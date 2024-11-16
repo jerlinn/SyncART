@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Profile - SYNC ART</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script src="scripts.js"></script>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-region">
+                    <button class="region-btn">
+                        <span>United States</span>
+                        <img src="images/ic_area-picker.svg" alt="Area selector">
+                    </button>
+                </div>
+            </div>
+
+            <a href="/" class="logo">
+                <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
+            </a>
+
+            <button class="mobile-menu-btn">
+                <img src="images/ic_menu.svg" alt="Menu">
+            </button>
+
+            <nav class="nav-right">
+                <a href="#preorder">PREORDER</a>
+                <a href="support.html">SUPPORT</a>
+                <a href="team.html">TEAM</a>
+                <a href="about.html">ABOUT US</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-hero">
+            <div class="container">
+                <h1>The AI staff behind Dawn</h1>
+            </div>
+        </section>
+
+        <section class="profile-section">
+            <div class="container">
+                <div class="profile-layout">
+                    <div class="role-nav">
+                        <button class="role active">Sleep Management Advisor</button>
+                        <button class="role">Chronobiology Specialist</button>
+                        <button class="role">Acoustic Experience Designer</button>
+                        <button class="role">Cognitive Function Consultant</button>
+                        <button class="role">Behavioral Habit Coach</button>
+                    </div>
+
+                    <div class="profile-content">
+                        <div class="quote">"Designing perfect sleep through science"</div>
+                        
+                        <h2>Michael Anderson</h2>
+                        <p class="title">Sleep Management Advisor</p>
+
+                        <div class="education">
+                            <h3>Education</h3>
+                            <ul>
+                                <li>University of Pennsylvania School of Medicine</li>
+                                <li>Center for Sleep & Circadian Neurobiology</li>
+                                <li>Ph.D. in Sleep Medicine</li>
+                                <li>Research focus: Sleep architecture & wake patterns</li>
+                            </ul>
+                        </div>
+
+                        <div class="background">
+                            <h3>Professional Background</h3>
+                            <ul>
+                                <li>Sleep Medicine & Neuroscience</li>
+                                <li>Focus: Sleep cycles & cognitive function</li>
+                                <li>RPSGT Certified Sleep Technologist</li>
+                                <li>Research Fellow, Stanford Sleep Science Center</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="region-selector">HONG KONG ▾</span>
+                <a href="/lab">LAB</a>
+                <a href="/about-us">ABOUT US</a>
+                <a href="/support">SUPPORT</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://x.com/intent/follow?screen_name=eviljer" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+                <div class="copyright">©2024 Sync Art company</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const roles = document.querySelectorAll('.role');
+            
+            roles.forEach(role => {
+                role.addEventListener('click', function() {
+                    // Remove active class from all roles
+                    roles.forEach(r => r.classList.remove('active'));
+                    // Add active class to clicked role
+                    this.classList.add('active');
+                    
+                    // Here you would typically update the profile content
+                    // based on the selected role
+                });
+            });
+
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navRight = document.querySelector('.nav-right');
+
+            mobileMenuBtn?.addEventListener('click', () => {
+                navRight?.classList.toggle('active');
+            });
+
+            // 点击页面其他地方关闭菜单
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn?.contains(e.target) && !navRight?.contains(e.target)) {
+                    navRight?.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

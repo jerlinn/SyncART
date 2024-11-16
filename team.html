@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - SYNC ART</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script src="scripts.js"></script>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-region">
+                    <button class="region-btn">
+                        <span>United States</span>
+                        <img src="images/ic_area-picker.svg" alt="Area selector">
+                    </button>
+                </div>
+            </div>
+
+            <a href="/" class="logo">
+                <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
+            </a>
+
+            <button class="mobile-menu-btn">
+                <img src="images/ic_menu.svg" alt="Menu">
+            </button>
+
+            <nav class="nav-right">
+                <a href="#preorder">PREORDER</a>
+                <a href="support.html">SUPPORT</a>
+                <a href="team.html">TEAM</a>
+                <a href="about.html">ABOUT US</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="team-hero">
+            <div class="container">
+                <h1>Elite Digital Specialists</h1>
+                <p>AI-Powered Professional Support, Available 24/7</p>
+            </div>
+        </section>
+
+        <!-- Dawn Professional Team -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Dawn Professional Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/team/michael-anderson.jpg" alt="Sleep Management Advisor">
+                        <h3>Dr. Michael Anderson</h3>
+                        <p>Sleep Management<br>Advisor</p>
+                    </div>
+                    <!-- More team members... -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="region-selector">HONG KONG ▾</span>
+                <a href="/lab">LAB</a>
+                <a href="/about-us">ABOUT US</a>
+                <a href="/support">SUPPORT</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://x.com/intent/follow?screen_name=eviljer" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+                <div class="copyright">©2024 Sync Art company</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 在 </body> 前添加脚本 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navRight = document.querySelector('.nav-right');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            navRight?.classList.toggle('active');
+        });
+
+        // 点击页面其他地方关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn?.contains(e.target) && !navRight?.contains(e.target)) {
+                navRight?.classList.remove('active');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

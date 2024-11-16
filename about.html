@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SYNC ART</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script src="scripts.js"></script>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-region">
+                    <button class="region-btn">
+                        <span>United States</span>
+                        <img src="images/ic_area-picker.svg" alt="Area selector">
+                    </button>
+                </div>
+            </div>
+
+            <a href="/" class="logo">
+                <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
+            </a>
+
+            <button class="mobile-menu-btn">
+                <img src="images/ic_menu.svg" alt="Menu">
+            </button>
+
+            <nav class="nav-right">
+                <a href="#preorder">PREORDER</a>
+                <a href="support.html">SUPPORT</a>
+                <a href="team.html">TEAM</a>
+                <a href="about.html">ABOUT US</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1>About SYNC ART</h1>
+                <p>Revolutionizing the way you wake up</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-card">
+                        <img src="images/innovation.png" alt="Innovation">
+                        <h3>Innovation</h3>
+                        <p>Pioneering the future of sleep technology with cutting-edge AI and personalization.</p>
+                    </div>
+                    <div class="about-card">
+                        <img src="images/quality.png" alt="Quality">
+                        <h3>Quality</h3>
+                        <p>Committed to delivering premium products that enhance your daily life.</p>
+                    </div>
+                    <div class="about-card">
+                        <img src="images/community.png" alt="Community">
+                        <h3>Community</h3>
+                        <p>Building a global community of well-rested, energized individuals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="container">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="text-center">To transform morning routines into personalized, inspiring experiences that set the tone for a productive day.</p>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Vision</h3>
+                        <p>Creating a world where every morning begins with purpose and inspiration.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Innovation</h3>
+                        <p>Continuously pushing the boundaries of technology to improve daily life.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Sustainability</h3>
+                        <p>Committed to environmentally conscious product development and practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lab Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">SYNC ART Lab</h2>
+                <p class="text-center">Our research and development hub where innovation meets reality.</p>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Research</h3>
+                        <p>Conducting cutting-edge sleep and wellness research to improve our products.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Development</h3>
+                        <p>Creating next-generation solutions for better mornings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="region-selector">HONG KONG ▾</span>
+                <a href="/lab">LAB</a>
+                <a href="/about-us">ABOUT US</a>
+                <a href="/support">SUPPORT</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://x.com/intent/follow?screen_name=eviljer" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+                <div class="copyright">©2024 Sync Art company</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 在 </body> 前添加脚本 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navRight = document.querySelector('.nav-right');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            navRight?.classList.toggle('active');
+        });
+
+        // 点击页面其他地方关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn?.contains(e.target) && !navRight?.contains(e.target)) {
+                navRight?.classList.remove('active');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - SYNC ART</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .support-hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--light-bg);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #357abd;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #2d3748;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            transition: opacity 0.2s ease;
+        }
+
+        .social-links a:hover img {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<script src="scripts.js"></script>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-region">
+                    <button class="region-btn">
+                        <span>United States</span>
+                        <img src="images/ic_area-picker.svg" alt="Area selector">
+                    </button>
+                </div>
+            </div>
+
+            <a href="/" class="logo">
+                <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
+            </a>
+
+            <button class="mobile-menu-btn">
+                <img src="images/ic_menu.svg" alt="Menu">
+            </button>
+
+            <nav class="nav-right">
+                <a href="#preorder">PREORDER</a>
+                <a href="support.html">SUPPORT</a>
+                <a href="team.html">TEAM</a>
+                <a href="about.html">ABOUT US</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="support-hero">
+        <div class="container">
+            <h1>Support Center</h1>
+            <p>Find answers to your questions about Dawn00</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does Dawn00's AI personalization work?
+                        <span class="toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Dawn00's AI learns from your sleep patterns, preferences, and daily routines to create a personalized wake-up experience. It adapts to your schedule and optimizes your wake-up time based on your sleep cycles.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What makes Dawn00 different from other alarm clocks?
+                        <span class="toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Dawn00 combines AI-driven personalization, voice wake-up technology, and sleep cycle optimization to create a gentle, natural wake-up experience tailored to your individual needs.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I set up my Dawn00 device?
+                        <span class="toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Setting up Dawn00 is simple: connect it to your Wi-Fi network, download the SYNC ART app, and follow the in-app setup guide to customize your wake-up experience.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I customize the wake-up sounds?
+                        <span class="toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, Dawn00 offers a variety of natural sounds, music, and personalized voice messages. You can also record your own wake-up messages or choose from our curated collection.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's included in the warranty?
+                        <span class="toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Dawn00 comes with a 1-year limited warranty covering manufacturing defects and hardware issues. Extended warranty options are available through our premium support plan.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Submit a Question</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="email">Your email address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" required placeholder="Describe your question or issue"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="region-selector">HONG KONG ▾</span>
+                <a href="/lab">LAB</a>
+                <a href="/about-us">ABOUT US</a>
+                <a href="/support">SUPPORT</a>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://x.com/intent/follow?screen_name=eviljer" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="images/ic_footer_instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+                <div class="copyright">©2024 Sync Art company</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const toggle = this.querySelector('.toggle');
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current answer
+                    answer.classList.toggle('active');
+                    toggle.textContent = answer.classList.contains('active') ? '▲' : '▼';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navRight = document.querySelector('.nav-right');
+
+            mobileMenuBtn?.addEventListener('click', () => {
+                navRight?.classList.toggle('active');
+            });
+
+            // 点击页面其他地方关闭菜单
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn?.contains(e.target) && !navRight?.contains(e.target)) {
+                    navRight?.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

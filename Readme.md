@@ -29,6 +29,7 @@ Order：跳到众筹网页
 - [ ] Footer右侧的模块水平间距 24px
 
 ## Todo
+- [x] 增加 gitignore：根目录Readme.md、.DS_Store、目录 content 和 design
 -[x] Homepage
 -[x] About Us
 -[x] Support

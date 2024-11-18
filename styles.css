@@ -150,22 +150,69 @@ body {
     }
 }
 
-/* Hero Section */
+/* Hero Section Styles */
 .hero {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 120px 0 60px;
+    padding: 40px 0 80px;
     text-align: center;
 }
 
-.video-container {
+.hero .container {
     max-width: 800px;
-    margin: 40px auto;
 }
 
-video {
+.hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 48px;
+    margin-bottom: 8px;
+    color: var(--main-color);
+}
+
+.hero .subtitle {
+    font-size: 24px;
+    color: var(--sub-color);
+    margin-bottom: 8px;
+}
+
+.hero .available-date {
+    font-size: 16px;
+    color: var(--info-color);
+    margin-bottom: 40px;
+}
+
+/* 视频容器样式 */
+.video-container {
     width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--placeholder-color);
+    border-radius: 16px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 预购按钮样式 */
+.btn-preorder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: var(--primary-color);
+    color: white;
     border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.btn-preorder:hover {
+    opacity: 0.9;
 }
 
 /* Features Section */
@@ -173,22 +220,75 @@ video {
     padding: 80px 0;
 }
 
-.feature-carousel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+.features .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 80px;
+    color: var(--main-color);
 }
 
-.feature {
-    text-align: center;
-    padding: 20px;
+/* Feature Tabs Layout */
+.feature-tabs {
+    display: flex;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.feature img {
+/* Tab Navigation - Left Side */
+.feature-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-width: 240px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    font-size: 20px;
+    color: var(--info-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    opacity: 0.5;
+}
+
+.tab-btn.active {
+    color: var(--main-color);
+    opacity: 1;
+}
+
+/* Feature Content - Right Side */
+.feature-content {
+    flex: 1;
+}
+
+.feature-panel {
+    display: none;
+    position: relative;
+}
+
+.feature-panel.active {
+    display: block;
+}
+
+.feature-panel img {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    height: auto;
+    border-radius: 16px;
+    background: var(--placeholder-color);
+}
+
+.feature-description {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: var(--primary-color);
+    font-size: 24px;
+    max-width: 400px;
 }
 
 /* Responsive Design */
@@ -1007,103 +1107,180 @@ h1 {
 }
 
 .contact-form {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
 }
 
-/* FAQ项目样式 */
-.faq-item {
+/* One Dawn Section */
+.one-dawn {
+    padding: 80px 0;
+}
+
+.one-dawn .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 48px;
+    line-height: 1.2;
     margin-bottom: 16px;
-    background: var(--placeholder-color);
-    border-radius: 8px;
 }
 
-.faq-question {
-    padding: 16px;
+.one-dawn .section-description {
+    font-size: 18px;
+    color: var(--sub-color);
+    margin-bottom: 48px;
+    max-width: 600px;
+}
+
+/* Profile Selector */
+.profile-selector {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.profile-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: #DDD;
     cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    padding: 0;
+}
+
+.profile-btn.active {
+    background-color: #333;
+}
+
+.profile-btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+}
+
+.profile-btn.active img {
+    opacity: 1;
+}
+
+/* Demo Container Layout */
+.demo-content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+/* Operation Demo - Left Side */
+.operation-demo {
+    background: #F9F9F9;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.operation-demo h3 {
+    font-size: 24px;
     font-weight: 500;
-}
-
-.faq-answer {
-    display: none;
-    padding: 0 16px 16px;
-    color: var(--info-color);
-}
-
-.faq-answer.active {
-    display: block;
-}
-
-/* Submit Question 表单样式 */
-.form-group {
     margin-bottom: 24px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
+.user-info {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.personalization h4 {
     font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-/* Support页面布局容器 */
-.support-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* FAQ部分样式 */
-.faq-section {
-    padding: 40px 0;
-}
-
-.faq-section .section-title {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 40px;
-    text-align: left;  /* 左对齐 */
-}
-
-.faq-container {
-    width: 100%;
-}
-
-/* FAQ项目样式 */
-.faq-item {
     margin-bottom: 16px;
-    background: var(--placeholder-color);
-    border-radius: 8px;
 }
 
-/* Submit Question部分样式 */
-.contact-section {
-    padding: 40px 0;
+.personalization ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
 }
 
-.contact-section .section-title {
-    font-size: 32px;
-    line-height: 1.2;
+/* Voice Demo - Right Side */
+.voice-demo {
+    background: #F9F9F9;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+/* Voice Demo Inner Layout */
+.voice-demo-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.voice-demo-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.voice-demo h3 {
+    font-size: 24px;
+    font-weight: 500;
     margin-bottom: 24px;
-    text-align: left;
 }
 
-.contact-form {
+/* Audio Player */
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.play-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #E5E5E5;
+    border-radius: 2px;
+    position: relative;
+}
+
+.progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #333;
+    border-radius: 2px;
+    width: 0;
+}
+
+.time {
+    color: #666;
+    font-size: 14px;
+}
+
+.wake-up-text {
+    margin-top: 24px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.demo-illustration {
     width: 100%;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .demo-content {
+        grid-template-columns: 1fr;
+    }
 }

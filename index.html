@@ -44,37 +44,145 @@
         <section class="hero">
             <div class="container">
                 <h1>Dawn00</h1>
-                <p>Your Personal Wake-Up Revolution</p>
+                <p class="subtitle">Your intelligent morning companion.</p>
+                <p class="available-date">Available starting 2025 January 1st</p>
+                
                 <div class="video-container">
-                    <video controls poster="images/dawn00-preview.jpg">
+                    <video autoplay muted loop playsinline poster="images/dawn00-preview.jpg">
                         <source src="videos/dawn00-intro.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
-                <a href="#preorder" class="btn">Pre-order Now</a>
+                
+                <a href="#preorder" class="btn-preorder">Pre-order</a>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section class="section features">
+        <section class="features">
             <div class="container">
-                <h2 class="section-title">Wake up inspired.<br>Not just an alarm.</h2>
-                <div class="feature-carousel">
-                    <div class="feature active">
-                        <img src="images/voice-wakeup.jpg" alt="Personal Voice Wake-up">
-                        <h3>Personal Voice Wake-up</h3>
-                        <p>Wake up to your personal morning narrative</p>
+                <h2 class="section-title">
+                    Wake up inspired.<br>
+                    Not just an alarm.
+                </h2>
+                
+                <div class="feature-tabs">
+                    <div class="feature-nav">
+                        <button class="tab-btn active" data-tab="voice-wakeup">Personal Voice Wake-up</button>
+                        <button class="tab-btn" data-tab="responsive-motion">Responsive Motion</button>
+                        <button class="tab-btn" data-tab="morning-insights">Morning Insights</button>
+                        <button class="tab-btn" data-tab="evolving-experience">Evolving Experience</button>
                     </div>
-                    <div class="feature">
-                        <img src="images/motion.jpg" alt="Responsive Motion">
-                        <h3>Responsive Motion</h3>
-                        <p>Intelligent motion detection for optimal wake-up timing</p>
+
+                    <div class="feature-content">
+                        <div class="feature-panel active" id="voice-wakeup">
+                            <img src="images/img_hp_Natural Rise.png" alt="Personal Voice Wake-up">
+                            <p class="feature-description">Wake up to your personal morning narrative</p>
+                        </div>
+                        
+                        <div class="feature-panel" id="responsive-motion">
+                            <img src="images/img_hp_City Brief.png" alt="Responsive Motion">
+                            <p class="feature-description">Intelligent motion detection for optimal wake-up timing</p>
+                        </div>
+                        
+                        <div class="feature-panel" id="morning-insights">
+                            <img src="images/img_hp_Smart Wake.png" alt="Morning Insights">
+                            <p class="feature-description">Daily personalized insights for better mornings</p>
+                        </div>
+                        
+                        <div class="feature-panel" id="evolving-experience">
+                            <img src="images/img_hp_Daily Spark.png" alt="Evolving Experience">
+                            <p class="feature-description">An experience that grows with your routine</p>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <img src="images/insights.jpg" alt="Morning Insights">
-                        <h3>Morning Insights</h3>
-                        <p>Personalized data to improve your morning routine</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- One Dawn Section -->
+        <section class="one-dawn">
+            <div class="container">
+                <h2 class="section-title">One Dawn<br>Every Generation</h2>
+                <p class="section-description">Smart Sleep Optimization AI-driven sleep recommendations based on user information, and potential needs</p>
+                
+                <div class="demo-container">
+                    <!-- Profile Selector -->
+                    <div class="profile-selector">
+                        <button class="profile-btn active">
+                            <img src="images/ic_edit-3.svg" alt="Profile 1">
+                        </button>
+                        <button class="profile-btn">
+                            <img src="images/ic_edit-3.svg" alt="Profile 2">
+                        </button>
+                        <button class="profile-btn">
+                            <img src="images/ic_edit-3.svg" alt="Profile 3">
+                        </button>
+                        <button class="profile-btn">
+                            <img src="images/ic_edit-3.svg" alt="Profile 4">
+                        </button>
                     </div>
+
+                    <!-- Demo Content -->
+                    <div class="demo-content">
+                        <!-- Left Side -->
+                        <div class="operation-demo">
+                            <h3>Operation demo</h3>
+                            <div class="user-info">
+                                <p>Age: 5 years old</p>
+                                <p>Location: San Francisco, California</p>
+                                <p>Early riser (7:30 AM wake-up)</p>
+                            </div>
+                            
+                            <div class="personalization">
+                                <h4>Personalization:</h4>
+                                <ul>
+                                    <li>Kindergarten at Golden Gate Elementary</li>
+                                    <li>Learning Mandarin</li>
+                                    <li>Loves dinosaurs and space exploration;</li>
+                                    <li>Favorite Activity: Drawing & Storytime</li>
+                                    <li>Special Note: Excited about morning yoga with mom</li>
+                                    <li>Likes: Ocean sounds & gentle nature music</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right Side -->
+                        <div class="voice-demo">
+                            <h3>Voice Wake-up demo</h3>
+                            <div class="voice-demo-inner">
+                                <!-- Left Content -->
+                                <div class="voice-demo-content">
+                                    <div class="audio-player">
+                                        <button class="play-btn">
+                                            <img src="images/ic_play.svg" alt="Play">
+                                        </button>
+                                        <div class="progress-bar">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="time">0:00 / 1:00</div>
+                                    </div>
+                                    <p class="wake-up-text">
+                                        "Good morning, little explorer Emma! The fog is rolling away from the Golden Gate Bridge, just like a friendly dragon's breath! Today's adventure: we have your favorite dinosaur art class! First mission: let's do our morning stretches like a gentle brachiosaurus. Remember your special rainbow water bottle for your Mandarin class later!"
+                                    </p>
+                                </div>
+                                <!-- Right Image -->
+                                <div class="voice-demo-illustration">
+                                    <img src="images/img_hp_slider-1.png" alt="Child's morning routine illustration" class="demo-illustration">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transitions Section -->
+        <section class="transitions">
+            <div class="container">
+                <h2 class="section-title">Gentle transitions into your day.</h2>
+                <p class="section-description">Smart Sleep Optimization AI-driven sleep recommendations based on user information, and potential needs</p>
+                
+                <div class="transitions-content">
+                    <!-- Visualization and stages -->
                 </div>
             </div>
         </section>
@@ -125,6 +233,50 @@
                 navRight?.classList.remove('active');
             }
         });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const playBtn = document.querySelector('.play-btn');
+        const progress = document.querySelector('.progress');
+        const currentTime = document.querySelector('.time .current');
+        const playIcon = playBtn.querySelector('img');
+        let isPlaying = false;
+        
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playIcon.src = 'images/ic_pause-circle.svg';
+                // Start progress animation
+                progress.style.width = '100%';
+                progress.style.transition = 'width 60s linear';
+                // Update time display
+                updateTime();
+            } else {
+                playIcon.src = 'images/ic_play.svg';
+                // Pause progress
+                const currentWidth = progress.offsetWidth;
+                progress.style.width = `${currentWidth}px`;
+                progress.style.transition = 'none';
+                // Stop time update
+                clearInterval(timeInterval);
+            }
+        });
+        
+        let timeInterval;
+        function updateTime() {
+            let seconds = 0;
+            timeInterval = setInterval(() => {
+                seconds++;
+                if (seconds >= 60) {
+                    seconds = 0;
+                    isPlaying = false;
+                    playIcon.src = 'images/ic_play.svg';
+                    progress.style.width = '0';
+                    clearInterval(timeInterval);
+                }
+                currentTime.textContent = `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, '0')}`;
+            }, 1000);
+        }
     });
     </script>
 </body>

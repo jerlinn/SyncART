@@ -421,7 +421,7 @@ h1 {
 }
 
 .faq-section {
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .faq-container {
@@ -590,4 +590,188 @@ h1 {
 .send-btn img {
     width: 16px;
     height: 16px;
+}
+
+/* Team Page Styles */
+.team-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+    background: white;
+}
+
+.team-hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--main-color);
+}
+
+.team-hero p {
+    font-size: 18px;
+    color: var(--sub-color);
+}
+
+.team-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--main-color);
+}
+
+.section-description {
+    font-size: 18px;
+    color: var(--sub-color);
+    margin-bottom: 48px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.team-member {
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+}
+
+.team-member a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.team-member img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--main-color);
+}
+
+.team-member p {
+    font-size: 16px;
+    color: var(--sub-color);
+    line-height: 1.5;
+}
+
+/* Star Staff Section */
+.star-staff {
+    padding: 80px 0;
+}
+
+.placeholder-member {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: left;
+}
+
+.placeholder-member .avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #eee;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.placeholder-member h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--main-color);
+}
+
+.placeholder-member p {
+    font-size: 16px;
+    color: var(--sub-color);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .team-hero {
+        padding: 80px 0 40px;
+    }
+
+    .team-hero h1 {
+        font-size: 36px;
+    }
+
+    .team-grid {
+        gap: 24px;
+    }
+}
+
+/* Support Page Styles */
+.section {
+    padding: 80px 0 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-section {
+    margin-bottom: 40px;
+}
+
+.faq-container, 
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--primary-color);
+}
+
+.submit-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+/* FAQ Section Styles */
+.faq-section {
+    margin-bottom: 0px;
+}
+
+/* 最后一个 FAQ 项，底部没有间距 */
+.faq-item:last-child {
+    margin-bottom: 0px;
+}
+
+/* 确保 Submit 区块没有额外的上边距 */
+.section {
+    padding-top: 0;
+    padding-bottom: 40px;
 }

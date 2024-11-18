@@ -57,30 +57,126 @@
                     </div>
 
                     <div class="profile-content">
-                        <div class="quote">"Designing perfect sleep through science"</div>
+                        <div class="profile-image-wrapper">
+                            <img src="images/person_team_1.png" alt="Michael Anderson" class="profile-image">
+                        </div>
                         
-                        <h2>Michael Anderson</h2>
-                        <p class="title">Sleep Management Advisor</p>
+                        <div class="profile-info">
+                            <div class="quote">"Designing perfect sleep through science"</div>
+                            
+                            <h2>Michael Anderson</h2>
+                            <p class="title">Sleep Management Advisor</p>
 
-                        <div class="education">
-                            <h3>Education</h3>
+                            <div class="education">
+                                <ul>
+                                    <li>University of Pennsylvania School of Medicine</li>
+                                    <li>Center for Sleep & Circadian Neurobiology</li>
+                                    <li>Ph.D. in Sleep Medicine</li>
+                                    <li>Research focus: Sleep architecture & wake patterns</li>
+                                </ul>
+                            </div>
+
+                            <div class="background">
+                                <h3>Professional Background</h3>
+                                <ul>
+                                    <li>Sleep Medicine & Neuroscience</li>
+                                    <li>Focus: Sleep cycles & cognitive function</li>
+                                    <li>RPSGT Certified Sleep Technologist</li>
+                                    <li>Research Fellow, Stanford Sleep Science Center</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience">
+                                <h3>Practical Experience</h3>
+                                <ul>
+                                    <li>5000+ Sleep Optimization Cases</li>
+                                    <li>Smart dynamic wake-up design</li>
+                                    <li>Sleep phase optimization</li>
+                                    <li>Recovery pattern analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="promise-section">
+            <div class="container">
+                <h2 class="promise-title">Our Promise</h2>
+                <p class="promise-subtitle">Built on research. Proven in practice. Enhanced by AI.</p>
+                
+                <div class="methodology-grid">
+                    <!-- Core Methodology -->
+                    <div class="methodology-section">
+                        <h3>Core Methodology</h3>
+                        
+                        <div class="methodology-category">
+                            <h4>Sleep Science</h4>
                             <ul>
-                                <li>University of Pennsylvania School of Medicine</li>
-                                <li>Center for Sleep & Circadian Neurobiology</li>
-                                <li>Ph.D. in Sleep Medicine</li>
-                                <li>Research focus: Sleep architecture & wake patterns</li>
+                                <li>Sleep Stage Theory</li>
+                                <li>Physiological Rhythm Control</li>
+                                <li>Circadian Pattern Optimization</li>
                             </ul>
                         </div>
 
-                        <div class="background">
-                            <h3>Professional Background</h3>
+                        <div class="methodology-category">
+                            <h4>Behavioral Psychology</h4>
                             <ul>
-                                <li>Sleep Medicine & Neuroscience</li>
-                                <li>Focus: Sleep cycles & cognitive function</li>
-                                <li>RPSGT Certified Sleep Technologist</li>
-                                <li>Research Fellow, Stanford Sleep Science Center</li>
+                                <li>Habit Formation Models</li>
+                                <li>Motivation Enhancement Systems</li>
+                                <li>Cognitive Behavioral Therapy</li>
                             </ul>
                         </div>
+
+                        <div class="methodology-category">
+                            <h4>Neuroscience</h4>
+                            <ul>
+                                <li>EEG Analysis</li>
+                                <li>Cognitive Assessment</li>
+                                <li>Consciousness Research</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service Features -->
+                    <div class="methodology-section">
+                        <h3>Service Features</h3>
+                        
+                        <div class="methodology-category">
+                            <h4>Scientific</h4>
+                            <p>Based on latest sleep research</p>
+                        </div>
+
+                        <div class="methodology-category">
+                            <h4>Personalized</h4>
+                            <p>Adapted to individual physiology</p>
+                        </div>
+
+                        <div class="methodology-category">
+                            <h4>Sustainable</h4>
+                            <p>Focus on long-term habit formation</p>
+                        </div>
+
+                        <div class="methodology-category">
+                            <h4>Data-driven</h4>
+                            <p>Objective tracking & feedback</p>
+                        </div>
+
+                        <div class="methodology-category">
+                            <h4>Human-centric</h4>
+                            <p>Gentle progressive adjustment</p>
+                        </div>
+                    </div>
+
+                    <!-- Continuous Evolution -->
+                    <div class="methodology-section">
+                        <h3>Continuous Evolution</h3>
+                        <ul>
+                            <li>Regular updates on sleep research</li>
+                            <li>Ongoing wake-up algorithm optimization</li>
+                            <li>Accumulative user feedback analysis</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -119,16 +215,137 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const roles = document.querySelectorAll('.role');
+            const profileData = {
+                'Sleep Management Advisor': {
+                    name: 'Michael Anderson',
+                    title: 'Sleep Management Advisor',
+                    image: 'images/person_team_1.png',
+                    quote: 'Designing perfect sleep through science',
+                    education: [
+                        'University of Pennsylvania School of Medicine',
+                        'Center for Sleep & Circadian Neurobiology',
+                        'Ph.D. in Sleep Medicine',
+                        'Research focus: Sleep architecture & wake patterns'
+                    ],
+                    background: [
+                        'Sleep Medicine & Neuroscience',
+                        'Focus: Sleep cycles & cognitive function',
+                        'RPSGT Certified Sleep Technologist',
+                        'Research Fellow, Stanford Sleep Science Center'
+                    ],
+                    experience: [
+                        '5000+ Sleep Optimization Cases',
+                        'Smart dynamic wake-up design',
+                        'Sleep phase optimization',
+                        'Recovery pattern analysis'
+                    ]
+                },
+                'Chronobiology Specialist': {
+                    name: 'Sarah Matthews',
+                    title: 'Chronobiology Specialist',
+                    image: 'images/person_team_2.png',
+                    quote: 'Synchronizing your body clock with ideal life',
+                    education: [
+                        'Northwestern University',
+                        'Department of Neurobiology',
+                        'M.S. in Life Sciences',
+                        'Research focus: Biological rhythms & behavior'
+                    ],
+                    background: [
+                        'Chronobiology & Behavioral Psychology',
+                        'Research: Circadian rhythm mechanisms',
+                        'CBT-I Certified Sleep Therapist',
+                        'Former researcher at Harvard\'s Division of Sleep Medicine'
+                    ],
+                    experience: [
+                        '3000+ Schedule Optimization Cases',
+                        'Sleep-wake cycle adjustment',
+                        'Personalized routine design',
+                        'Habit formation coaching'
+                    ]
+                },
+                'Acoustic Experience Designer': {
+                    name: 'James Miller',
+                    title: 'Acoustic Experience Designer',
+                    image: 'images/person_team_3.png',
+                    quote: 'Crafting gentle awakening through sound',
+                    education: [
+                        'Berklee College of Music',
+                        'Music Therapy Program',
+                        'B.A. in Music Therapy',
+                        'Focus: Sound healing & neuroacoustics'
+                    ],
+                    background: [
+                        'Acoustic Engineering & Music Therapy',
+                        'MIT Media Lab collaboration: Sound & sleep',
+                        'Certified Music Therapist (MT-BC)'
+                    ],
+                    experience: [
+                        '2000+ Wake-up Sound Designs',
+                        'Binaural beat integration',
+                        'Natural soundscape design',
+                        'Progressive audio transitions'
+                    ]
+                },
+                'Cognitive Function Consultant': {
+                    name: 'Jennifer Chen',
+                    title: 'Cognitive Function Consultant',
+                    image: 'images/person_team_4.png',
+                    quote: 'Optimizing brain state for awakening',
+                    education: [
+                        'UC Berkeley',
+                        'Department of Psychology',
+                        'Ph.D. in Cognitive Neuroscience',
+                        'Research focus: Sleep & memory consolidation'
+                    ],
+                    background: [
+                        'Cognitive Science & Neuropsychology',
+                        'Research: Sleep-wake transition states',
+                        'Expert in cognitive state optimization',
+                        'Former researcher at UCSF Sleep Lab'
+                    ],
+                    experience: [
+                        '4000+ Cognitive Enhancement Cases',
+                        'Wake-up state optimization',
+                        'Mental clarity improvement',
+                        'Morning cognitive performance'
+                    ]
+                },
+                'Behavioral Habit Coach': {
+                    name: 'David Thompson',
+                    title: 'Behavioral Habit Coach',
+                    image: 'images/person_team_5.png',
+                    quote: 'Building lasting healthy routines',
+                    education: [
+                        'Brown University',
+                        'Department of Cognitive Sciences',
+                        'M.S. in Psychology',
+                        'Focus: Habit formation & behavior change'
+                    ],
+                    background: [
+                        'Behavioral Science & Positive Psychology',
+                        'Research: Sleep behavior modification',
+                        'Certified Health & Behavior Coach',
+                        'Former researcher at Yale Sleep Center'
+                    ],
+                    experience: [
+                        '3500+ Habit Formation Cases',
+                        'Sleep routine design',
+                        'Behavioral change programs',
+                        'Long-term habit maintenance'
+                    ]
+                }
+            };
             
             roles.forEach(role => {
                 role.addEventListener('click', function() {
-                    // Remove active class from all roles
                     roles.forEach(r => r.classList.remove('active'));
-                    // Add active class to clicked role
                     this.classList.add('active');
                     
-                    // Here you would typically update the profile content
-                    // based on the selected role
+                    const roleData = profileData[this.textContent];
+                    if (roleData) {
+                        updateProfile(roleData);
+                    }
                 });
             });
 
@@ -146,6 +363,25 @@
                 }
             });
         });
+
+        function updateProfile(data) {
+            document.querySelector('.profile-image').src = data.image;
+            document.querySelector('.quote').textContent = `"${data.quote}"`;
+            document.querySelector('.profile-info h2').textContent = data.name;
+            document.querySelector('.profile-info .title').textContent = data.title;
+            
+            // 更新教育背景
+            const educationList = document.querySelector('.education ul');
+            educationList.innerHTML = data.education.map(item => `<li>${item}</li>`).join('');
+            
+            // 更新专业背景
+            const backgroundList = document.querySelector('.background ul');
+            backgroundList.innerHTML = data.background.map(item => `<li>${item}</li>`).join('');
+            
+            // 更新实践经验
+            const experienceList = document.querySelector('.experience ul');
+            experienceList.innerHTML = data.experience.map(item => `<li>${item}</li>`).join('');
+        }
     </script>
 </body>
 </html>

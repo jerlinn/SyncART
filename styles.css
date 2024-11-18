@@ -24,7 +24,9 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Header Styles */
@@ -277,44 +279,68 @@ video {
 /* Team Profile Styles */
 .profile-hero {
     padding: 120px 0 60px;
-    background: var(--primary-color);
-    color: white;
-    text-align: center;
+    background: white;
+}
+
+.profile-hero h1 {
+    font-size: 48px;
+    color: var(--main-color);
+}
+
+.profile-section {
+    padding: 60px 0;
 }
 
 .profile-layout {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 40px;
-    margin: 60px 0;
+    grid-template-columns: 240px 1fr;
+    gap: 80px;
+    margin: 40px 0;
 }
 
+/* Role Navigation Styles */
 .role-nav {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
 }
 
 .role {
     padding: 16px 24px;
     background: none;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
+    border: none;
     text-align: left;
     cursor: pointer;
+    color: var(--info-color);
     transition: all 0.3s ease;
+    font-size: 16px;
+    opacity: 0.5;
 }
 
 .role.active {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+    color: var(--main-color);
+    opacity: 1;
 }
 
+/* Profile Content Styles */
 .profile-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
     padding: 40px;
-    background: #f8f9fa;
+    background: #F9F9F9;
     border-radius: 16px;
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.profile-info {
+    padding-top: 24px;
 }
 
 .quote {
@@ -330,10 +356,10 @@ video {
     margin-bottom: 8px;
 }
 
-.title {
-    color: var(--secondary-color);
+.profile-content .title {
     font-size: 18px;
-    margin-bottom: 32px;
+    color: var(--sub-color);
+    margin-bottom: 40px;
 }
 
 .education, .background, .experience {
@@ -341,7 +367,8 @@ video {
 }
 
 .education h3, .background h3, .experience h3 {
-    font-size: 20px;
+    font-size: 18px;
+    color: var(--info-color);
     margin-bottom: 16px;
 }
 
@@ -351,55 +378,88 @@ video {
 }
 
 .education li, .background li, .experience li {
-    margin-bottom: 8px;
-    padding-left: 24px;
     position: relative;
+    padding-left: 16px;
+    margin-bottom: 12px;
+    color: var(--sub-color);
 }
 
 .education li:before, .background li:before, .experience li:before {
     content: "•";
-    color: var(--primary-color);
     position: absolute;
     left: 0;
+    color: var(--primary-color);
 }
 
-/* Methodology Section */
-.methodology-section {
+/* Our Promise Section */
+.promise-section {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: white;
+}
+
+.promise-title {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.promise-subtitle {
+    font-size: 18px;
+    color: var(--sub-color);
+    margin-bottom: 60px;
 }
 
 .methodology-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 60px;
 }
 
-.methodology-item {
+.methodology-section h3 {
+    font-size: 24px;
     margin-bottom: 32px;
+    color: var(--main-color);
 }
 
-.methodology-item h4 {
+.methodology-category {
+    margin-bottom: 40px;
+}
+
+.methodology-category h4 {
     font-size: 18px;
+    color: var(--info-color);
     margin-bottom: 16px;
-    color: var(--primary-color);
+}
+
+.methodology-category p {
+    color: var(--sub-color);
+    margin-bottom: 8px;
+}
+
+.methodology-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.methodology-category li {
+    margin-bottom: 12px;
+    color: var(--sub-color);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .profile-content {
         grid-template-columns: 1fr;
     }
 
-    .role-nav {
-        flex-direction: row;
-        overflow-x: auto;
-        padding-bottom: 16px;
-    }
-
-    .role {
-        white-space: nowrap;
+    .methodology-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }
 
@@ -594,52 +654,119 @@ h1 {
 
 /* Team Page Styles */
 .team-hero {
-    padding: 120px 0 60px;
-    text-align: center;
-    background: white;
+    padding: 40px 0 40px;
+    text-align: left;
+    background-color: var(--background-color);
+}
+
+.team-hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 .team-hero h1 {
+    font-family: 'Instrument Serif', serif;
     font-size: 48px;
     margin-bottom: 16px;
-    color: var(--main-color);
+    color: var(--text-primary);
+    text-align: left;
 }
 
-.team-hero p {
-    font-size: 18px;
-    color: var(--sub-color);
+.team-hero .subtitle {
+    font-size: 24px;
+    color: var(--text-secondary);
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .team-hero h1 {
+        font-size: 36px;
+    }
+    
+    .team-hero .subtitle {
+        font-size: 20px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
 }
 
 .team-section {
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .section-title {
     font-size: 32px;
-    margin-bottom: 16px;
-    color: var(--main-color);
+    margin-bottom: 24px;
+    text-align: left;
+    color: var(--text-primary);
 }
 
 .section-description {
     font-size: 18px;
-    color: var(--sub-color);
-    margin-bottom: 48px;
+    line-height: 1.5;
+    margin: 0 0 40px 0;
+    padding: 0;
+    text-align: left;
+    color: var(--text-secondary);
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-bottom: 80px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    margin-bottom: 40px;
 }
 
 .team-member {
-    text-align: left;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
     transition: transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .team-member:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
+}
+
+.team-member img,
+.team-member .avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.team-member .avatar {
+    background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+    position: relative;
+}
+
+.team-member .avatar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url('images/placeholder-icon.svg') center/contain no-repeat;
+    opacity: 0.5;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    margin: 16px 16px 8px;
+    color: var(--text-primary);
+}
+
+.team-member p {
+    font-size: 16px;
+    margin: 0 16px 16px;
+    color: var(--text-secondary);
+    line-height: 1.4;
 }
 
 .team-member a {
@@ -648,29 +775,16 @@ h1 {
     display: block;
 }
 
-.team-member img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 24px;
-}
-
-.team-member h3 {
-    font-size: 24px;
-    margin-bottom: 8px;
-    color: var(--main-color);
-}
-
-.team-member p {
-    font-size: 16px;
-    color: var(--sub-color);
-    line-height: 1.5;
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 24px;
+    }
 }
 
 /* Star Staff Section */
 .star-staff {
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .placeholder-member {
@@ -774,4 +888,222 @@ h1 {
 .section {
     padding-top: 0;
     padding-bottom: 40px;
+}
+
+/* 重置section样式 */
+.team-section,
+.star-staff {
+    padding: 40px 0;
+}
+
+/* 标题容器样式 */
+.section-header {
+    margin-left: 0;  /* 确保没有左边距 */
+    padding-left: 0; /* 确保没有左内边距 */
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+/* 标题样式 */
+.section-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 16px 0; /* 重置所有边距，只保留底部间距 */
+    padding: 0;         /* 移除所有内边距 */
+    text-align: left;   /* 强制左对齐 */
+    color: var(--text-primary);
+}
+
+.section-description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 40px 0;
+    padding: 0;
+    text-align: left;
+    color: var(--text-secondary);
+}
+
+/* Support页面特定样式 */
+.support-section .section-title,
+.faq-section .section-title,
+.contact-section .section-title {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Team页面特定样式 */
+.team-section .section-title,
+.star-staff .section-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 16px 0;
+    padding: 0;
+    text-align: left;
+    color: var(--text-primary);
+}
+
+.team-section .section-description,
+.star-staff .section-description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 40px 0;
+    padding: 0;
+    text-align: left;
+    color: var(--text-secondary);
+}
+
+/* FAQ和Contact Form容器样式 */
+.faq-container, 
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* 基础标题样式 */
+.section-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+/* Support页面样式 */
+.support-hero {
+    text-align: center;
+    padding: 80px 0 40px;
+}
+
+.support-hero .container {
+    max-width: 800px;
+}
+
+.faq-section {
+    padding: 40px 0;
+}
+
+.faq-section .section-title {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Form 部分样式 */
+.contact-section {
+    padding: 40px 0;
+}
+
+.contact-section .section-title {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 24px;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* FAQ项目样式 */
+.faq-item {
+    margin-bottom: 16px;
+    background: var(--placeholder-color);
+    border-radius: 8px;
+}
+
+.faq-question {
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 16px 16px;
+    color: var(--info-color);
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+/* Submit Question 表单样式 */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Support页面布局容器 */
+.support-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* FAQ部分样式 */
+.faq-section {
+    padding: 40px 0;
+}
+
+.faq-section .section-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    text-align: left;  /* 左对齐 */
+}
+
+.faq-container {
+    width: 100%;
+}
+
+/* FAQ项目样式 */
+.faq-item {
+    margin-bottom: 16px;
+    background: var(--placeholder-color);
+    border-radius: 8px;
+}
+
+/* Submit Question部分样式 */
+.contact-section {
+    padding: 40px 0;
+}
+
+.contact-section .section-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.contact-form {
+    width: 100%;
 }

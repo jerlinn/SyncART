@@ -4,150 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - SYNC ART</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .support-hero {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-
-        .faq-section {
-            padding: 80px 0;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            background: var(--light-bg);
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-        }
-
-        .faq-answer {
-            padding: 20px;
-            display: none;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            background: var(--light-bg);
-            border-radius: 8px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: var(--secondary-color);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #357abd;
-        }
-
-        .footer {
-            background-color: #f8f9fa;
-            padding: 2rem 0;
-            margin-top: auto;
-            width: 100%;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: #4a5568;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #2d3748;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .social-links img {
-            width: 24px;
-            height: 24px;
-            transition: opacity 0.2s ease;
-        }
-
-        .social-links a:hover img {
-            opacity: 0.8;
-        }
-    </style>
 </head>
 <script src="scripts.js"></script>
 <body>
@@ -163,7 +21,7 @@
                 </div>
             </div>
 
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
             </a>
 
@@ -268,7 +126,10 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
-                <span class="region-selector">HONG KONG ▾</span>
+                <button class="region-btn">
+                    <span>United States</span>
+                    <img src="images/ic_area-picker.svg" alt="Area selector">
+                </button>
                 <a href="/lab">LAB</a>
                 <a href="/about-us">ABOUT US</a>
                 <a href="/support">SUPPORT</a>
@@ -285,7 +146,7 @@
                         <img src="images/ic_footer_instagram.svg" alt="Instagram">
                     </a>
                 </div>
-                <div class="copyright">©2024 Sync Art company</div>
+                <div class="copyright">2024 Sync Art company</div>
             </div>
         </div>
     </footer>

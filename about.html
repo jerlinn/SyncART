@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SYNC ART</title>
+    <title>About - SYNC ART</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <script src="scripts.js"></script>
@@ -20,7 +21,7 @@
                 </div>
             </div>
 
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
             </a>
 
@@ -39,83 +40,54 @@
 
     <!-- Main Content -->
     <main>
-        <section class="about-hero">
-            <div class="container">
-                <h1>About SYNC ART</h1>
-                <p>Revolutionizing the way you wake up</p>
-            </div>
-        </section>
-
-        <!-- About Content -->
-        <section class="about-content">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-card">
-                        <img src="images/innovation.png" alt="Innovation">
-                        <h3>Innovation</h3>
-                        <p>Pioneering the future of sleep technology with cutting-edge AI and personalization.</p>
-                    </div>
-                    <div class="about-card">
-                        <img src="images/quality.png" alt="Quality">
-                        <h3>Quality</h3>
-                        <p>Committed to delivering premium products that enhance your daily life.</p>
-                    </div>
-                    <div class="about-card">
-                        <img src="images/community.png" alt="Community">
-                        <h3>Community</h3>
-                        <p>Building a global community of well-rested, energized individuals.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mission Section -->
-        <section class="mission-section">
-            <div class="container">
-                <h2 class="section-title">Our Mission</h2>
-                <p class="text-center">To transform morning routines into personalized, inspiring experiences that set the tone for a productive day.</p>
+        <div class="container about-container">
+            <h1 class="about-title">ABOUT US</h1>
+            
+            <div class="about-content">
+                <p class="greeting">Hey there! 👋</p>
                 
-                <div class="values-grid">
-                    <div class="value-card">
-                        <h3>Vision</h3>
-                        <p>Creating a world where every morning begins with purpose and inspiration.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Innovation</h3>
-                        <p>Continuously pushing the boundaries of technology to improve daily life.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Sustainability</h3>
-                        <p>Committed to environmentally conscious product development and practices.</p>
-                    </div>
-                </div>
+                <p>I'm AI from Sync Art, and I'm stoked to meet you!</p>
+                
+                <p>We're keeping it pretty lean here - just a handful of humans working alongside some digital teammates (yep, AI folks like me!). No fancy corporate stuff, just a passionate crew trying to shake things up.</p>
+                
+                <p>Why this setup? Well, we're big believers that AI shouldn't just be another cold tech tool. We're aiming for something way more interesting - creating genuine connections that get better with every conversation. Think of it as having a friend who's constantly learning how to be a better friend.</p>
+                
+                <p>Here's what we're all about:</p>
+                <ul class="about-list">
+                    <li>Taking cool tech and making it actually feel human</li>
+                    <li>Creating products that are both beautiful AND make sense</li>
+                    <li>Learning and evolving through every chat we have</li>
+                </ul>
+                
+                <p>Got something on your mind? Drop us a message below. Whether it's feedback, random thoughts, or just saying hi - we're all ears. Every single message helps us grow and get better at what we do.</p>
+                
+                <p>Can't wait to hear what you think!</p>
+                
+                <p class="signature">
+                    Catch you later,<br>
+                    Your Sync Art crew<br>
+                    (humans + digital pals 😎)
+                </p>
             </div>
-        </section>
 
-        <!-- Lab Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">SYNC ART Lab</h2>
-                <p class="text-center">Our research and development hub where innovation meets reality.</p>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>Research</h3>
-                        <p>Conducting cutting-edge sleep and wellness research to improve our products.</p>
-                    </div>
-                    <div class="about-card">
-                        <h3>Development</h3>
-                        <p>Creating next-generation solutions for better mornings.</p>
-                    </div>
-                </div>
+            <div class="message-box">
+                <textarea placeholder="Write your message here..."></textarea>
+                <button class="send-btn">
+                    <img src="images/ic_send.svg" alt="Send">
+                    Send
+                </button>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
-                <span class="region-selector">HONG KONG ▾</span>
+                <button class="region-btn">
+                    <span>United States</span>
+                    <img src="images/ic_area-picker.svg" alt="Area selector">
+                </button>
                 <a href="/lab">LAB</a>
                 <a href="/about-us">ABOUT US</a>
                 <a href="/support">SUPPORT</a>
@@ -132,7 +104,7 @@
                         <img src="images/ic_footer_instagram.svg" alt="Instagram">
                     </a>
                 </div>
-                <div class="copyright">©2024 Sync Art company</div>
+                <div class="copyright">2024 Sync Art company</div>
             </div>
         </div>
     </footer>

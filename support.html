@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - SYNC ART</title>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <script src="scripts.js"></script>
@@ -49,7 +50,7 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="support-container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title">FAQs</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
@@ -153,46 +154,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // FAQ Toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const questions = document.querySelectorAll('.faq-question');
-            
-            questions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const toggle = this.querySelector('.toggle');
-                    
-                    // Close all other answers
-                    document.querySelectorAll('.faq-answer').forEach(item => {
-                        if (item !== answer) {
-                            item.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current answer
-                    answer.classList.toggle('active');
-                    toggle.textContent = answer.classList.contains('active') ? '▲' : '▼';
-                });
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navRight = document.querySelector('.nav-right');
-
-            mobileMenuBtn?.addEventListener('click', () => {
-                navRight?.classList.toggle('active');
-            });
-
-            // 点击页面其他地方关闭菜单
-            document.addEventListener('click', (e) => {
-                if (!mobileMenuBtn?.contains(e.target) && !navRight?.contains(e.target)) {
-                    navRight?.classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

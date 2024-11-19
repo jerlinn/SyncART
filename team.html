@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team - SYNC ART</title>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <script src="scripts.js"></script>
@@ -53,7 +54,6 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Dawn Professional Team</h2>
-                    <p class="section-description">AI-Powered Professional Support, Available 24/7</p>
                 </div>
                 <div class="team-grid">
                     <div class="team-member">
@@ -160,24 +160,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- 在 </body> 前添加脚本 -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navRight = document.querySelector('.nav-right');
-
-        mobileMenuBtn?.addEventListener('click', () => {
-            navRight?.classList.toggle('active');
-        });
-
-        // 点击页面其他地方关闭菜单
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuBtn?.contains(e.target) && !navRight?.contains(e.target)) {
-                navRight?.classList.remove('active');
-            }
-        });
-    });
-    </script>
 </body>
 </html>

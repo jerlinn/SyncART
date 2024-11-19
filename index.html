@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SYNC ART - Dawn00</title>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <script src="scripts.js"></script>
+<script src="home.js"></script>
+<script src="gallery.js"></script>
 <body>
     <!-- Header -->
     <header class="header">
@@ -61,8 +64,8 @@
         <section class="features">
             <div class="container">
                 <h2 class="section-title">
-                    Wake up inspired.<br>
-                    Not just an alarm.
+                    Wake up inspired<br>
+                    Not just an alarm
                 </h2>
                 
                 <div class="feature-tabs">
@@ -76,22 +79,18 @@
                     <div class="feature-content">
                         <div class="feature-panel active" id="voice-wakeup">
                             <img src="images/img_hp_Natural Rise.png" alt="Personal Voice Wake-up">
-                            <p class="feature-description">Wake up to your personal morning narrative</p>
                         </div>
                         
                         <div class="feature-panel" id="responsive-motion">
                             <img src="images/img_hp_City Brief.png" alt="Responsive Motion">
-                            <p class="feature-description">Intelligent motion detection for optimal wake-up timing</p>
                         </div>
                         
                         <div class="feature-panel" id="morning-insights">
                             <img src="images/img_hp_Smart Wake.png" alt="Morning Insights">
-                            <p class="feature-description">Daily personalized insights for better mornings</p>
                         </div>
                         
                         <div class="feature-panel" id="evolving-experience">
                             <img src="images/img_hp_Daily Spark.png" alt="Evolving Experience">
-                            <p class="feature-description">An experience that grows with your routine</p>
                         </div>
                     </div>
                 </div>
@@ -175,14 +174,164 @@
             </div>
         </section>
 
-        <!-- Transitions Section -->
-        <section class="transitions">
+        <!-- Block 4: Gentle Transitions -->
+        <section class="content-block">
             <div class="container">
-                <h2 class="section-title">Gentle transitions into your day.</h2>
-                <p class="section-description">Smart Sleep Optimization AI-driven sleep recommendations based on user information, and potential needs</p>
+                <h2>Gentle transitions into your day</h2>
+                <p class="subtitle">Smart Sleep Optimization AI-driven sleep recommendations based on user information, and potential needs</p>
+                <div class="two-column">
+                    <img src="images/img_hp_scene.png" alt="Sleep scene">
+                    <div class="graph-container">
+                        <img src="images/wake-up-progression.svg" alt="Dawn00 Natural Wake-up Progression" class="wake-up-graph">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 5: Three-Stage Awakening -->
+        <section class="content-block">
+            <div class="container">
+                <h2>Your Three-Stage Natural Awakening</h2>
+                <div class="three-column">
+                    <div class="stage-card">
+                        <p class="step">Step1</p>
+                        <h3>Gradual Music Wake-Up</h3>
+                        <p>Gently ramps up sound and light, mimicking a natural sunrise</p>
+                    </div>
+                    <div class="stage-card">
+                        <p class="step">Step2</p>
+                        <h3>Motion-Triggered Personal Briefing</h3>
+                        <p>Personalized Morning Scoop：Blends local weather, cultural tidbits, and holiday heads-up；Curates content based on your interests and day ahead</p>
+                    </div>
+                    <div class="stage-card">
+                        <p class="step">Step3</p>
+                        <h3>Daily Inspiration</h3>
+                        <p>"Book of Answers" Daily Quote Hand-picked motivational nuggets to kickstart your day</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 6: Book of Answers -->
+        <section class="content-block">
+            <div class="container">
+                <h2>"Book of Answers" Daily Quote</h2>
+                <p class="subtitle">Refreshed every 2 hours to guide your day</p>
+                <div class="quote-image">
+                    <img src="images/img_hp_detail2.png" alt="Book of Answers Display" style="width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 7: Mood Spectrum -->
+        <section class="content-block">
+            <div class="container">
+                <h2>Mood Spectrum</h2>
+                <p class="subtitle">Simply turn the dial to set your perfect wake-up mood</p>
+                <div class="mood-spectrum">
+                    <div class="mood-image">
+                        <img src="images/img_hp_mood-spectrum.png" alt="Mood Spectrum Dial" style="width: 100%; height: auto;">
+                    </div>
+                    <div class="mood-modes">
+                        <div class="mood-mode active">
+                            <h3>Chill Mode (Upper Dial)</h3>
+                            <p>Soft tunes, slow wake-up (perfect for lazy Sundays)</p>
+                        </div>
+                        <div class="mood-mode">
+                            <h3>Regular Mode (Middle Dial)</h3>
+                            <p>Balanced rhythm, effective wake-up (your weekday go-to)</p>
+                        </div>
+                        <div class="mood-mode">
+                            <h3>Energetic Mode (Lower Dial)</h3>
+                            <p>Upbeat music, quick wake-up (for those big-day energizers)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 8: Smart Components -->
+        <section class="content-block">
+            <div class="container">
+                <h2>Smart Components</h2>
+                <div class="components-image">
+                    <img src="images/img_hp_smart-components.png" alt="Smart Components Diagram" style="width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 9: Simplicity -->
+        <section class="content-block">
+            <div class="container">
+                <div class="two-column align-center">
+                    <div class="simplicity-text">
+                        <h2>Simplicity is the ultimate sophistication</h2>
+                    </div>
+                    <div class="simplicity-image">
+                        <div class="gallery-grid">
+                            <img src="images/gallery_sm_1.png" alt="Gallery image 1" data-index="0">
+                            <img src="images/gallery_sm_2.png" alt="Gallery image 2" data-index="1">
+                            <img src="images/gallery_sm_3.png" alt="Gallery image 3" data-index="2">
+                            <img src="images/gallery_sm_4.png" alt="Gallery image 4" data-index="3">
+                            <img src="images/gallery_sm_5.png" alt="Gallery image 5" data-index="4">
+                            <img src="images/gallery_sm_6.png" alt="Gallery image 6" data-index="5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 10: Colors of Dawn -->
+        <section class="content-block">
+            <div class="container">
+                <h2>Colors of Dawn</h2>
+                <div class="color-cards">
+                    <!-- Classic Card -->
+                    <div class="color-card">
+                        <h3>Classic</h3>
+                        <div class="main-image-container">
+                            <img src="images/img_hp_style-classic.png" alt="Classic Style" class="main-image">
+                        </div>
+                        <div class="color-card-footer">
+                            <img src="images/img_hp_style-mondrian-s.png" alt="K VII Thumbnail">
+                            <div class="info">
+                                <h4>K VII</h4>
+                                <p>László Moholy-Nagy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mondrian Card -->
+                    <div class="color-card">
+                        <h3>Mondrian</h3>
+                        <div class="main-image-container">
+                            <img src="images/img_hp_style-mondrian.png" alt="Mondrian Style" class="main-image">
+                        </div>
+                        <div class="color-card-footer">
+                            <img src="images/img_hp_style-mondrian-s-1.png" alt="Composition Thumbnail">
+                            <div class="info">
+                                <h4>Composition with Red, Blue and Yellow</h4>
+                                <p>Pieter Cornelis Mondriaan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 11: Philosophy -->
+        <section class="content-block">
+            <div class="container">
+                <h2>Brains Behind the Beauty</h2>
+                <div class="philosophy-image">
+                    <img src="images/img_hp_philosophy.png" alt="Product Philosophy" style="width: 100%; height: auto;">
+                </div>
                 
-                <div class="transitions-content">
-                    <!-- Visualization and stages -->
+                <!-- Pre-order Button -->
+                <div class="cta-container" style="text-align: center;">
+                    <a href="#" class="preorder-button">
+                        Pre-order now, visit here
+                        <img src="images/ic_arrow_order.svg" alt="Arrow" style="width: 32px; height: 32px;">
+                    </a>
                 </div>
             </div>
         </section>
@@ -216,68 +365,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- 在 </body> 前添加脚本 -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navRight = document.querySelector('.nav-right');
-
-        mobileMenuBtn?.addEventListener('click', () => {
-            navRight?.classList.toggle('active');
-        });
-
-        // 点击页面其他地方关闭菜单
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuBtn?.contains(e.target) && !navRight?.contains(e.target)) {
-                navRight?.classList.remove('active');
-            }
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const playBtn = document.querySelector('.play-btn');
-        const progress = document.querySelector('.progress');
-        const currentTime = document.querySelector('.time .current');
-        const playIcon = playBtn.querySelector('img');
-        let isPlaying = false;
-        
-        playBtn.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            if (isPlaying) {
-                playIcon.src = 'images/ic_pause-circle.svg';
-                // Start progress animation
-                progress.style.width = '100%';
-                progress.style.transition = 'width 60s linear';
-                // Update time display
-                updateTime();
-            } else {
-                playIcon.src = 'images/ic_play.svg';
-                // Pause progress
-                const currentWidth = progress.offsetWidth;
-                progress.style.width = `${currentWidth}px`;
-                progress.style.transition = 'none';
-                // Stop time update
-                clearInterval(timeInterval);
-            }
-        });
-        
-        let timeInterval;
-        function updateTime() {
-            let seconds = 0;
-            timeInterval = setInterval(() => {
-                seconds++;
-                if (seconds >= 60) {
-                    seconds = 0;
-                    isPlaying = false;
-                    playIcon.src = 'images/ic_play.svg';
-                    progress.style.width = '0';
-                    clearInterval(timeInterval);
-                }
-                currentTime.textContent = `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, '0')}`;
-            }, 1000);
-        }
-    });
-    </script>
 </body>
 </html>

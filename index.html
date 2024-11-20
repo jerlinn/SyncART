@@ -8,36 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<script src="header_menu.js"></script>
-<script src="slider.js"></script>
-<script src="gallery.js"></script>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
             <div class="nav-left">
-                <div class="nav-region">
-                    <button class="region-btn">
-                        <span>United States</span>
-                        <img src="images/ic_area-picker.svg" alt="Area selector">
-                    </button>
-                </div>
+                <a href="index.html" class="logo">
+                    <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
+                </a>
             </div>
 
-            <a href="index.html" class="logo">
-                <img src="images/logo_syncart.svg" alt="SYNC ART Logo">
-            </a>
-
-            <button class="mobile-menu-btn">
-                <img src="images/ic_menu.svg" alt="Menu">
-            </button>
-
-            <nav class="nav-right">
+            <div class="nav-center">
                 <a href="about.html">About</a>
                 <a href="team.html">Team</a>
                 <a href="support.html">Support</a>
-                <a href="#preorder" class="cta-button">Pre-order</a>
-            </nav>
+            </div>
+
+            <div class="nav-right">
+                <a href="#" class="pre-order-btn">Pre-order</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <img src="images/ic_menu.svg" alt="Menu">
+            </button>
         </div>
     </header>
 
@@ -47,7 +39,7 @@
         <section class="hero">
             <div class="container">
                 <h1>Dawn00</h1>
-                <p class="subtitle">Your intelligent morning companion.</p>
+                <p class="subtitle">Elevate your morning rituals</p>
                 <p class="available-date">Available starting 2025 January 1st</p>
                 
                 <div class="video-container">
@@ -341,10 +333,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
-                <button class="region-btn">
-                    <span>United States</span>
-                    <img src="images/ic_area-picker.svg" alt="Area selector">
-                </button>
+                <div class="tagline">Elevate your morning rituals</div>
                 <a href="lab.html">Lab</a>
                 <a href="about.html">About</a>
                 <a href="support.html">Support</a>
@@ -363,9 +352,12 @@
                         <img src="images/ic_footer_instagram.svg" alt="Instagram">
                     </a>
                 </div>
-                <div class="copyright">© 2024 Sync Art</div>
+                <div class="copyright">&copy; 2024 Sync Art</div>
             </div>
         </div>
     </footer>
+    <script src="header_menu.js"></script>
+    <script src="slider.js"></script>
+    <script src="gallery.js"></script>
 </body>
 </html>

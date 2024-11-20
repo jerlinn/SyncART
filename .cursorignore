@@ -1,0 +1,19 @@
+# 已完成的内容和设计文件
+content/
+design/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+
+# 忽略所有 .log 文件
+*.log

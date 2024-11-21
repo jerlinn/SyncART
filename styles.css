@@ -130,6 +130,24 @@ main {
     gap: 24px;
 }
 
+.btn-preorder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.btn-preorder:hover {
+    opacity: 0.9;
+}
+
 .pre-order-btn {
     color: var(--sub-color);
     text-decoration: none;
@@ -307,22 +325,34 @@ main {
 }
 
 /* 预购按钮样式 */
-.btn-preorder {
+.preorder-button {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 24px;
     padding: 16px 32px;
-    background: var(--primary-color);
+    background: var(--main-color);
     color: white;
     border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    margin-top: 48px;
+    transition: all 0.3s ease;
+    font-size: 32px;
+    font-weight: 400;
 }
 
-.btn-preorder:hover {
+.preorder-button:hover {
     opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.preorder-button img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.preorder-button:hover img {
+    transform: translateX(4px);
 }
 
 /* Features Section */
@@ -1365,6 +1395,381 @@ main {
     }
 }
 
+.wake-up-graph {
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .wake-up-graph {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        margin: 0 20px;
+        margin-bottom: 32px !important;
+        padding: 30px 20px;
+    }
+    
+    .faq-container {
+        margin: 0 20px;
+    }
+}
+
+/* Promise Section Styles */
+.promise-section {
+    padding: 40px 0;
+    background: var(--placeholder-color);
+}
+
+.promise-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.promise-title {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--main-color);
+}
+
+.promise-subtitle {
+    font-size: 18px;
+    color: var(--sub-color);
+    margin-bottom: 64px;
+}
+
+/* Methodology Grid - 三列布局 */
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.methodology-section {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.methodology-section h3 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    color: var(--main-color);
+    margin-bottom: 32px;
+}
+
+.methodology-category {
+    margin-bottom: 24px;
+}
+
+.methodology-category:last-child {
+    margin-bottom: 0;
+}
+
+.methodology-category h4 {
+    font-size: 18px;
+    color: var(--main-color);
+    margin-bottom: 12px;
+}
+
+.methodology-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.methodology-category li {
+    color: var(--sub-color);
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.methodology-category li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.methodology-category p {
+    color: var(--sub-color);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .methodology-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .promise-section {
+        padding: 40px 0;
+    }
+
+    .promise-title {
+        font-size: 32px;
+    }
+
+    .promise-subtitle {
+        margin-bottom: 40px;
+    }
+
+    .methodology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .methodology-section {
+        padding: 24px;
+    }
+}
+
+/* Support Page Container */
+.support-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* FAQ Section Styles */
+.faq-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    width: 100%;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+/* 移除移动端的特殊边距 */
+@media (max-width: 768px) {
+    .faq-container {
+        margin: 0; /* 移除之前设置的左右边距 */
+    }
+    
+    .contact-form {
+        margin: 0 auto 32px; /* 保持表单的居中对齐 */
+        padding: 30px 20px;
+    }
+}
+
+/* ==========================================================================
+   Gallery Grid Styles
+   ========================================================================== */
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 使用 brightness 滤镜会有更好的视觉效果，因为它能保持图片的色彩饱和度，只调整亮度 */
+.gallery-grid img:hover {
+    filter: brightness(1.15); /* 或者 brightness(115%) */
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px;
+}
+
+.lightbox.active {
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.lightbox-image {
+    max-width: min(1000px, calc(100% - 120px));
+    max-height: min(1000px, 90vh);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    opacity: 1;
+}
+
+.lightbox-prev img,
+.lightbox-next img {
+    width: 32px;
+    height: 32px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-content {
+        gap: 20px;
+    }
+
+    .lightbox-image {
+        max-width: min(1000px, calc(100% - 80px));
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        padding: 10px;
+    }
+
+    .lightbox-prev img,
+    .lightbox-next img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+/* ==========================================================================
+   Legal Pages Styles
+   ========================================================================== */
+.legal-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.legal-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.legal-container .last-updated {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.legal-container section {
+    margin-bottom: 40px;
+}
+
+.legal-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.legal-container h3 {
+    font-size: 1.2em;
+    margin: 20px 0 15px;
+    color: #444;
+}
+
+.legal-container p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.legal-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.legal-container li {
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.legal-container a {
+    color: #007AFF;
+    text-decoration: none;
+}
+
+.legal-container a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .legal-container {
+        margin: 40px auto;
+    }
+
+    .legal-container h1 {
+        font-size: 2em;
+    }
+
+    .legal-container h2 {
+        font-size: 1.3em;
+    }
+
+    .legal-container h3 {
+        font-size: 1.1em;
+    }
+}
+
 /* ==========================================================================
    Content Block Styles
    ========================================================================== */
@@ -1390,8 +1795,15 @@ main {
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
+}
+
+.two-column img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
 }
 
 /* Three Column Layout */
@@ -1404,12 +1816,12 @@ main {
 
 /* Stage Card */
 .stage-card {
-    padding: 32px;
+    padding: 32px 32px 32px 0;
 }
 
 .stage-card .step {
-    color: var(--primary-color);
-    font-size: 14px;
+    color: var(--info-color);
+    font-size: 16px;
     margin-bottom: 16px;
 }
 
@@ -1566,25 +1978,25 @@ main {
     }
 }
 
-/* Pre-order Button */
-.preorder-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px 32px;
-    background: var(--main-color);
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 48px;
-    transition: opacity 0.3s;
+.wake-up-graph {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
 }
 
-.preorder-button:hover {
-    opacity: 0.9;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .wake-up-graph {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .two-column,
     .three-column,
@@ -1599,6 +2011,11 @@ main {
     
     .content-block h2 {
         font-size: 32px;
+    }
+    
+    .two-column img,
+    .wake-up-graph {
+        max-height: none;
     }
 }
 
@@ -1647,16 +2064,10 @@ main {
 
 /* Graph Container Styles */
 .graph-container {
-    padding: 24px;
+    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.wake-up-graph {
-    width: 500px;
-    height: 350px;
-    object-fit: contain;
 }
 
 /* Responsive adjustments */
@@ -1664,6 +2075,8 @@ main {
     .wake-up-graph {
         width: 100%;
         height: auto;
+        padding: 0;
+        margin: 0;
     }
 }
 

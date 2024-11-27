@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
     --main-color: #000;
     --sub-color: #333;
     --info-color: #666;
+    --unselected-color: #aaa;
     --placeholder-color: #F9F9F9;
     --header-height: 126px;
     --footer-height: 104px;
@@ -19,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
     --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     --border-color: #EAEAEA;
     --max-width: 1280px;
-    --container-padding: 40px;
+    --container-padding: 60px;
 }
 
 /* Typography */
@@ -32,7 +33,7 @@ h1,
 .quote,
 .section-title {
     font-family: var(--font-serif);
-    font-weight: bold; /* 或 Xanh Mono 推荐的字重 400 */
+    font-weight: 400; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -367,7 +368,8 @@ main {
 
 /* Features Section */
 .features {
-    padding: 40px 0;
+    padding: 60px 0;
+    position: relative;
 }
 
 .features .section-title {
@@ -384,6 +386,7 @@ main {
     gap: 80px;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 /* Tab Navigation - Left Side */
@@ -392,6 +395,9 @@ main {
     flex-direction: column;
     gap: 32px;
     min-width: 240px;
+    position: sticky;
+    top: calc(var(--header-height) + 40px);
+    align-self: flex-start;
 }
 
 .tab-btn {
@@ -400,36 +406,62 @@ main {
     padding: 0;
     text-align: left;
     font-size: 20px;
-    color: var(--info-color);
+    color: var(--unselected-color);
     cursor: pointer;
-    transition: color 0.3s ease;
-    opacity: 0.5;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: width 0.3s ease;
 }
 
 .tab-btn.active {
     color: var(--main-color);
-    opacity: 1;
+}
+
+.tab-btn.active::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .tab-btn {
+        font-size: 16px;
+        white-space: nowrap;
+    }
 }
 
 /* Feature Content - Right Side */
 .feature-content {
     flex: 1;
-}
-
-.feature-panel {
-    display: none;
     position: relative;
 }
 
+.feature-panel {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-bottom: 40vh; /* Add space between panels for scrolling */
+}
+
+.feature-panel:last-child {
+    margin-bottom: 0;
+}
+
 .feature-panel.active {
-    display: block;
+    opacity: 1;
 }
 
 .feature-panel img {
     width: 100%;
     height: auto;
     border-radius: 16px;
-    background: var(--placeholder-color);
 }
 
 .feature-description {
@@ -463,17 +495,23 @@ main {
     }
 
     .feature-nav {
+        position: sticky;
+        top: calc(var(--header-height) + 20px);
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 16px;
+        justify-content: flex-start;
+        gap: 24px;
+        padding-bottom: 16px;
+        min-width: auto;
     }
 
     .tab-btn {
         font-size: 16px;
+        padding-right: 8px;
     }
 
-    .feature-content {
-        width: 100%;
+    .feature-panel {
+        margin-bottom: 20vh;
     }
 
     .feature-panel img {
@@ -493,7 +531,7 @@ main {
     }
 
     .content-block {
-        padding: 40px 0;
+        padding: 60px 0;
     }
 
     .content-block img {
@@ -732,9 +770,16 @@ main {
 
 .education li:before, .background li:before, .experience li:before {
     content: "•";
+    color: var(--primary-color);
     position: absolute;
     left: 0;
+}
+
+.methodology-category li:before {
+    content: "•";
     color: var(--primary-color);
+    position: absolute;
+    left: 0;
 }
 
 /* ==========================================================================
@@ -942,7 +987,6 @@ main {
 }
 
 .footer-left .tagline {
-    font-family: 'Xanh Mono', monospace;
     color: #666;
     margin-right: 48px;
     font-size: 14px;
@@ -1228,7 +1272,8 @@ main {
    One Dawn Section
    ========================================================================== */
 .one-dawn {
-    padding: 40px 0;
+    padding: 60px 0;
+    background-color: #fff;
 }
 
 .one-dawn .section-title {
@@ -1784,7 +1829,7 @@ main {
    Content Block Styles
    ========================================================================== */
 .content-block {
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
 .content-block h2 {
@@ -2016,7 +2061,7 @@ main {
     }
     
     .content-block {
-        padding: 40px 0;
+        padding: 60px 0;
     }
     
     .content-block h2 {
@@ -2444,5 +2489,112 @@ main {
 
     .legal-container h3 {
         font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .features,
+    .one-dawn,
+    .content-block {
+        padding: 40px 0;
+    }
+}
+
+/* Book of Answers Section */
+.quote-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1142/220;
+}
+
+.quote-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.quote-date {
+    --scale: min(1, calc(100vw/1142));
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    color: #FFFFFF;
+    opacity: 0.8;
+    position: absolute;
+    top: 66px;
+    left: 170px;
+    transform-origin: left;
+    transform: scale(var(--scale));
+    white-space: nowrap;
+}
+
+.quote-date::after {
+    content: "Mood: 78";
+    margin-left: 24px;
+}
+
+.quote-text {
+    --scale: min(1, calc(100vw/1142));
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 98px;
+    left: 170px;
+    width: 287px;
+    transform-origin: left top;
+    transform: scale(var(--scale));
+}
+
+.quote-text .text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    display: inline;
+}
+
+.quote-text .cursor {
+    display: inline;
+    animation: blink 1s infinite;
+    position: relative;
+    white-space: pre;
+    margin-left: 1px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .quote-date {
+        left: 24px;
+    }
+    
+    .quote-text {
+        left: 24px;
+    }
+
+    .quote-image {
+        aspect-ratio: auto;
+        min-height: 180px;
+    }
+}
+
+/* Ensure minimum readable size */
+@media (max-width: 375px) {
+    .quote-date,
+    .quote-text {
+        --scale: calc(375px/1142);
     }
 }

@@ -878,6 +878,7 @@ main {
     color: var(--primary-color);
     position: absolute;
     left: 0;
+    top: 0;
 }
 
 /* ==========================================================================
@@ -1697,6 +1698,8 @@ main {
     color: var(--sub-color);
     font-size: 0.9em;
     margin-top: 0.5em;
+    position: relative;
+    padding-left: 16px;
 }
 
 .methodology-category li:before {
@@ -1704,6 +1707,7 @@ main {
     color: var(--primary-color);
     position: absolute;
     left: 0;
+    top: 0;
 }
 
 .methodology-category p {
@@ -2234,7 +2238,7 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    vertical-align: top;
+
 }
 
 .quote-svg-overlay {
@@ -2401,6 +2405,8 @@ object.quote-svg-overlay {
     color: var(--sub-color);
     font-size: 0.9em;
     margin-top: 0.5em;
+    position: relative;
+    padding-left: 16px;
 }
 
 .methodology-category li:before {
@@ -2408,6 +2414,7 @@ object.quote-svg-overlay {
     color: var(--primary-color);
     position: absolute;
     left: 0;
+    top: 0;
 }
 
 .methodology-category p {

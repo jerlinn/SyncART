@@ -601,6 +601,9 @@ main {
     overflow: hidden;
     transition: transform 0.3s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 296px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .team-member:hover {
@@ -610,8 +613,15 @@ main {
 .team-member img,
 .team-member .avatar {
     width: 100%;
+    max-width: 296px;
     aspect-ratio: 1;
     object-fit: cover;
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member:hover img,
+.team-member:hover .avatar {
+    filter: brightness(1.15);
 }
 
 .team-member .avatar {

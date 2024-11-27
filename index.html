@@ -155,13 +155,17 @@
                                 <!-- Left Content -->
                                 <div class="voice-demo-content">
                                     <div class="audio-player">
-                                        <button class="play-btn">
-                                            <img src="images/ic_play.svg" alt="Play">
+                                        <audio src="media/audio/test.mp3"></audio>
+                                        <button class="audio-control" aria-label="Toggle audio playback">
+                                            <img src="images/ic_play.svg" alt="Play" class="play-icon">
+                                            <img src="images/ic_pause-circle.svg" alt="Pause" class="pause-icon hidden">
                                         </button>
-                                        <div class="progress-bar">
-                                            <div class="progress"></div>
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <div class="progress"></div>
+                                            </div>
+                                            <div class="time">0:00 / 0:00</div>
                                         </div>
-                                        <div class="time">0:00 / 1:00</div>
                                     </div>
                                     <p class="wake-up-text">
                                         "Good morning, little explorer Emma! The fog is rolling away from the Golden Gate Bridge, just like a friendly dragon's breath! Today's adventure: we have your favorite dinosaur art class! First mission: let's do our morning stretches like a gentle brachiosaurus. Remember your special rainbow water bottle for your Mandarin class later!"
@@ -376,5 +380,6 @@
     <script src="feature-scroll.js"></script>
     <script src="typewriter.js"></script>
     <script src="js/video-control.js"></script>
+    <script src="js/audio-player.js"></script>
 </body>
 </html>

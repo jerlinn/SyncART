@@ -48,6 +48,15 @@ h1,
     font-family: var(--font-serif);
 }
 
+.about-content p:empty {
+    height: 1em;
+}
+
+.about-content p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;
@@ -941,9 +950,22 @@ main {
     left: 0;
 }
 
-.signature {
+.signature-block {
+    text-align: right;
     margin-top: 40px;
-    line-height: 1.8;
+}
+
+.signature-block .team-name {
+    font-family: var(--font-serif);
+    font-size: 1.2em;
+    color: var(--main-color);
+    margin-bottom: 8px;
+}
+
+.signature-block em {
+    color: var(--info-color);
+    font-size: 0.9em;
+    font-style: italic;
 }
 
 .message-box {

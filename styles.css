@@ -546,6 +546,22 @@ main {
     }
 }
 
+.demo-content li {
+    color: var(--info-color);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.demo-content h4 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.demo-content ul {
+    margin: 0;
+    padding-left: 16px;
+}
+
 /* ==========================================================================
    Team Page Styles
    ========================================================================== */
@@ -1524,6 +1540,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    margin-top: 40px;
 }
 
 .methodology-section {

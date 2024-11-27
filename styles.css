@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
     --placeholder-color: #F9F9F9;
     --header-height: 126px;
     --footer-height: 104px;
-    --font-serif: "Xanh Mono", "Courier New", "DejaVu Serif", Georgia, Times, serif;
+    --font-serif: Times, "Xanh Mono", "Courier New", "DejaVu Serif", Georgia, serif;
     --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     --border-color: #EAEAEA;
     --max-width: 1280px;
@@ -35,6 +35,16 @@ h1,
     font-weight: bold; /* 或 Xanh Mono 推荐的字重 400 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.section-description {
+    margin-bottom: 24px;
+}
+
+.about-content h3 {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-family: var(--font-serif);
 }
 
 /* Reset & Base Styles */

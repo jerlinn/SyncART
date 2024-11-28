@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <script src="header_menu.js"></script>
+<script src="contact.js"></script>
 <body>
     <!-- Header -->
     <header class="header">
@@ -86,11 +87,23 @@
                 </div>
 
                 <div class="message-box">
-                    <textarea placeholder="Share your thoughts with us..."></textarea>
-                    <button class="send-btn">
-                        <img src="images/ic_send.svg" alt="Send">
-                        Send
-                    </button>
+                    <form action="https://formsubmit.co/syncart.tech@gmail.com" method="POST">
+                        <!-- Honeypot -->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Disable Captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Success Page -->
+                        <input type="hidden" name="_next" value="https://dawn00.life/about.html">
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <textarea name="message" placeholder="Share your thoughts with us..." required></textarea>
+                        <button type="submit" class="send-btn">
+                            <img src="images/ic_send.svg" alt="Send">
+                            Send
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

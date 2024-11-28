@@ -467,7 +467,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    min-width: 240px;
+    min-width: 200px;
     position: sticky;
     top: calc(var(--header-height) + 40px);
     align-self: flex-start;
@@ -1482,7 +1482,7 @@ main {
     height: 48px;
     border-radius: 50%;
     border: none;
-    background-color: #DDD;
+    background-color: #ccc;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1492,7 +1492,7 @@ main {
 }
 
 .profile-btn.active {
-    background-color: #333;
+    background-color: var(--primary-color);
 }
 
 .profile-btn img {

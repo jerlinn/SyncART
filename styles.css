@@ -886,10 +886,47 @@ main {
    Support Page Styles
    ========================================================================== */
 .support-hero {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 120px 0 60px;
+    padding-top: calc(var(--header-height) + 32px);
+    padding-bottom: 8px;
     text-align: center;
+    background-color: var(--placeholder-color);
+    margin-top: 0;
+}
+
+.support-hero-image {
+    max-width: 800px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+}
+
+.support-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+}
+
+.support-hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--main-color);
+    font-family: var(--font-serif);
+}
+
+@media (max-width: 768px) {
+    .support-hero {
+        padding-top: calc(var(--header-height) + 24px);
+        padding-bottom: 24px;
+    }
+
+    .support-hero-image {
+        padding: 0 16px;
+    }
+
+    .support-hero h1 {
+        font-size: 32px;
+        padding: 0 16px;
+    }
 }
 
 .faq-section {
@@ -1352,15 +1389,6 @@ main {
     padding: 0 24px;
     width: 100%;
     box-sizing: border-box;
-}
-
-.section-title {
-    font-family: var(--font-serif);
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 24px;
-    text-align: left;
-    color: var(--main-color);
 }
 
 /* FAQ Section Styles */

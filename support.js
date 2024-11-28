@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // FAQ 手风琴效果
+    // FAQ Accordion Implementation
     const initFAQAccordion = () => {
         const faqItems = document.querySelectorAll('.faq-item');
         
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const answer = item.querySelector('.faq-answer');
             const toggle = item.querySelector('.toggle');
             
-            // 默认展开第一条
+            // Expand the first item by default
             if (index === 0) {
                 answer.style.display = 'block';
                 toggle.style.transform = 'rotate(180deg)';
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             question.addEventListener('click', () => {
                 const isOpen = answer.style.display === 'block';
                 
-                // 关闭所有其他打开的FAQ
+                // Close all other open FAQs
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         const otherAnswer = otherItem.querySelector('.faq-answer');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // 切换当前FAQ的状态
+                // Toggle current FAQ state
                 answer.style.display = isOpen ? 'none' : 'block';
                 toggle.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
                 item.classList.toggle('active');
@@ -39,6 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // 初始化FAQ手风琴效果
+    // Initialize FAQ accordion functionality
     initFAQAccordion();
 }); 

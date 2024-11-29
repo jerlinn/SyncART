@@ -1,3 +1,4 @@
+<Done>
 # One Dawn, Every Aspiration
 
 Morning is when possibilities feel most alive.
@@ -13,8 +14,9 @@ Tab2: **Mind Coach**
 
 Tab3: **Purpose Coach**
 *Your companion in pursuing meaningful goals and aspirations, turning morning clarity into actionable steps toward your life vision.*
+</Done>
 
----
+---ignored the previous part which is done---
 
 ## Coach Cases
 

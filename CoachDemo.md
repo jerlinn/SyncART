@@ -18,6 +18,7 @@ Tab3: **Purpose Coach**
 
 ---ignored the previous part which is done---
 
+---3 个 coach case 的内容更新，和 Tab 一一对应---
 ## Coach Cases
 
 ### Vitality Coach Case
@@ -98,4 +99,3 @@ Leadership nugget: When that all-hands gets intense today, remember your 'pause 
 Keep nurturing this practice, Jen - you're redefining what conscious leadership looks like in tech, one breath at a time! 🧘‍♀️"
 
 [Create Your Dawn Story →] #new button
-

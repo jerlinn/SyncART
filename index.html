@@ -102,22 +102,38 @@
                 <div class="demo-container">
                     <!-- Profile Selector -->
                     <div class="profile-selector">
-                        <button class="profile-btn active">
-                            <img src="images/ic_coach_vitality.svg" alt="Profile 1">
-                        </button>
-                        <button class="profile-btn">
-                            <img src="images/ic_coach_mind.svg" alt="Profile 2">
-                        </button>
-                        <button class="profile-btn">
-                            <img src="images/ic_coach_purpose.svg" alt="Profile 3">
-                        </button>
+                        <div class="profile-tabs">
+                            <button class="profile-btn active" data-tab="vitality">
+                                <img src="images/ic_coach_vitality.svg" alt="Vitality Coach">
+                            </button>
+                            <button class="profile-btn" data-tab="mind">
+                                <img src="images/ic_coach_mind.svg" alt="Mind Coach">
+                            </button>
+                            <button class="profile-btn" data-tab="purpose">
+                                <img src="images/ic_coach_purpose.svg" alt="Purpose Coach">
+                            </button>
+                        </div>
+                        <div class="coach-description">
+                            <div class="tab-content active" data-tab="vitality">
+                                <h4>Vitality Coach</h4>
+                                <p>Your partner in unlocking physical energy and wellbeing, turning mornings into a foundation for daily vitality.</p>
+                            </div>
+                            <div class="tab-content" data-tab="mind">
+                                <h4>Mind Coach</h4>
+                                <p>Your guide to mental clarity and emotional balance, transforming dawn hours into moments of focused calm.</p>
+                            </div>
+                            <div class="tab-content" data-tab="purpose">
+                                <h4>Purpose Coach</h4>
+                                <p>Your companion in pursuing meaningful goals and aspirations, turning morning clarity into actionable steps toward your life vision.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Demo Content -->
                     <div class="demo-content">
                         <!-- Left Side -->
                         <div class="operation-demo">
-                            <h3>Vitality Coach Case<br>Half Marathon Journey</h3>
+                            <h3>Vitality Coach Case - Half Marathon Journey</h3>
                             <div class="user-info">
                                 <h4>Emma Wilson, 14</h4>
                                 <p>Bay Area student setting her first major athletic goal: completing a half marathon in spring, building foundational fitness during key development years.</p>
@@ -137,7 +153,6 @@
 
                         <!-- Right Side -->
                         <div class="voice-demo">
-                            <h3>Voice Wake-up demo</h3>
                             <div class="voice-demo-inner">
                                 <!-- Left Content -->
                                 <div class="voice-demo-content">
@@ -155,16 +170,8 @@
                                         </div>
                                     </div>
                                     <p class="wake-up-text">
-                                        "⭐ Rise and shine Emma! OMG, it's a perfect 55° morning in SF - literally ideal running weather!<br><br>
-                                        You're gonna love this: The Presidio trails are looking absolutely gorgeous today. Remember when you could barely finish 3 miles? Now you're crushing 8-mile runs like it's no big deal! That's some serious level-up energy right there!<br><br>
-                                        Fun science fact of the day: Your muscles actually love these cool morning temps - it's like getting a natural performance boost! Just don't forget your fuel stops every 30 mins (I know, I know, I sound like such a coach right now).<br><br>
-                                        Pro tip: Those hills you've been training on? They're basically your secret weapon for race day. Trust me, you're going to thank yourself when you're zooming past everyone else!<br><br>
-                                        Keep being amazing - every step is taking you closer to that finish line!"
+                                        "⭐ Rise and shine Emma!"
                                     </p>
-                                </div>
-                                <!-- Right Image -->
-                                <div class="voice-demo-illustration">
-                                    <img src="images/img_hp_slider-1.png" alt="Running training illustration" class="demo-illustration">
                                 </div>
                             </div>
                         </div>
@@ -365,12 +372,11 @@
             </div>
         </div>
     </footer>
-    <script src="header_menu.js"></script>
-    <script src="support.js"></script>
-    <script src="gallery.js"></script>
-    <script src="feature-scroll.js"></script>
-    <script src="typewriter.js"></script>
+    <script src="js/header_menu.js"></script>
     <script src="js/video-control.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/feature-scroll.js"></script>
+    <script src="js/tab-coaches.js"></script>
     <script src="js/audio-player.js"></script>
 </body>
 </html>

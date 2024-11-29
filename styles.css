@@ -780,6 +780,104 @@ main {
     margin: 40px 0;
 }
 
+/* Profile Selector Styles */
+.profile-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.profile-tabs {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+}
+
+.profile-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--unselected-color);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.profile-btn:focus {
+    outline: none;
+}
+
+.profile-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.profile-btn.active {
+    background: var(--primary-color);
+}
+
+.coach-description {
+    text-align: left;
+    max-width: 800px;
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.tab-content h4 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--main-color);
+}
+
+.tab-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--sub-color);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .profile-selector {
+        gap: 24px;
+    }
+
+    .profile-tabs {
+        gap: 32px;
+    }
+
+    .profile-btn {
+        width: 64px;
+        height: 64px;
+    }
+
+    .profile-btn img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .tab-content h4 {
+        font-size: 20px;
+    }
+}
+
 /* Role Navigation Styles */
 .role-nav {
     display: flex;
@@ -1466,44 +1564,6 @@ main {
     color: var(--sub-color);
     margin-bottom: 40px;
     max-width: 600px;
-}
-
-/* ==========================================================================
-   Profile Selector
-   ========================================================================== */
-.profile-selector {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 32px;
-}
-
-.profile-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ccc;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-    padding: 0;
-}
-
-.profile-btn.active {
-    background-color: var(--primary-color);
-}
-
-.profile-btn img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
-}
-
-.profile-btn.active img {
-    opacity: 1;
 }
 
 /* ==========================================================================

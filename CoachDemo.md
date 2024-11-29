@@ -32,7 +32,7 @@ Bay Area student setting her first major athletic goal: completing a half marath
 - Morning schedule: 6:45 AM wake-up
 - Location: San Francisco, CA
 
-[Audio]
+[Audio] //用类似字幕的方式实现，每次显示一句
 
 "⭐ Rise and shine Emma! OMG, it's a perfect 55° morning in SF - literally ideal running weather!
 

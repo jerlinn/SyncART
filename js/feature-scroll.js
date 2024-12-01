@@ -4,85 +4,110 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const featuresSection = document.querySelector('.features');
     
-    // Initialize Intersection Observer for the features section
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Start observing panels when section comes into view
-                startObservingPanels();
-            } else {
-                // Stop observing panels when section is out of view
-                stopObservingPanels();
+    let currentActiveIndex = 0;
+    let autoSwitchInterval = null;
+    let isPaused = false;
+
+    // Function to update active states with fade effect
+    function updateActiveStates(index) {
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabButtons[index].classList.add('active');
+        
+        // Handle panel transition
+        featurePanels.forEach((panel, i) => {
+            if (panel.classList.contains('active')) {
+                // Fade out current panel
+                panel.style.opacity = '0';
+                setTimeout(() => {
+                    panel.classList.remove('active');
+                    panel.style.position = 'absolute';
+                    
+                    // Fade in new panel
+                    featurePanels[index].style.position = 'relative';
+                    featurePanels[index].classList.add('active');
+                    requestAnimationFrame(() => {
+                        featurePanels[index].style.opacity = '1';
+                    });
+                }, 400); // Match fade-out duration
             }
         });
-    }, {
-        threshold: 0.1 // Trigger when 10% of the section is visible
-    });
-
-    // Observe the features section
-    sectionObserver.observe(featuresSection);
-    
-    // Initialize panel observer
-    const panelOptions = {
-        root: null,
-        threshold: 0.7,
-        rootMargin: '0px'
-    };
-
-    let currentActiveIndex = 0;
-    let isScrolling = false;
-    let panelObserver = null;
-
-    // Function to start observing panels
-    function startObservingPanels() {
-        if (panelObserver) return;
-
-        panelObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !isScrolling) {
-                    const index = Array.from(featurePanels).indexOf(entry.target);
-                    if (index !== currentActiveIndex) {
-                        updateActiveStates(index);
-                        currentActiveIndex = index;
-                    }
-                }
-            });
-        }, panelOptions);
-
-        // Observe all panels
-        featurePanels.forEach(panel => {
-            panelObserver.observe(panel);
-        });
     }
 
-    // Function to stop observing panels
-    function stopObservingPanels() {
-        if (panelObserver) {
-            panelObserver.disconnect();
-            panelObserver = null;
-        }
+    // Function to switch to next panel
+    function switchToNextPanel() {
+        if (isPaused) return;
+        
+        let nextIndex = (currentActiveIndex + 1) % featurePanels.length;
+        updateActiveStates(nextIndex);
+        currentActiveIndex = nextIndex;
     }
 
-    // Function to update active states
-    function updateActiveStates(index) {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        featurePanels.forEach(panel => panel.classList.remove('active'));
-
-        tabButtons[index].classList.add('active');
-        featurePanels[index].classList.add('active');
+    // Start auto-switching
+    function startAutoSwitch() {
+        if (autoSwitchInterval) clearInterval(autoSwitchInterval);
+        autoSwitchInterval = setInterval(switchToNextPanel, 3000);
     }
 
     // Handle manual tab clicks
     tabButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            isScrolling = true;
             updateActiveStates(index);
-            featurePanels[index].scrollIntoView({ behavior: 'smooth' });
             currentActiveIndex = index;
-
-            setTimeout(() => {
-                isScrolling = false;
-            }, 1000);
+            // Reset interval after manual click
+            startAutoSwitch();
         });
     });
+
+    // Pause on hover
+    featurePanels.forEach(panel => {
+        panel.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+        
+        panel.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+    });
+
+    // Initialize
+    featurePanels.forEach((panel, i) => {
+        if (i === 0) {
+            panel.style.position = 'relative';
+            panel.style.opacity = '1';
+            panel.classList.add('active');
+        } else {
+            panel.style.position = 'absolute';
+            panel.style.opacity = '0';
+        }
+    });
+    startAutoSwitch();
+
+    // Add necessary CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        .feature-content {
+            position: relative;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            min-height: 400px;
+        }
+        .feature-panel {
+            opacity: 0;
+            transition: opacity 400ms ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .feature-panel.active {
+            opacity: 1;
+        }
+        .feature-panel img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    `;
+    document.head.appendChild(style);
 });

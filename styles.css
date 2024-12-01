@@ -520,22 +520,22 @@ main {
 
 .feature-panel {
     opacity: 0;
-    transition: opacity 0.3s ease;
-    margin-bottom: 40vh; /* Add space between panels for scrolling */
-}
-
-.feature-panel:last-child {
-    margin-bottom: 0;
+    transition: opacity 400ms ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .feature-panel.active {
     opacity: 1;
+    position: relative;
 }
 
 .feature-panel img {
     width: 100%;
     height: auto;
-    border-radius: 16px;
+    display: block;
 }
 
 .feature-description {
@@ -545,6 +545,11 @@ main {
     color: var(--primary-color);
     font-size: 24px;
     max-width: 400px;
+}
+
+.feature-content {
+    position: relative;
+    margin: 40px 0;
 }
 
 /* Responsive Design */

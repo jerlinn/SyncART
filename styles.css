@@ -461,6 +461,8 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    align-items: flex-start;
+    font-size: 0;
 }
 
 /* Tab Navigation - Left Side */
@@ -472,6 +474,8 @@ main {
     position: sticky;
     top: calc(var(--header-height) + 40px);
     align-self: flex-start;
+    padding-top: 0;
+    font-size: 16px;
 }
 
 .tab-btn {
@@ -482,40 +486,27 @@ main {
     font-size: 20px;
     color: var(--unselected-color);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     position: relative;
+    outline: none;
 }
 
-.tab-btn::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--main-color);
-    transition: width 0.3s ease;
+.tab-btn:focus {
+    outline: none;
 }
 
 .tab-btn.active {
     color: var(--main-color);
 }
 
-.tab-btn.active::after {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .tab-btn {
-        font-size: 16px;
-        white-space: nowrap;
-    }
-}
-
 /* Feature Content - Right Side */
 .feature-content {
     flex: 1;
     position: relative;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
 }
 
 .feature-panel {
@@ -525,6 +516,8 @@ main {
     top: 0;
     left: 0;
     width: 100%;
+    line-height: 0;
+    font-size: 0;
 }
 
 .feature-panel.active {
@@ -536,6 +529,7 @@ main {
     width: 100%;
     height: auto;
     display: block;
+    line-height: 0;
 }
 
 .feature-description {
@@ -545,6 +539,7 @@ main {
     color: var(--primary-color);
     font-size: 24px;
     max-width: 400px;
+    line-height: 1.5;
 }
 
 .feature-content {
@@ -574,19 +569,19 @@ main {
     }
 
     .feature-nav {
-        position: sticky;
-        top: calc(var(--header-height) + 20px);
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        position: relative;
+        top: 0;
+        flex-direction: column;
         gap: 24px;
-        padding-bottom: 16px;
-        min-width: auto;
+        padding: 0;
+        width: 100%;
     }
 
     .tab-btn {
-        font-size: 16px;
-        padding-right: 8px;
+        font-size: 18px;
+        padding: 8px 0;
+        width: 100%;
+        text-align: left;
     }
 
     .feature-panel {
@@ -691,7 +686,10 @@ main {
     background: white;
     border-radius: 0px;
     padding: 24px 24px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    filter: drop-shadow(0px 80px 60px rgba(0, 0, 0, 0.01)) 
+            drop-shadow(0px 40px 40px rgba(0, 0, 0, 0.03)) 
+            drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.06)) 
+            drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.08));
     width: 100%;
 }
 
@@ -702,23 +700,82 @@ main {
     text-align: left; /* Change from center to left */
 }
 
+.audio-control {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.audio-control:focus-visible {
+    outline: none;
+}
+
+.audio-control:hover {
+    transform: scale(1.1);
+}
+
+.audio-control img {
+    width: 100%;
+    height: 100%;
+}
+
+.progress-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #E5E5E5;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    width: 75%;
+}
+
+.time {
+    color: #666;
+    font-size: 14px;
+    align-self: flex-end;
+}
+
 .digital-text {
-    font-family: 'Digital Numbers', monospace;
+    font-family: 'Doto', monospace;
     font-size: 16px;
+    font-weight: 700;
     letter-spacing: 1px;
     color: var(--sub-color);
-    opacity: 0.8;
-    text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: left; /* Ensure left alignment */
+    background-color: #F9F9F9;
+    padding: 0;
 }
 
 @font-face {
-    font-family: 'Digital Numbers';
+    font-family: 'Doto';
     font-style: normal;
     font-weight: normal;
-    src: url('./digital-numbers-webfont/DigitalNumbers-Regular.woff') format('woff');
+    src: url('./fonts/Doto-VariableFont_ROND,wght.ttf') format('ttf');
     font-display: swap;
 }
 
@@ -1863,18 +1920,6 @@ main {
 
 .hidden {
     display: none;
-}
-
-.wake-up-text {
-    margin-top: 24px;
-    line-height: 1.6;
-    color: #333;
-    font-size: 14px;
-}
-
-.demo-illustration {
-    width: 100%;
-    height: auto;
 }
 
 /* Responsive Design */
@@ -3112,94 +3157,9 @@ object.quote-svg-overlay {
     color: var(--main-color);
 }
 
-.audio-player-container {
-    background: white;
-    border-radius: 0;
-    padding: 24px 24px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    width: 100%;
-}
-
-.audio-player {
-    margin-bottom: 32px;
-}
-
-.audio-control {
-    width: 48px;
-    height: 48px;
-    background: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 0;
-    transition: transform 0.2s ease;
-    outline: none;
-    flex-shrink: 0;
-}
-
-.audio-control:focus-visible {
-    outline: none;
-}
-
-.audio-control:hover {
-    transform: scale(1.1);
-}
-
-.audio-control img {
-    width: 100%;
-    height: 100%;
-}
-
-.progress-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-width: 0;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 4px;
-    background: #E5E5E5;
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
-}
-
-.progress {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: var(--primary-color);
-    border-radius: 2px;
-    width: 75%;
-}
-
-.time {
-    color: #666;
-    font-size: 14px;
-    align-self: flex-end;
-}
-
 .audio-caption {
     margin-top: 32px;
     padding: 16px;
     background: var(--placeholder-color);
     border-radius: 2px;
-}
-
-.digital-text {
-    font-family: 'Digital Numbers', monospace;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: var(--sub-color);
-    opacity: 0.8;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #F9F9F9;
-    padding: 0;
-    border-radius: 4px;
 }

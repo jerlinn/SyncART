@@ -37,7 +37,7 @@ Bay Area student setting her first major athletic goal: completing a half marath
 
 [Audio] //用类似字幕的方式实现，每次显示一句
 
-"⭐ Rise and shine Emma! OMG, it's a perfect 55° morning in SF - literally ideal running weather!
+⭐ Rise and shine Emma! Oh my God, it's a perfect 55° morning in San Francisco - literally ideal running weather!
 
 You're gonna love this: The Presidio trails are looking absolutely gorgeous today. Remember when you could barely finish 3 miles? Now you're crushing 8-mile runs like it's no big deal! That's some serious level-up energy right there!
 
@@ -45,7 +45,7 @@ Fun science fact of the day: Your muscles actually love these cool morning temps
 
 Pro tip: Those hills you've been training on? They're basically your secret weapon for race day. Trust me, you're going to thank yourself when you're zooming past everyone else!
 
-Keep being amazing - every step is taking you closer to that finish line!"
+Keep being amazing - every step is taking you closer to that finish line!
 
 ### Purpose Coach Case
 #### Financial Independence Journey
@@ -64,15 +64,15 @@ Tech professional pursuing FIRE: A strategic path to financial independence and 
 
 [Audio]
 
-"Hey Michael! Catching that golden hour at 6:15 in SF - love to see that consistency!
+💡 Hey Michael! Catching that golden hour at 6:15 in San Francisco - love to see that consistency!
 
 Quick thought for today: You know what's wild? The whole work-from-anywhere revolution has totally changed the FIRE game. Get this - 87% of tech roles are now location-flexible. Pretty sweet for someone eyeing that 2035 freedom, right?
 
 Here's what's got me excited: I'm seeing more and more folks in our community crushing their FIRE goals by thinking outside the Bay Area box. They're keeping those sweet tech salaries while exploring some seriously cool lifestyle options.
 
-💡 Food for thought: Where could your skills take you? The world's getting smaller, but the opportunities? They're exploding.
+Food for thought: Where could your skills take you? The world's getting smaller, but the opportunities? They're exploding.
 
-Keep rocking that morning routine - you're building something special here!"
+Keep rocking that morning routine - you're building something special here!
 
 ### Mind Coach Case
 #### Inner Peace Journey
@@ -90,12 +90,12 @@ Seasoned tech executive discovering mindfulness after two decades in Silicon Val
 
 [Audio]
 
-"Hey Jen! Love seeing you claim this 5:45 sacred space. Remember when you thought meditation was just another productivity hack? Now look at you, embracing these quiet moments like an old friend.
+🧘‍♀️ Hey Jen! Love seeing you claim this 5:45 sacred space. Remember when you thought meditation was just another productivity hack? Now look at you, embracing these quiet moments like an old friend.
 
 Today's insight: Watching the sunrise over the Bay Bridge this morning - noticed how the light changes gradually? No rushing, no pushing, just natural unfolding. Kinda like your journey with mindfulness, right?
 
-Leadership nugget: When that all-hands gets intense today, remember your 'pause practice' - that micro-moment between stimulus and response where your best decisions live. You're really owning that space now! 🌟
+Leadership nugget: When that all-hands gets intense today, remember your 'pause practice' - that micro-moment between stimulus and response where your best decisions live. You're really owning that space now!
 
-Keep nurturing this practice, Jen - you're redefining what conscious leadership looks like in tech, one breath at a time! 🧘‍♀️"
+Keep nurturing this practice, Jen - you're redefining what conscious leadership looks like in tech, one breath at a time! 
 
 [Create Your Dawn Story →] #new button

@@ -39,9 +39,9 @@ Bay Area student setting her first major athletic goal: completing a half marath
 
 ⭐ Rise and shine Emma! Oh my God, it's a perfect 55° morning in San Francisco - literally ideal running weather!
 
-You're gonna love this: The Presidio trails are looking absolutely gorgeous today. Remember when you could barely finish 3 miles? Now you're crushing 8-mile runs like it's no big deal! That's some serious level-up energy right there!
+You're gonna love this: The Presidio trails are looking absolutely gorgeous today. Remember when you could barely finish 3 miles? Now you're crushing 8-mile runs like it's no big deal. That's some serious level-up energy right there.
 
-Fun science fact of the day: Your muscles actually love these cool morning temps - it's like getting a natural performance boost! Just don't forget your fuel stops every 30 mins (I know, I know, I sound like such a coach right now).
+Fun science fact of the day: Your muscles actually love these cool morning temps - it's like getting a natural performance boost. Just don't forget your fuel stops every 30 mins (I know, I know, I sound like such a coach right now).
 
 Pro tip: Those hills you've been training on? They're basically your secret weapon for race day. Trust me, you're going to thank yourself when you're zooming past everyone else!
 

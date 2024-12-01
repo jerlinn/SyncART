@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const audioPlayers = document.querySelectorAll('.audio-player');
+    let currentlyPlaying = null;
     
     audioPlayers.forEach(player => {
         const audio = player.querySelector('audio');
@@ -38,11 +39,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function toggleAudio() {
             if (audio.paused) {
+                // 如果有其他音频在播放，先停止它
+                if (currentlyPlaying && currentlyPlaying !== audio) {
+                    currentlyPlaying.pause();
+                    currentlyPlaying.currentTime = 0;
+                    // 重置其他音频的UI
+                    const otherPlayer = currentlyPlaying.closest('.audio-player');
+                    const otherPlayIcon = otherPlayer.querySelector('.play-icon');
+                    const otherPauseIcon = otherPlayer.querySelector('.pause-icon');
+                    const otherProgress = otherPlayer.querySelector('.progress');
+                    otherPlayIcon.classList.remove('hidden');
+                    otherPauseIcon.classList.add('hidden');
+                    otherProgress.style.width = '0%';
+                }
                 audio.play();
+                currentlyPlaying = audio;
                 playIcon.classList.add('hidden');
                 pauseIcon.classList.remove('hidden');
             } else {
                 audio.pause();
+                if (currentlyPlaying === audio) {
+                    currentlyPlaying = null;
+                }
                 playIcon.classList.remove('hidden');
                 pauseIcon.classList.add('hidden');
             }

@@ -1101,7 +1101,7 @@ main {
 }
 
 .support-hero h1 {
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 16px;
     color: var(--main-color);
     font-family: var(--font-serif);
@@ -1235,15 +1235,14 @@ main {
 .contact-section h2 {
     font-weight: bold;
     text-align: left;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
 }
 
 .faq-group-title {
-    font-size: 1.5em;
-    color: #333;
-    margin: 2em 0 1em;
+    font-size: 1em;
+    color: var(--info-color);
+    margin: 2em 0 0 0;
     padding-bottom: 0.5em;
-    border-bottom: 2px solid #eee;
 }
 
 .faq-container .faq-group-title:first-of-type {

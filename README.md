@@ -1,5 +1,7 @@
 # SYNC ART Dawn00
 
+Link：https://jerlinn.github.io/SyncART/
+
 A revolutionary AI-powered wake-up device that personalizes your morning experience. This repository contains the website codebase for the Dawn00 product.
 
 ## Project Overview

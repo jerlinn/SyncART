@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // images
     const galleryImages = [
-        { small: 'images/img_product 1.png', large: 'images/img_product 1.png' },
-        { small: 'images/img_product 2.jpg', large: 'images/img_product 2.jpg' },
-        { small: 'images/img_product 3.jpg', large: 'images/img_product 3.jpg' },
-        { small: 'images/img_product 4.jpg', large: 'images/img_product 4.jpg' },
-        { small: 'images/img_product 5.jpg', large: 'images/img_product 5.jpg' },
-        { small: 'images/img_product 6.png', large: 'images/img_product 6.png' }
+        { small: 'images/Frame 4.jpg', large: 'images/Frame 4.jpg' },
+        { small: 'images/Frame 6.jpg', large: 'images/Frame 6.jpg' },
+        { small: 'images/Frame 7.jpg', large: 'images/Frame 7.jpg' },
+        { small: 'images/Frame 8.jpg', large: 'images/Frame 8.jpg' },
+        { small: 'images/Frame 9.jpg', large: 'images/Frame 9.jpg' },
+        { small: 'images/Frame 10.jpg', large: 'images/Frame 10.jpg' }
     ];
 
     let currentIndex = 0;

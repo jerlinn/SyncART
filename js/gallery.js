@@ -103,3 +103,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化
     initEventListeners();
 });
+
+// 独立图片lightbox功能
+function openImageLightbox(imageSrc, imageAlt) {
+    // 检查是否已经存在image lightbox
+    let imageLightbox = document.querySelector('.image-lightbox');
+    
+    if (!imageLightbox) {
+        // 创建image lightbox
+        imageLightbox = document.createElement('div');
+        imageLightbox.className = 'image-lightbox';
+        imageLightbox.innerHTML = `
+            <div class="image-lightbox-content">
+                <button class="image-lightbox-close">&times;</button>
+                <img class="image-lightbox-img" src="" alt="">
+            </div>
+        `;
+        document.body.appendChild(imageLightbox);
+        
+        // 添加关闭事件
+        imageLightbox.addEventListener('click', closeImageLightbox);
+        imageLightbox.querySelector('.image-lightbox-img').addEventListener('click', (e) => e.stopPropagation());
+        imageLightbox.querySelector('.image-lightbox-close').addEventListener('click', closeImageLightbox);
+    }
+    
+    // 设置图片
+    const img = imageLightbox.querySelector('.image-lightbox-img');
+    img.src = imageSrc;
+    img.alt = imageAlt;
+    
+    // 显示lightbox
+    document.body.style.overflow = 'hidden';
+    imageLightbox.classList.add('active');
+}
+
+function closeImageLightbox() {
+    const imageLightbox = document.querySelector('.image-lightbox');
+    if (imageLightbox) {
+        imageLightbox.classList.remove('active');
+        setTimeout(() => {
+            document.body.style.overflow = '';
+        }, 400);
+    }
+}

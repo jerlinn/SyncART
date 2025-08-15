@@ -1188,34 +1188,29 @@ main {
    Support Page Styles
    ========================================================================== */
 .support-hero {
-    padding-top: calc(var(--header-height) + 32px);
-    padding-bottom: 8px;
-    text-align: center;
-    background-color: var(--placeholder-color);
-    margin-top: 0;
+    padding: 40px 0 40px;
+    text-align: left;
+    background-color: var(--background-color);
 }
 
-
+.support-hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
 
 .support-hero h1 {
-    font-size: 32px;
+    font-size: 48px;
     margin-bottom: 16px;
-    color: var(--main-color);
+    color: var(--text-primary);
     font-family: var(--font-serif);
 }
 
 @media (max-width: 768px) {
-    .support-hero {
-        padding-top: calc(var(--header-height) + 24px);
-        padding-bottom: 24px;
-    }
-
-
-
     .support-hero h1 {
-        font-size: 32px;
-        padding: 0 16px;
+        font-size: 36px;
     }
+}
 }
 
 .faq-section {

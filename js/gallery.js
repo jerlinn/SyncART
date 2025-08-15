@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // images
     const galleryImages = [
-        { small: 'images/gallery_sm_1.png', large: 'images/gallery_lg_1.png' },
-        { small: 'images/gallery_sm_2.png', large: 'images/gallery_lg_2.png' },
-        { small: 'images/gallery_sm_3.png', large: 'images/gallery_lg_3.png' },
-        { small: 'images/gallery_sm_4.png', large: 'images/gallery_lg_4.png' },
-        { small: 'images/gallery_sm_5.png', large: 'images/gallery_lg_5.png' },
-        { small: 'images/gallery_sm_6.png', large: 'images/gallery_lg_6.png' }
+        { small: 'images/img_product 1.png', large: 'images/img_product 1.png' },
+        { small: 'images/img_product 2.jpg', large: 'images/img_product 2.jpg' },
+        { small: 'images/img_product 3.jpg', large: 'images/img_product 3.jpg' },
+        { small: 'images/img_product 4.jpg', large: 'images/img_product 4.jpg' },
+        { small: 'images/img_product 5.jpg', large: 'images/img_product 5.jpg' },
+        { small: 'images/img_product 6.png', large: 'images/img_product 6.png' }
     ];
 
     let currentIndex = 0;

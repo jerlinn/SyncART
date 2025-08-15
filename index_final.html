@@ -75,7 +75,21 @@
                     🦜 Jungle Flutter:Lively forest sounds to energize your morning.<br>
                     🪐 Planet Drift:Cosmic ambience for a serene, expansive start.<br>
                     ☁️ Cloud Rest:Soft, airy soundscapes for a peaceful wake-up.</p>
-                    <img src="images/img_day and night.png" alt="Personalized Wake-Up" class="clickable-image" onclick="openImageLightbox(this.src, this.alt)">
+                    <img src="images/img_day and night.png" alt="Personalized Wake-Up" class="clickable-image" onclick="
+                        let lightbox = document.querySelector('.image-lightbox') || (() => {
+                            const lb = document.createElement('div');
+                            lb.className = 'image-lightbox';
+                            lb.innerHTML = '<div class=\\'image-lightbox-content\\'><button class=\\'image-lightbox-close\\'>&times;</button><img class=\\'image-lightbox-img\\' src=\\'\\'></div>';
+                            document.body.appendChild(lb);
+                            lb.onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
+                            lb.querySelector('.image-lightbox-close').onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
+                            lb.querySelector('.image-lightbox-img').onclick = (e) => e.stopPropagation();
+                            return lb;
+                        })();
+                        lightbox.querySelector('.image-lightbox-img').src = this.src;
+                        document.body.style.overflow = 'hidden';
+                        lightbox.classList.add('active');
+                    ">
                 </div>
                 
                 <div class="feature-panel feature-panel-1" id="Precise wake-up">

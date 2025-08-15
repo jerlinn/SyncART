@@ -156,7 +156,7 @@ main {
     align-items: center;
     justify-content: center;
     padding: 16px 32px;
-    background: var(--primary-color);
+    background: var(--main-color);
     color: white;
     border-radius: 8px;
     font-size: 16px;
@@ -473,6 +473,14 @@ main {
     transform: translateX(4px);
 }
 
+/* 针对 Intelligent Mood Soundscapes Section 的图片 */
+.mood-soundscapes .feature-panel img {
+    max-width: 300px; /* 限制图片最大宽度为 300px */
+    height: auto; /* 保持图片宽高比 */
+    display: block; /* 确保图片是块级元素 */
+    margin: 0 auto; /* 图片居中 */
+}
+
 /* Features Section */
 .features {
     padding: 60px 0;
@@ -487,6 +495,29 @@ main {
     text-align: left;
 }
 
+/* 新增：匹配所有 .section-title，无论父容器 */
+.section-title {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: var(--main-color);
+    text-align: left;
+}
+
+/* 新增样式：控制 h3 和 p 的显示 */
+.feature-panel h3 {
+    font-size: 24px; /* 设置标题大小 */
+    color: var(--main-color); /* 使用主颜色 */
+    margin-bottom: 24px; /* 添加下方间距 */
+}
+
+.feature-panel p {
+    font-size: 16px; /* 设置正文大小 */
+    color: var(--sub-color); /* 使用次要颜色 */
+    line-height: 1.6; /* 设置行高 */
+    margin-bottom: 24px; /* 添加下方间距 */
+}
+
 /* Feature Tabs Layout */
 .feature-tabs {
     display: flex;
@@ -496,6 +527,22 @@ main {
     position: relative;
     align-items: flex-start;
     font-size: 0;
+}
+
+/* 原规则保留，新增 .technology-behind-experience 适配 */
+.feature-panel h3,
+.technology-behind-experience .text h3 {
+    font-size: 24px; 
+    color: var(--main-color); 
+    margin-bottom: 24px; /* 你想要的统一间距 */
+}
+
+.feature-panel p,
+.technology-behind-experience .text p {
+    font-size: 16px; 
+    color: var(--sub-color); 
+    line-height: 1.6; 
+    margin-bottom: 24px; 
 }
 
 /* Tab Navigation - Left Side */
@@ -511,6 +558,7 @@ main {
     font-size: 16px;
 }
 
+/* 保留原有按钮样式，不修改 */
 .tab-btn {
     background: none;
     border: none;
@@ -542,7 +590,9 @@ main {
     display: block;
 }
 
-.feature-panel {
+/* 核心修改：区分两个区域的面板样式 */
+/* 第一个区域（4 Pillars）面板 */
+.features:not(.mood-soundscapes) .feature-panel {
     opacity: 0;
     transition: opacity 400ms ease;
     position: absolute;
@@ -553,11 +603,29 @@ main {
     font-size: 0;
 }
 
-.feature-panel.active {
+.features:not(.mood-soundscapes) .feature-panel.active {
     opacity: 1;
     position: relative;
 }
 
+/* 第二个区域（Mood Soundscapes）面板 */
+.features.mood-soundscapes .feature-panel {
+    opacity: 0;
+    transition: opacity 400ms ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+}
+
+.features.mood-soundscapes .feature-panel.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* 保留原有图片样式 */
 .feature-panel img {
     width: 100%;
     height: auto;

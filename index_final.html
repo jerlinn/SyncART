@@ -284,6 +284,53 @@
     <script src="js/video-control.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/feature-scroll.js"></script>
+    
+    <!-- 确保图片lightbox功能正常工作 -->
+    <script>
+    // 备用的图片lightbox功能，防止主脚本加载问题
+    window.addEventListener('DOMContentLoaded', function() {
+        // 确保openImageLightbox函数在全局作用域中可用
+        if (typeof window.openImageLightbox === 'undefined') {
+            window.openImageLightbox = function(imageSrc, imageAlt) {
+                let imageLightbox = document.querySelector('.image-lightbox');
+                
+                if (!imageLightbox) {
+                    imageLightbox = document.createElement('div');
+                    imageLightbox.className = 'image-lightbox';
+                    imageLightbox.innerHTML = `
+                        <div class="image-lightbox-content">
+                            <button class="image-lightbox-close">&times;</button>
+                            <img class="image-lightbox-img" src="" alt="">
+                        </div>
+                    `;
+                    document.body.appendChild(imageLightbox);
+                    
+                    imageLightbox.addEventListener('click', function() {
+                        imageLightbox.classList.remove('active');
+                        setTimeout(() => {
+                            document.body.style.overflow = '';
+                        }, 400);
+                    });
+                    
+                    imageLightbox.querySelector('.image-lightbox-img').addEventListener('click', (e) => e.stopPropagation());
+                    imageLightbox.querySelector('.image-lightbox-close').addEventListener('click', function() {
+                        imageLightbox.classList.remove('active');
+                        setTimeout(() => {
+                            document.body.style.overflow = '';
+                        }, 400);
+                    });
+                }
+                
+                const img = imageLightbox.querySelector('.image-lightbox-img');
+                img.src = imageSrc;
+                img.alt = imageAlt;
+                
+                document.body.style.overflow = 'hidden';
+                imageLightbox.classList.add('active');
+            };
+        }
+    });
+    </script>
     <script src="js/tab-coaches.js"></script>
     <script src="js/audio-player.js"></script>
     <script src="js/audio-sync.js"></script>

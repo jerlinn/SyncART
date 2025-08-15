@@ -125,6 +125,13 @@ function openImageLightbox(imageSrc, imageAlt) {
         imageLightbox.addEventListener('click', closeImageLightbox);
         imageLightbox.querySelector('.image-lightbox-img').addEventListener('click', (e) => e.stopPropagation());
         imageLightbox.querySelector('.image-lightbox-close').addEventListener('click', closeImageLightbox);
+        
+        // 添加ESC键支持
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && imageLightbox.classList.contains('active')) {
+                closeImageLightbox();
+            }
+        });
     }
     
     // 设置图片

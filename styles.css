@@ -3628,14 +3628,14 @@ object.quote-svg-overlay {
    ========================================================================== */
 
 .stage-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 24px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
@@ -3645,10 +3645,10 @@ object.quote-svg-overlay {
 }
 
 .stage-icon img {
-    width: 56px;
-    height: 56px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
     transition: all 0.3s ease;
 }
 
@@ -3660,13 +3660,13 @@ object.quote-svg-overlay {
 /* Mobile optimization for stage icons */
 @media (max-width: 768px) {
     .stage-icon {
-        width: 72px;
-        height: 72px;
-        margin-bottom: 20px;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 10px;
     }
     
     .stage-icon img {
-        width: 48px;
-        height: 48px;
+        width: 24px;
+        height: 24px;
     }
 }

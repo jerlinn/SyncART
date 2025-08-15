@@ -3467,3 +3467,85 @@ object.quote-svg-overlay {
     background: var(--placeholder-color);
     border-radius: 2px;
 }
+
+/* ==========================================================================
+   Mobile Optimization for Gallery and Layout
+   ========================================================================== */
+
+/* Gallery Mobile Adaptation */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .simplicity-image {
+        margin-top: 24px;
+    }
+    
+    /* Ensure proper spacing on mobile */
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Feature tabs mobile optimization */
+    .feature-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .tab-btn {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 120px;
+        text-align: center;
+        font-size: 14px;
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+    
+    /* Stack tabs vertically on very small screens */
+    .tab-btn {
+        flex: 1 1 100%;
+        font-size: 16px;
+        padding: 16px;
+    }
+    
+    /* Adjust hero text for small screens */
+    .hero h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+    
+    .hero .section-description {
+        font-size: 18px;
+    }
+    
+    /* Technology section mobile optimization */
+    .technology-behind-experience .content {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    /* Ensure images are responsive */
+    .technology-behind-experience .image img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Stage cards mobile optimization */
+    .stage-card {
+        text-align: center;
+        padding: 24px 16px;
+    }
+    
+    .stage-card h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+}

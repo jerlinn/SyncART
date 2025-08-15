@@ -3622,3 +3622,51 @@ object.quote-svg-overlay {
         max-height: 90%;
     }
 }
+
+/* ==========================================================================
+   Stage Icon Styles - SVG Optimized
+   ========================================================================== */
+
+.stage-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.stage-icon:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.stage-icon img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+}
+
+.stage-icon:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Mobile optimization for stage icons */
+@media (max-width: 768px) {
+    .stage-icon {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 20px;
+    }
+    
+    .stage-icon img {
+        width: 48px;
+        height: 48px;
+    }
+}

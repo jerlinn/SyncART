@@ -75,16 +75,21 @@
                     🦜 Jungle Flutter:Lively forest sounds to energize your morning.<br>
                     🪐 Planet Drift:Cosmic ambience for a serene, expansive start.<br>
                     ☁️ Cloud Rest:Soft, airy soundscapes for a peaceful wake-up.</p>
-                    <div class="day-night-images">
-                        <div class="screenshot-container">
-                            <img src="images/Day.jpg" alt="Morning Interface - Own Your Morning" class="interface-screenshot clickable-image" onclick="openImageLightbox(this.src, this.alt)">
-                            <div class="screenshot-label">Morning Experience</div>
-                        </div>
-                        <div class="screenshot-container">
-                            <img src="images/night.jpg" alt="Night Interface - Recharge Tonight" class="interface-screenshot clickable-image" onclick="openImageLightbox(this.src, this.alt)">
-                            <div class="screenshot-label">Night Experience</div>
-                        </div>
-                    </div>
+                    <img src="images/img_day and night.png" alt="Personalized Wake-Up" class="clickable-image" onclick="
+                        let lightbox = document.querySelector('.image-lightbox') || (() => {
+                            const lb = document.createElement('div');
+                            lb.className = 'image-lightbox';
+                            lb.innerHTML = '<div class=\\'image-lightbox-content\\'><button class=\\'image-lightbox-close\\'>&times;</button><img class=\\'image-lightbox-img\\' src=\\'\\'></div>';
+                            document.body.appendChild(lb);
+                            lb.onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
+                            lb.querySelector('.image-lightbox-close').onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
+                            lb.querySelector('.image-lightbox-img').onclick = (e) => e.stopPropagation();
+                            return lb;
+                        })();
+                        lightbox.querySelector('.image-lightbox-img').src = this.src;
+                        document.body.style.overflow = 'hidden';
+                        lightbox.classList.add('active');
+                    ">
                 </div>
                 
                 <div class="feature-panel feature-panel-1" id="Precise wake-up">
@@ -137,9 +142,18 @@
                 Receive tailored wake-up reports and recommendations.</p>
             </div>
 
-            <!-- Right Side: Image -->
+            <!-- Right Side: Interface Screenshots -->
             <div class="image">
-                <img src="images/img_mmwave ui.png" alt="Millimeter Wave Sleep Monitoring" style="width: 100%; max-width: 500px; height: auto;">
+                <div class="day-night-images">
+                    <div class="screenshot-container">
+                        <img src="images/night.jpg" alt="Night Interface - Sleep Monitoring" class="interface-screenshot clickable-image" onclick="openImageLightbox(this.src, this.alt)">
+                        <div class="screenshot-label">Night Monitoring</div>
+                    </div>
+                    <div class="screenshot-container">
+                        <img src="images/Day.jpg" alt="Morning Interface - Wake Reports" class="interface-screenshot clickable-image" onclick="openImageLightbox(this.src, this.alt)">
+                        <div class="screenshot-label">Morning Reports</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

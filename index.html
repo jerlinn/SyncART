@@ -45,8 +45,11 @@
 <section class="features" id="features-section-1">
     <div class="container">
         <div class="main-hero-section">
-            <h1 class="main-title">Lunawake</h1>
-            <p class="main-subtitle">Advanced millimeter-wave technology silently tracks your sleep and wakes you at the perfect moment — no wearables, no cameras, no intrusion.</p>
+            <h1 class="main-title">
+                <span class="title-line">Lunawake</span>
+                <span class="title-line">AI Alarm with</span>
+                <span class="title-line">Contactless Sleep Monitoring</span>
+            </h1>
         </div>
         
         <div class="feature-tabs">
@@ -373,14 +376,17 @@
         line-height: 1.1;
         margin-bottom: 30px;
         letter-spacing: 0;
+        display: flex;
+        flex-direction: column;
     }
 
-    .main-subtitle {
-        font-size: 20px;
-        color: #666;
-        line-height: 1.5;
-        margin-bottom: 0;
-        max-width: 600px;
+    .title-line {
+        display: block;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 72px;
+        font-weight: 100;
+        color: #000000;
+        letter-spacing: 0;
     }
 
     @media (max-width: 768px) {
@@ -395,9 +401,8 @@
             margin-bottom: 20px;
         }
         
-        .main-subtitle {
-            font-size: 18px;
-            max-width: 100%;
+        .title-line {
+            font-size: 56px;
         }
     }
 
@@ -406,8 +411,8 @@
             font-size: 42px;
         }
         
-        .main-subtitle {
-            font-size: 16px;
+        .title-line {
+            font-size: 42px;
         }
     }
 </style>

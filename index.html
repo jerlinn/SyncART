@@ -136,10 +136,15 @@
         <div class="content">
             <!-- Left Side: Text -->
             <div class="text">
-                <h3>Millimeter Wave Sleep Monitoring</h3>
-                <p>Visualize your rest and wake cycles in real time.<br>
-                Track sleep stages with non-intrusive mmWave sensing.<br>
-                Receive tailored wake-up reports and recommendations.</p>
+                <div class="monitoring-section">
+                    <h3>Night - Sleep Monitoring</h3>
+                    <p>Throughout the night, our advanced sensors silently track your sleep patterns, breathing rhythms, and movement cycles. Monitor deep sleep phases, REM stages, and natural wake windows without any wearables or cameras.</p>
+                </div>
+                
+                <div class="monitoring-section">
+                    <h3>Morning - Intelligent Reports</h3>
+                    <p>Wake up to personalized insights and actionable recommendations. Receive detailed sleep analysis, optimal wake timing suggestions, and daily briefings that help you understand and improve your sleep quality.</p>
+                </div>
             </div>
 
             <!-- Right Side: Interface Screenshots -->
@@ -320,6 +325,44 @@
         .interface-screenshot::after {
             font-size: 11px;
             padding: 5px 10px;
+        }
+    }
+
+    /* Monitoring sections styling */
+    .monitoring-section {
+        margin-bottom: 30px;
+    }
+
+    .monitoring-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .monitoring-section h3 {
+        color: #2c3e50;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #ecf0f1;
+    }
+
+    .monitoring-section p {
+        color: #555;
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+        .monitoring-section {
+            margin-bottom: 25px;
+        }
+        
+        .monitoring-section h3 {
+            font-size: 18px;
+        }
+        
+        .monitoring-section p {
+            font-size: 15px;
         }
     }
 </style>

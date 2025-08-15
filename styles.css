@@ -1195,18 +1195,7 @@ main {
     margin-top: 0;
 }
 
-.support-hero-image {
-    max-width: 800px;
-    margin: 0 auto 24px;
-    padding: 0 24px;
-}
 
-.support-hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    display: block;
-}
 
 .support-hero h1 {
     font-size: 32px;
@@ -1221,9 +1210,7 @@ main {
         padding-bottom: 24px;
     }
 
-    .support-hero-image {
-        padding: 0 16px;
-    }
+
 
     .support-hero h1 {
         font-size: 32px;

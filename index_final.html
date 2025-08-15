@@ -75,21 +75,16 @@
                     🦜 Jungle Flutter:Lively forest sounds to energize your morning.<br>
                     🪐 Planet Drift:Cosmic ambience for a serene, expansive start.<br>
                     ☁️ Cloud Rest:Soft, airy soundscapes for a peaceful wake-up.</p>
-                    <img src="images/img_day and night.png" alt="Personalized Wake-Up" class="clickable-image" onclick="
-                        let lightbox = document.querySelector('.image-lightbox') || (() => {
-                            const lb = document.createElement('div');
-                            lb.className = 'image-lightbox';
-                            lb.innerHTML = '<div class=\\'image-lightbox-content\\'><button class=\\'image-lightbox-close\\'>&times;</button><img class=\\'image-lightbox-img\\' src=\\'\\'></div>';
-                            document.body.appendChild(lb);
-                            lb.onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
-                            lb.querySelector('.image-lightbox-close').onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
-                            lb.querySelector('.image-lightbox-img').onclick = (e) => e.stopPropagation();
-                            return lb;
-                        })();
-                        lightbox.querySelector('.image-lightbox-img').src = this.src;
-                        document.body.style.overflow = 'hidden';
-                        lightbox.classList.add('active');
-                    ">
+                    <div class="day-night-images">
+                        <div class="screenshot-container">
+                            <img src="images/Day.jpg" alt="Morning Interface - Own Your Morning" class="interface-screenshot clickable-image" onclick="openImageLightbox(this.src, this.alt)">
+                            <div class="screenshot-label">Morning Experience</div>
+                        </div>
+                        <div class="screenshot-container">
+                            <img src="images/night.jpg" alt="Night Interface - Recharge Tonight" class="interface-screenshot clickable-image" onclick="openImageLightbox(this.src, this.alt)">
+                            <div class="screenshot-label">Night Experience</div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="feature-panel feature-panel-1" id="Precise wake-up">
@@ -228,6 +223,90 @@
         image-rendering: -webkit-optimize-contrast; /* Improve PNG scaling on WebKit */
         image-rendering: crisp-edges; /* Better scaling for pixel art */
         image-rendering: pixelated; /* Fallback for better scaling */
+    }
+
+    /* Day and Night Interface Screenshots */
+    .day-night-images {
+        display: flex;
+        gap: 30px;
+        margin: 30px 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .screenshot-container {
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+        min-width: 300px;
+        text-align: center;
+    }
+
+    .interface-screenshot {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+
+    .interface-screenshot:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .screenshot-label {
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    .screenshot-container:hover .screenshot-label {
+        opacity: 1;
+    }
+
+    /* Click hint */
+    .interface-screenshot::after {
+        content: "🔍 Click to enlarge";
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .interface-screenshot:hover::after {
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        .day-night-images {
+            flex-direction: column;
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .screenshot-container {
+            max-width: 100%;
+            min-width: unset;
+        }
+
+        .interface-screenshot::after {
+            font-size: 11px;
+            padding: 5px 10px;
+        }
     }
 </style>
 

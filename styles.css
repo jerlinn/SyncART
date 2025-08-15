@@ -151,33 +151,9 @@ main {
     gap: 24px;
 }
 
-.btn-preorder {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 32px;
-    background: var(--main-color);
-    color: white;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
+/* .btn-preorder styles removed */
 
-.btn-preorder:hover {
-    opacity: 0.9;
-}
-
-.pre-order-btn {
-    color: var(--info-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.pre-order-btn:hover {
-    color: var(--main-color);
-}
+/* .pre-order-btn styles removed */
 
 .mobile-menu-btn {
     display: none;
@@ -211,9 +187,7 @@ main {
         display: none;
     }
 
-    .pre-order-btn {
-        display: none;
-    }
+    /* .pre-order-btn mobile styles removed */
 
     .mobile-menu-btn {
         display: block;
@@ -442,36 +416,7 @@ main {
     display: none;
 }
 
-/* 预购按钮样式 */
-.preorder-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 24px;
-    padding: 16px 32px;
-    background: var(--main-color);
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 48px;
-    transition: all 0.3s ease;
-    font-size: 32px;
-    font-weight: 400;
-}
-
-.preorder-button:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-.preorder-button img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s ease;
-}
-
-.preorder-button:hover img {
-    transform: translateX(4px);
-}
+/* 预购按钮样式已移除 */
 
 /* 针对 Intelligent Mood Soundscapes Section 的图片 */
 .mood-soundscapes .feature-panel img {

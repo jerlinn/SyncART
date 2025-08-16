@@ -20,8 +20,10 @@ function updateActiveStates1(index) {
             setTimeout(() => {
                 panel.classList.remove('active');
                 panel.style.position = 'absolute';
+                panel.style.visibility = 'hidden';
                 
                 featurePanels1[index].style.position = 'relative';
+                featurePanels1[index].style.visibility = 'visible';
                 featurePanels1[index].classList.add('active');
                 requestAnimationFrame(() => {
                     featurePanels1[index].style.opacity = '1';
@@ -66,18 +68,52 @@ featurePanels1.forEach(panel => {
     });
 });
 
+// 区域1：重置函数
+function resetPanels1() {
+    // 清除所有定时器
+    if (autoSwitchInterval1) {
+        clearInterval(autoSwitchInterval1);
+        autoSwitchInterval1 = null;
+    }
+    
+    // 重置所有面板状态
+    featurePanels1.forEach((panel, i) => {
+        panel.classList.remove('active');
+        if (i === 0) {
+            panel.style.position = 'relative';
+            panel.style.opacity = '1';
+            panel.style.visibility = 'visible';
+            panel.classList.add('active');
+        } else {
+            panel.style.position = 'absolute';
+            panel.style.opacity = '0';
+            panel.style.visibility = 'hidden';
+        }
+    });
+    
+    // 重置按钮状态
+    tabButtons1.forEach((btn, i) => {
+        btn.classList.remove('active');
+        if (i === 0) btn.classList.add('active');
+    });
+    
+    currentActiveIndex1 = 0;
+    isPaused1 = false;
+}
+
 // 区域1：初始化
-featurePanels1.forEach((panel, i) => {
-    if (i === 0) {
-        panel.style.position = 'relative';
-        panel.style.opacity = '1';
-        panel.classList.add('active');
-    } else {
-        panel.style.position = 'absolute';
-        panel.style.opacity = '0';
+document.addEventListener('DOMContentLoaded', function() {
+    resetPanels1();
+    startAutoSwitch1();
+});
+
+// 页面显示时重置（解决切换页面后的问题）
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+        resetPanels1();
+        startAutoSwitch1();
     }
 });
-startAutoSwitch1();
 
 
 // 区域2：Intelligent Mood Soundscapes

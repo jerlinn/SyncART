@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Premium Typography System - Apple/Tesla/Dyson Quality
+   ========================================================================== */
+
+/* 字体变量 - 精选高品质字体栈 */
+:root {
+    /* 主要字体 - San Francisco风格的现代无衬线字体 */
+    --font-primary: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    
+    /* 展示字体 - 用于大标题，更有个性 */
+    --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    
+    /* 辅助字体 - 用于特殊场合的衬线字体 */
+    --font-accent: "Times New Roman", Times, serif;
+    
+    /* 等宽字体 - 用于代码或数据 */
+    --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", monospace;
+    
+    /* 字重系统 */
+    --weight-ultralight: 100;
+    --weight-thin: 200;
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-heavy: 800;
+    --weight-black: 900;
+    
+    /* 字号系统 - 基于8px网格 */
+    --text-xs: 12px;      /* 辅助文字 */
+    --text-sm: 14px;      /* 小文字 */
+    --text-base: 16px;    /* 基础文字 */
+    --text-lg: 18px;      /* 大文字 */
+    --text-xl: 20px;      /* 副标题 */
+    --text-2xl: 24px;     /* 小标题 */
+    --text-3xl: 30px;     /* 中标题 */
+    --text-4xl: 36px;     /* 大标题 */
+    --text-5xl: 48px;     /* 超大标题 */
+    --text-6xl: 60px;     /* 巨大标题 */
+    --text-7xl: 72px;     /* 展示标题 */
+    --text-8xl: 96px;     /* 英雄标题 */
+    
+    /* 行高系统 */
+    --leading-none: 1;
+    --leading-tight: 1.1;
+    --leading-snug: 1.2;
+    --leading-normal: 1.4;
+    --leading-relaxed: 1.6;
+    --leading-loose: 1.8;
+    
+    /* 字间距系统 */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+}
+
+/* 基础排版重置 */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 主标题 - 英雄级别 */
+.hero-title {
+    font-family: var(--font-display);
+    font-size: var(--text-7xl);
+    font-weight: var(--weight-ultralight);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: #1d1d1f;
+}
+
+/* 页面标题 */
+.page-title {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: var(--weight-light);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: #1d1d1f;
+}
+
+/* 章节标题 */
+.section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-normal);
+    color: #1d1d1f;
+}
+
+/* 子标题 */
+.subsection-title {
+    font-family: var(--font-primary);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: #424245;
+}
+
+/* 正文 - 大 */
+.body-large {
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-normal);
+    color: #1d1d1f;
+}
+
+/* 正文 - 标准 */
+.body-text {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-normal);
+    color: #1d1d1f;
+}
+
+/* 正文 - 小 */
+.body-small {
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: #424245;
+}
+
+/* 说明文字 */
+.caption {
+    font-family: var(--font-primary);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+    color: #86868b;
+    text-transform: uppercase;
+}
+
+/* 按钮文字 */
+.button-text {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-none);
+    letter-spacing: var(--tracking-normal);
+}
+
+/* 导航文字 */
+.nav-text {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-none);
+    letter-spacing: var(--tracking-normal);
+}
+
+/* 响应式字体 */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: var(--text-5xl);
+    }
+    
+    .page-title {
+        font-size: var(--text-4xl);
+    }
+    
+    .section-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .subsection-title {
+        font-size: var(--text-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--text-4xl);
+    }
+    
+    .page-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+}

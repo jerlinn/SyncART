@@ -4021,6 +4021,151 @@ object.quote-svg-overlay {
 }
 
 /* ==========================================================================
+   Lifestyle Showcase - Real Life Integration
+   ========================================================================== */
+
+.lifestyle-showcase {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.lifestyle-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.lifestyle-text h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: var(--font-light);
+    color: var(--color-text-primary);
+    line-height: var(--leading-tight);
+    margin-bottom: 32px;
+    letter-spacing: var(--tracking-tight);
+}
+
+.lifestyle-text p {
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+.lifestyle-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.lifestyle-scene {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.lifestyle-scene:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+}
+
+.scene-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.lifestyle-scene:hover .scene-image {
+    transform: scale(1.02);
+}
+
+.scene-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    padding: 40px 32px 24px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.lifestyle-scene:hover .scene-overlay {
+    transform: translateY(0);
+}
+
+.scene-label {
+    color: white;
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wide);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .lifestyle-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    .lifestyle-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lifestyle-showcase {
+        padding: 80px 0;
+    }
+    
+    .lifestyle-text h2 {
+        font-size: var(--text-4xl);
+    }
+    
+    .lifestyle-text p {
+        font-size: var(--text-lg);
+    }
+    
+    .lifestyle-images {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .scene-overlay {
+        position: static;
+        background: rgba(0, 0, 0, 0.8);
+        transform: none;
+        padding: 16px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lifestyle-showcase {
+        padding: 60px 0;
+    }
+    
+    .lifestyle-text h2 {
+        font-size: var(--text-3xl);
+    }
+    
+    .lifestyle-content {
+        gap: 40px;
+    }
+    
+    .lifestyle-scene {
+        border-radius: 16px;
+    }
+}
+
+/* ==========================================================================
    Product Showcase Section
    ========================================================================== */
 

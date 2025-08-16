@@ -1204,6 +1204,7 @@ main {
     margin-bottom: 16px;
     color: var(--text-primary);
     font-family: var(--font-serif);
+    text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -2104,14 +2105,7 @@ main {
     }
 }
 
-/* Support Page Container */
-.support-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 24px;
-    width: 100%;
-    box-sizing: border-box;
-}
+
 
 /* FAQ Section Styles */
 .faq-container {
@@ -2828,14 +2822,7 @@ object.quote-svg-overlay {
     }
 }
 
-/* Support Page Container */
-.support-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 24px;
-    width: 100%;
-    box-sizing: border-box;
-}
+
 
 /* FAQ Section Styles */
 .faq-container {

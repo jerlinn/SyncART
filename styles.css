@@ -4021,6 +4021,97 @@ object.quote-svg-overlay {
 }
 
 /* ==========================================================================
+   Technology Section - Vertical Layout
+   ========================================================================== */
+
+.tech-section {
+    margin: 60px 0;
+}
+
+.tech-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.night-section .tech-content {
+    grid-template-columns: 1fr 1fr;
+}
+
+.morning-section .tech-content {
+    grid-template-columns: 1fr 1fr;
+}
+
+.tech-text h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+}
+
+.tech-text p {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+.tech-image {
+    position: relative;
+}
+
+.tech-screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-screenshot:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .tech-section {
+        margin: 40px 0;
+    }
+    
+    .tech-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .night-section .tech-content,
+    .morning-section .tech-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-text h3 {
+        font-size: var(--text-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-section {
+        margin: 32px 0;
+    }
+    
+    .tech-content {
+        gap: 24px;
+    }
+    
+    .tech-screenshot {
+        border-radius: 12px;
+    }
+}
+
+/* ==========================================================================
    Lifestyle Showcase - Real Life Integration
    ========================================================================== */
 

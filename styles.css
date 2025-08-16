@@ -1211,7 +1211,6 @@ main {
         font-size: 36px;
     }
 }
-}
 
 .faq-section {
     padding: 40px 0;
@@ -3628,14 +3627,14 @@ object.quote-svg-overlay {
    ========================================================================== */
 
 .stage-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 12px;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
@@ -3645,10 +3644,10 @@ object.quote-svg-overlay {
 }
 
 .stage-icon img {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
-    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
     transition: all 0.3s ease;
 }
 
@@ -3660,13 +3659,13 @@ object.quote-svg-overlay {
 /* Mobile optimization for stage icons */
 @media (max-width: 768px) {
     .stage-icon {
-        width: 36px;
-        height: 36px;
-        margin-bottom: 10px;
+        width: 28px;
+        height: 28px;
+        margin-bottom: 6px;
     }
     
     .stage-icon img {
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
     }
 }

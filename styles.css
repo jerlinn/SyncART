@@ -3799,6 +3799,77 @@ object.quote-svg-overlay {
 
 
 /* ==========================================================================
+   Hero Section - Main Title
+   ========================================================================== */
+
+.hero-section {
+    padding: 80px 0 60px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-section .main-title {
+    font-family: var(--font-display);
+    font-size: var(--text-6xl);
+    font-weight: var(--font-light);
+    color: var(--color-text-primary);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: 32px;
+}
+
+.hero-section .title-line {
+    display: block;
+    margin-bottom: -8px;
+}
+
+.hero-section .title-line:last-child {
+    margin-bottom: 0;
+}
+
+.hero-subtitle {
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Mobile Responsive for Hero */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0 40px;
+    }
+    
+    .hero-section .main-title {
+        font-size: var(--text-4xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 40px 0 30px;
+    }
+    
+    .hero-section .main-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-base);
+    }
+}
+
+/* ==========================================================================
    Product Details Gallery - Craftsmanship Showcase
    ========================================================================== */
 

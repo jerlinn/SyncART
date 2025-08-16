@@ -53,7 +53,7 @@ tabButtons1.forEach((button, index) => {
     button.addEventListener('click', () => {
         updateActiveStates1(index);
         currentActiveIndex1 = index;
-        startAutoSwitch1();
+        // startAutoSwitch1(); // 已禁用自动切换
     });
 });
 
@@ -104,14 +104,14 @@ function resetPanels1() {
 // 区域1：初始化
 document.addEventListener('DOMContentLoaded', function() {
     resetPanels1();
-    startAutoSwitch1();
+    // startAutoSwitch1(); // 已禁用自动切换
 });
 
 // 页面显示时重置（解决切换页面后的问题）
 document.addEventListener('visibilitychange', function() {
     if (!document.hidden) {
         resetPanels1();
-        startAutoSwitch1();
+        // startAutoSwitch1(); // 已禁用自动切换
     }
 });
 
@@ -169,7 +169,7 @@ tabButtons2.forEach((button, index) => {
     button.addEventListener('click', () => {
         updateActiveStates2(index);
         currentActiveIndex2 = index;
-        startAutoSwitch2();
+        // startAutoSwitch2(); // 已禁用自动切换
     });
 });
 
@@ -195,7 +195,7 @@ featurePanels2.forEach((panel, i) => {
         panel.style.opacity = '0';
     }
 });
-startAutoSwitch2();
+// startAutoSwitch2(); // 已禁用自动切换
 
 
 // 添加样式（区分两个区域的动画）

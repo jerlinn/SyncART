@@ -30,29 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     --weight-semibold: 600;
     --weight-bold: 700;
     
-    /* Font sizes */
-    --text-xs: 12px;
-    --text-sm: 14px;
-    --text-base: 16px;
-    --text-lg: 18px;
-    --text-xl: 20px;
-    --text-2xl: 24px;
-    --text-3xl: 30px;
-    --text-4xl: 36px;
-    --text-5xl: 48px;
-    --text-6xl: 60px;
-    --text-7xl: 72px;
-    
-    /* Line heights */
-    --leading-tight: 1.1;
-    --leading-snug: 1.2;
-    --leading-normal: 1.4;
-    --leading-relaxed: 1.6;
-    
-    /* Letter spacing */
-    --tracking-tight: -0.025em;
-    --tracking-normal: 0;
-    --tracking-wide: 0.025em;
+    /* Typography variables moved to Apple/TE design system above */
     --border-color: #EAEAEA;
     --max-width: 1280px;
     --container-padding: 60px;
@@ -84,66 +62,7 @@ body {
     color: #1d1d1f;
 }
 
-/* Page Titles */
-h1,
-.hero h1,
-.team-hero h1,
-.support-hero h1,
-.about-title {
-    font-family: var(--font-display);
-    font-size: var(--text-5xl);
-    font-weight: var(--weight-light);
-    line-height: var(--leading-snug);
-    letter-spacing: var(--tracking-tight);
-    color: #1d1d1f;
-}
-
-/* Section Titles */
-.section-title,
-.content-block h2,
-.features .section-title,
-.one-dawn .section-title {
-    font-family: var(--font-display);
-    font-size: var(--text-4xl);
-    font-weight: var(--weight-medium);
-    line-height: var(--leading-snug);
-    letter-spacing: var(--tracking-normal);
-    color: #1d1d1f;
-}
-
-/* Subsection Titles */
-h3,
-.stage-card h3,
-.feature-panel h3 {
-    font-family: var(--font-primary);
-    font-size: var(--text-2xl);
-    font-weight: var(--weight-semibold);
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-normal);
-    color: #1d1d1f;
-}
-
-/* Body Text */
-p,
-.section-description,
-.stage-card p {
-    font-family: var(--font-primary);
-    font-size: var(--text-lg);
-    font-weight: var(--weight-regular);
-    line-height: var(--leading-relaxed);
-    letter-spacing: var(--tracking-normal);
-    color: #424245;
-}
-
-/* Navigation */
-.nav-center a,
-.nav-right a {
-    font-family: var(--font-primary);
-    font-size: var(--text-base);
-    font-weight: var(--weight-regular);
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-normal);
-}
+/* Typography styles moved to Apple/TE design system above */
 
 .section-description {
     margin-bottom: 24px;
@@ -4522,4 +4441,330 @@ object.quote-svg-overlay {
     .tab-btn {
         transition: none !important;
     }
+}
+
+/* ==========================================================================
+   Typography System - Apple/TE Design Standards
+   ========================================================================== */
+
+/* Font Scale System (8pt grid) */
+:root {
+    /* Font Sizes - Based on 8pt grid system */
+    --text-xs: 12px;      /* 12px = 1.5 * 8pt */
+    --text-sm: 14px;      /* 14px = 1.75 * 8pt */
+    --text-base: 16px;    /* 16px = 2 * 8pt */
+    --text-lg: 18px;      /* 18px = 2.25 * 8pt */
+    --text-xl: 20px;      /* 20px = 2.5 * 8pt */
+    --text-2xl: 24px;     /* 24px = 3 * 8pt */
+    --text-3xl: 32px;     /* 32px = 4 * 8pt */
+    --text-4xl: 40px;     /* 40px = 5 * 8pt */
+    --text-5xl: 48px;     /* 48px = 6 * 8pt */
+    --text-6xl: 56px;     /* 56px = 7 * 8pt */
+    --text-7xl: 64px;     /* 64px = 8 * 8pt */
+    --text-8xl: 72px;     /* 72px = 9 * 8pt */
+    
+    /* Line Heights - Optimized for readability */
+    --leading-none: 1;           /* 100% */
+    --leading-tight: 1.25;       /* 125% */
+    --leading-snug: 1.375;       /* 137.5% */
+    --leading-normal: 1.5;       /* 150% */
+    --leading-relaxed: 1.625;    /* 162.5% */
+    --leading-loose: 2;          /* 200% */
+    
+    /* Font Weights - Apple SF Pro weights */
+    --weight-thin: 100;
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-heavy: 800;
+    --weight-black: 900;
+    
+    /* Letter Spacing - Optimized for each size */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+    
+    /* Spacing System - 8pt grid */
+    --space-1: 4px;      /* 0.5 * 8pt */
+    --space-2: 8px;      /* 1 * 8pt */
+    --space-3: 12px;     /* 1.5 * 8pt */
+    --space-4: 16px;     /* 2 * 8pt */
+    --space-5: 20px;     /* 2.5 * 8pt */
+    --space-6: 24px;     /* 3 * 8pt */
+    --space-8: 32px;     /* 4 * 8pt */
+    --space-10: 40px;    /* 5 * 8pt */
+    --space-12: 48px;    /* 6 * 8pt */
+    --space-16: 64px;    /* 8 * 8pt */
+    --space-20: 80px;    /* 10 * 8pt */
+    --space-24: 96px;    /* 12 * 8pt */
+    
+    /* Color System - Apple Human Interface Guidelines */
+    --color-primary: #007AFF;      /* Apple Blue */
+    --color-secondary: #5856D6;    /* Apple Purple */
+    --color-success: #34C759;      /* Apple Green */
+    --color-warning: #FF9500;      /* Apple Orange */
+    --color-error: #FF3B30;        /* Apple Red */
+    
+    /* Text Colors - Apple Typography Standards */
+    --text-primary: #1D1D1F;       /* Primary text */
+    --text-secondary: #424245;     /* Secondary text */
+    --text-tertiary: #6E6E73;      /* Tertiary text */
+    --text-quaternary: #8E8E93;    /* Quaternary text */
+    --text-placeholder: #C7C7CC;   /* Placeholder text */
+    
+    /* Background Colors */
+    --bg-primary: #FFFFFF;         /* Primary background */
+    --bg-secondary: #F2F2F7;       /* Secondary background */
+    --bg-tertiary: #E5E5EA;        /* Tertiary background */
+    
+    /* Border Colors */
+    --border-primary: #C6C6C8;     /* Primary border */
+    --border-secondary: #D1D1D6;   /* Secondary border */
+    --border-tertiary: #E5E5EA;    /* Tertiary border */
+}
+
+/* ==========================================================================
+   Typography Hierarchy - Apple/TE Standards
+   ========================================================================== */
+
+/* Display Headings - Large, impactful titles */
+.display-1 {
+    font-size: var(--text-8xl);        /* 72px */
+    font-weight: var(--weight-light);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-8);
+}
+
+.display-2 {
+    font-size: var(--text-7xl);        /* 64px */
+    font-weight: var(--weight-light);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-6);
+}
+
+.display-3 {
+    font-size: var(--text-6xl);        /* 56px */
+    font-weight: var(--weight-light);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-6);
+}
+
+/* Page Headings - Main page titles */
+.page-title,
+.about-title,
+.team-hero h1,
+.support-hero h1 {
+    font-size: var(--text-5xl);        /* 48px */
+    font-weight: var(--weight-light);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--text-primary);
+    margin-bottom: var(--space-8);
+}
+
+/* Section Headings - Major content sections */
+.section-title,
+.content-block h2,
+.features .section-title,
+.one-dawn .section-title {
+    font-size: var(--text-4xl);        /* 40px */
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+}
+
+/* Subsection Headings - Content subsections */
+.subsection-title,
+h3,
+.stage-card h3,
+.feature-panel h3 {
+    font-size: var(--text-2xl);        /* 24px */
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+/* Body Text - Main content */
+.body-large {
+    font-size: var(--text-lg);         /* 18px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.body-medium {
+    font-size: var(--text-base);       /* 16px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.body-small {
+    font-size: var(--text-sm);         /* 14px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-2);
+}
+
+/* Caption Text - Small supporting text */
+.caption {
+    font-size: var(--text-xs);         /* 12px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-quaternary);
+    text-transform: uppercase;
+}
+
+/* FAQ Group Titles - Specialized for FAQ sections */
+.faq-group-title {
+    font-size: var(--text-2xl);        /* 24px */
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-secondary);
+    margin: var(--space-10) 0 var(--space-4) 0;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border-tertiary);
+}
+
+.faq-container .faq-group-title:first-of-type {
+    margin-top: 0;
+}
+
+/* Promise Title - Specialized for promise sections */
+.promise-title {
+    font-size: var(--text-3xl);        /* 32px */
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+/* Promise Subtitle - Supporting text for promises */
+.promise-subtitle {
+    font-size: var(--text-lg);         /* 18px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+}
+
+/* Navigation Text */
+.nav-text {
+    font-size: var(--text-base);       /* 16px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-primary);
+}
+
+/* Button Text */
+.btn-text {
+    font-size: var(--text-base);       /* 16px */
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+}
+
+/* Form Labels */
+.form-label {
+    font-size: var(--text-sm);         /* 14px */
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+/* Form Input Text */
+.form-input {
+    font-size: var(--text-base);       /* 16px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: var(--text-primary);
+}
+
+/* Link Text */
+.link-text {
+    font-size: var(--text-base);       /* 16px */
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.link-text:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive Typography - Mobile First Approach
+   ========================================================================== */
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .display-1 { font-size: var(--text-6xl); }      /* 56px */
+    .display-2 { font-size: var(--text-5xl); }      /* 48px */
+    .display-3 { font-size: var(--text-4xl); }      /* 40px */
+    
+    .page-title,
+    .about-title,
+    .team-hero h1,
+    .support-hero h1 {
+        font-size: var(--text-4xl);                  /* 40px */
+        margin-bottom: var(--space-6);
+    }
+    
+    .section-title {
+        font-size: var(--text-3xl);                  /* 32px */
+        margin-bottom: var(--space-5);
+    }
+    
+    .subsection-title,
+    h3 {
+        font-size: var(--text-xl);                   /* 20px */
+        margin-bottom: var(--space-3);
+    }
+    
+    .faq-group-title {
+        font-size: var(--text-xl);                   /* 20px */
+        margin: var(--space-8) 0 var(--space-3) 0;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .display-1 { font-size: var(--text-7xl); }      /* 64px */
+    .display-2 { font-size: var(--text-6xl); }      /* 56px */
+    .display-3 { font-size: var(--text-5xl); }      /* 48px */
+}
+
+/* Desktop adjustments */
+@media (min-width: 1025px) {
+    .display-1 { font-size: var(--text-8xl); }      /* 72px */
+    .display-2 { font-size: var(--text-7xl); }      /* 64px */
+    .display-3 { font-size: var(--text-6xl); }      /* 56px */
 }

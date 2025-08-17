@@ -4720,6 +4720,11 @@ h3,
     text-decoration: underline;
 }
 
+/* Muted Text - For secondary content */
+.muted {
+    color: var(--text-tertiary);
+}
+
 /* ==========================================================================
    Responsive Typography - Mobile First Approach
    ========================================================================== */

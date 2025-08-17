@@ -4725,40 +4725,7 @@ h3,
     color: var(--text-tertiary);
 }
 
-/* CTA Section Styles */
-.cta-section {
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-    padding: var(--space-20) 0;
-    text-align: center;
-}
 
-.cta-section .section-title {
-    margin-bottom: var(--space-4);
-}
-
-.cta-section .body-large {
-    max-width: 600px;
-    margin: 0 auto var(--space-8);
-    color: var(--text-secondary);
-}
-
-.cta-section .cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    color: white;
-    padding: var(--space-4) var(--space-8);
-    border-radius: 12px;
-    font-size: var(--text-lg);
-    font-weight: var(--weight-medium);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
-}
-
-.cta-section .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
-}
 
 /* ==========================================================================
    Responsive Typography - Mobile First Approach

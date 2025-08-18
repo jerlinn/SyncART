@@ -2711,10 +2711,7 @@ object.quote-svg-overlay {
     margin-bottom: 48px;
 }
 
-/* CTA Container */
-.cta-container {
-    margin-top: 48px;
-}
+
 
 /* Additional Responsive Styles */
 @media (max-width: 768px) {
@@ -4802,24 +4799,7 @@ h3,
     color: var(--text-secondary);
 }
 
-/* CTA Button */
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    color: white;
-    padding: var(--space-4) var(--space-8);
-    border-radius: 12px;
-    font-size: var(--text-lg);
-    font-weight: var(--weight-medium);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
-}
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
-}
 
 /* Vision Section */
 .vision {

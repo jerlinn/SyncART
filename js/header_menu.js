@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // 创建移动端菜单容器
         const mobileMenu = document.createElement('div');
         mobileMenu.className = 'mobile-menu';
+
+        // Backdrop for desktop + mobile (drawer style)
+        const backdrop = document.createElement('div');
+        backdrop.className = 'menu-backdrop';
         
         // 复制导航链接到移动端菜单
         const centerLinks = Array.from(navCenter.querySelectorAll('a')).map(link => link.cloneNode(true));
@@ -23,21 +27,48 @@ document.addEventListener('DOMContentLoaded', function() {
         // 将移动端菜单添加到 header
         const header = document.querySelector('.header');
         header.appendChild(mobileMenu);
+        document.body.appendChild(backdrop);
+
+        const openMenu = () => {
+            mobileMenu.classList.add('active');
+            backdrop.classList.add('active');
+            mobileMenuBtn.classList.add('active');
+            document.body.classList.add('menu-open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('active');
+            backdrop.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        };
 
         // 添加点击事件处理
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            mobileMenu.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
+            const isOpen = mobileMenu.classList.contains('active');
+            if (isOpen) closeMenu();
+            else openMenu();
         });
 
         // 点击页面其他地方关闭菜单
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-            }
+        backdrop.addEventListener('click', closeMenu);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
         });
+
+        // Clicking a link closes the menu
+        mobileMenu.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target && target.tagName === 'A') closeMenu();
+        });
+
+        // A11y attributes
+        mobileMenuBtn.setAttribute('aria-label', 'Menu');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
     };
 
     // 初始化移动端菜单

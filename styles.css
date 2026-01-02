@@ -1614,6 +1614,129 @@ main {
     }
 }
 
+/* ==========================================================================
+   About letter page — frosted letter + side notes (React/Tailwind reference)
+   ========================================================================== */
+.about-letter-header {
+    margin-bottom: 40px;
+}
+
+.about-letter-subhead {
+    margin-top: 16px;
+    max-width: 65ch;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(20, 20, 20, 0.72);
+}
+
+.about-letter-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1.35fr 0.65fr;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .about-letter-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-letter-card {
+    border-radius: 16px;
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overflow: hidden;
+}
+
+.about-letter-body {
+    padding: 32px;
+}
+
+.about-letter-greeting {
+    font-size: 15px;
+    line-height: 28px;
+    color: rgba(20, 20, 20, 0.78);
+}
+
+.about-letter-content {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+}
+
+.about-letter-content p {
+    font-size: 15px;
+    line-height: 28px;
+    color: rgba(20, 20, 20, 0.78);
+}
+
+.about-letter-signoff {
+    margin-top: 28px;
+    border-top: 1px solid rgba(20, 20, 20, 0.08);
+    padding-top: 24px;
+}
+
+.about-letter-sig {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(20, 20, 20, 0.78);
+}
+
+.about-letter-updated {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(20, 20, 20, 0.55);
+}
+
+.about-letter-aside {
+    display: grid;
+    gap: 16px;
+}
+
+.about-aside-card {
+    border-radius: 16px;
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.about-aside-body {
+    padding: 20px 24px;
+}
+
+.about-aside-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(20, 20, 20, 0.65);
+}
+
+.about-aside-list {
+    margin-top: 12px;
+    display: grid;
+    gap: 8px;
+}
+
+.about-aside-list p {
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(20, 20, 20, 0.72);
+}
+
+@media (max-width: 768px) {
+    .about-letter-body {
+        padding: 24px 20px;
+    }
+    .about-aside-body {
+        padding: 18px 20px;
+    }
+}
+
 .faq-container {
     max-width: 600px;
     margin: 0 auto;

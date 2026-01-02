@@ -2204,6 +2204,16 @@ main {
     color: rgba(255, 255, 255, 0.82);
 }
 
+.ces-page .social-links img {
+    /* Social icons are black SVGs; invert them on dark CES background */
+    filter: invert(1);
+    opacity: 0.92;
+}
+
+.ces-page .social-link:hover img {
+    opacity: 1;
+}
+
 .ces-page .social-link:hover {
     color: rgba(255, 255, 255, 0.96);
 }

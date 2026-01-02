@@ -21,6 +21,12 @@ h1, h2, h3, h4, h5, h6 {
     --font-primary: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
     --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
     --font-accent: "Times New Roman", Times, serif;
+    /* Backwards-compatible aliases used in older rules */
+    --font-sans: var(--font-primary);
+    --font-serif: var(--font-display);
+    --text-color: #1d1d1f;
+    --color-text-primary: #1d1d1f;
+    --color-text-secondary: #6e6e73;
     
     /* Font weights */
     --weight-ultralight: 100;
@@ -53,14 +59,9 @@ body {
     color: #1d1d1f;
 }
 
-/* Hero Title - Main page headline */
+/* Hero Title - legacy selector; keep consistent with current system */
 .main-title {
-    font-family: var(--font-accent);
-    font-size: var(--text-7xl);
-    font-weight: var(--weight-ultralight);
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-tight);
-    color: #1d1d1f;
+    font-family: var(--font-display);
 }
 
 /* Typography styles moved to Apple/TE design system above */
@@ -92,8 +93,11 @@ body {
 }
 
 body {
-    font-family: var(--font-sans);
-    line-height: 1.5;
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    letter-spacing: var(--tracking-normal);
     color: var(--text-color);
 }
 

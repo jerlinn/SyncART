@@ -149,14 +149,16 @@ main {
 }
 
 .logo img {
-    width: 120px;
-    height: 48px;
+    width: auto;
+    height: 28px;
+    max-width: 140px;
     object-fit: contain;
     transition: all 0.3s ease;
 }
 
 .nav-center {
-    display: flex;
+    /* B&O-style: links live in the hamburger menu (mobile-menu); keep DOM for JS cloning */
+    display: none;
     gap: 40px;
 }
 
@@ -182,7 +184,8 @@ main {
 /* .pre-order-btn styles removed */
 
 .mobile-menu-btn {
-    display: none;
+    /* B&O-style: always show menu button */
+    display: block;
     border: none;
     background: none;
     cursor: pointer;
@@ -305,7 +308,8 @@ main {
 }
 
 .mobile-menu-btn {
-    display: none;
+    /* B&O-style: always show menu button */
+    display: block;
     border: none;
     background: none;
     cursor: pointer;
@@ -326,8 +330,8 @@ main {
 }
 
 @media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
+    .logo img {
+        height: 24px;
     }
 }
 

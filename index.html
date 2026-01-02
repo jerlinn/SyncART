@@ -20,7 +20,7 @@
         <div class="nav-container">
             <div class="nav-left">
                 <a href="index.html" class="logo">
-                    <img src="images/img_Lunawake_logo.png" alt="Lunawake Logo">
+                    <img src="images/logo_lunawake.png" alt="Lunawake Logo" onerror="this.onerror=null;this.src='images/img_Lunawake_logo.png';">
                 </a>
             </div>
 
@@ -106,21 +106,7 @@
                     <p>Every morning is different, and your wake-up should be too.<br>
                     Lunawake learns your sleep patterns and personal preferences to create the perfect start to your day.<br>
                     From gentle sounds to motivational messages, everything is tailored just for you.</p>
-                    <img src="images/img_day and night.png" alt="Personalized Wake-Up" class="clickable-image" onclick="
-                        let lightbox = document.querySelector('.image-lightbox') || (() => {
-                            const lb = document.createElement('div');
-                            lb.className = 'image-lightbox';
-                            lb.innerHTML = '<div class=\\'image-lightbox-content\\'><button class=\\'image-lightbox-close\\'>&times;</button><img class=\\'image-lightbox-img\\' src=\\'\\'></div>';
-                            document.body.appendChild(lb);
-                            lb.onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
-                            lb.querySelector('.image-lightbox-close').onclick = () => { lb.classList.remove('active'); document.body.style.overflow = ''; };
-                            lb.querySelector('.image-lightbox-img').onclick = (e) => e.stopPropagation();
-                            return lb;
-                        })();
-                        lightbox.querySelector('.image-lightbox-img').src = this.src;
-                        document.body.style.overflow = 'hidden';
-                        lightbox.classList.add('active');
-                    ">
+                    <img src="images/img_day and night.png" alt="Personalized Wake-Up" class="clickable-image" onclick="openImageLightbox(this.src, this.alt)">
                 </div>
                 
                 <div class="feature-panel feature-panel-1" id="Precise wake-up">

@@ -34,9 +34,9 @@ h1, h2, h3, h4, h5, h6 {
     --ces-hero-top: #1B214A;
     --ces-hero-mid: #232B5B;
     /* Glass header defaults (tints by page background) */
-    --header-bg: rgba(255, 255, 255, 0.42);
+    --header-bg: rgba(255, 255, 255, 0.64);
     --header-border: rgba(0, 0, 0, 0.06);
-    --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+    --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.06);
     
     /* Font weights */
     --weight-ultralight: 100;
@@ -207,7 +207,7 @@ a {
     background: transparent;
     color: rgba(255, 255, 255, 0.92);
     /* White glass on dark for a more natural "inverted" feel */
-    --header-bg: rgba(255, 255, 255, 0.10);
+    --header-bg: rgba(255, 255, 255, 0.14);
     --header-border: rgba(255, 255, 255, 0.18);
     --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.10);
 }

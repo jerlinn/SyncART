@@ -1,12 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Header glass appears only after scrolling
     const header = document.querySelector('.header');
+    const SCROLL_THRESHOLD = 24;
     const syncHeaderScrollState = () => {
         if (!header) return;
-        header.classList.toggle('is-scrolled', window.scrollY > 8);
+        header.classList.toggle('is-scrolled', window.scrollY > SCROLL_THRESHOLD);
     };
+    // Initial + restore checks (Safari/iOS may restore scroll after DOMContentLoaded)
     syncHeaderScrollState();
-    window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
+    window.requestAnimationFrame(syncHeaderScrollState);
+    window.addEventListener('load', syncHeaderScrollState);
+    window.addEventListener('pageshow', syncHeaderScrollState);
+    window.addEventListener('resize', syncHeaderScrollState);
+    // Passive listener where supported (fallback for older browsers)
+    try {
+        window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
+    } catch (e) {
+        window.addEventListener('scroll', syncHeaderScrollState);
+    }
 
     // 移动端菜单处理
     const initMobileMenu = () => {

@@ -2227,15 +2227,15 @@ main {
 .footer-brand {
     justify-self: end;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: column;
     gap: 8px;
-    text-align: right;
+    text-align: left;
 }
 
 .footer-site {
     display: block;
-    text-align: right;
+    text-align: left;
 }
 .footer-meta {
     justify-self: start;

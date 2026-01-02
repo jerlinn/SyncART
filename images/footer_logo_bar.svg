@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="111" viewBox="0 0 1280 111" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lunawake footer logo">
+  <defs>
+    <linearGradient id="wingL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF9B6A"/>
+      <stop offset="55%" stop-color="#FF6A57"/>
+      <stop offset="100%" stop-color="#FF3B3B"/>
+    </linearGradient>
+    <linearGradient id="wingR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF7A5A"/>
+      <stop offset="55%" stop-color="#FF4E47"/>
+      <stop offset="100%" stop-color="#FF2D2D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Black strip -->
+  <rect x="0" y="0" width="1280" height="111" fill="#000000"/>
+
+  <!-- Butterfly mark (right aligned) -->
+  <g transform="translate(1114 16) scale(1.65)">
+    <path d="M2 6C2 6 12 2 18 12C20 16 22 20 22 24C22 28 20 32 18 36C12 46 2 42 2 42V6Z" fill="url(#wingL)"/>
+    <path d="M46 6C46 6 36 2 30 12C28 16 26 20 26 24C26 28 28 32 30 36C36 46 46 42 46 42V6Z" fill="url(#wingR)"/>
+  </g>
+</svg>
+

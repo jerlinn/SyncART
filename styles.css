@@ -27,6 +27,8 @@ h1, h2, h3, h4, h5, h6 {
     --text-color: #1d1d1f;
     --color-text-primary: #1d1d1f;
     --color-text-secondary: #6e6e73;
+    /* Site background (PANTONE 11-4201 Cloud Dancer approximation) */
+    --bg-site: #F0EEE9;
     
     /* Font weights */
     --weight-ultralight: 100;
@@ -57,6 +59,7 @@ body {
     line-height: var(--leading-relaxed);
     letter-spacing: var(--tracking-normal);
     color: #1d1d1f;
+    background-color: var(--bg-site);
 }
 
 /* Hero Title - legacy selector; keep consistent with current system */
@@ -99,6 +102,7 @@ body {
     line-height: var(--leading-relaxed);
     letter-spacing: var(--tracking-normal);
     color: var(--text-color);
+    background-color: var(--bg-site);
 }
 
 a {
@@ -1631,7 +1635,7 @@ main {
 .footer {
     padding: 56px 0;
     border-top: 1px solid rgba(234, 234, 234, 0.8);
-    background: #fff;
+    background: var(--bg-site);
 }
 
 .footer-content {
@@ -1650,6 +1654,12 @@ main {
     font-weight: 600;
     letter-spacing: 0.01em;
     white-space: nowrap;
+}
+
+.footer-logo {
+    display: block;
+    width: min(320px, 60vw);
+    height: auto;
 }
 
 .footer-nav {
@@ -3898,7 +3908,7 @@ object.quote-svg-overlay {
 
 .ces-timeline {
     padding: 48px 0 64px;
-    background: #fff;
+    background: transparent;
 }
 
 .timeline-item {
@@ -3920,12 +3930,12 @@ object.quote-svg-overlay {
    ========================================================================== */
 .updates-feed {
     padding: 48px 0 64px;
-    background: #fff;
+    background: transparent;
 }
 
 .poster-section {
     padding: 48px 0 24px;
-    background: #fff;
+    background: transparent;
 }
 
 .poster-image {
@@ -3935,7 +3945,7 @@ object.quote-svg-overlay {
 }
 
 .updates-header {
-    background: #fff;
+    background: transparent;
 }
 
 .update-card {

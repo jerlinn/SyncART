@@ -84,6 +84,12 @@ html, body, button, input, textarea, select {
     font-family: var(--font-primary);
 }
 
+/* Hard-enforce sans inside Support (Guide) cards (prevents any late overrides) */
+.guide-page .guide-card,
+.guide-page .guide-card * {
+    font-family: var(--font-primary) !important;
+}
+
 /* Hero Title - legacy selector; keep consistent with current system */
 .main-title {
     font-family: var(--font-display);

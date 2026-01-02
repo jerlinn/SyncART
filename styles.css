@@ -29,6 +29,8 @@ h1, h2, h3, h4, h5, h6 {
     --color-text-secondary: #6e6e73;
     /* Site background (PANTONE 11-4201 Cloud Dancer approximation) */
     --bg-site: #F0EEE9;
+    --ces-hero-top: #1B214A;
+    --ces-hero-mid: #232B5B;
     
     /* Font weights */
     --weight-ultralight: 100;
@@ -3946,6 +3948,132 @@ object.quote-svg-overlay {
 
 .updates-header {
     background: transparent;
+}
+
+.ces-official-hero {
+    position: relative;
+    padding: calc(var(--header-height) + 72px) 0 88px;
+    background: linear-gradient(180deg, var(--ces-hero-top) 0%, var(--ces-hero-mid) 58%, var(--bg-site) 100%);
+    overflow: hidden;
+}
+
+.ces-official-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1200px 520px at 72% 92%, rgba(255, 143, 102, 0.18), rgba(255, 143, 102, 0) 62%);
+    pointer-events: none;
+}
+
+.ces-official-hero-inner {
+    position: relative;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.ces-official-title {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0 0 22px 0;
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: var(--tracking-tight);
+    line-height: 1.02;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: clamp(54px, 6vw, 92px);
+}
+
+.ces-official-title span {
+    display: block;
+}
+
+.ces-official-subtitle {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.ces-official-note {
+    margin: 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.ces-content {
+    padding: 40px 0 76px;
+    background: transparent;
+}
+
+.ces-info-card {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 18px 18px 8px;
+}
+
+.ces-section-title {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: var(--weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.ces-section-title-muted {
+    margin-top: 28px;
+    color: rgba(29, 29, 31, 0.62);
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .ces-official-hero {
+        padding: calc(var(--header-height) + 56px) 0 72px;
+    }
+    .album-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.album-card {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 18px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.album-day {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(29, 29, 31, 0.62);
+}
+
+.album-empty {
+    margin-top: 14px;
+    border-radius: 12px;
+    border: 1px dashed rgba(0, 0, 0, 0.14);
+    background: rgba(255, 255, 255, 0.45);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(29, 29, 31, 0.55);
+    font-size: 14px;
 }
 
 .update-card {

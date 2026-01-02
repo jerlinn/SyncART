@@ -1688,6 +1688,13 @@ main {
     border-top: none;
 }
 
+/* Remove legacy FAQ borders/radius inside Guide cards (prevents the “extra line”) */
+.guide-page .guide-card .faq-item {
+    border: 0 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
 .guide-card .faq-question {
     padding: 20px 28px;
     display: flex;

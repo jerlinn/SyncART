@@ -2239,15 +2239,15 @@ main {
 .footer-brand {
     justify-self: end;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     flex-direction: column;
     gap: 8px;
-    text-align: left;
+    text-align: right;
 }
 
 .footer-site {
     display: block;
-    text-align: left;
+    text-align: right;
 }
 .footer-meta {
     justify-self: start;

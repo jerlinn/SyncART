@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <title>Team Vlog - Lunawake</title>
+    <title>Updates - Lunawake</title>
     <link rel="stylesheet" href="styles.css?v=navfix1">
 </head>
 <script src="js/header_menu.js"></script>
@@ -23,7 +23,7 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="support.html">Support</a>
-                <a href="updates.html" class="active">Vlog</a>
+                <a href="updates.html" class="active">Updates</a>
             </div>
 
             <div class="nav-right">
@@ -33,87 +33,59 @@
     </header>
 
     <main>
-        <!-- Team Vlog Hero -->
+        <!-- Updates Hero -->
         <section class="ces-hero" aria-label="Latest updates">
             <div class="ces-hero-bg" role="img" aria-label="Lunawake poster background"></div>
             <div class="container ces-hero-inner">
-                <h1 class="page-hero-title">Team Vlog</h1>
-                <p class="page-hero-subtitle">New → old. We’ll keep posting our latest progress and on-the-ground moments.</p>
+                <h1 class="page-hero-title">Updates</h1>
+                <p class="page-hero-subtitle">A running log of demos, milestones, and changes we make along the way.</p>
             </div>
         </section>
 
-        <!-- Vlog Feed (newest → oldest) -->
-        <section class="ces-timeline" aria-label="Team vlog feed">
+        <!-- Update cards (newest → oldest) -->
+        <section class="updates-feed" aria-label="Updates feed">
             <div class="support-container">
-                <h2 class="faq-group-title">Latest</h2>
-
-                <!-- Pinned / first post: booth info -->
-                <article class="timeline-item timeline-item-featured">
-                    <div class="timeline-date">CES</div>
-                    <h3 class="timeline-title">Booth #60449 — Eureka Park</h3>
-                    <p class="timeline-body">Come say hi. We’ll be posting daily highlights, photos, and quick notes so everyone can follow along.</p>
-                    <div class="ces-booth-card" aria-label="CES booth details">
-                        <div class="ces-booth-kicker">Find us at</div>
-                        <div class="ces-booth-main">
-                            <div class="ces-booth-number">Booth #60449</div>
-                            <div class="ces-booth-location">Eureka Park</div>
-                        </div>
-                        <div class="ces-booth-note">Poster background is live—add your real booth photos below as the show begins.</div>
+                <article class="update-card update-card-featured">
+                    <div class="update-date">CES</div>
+                    <div class="update-media" aria-label="CES poster">
+                        <img class="update-media-img" src="images/ces_poster.svg" alt="Lunawake CES poster">
+                    </div>
+                    <div class="update-content">
+                        <h3 class="update-title">Booth #60449 — Eureka Park</h3>
+                        <p class="update-body">We’ll share demos, behind-the-scenes moments, and daily highlights. Follow along here.</p>
                     </div>
                 </article>
 
-                <article class="timeline-item">
-                    <div class="timeline-date">Day 2</div>
-                    <h3 class="timeline-title">Iterate & Improve</h3>
-                    <p class="timeline-body">We’ll share what we changed overnight, what we learned, and what we’ll test next on the floor.</p>
-                    <div class="timeline-schedule">
-                        <div class="timeline-schedule-title">Focus</div>
-                        <ul>
-                            <li>Refine pitch based on Day 1 feedback</li>
-                            <li>Record mini-demos</li>
-                            <li>Capture booth moments</li>
-                        </ul>
+                <article class="update-card">
+                    <div class="update-date">Day 2</div>
+                    <div class="update-media" aria-label="Day 2 main photo">
+                        <div class="ces-photo-placeholder">Add main photo: <code>images/ces/day2_main.jpg</code></div>
                     </div>
-                    <div class="ces-photos" aria-label="Day 2 photos">
-                        <div class="ces-photo-placeholder">Add photos: <code>images/ces/day2_01.jpg</code></div>
-                        <div class="ces-photo-placeholder">Add photos: <code>images/ces/day2_02.jpg</code></div>
+                    <div class="update-content">
+                        <h3 class="update-title">Iterate & Improve</h3>
+                        <p class="update-body">We’ll share what we changed overnight, what we learned, and what we’ll test next on the floor.</p>
                     </div>
                 </article>
 
-                <article class="timeline-item">
-                    <div class="timeline-date">Day 1</div>
-                    <h3 class="timeline-title">Show Floor: First Conversations</h3>
-                    <p class="timeline-body">First day energy—meeting people, gathering feedback, and learning what resonates most.</p>
-                    <div class="timeline-schedule">
-                        <div class="timeline-schedule-title">Highlights</div>
-                        <ul>
-                            <li>Live demos at Booth #60449</li>
-                            <li>Press / partner chats</li>
-                            <li>Quick takeaways posted here</li>
-                        </ul>
+                <article class="update-card">
+                    <div class="update-date">Day 1</div>
+                    <div class="update-media" aria-label="Day 1 main photo">
+                        <div class="ces-photo-placeholder">Add main photo: <code>images/ces/day1_main.jpg</code></div>
                     </div>
-                    <div class="ces-photos" aria-label="Day 1 photos">
-                        <div class="ces-photo-placeholder">Add photos: <code>images/ces/day1_01.jpg</code></div>
-                        <div class="ces-photo-placeholder">Add photos: <code>images/ces/day1_02.jpg</code></div>
-                        <div class="ces-photo-placeholder">Add photos: <code>images/ces/day1_03.jpg</code></div>
+                    <div class="update-content">
+                        <h3 class="update-title">Show Floor: First Conversations</h3>
+                        <p class="update-body">First day energy—meeting people, gathering feedback, and learning what resonates most.</p>
                     </div>
                 </article>
 
-                <article class="timeline-item">
-                    <div class="timeline-date">Day 0</div>
-                    <h3 class="timeline-title">Arrival & Setup</h3>
-                    <p class="timeline-body">We’re getting everything ready for the show. Booth build, device checks, and last-minute details.</p>
-                    <div class="timeline-schedule">
-                        <div class="timeline-schedule-title">Planned</div>
-                        <ul>
-                            <li>Booth setup</li>
-                            <li>Team briefing</li>
-                            <li>Poster + demo readiness</li>
-                        </ul>
+                <article class="update-card">
+                    <div class="update-date">Day 0</div>
+                    <div class="update-media" aria-label="Day 0 main photo">
+                        <div class="ces-photo-placeholder">Add main photo: <code>images/ces/day0_main.jpg</code></div>
                     </div>
-                    <div class="ces-photos" aria-label="Day 0 photos">
-                        <div class="ces-photo-placeholder">Add photos: <code>images/ces/day0_01.jpg</code></div>
-                        <div class="ces-photo-placeholder">Add photos: <code>images/ces/day0_02.jpg</code></div>
+                    <div class="update-content">
+                        <h3 class="update-title">Arrival & Setup</h3>
+                        <p class="update-body">We’re getting everything ready for the show. Booth build, device checks, and last-minute details.</p>
                     </div>
                 </article>
             </div>
@@ -129,7 +101,7 @@
             <nav class="footer-nav" aria-label="Footer">
                 <a href="about.html">About</a>
                 <a href="support.html">Support</a>
-                <a href="updates.html" class="active">Vlog</a>
+                <a href="updates.html" class="active">Updates</a>
             </nav>
             <div class="footer-meta">
                 <div class="social-links">

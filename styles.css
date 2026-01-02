@@ -213,6 +213,52 @@ a {
     text-align: center;
 }
 
+/* Apple-style minimal CES hero */
+.ces-hero-min .ces-invite-center {
+    max-width: 760px;
+}
+
+.ces-hero-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 520;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(44px, 5vw, 64px);
+    line-height: 1.08;
+}
+
+.ces-hero-booth {
+    margin: 20px auto 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 16px 22px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    color: rgba(255, 255, 255, 0.96);
+    font-size: clamp(18px, 2.4vw, 22px);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+
+.ces-hero-meta {
+    margin: 14px 0 0 0;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.ces-hero-note {
+    margin: 10px 0 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
 .ces-pill {
     display: inline-flex;
     align-items: center;

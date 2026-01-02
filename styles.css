@@ -1402,7 +1402,7 @@ main {
 .about-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 80px 24px;
 }
 
 .about-title {
@@ -1420,6 +1420,8 @@ main {
 }
 
 .about-content {
+    /* Match Support: add “air” between hero title and first body block */
+    margin-top: var(--space-10); /* 40px */
     font-size: 16px;
     line-height: 1.6;
     color: var(--main-color);

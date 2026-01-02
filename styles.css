@@ -1690,7 +1690,7 @@ main {
 
 .footer-logo {
     display: block;
-    width: 44px;
+    width: min(220px, 42vw);
     height: auto;
 }
 

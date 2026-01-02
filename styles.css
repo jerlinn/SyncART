@@ -3795,7 +3795,7 @@ object.quote-svg-overlay {
 }
 
 .hero-section .main-title {
-    font-family: "Gilroy", var(--font-display);
+    font-family: var(--font-display);
     /* B&O-style airy hero: larger scale, lighter weight, slightly tighter leading */
     font-size: var(--text-8xl);
     font-weight: var(--weight-light);

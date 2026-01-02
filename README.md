@@ -6,13 +6,12 @@ A revolutionary AI-powered wake-up device that personalizes your morning experie
 
 ## Project Overview
 
-Lunawake is a smart alarm clock that combines AI technology with personalized wake-up experiences. The website showcases the product's features, team, and support information.
+Lunawake is a smart alarm clock that combines AI technology with personalized wake-up experiences. The website showcases the product's features and support information.
 
 ## Features
 
 - Responsive design for all devices
 - Mobile-first approach
 - Interactive FAQ system
-- Team profiles with dynamic content loading
 - Support ticket system
 - Region selector functionality

@@ -265,15 +265,16 @@ main {
     }
 
     .nav-center {
-        display: none;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex: 1;
     }
 
     /* .pre-order-btn mobile styles removed */
 
     .mobile-menu-btn {
-        display: block;
-        position: relative;
-        z-index: 1001;
+        display: none;
     }
 
     .nav-right.active {

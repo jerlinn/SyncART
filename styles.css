@@ -1684,10 +1684,7 @@ main {
 }
 
 .guide-card .faq-item {
-    border-top: 1px solid rgba(20, 20, 20, 0.08);
-}
-
-.guide-card .faq-item:first-child {
+    /* No inner dividers inside the frosted card */
     border-top: none;
 }
 

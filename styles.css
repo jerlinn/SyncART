@@ -31,6 +31,10 @@ h1, h2, h3, h4, h5, h6 {
     --bg-site: #F0EEE9;
     --ces-hero-top: #1B214A;
     --ces-hero-mid: #232B5B;
+    /* Glass header defaults (tints by page background) */
+    --header-bg: rgba(255, 255, 255, 0.42);
+    --header-border: rgba(0, 0, 0, 0.06);
+    --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
     
     /* Font weights */
     --weight-ultralight: 100;
@@ -149,6 +153,15 @@ a {
     }
 }
 
+/* Page theme overrides */
+.ces-page {
+    background: linear-gradient(180deg, var(--ces-hero-top) 0%, var(--ces-hero-mid) 55%, #1e2654 100%);
+    color: rgba(255, 255, 255, 0.92);
+    --header-bg: rgba(18, 22, 45, 0.28);
+    --header-border: rgba(255, 255, 255, 0.10);
+    --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
 /* ==========================================================================
    Header & Navigation Styles
    ========================================================================== */
@@ -159,10 +172,10 @@ a {
     right: 0;
     /* Keep brand visible while scrolling */
     z-index: 2000;
-    /* iOS-style glass */
-    background: rgba(255, 255, 255, 0.78);
-    border-bottom: 1px solid rgba(234, 234, 234, 0.8);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+    /* iOS-style glass (transparent, background-aware) */
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+    box-shadow: var(--header-shadow);
     backdrop-filter: saturate(180%) blur(16px);
     -webkit-backdrop-filter: saturate(180%) blur(16px);
 }
@@ -1638,6 +1651,23 @@ main {
     padding: 56px 0;
     border-top: 1px solid rgba(234, 234, 234, 0.8);
     background: var(--bg-site);
+}
+
+/* Footer on dark (CES) background should feel like glass, not a solid block */
+.ces-page .footer {
+    background: rgba(18, 22, 45, 0.18);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ces-page .footer-nav a,
+.ces-page .footer-brand .tagline,
+.ces-page .footer-meta {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.ces-page .footer-nav a:hover,
+.ces-page .footer-nav a.active {
+    color: rgba(255, 255, 255, 0.96);
 }
 
 .footer-content {
@@ -3953,7 +3983,7 @@ object.quote-svg-overlay {
 .ces-official-hero {
     position: relative;
     padding: calc(var(--header-height) + 72px) 0 88px;
-    background: linear-gradient(180deg, var(--ces-hero-top) 0%, var(--ces-hero-mid) 58%, var(--bg-site) 100%);
+    background: transparent;
     overflow: hidden;
 }
 
@@ -4010,7 +4040,7 @@ object.quote-svg-overlay {
 .ces-info-card {
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 18px 18px 8px;
@@ -4046,7 +4076,7 @@ object.quote-svg-overlay {
 .album-card {
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 18px;

@@ -70,6 +70,20 @@ body {
     background-color: var(--bg-site);
 }
 
+/* Hard enforce sans everywhere (prevents any UA serif fallback on headings/buttons/forms) */
+html, body, button, input, textarea, select {
+    font-family: var(--font-primary);
+}
+
+.guide-page h1,
+.guide-page h2,
+.guide-page h3,
+.guide-page p,
+.guide-page .faq-question,
+.guide-page .faq-answer {
+    font-family: var(--font-primary);
+}
+
 /* Hero Title - legacy selector; keep consistent with current system */
 .main-title {
     font-family: var(--font-display);

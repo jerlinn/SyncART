@@ -83,7 +83,7 @@ Seasoned tech executive discovering mindfulness after two decades in Silicon Val
 
 ##### Initial Settings
 - Current status: Engineering Director at Fortune 500
-- Target: Sustainable high performance with inner peace by 2024
+- Target: Sustainable high performance with inner peace
 - Strategy: Daily mindfulness practice with leadership integration
 - Morning schedule: 5:45 AM wake-up
 - Location: San Francisco, CA

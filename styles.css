@@ -183,6 +183,11 @@ a {
     box-sizing: border-box;
 }
 
+.page-wrap.page-wrap--hero {
+    /* Match About page rhythm: roomy top, tighter bottom before first card */
+    padding-bottom: 24px;
+}
+
 .page-inner {
     max-width: 800px;
     margin: 0 auto;
@@ -194,6 +199,10 @@ a {
 @media (max-width: 768px) {
     .page-wrap {
         padding: 56px 20px;
+    }
+
+    .page-wrap.page-wrap--hero {
+        padding-bottom: 18px;
     }
 
     .page-inner {
@@ -1595,6 +1604,12 @@ main {
     padding: 40px 0;
 }
 
+.guide-page .faq-section {
+    /* Avoid stacking padding with .page-wrap bottom padding on Guide page */
+    padding-top: 0;
+    padding-bottom: 64px;
+}
+
 .page-inner .faq-container {
     max-width: 100%;
     margin: 0;
@@ -1604,7 +1619,7 @@ main {
    Guide page (Support) — frosted section cards (React/Tailwind reference)
    ========================================================================== */
 .guide-header {
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .guide-subhead {

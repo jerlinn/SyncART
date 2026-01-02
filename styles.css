@@ -427,6 +427,18 @@ a {
     will-change: backdrop-filter, background-color;
 }
 
+/* Mobile: show the glass baseplate even at the top (better readability on phones) */
+@media (max-width: 768px) {
+    .header {
+        background: var(--header-bg);
+        background-color: var(--header-bg);
+        border-bottom: 1px solid var(--header-border);
+        box-shadow: var(--header-shadow);
+        backdrop-filter: saturate(180%) blur(16px);
+        -webkit-backdrop-filter: saturate(180%) blur(16px);
+    }
+}
+
 /* Fallback when backdrop-filter isn’t supported (still show a “glass” tint) */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .header.is-scrolled {

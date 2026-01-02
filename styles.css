@@ -2072,16 +2072,18 @@ main {
    ========================================================================== */
 .footer {
     padding: 56px 0;
-    border-top: 1px solid rgba(234, 234, 234, 0.8);
-    background: var(--bg-site);
-}
-
-/* Footer on dark (CES) background should feel like glass, not a solid block */
-.ces-page .footer {
-    background: rgba(255, 255, 255, 0.10);
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    /* Match the top bar: iOS glass layer */
+    border-top: 1px solid var(--header-border);
+    background: var(--header-bg);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02);
     backdrop-filter: saturate(180%) blur(16px);
     -webkit-backdrop-filter: saturate(180%) blur(16px);
+}
+
+/* Footer on dark (CES) background should feel like the same iOS glass */
+.ces-page .footer {
+    background: var(--header-bg);
+    border-top: 1px solid var(--header-border);
 }
 
 .ces-page .footer-nav a,

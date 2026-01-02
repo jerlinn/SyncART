@@ -1468,9 +1468,11 @@ main {
 
 .faq-group-title {
     font-size: 1em;
-    color: var(--info-color);
+    color: #8a8a8f;
+    font-weight: var(--weight-medium);
     margin: 2em 0 0 0;
-    padding-bottom: 0.5em;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .faq-container .faq-group-title:first-of-type {
@@ -5007,10 +5009,10 @@ h3,
     font-weight: var(--weight-medium);
     line-height: var(--leading-snug);
     letter-spacing: var(--tracking-normal);
-    color: var(--text-secondary);
+    color: #8a8a8f;
     margin: var(--space-10) 0 var(--space-4) 0;
-    padding-bottom: var(--space-2);
-    border-bottom: 1px solid var(--border-tertiary);
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .faq-container .faq-group-title:first-of-type {

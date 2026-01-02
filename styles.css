@@ -2008,6 +2008,24 @@ main {
     left: 0;
 }
 
+.about-card-kicker {
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(20, 20, 20, 0.65);
+}
+
+.about-story-card .signature-block {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(20, 20, 20, 0.08);
+    min-height: 66px;
+}
+
+.about-story-card .stamp-container {
+    bottom: 8px;
+}
+
 .signature-block {
     text-align: right;
     margin-top: 40px;

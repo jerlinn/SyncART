@@ -6,10 +6,11 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>CES - Lunawake</title>
-    <link rel="stylesheet" href="styles.css?v=navfix12">
+    <link rel="stylesheet" href="styles.css?v=navfix13">
 </head>
 <script src="js/header_menu.js"></script>
 <body class="ces-page">
+    <div class="ces-backdrop" aria-hidden="true"></div>
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
@@ -33,17 +34,27 @@
     </header>
 
     <main>
-        <!-- CES Hero (official-style) -->
-        <section class="ces-official-hero" aria-label="CES hero">
-            <div class="ces-official-hero-inner">
-                <h1 class="ces-official-title">
-                    <span>January 6–9</span>
-                    <span>Las Vegas, NV</span>
-                </h1>
-                <p class="ces-official-subtitle">Eureka Park · Booth #60449</p>
-                <p class="ces-official-note">
-                    What we’re showing: No-wear sleep sensing · Breath-paced unwind · Wake when your body is ready
-                </p>
+        <!-- CES Invite Hero (Tailwind reference → static) -->
+        <section class="ces-invite-hero" aria-label="CES invite">
+            <div class="ces-container">
+                <div class="ces-invite-center">
+                    <div class="ces-pill" aria-label="CES badge">
+                        <span class="ces-dot" aria-hidden="true"></span>
+                        CES 2026 · Eureka Park
+                    </div>
+
+                    <h1 class="ces-invite-title">Come experience Lunawake at CES.</h1>
+
+                    <p class="ces-invite-date">January 6–9 · Las Vegas, NV</p>
+
+                    <div class="ces-booth-chip" aria-label="Booth information">
+                        Eureka Park <span class="ces-sep">·</span> Booth <span class="ces-booth-strong">#60449</span>
+                    </div>
+
+                    <p class="ces-invite-note">Live demos throughout the day.</p>
+
+                    <p class="ces-invite-footnote">Official CES page. Updated for CES week.</p>
+                </div>
             </div>
         </section>
 

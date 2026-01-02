@@ -157,12 +157,124 @@ a {
 
 /* Page theme overrides */
 .ces-page {
-    background: linear-gradient(180deg, var(--ces-hero-top) 0%, var(--ces-hero-mid) 55%, #1e2654 100%);
+    /* Page backdrop handled by .ces-backdrop */
+    background: transparent;
     color: rgba(255, 255, 255, 0.92);
     /* White glass on dark for a more natural "inverted" feel */
     --header-bg: rgba(255, 255, 255, 0.10);
     --header-border: rgba(255, 255, 255, 0.18);
     --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.10);
+}
+
+/* Fixed CES background (radials + deep gradient) */
+.ces-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    background:
+        radial-gradient(1200px 700px at 50% -10%, rgba(255, 255, 255, 0.10), transparent 60%),
+        radial-gradient(900px 500px at 80% 30%, rgba(255, 106, 94, 0.10), transparent 55%),
+        linear-gradient(180deg, #070A14 0%, #0B1230 55%, #101A3D 100%);
+}
+
+/* CES invite hero */
+.ces-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.ces-invite-hero {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+.ces-invite-center {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ces-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.ces-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #FF6A5E;
+}
+
+.ces-invite-title {
+    margin: 26px 0 0 0;
+    font-family: var(--font-display);
+    font-weight: 520;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(44px, 5vw, 64px);
+    line-height: 1.08;
+}
+
+.ces-invite-date {
+    margin: 16px 0 0 0;
+    font-size: clamp(18px, 2vw, 20px);
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.ces-booth-chip {
+    margin: 18px auto 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 14px 18px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.ces-sep {
+    color: rgba(255, 255, 255, 0.35);
+    padding: 0 10px;
+}
+
+.ces-booth-strong {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.ces-invite-note {
+    margin: 14px 0 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.ces-invite-footnote {
+    margin: 26px 0 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.45);
 }
 
 /* CES header nav text should be light */
@@ -4110,57 +4222,7 @@ object.quote-svg-overlay {
     background: transparent;
 }
 
-.ces-official-hero {
-    position: relative;
-    padding: calc(var(--header-height) + 72px) 0 88px;
-    background: transparent;
-    overflow: hidden;
-}
-
-.ces-official-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(1200px 520px at 72% 92%, rgba(255, 143, 102, 0.18), rgba(255, 143, 102, 0) 62%);
-    pointer-events: none;
-}
-
-.ces-official-hero-inner {
-    position: relative;
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 0 24px;
-    text-align: center;
-}
-
-.ces-official-title {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 14px;
-    margin: 0 0 22px 0;
-    font-family: var(--font-display);
-    font-weight: 300;
-    letter-spacing: var(--tracking-tight);
-    line-height: 1.02;
-    color: rgba(255, 255, 255, 0.96);
-    font-size: clamp(54px, 6vw, 92px);
-}
-
-.ces-official-title span {
-    display: block;
-}
-
-.ces-official-subtitle {
-    margin: 0 0 12px 0;
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.82);
-}
-
-.ces-official-note {
-    margin: 0;
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.72);
-}
+/* Legacy CES hero classes kept for backwards safety (no longer used on page) */
 
 .ces-content {
     padding: 40px 0 76px;

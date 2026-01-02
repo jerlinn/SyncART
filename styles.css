@@ -3990,6 +3990,26 @@ object.quote-svg-overlay {
     color: var(--color-text-primary);
 }
 
+.update-kicker {
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+}
+
+.update-list {
+    margin: 10px 0 0 0;
+    padding-left: 18px;
+}
+
+.update-list li {
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+}
+
 .timeline-date {
     font-size: 12px;
     letter-spacing: 0.14em;

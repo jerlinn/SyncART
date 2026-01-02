@@ -125,9 +125,21 @@ a {
     box-sizing: border-box;
 }
 
+.page-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
     .page-wrap {
         padding: 56px 20px;
+    }
+
+    .page-inner {
+        padding: 0 20px;
     }
 }
 
@@ -1336,6 +1348,11 @@ main {
 
 .faq-section {
     padding: 40px 0;
+}
+
+.page-inner .faq-container {
+    max-width: 100%;
+    margin: 0;
 }
 
 .faq-container {

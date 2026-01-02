@@ -157,9 +157,20 @@ a {
 .ces-page {
     background: linear-gradient(180deg, var(--ces-hero-top) 0%, var(--ces-hero-mid) 55%, #1e2654 100%);
     color: rgba(255, 255, 255, 0.92);
-    --header-bg: rgba(18, 22, 45, 0.28);
-    --header-border: rgba(255, 255, 255, 0.10);
-    --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+    /* White glass on dark for a more natural "inverted" feel */
+    --header-bg: rgba(255, 255, 255, 0.10);
+    --header-border: rgba(255, 255, 255, 0.18);
+    --header-shadow: 0 1px 0 rgba(0, 0, 0, 0.10);
+}
+
+/* CES header nav text should be light */
+.ces-page .nav-center a {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.ces-page .nav-center a:hover,
+.ces-page .nav-center a.active {
+    color: rgba(255, 255, 255, 0.96);
 }
 
 /* ==========================================================================
@@ -1655,8 +1666,10 @@ main {
 
 /* Footer on dark (CES) background should feel like glass, not a solid block */
 .ces-page .footer {
-    background: rgba(18, 22, 45, 0.18);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
 }
 
 .ces-page .footer-nav a,
@@ -4038,11 +4051,11 @@ object.quote-svg-overlay {
 }
 
 .ces-info-card {
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.76);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: saturate(180%) blur(18px);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
     padding: 18px 18px 8px;
 }
 
@@ -4050,12 +4063,12 @@ object.quote-svg-overlay {
     margin: 0 0 12px 0;
     font-size: 18px;
     font-weight: var(--weight-semibold);
-    color: var(--color-text-primary);
+    color: rgba(255, 255, 255, 0.94);
 }
 
 .ces-section-title-muted {
     margin-top: 28px;
-    color: rgba(29, 29, 31, 0.62);
+    color: rgba(255, 255, 255, 0.72);
 }
 
 .album-grid {
@@ -4074,11 +4087,11 @@ object.quote-svg-overlay {
 }
 
 .album-card {
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.76);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: saturate(180%) blur(18px);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
     padding: 18px;
     min-height: 180px;
     display: flex;
@@ -4090,19 +4103,19 @@ object.quote-svg-overlay {
     font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(29, 29, 31, 0.62);
+    color: rgba(255, 255, 255, 0.72);
 }
 
 .album-empty {
     margin-top: 14px;
     border-radius: 12px;
-    border: 1px dashed rgba(0, 0, 0, 0.14);
-    background: rgba(255, 255, 255, 0.45);
+    border: 1px dashed rgba(255, 255, 255, 0.26);
+    background: rgba(255, 255, 255, 0.06);
     height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(29, 29, 31, 0.55);
+    color: rgba(255, 255, 255, 0.70);
     font-size: 14px;
 }
 
@@ -4176,6 +4189,11 @@ object.quote-svg-overlay {
     font-size: 15px;
     line-height: 1.7;
     color: var(--color-text-primary);
+}
+
+/* CES: list text should be light inside glass UI */
+.ces-page .update-list li {
+    color: rgba(255, 255, 255, 0.90);
 }
 
 .timeline-date {

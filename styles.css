@@ -389,7 +389,15 @@ a {
     right: 0;
     /* Keep brand visible while scrolling */
     z-index: 2000;
-    /* iOS-style glass (transparent, background-aware) */
+    /* Default: no background. Glass appears only after scrolling. */
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.header.is-scrolled {
     background: var(--header-bg);
     border-bottom: 1px solid var(--header-border);
     box-shadow: var(--header-shadow);
@@ -2104,18 +2112,18 @@ main {
    ========================================================================== */
 .footer {
     padding: 56px 0;
-    /* Match the top bar: iOS glass layer */
-    border-top: 1px solid var(--header-border);
-    background: var(--header-bg);
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.02);
-    backdrop-filter: saturate(180%) blur(16px);
-    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    /* Blend into page background (no bar fill) */
+    background: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 /* Footer on dark (CES) background should feel like the same iOS glass */
 .ces-page .footer {
-    background: var(--header-bg);
-    border-top: 1px solid var(--header-border);
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .ces-page .footer-nav a,

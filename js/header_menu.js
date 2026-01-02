@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Header glass appears only after scrolling
+    const header = document.querySelector('.header');
+    const syncHeaderScrollState = () => {
+        if (!header) return;
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    syncHeaderScrollState();
+    window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
+
     // 移动端菜单处理
     const initMobileMenu = () => {
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -25,8 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // 将移动端菜单添加到 header
-        const header = document.querySelector('.header');
-        header.appendChild(mobileMenu);
+        const headerEl = document.querySelector('.header');
+        if (!headerEl) return;
+        headerEl.appendChild(mobileMenu);
         document.body.appendChild(backdrop);
 
         const openMenu = () => {

@@ -1246,7 +1246,7 @@ main {
    Support Page Styles
    ========================================================================== */
 .support-hero {
-    padding: 40px 0 40px;
+    padding: 80px 0 40px;
     text-align: left;
     background-color: transparent;
 }
@@ -1258,10 +1258,7 @@ main {
 }
 
 .support-hero h1 {
-    font-size: 48px;
-    margin-bottom: 60px;
-    color: var(--main-color);
-    font-family: inherit;
+    margin-bottom: 0;
     text-align: left;
 }
 
@@ -3718,6 +3715,30 @@ object.quote-svg-overlay {
    Hero Section - Main Title
    ========================================================================== */
 
+/* Shared page hero title (About / Support) — aligned with homepage hero scale */
+.page-hero-title {
+    font-family: var(--font-display);
+    font-size: var(--text-6xl);
+    font-weight: var(--weight-light);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-8); /* 32px */
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .page-hero-title {
+        font-size: var(--text-4xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero-title {
+        font-size: var(--text-3xl);
+    }
+}
+
 .hero-section {
     padding: 80px 0 60px;
     background: #ffffff;
@@ -3731,12 +3752,12 @@ object.quote-svg-overlay {
 
 .hero-section .main-title {
     font-family: var(--font-display);
-    font-size: var(--text-6xl);
-    font-weight: var(--font-light);
+    font-size: var(--text-7xl);
+    font-weight: var(--weight-thin);
     color: var(--color-text-primary);
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-tight);
-    margin-bottom: 32px;
+    margin-bottom: var(--space-10); /* 40px */
 }
 
 .hero-section .title-line {
@@ -3763,7 +3784,7 @@ object.quote-svg-overlay {
     }
     
     .hero-section .main-title {
-        font-size: var(--text-4xl);
+        font-size: var(--text-5xl);
     }
     
     .hero-subtitle {
@@ -3777,7 +3798,7 @@ object.quote-svg-overlay {
     }
     
     .hero-section .main-title {
-        font-size: var(--text-3xl);
+        font-size: var(--text-4xl);
     }
     
     .hero-subtitle {

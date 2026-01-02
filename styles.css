@@ -115,6 +115,23 @@ a {
 }
 
 /* ==========================================================================
+   Page Grid (non-home) — B&O-level alignment
+   ========================================================================== */
+.page-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .page-wrap {
+        padding: 56px 20px;
+    }
+}
+
+/* ==========================================================================
    Header & Navigation Styles
    ========================================================================== */
 .header {
@@ -3884,6 +3901,21 @@ object.quote-svg-overlay {
    ========================================================================== */
 .updates-feed {
     padding: 48px 0 64px;
+    background: #fff;
+}
+
+.poster-section {
+    padding: 48px 0 24px;
+    background: #fff;
+}
+
+.poster-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.updates-header {
     background: #fff;
 }
 

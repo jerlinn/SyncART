@@ -129,16 +129,12 @@ main {
     padding-top: var(--header-height);
 }
 
-body.menu-open {
-    overflow: hidden;
-}
-
 .nav-container {
     max-width: var(--max-width);
     margin: 0 auto;
     height: var(--header-height);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 24px var(--container-padding);
 }
@@ -146,7 +142,7 @@ body.menu-open {
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 0;
 }
 
 .logo {
@@ -163,8 +159,7 @@ body.menu-open {
 }
 
 .nav-center {
-    /* B&O-style: links live in the hamburger menu (mobile-menu); keep DOM for JS cloning */
-    display: none;
+    display: flex;
     gap: 40px;
 }
 
@@ -180,27 +175,20 @@ body.menu-open {
 }
 
 .nav-right {
-    /* Keep in DOM for JS cloning, but don’t affect layout (B&O style) */
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 /* .btn-preorder styles removed */
 
 /* .pre-order-btn styles removed */
 
-.mobile-menu-btn {
-    /* B&O-style: always show menu button */
-    display: block;
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 8px;
-}
-
-.mobile-menu-btn img {
-    width: 24px;
-    height: 24px;
-    display: block;
+/* Hamburger menu disabled (classic nav layout) */
+.mobile-menu-btn,
+.mobile-menu,
+.menu-backdrop {
+    display: none !important;
 }
 
 @media (max-width: 768px) {

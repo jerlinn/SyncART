@@ -110,6 +110,38 @@ html, body, button, input, textarea, select {
     line-height: 1.6;
 }
 
+/* About body copy — use the same frosted card language as FAQ */
+.about-story-card {
+    border-radius: 16px;
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overflow: hidden;
+    margin: 18px 0 28px;
+}
+
+.about-story-body {
+    padding: 28px;
+    display: grid;
+    gap: 18px;
+}
+
+.about-story-body p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 28px;
+    color: rgba(20, 20, 20, 0.78);
+}
+
+@media (max-width: 768px) {
+    .about-story-body {
+        padding: 22px 20px;
+        gap: 16px;
+    }
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;

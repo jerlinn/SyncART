@@ -138,7 +138,7 @@ body.menu-open {
     margin: 0 auto;
     height: var(--header-height);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 24px var(--container-padding);
 }
@@ -146,6 +146,7 @@ body.menu-open {
 .nav-left {
     display: flex;
     align-items: center;
+    gap: 16px;
 }
 
 .logo {
@@ -179,9 +180,8 @@ body.menu-open {
 }
 
 .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+    /* Keep in DOM for JS cloning, but don’t affect layout (B&O style) */
+    display: none;
 }
 
 /* .btn-preorder styles removed */

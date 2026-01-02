@@ -1663,8 +1663,9 @@ main {
 }
 
 .guide-card-body {
-    margin-top: 18px;
-    padding-bottom: 4px;
+    /* Tighter, more premium rhythm */
+    margin-top: 12px;
+    padding-bottom: 2px;
 }
 
 .guide-card .faq-group-title {
@@ -1696,7 +1697,7 @@ main {
 }
 
 .guide-card .faq-question {
-    padding: 20px 28px;
+    padding: 16px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1718,7 +1719,7 @@ main {
 }
 
 .guide-card .faq-answer {
-    padding: 0 28px 22px;
+    padding: 0 28px 16px;
 }
 
 .guide-card .faq-answer p {
@@ -1733,7 +1734,7 @@ main {
         padding: 22px 20px 0;
     }
     .guide-card .faq-question {
-        padding: 18px 20px;
+        padding: 14px 20px;
     }
     .guide-card .faq-answer {
         padding: 0 20px 20px;

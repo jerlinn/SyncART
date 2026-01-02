@@ -1248,7 +1248,7 @@ main {
 .support-hero {
     padding: 40px 0 40px;
     text-align: left;
-    background-color: var(--background-color);
+    background-color: transparent;
 }
 
 .support-hero .container {
@@ -1259,9 +1259,9 @@ main {
 
 .support-hero h1 {
     font-size: 48px;
-    margin-bottom: 16px;
-    color: var(--text-primary);
-    font-family: var(--font-serif);
+    margin-bottom: 60px;
+    color: var(--main-color);
+    font-family: inherit;
     text-align: left;
 }
 

@@ -1385,6 +1385,121 @@ main {
     margin: 0;
 }
 
+/* ==========================================================================
+   Guide page (Support) — frosted section cards (React/Tailwind reference)
+   ========================================================================== */
+.guide-header {
+    margin-bottom: 10px;
+}
+
+.guide-subhead {
+    margin-top: 16px;
+    max-width: 60ch;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(20, 20, 20, 0.72);
+}
+
+.guide-updated {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(20, 20, 20, 0.56);
+}
+
+.guide-sections {
+    display: grid;
+    gap: 32px;
+}
+
+.guide-card {
+    border-radius: 16px;
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overflow: hidden;
+}
+
+.guide-card-head {
+    padding: 24px 28px 0;
+}
+
+.guide-card-body {
+    margin-top: 18px;
+    padding-bottom: 4px;
+}
+
+.guide-card .faq-group-title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: rgba(20, 20, 20, 0.68);
+    margin: 0;
+    padding: 0;
+}
+
+.faq-group-lead {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(20, 20, 20, 0.62);
+}
+
+.guide-card .faq-item {
+    border-top: 1px solid rgba(20, 20, 20, 0.08);
+}
+
+.guide-card .faq-item:first-child {
+    border-top: none;
+}
+
+.guide-card .faq-question {
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    cursor: pointer;
+    transition: background-color 180ms ease;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.guide-card .faq-question:hover {
+    background: rgba(20, 20, 20, 0.03);
+}
+
+.guide-card .toggle {
+    color: rgba(20, 20, 20, 0.45);
+    transition: transform 200ms ease;
+}
+
+.guide-card .faq-answer {
+    padding: 0 28px 22px;
+}
+
+.guide-card .faq-answer p {
+    max-width: 80ch;
+    font-size: 15px;
+    line-height: 24px;
+    color: rgba(20, 20, 20, 0.72);
+}
+
+@media (max-width: 768px) {
+    .guide-card-head {
+        padding: 22px 20px 0;
+    }
+    .guide-card .faq-question {
+        padding: 18px 20px;
+    }
+    .guide-card .faq-answer {
+        padding: 0 20px 20px;
+    }
+}
+
 .faq-container {
     max-width: 600px;
     margin: 0 auto;

@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
     <title>Lunawake — The Next-Gen AI Sleep & Energy Companion</title>
-    <link rel="stylesheet" href="styles.css?v=navfix45">
+    <link rel="stylesheet" href="styles.css?v=navfix46">
 </head>
 <body>
     <!-- Header -->
@@ -153,6 +153,41 @@
         <div class="container">
             <h2>Designed for Life</h2>
             <p class="gallery-description">Where minimalist elegance meets intelligent technology. Every curve, every surface, every detail crafted to blend seamlessly into your most personal space.</p>
+
+            <!-- Mobile editorial layout (Plan A): hero + caption + horizontal detail strip -->
+            <div class="design-mobile" aria-label="Design details">
+                <div class="design-hero">
+                    <img class="design-hero-img" src="images/1.jpg" alt="Lunawake Design Overview" decoding="async">
+                </div>
+
+                <div class="design-caption">
+                    <div class="design-label">Design details</div>
+                    <div class="design-subline">Materials, surfaces, and form.</div>
+                </div>
+
+                <div class="design-strip" role="list" aria-label="Design detail thumbnails">
+                    <button class="design-thumb" type="button" data-src="images/Frame 7.jpg" aria-label="Material Excellence">
+                        <span class="design-thumb-media">
+                            <img src="images/Frame 7.jpg" alt="Material Excellence" loading="lazy" decoding="async">
+                        </span>
+                    </button>
+                    <button class="design-thumb" type="button" data-src="images/4.jpg" aria-label="Intelligent Components">
+                        <span class="design-thumb-media">
+                            <img src="images/4.jpg" alt="Intelligent Components" loading="lazy" decoding="async">
+                        </span>
+                    </button>
+                    <button class="design-thumb" type="button" data-src="images/6.jpg" aria-label="Thoughtful Details">
+                        <span class="design-thumb-media">
+                            <img src="images/6.jpg" alt="Thoughtful Details" loading="lazy" decoding="async">
+                        </span>
+                    </button>
+                    <button class="design-thumb" type="button" data-src="images/2.jpg" aria-label="Precision Engineering">
+                        <span class="design-thumb-media">
+                            <img src="images/2.jpg" alt="Precision Engineering" loading="lazy" decoding="async">
+                        </span>
+                    </button>
+                </div>
+            </div>
             
             <div class="details-grid">
                 <div class="detail-item main-feature">
@@ -273,6 +308,58 @@
     <script src="js/header_menu.js"></script>
     <script src="js/video-control.js"></script>
     <script src="js/gallery.js"></script>
+
+    <script>
+    // Mobile editorial gallery (Plan A): swap hero image on thumbnail tap
+    document.addEventListener('DOMContentLoaded', function () {
+        const root = document.querySelector('.product-details-gallery .design-mobile');
+        if (!root) return;
+
+        const heroImg = root.querySelector('.design-hero-img');
+        const thumbs = Array.from(root.querySelectorAll('.design-thumb'));
+        if (!heroImg || thumbs.length === 0) return;
+
+        function setActive(btn) {
+            thumbs.forEach((b) => {
+                const isActive = b === btn;
+                b.classList.toggle('is-active', isActive);
+                if (isActive) b.setAttribute('aria-current', 'true');
+                else b.removeAttribute('aria-current');
+            });
+        }
+
+        function swapHero(btn) {
+            const src = btn.getAttribute('data-src');
+            if (!src || heroImg.getAttribute('src') === src) return;
+
+            setActive(btn);
+
+            // Fade out → swap → fade in
+            heroImg.classList.add('is-switching');
+            const preload = new Image();
+            preload.decoding = 'async';
+            preload.src = src;
+
+            const commitSwap = () => {
+                heroImg.setAttribute('src', src);
+                const label = btn.getAttribute('aria-label');
+                if (label) heroImg.setAttribute('alt', label);
+                requestAnimationFrame(() => heroImg.classList.remove('is-switching'));
+            };
+
+            // Allow the fade-out to register
+            setTimeout(() => {
+                if (preload.complete) commitSwap();
+                else preload.onload = commitSwap;
+            }, 160);
+        }
+
+        // Initialize active state based on current hero src (no thumb selected by default)
+        thumbs.forEach((b) => b.classList.remove('is-active'));
+
+        thumbs.forEach((btn) => btn.addEventListener('click', () => swapHero(btn)));
+    });
+    </script>
     
     <!-- 确保图片lightbox功能正常工作 -->
     <script>

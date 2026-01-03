@@ -5126,6 +5126,101 @@ object.quote-svg-overlay {
     position: relative;
 }
 
+.design-mobile {
+    display: none;
+}
+
+.design-hero {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.design-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 55%;
+    display: block;
+    transition: opacity 220ms ease;
+}
+
+.design-hero-img.is-switching {
+    opacity: 0;
+}
+
+.design-caption {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    max-width: 680px;
+}
+
+.design-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.60);
+    margin-bottom: 6px;
+}
+
+.design-subline {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.60);
+}
+
+.design-strip {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0 24px 8px;
+    margin: 0 -24px;
+    scrollbar-width: none;
+}
+
+.design-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.design-thumb {
+    flex: 0 0 clamp(160px, 46vw, 200px);
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.design-thumb-media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.02);
+    transition: opacity 220ms ease;
+}
+
+.design-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.design-thumb.is-active .design-thumb-media {
+    opacity: 1;
+}
+
+.design-thumb:not(.is-active) .design-thumb-media {
+    opacity: 0.88;
+}
+
 .product-details-gallery h2 {
     font-family: var(--font-display);
     font-size: var(--text-5xl);
@@ -5195,7 +5290,20 @@ object.quote-svg-overlay {
 }
 
 /* Mobile Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
+    /* Plan A: mobile editorial layout */
+    .details-grid {
+        display: none;
+    }
+
+    .design-mobile {
+        display: block;
+    }
+
+    .gallery-description {
+        margin-bottom: 32px;
+    }
+
     .details-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;

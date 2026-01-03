@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { small: 'images/2.jpg', large: 'images/2.jpg' },
         { small: 'images/Frame 7.jpg', large: 'images/Frame 7.jpg' },
         { small: 'images/4.jpg', large: 'images/4.jpg' },
-        { small: 'images/6.jpg', large: 'images/6.jpg' }
+        { small: 'images/5.jpg', large: 'images/5.jpg' }
     ];
 
     let currentIndex = 0;

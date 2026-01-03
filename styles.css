@@ -941,6 +941,8 @@ main {
 .lt-stage-media {
   grid-column: 5 / -1;
   min-width: 0;
+  width: 100%;
+  justify-self: stretch;
 }
 
 .lt-stage--image-left .lt-stage-text {
@@ -1021,6 +1023,7 @@ main {
 }
 
 .lt-media {
+  width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 16px;

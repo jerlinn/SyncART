@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { small: 'images/Frame 7.jpg', large: 'images/Frame 7.jpg' },
         { small: 'images/Frame 6.jpg', large: 'images/Frame 6.jpg' },
         { small: 'images/Frame 9.jpg', large: 'images/Frame 9.jpg' },
-        { small: 'images/Frame 10.jpg', large: 'images/Frame 10.jpg' },
+        { small: 'images/5.jpg', large: 'images/5.jpg' },
         { small: 'images/Frame 8.jpg', large: 'images/Frame 8.jpg' }
     ];
 

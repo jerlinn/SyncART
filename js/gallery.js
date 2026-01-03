@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // images
     const galleryImages = [
-        { small: 'images/Frame 4.jpg', large: 'images/Frame 4.jpg' },
+        { small: 'images/Frame 45142.png', large: 'images/Frame 45142.png' },
+        { small: 'images/2.jpg', large: 'images/2.jpg' },
         { small: 'images/Frame 7.jpg', large: 'images/Frame 7.jpg' },
-        { small: 'images/Frame 6.jpg', large: 'images/Frame 6.jpg' },
-        { small: 'images/Frame 9.jpg', large: 'images/Frame 9.jpg' },
-        { small: 'images/5.jpg', large: 'images/5.jpg' },
-        { small: 'images/Frame 8.jpg', large: 'images/Frame 8.jpg' }
+        { small: 'images/4.jpg', large: 'images/4.jpg' },
+        { small: 'images/5.jpg', large: 'images/5.jpg' }
     ];
 
     let currentIndex = 0;
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化事件监听
     function initEventListeners() {
         // 图片点击事件
-        document.querySelectorAll('.gallery-grid img').forEach((img, index) => {
+        document.querySelectorAll('.details-grid img').forEach((img, index) => {
             img.addEventListener('click', () => openLightbox(index));
         });
 

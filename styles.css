@@ -956,6 +956,18 @@ main {
   margin-top: 28px;
 }
 
+.lt-stage--coda .lt-stage-text--wide {
+  margin-top: 28px;
+}
+
+.lt-stage--coda .lt-stage-media {
+  margin-top: clamp(40px, 5vw, 56px);
+}
+
+.lt-stage--coda {
+  padding-bottom: 140px;
+}
+
 .lt-bleed {
   margin-top: 28px;
   margin-left: calc(50% - min(50vw, 820px));
@@ -1036,12 +1048,16 @@ main {
 }
 
 .lt-media--longterm img {
-  object-position: 55% 55%;
+  object-position: 70% 65%;
 }
 
 .lt-media--bleed {
   border-radius: 0;
   box-shadow: none;
+}
+
+.lt-media--coda {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 768px) {
@@ -1074,6 +1090,10 @@ main {
   .lt-media--bleed {
     border-radius: 16px;
     box-shadow: var(--lt-shadow);
+  }
+
+  .lt-stage--coda {
+    padding-bottom: 96px;
   }
 
   .lt-headline {

@@ -927,7 +927,7 @@ main {
   margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 64px;
+  column-gap: clamp(40px, 5vw, 56px);
   row-gap: 24px;
   align-items: start;
 }
@@ -956,8 +956,8 @@ main {
 
 .lt-bleed {
   margin-top: 28px;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - min(50vw, 720px));
+  margin-right: calc(50% - min(50vw, 720px));
 }
 
 .lt-eyebrow {

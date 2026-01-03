@@ -926,7 +926,7 @@ main {
 .lt-stage-grid {
   margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(40px, 5vw, 56px);
   row-gap: 24px;
   align-items: start;
@@ -935,10 +935,12 @@ main {
 .lt-stage-text {
   grid-column: 1 / span 4;
   max-width: 680px;
+  min-width: 0;
 }
 
 .lt-stage-media {
   grid-column: 5 / -1;
+  min-width: 0;
 }
 
 .lt-stage--image-left .lt-stage-text {
@@ -956,8 +958,14 @@ main {
 
 .lt-bleed {
   margin-top: 28px;
-  margin-left: calc(50% - min(50vw, 720px));
-  margin-right: calc(50% - min(50vw, 720px));
+  margin-left: calc(50% - min(50vw, 820px));
+  margin-right: calc(50% - min(50vw, 820px));
+}
+
+@media (min-width: 1440px) {
+  .lt-improvement .container {
+    max-width: 1320px;
+  }
 }
 
 .lt-eyebrow {

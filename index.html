@@ -53,49 +53,55 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features-section-1">
-    <div class="container">
-        <h2 class="section-title">Long-term sleep improvement</h2>
-        <p class="section-description">Small nightly guidance adds up. Over time, Lunawake helps you build a steadier rhythm—without extra effort.</p>
-        
-        <div class="feature-tabs">
-            <div class="feature-nav">
-                <!-- 添加区域1标识 -->
-                <button class="tab-btn tab-btn-1 active" data-tab="Pre-sleep">Pre-sleep</button>
-                <button class="tab-btn tab-btn-1" data-tab="In-sleep">In-sleep</button>
-                <button class="tab-btn tab-btn-1" data-tab="Wake-up">Wake-up</button>
-            </div>
+    <!-- Long-term sleep improvement -->
+    <section class="lt-improvement" id="long-term-sleep-improvement">
+        <div class="container">
+            <div class="lt-col">
+                <h2 class="lt-title">Long-term sleep improvement</h2>
+                <p class="lt-subhead">A calm nightly flow—designed to make consistency feel effortless over time.</p>
 
-            <div class="feature-content">
-                 <!-- 添加区域1标识 -->
-                <div class="feature-panel feature-panel-1 active" id="Pre-sleep">
-                    <h3>AI-guided breathing</h3>
-                    <p>A short guided routine that helps your body slow down—so falling asleep feels easier, not forced.</p>
-                    <h4>Personalized sleep sounds</h4>
-                    <p>Choose from a rich sound library—or play your own music/podcasts. When you fall asleep, Lunawake gently fades out and turns off.</p>
-                    <img src="images/img_emotion.jpg" alt="Pre-sleep">
+                <div class="lt-stages">
+                    <div class="lt-stage">
+                        <div class="lt-eyebrow">Pre-sleep</div>
+                        <h3 class="lt-headline">Wind down with intention.</h3>
+                        <ul class="lt-bullets">
+                            <li><strong>AI-guided breathing</strong> — A short routine that slows you down.</li>
+                            <li><strong>Personalized sleep sounds</strong> — Choose a sound or your own. Fades out when you fall asleep.</li>
+                        </ul>
+                    </div>
+
+                    <div class="lt-stage">
+                        <div class="lt-eyebrow">In-sleep</div>
+                        <h3 class="lt-headline">Track quietly. Sleep naturally.</h3>
+                        <ul class="lt-bullets">
+                            <li><strong>Effortless sleep tracking</strong> — Bedside, automatic. No ring. No watch.</li>
+                            <li><strong>Privacy fully protected</strong> — No camera—ever. Mic only in the talk window you start.</li>
+                        </ul>
+                    </div>
+
+                    <div class="lt-stage">
+                        <div class="lt-eyebrow">Wake-up</div>
+                        <h3 class="lt-headline">A routine, not just an alarm.</h3>
+                        <ul class="lt-bullets">
+                            <li><strong>Target time + hard deadline</strong> — Adapts to real mornings—then gets you up on time.</li>
+                            <li><strong>Built for real wake-ups</strong> — Snooze, half-awake moments, brief get-ups—handled.</li>
+                        </ul>
+                    </div>
+
+                    <div class="lt-stage">
+                        <div class="lt-eyebrow">Long-term sleep improvement</div>
+                        <h3 class="lt-headline">Small guidance. Steadier rhythm.</h3>
+                        <ul class="lt-bullets">
+                            <li><strong>Nightly cues that add up</strong> — Over time, a more consistent sleep schedule.</li>
+                            <li><strong>No extra effort</strong> — It runs in the background, night after night.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="feature-panel feature-panel-1" id="In-sleep">
-                    <h3>Effortless sleep tracking</h3>
-                    <p>Just place it bedside. It tracks your night automatically—no wearables, no nightly setup.</p>
-                    <h4>Privacy fully protected</h4>
-                    <p>No camera—ever. And the mic isn’t always on: it only listens during a short talk window you trigger. Pause or delete anytime.</p>
-                    <img src="images/mmwave.jpg" alt="mmWave sensing">
-                </div>
-
-                <div class="feature-panel feature-panel-1" id="Wake-up">
-                    <h3>A routine, not just an alarm</h3>
-                    <p>Set a target time and a hard deadline. Lunawake adapts to real mornings—snooze, half-awake moments, brief get-ups—then gets you up on time.</p>
-                    <h4>Long-term sleep improvement</h4>
-                    <p>Small nightly guidance adds up. Over time, Lunawake helps you build a steadier rhythm—without extra effort.</p>
-                    <img src="images/img_day and night.png" alt="Personalized Wake-Up" class="clickable-image" onclick="openImageLightbox(this.src, this.alt)">
-                </div>
+                <!-- Optional: large product image can go here later -->
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Product Details Gallery -->
     <section class="product-details-gallery">
@@ -445,7 +451,6 @@
     <script src="js/header_menu.js"></script>
     <script src="js/video-control.js"></script>
     <script src="js/gallery.js"></script>
-    <script src="js/feature-scroll.js"></script>
     
     <!-- 确保图片lightbox功能正常工作 -->
     <script>

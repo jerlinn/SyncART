@@ -893,6 +893,105 @@ main {
     font-size: 0;
 }
 
+/* ------------------------------------------------------------
+   Homepage: Long-term sleep improvement (Apple-like vertical)
+   ------------------------------------------------------------ */
+.lt-improvement {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  padding: 96px 0;
+}
+
+.lt-improvement .lt-col {
+  max-width: 680px;
+}
+
+.lt-title {
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.lt-subhead {
+  margin: 16px 0 48px;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(20, 20, 20, 0.72);
+}
+
+.lt-stage {
+  padding: 30px 0;
+}
+
+.lt-stage + .lt-stage {
+  border-top: 1px solid rgba(20, 20, 20, 0.12);
+}
+
+.lt-eyebrow {
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 20, 0.62);
+  margin-bottom: 10px;
+}
+
+.lt-headline {
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+
+.lt-bullets {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: rgba(20, 20, 20, 0.88);
+}
+
+.lt-bullets li + li {
+  margin-top: 12px;
+}
+
+.lt-bullets strong {
+  font-weight: 600;
+  color: rgba(20, 20, 20, 0.92);
+}
+
+.lt-bullets li::marker {
+  color: rgba(20, 20, 20, 0.38);
+}
+
+@media (max-width: 768px) {
+  .lt-improvement {
+    padding: 72px 0;
+  }
+
+  .lt-title {
+    font-size: 32px;
+  }
+
+  .lt-subhead {
+    font-size: 16px;
+  }
+
+  .lt-headline {
+    font-size: 22px;
+  }
+
+  .lt-bullets {
+    font-size: 15px;
+  }
+}
+
 /* 原规则保留，新增 .technology-behind-experience 适配 */
 .feature-panel h3,
 .technology-behind-experience .text h3 {

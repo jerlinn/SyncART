@@ -901,6 +901,9 @@ main {
   --lt-muted: rgba(20, 20, 20, 0.62);
   --lt-divider: rgba(20, 20, 20, 0.12);
   --lt-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+  /* Spacing tokens (keep rhythm consistent across stage variants) */
+  --lt-gap-header: 28px; /* header -> content (grid / text / bleed) */
+  --lt-gap-media: clamp(40px, 4vw, 48px); /* text -> media (coda) */
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
     "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
@@ -920,11 +923,12 @@ main {
 }
 
 .lt-stage-header {
-  max-width: 680px;
+  /* Let the header span the stage width so right-column content doesn't look "dropped" */
+  max-width: none;
 }
 
 .lt-stage-grid {
-  margin-top: 28px;
+  margin-top: var(--lt-gap-header);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(40px, 5vw, 56px);
@@ -955,15 +959,11 @@ main {
 
 .lt-stage--bleed .lt-stage-text--wide {
   max-width: 680px;
-  margin-top: 28px;
-}
-
-.lt-stage--coda .lt-stage-text--wide {
-  margin-top: 28px;
+  margin-top: var(--lt-gap-header);
 }
 
 .lt-stage--coda .lt-stage-media {
-  margin-top: clamp(40px, 5vw, 56px);
+  margin-top: var(--lt-gap-media);
 }
 
 .lt-stage--coda {
@@ -971,9 +971,15 @@ main {
 }
 
 .lt-bleed {
-  margin-top: 28px;
+  margin-top: var(--lt-gap-header);
   margin-left: calc(50% - min(50vw, 820px));
   margin-right: calc(50% - min(50vw, 820px));
+}
+
+/* Coda text block uses a different modifier class in markup */
+.lt-stage--coda .lt-stage-text--coda {
+  max-width: 680px;
+  margin-top: var(--lt-gap-header);
 }
 
 @media (min-width: 1440px) {

@@ -266,25 +266,28 @@ a {
     inset: -25%;
     pointer-events: none;
     /* SVG fractal noise as “sand grain” (tinted + ultra subtle) */
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%20viewBox='0%200%20240%20240'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.55%200%200%200%200%200.45%200%200%200%200%200.85%200%200%200%200.22%200'/%3E%3C/filter%3E%3Crect%20width='240'%20height='240'%20filter='url(%23n)'%20opacity='.60'/%3E%3C/svg%3E");
-    background-size: 260px 260px;
+    background-image:
+        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%20viewBox='0%200%20240%20240'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.55%200%200%200%200%200.45%200%200%200%200%200.85%200%200%200%200.22%200'/%3E%3C/filter%3E%3Crect%20width='240'%20height='240'%20filter='url(%23n)'%20opacity='.60'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%20viewBox='0%200%20240%20240'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.55'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.55%200%200%200%200%200.45%200%200%200%200%200.85%200%200%200%200.18%200'/%3E%3C/filter%3E%3Crect%20width='240'%20height='240'%20filter='url(%23n)'%20opacity='.55'/%3E%3C/svg%3E");
+    background-size: 260px 260px, 520px 520px;
     background-repeat: repeat;
+    background-position: 0 0, 0 0;
     mix-blend-mode: soft-light;
-    opacity: 0.10;
+    opacity: 0.14;
     will-change: transform, background-position;
     transform: translate3d(0, 0, 0);
-    animation: ces-grain-flow 22s linear infinite;
+    animation: ces-grain-flow 18s linear infinite;
 }
 
 @keyframes ces-blob-drift {
-    0%   { transform: translate3d(-1.6%, -0.8%, 0) scale(1.02); }
-    50%  { transform: translate3d( 1.2%,  1.1%, 0) scale(1.05); }
-    100% { transform: translate3d(-0.8%,  1.8%, 0) scale(1.03); }
+    0%   { transform: translate3d(-2.4%, -1.2%, 0) scale(1.02); }
+    50%  { transform: translate3d( 1.8%,  1.6%, 0) scale(1.06); }
+    100% { transform: translate3d(-1.2%,  2.6%, 0) scale(1.03); }
 }
 
 @keyframes ces-grain-flow {
-    0%   { transform: translate3d(0, 0, 0); background-position: 0 0; }
-    100% { transform: translate3d(-6%, -4%, 0); background-position: 160px 220px; }
+    0%   { transform: translate3d(0, 0, 0); background-position: 0 0, 0 0; }
+    100% { transform: translate3d(-10%, -7%, 0); background-position: 240px 360px, -200px 160px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -232,10 +232,66 @@ a {
     position: fixed;
     inset: 0;
     z-index: -10;
+    overflow: hidden;
+    /* Keep blend layers contained and predictable */
+    isolation: isolate;
     background:
         radial-gradient(1200px 700px at 50% -10%, rgba(255, 255, 255, 0.10), transparent 60%),
         radial-gradient(900px 500px at 80% 30%, rgba(255, 106, 94, 0.10), transparent 55%),
         linear-gradient(180deg, #070A14 0%, #0B1230 55%, #101A3D 100%);
+}
+
+/* CES: restrained “sand / time-flow” motion (subtle blob drift + gentle grain) */
+.ces-page .ces-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    pointer-events: none;
+    /* Soft “particle clumps” (very low alpha) */
+    background:
+        radial-gradient(900px 620px at 18% 22%, rgba(125, 105, 255, 0.14), transparent 62%),
+        radial-gradient(760px 520px at 82% 38%, rgba(255, 106, 94, 0.10), transparent 60%),
+        radial-gradient(980px 720px at 55% 92%, rgba(78, 120, 255, 0.10), transparent 64%);
+    filter: blur(18px) saturate(115%);
+    opacity: 0.95;
+    mix-blend-mode: screen;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    animation: ces-blob-drift 36s ease-in-out infinite alternate;
+}
+
+.ces-page .ces-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: -25%;
+    pointer-events: none;
+    /* SVG fractal noise as “sand grain” (tinted + ultra subtle) */
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%20viewBox='0%200%20240%20240'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.55%200%200%200%200%200.45%200%200%200%200%200.85%200%200%200%200.22%200'/%3E%3C/filter%3E%3Crect%20width='240'%20height='240'%20filter='url(%23n)'%20opacity='.60'/%3E%3C/svg%3E");
+    background-size: 260px 260px;
+    background-repeat: repeat;
+    mix-blend-mode: soft-light;
+    opacity: 0.10;
+    will-change: transform, background-position;
+    transform: translate3d(0, 0, 0);
+    animation: ces-grain-flow 22s linear infinite;
+}
+
+@keyframes ces-blob-drift {
+    0%   { transform: translate3d(-1.6%, -0.8%, 0) scale(1.02); }
+    50%  { transform: translate3d( 1.2%,  1.1%, 0) scale(1.05); }
+    100% { transform: translate3d(-0.8%,  1.8%, 0) scale(1.03); }
+}
+
+@keyframes ces-grain-flow {
+    0%   { transform: translate3d(0, 0, 0); background-position: 0 0; }
+    100% { transform: translate3d(-6%, -4%, 0); background-position: 160px 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ces-page .ces-backdrop::before,
+    .ces-page .ces-backdrop::after {
+        animation: none !important;
+    }
 }
 
 /* CES invite hero */

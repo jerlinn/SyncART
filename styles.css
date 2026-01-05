@@ -116,7 +116,7 @@ html, body, button, input, textarea, select {
     line-height: 1.6;
 }
 
-/* About body copy — use the same frosted card language as FAQ */
+/* About body copy - use the same frosted card language as FAQ */
 .about-story-card {
     border-radius: 16px;
     border: 1px solid rgba(20, 20, 20, 0.08);
@@ -179,7 +179,7 @@ a {
 }
 
 /* ==========================================================================
-   Page Grid (non-home) — B&O-level alignment
+   Page Grid (non-home) - B&O-level alignment
    ========================================================================== */
 .page-wrap {
     max-width: 800px;
@@ -2138,7 +2138,7 @@ main {
 }
 
 /* ==========================================================================
-   Guide page (Support) — frosted section cards (React/Tailwind reference)
+   Guide page (Support) - frosted section cards (React/Tailwind reference)
    ========================================================================== */
 .guide-header {
     margin-bottom: 0;
@@ -2258,7 +2258,7 @@ main {
 }
 
 /* ==========================================================================
-   About letter page — frosted letter + side notes (React/Tailwind reference)
+   About letter page - frosted letter + side notes (React/Tailwind reference)
    ========================================================================== */
 .about-letter-header {
     margin-bottom: 40px;
@@ -4934,7 +4934,7 @@ object.quote-svg-overlay {
    Hero Section - Main Title
    ========================================================================== */
 
-/* Shared page hero title (About / Support) — aligned with homepage hero scale */
+/* Shared page hero title (About / Support) - aligned with homepage hero scale */
 .page-hero-title {
     font-family: var(--font-display);
     font-size: var(--text-6xl);

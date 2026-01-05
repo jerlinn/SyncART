@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
     <title>Lunawake — The Next-Gen AI Sleep & Energy Companion</title>
-    <link rel="stylesheet" href="styles.css?v=navfix47">
+    <link rel="stylesheet" href="styles.css?v=navfix48">
 </head>
 <body>
     <!-- Header -->
@@ -134,14 +134,47 @@
                         </ul>
                     </div>
 
-                    <div class="lt-stage-media lt-media lt-media--longterm lt-media--coda">
+                    <div
+                        class="lt-stage-media lt-media lt-media--longterm lt-media--coda lt-carousel"
+                        data-lt-carousel
+                        role="region"
+                        aria-label="Long-term sleep scenes">
                         <img
+                            class="lt-carousel-img is-active"
                             src="images/Scene0_2000.jpg"
                             srcset="images/Scene0_2000.jpg 2000w, images/Scene0_3200.jpg 3200w"
                             sizes="(max-width: 768px) 100vw, min(1320px, 100vw)"
                             alt="Long-term sleep improvement"
+                            decoding="async">
+                        <img
+                            class="lt-carousel-img"
+                            src="images/补充场景1_2000.jpg"
+                            srcset="images/补充场景1_2000.jpg 2000w, images/补充场景1_3200.jpg 3200w"
+                            sizes="(max-width: 768px) 100vw, min(1320px, 100vw)"
+                            alt="Long-term sleep improvement scene"
                             loading="lazy"
                             decoding="async">
+                        <img
+                            class="lt-carousel-img"
+                            src="images/补充场景2_2000.jpg"
+                            srcset="images/补充场景2_2000.jpg 2000w, images/补充场景2_3200.jpg 3200w"
+                            sizes="(max-width: 768px) 100vw, min(1320px, 100vw)"
+                            alt="Long-term sleep improvement scene"
+                            loading="lazy"
+                            decoding="async">
+
+                        <button class="lt-carousel-nav lt-carousel-prev" type="button" aria-label="Previous image">
+                            <img src="images/gallery_arrow-left.svg" alt="" aria-hidden="true">
+                        </button>
+                        <button class="lt-carousel-nav lt-carousel-next" type="button" aria-label="Next image">
+                            <img src="images/gallery_arrow-right.svg" alt="" aria-hidden="true">
+                        </button>
+
+                        <div class="lt-carousel-dots" role="tablist" aria-label="Select image">
+                            <button class="lt-carousel-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Image 1"></button>
+                            <button class="lt-carousel-dot" type="button" role="tab" aria-selected="false" aria-label="Image 2"></button>
+                            <button class="lt-carousel-dot" type="button" role="tab" aria-selected="false" aria-label="Image 3"></button>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -308,6 +341,7 @@
     <script src="js/header_menu.js"></script>
     <script src="js/video-control.js"></script>
     <script src="js/gallery.js"></script>
+    <script src="js/lt-carousel.js"></script>
 
     <script>
     // Mobile editorial gallery (Plan A): swap hero image on thumbnail tap

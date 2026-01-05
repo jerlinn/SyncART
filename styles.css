@@ -1224,6 +1224,109 @@ main {
   }
 }
 
+/* ------------------------------------------------------------
+   Homepage: App Experience (Apple-like, calm)
+   ------------------------------------------------------------ */
+.app-experience {
+  padding: 120px 0;
+}
+
+.app-experience .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.app-exp-headline {
+  margin: 0;
+  max-width: 820px;
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgba(20, 20, 20, 0.92);
+}
+
+.app-exp-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.app-exp-card {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.app-exp-media {
+  padding: 18px;
+}
+
+.app-exp-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.app-exp-text {
+  padding: 0 20px 22px;
+}
+
+.app-exp-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  opacity: 0.65;
+}
+
+.app-exp-title {
+  margin-top: 10px;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 0.92);
+}
+
+.app-exp-desc {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.72;
+  max-width: 320px;
+  color: rgba(20, 20, 20, 0.92);
+}
+
+@media (max-width: 1024px) {
+  .app-exp-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-experience {
+    padding: 64px 0;
+  }
+
+  .app-experience .container {
+    padding: 0 20px;
+  }
+
+  .app-exp-headline {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+}
+
 @media (max-width: 768px) {
   .lt-improvement {
     padding: 64px 0;

@@ -538,7 +538,8 @@ main {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    white-space: nowrap;
 }
 
 .logo img {
@@ -550,11 +551,13 @@ main {
 
 .logo-mark {
     height: 28px;
+    flex: 0 0 auto;
 }
 
 .logo-wordmark {
     height: 18px;
     max-width: 160px;
+    flex: 0 0 auto;
 }
 
 .ces-page .logo-wordmark {
@@ -648,12 +651,18 @@ main {
         padding: 0 20px;
     }
 
+    .logo {
+        gap: 6px;
+    }
+
     .logo-mark {
         height: 24px;
+        width: auto;
     }
 
     .logo-wordmark {
         height: 16px;
+        width: auto;
         max-width: 120px;
     }
 
@@ -2944,9 +2953,10 @@ main {
         gap: 20px;
     }
 
+    /* Keep mark + wordmark as a single lockup on mobile */
     .logo img {
-        width: 60px;
-        height: 24px;
+        width: auto;
+        height: auto;
     }
 
     .team-hero h1 {

@@ -549,6 +549,12 @@ main {
     transition: opacity 0.2s ease;
 }
 
+.logo-combined {
+    height: 28px;
+    width: auto;
+    max-width: 220px;
+}
+
 .logo-mark {
     height: 28px;
     flex: 0 0 auto;
@@ -653,6 +659,11 @@ main {
 
     .logo {
         gap: 6px;
+    }
+
+    .logo-combined {
+        height: 24px;
+        max-width: 160px;
     }
 
     .logo-mark {

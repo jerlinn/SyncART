@@ -550,9 +550,9 @@ main {
 }
 
 .logo-combined {
-    height: 28px;
+    height: 26px;
     width: auto;
-    max-width: 220px;
+    max-width: 200px;
 }
 
 .logo-mark {
@@ -662,8 +662,8 @@ main {
     }
 
     .logo-combined {
-        height: 24px;
-        max-width: 160px;
+        height: 22px;
+        max-width: 150px;
     }
 
     .logo-mark {
@@ -2964,10 +2964,11 @@ main {
         gap: 20px;
     }
 
-    /* Keep mark + wordmark as a single lockup on mobile */
-    .logo img {
+    /* Ensure combined PNG keeps premium lockup proportions on mobile */
+    .logo .logo-combined {
         width: auto;
-        height: auto;
+        height: 22px;
+        max-width: 150px;
     }
 
     .team-hero h1 {

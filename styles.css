@@ -662,8 +662,8 @@ main {
     }
 
     .logo-combined {
-        height: 22px;
-        max-width: 150px;
+        height: 20px;
+        max-width: 140px;
     }
 
     .logo-mark {
@@ -2967,8 +2967,8 @@ main {
     /* Ensure combined PNG keeps premium lockup proportions on mobile */
     .logo .logo-combined {
         width: auto;
-        height: 22px;
-        max-width: 150px;
+        height: 20px;
+        max-width: 140px;
     }
 
     .team-hero h1 {
@@ -2978,6 +2978,13 @@ main {
     .team-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 24px;
+    }
+}
+
+@media (max-width: 420px) {
+    .logo .logo-combined {
+        height: 18px;
+        max-width: 128px;
     }
 }
 

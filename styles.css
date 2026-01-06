@@ -1154,7 +1154,8 @@ main {
 }
 
 .lt-media--insleep img {
-  object-position: 56% 50%;
+  /* Keep the bottom-left caption inside the 16:9 crop */
+  object-position: 18% 62%;
 }
 
 .lt-media--wakeup img {

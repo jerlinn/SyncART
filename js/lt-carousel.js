@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDown = false;
 
     root.addEventListener('pointerdown', (e) => {
+      // Don't hijack pointer events from interactive controls (arrows/dots).
+      // Pointer capture can prevent buttons from receiving a click on mobile.
+      if (e.target && e.target.closest?.('.lt-carousel-nav, .lt-carousel-dot')) return;
+
       // Only primary button / touch
       if (typeof e.button === 'number' && e.button !== 0) return;
       isDown = true;

@@ -571,6 +571,12 @@ main {
     opacity: 0.92;
 }
 
+.ces-page .logo-combined {
+    height: 20px;
+    max-width: 150px;
+    opacity: 0.95;
+}
+
 .nav-center {
     display: flex;
     gap: 40px;
@@ -2985,6 +2991,20 @@ main {
     .logo .logo-combined {
         height: 18px;
         max-width: 128px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ces-page .logo-combined {
+        height: 18px;
+        max-width: 132px;
+    }
+}
+
+@media (max-width: 420px) {
+    .ces-page .logo-combined {
+        height: 16px;
+        max-width: 120px;
     }
 }
 

@@ -90,6 +90,71 @@ document.addEventListener('DOMContentLoaded', () => {
     root.addEventListener('pointercancel', () => {
       isDown = false;
     });
+
+    // Autoplay (opt-in per carousel)
+    if (root.hasAttribute('data-lt-autoplay') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const INTERVAL_MS = 5200;
+      const RESUME_AFTER_MS = 6500;
+      let timer = null;
+      let resumeTimer = null;
+
+      const clearTimers = () => {
+        if (timer) window.clearInterval(timer);
+        if (resumeTimer) window.clearTimeout(resumeTimer);
+        timer = null;
+        resumeTimer = null;
+      };
+
+      const start = () => {
+        if (timer) return;
+        timer = window.setInterval(() => step(1), INTERVAL_MS);
+      };
+
+      const pause = () => {
+        if (!timer) return;
+        window.clearInterval(timer);
+        timer = null;
+      };
+
+      const pauseAndResume = () => {
+        pause();
+        if (resumeTimer) window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(() => {
+          // Don't autoplay in background tabs
+          if (!document.hidden) start();
+        }, RESUME_AFTER_MS);
+      };
+
+      // Start once loaded
+      start();
+
+      // Pause on hover/focus for desktop
+      root.addEventListener('mouseenter', pause);
+      root.addEventListener('mouseleave', start);
+      root.addEventListener('focusin', pause);
+      root.addEventListener('focusout', start);
+
+      // Pause after any explicit user action
+      prevBtn?.addEventListener('click', pauseAndResume);
+      nextBtn?.addEventListener('click', pauseAndResume);
+      dots.forEach((dot) => dot.addEventListener('click', pauseAndResume));
+      root.addEventListener('pointerup', pauseAndResume);
+
+      // Pause when tab is hidden
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) pause();
+        else start();
+      });
+
+      // Safety cleanup if node removed (rare on this site, but harmless)
+      const obs = new MutationObserver(() => {
+        if (!document.body.contains(root)) {
+          clearTimers();
+          obs.disconnect();
+        }
+      });
+      obs.observe(document.body, { childList: true, subtree: true });
+    }
   });
 });
 

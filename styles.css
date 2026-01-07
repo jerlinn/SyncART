@@ -457,6 +457,76 @@ a {
 /* ==========================================================================
    Header & Navigation Styles
    ========================================================================== */
+:root {
+    --announcement-height: 0px;
+}
+
+.has-announcement {
+    --announcement-height: 44px;
+}
+
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2500;
+    height: var(--announcement-height);
+    display: flex;
+    align-items: center;
+    background: rgba(18, 18, 18, 0.92);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.announcement-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.announcement-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.announcement-domain {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.78);
+    white-space: nowrap;
+}
+
+.announcement-link:hover {
+    color: rgba(255, 255, 255, 0.98);
+}
+
+.has-announcement .header {
+    top: var(--announcement-height);
+}
+
+.has-announcement main {
+    padding-top: calc(var(--header-height) + var(--announcement-height));
+}
+
+@media (max-width: 768px) {
+    .has-announcement { --announcement-height: 40px; }
+    .announcement-link {
+        font-size: 12px;
+        gap: 10px;
+    }
+    .announcement-domain { display: none; }
+}
+
 .header {
     position: fixed;
     top: 0;

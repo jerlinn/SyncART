@@ -5539,6 +5539,23 @@ object.quote-svg-overlay {
     .email-entry-card { border-radius: 16px; }
 }
 
+/* Dark (CES) pages */
+.ces-page .email-entry-card {
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(0, 0, 0, 0.14);
+    box-shadow: none;
+}
+
+.ces-page .btn-outline {
+    color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.ces-page .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
 .btn {
     display: inline-flex;
     align-items: center;

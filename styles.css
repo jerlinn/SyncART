@@ -5514,46 +5514,24 @@ object.quote-svg-overlay {
     justify-content: center;
 }
 
-/* Email entry (B&O-like, minimal) */
-.email-entry {
-    padding: 84px 0 44px;
-}
-
-.email-entry-card {
-    border: 1px solid rgba(20, 20, 20, 0.10);
-    border-radius: 18px;
-    padding: clamp(28px, 4vw, 44px);
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 18px 46px rgba(20, 20, 20, 0.06);
+/* Footer CTA (integrated, not a separate section) */
+.footer-cta {
+    max-width: 800px;
+    margin: 0 auto 34px auto;
+    padding: 0 24px;
     display: flex;
     justify-content: center;
 }
 
-.email-entry-card .btn {
+.footer-cta .btn {
     min-height: 46px;
     padding: 12px 22px;
 }
 
 @media (max-width: 768px) {
-    .email-entry { padding: 56px 0 32px; }
-    .email-entry-card { border-radius: 16px; }
-}
-
-/* Dark (CES) pages */
-.ces-page .email-entry-card {
-    border-color: rgba(255, 255, 255, 0.14);
-    background: rgba(0, 0, 0, 0.14);
-    box-shadow: none;
-}
-
-.ces-page .btn-outline {
-    color: rgba(255, 255, 255, 0.92);
-    border-color: rgba(255, 255, 255, 0.22);
-}
-
-.ces-page .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.32);
+    .footer-cta {
+        margin-bottom: 24px;
+    }
 }
 
 .btn {
@@ -5574,20 +5552,18 @@ object.quote-svg-overlay {
     transform: translateY(1px);
 }
 
-.btn-primary {
-    color: rgba(20, 20, 20, 0.92);
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(20, 20, 20, 0.10);
-    box-shadow: 0 10px 22px rgba(20, 20, 20, 0.10);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+/* Apple-like CTA with brand gradient */
+.btn-gradient {
+    color: rgba(255, 255, 255, 0.98);
+    background: linear-gradient(135deg, #ff4d4d 0%, #ff7a1a 48%, #ffb000 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(255, 122, 26, 0.24);
 }
 
-.btn-primary:hover {
-    background: rgba(255, 255, 255, 0.88);
-    border-color: rgba(20, 20, 20, 0.14);
-    box-shadow: 0 14px 30px rgba(20, 20, 20, 0.12);
+.btn-gradient:hover {
+    box-shadow: 0 14px 30px rgba(255, 122, 26, 0.30);
     transform: translateY(-1px);
+    filter: saturate(1.02);
 }
 
 .btn-outline {

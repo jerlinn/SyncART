@@ -305,11 +305,10 @@ a {
 }
 
 .ces-invite-hero {
-    min-height: calc(100vh - var(--header-height));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 44px 0;
+    /* Allow content (like the video) to be visible without requiring a scroll */
+    min-height: auto;
+    display: block;
+    padding: 56px 0 72px;
 }
 
 .ces-invite-center {

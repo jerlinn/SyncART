@@ -7184,8 +7184,8 @@ h3,
 .lw2-notice-inner { display: flex; align-items: center; justify-content: space-between; min-height: 34px; gap: 20px; }
 .lw2-notice a { color: #fffdf8; font-weight: 500; text-decoration: none; }
 .lw2-notice a span { margin-left: 7px; }
-.lw2-header { position: sticky; top: 0; z-index: 20; background: rgba(247, 245, 240, .84); border-bottom: 1px solid transparent; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: background .3s var(--lw2-ease), border-color .3s var(--lw2-ease); }
-.lw2-header.is-scrolled { background: rgba(247, 245, 240, .96); border-color: var(--lw2-line); }
+.lw2-header { position: absolute; top: 0; right: 0; left: 0; z-index: 20; background: rgba(247, 245, 240, .74); border-bottom: 1px solid rgba(255, 255, 255, .22); backdrop-filter: blur(20px) saturate(115%); -webkit-backdrop-filter: blur(20px) saturate(115%); transition: background .3s var(--lw2-ease), border-color .3s var(--lw2-ease), box-shadow .3s var(--lw2-ease); }
+.lw2-header.is-scrolled { position: fixed; background: rgba(247, 245, 240, .96); border-color: var(--lw2-line); box-shadow: 0 8px 28px rgba(48, 42, 34, .08); }
 .lw2-nav { min-height: 78px; display: flex; align-items: center; gap: 34px; }
 .lw2-logo { display: inline-flex; flex: 0 0 auto; align-items: center; }
 .lw2-logo img { width: 146px; height: auto; }
@@ -7204,7 +7204,7 @@ h3,
 .lw2-inline-link { display: inline-flex; align-items: center; gap: 9px; color: var(--lw2-ink); font-size: 12px; font-weight: 600; text-decoration: none; transition: gap .3s var(--lw2-ease); }
 .lw2-inline-link:hover { gap: 13px; }
 .lw2-inline-link--light { color: rgba(255, 253, 248, .82); }
-.lw2-hero { position: relative; min-height: min(780px, calc(100svh - 78px)); display: flex; align-items: flex-end; overflow: hidden; background: #25201d; color: #fffdf8; }
+.lw2-hero { position: relative; min-height: min(780px, 100svh); display: flex; align-items: flex-end; overflow: hidden; background: #25201d; color: #fffdf8; }
 .lw2-hero-image { position: absolute; inset: 0; overflow: hidden; background: #25201d; }
 .lw2-hero-image::after { position: absolute; inset: 0; z-index: 1; background: linear-gradient(118deg, rgba(21, 17, 15, .62) 0%, rgba(21, 17, 15, .26) 43%, rgba(21, 17, 15, 0) 76%), linear-gradient(0deg, rgba(21, 17, 15, .28) 0%, rgba(21, 17, 15, .03) 56%, rgba(21, 17, 15, 0) 100%); content: ""; pointer-events: none; }
 .lw2-hero-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }

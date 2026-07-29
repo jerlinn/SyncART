@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f7f5f0">
-    <meta name="description" content="LunaWake is a bedside sleep companion that senses, follows, and wakes with you — without a wearable or a camera.">
+    <meta name="description" content="LunaWake is a bedside sleep companion for quieter nights — sensing, guiding, and waking without a wearable or a camera.">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <title>LunaWake — A better night, from the bedside.</title>
-    <link rel="stylesheet" href="styles.css?v=lunawake-type-system-2026-07-29">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>LunaWake — Better sleep begins at the bedside.</title>
+    <link rel="stylesheet" href="styles.css?v=lunawake-editorial-type-2026-07-29">
 </head>
 <body class="lw2-site">
     <div class="lw2-notice">
@@ -26,17 +26,19 @@
             <nav class="lw2-nav-links" aria-label="Primary navigation">
                 <a href="#how-it-works">How it works</a>
                 <a href="#hardware">The device</a>
-                <a href="#app">Luna App</a>
+                <a href="#radar">Inside the room</a>
+                <a href="#app">The app</a>
                 <a href="#sleep-lab">Sleep Lab</a>
             </nav>
-            <a class="lw2-nav-cta" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Stay updated <span aria-hidden="true">↗</span></a>
+            <a class="lw2-nav-cta" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
             <button class="lw2-menu" type="button" aria-expanded="false" aria-controls="lw2-mobile-menu" aria-label="Open menu"><span></span><span></span></button>
         </div>
         <div class="lw2-mobile" id="lw2-mobile-menu" hidden>
             <nav aria-label="Mobile navigation">
                 <a href="#how-it-works">How it works <span>↗</span></a>
                 <a href="#hardware">The device <span>↗</span></a>
-                <a href="#app">Luna App <span>↗</span></a>
+                <a href="#radar">Inside the room <span>↗</span></a>
+                <a href="#app">The app <span>↗</span></a>
                 <a href="#sleep-lab">Sleep Lab <span>↗</span></a>
             </nav>
             <a class="lw2-button lw2-button--dark" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
@@ -45,82 +47,182 @@
 
     <main id="top">
         <section class="lw2-hero">
-            <div class="lw2-hero-image" aria-hidden="true"></div>
+            <div class="lw2-hero-image">
+                <img src="images/luna-latest/luna-banner.png" alt="LunaWake glowing on a bedside table in a quiet bedroom at night" fetchpriority="high" decoding="async">
+            </div>
             <div class="lw2-shell lw2-hero-content">
-                <p class="lw2-eyebrow">LunaWake / bedside intelligence</p>
-                <h1>A better night,<br><em>from the bedside.</em></h1>
-                <p class="lw2-hero-copy">A sleep companion that senses the night, follows your rhythm, and helps you wake with intention.</p>
+                <p class="lw2-eyebrow">LunaWake / bedside sleep companion</p>
+                <h1>Better sleep<br>begins at the<br>bedside.</h1>
+                <p class="lw2-hero-copy">A quieter way to sleep and wake—without a wearable or a camera.</p>
                 <div class="lw2-actions">
-                    <a class="lw2-button lw2-button--light" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Explore the launch <span aria-hidden="true">↗</span></a>
-                    <a class="lw2-inline-link lw2-inline-link--light" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+                    <a class="lw2-button lw2-button--light" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
+                    <a class="lw2-inline-link lw2-inline-link--light" href="#how-it-works">See one night <span aria-hidden="true">↓</span></a>
                 </div>
-                <div class="lw2-hero-meta"><span>No wearable</span><i></i><span>No camera</span><i></i><span>Privacy first</span></div>
+                <div class="lw2-hero-meta"><span>No wearable</span><i></i><span>No camera</span><i></i><span>Bedside sleep companion</span></div>
             </div>
         </section>
 
         <section class="lw2-intro">
             <div class="lw2-shell lw2-intro-grid">
-                <p class="lw2-eyebrow">The LunaWake system</p>
-                <div><h2>Sleep support that stays in the room.</h2><p>From wind-down to wake-up, LunaWake is designed to be present without asking you to wear, watch, or measure yourself.</p></div>
+                <p class="lw2-eyebrow">Meet LunaWake</p>
+                <div><h2>Sleep support for the night you actually live.</h2><p>Wind down without another screen. Sleep without wearing another device. Wake inside the window you choose — and understand the night without turning it into a score.</p></div>
             </div>
         </section>
 
-        <section class="lw2-process" id="how-it-works">
+        <section class="lw2-real-life" aria-labelledby="real-life-heading">
+            <div class="lw2-shell">
+                <div class="lw2-real-life-head">
+                    <div><p class="lw2-eyebrow">One night, considered</p><h2 id="real-life-heading">Before the night goes quiet.</h2></div>
+                    <p>LunaWake fits into the small transitions that shape a night: the last page, the room settling, and the first stretch toward morning.</p>
+                </div>
+                <div class="lw2-real-life-grid">
+                    <figure class="lw2-real-life-card">
+                        <img src="images/luna-latest/model-scenes/C 63.JPG" alt="Person reading in bed beside LunaWake before sleep" loading="lazy" decoding="async">
+                        <figcaption><span>01 / Wind down</span><strong>Let the room soften.</strong></figcaption>
+                    </figure>
+                    <figure class="lw2-real-life-card lw2-real-life-card--tall">
+                        <img src="images/luna-latest/model-scenes/C 20.JPG" alt="Person resting in bed beside LunaWake as the room grows quiet" loading="lazy" decoding="async">
+                        <figcaption><span>02 / Through the night</span><strong>Nothing to wear. Nothing to manage.</strong></figcaption>
+                    </figure>
+                    <figure class="lw2-real-life-card">
+                        <img src="images/luna-latest/model-scenes/C 86.JPG" alt="Person stretching awake in bed beside LunaWake in the morning" loading="lazy" decoding="async">
+                        <figcaption><span>03 / Wake gently</span><strong>Meet the morning at your pace.</strong></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="lw2-process" id="how-it-works" aria-labelledby="process-heading">
             <div class="lw2-shell">
                 <div class="lw2-section-head">
-                    <div><p class="lw2-eyebrow">How it works</p><h2>Sense. Follow. Wake.</h2></div>
-                    <p>Three quiet steps connect the device, the app, and your morning. The system is built around observable interactions — not promises of diagnosis or treatment.</p>
+                        <div><p class="lw2-eyebrow">How it works</p><h2 id="process-heading">Three quiet steps.<br>One complete night.</h2></div>
+                    <p>Place it for wind down, let it sense quietly through the night, then wake inside the window you choose. These are real product interactions, not simulated screens.</p>
                 </div>
-                <div class="lw2-process-grid">
-                    <article class="lw2-process-card"><div class="lw2-process-media"><img src="images/luna-lifestyle-bedside.png" alt="LunaWake placed at the bedside" loading="lazy"><span class="lw2-video-label">01 / Set it down</span></div><div class="lw2-process-body"><h3>Sense</h3><p>Place LunaWake at the bedside, facing you. Contact-free signals follow breathing-related movement and presence across the night.</p></div></article>
-                    <article class="lw2-process-card"><div class="lw2-process-media"><img src="images/luna-speaker-exploded.jpg" alt="LunaWake sensing and speaker architecture" loading="lazy"><span class="lw2-video-label">02 / Live signals</span></div><div class="lw2-process-body"><h3>Follow</h3><p>The Luna App makes the night legible: real signals, clear context, and a calmer view of how your routine is moving.</p></div></article>
-                    <article class="lw2-process-card"><div class="lw2-process-media"><img src="images/luna-finish-olive-champagne.png" alt="LunaWake light and sound at the bedside" loading="lazy"><span class="lw2-video-label">03 / Gentle rise</span></div><div class="lw2-process-body"><h3>Wake</h3><p>Light and sound rise with the wake window, then meet the hard deadline you set. A routine, not just an alarm.</p></div></article>
+                <div class="lw2-process-grid lw2-video-grid">
+                    <article class="lw2-process-card">
+                        <div class="lw2-process-media">
+                            <video poster="images/luna-latest/sense-room.png" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="Placing LunaWake at the bedside">
+                                <source data-src="media/video/lunawake/featured/01-set-down.mp4" type="video/mp4">
+                            </video>
+                            <span class="lw2-video-label">01 / Set it down</span>
+                        </div>
+                        <div class="lw2-process-body"><h3>Place</h3><p>Set LunaWake at the bedside, facing you. No wearable, camera, or complicated setup.</p></div>
+                    </article>
+                    <article class="lw2-process-card">
+                        <div class="lw2-process-media">
+                            <video poster="images/luna-latest/follow-room.png" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="LunaWake sensing movement without contact">
+                                <source data-src="media/video/lunawake/featured/02-contact-free-sensing.mp4" type="video/mp4">
+                            </video>
+                            <span class="lw2-video-label">02 / Live signals</span>
+                        </div>
+                        <div class="lw2-process-body"><h3>Sense</h3><p>Contact-free signals follow presence and breathing-related movement while the room stays quiet. No camera, no contact.</p></div>
+                    </article>
+                    <article class="lw2-process-card">
+                        <div class="lw2-process-media">
+                            <video poster="images/luna-latest/wake-room.png" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="LunaWake waking the room with rising light and sound">
+                                <source data-src="media/video/lunawake/featured/03-morning-rise.mp4" type="video/mp4">
+                            </video>
+                            <span class="lw2-video-label">03 / Gentle rise</span>
+                        </div>
+                        <div class="lw2-process-body"><h3>Wake</h3><p>Light and sound rise with the wake window, then meet the hard deadline you set without a sudden alarm.</p></div>
+                    </article>
                 </div>
-                <div class="lw2-proof-line"><span>Designed to support everyday sleep routines.</span><span>Clinical validation is in progress.</span><span>LunaWake is not a medical device.</span></div>
+                <div class="lw2-proof-line"><span>No wearable</span><span>No camera</span><span>Works offline</span><span>Physical privacy gate</span></div>
             </div>
         </section>
 
         <section class="lw2-device" id="hardware">
             <div class="lw2-shell">
                 <div class="lw2-device-hero">
-                    <div class="lw2-device-copy"><p class="lw2-eyebrow">The device</p><h2>Made for the room you sleep in.</h2><p>LunaWake is a considered bedside object: warm light, quiet sound, contact-free sensing, and a physical privacy switch you can see and trust.</p><a class="lw2-inline-link" href="#finishes">Explore finishes <span aria-hidden="true">→</span></a></div>
-                    <figure class="lw2-device-image"><img src="images/luna-lifestyle-bedside.png" alt="LunaWake glowing beside a sleeping person" loading="lazy"><figcaption>Built to belong at the bedside.</figcaption></figure>
+                    <div class="lw2-device-copy"><p class="lw2-eyebrow">The device</p><h2>A quiet object for the room you already have.</h2><p>Warm light, gentle sound, contact-free sensing, and a physical privacy gate — designed to belong at the bedside and disappear into the night.</p><a class="lw2-inline-link" href="#finishes">Explore finishes <span aria-hidden="true">→</span></a></div>
+                    <figure class="lw2-device-image"><img src="images/luna-latest/lab-bedside.png" alt="LunaWake glowing on a bedside table in a quiet bedroom" loading="lazy" decoding="async"><figcaption>Built to belong at the bedside.</figcaption></figure>
                 </div>
                 <div class="lw2-feature-row">
                     <div><span>01</span><h3>Contact-free</h3><p>No ring. No watch. No skin contact.</p></div>
-                    <div><span>02</span><h3>Privacy gate</h3><p>A physical switch controls acoustic sensing at the hardware level.</p></div>
-                    <div><span>03</span><h3>Light + sound</h3><p>A gradual transition into and out of sleep.</p></div>
-                    <div><span>04</span><h3>Low friction</h3><p>Set it down, plug it in, and let the routine run.</p></div>
+                    <div><span>02</span><h3>Privacy gate</h3><p>A physical switch cuts off acoustic sensing at the hardware level.</p></div>
+                    <div><span>03</span><h3>Local by default</h3><p>Core routines keep running on-device, even when the app or network is unavailable.</p></div>
+                    <div><span>04</span><h3>Light + sound</h3><p>Wind down gently. Wake inside the window you choose.</p></div>
                 </div>
+                <div class="lw2-device-detail">
+                    <figure class="lw2-device-detail-image"><img src="images/luna-latest/device-bedside.png" alt="LunaWake glowing beside a sleeping person on a bedside table" loading="lazy" decoding="async"><figcaption>Bedside study / illuminated prototype</figcaption></figure>
+                    <div class="lw2-device-detail-copy"><p class="lw2-eyebrow">The object in the room</p><h3>Present when you need it. Quiet when you don’t.</h3><p>The form keeps the light, sensing, and privacy controls in one calm bedside object — close enough to help, considered enough to disappear.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lw2-radar" id="radar" aria-labelledby="room-heading">
+            <div class="lw2-shell">
+                <div class="lw2-radar-head">
+                    <div><p class="lw2-eyebrow">Inside the room / Smart &amp; adaptable</p><h2 id="room-heading">Smart &amp; adaptable for every room.</h2></div>
+                    <p>One calm intelligence layer notices the room, understands the moment, and lets the space respond. Explore the signal first, then see how it becomes a routine across the devices you already have.</p>
+                </div>
+                <div class="lw2-room-demo" data-room-experience>
+                    <div class="lw2-room-tabs" role="tablist" aria-label="Inside the room views">
+                        <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="room-panel-sensors" id="room-tab-sensors" data-room-tab="sensors"><span>01</span>Sensors &amp; Data</button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="room-panel-home" id="room-tab-home" data-room-tab="home"><span>02</span>Smart Home</button>
+                    </div>
+                    <div class="lw2-room-workspace">
+                        <div class="lw2-room-screen">
+                            <section class="lw2-room-panel is-active" role="tabpanel" id="room-panel-sensors" aria-labelledby="room-tab-sensors" data-room-panel="sensors">
+                                <div class="lw2-room-screen-header"><div><h3>Sensors &amp; Data</h3></div><button class="lw2-room-privacy is-on" type="button" data-room-toggle="privacy" aria-pressed="true"><span></span><b>Privacy switch</b><strong data-room-privacy-label>Sensing</strong></button></div>
+                                <div class="lw2-room-signal-grid"><article><div><span class="lw2-signal-glyph lw2-signal-glyph--breath" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M239.24,131.4c-22,46.8-41.4,68.6-61.2,68.6-25.1,0-40.73-33.32-57.28-68.6C107.7,103.56,92.9,72,78,72c-16.4,0-36.31,37.21-46.72,59.4a8,8,0,0,1-14.48-6.8C38.71,77.8,58.16,56,78,56c25.1,0,40.73,33.32,57.28,68.6C148.3,152.44,163.1,184,178,184c16.4,0,36.31-37.21,46.72-59.4a8,8,0,0,1,14.48,6.8Z"></path></svg></span><strong>Breathing</strong><em>in bed</em></div><b>15<small>br/min</small></b><svg class="lw2-sparkline lw2-sparkline--breath" viewBox="0 0 240 40" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sparkline-breath-stroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="currentColor" stop-opacity="0"></stop><stop offset="35%" stop-color="currentColor" stop-opacity=".35"></stop><stop offset="100%" stop-color="currentColor" stop-opacity=".95"></stop></linearGradient></defs><path d="M0.00 6.00 C1.38 8.33 5.52 17.67 8.28 20.00 C11.03 22.33 13.79 22.33 16.55 20.00 C19.31 17.67 22.07 3.67 24.83 6.00 C27.59 8.33 30.34 31.67 33.10 34.00 C35.86 36.33 38.62 24.67 41.38 20.00 C44.14 15.33 46.90 8.33 49.66 6.00 C52.41 3.67 55.17 1.33 57.93 6.00 C60.69 10.67 63.45 29.33 66.21 34.00 C68.97 38.67 71.72 36.33 74.48 34.00 C77.24 31.67 80.00 22.33 82.76 20.00 C85.52 17.67 88.28 22.33 91.03 20.00 C93.79 17.67 96.55 3.67 99.31 6.00 C102.07 8.33 104.83 31.67 107.59 34.00 C110.34 36.33 113.10 24.67 115.86 20.00 C118.62 15.33 121.38 8.33 124.14 6.00 C126.90 3.67 129.66 6.00 132.41 6.00 C135.17 6.00 137.93 1.33 140.69 6.00 C143.45 10.67 146.21 34.00 148.97 34.00 C151.72 34.00 154.48 8.33 157.24 6.00 C160.00 3.67 162.76 15.33 165.52 20.00 C168.28 24.67 171.03 31.67 173.79 34.00 C176.55 36.33 179.31 36.33 182.07 34.00 C184.83 31.67 187.59 20.00 190.34 20.00 C193.10 20.00 195.86 31.67 198.62 34.00 C201.38 36.33 204.14 38.67 206.90 34.00 C209.66 29.33 212.41 6.00 215.17 6.00 C217.93 6.00 220.69 29.33 223.45 34.00 C226.21 38.67 228.97 38.67 231.72 34.00 C234.48 29.33 238.62 10.67 240.00 6.00"></path></svg></article><article><div><span class="lw2-signal-glyph lw2-signal-glyph--movement" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"></path></svg></span><strong>Movement</strong><em>Still</em></div><b>8<small>%</small></b><svg class="lw2-sparkline lw2-sparkline--movement" viewBox="0 0 240 40" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sparkline-movement-stroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="currentColor" stop-opacity="0"></stop><stop offset="35%" stop-color="currentColor" stop-opacity=".35"></stop><stop offset="100%" stop-color="currentColor" stop-opacity=".95"></stop></linearGradient></defs><path d="M0.00 30.50 C1.38 28.75 5.52 23.50 8.28 20.00 C11.03 16.50 13.79 7.17 16.55 9.50 C19.31 11.83 22.07 32.83 24.83 34.00 C27.59 35.17 30.34 20.00 33.10 16.50 C35.86 13.00 38.62 11.83 41.38 13.00 C44.14 14.17 46.90 20.00 49.66 23.50 C52.41 27.00 55.17 34.58 57.93 34.00 C60.69 33.42 63.45 24.08 66.21 20.00 C68.97 15.92 71.72 9.50 74.48 9.50 C77.24 9.50 80.00 17.08 82.76 20.00 C85.52 22.92 88.28 24.67 91.03 27.00 C93.79 29.33 96.55 32.83 99.31 34.00 C102.07 35.17 104.83 36.33 107.59 34.00 C110.34 31.67 113.10 24.08 115.86 20.00 C118.62 15.92 121.38 10.67 124.14 9.50 C126.90 8.33 129.66 13.00 132.41 13.00 C135.17 13.00 137.93 6.58 140.69 9.50 C143.45 12.42 146.21 28.75 148.97 30.50 C151.72 32.25 154.48 23.50 157.24 20.00 C160.00 16.50 162.76 9.50 165.52 9.50 C168.28 9.50 171.03 18.25 173.79 20.00 C176.55 21.75 179.31 18.83 182.07 20.00 C184.83 21.17 187.59 29.33 190.34 27.00 C193.10 24.67 195.86 8.92 198.62 6.00 C201.38 3.08 204.14 5.42 206.90 9.50 C209.66 13.58 212.41 27.58 215.17 30.50 C217.93 33.42 220.69 28.17 223.45 27.00 C226.21 25.83 228.97 22.92 231.72 23.50 C234.48 24.08 238.62 29.33 240.00 30.50"></path></svg></article><article><div><span class="lw2-signal-glyph lw2-signal-glyph--noise" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></span><strong>Noise</strong><em>Quiet</em></div><b>36<small>dB</small></b></article></div>
+                                <div class="lw2-room-live-head"><span>Room <b>Bedroom · Night</b></span><strong><i></i> Example read · not connected</strong></div>
+                                <div class="lw2-room-climate"><article><span aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M136,153V88a8,8,0,0,0-16,0v65a32,32,0,1,0,16,0Zm-8,47a16,16,0,1,1,16-16A16,16,0,0,1,128,200Zm40-66V48a40,40,0,0,0-80,0v86a64,64,0,1,0,80,0Zm-40,98a48,48,0,0,1-27.42-87.4A8,8,0,0,0,104,138V48a24,24,0,0,1,48,0v90a8,8,0,0,0,3.42,6.56A48,48,0,0,1,128,232Z"></path></svg></span><small>Temperature</small><strong>22.0°C</strong></article><article><span aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM128,216a72.08,72.08,0,0,1-72-72c0-57.23,55.47-105,72-118,16.53,13,72,60.75,72,118A72.08,72.08,0,0,1,128,216Zm55.89-62.66a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68Z"></path></svg></span><small>Humidity</small><strong>50%</strong></article><article><span aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16-16a8,8,0,0,0-11.32,11.32l16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H40a8,8,0,0,0,0,16h8A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0-16h24A8,8,0,0,0,240,120Z"></path></svg></span><small>Light</small><strong>220 lux</strong></article></div>
+                                <button class="lw2-room-row-action" type="button" data-room-action="summary">◷ <strong>View morning summary</strong><span>›</span></button><div class="lw2-room-feedback" data-room-feedback="sensors" role="status" aria-live="polite"></div>
+                            </section>
+                            <section class="lw2-room-panel" role="tabpanel" tabindex="0" hidden id="room-panel-home" aria-labelledby="room-tab-home" data-room-panel="home">
+                                <div class="lw2-room-screen-header"><div><h3>Smart Home</h3></div></div>
+                                <p class="lw2-room-helper">Connected devices</p>
+                                <div class="lw2-device-grid"><button type="button" data-room-device="Connected shade"><span>▣</span><strong>Connected shade</strong><small><i></i> Wind Down <em>·</em> Wake</small></button><button type="button" data-room-device="Connected light"><span>♧</span><strong>Connected light</strong><small><i></i> Wind Down <em>·</em> Wake</small></button><button type="button" data-room-device="Connected climate"><span>♨</span><strong>Connected climate</strong><small><i></i> Wind Down <em>·</em> Wake</small></button><button type="button" class="is-add" data-room-device="Add a device"><span>＋</span><strong>Add a device</strong></button></div>
+                                <button class="lw2-room-row-action" type="button" data-room-action="manage">▣ <strong>Manage devices</strong><span>›</span></button>
+                                <div class="lw2-scenes-head"><span>Scenes</span><button type="button" data-room-action="edit">Edit</button></div><div class="lw2-scene-pills"><button type="button" data-room-scene="Wind Down">◌ Wind Down · 3</button><button type="button" data-room-scene="Wake">☼ Wake · 3</button></div><div class="lw2-room-feedback" data-room-feedback="home" role="status" aria-live="polite"></div>
+                            </section>
+                        </div>
+                        <div class="lw2-room-copy">
+                            <div class="lw2-room-copy-panel is-active" data-room-copy="sensors"><span>01 / Example live read</span><h3>Know what is being noticed.</h3><p>Breathing, movement, and room conditions stay legible without turning the night into a medical dashboard.</p><b>Contact-free · Privacy switch · Local sensing</b><div class="lw2-room-glass-card"><div><span>Room profile</span><strong>Bedroom · Night</strong></div><p>Quiet signals become context, so the room can respond without becoming another thing to manage.</p><div class="lw2-room-glass-tags"><em>quiet</em><em>local</em><em>contact-free</em></div></div></div>
+                            <div class="lw2-room-copy-panel" hidden data-room-copy="home"><span>02 / Connected room</span><h3>Let the room follow your rhythm.</h3><p>Wind Down and Wake can carry into the devices you already use, so the bedroom supports the routine without asking you to manage every detail.</p><b>Matter · Connected devices</b><div class="lw2-room-glass-card"><div><span>Example scene</span><strong>Wake · 3 devices ready</strong></div><p>One intention can move through light, temperature, and privacy — each device keeping its own role.</p><div class="lw2-room-glass-tags"><em>wind down</em><em>wake</em><em>adaptable</em></div></div></div>
+                            <div class="lw2-room-note"><span>Example only</span><p>Values and connected devices shown here are illustrative. Availability depends on the final Matter setup.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lw2-radar-proof"><span>No camera</span><span>No wearable</span><span>Local routines</span><span>Physical privacy gate</span></div>
+            </div>
+        </section>
+
+        <section class="lw2-app-story" id="app" aria-labelledby="app-heading">
+            <div class="lw2-shell">
+                <div class="lw2-app-story-head">
+                    <div><p class="lw2-eyebrow">The Luna App</p><h2 id="app-heading">The app makes the night legible.</h2></div>
+                    <p>The Luna App is the configuration and reflection layer. Set up tonight before bed, let the device run locally, then return in the morning for a clear summary.</p>
+                </div>
+                <div class="lw2-app-story-grid">
+                    <article><span>01 / Before bed</span><h3>Configure tonight.</h3><p>Choose the wake target, the latest you can sleep, and the preferences that shape the room.</p></article>
+                    <article><span>02 / Through the night</span><h3>Let the device run.</h3><p>Core routines continue on-device when the app or network is unavailable. Physical controls remain authoritative.</p></article>
+                    <article><span>03 / In the morning</span><h3>See what happened.</h3><p>Review a concise morning summary instead of an endless dashboard or a medical score.</p></article>
+                </div>
+                <p class="lw2-app-story-note">Configuration and presentation live in the app. The bedside device remains the always-available system.</p>
             </div>
         </section>
 
         <section class="lw2-finishes" id="finishes">
             <div class="lw2-shell lw2-finish-grid">
                 <div class="lw2-finish-copy"><p class="lw2-eyebrow">Choose your finish</p><h2>A quieter kind of color.</h2><p>Three material directions, one LunaWake experience. Select a finish to see the product render in its lit state.</p><div class="lw2-finish-buttons" role="group" aria-label="Choose a LunaWake finish"><button class="is-active" type="button" data-finish="orange" aria-pressed="true"><span class="lw2-swatch lw2-swatch--orange"></span>Amber</button><button type="button" data-finish="gray" aria-pressed="false"><span class="lw2-swatch lw2-swatch--gray"></span>Stone</button><button type="button" data-finish="black" aria-pressed="false"><span class="lw2-swatch lw2-swatch--black"></span>Charcoal</button></div><p class="lw2-finish-name"><strong data-finish-name>Amber</strong><span data-finish-detail>Warm textile, warm light.</span></p></div>
-                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img data-finish-image src="images/luna-finish-olive-champagne.png" alt="LunaWake in the Amber finish" loading="lazy"></div><figcaption><span>LunaWake / illuminated render</span><span data-finish-code>LW / AMBER</span></figcaption></figure>
-            </div>
-        </section>
-
-        <section class="lw2-app" id="app">
-            <div class="lw2-shell">
-                <div class="lw2-section-head"><div><p class="lw2-eyebrow">Luna App</p><h2>The night, made readable.</h2></div><p>Simple controls when you want them. Clear context when you check in. The app turns the bedside system into a routine you can understand.</p></div>
-                <div class="lw2-app-layout"><div class="lw2-app-screens"><img src="images/APP2.jpg" alt="Luna App wind-down experience" loading="lazy"><img src="images/APP1.jpg" alt="Luna App morning experience" loading="lazy"><img src="images/APP3.jpg" alt="Luna App sleep insights" loading="lazy"></div><div class="lw2-app-notes"><div><span>Wind down</span><h3>Settle without another task.</h3><p>Breathing, sound, and pace are shaped into a small routine that can fade into the background.</p></div><div><span>Wake up</span><h3>A morning that meets you.</h3><p>Choose a target and a hard deadline. LunaWake handles the space in between.</p></div><div><span>Over time</span><h3>Notice patterns, not judgments.</h3><p>Signals become context across nights, with language that helps you notice and adjust.</p></div></div></div>
+                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img class="is-current" data-finish-image src="images/luna-latest/finish-amber-on.png" alt="LunaWake in the Amber finish" loading="lazy"><img class="is-next" data-finish-image-next src="images/luna-latest/finish-amber-on.png" alt="" loading="lazy" aria-hidden="true"></div><figcaption><span>LunaWake / illuminated render</span><span data-finish-code>LW / AMBER</span></figcaption></figure>
             </div>
         </section>
 
         <section class="lw2-lab" id="sleep-lab">
-            <div class="lw2-shell lw2-lab-grid"><div class="lw2-lab-media"><img src="images/luna-finish-cool-gray.png" alt="LunaWake prototype in a calm bedside setting" loading="lazy"><span>Working prototype / lighting and sound preview</span></div><div class="lw2-lab-copy"><p class="lw2-eyebrow">Sleep Lab</p><h2>Good sleep products ask better questions.</h2><p>We are testing the system in real rooms and real routines: what bedside signals can tell us, how wake experiences should feel, and how to talk about sleep without overclaiming.</p><div class="lw2-lab-list"><div><span>01</span><strong>Sensing</strong><p>Can contact-free signals be useful without being intrusive?</p></div><div><span>02</span><strong>Waking</strong><p>What makes a wake-up feel gentle and dependable?</p></div><div><span>03</span><strong>Language</strong><p>How can insights stay human and non-diagnostic?</p></div></div><small>Clinical validation is in progress.</small></div></div>
+            <div class="lw2-shell lw2-lab-grid"><div class="lw2-lab-media"><img src="images/luna-latest/model-scenes/C 7.JPG" alt="Person sleeping beside LunaWake in a real bedroom" loading="lazy" decoding="async"><span>Real-room study / overnight routine preview</span></div><div class="lw2-lab-copy"><p class="lw2-eyebrow">Sleep Lab</p><h2>Good sleep products ask better questions.</h2><p>We are testing the system in real rooms and real routines: what bedside signals can tell us, how wake experiences should feel, and how to talk about sleep without overclaiming.</p><div class="lw2-lab-list"><div><span>01</span><strong>Sensing</strong><p>Can contact-free signals be useful without being intrusive?</p></div><div><span>02</span><strong>Waking</strong><p>What makes a wake-up feel gentle and dependable?</p></div><div><span>03</span><strong>Language</strong><p>How can insights stay human and non-diagnostic?</p></div></div><small>Clinical validation is in progress.</small></div></div>
         </section>
 
         <section class="lw2-faq" id="faq">
-            <div class="lw2-shell lw2-faq-grid"><div><p class="lw2-eyebrow">Questions, answered</p><h2>Start with the important ones.</h2><p>We are early, so clarity matters. Here is what LunaWake is designed to do — and where we are still learning.</p></div><div class="lw2-faq-list"><details open><summary>Do I need to wear anything?</summary><p>No. LunaWake is a bedside system, with no ring, watch, or sensor on your body.</p></details><details><summary>Does LunaWake use a camera?</summary><p>No. LunaWake is designed without a camera. Its microphones are used only for passive acoustic sensing, not voice commands, text-to-speech, or conversation. The physical privacy switch cuts off acoustic sensing at the hardware level.</p></details><details><summary>What does it measure?</summary><p>LunaWake is designed to notice contact-free signals such as movement, presence, and breathing-related patterns. Acoustic events are recorded locally for a morning summary. It is not a medical diagnostic system.</p></details><details><summary>Is it a medical device?</summary><p>No. LunaWake is a consumer sleep companion. It does not diagnose, treat, or prevent any condition. Clinical validation is in progress.</p></details><details><summary>When can I get one?</summary><p>Join the launch list for product updates, testing opportunities, and availability news.</p></details></div></div>
+            <div class="lw2-shell lw2-faq-grid"><div><p class="lw2-eyebrow">Questions, answered</p><h2>Start with the important ones.</h2><p>Clarity matters. Here is what LunaWake is designed to do — and where we are still learning.</p></div><div class="lw2-faq-list"><details open><summary>Do I need to wear anything?</summary><p>No. LunaWake is a bedside system, with no ring, watch, or sensor on your body.</p></details><details><summary>Does LunaWake use a camera?</summary><p>No. LunaWake is designed without a camera. Its microphones are used only for passive acoustic sensing, not voice commands, text-to-speech, or conversation. The physical privacy switch cuts off acoustic sensing at the hardware level.</p></details><details><summary>What does it measure?</summary><p>LunaWake notices contact-free signals such as presence, movement, and breathing-related patterns. Your original breathing and body data stays on the device; the app receives a morning summary for review. It is not a medical diagnostic system.</p></details><details><summary>Does LunaWake work offline?</summary><p>Yes. Wind down, overnight sensing, and wake routines continue locally when Wi-Fi or the app is unavailable. Wi-Fi is needed for reports, updates, backups, and home integrations.</p></details><details><summary>Is it a medical device?</summary><p>No. LunaWake is a consumer sleep companion. It does not diagnose, treat, or prevent any condition. Clinical validation is in progress.</p></details><details><summary>When can I get one?</summary><p>Join the launch list for product updates, testing opportunities, and availability news.</p></details></div></div>
         </section>
 
         <section class="lw2-cta"><div class="lw2-shell"><p class="lw2-eyebrow">Stay close to the build</p><h2>Make tomorrow a little easier to meet.</h2><a class="lw2-button lw2-button--dark" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
-    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div><nav aria-label="Footer navigation"><a href="#how-it-works">How it works</a><a href="#hardware">The device</a><a href="#app">Luna App</a><a href="#sleep-lab">Sleep Lab</a><a href="about.html">About</a></nav></div><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year>2026</span> LunaWake</span><span>Sleep support, not medical advice.</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
+    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div><nav aria-label="Footer navigation"><a href="#how-it-works">How it works</a><a href="#radar">Inside the room</a><a href="#hardware">The device</a><a href="#app">The app</a><a href="#sleep-lab">Sleep Lab</a><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></div><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Sleep support, not medical advice.</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
 
     <script>
     (() => {
@@ -132,20 +234,156 @@
         mobile?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => toggle(false)));
         window.addEventListener('scroll', () => header?.classList.toggle('is-scrolled', window.scrollY > 16), { passive: true });
 
-        const finishData = {
-            orange: { name: 'Amber', detail: 'Warm textile, warm light.', code: 'LW / AMBER', src: 'images/luna-finish-olive-champagne.png' },
-            gray: { name: 'Stone', detail: 'Soft neutral, warm light.', code: 'LW / STONE', src: 'images/luna-finish-cool-gray.png' },
-            black: { name: 'Charcoal', detail: 'Deep textile, warm light.', code: 'LW / CHARCOAL', src: 'images/luna-speaker-exploded.jpg' }
+        const lazyVideos = Array.from(document.querySelectorAll('[data-lazy-video]'));
+        const loadVideo = (video) => {
+            if (video.dataset.loaded === 'true') return;
+            video.querySelectorAll('source[data-src]').forEach((source) => {
+                source.src = source.dataset.src;
+                source.removeAttribute('data-src');
+            });
+            video.load();
+            video.dataset.loaded = 'true';
+            video.play().catch(() => {});
         };
+        if ('IntersectionObserver' in window) {
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    loadVideo(entry.target);
+                    videoObserver.unobserve(entry.target);
+                });
+            }, { rootMargin: '240px 0px' });
+            lazyVideos.forEach((video) => videoObserver.observe(video));
+        } else {
+            lazyVideos.forEach(loadVideo);
+        }
+
+        const finishData = {
+            orange: { name: 'Amber', detail: 'Warm textile, warm light.', code: 'LW / AMBER', src: 'images/luna-latest/finish-amber-on.png' },
+            gray: { name: 'Stone', detail: 'Soft neutral, warm light.', code: 'LW / STONE', src: 'images/luna-latest/finish-stone-on.png' },
+            black: { name: 'Charcoal', detail: 'Deep textile, warm light.', code: 'LW / CHARCOAL', src: 'images/luna-latest/finish-charcoal-on.png' }
+        };
+        const finishFrame = document.querySelector('.lw2-finish-image');
+        let currentFinishImage = finishFrame?.querySelector('[data-finish-image]');
+        let nextFinishImage = finishFrame?.querySelector('[data-finish-image-next]');
+        let currentFinishSrc = currentFinishImage?.getAttribute('src');
+        let queuedFinish = null;
+        let isSwitchingFinish = false;
+        const finishTransitionMs = 300;
+
+        const preloadFinish = (src) => new Promise((resolve, reject) => {
+            const image = new Image();
+            image.onload = resolve;
+            image.onerror = reject;
+            image.src = src;
+        });
+
+        const switchFinishImage = async (data) => {
+            if (!currentFinishImage || !nextFinishImage || !data) return;
+            if (!isSwitchingFinish && data.src === currentFinishSrc) return;
+            queuedFinish = data;
+            if (isSwitchingFinish) return;
+
+            isSwitchingFinish = true;
+            while (queuedFinish) {
+                const target = queuedFinish;
+                queuedFinish = null;
+                if (target.src === currentFinishSrc) continue;
+
+                try {
+                    await preloadFinish(target.src);
+                } catch {
+                    continue;
+                }
+
+                nextFinishImage.src = target.src;
+                nextFinishImage.alt = `LunaWake in the ${target.name} finish`;
+                requestAnimationFrame(() => {
+                    nextFinishImage.classList.add('is-visible');
+                    currentFinishImage.classList.add('is-hidden');
+                });
+                await new Promise((resolve) => window.setTimeout(resolve, finishTransitionMs));
+
+                currentFinishImage.classList.remove('is-current', 'is-hidden');
+                currentFinishImage.classList.add('is-next');
+                nextFinishImage.classList.remove('is-next', 'is-visible');
+                nextFinishImage.classList.add('is-current');
+                [currentFinishImage, nextFinishImage] = [nextFinishImage, currentFinishImage];
+                currentFinishSrc = target.src;
+            }
+            isSwitchingFinish = false;
+        };
+
+        Object.values(finishData).forEach(({ src }) => { const image = new Image(); image.src = src; });
         document.querySelectorAll('[data-finish]').forEach((button) => button.addEventListener('click', () => {
             const data = finishData[button.dataset.finish];
+            if (!data) return;
             document.querySelectorAll('[data-finish]').forEach((item) => { const active = item === button; item.classList.toggle('is-active', active); item.setAttribute('aria-pressed', String(active)); });
-            const image = document.querySelector('[data-finish-image]');
-            if (image && data) { image.classList.add('is-switching'); window.setTimeout(() => { image.src = data.src; image.alt = `LunaWake in the ${data.name} finish`; image.classList.remove('is-switching'); }, 160); }
+            switchFinishImage(data);
             document.querySelector('[data-finish-name]').textContent = data.name;
             document.querySelector('[data-finish-detail]').textContent = data.detail;
             document.querySelector('[data-finish-code]').textContent = data.code;
         }));
+
+        const roomRoots = Array.from(document.querySelectorAll('[data-room-experience]'));
+        roomRoots.forEach((root) => {
+            const tabs = Array.from(root.querySelectorAll('[data-room-tab]'));
+            const panels = Array.from(root.querySelectorAll('[data-room-panel]'));
+            const copyPanels = Array.from(root.querySelectorAll('[data-room-copy]'));
+            const setRoomState = (key) => {
+                tabs.forEach((tab) => {
+                    const active = tab.dataset.roomTab === key;
+                    tab.classList.toggle('is-active', active);
+                    tab.setAttribute('aria-selected', String(active));
+                });
+                panels.forEach((panel) => {
+                    const active = panel.dataset.roomPanel === key;
+                    panel.classList.toggle('is-active', active);
+                    panel.hidden = !active;
+                });
+                copyPanels.forEach((panel) => {
+                    const active = panel.dataset.roomCopy === key;
+                    panel.classList.toggle('is-active', active);
+                    panel.hidden = !active;
+                });
+            };
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => setRoomState(tab.dataset.roomTab));
+                tab.addEventListener('keydown', (event) => {
+                    const keys = ['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'];
+                    if (!keys.includes(event.key) || !tabs.length) return;
+                    event.preventDefault();
+                    const direction = event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 1;
+                    const targetIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + direction + tabs.length) % tabs.length;
+                    tabs[targetIndex].focus();
+                    setRoomState(tabs[targetIndex].dataset.roomTab);
+                });
+            });
+            root.querySelectorAll('[data-room-toggle="privacy"]').forEach((button) => button.addEventListener('click', () => {
+                const active = button.getAttribute('aria-pressed') !== 'true';
+                button.classList.toggle('is-on', active);
+                button.setAttribute('aria-pressed', String(active));
+                const label = root.querySelector('[data-room-privacy-label]');
+                if (label) label.textContent = active ? 'Sensing' : 'Paused';
+                const feedback = root.querySelector('[data-room-feedback="sensors"]');
+                if (feedback) feedback.textContent = active ? 'Example sensing is on.' : 'Example sensing is paused by the physical privacy gate.';
+            }));
+            root.querySelectorAll('[data-room-device]').forEach((button) => button.addEventListener('click', () => {
+                const feedback = root.querySelector('[data-room-feedback="home"]');
+                if (feedback) feedback.textContent = button.dataset.roomDevice === 'Add a device' ? 'Example device setup opened.' : `Example device selected: ${button.dataset.roomDevice}.`;
+            }));
+            root.querySelectorAll('[data-room-scene]').forEach((button) => button.addEventListener('click', () => {
+                const feedback = root.querySelector('[data-room-feedback="home"]');
+                if (feedback) feedback.textContent = `Example ${button.dataset.roomScene} scene selected.`;
+            }));
+            root.querySelectorAll('[data-room-action]').forEach((button) => button.addEventListener('click', () => {
+                const feedbackKey = button.dataset.roomAction === 'summary' ? 'sensors' : 'home';
+                const feedback = root.querySelector(`[data-room-feedback="${feedbackKey}"]`);
+                if (feedback) {
+                    feedback.textContent = button.dataset.roomAction === 'summary' ? 'Example morning summary opened.' : button.dataset.roomAction === 'manage' ? 'Example device manager opened.' : 'Example scene editor opened.';
+                }
+            }));
+        });
         document.querySelectorAll('[data-year]').forEach((item) => item.textContent = new Date().getFullYear());
     })();
     </script>

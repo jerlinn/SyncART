@@ -15,5 +15,7 @@
 .gstack/
 
 # Raw shooting footage & source image library (not deployed)
-/media/video/lunawake/
+/media/video/lunawake/*
+!/media/video/lunawake/featured/
+!/media/video/lunawake/featured/*.mp4
 /images/library/

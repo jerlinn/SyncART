@@ -1,444 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#faf9f6">
+    <meta name="description" content="LunaWake is a bedside sleep companion that senses, follows, and wakes with you — without a wearable or a camera.">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
-    <title>Lunawake | The Next-Gen AI Sleep &amp; Energy Companion</title>
-    <link rel="stylesheet" href="styles.css?v=navfix56">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <title>LunaWake — Sleep, understood from the bedside.</title>
+    <link rel="stylesheet" href="styles.css?v=lunawake-home-2026-07-29">
 </head>
-<body class="has-announcement">
-    <!-- Announcement Bar -->
-    <div class="announcement-bar" role="region" aria-label="Announcement">
-        <div class="announcement-inner">
-            <a class="announcement-link" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">
-                <span class="announcement-text">📍 CES 2026: Get the full Launch Preview &amp; unlock founding member perks</span>
-                <span class="announcement-domain" aria-hidden="true">⏭️ signup.lunawake.ai</span>
-            </a>
+<body class="lw-site">
+    <div class="lw-announcement">
+        <div class="lw-container lw-announcement-inner">
+            <span>Now building the next generation of bedside sleep support.</span>
+            <a href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="nav-container">
-            <div class="nav-left">
-                <a href="index.html" class="logo" aria-label="Lunawake">
-                    <img class="logo-combined" src="images/combinelogo.png" alt="Lunawake" decoding="async">
-                </a>
-            </div>
-
-            <div class="nav-center">
-                <a href="about.html">About</a>
-                <a href="support.html">Support</a>
-                <a href="updates.html">CES</a>
-            </div>
-
-            <div class="nav-right">
-                <!-- Pre-order removed -->
-            </div>
+    <header class="lw-header" data-header>
+        <div class="lw-container lw-nav">
+            <a class="lw-brand" href="#top" aria-label="LunaWake home">
+                <img src="images/combinelogo.png" alt="LunaWake" decoding="async">
+            </a>
+            <nav class="lw-nav-links" aria-label="Primary navigation">
+                <a href="#how-it-works">How it works</a>
+                <a href="#app">Luna App</a>
+                <a href="#hardware">Hardware</a>
+                <a href="#sleep-lab">Sleep Lab</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a class="lw-nav-cta" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Get updates <span aria-hidden="true">↗</span></a>
+            <button class="lw-menu-button" type="button" aria-expanded="false" aria-controls="lw-mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+        </div>
+        <div class="lw-mobile-menu" id="lw-mobile-menu" hidden>
+            <nav aria-label="Mobile navigation">
+                <a href="#how-it-works">How it works <span>↗</span></a>
+                <a href="#app">Luna App <span>↗</span></a>
+                <a href="#hardware">Hardware <span>↗</span></a>
+                <a href="#sleep-lab">Sleep Lab <span>↗</span></a>
+                <a href="#faq">FAQ <span>↗</span></a>
+            </nav>
+            <a class="lw-button lw-button--dark" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="main-title">
-                    <span class="title-line">Meet LunaWake</span>
-                    <span class="title-line">the next-gen AI sleep mentor</span>
-                </h1>
-                <p class="hero-subtitle">It turns your night into a simple routine: wind down easier, sleep effortlessly, wake up on time.</p>
-                <div class="hero-cta">
-                    <a class="btn btn-gradient" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Explore the Launch Plan</a>
+    <main id="top">
+        <section class="lw-hero">
+            <div class="lw-hero-media" aria-hidden="true"></div>
+            <div class="lw-container lw-hero-inner">
+                <div class="lw-hero-copy lw-reveal">
+                    <p class="lw-kicker">A quieter way to wake</p>
+                    <h1>Sleep, understood from the bedside.</h1>
+                    <p class="lw-hero-lede">LunaWake is a no-wearable, no-camera sleep companion that senses the night, follows your rhythm, and helps you wake when it matters.</p>
+                    <div class="lw-actions">
+                        <a class="lw-button lw-button--light" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
+                        <a class="lw-text-link lw-text-link--light" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+                <div class="lw-hero-proof lw-reveal" style="--delay: 120ms">
+                    <span class="lw-proof-pulse" aria-hidden="true"></span>
+                    <span>Sense <b>→</b> Follow <b>→</b> Wake</span>
+                    <small>Designed to work quietly in the background.</small>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Long-term sleep improvement -->
-    <section class="lt-improvement" id="long-term-sleep-improvement">
-        <div class="container">
-            <div class="lt-stack">
-                <!-- Pre-sleep (image right) -->
-                <section class="lt-stage lt-stage--image-right">
-                    <div class="lt-stage-header">
-                        <div class="lt-eyebrow">Pre-sleep</div>
-                        <h3 class="lt-headline">Wind down with intention.</h3>
-                    </div>
-
-                    <div class="lt-stage-grid">
-                        <div class="lt-stage-text">
-                            <ul class="lt-bullets">
-                                <li><strong>AI-guided breathing:</strong> A short routine that slows you down.</li>
-                                <li><strong>Personalized sleep sounds:</strong> Choose a sound or your own. Fades out when you fall asleep.</li>
-                            </ul>
-                        </div>
-
-                        <div class="lt-stage-media lt-media lt-media--pre">
-                            <img src="images/Scene1.jpg" alt="Pre-sleep" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </section>
-
-                <!-- In-sleep (FULL-BLEED image) -->
-                <section class="lt-stage lt-stage--bleed">
-                    <div class="lt-stage-header">
-                        <div class="lt-eyebrow">In-sleep</div>
-                        <h3 class="lt-headline">Track automatically. Sleep naturally.</h3>
-                    </div>
-
-                    <div class="lt-stage-text lt-stage-text--wide">
-                        <ul class="lt-bullets">
-                            <li><strong>Effortless sleep tracking:</strong> Bedside, automatic. No ring. No watch.</li>
-                            <li><strong>Privacy fully protected:</strong> No camera. Ever. Mic only in the talk window you start.</li>
-                        </ul>
-                    </div>
-
-                    <div class="lt-bleed">
-                        <div class="lt-media lt-media--bleed lt-media--insleep">
-                            <img src="images/Scene-2.jpg" alt="In-sleep" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Wake-up (image left) -->
-                <section class="lt-stage lt-stage--image-left">
-                    <div class="lt-stage-header">
-                        <div class="lt-eyebrow">Wake-up</div>
-                        <h3 class="lt-headline">A routine, not just an alarm.</h3>
-                    </div>
-
-                    <div class="lt-stage-grid">
-                        <div class="lt-stage-text">
-                            <ul class="lt-bullets">
-                                <li><strong>Target time + hard deadline:</strong> Adapts to real mornings, then gets you up on time.</li>
-                                <li><strong>Built for real wake-ups:</strong> Snooze, half-awake moments, brief get-ups. Handled.</li>
-                            </ul>
-                        </div>
-
-                        <div class="lt-stage-media lt-media lt-media--wakeup">
-                            <img src="images/scene3.jpg" alt="Wake-up" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Long-term (calm coda) -->
-                <section class="lt-stage lt-stage--coda">
-                    <div class="lt-stage-header">
-                        <div class="lt-eyebrow">Long-term sleep improvement</div>
-                        <h3 class="lt-headline">Gentle guidance. Steadier rhythm.</h3>
-                    </div>
-
-                    <div class="lt-stage-text lt-stage-text--wide">
-                        <ul class="lt-bullets">
-                            <li><strong>Nightly cues that add up:</strong> Over time, a more consistent sleep schedule.</li>
-                            <li><strong>No extra effort:</strong> It runs in the background, night after night.</li>
-                        </ul>
-                    </div>
-
-                    <div
-                        class="lt-stage-media lt-media lt-media--longterm lt-media--coda lt-carousel"
-                        data-lt-carousel
-                        data-lt-autoplay
-                        role="region"
-                        aria-label="Long-term sleep scenes">
-                        <img
-                            class="lt-carousel-img is-active"
-                            src="images/Scene0_2000.jpg"
-                            srcset="images/Scene0_2000.jpg 2000w, images/Scene0_3200.jpg 3200w"
-                            sizes="(max-width: 768px) 100vw, min(1320px, 100vw)"
-                            alt="Long-term sleep improvement"
-                            decoding="async">
-                        <img
-                            class="lt-carousel-img"
-                            src="images/补充场景1_2000.jpg"
-                            srcset="images/补充场景1_2000.jpg 2000w, images/补充场景1_3200.jpg 3200w"
-                            sizes="(max-width: 768px) 100vw, min(1320px, 100vw)"
-                            alt="Long-term sleep improvement scene"
-                            loading="lazy"
-                            decoding="async">
-                        <img
-                            class="lt-carousel-img"
-                            src="images/补充场景2_2000.jpg"
-                            srcset="images/补充场景2_2000.jpg 2000w, images/补充场景2_3200.jpg 3200w"
-                            sizes="(max-width: 768px) 100vw, min(1320px, 100vw)"
-                            alt="Long-term sleep improvement scene"
-                            loading="lazy"
-                            decoding="async">
-
-                        <button class="lt-carousel-nav lt-carousel-prev" type="button" aria-label="Previous image">
-                            <img src="images/gallery_arrow-left.svg" alt="" aria-hidden="true">
-                        </button>
-                        <button class="lt-carousel-nav lt-carousel-next" type="button" aria-label="Next image">
-                            <img src="images/gallery_arrow-right.svg" alt="" aria-hidden="true">
-                        </button>
-
-                        <div class="lt-carousel-dots" role="tablist" aria-label="Select image">
-                            <button class="lt-carousel-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Image 1"></button>
-                            <button class="lt-carousel-dot" type="button" role="tab" aria-selected="false" aria-label="Image 2"></button>
-                            <button class="lt-carousel-dot" type="button" role="tab" aria-selected="false" aria-label="Image 3"></button>
-                        </div>
-                    </div>
-                </section>
+        <section class="lw-trust-band" aria-label="Product principles">
+            <div class="lw-container lw-trust-grid">
+                <div><strong>01</strong><span>No wearable</span></div>
+                <div><strong>02</strong><span>No camera</span></div>
+                <div><strong>03</strong><span>Privacy by design</span></div>
+                <div><strong>04</strong><span>Clinical validation in progress</span></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Product Details Gallery -->
-    <section class="product-details-gallery">
-        <div class="container">
-            <h2>Designed for Life</h2>
-            <p class="gallery-description">Where minimalist elegance meets intelligent technology. Every curve, every surface, every detail crafted to blend seamlessly into your most personal space.</p>
-
-            <!-- Mobile editorial layout (Plan A): hero + caption + horizontal detail strip -->
-            <div class="design-mobile" aria-label="Design details">
-                <div class="design-hero">
-                    <img class="design-hero-img" src="images/1.jpg" alt="Lunawake Design Overview" decoding="async">
+        <section class="lw-section lw-how" id="how-it-works">
+            <div class="lw-container">
+                <div class="lw-section-intro lw-reveal">
+                    <p class="lw-kicker">How it works</p>
+                    <h2>A simple loop, made visible.</h2>
+                    <p>Every part of LunaWake has a job. It starts with contact-free sensing, turns signals into a night you can understand, then uses that context to shape the wake window.</p>
                 </div>
-
-                <div class="design-caption">
-                    <div class="design-label">Design details</div>
-                    <div class="design-subline">Materials, surfaces, and form.</div>
+                <div class="lw-loop-grid">
+                    <article class="lw-loop-card lw-reveal">
+                        <span class="lw-step">01</span>
+                        <div class="lw-icon lw-icon--indigo" aria-hidden="true">⌁</div>
+                        <h3>Sense</h3>
+                        <p>Bedside sensing reads movement and breathing-related patterns without asking you to wear anything.</p>
+                        <span class="lw-card-note">Signal, not diagnosis</span>
+                    </article>
+                    <article class="lw-loop-card lw-reveal" style="--delay: 80ms">
+                        <span class="lw-step">02</span>
+                        <div class="lw-icon lw-icon--sage" aria-hidden="true">◌</div>
+                        <h3>Follow</h3>
+                        <p>The Luna App turns nightly signals into a calm, readable picture of how your routine is moving.</p>
+                        <span class="lw-card-note">Context over scores</span>
+                    </article>
+                    <article class="lw-loop-card lw-reveal" style="--delay: 160ms">
+                        <span class="lw-step">03</span>
+                        <div class="lw-icon lw-icon--amber" aria-hidden="true">☼</div>
+                        <h3>Wake</h3>
+                        <p>LunaWake uses your target time and a hard deadline to create a more considerate wake-up window.</p>
+                        <span class="lw-card-note">Gentle, then dependable</span>
+                    </article>
                 </div>
-
-                <div class="design-strip" role="list" aria-label="Design detail thumbnails">
-                    <button class="design-thumb" type="button" data-src="images/Frame 7.jpg" aria-label="Material Excellence">
-                        <span class="design-thumb-media">
-                            <img src="images/Frame 7.jpg" alt="Material Excellence" loading="lazy" decoding="async">
-                        </span>
-                    </button>
-                    <button class="design-thumb" type="button" data-src="images/4.jpg" aria-label="Intelligent Components">
-                        <span class="design-thumb-media">
-                            <img src="images/4.jpg" alt="Intelligent Components" loading="lazy" decoding="async">
-                        </span>
-                    </button>
-                    <button class="design-thumb" type="button" data-src="images/6.jpg" aria-label="Thoughtful Details">
-                        <span class="design-thumb-media">
-                            <img src="images/6.jpg" alt="Thoughtful Details" loading="lazy" decoding="async">
-                        </span>
-                    </button>
-                    <button class="design-thumb" type="button" data-src="images/2.jpg" aria-label="Precision Engineering">
-                        <span class="design-thumb-media">
-                            <img src="images/2.jpg" alt="Precision Engineering" loading="lazy" decoding="async">
-                        </span>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="details-grid">
-                <div class="detail-item main-feature">
-                    <img src="images/1.jpg" alt="Lunawake Design Overview" class="detail-image" decoding="async">
-                </div>
-                <div class="detail-item">
-                    <img src="images/Frame 7.jpg" alt="Material Excellence" class="detail-image" loading="lazy" decoding="async">
-                </div>
-                <div class="detail-item">
-                    <img src="images/4.jpg" alt="Intelligent Components" class="detail-image" loading="lazy" decoding="async">
-                </div>
-                <div class="detail-item">
-                    <img src="images/6.jpg" alt="Thoughtful Details" class="detail-image" loading="lazy" decoding="async">
-                </div>
-                <div class="detail-item">
-                    <img src="images/2.jpg" alt="Precision Engineering" class="detail-image" loading="lazy" decoding="async">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- App Experience (Apple-like, calm) -->
-    <section class="app-experience" aria-label="App Experience">
-        <div class="container">
-            <h2 class="app-exp-headline">Set it once. We’ll handle the rest.</h2>
-            <p class="app-exp-subhead">From wind-down to wake-up, Lunawake stays with you. It tracks, guides, and adapts without demanding your time.</p>
-
-            <div class="app-exp-grid">
-                <div class="app-exp-card">
-                    <div class="app-exp-media">
-                        <img src="images/APP1.jpg" alt="Morning wake-up" loading="lazy" decoding="async">
-                    </div>
-                    <div class="app-exp-text">
-                        <div class="app-exp-label">MORNING</div>
-                        <div class="app-exp-title">A wake-up that continues your night.</div>
-                        <p class="app-exp-desc">Gently brings you back with a voice you recognize, guided by how you slept.</p>
-                    </div>
-                </div>
-
-                <div class="app-exp-card">
-                    <div class="app-exp-media">
-                        <img src="images/APP2.jpg" alt="Night unwind" loading="lazy" decoding="async">
-                    </div>
-                    <div class="app-exp-text">
-                        <div class="app-exp-label">NIGHT</div>
-                        <div class="app-exp-title">Unwind, on autopilot.</div>
-                        <p class="app-exp-desc">Breathing, sound, and tempo. Shaped to help you settle without effort.</p>
-                    </div>
-                </div>
-
-                <div class="app-exp-card">
-                    <div class="app-exp-media">
-                        <img src="images/APP3.jpg" alt="Over time insights" loading="lazy" decoding="async">
-                    </div>
-                    <div class="app-exp-text">
-                        <div class="app-exp-label">OVER TIME</div>
-                        <div class="app-exp-title">A rhythm that sticks.</div>
-                        <p class="app-exp-desc">Small cues, learned across nights. Signals become steady progress.</p>
+                <div class="lw-evidence-row lw-reveal">
+                    <div class="lw-evidence-media"><img src="images/luna-speaker-exploded.jpg" alt="LunaWake speaker architecture, shown in an exploded view" loading="lazy" decoding="async"></div>
+                    <div class="lw-evidence-copy">
+                        <p class="lw-kicker">The support behind the promise</p>
+                        <h3>Contact-free sensing, explained plainly.</h3>
+                        <p>LunaWake uses low-power, contact-free sensing from the bedside. The system is designed to notice patterns across a night — not to make a medical claim about you.</p>
+                        <div class="lw-evidence-points"><span><i aria-hidden="true">✓</i> No camera</span><span><i aria-hidden="true">✓</i> No skin contact</span><span><i aria-hidden="true">✓</i> Private by default</span></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="lw-section lw-finish-section" id="finishes">
+            <div class="lw-container lw-finish-layout">
+                <div class="lw-finish-copy lw-reveal">
+                    <p class="lw-kicker">Make it yours</p>
+                    <h2>A bedside object, in your kind of quiet.</h2>
+                    <p>Choose the finish that belongs in your room. Both versions share the same sensing, sound, light, and privacy-first experience.</p>
+                    <div class="lw-finish-picker" role="group" aria-label="Choose a finish">
+                        <button class="lw-finish-option is-selected" type="button" data-finish="olive" aria-pressed="true"><span class="lw-swatch lw-swatch--olive" aria-hidden="true"></span><span>Olive / Champagne</span></button>
+                        <button class="lw-finish-option" type="button" data-finish="gray" aria-pressed="false"><span class="lw-swatch lw-swatch--gray" aria-hidden="true"></span><span>Cool Gray</span></button>
+                    </div>
+                    <p class="lw-finish-status"><strong data-finish-name>Olive / Champagne</strong><span data-finish-detail>Soft olive textile with a warm champagne chassis.</span></p>
+                </div>
+                <div class="lw-finish-visual lw-reveal" style="--delay: 100ms">
+                    <div class="lw-finish-image" data-finish-visual><img src="images/luna-finish-olive-champagne.png" alt="LunaWake in the Olive and Champagne finish" loading="lazy" decoding="async"></div>
+                    <div class="lw-finish-caption"><span>LunaWake / bedside companion</span><span data-finish-code>LW-01 · Olive / Champagne</span></div>
+                </div>
+            </div>
+        </section>
 
+        <section class="lw-section lw-app-section" id="app">
+            <div class="lw-container">
+                <div class="lw-section-intro lw-reveal">
+                    <p class="lw-kicker">Luna App</p>
+                    <h2>The night, without the noise.</h2>
+                    <p>Set the intention once. Luna gives you the context to make the next night a little more yours — no dashboard anxiety required.</p>
+                </div>
+                <div class="lw-app-grid">
+                    <article class="lw-app-card lw-reveal"><div class="lw-app-image"><img src="images/APP2.jpg" alt="Luna App wind-down experience" loading="lazy" decoding="async"></div><div class="lw-app-body"><span>Wind down</span><h3>A softer landing for the evening.</h3><p>Breathing, sound, and pace — composed into a small routine you can actually keep.</p></div></article>
+                    <article class="lw-app-card lw-reveal" style="--delay: 90ms"><div class="lw-app-image"><img src="images/APP1.jpg" alt="Luna App morning wake-up experience" loading="lazy" decoding="async"></div><div class="lw-app-body"><span>Wake up</span><h3>A morning that meets you where you are.</h3><p>Choose a target and a hard deadline. Luna handles the in-between with care.</p></div></article>
+                    <article class="lw-app-card lw-reveal" style="--delay: 180ms"><div class="lw-app-image"><img src="images/APP3.jpg" alt="Luna App long-term sleep insights" loading="lazy" decoding="async"></div><div class="lw-app-body"><span>Learn over time</span><h3>Signals become a steadier rhythm.</h3><p>See patterns across nights, with language that helps you notice — not judge.</p></div></article>
+                </div>
+                <div class="lw-app-footnote"><span class="lw-dot" aria-hidden="true"></span><span>Designed to support everyday sleep routines. LunaWake is not a medical device and does not diagnose or treat conditions.</span></div>
+            </div>
+        </section>
 
+        <section class="lw-section lw-hardware-section" id="hardware">
+            <div class="lw-container">
+                <div class="lw-hardware-hero lw-reveal">
+                    <div class="lw-hardware-copy"><p class="lw-kicker">Hardware</p><h2>Small footprint. Thoughtful signals.</h2><p>LunaWake belongs on the nightstand — close enough to help, quiet enough to forget. Every visible interaction is intentional.</p></div>
+                    <div class="lw-hardware-image"><img src="images/luna-lifestyle-bedside.png" alt="LunaWake on a quiet bedside table" loading="lazy" decoding="async"></div>
+                </div>
+                <div class="lw-hardware-features">
+                    <article class="lw-feature-tile lw-reveal"><span class="lw-feature-number">01</span><h3>Ambient light</h3><p>Warm light and sound make the transition into and out of sleep feel gradual.</p></article>
+                    <article class="lw-feature-tile lw-reveal" style="--delay: 70ms"><span class="lw-feature-number">02</span><h3>Private by default</h3><p>No camera. A physical privacy switch gives you a clear boundary for voice features.</p></article>
+                    <article class="lw-feature-tile lw-reveal" style="--delay: 140ms"><span class="lw-feature-number">03</span><h3>Made for the bedside</h3><p>One glanceable display, simple controls, and a form that feels at home in your room.</p></article>
+                    <article class="lw-feature-tile lw-reveal" style="--delay: 210ms"><span class="lw-feature-number">04</span><h3>Quietly connected</h3><p>Low-friction setup through the Luna App, then a routine that runs in the background.</p></article>
+                </div>
+            </div>
+        </section>
 
+        <section class="lw-section lw-lab-section" id="sleep-lab">
+            <div class="lw-container">
+                <div class="lw-lab-head lw-reveal"><div><p class="lw-kicker">Sleep Lab</p><h2>Better questions make better mornings.</h2></div><p>We are building LunaWake in the open: testing sensing, wake experiences, and the language we use to talk about sleep. Clinical validation is in progress.</p></div>
+                <div class="lw-lab-grid">
+                    <div class="lw-lab-visual lw-reveal"><img src="images/mmwave.jpg" alt="Illustration of bedside sensing around a bed" loading="lazy" decoding="async"><div class="lw-lab-overlay"><span class="lw-live-dot"></span><span>Research in progress</span></div></div>
+                    <div class="lw-lab-list lw-reveal" style="--delay: 100ms">
+                        <button class="lw-lab-tab is-active" type="button" data-lab-tab="sensing" aria-expanded="true"><span>01</span><span><strong>Sensing</strong><small>Can contact-free signals be useful without being intrusive?</small></span><b>+</b></button>
+                        <div class="lw-lab-panel is-open" data-lab-panel="sensing">We are evaluating how consistently bedside signals can support a clear nightly picture across real rooms and real routines.</div>
+                        <button class="lw-lab-tab" type="button" data-lab-tab="waking" aria-expanded="false"><span>02</span><span><strong>Waking</strong><small>What makes a wake-up feel gentle and dependable?</small></span><b>+</b></button>
+                        <div class="lw-lab-panel" data-lab-panel="waking">We are studying wake windows, light, sound, and the moments that turn a soft prompt into a reliable morning.</div>
+                        <button class="lw-lab-tab" type="button" data-lab-tab="language" aria-expanded="false"><span>03</span><span><strong>Language</strong><small>How can sleep insights stay human?</small></span><b>+</b></button>
+                        <div class="lw-lab-panel" data-lab-panel="language">We choose words that help people notice patterns and make choices — never language that implies a diagnosis or guaranteed outcome.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="lw-section lw-faq-section" id="faq">
+            <div class="lw-container lw-faq-layout">
+                <div class="lw-faq-intro lw-reveal"><p class="lw-kicker">Q&amp;A</p><h2>Good questions belong here.</h2><p>We are early, and we want the product to be clear about what it can do, what it cannot do, and what we are still learning.</p><a class="lw-text-link" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Ask to hear from us <span aria-hidden="true">↗</span></a></div>
+                <div class="lw-faq-list lw-reveal" style="--delay: 100ms">
+                    <details open><summary>Do I need to wear anything?</summary><p>No. LunaWake is designed as a bedside system, so there is no ring, watch, or sensor on your body.</p></details>
+                    <details><summary>Does LunaWake use a camera?</summary><p>No. LunaWake is designed without a camera. Voice features are opt-in and bounded by a physical privacy switch.</p></details>
+                    <details><summary>Is LunaWake a medical device?</summary><p>No. LunaWake is a consumer sleep companion, not a medical device. It does not diagnose, treat, or prevent any condition. Clinical validation is in progress.</p></details>
+                    <details><summary>What does the app show me?</summary><p>The Luna App is designed to show nightly patterns, routine context, and gentle suggestions in plain language — not a wall of scores.</p></details>
+                    <details><summary>When can I get one?</summary><p>We are preparing the launch now. Join the launch list for product updates, testing opportunities, and availability news.</p></details>
+                </div>
+            </div>
+        </section>
 
+        <section class="lw-final-cta">
+            <div class="lw-container lw-final-inner lw-reveal"><p class="lw-kicker">Stay close to the build</p><h2>Make tomorrow a little easier to meet.</h2><a class="lw-button lw-button--dark" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a></div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-cta">
-            <a class="btn btn-gradient" href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">
-                Stay updated on our journey
-            </a>
+    <footer class="lw-footer">
+        <div class="lw-container lw-footer-grid">
+            <div><a class="lw-brand lw-brand--footer" href="#top"><img src="images/combinelogo.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div>
+            <div class="lw-footer-links"><div><span>Explore</span><a href="#how-it-works">How it works</a><a href="#app">Luna App</a><a href="#hardware">Hardware</a></div><div><span>Learn</span><a href="#sleep-lab">Sleep Lab</a><a href="#faq">FAQ</a><a href="about.html">About LunaWake</a></div><div><span>Follow</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://signup.lunawake.ai" target="_blank" rel="noopener noreferrer">Launch list</a></div></div>
         </div>
-        <div class="footer-content">
-            <div class="footer-meta">
-                <div class="footer-social">
-                    <div class="social-links">
-                        <a class="social-link" href="https://www.facebook.com/profile.php?id=61584180002104" target="_blank" rel="noopener noreferrer">
-                            <img src="images/ic_footer_facebook.svg" alt="Facebook">
-                            <span>LunaWake</span>
-                        </a>
-                        <a class="social-link" href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">
-                            <img src="images/ic_footer_instagram.svg" alt="Instagram">
-                            <span>Lunawake.ai</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="copyright">&copy; 2025 Lunawake</div>
-            </div>
-            <div class="footer-brand">
-                <img class="footer-logo" src="images/footer_logo.svg" alt="Lunawake">
-                <div class="footer-site">Designed for better nights.</div>
-            </div>
-        </div>
+        <div class="lw-container lw-footer-bottom"><span>© <span data-year>2026</span> LunaWake</span><span>Sleep support, not medical advice.</span></div>
     </footer>
-    <script src="js/header_menu.js"></script>
-    <script src="js/video-control.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/lt-carousel.js?v=navfix56"></script>
 
     <script>
-    // Mobile editorial gallery (Plan A): swap hero image on thumbnail tap
-    document.addEventListener('DOMContentLoaded', function () {
-        const root = document.querySelector('.product-details-gallery .design-mobile');
-        if (!root) return;
+    (() => {
+        const header = document.querySelector('[data-header]');
+        const menuButton = document.querySelector('.lw-menu-button');
+        const mobileMenu = document.querySelector('#lw-mobile-menu');
+        const toggleMenu = (open) => {
+            if (!menuButton || !mobileMenu) return;
+            menuButton.setAttribute('aria-expanded', String(open));
+            menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            menuButton.classList.toggle('is-open', open);
+            mobileMenu.hidden = !open;
+            document.body.classList.toggle('lw-menu-open', open);
+        };
+        menuButton?.addEventListener('click', () => toggleMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+        mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => toggleMenu(false)));
+        window.addEventListener('scroll', () => header?.classList.toggle('is-scrolled', window.scrollY > 20), { passive: true });
 
-        const heroImg = root.querySelector('.design-hero-img');
-        const thumbs = Array.from(root.querySelectorAll('.design-thumb'));
-        if (!heroImg || thumbs.length === 0) return;
+        const finishData = {
+            olive: { name: 'Olive / Champagne', detail: 'Soft olive textile with a warm champagne chassis.', code: 'LW-01 · Olive / Champagne', src: 'images/luna-finish-olive-champagne.png' },
+            gray: { name: 'Cool Gray', detail: 'A calm neutral with a cooler metal finish.', code: 'LW-02 · Cool Gray', src: 'images/luna-finish-cool-gray.png' }
+        };
+        document.querySelectorAll('[data-finish]').forEach((button) => button.addEventListener('click', () => {
+            const data = finishData[button.dataset.finish];
+            document.querySelectorAll('[data-finish]').forEach((item) => { const active = item === button; item.classList.toggle('is-selected', active); item.setAttribute('aria-pressed', String(active)); });
+            const img = document.querySelector('[data-finish-visual] img');
+            if (img && data) { img.classList.add('is-switching'); window.setTimeout(() => { img.src = data.src; img.alt = `LunaWake in the ${data.name} finish`; img.classList.remove('is-switching'); }, 160); }
+            document.querySelector('[data-finish-name]').textContent = data.name;
+            document.querySelector('[data-finish-detail]').textContent = data.detail;
+            document.querySelector('[data-finish-code]').textContent = data.code;
+        }));
 
-        function setActive(btn) {
-            thumbs.forEach((b) => {
-                const isActive = b === btn;
-                b.classList.toggle('is-active', isActive);
-                if (isActive) b.setAttribute('aria-current', 'true');
-                else b.removeAttribute('aria-current');
-            });
-        }
+        document.querySelectorAll('[data-lab-tab]').forEach((tab) => tab.addEventListener('click', () => {
+            const target = tab.dataset.labTab;
+            document.querySelectorAll('[data-lab-tab]').forEach((item) => { const active = item === tab; item.classList.toggle('is-active', active); item.setAttribute('aria-expanded', String(active)); });
+            document.querySelectorAll('[data-lab-panel]').forEach((panel) => panel.classList.toggle('is-open', panel.dataset.labPanel === target));
+        }));
 
-        function swapHero(btn) {
-            const src = btn.getAttribute('data-src');
-            if (!src || heroImg.getAttribute('src') === src) return;
-
-            setActive(btn);
-
-            // Fade out → swap → fade in
-            heroImg.classList.add('is-switching');
-            const preload = new Image();
-            preload.decoding = 'async';
-            preload.src = src;
-
-            const commitSwap = () => {
-                heroImg.setAttribute('src', src);
-                const label = btn.getAttribute('aria-label');
-                if (label) heroImg.setAttribute('alt', label);
-                requestAnimationFrame(() => heroImg.classList.remove('is-switching'));
-            };
-
-            // Allow the fade-out to register
-            setTimeout(() => {
-                if (preload.complete) commitSwap();
-                else preload.onload = commitSwap;
-            }, 160);
-        }
-
-        // Initialize active state based on current hero src (no thumb selected by default)
-        thumbs.forEach((b) => b.classList.remove('is-active'));
-
-        thumbs.forEach((btn) => btn.addEventListener('click', () => swapHero(btn)));
-    });
+        document.querySelectorAll('[data-year]').forEach((item) => item.textContent = new Date().getFullYear());
+        const reveal = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); reveal.unobserve(entry.target); } }), { threshold: 0.12 });
+        document.querySelectorAll('.lw-reveal').forEach((item) => reveal.observe(item));
+    })();
     </script>
-    
-    <!-- 确保图片lightbox功能正常工作 -->
-    <script>
-    // 备用的图片lightbox功能，防止主脚本加载问题
-    window.addEventListener('DOMContentLoaded', function() {
-        // 确保openImageLightbox函数在全局作用域中可用
-        if (typeof window.openImageLightbox === 'undefined') {
-            window.openImageLightbox = function(imageSrc, imageAlt) {
-                let imageLightbox = document.querySelector('.image-lightbox');
-                
-                if (!imageLightbox) {
-                    imageLightbox = document.createElement('div');
-                    imageLightbox.className = 'image-lightbox';
-                    imageLightbox.innerHTML = `
-                        <div class="image-lightbox-content">
-                            <button class="image-lightbox-close">&times;</button>
-                            <img class="image-lightbox-img" src="" alt="">
-                        </div>
-                    `;
-                    document.body.appendChild(imageLightbox);
-                    
-                    imageLightbox.addEventListener('click', function() {
-                        imageLightbox.classList.remove('active');
-                        setTimeout(() => {
-                            document.body.style.overflow = '';
-                        }, 400);
-                    });
-                    
-                    imageLightbox.querySelector('.image-lightbox-img').addEventListener('click', (e) => e.stopPropagation());
-                    imageLightbox.querySelector('.image-lightbox-close').addEventListener('click', function() {
-                        imageLightbox.classList.remove('active');
-                        setTimeout(() => {
-                            document.body.style.overflow = '';
-                        }, 400);
-                    });
-                }
-                
-                const img = imageLightbox.querySelector('.image-lightbox-img');
-                img.src = imageSrc;
-                img.alt = imageAlt;
-                
-                document.body.style.overflow = 'hidden';
-                imageLightbox.classList.add('active');
-            };
-        }
-    });
-    </script>
-    <script src="js/tab-coaches.js"></script>
-    <script src="js/audio-player.js"></script>
-    <script src="js/audio-sync.js"></script>
 </body>
 </html>

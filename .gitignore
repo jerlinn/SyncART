@@ -12,3 +12,8 @@
 ._*
 .Spotlight-V100
 .Trashes
+.gstack/
+
+# Raw shooting footage & source image library (not deployed)
+/media/video/lunawake/
+/images/library/

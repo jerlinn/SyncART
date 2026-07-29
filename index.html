@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>LunaWake — Better sleep begins at the bedside.</title>
-    <link rel="stylesheet" href="styles.css?v=lunawake-glass-header-2026-07-29">
+    <link rel="stylesheet" href="styles.css?v=lunawake-mm6-global-menu-contrast-2026-07-29">
 </head>
 <body class="lw2-site">
     <div class="lw2-notice">
@@ -22,24 +22,26 @@
 
     <header class="lw2-header" data-header>
         <div class="lw2-shell lw2-nav">
-            <a class="lw2-logo" href="#top" aria-label="LunaWake home"><img src="images/combinelogo.png" alt="LunaWake"></a>
+            <a class="lw2-logo lw2-logo--header" href="#top" aria-label="LunaWake home">
+                <img class="lw2-logo-mark lw2-logo-mark--light" src="images/combinelogo_white.png" alt="LunaWake">
+                <img class="lw2-logo-mark lw2-logo-mark--dark" src="images/combinelogo.png" alt="" aria-hidden="true">
+            </a>
             <nav class="lw2-nav-links" aria-label="Primary navigation">
                 <a href="#how-it-works">How it works</a>
-                <a href="#hardware">The device</a>
-                <a href="#radar">Inside the room</a>
-                <a href="#app">The app</a>
-                <a href="#sleep-lab">Sleep Lab</a>
+                <a href="#hardware">Device</a>
+                <a href="#radar">Room</a>
+                <a href="#app">App</a>
             </nav>
             <a class="lw2-nav-cta" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
             <button class="lw2-menu" type="button" aria-expanded="false" aria-controls="lw2-mobile-menu" aria-label="Open menu"><span></span><span></span></button>
         </div>
         <div class="lw2-mobile" id="lw2-mobile-menu" hidden>
+            <button class="lw2-mobile-close" type="button" aria-label="Close navigation">Close <span aria-hidden="true">×</span></button>
             <nav aria-label="Mobile navigation">
-                <a href="#how-it-works">How it works <span>↗</span></a>
-                <a href="#hardware">The device <span>↗</span></a>
-                <a href="#radar">Inside the room <span>↗</span></a>
-                <a href="#app">The app <span>↗</span></a>
-                <a href="#sleep-lab">Sleep Lab <span>↗</span></a>
+                <a href="#how-it-works">How it works <span>01</span></a>
+                <a href="#hardware">Device <span>02</span></a>
+                <a href="#radar">Room <span>03</span></a>
+                <a href="#app">App <span>04</span></a>
             </nav>
             <a class="lw2-button lw2-button--dark" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
         </div>
@@ -101,7 +103,7 @@
                 <div class="lw2-process-grid lw2-video-grid">
                     <article class="lw2-process-card">
                         <div class="lw2-process-media">
-                            <video poster="images/luna-latest/sense-room.png" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="Placing LunaWake at the bedside">
+                            <video poster="images/luna-latest/video-posters/01-set-down.jpg" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="Placing LunaWake at the bedside">
                                 <source data-src="media/video/lunawake/featured/01-set-down.mp4" type="video/mp4">
                             </video>
                             <span class="lw2-video-label">01 / Set it down</span>
@@ -110,7 +112,7 @@
                     </article>
                     <article class="lw2-process-card">
                         <div class="lw2-process-media">
-                            <video poster="images/luna-latest/follow-room.png" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="LunaWake sensing movement without contact">
+                            <video poster="images/luna-latest/video-posters/02-contact-free-sensing.jpg" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="LunaWake sensing movement without contact">
                                 <source data-src="media/video/lunawake/featured/02-contact-free-sensing.mp4" type="video/mp4">
                             </video>
                             <span class="lw2-video-label">02 / Live signals</span>
@@ -119,7 +121,7 @@
                     </article>
                     <article class="lw2-process-card">
                         <div class="lw2-process-media">
-                            <video poster="images/luna-latest/wake-room.png" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="LunaWake waking the room with rising light and sound">
+                            <video poster="images/luna-latest/video-posters/03-morning-rise.jpg" autoplay muted loop playsinline preload="none" data-lazy-video aria-label="LunaWake waking the room with rising light and sound">
                                 <source data-src="media/video/lunawake/featured/03-morning-rise.mp4" type="video/mp4">
                             </video>
                             <span class="lw2-video-label">03 / Gentle rise</span>
@@ -229,9 +231,25 @@
         const header = document.querySelector('[data-header]');
         const menu = document.querySelector('.lw2-menu');
         const mobile = document.querySelector('#lw2-mobile-menu');
-        const toggle = (open) => { if (!menu || !mobile) return; menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); menu.classList.toggle('is-open', open); mobile.hidden = !open; };
+        const mobileClose = document.querySelector('.lw2-mobile-close');
+        const toggle = (open) => {
+            if (!menu || !mobile) return;
+            menu.setAttribute('aria-expanded', String(open));
+            menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            menu.classList.toggle('is-open', open);
+            header?.classList.toggle('is-menu-open', open);
+            mobile.hidden = !open;
+            document.body.classList.toggle('lw2-menu-open', open);
+            if (open) mobile.querySelector('a')?.focus({ preventScroll: true });
+        };
         menu?.addEventListener('click', () => toggle(menu.getAttribute('aria-expanded') !== 'true'));
+        mobileClose?.addEventListener('click', () => toggle(false));
         mobile?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => toggle(false)));
+        document.addEventListener('keydown', (event) => { if (event.key === 'Escape') toggle(false); });
+        document.addEventListener('click', (event) => {
+            if (menu?.getAttribute('aria-expanded') !== 'true' || header?.contains(event.target)) return;
+            toggle(false);
+        });
         const updateHeaderState = () => header?.classList.toggle('is-scrolled', window.scrollY > 16);
         updateHeaderState();
         window.addEventListener('scroll', updateHeaderState, { passive: true });

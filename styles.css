@@ -8921,3 +8921,108 @@ h3,
 @media (max-width: 560px) {
     .lw2-site .lw2-menu { width: 40px !important; min-width: 40px !important; }
 }
+
+/* Account for high-density browser viewports: compact mode starts at 1280px. */
+@media (max-width: 1280px) {
+    body.lw2-site {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        overflow-x: clip;
+    }
+    .lw2-site .lw2-header,
+    .lw2-site main,
+    .lw2-site .lw2-footer {
+        width: 100%;
+        max-width: 100vw;
+    }
+    .lw2-site .lw2-nav {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+    .lw2-site .lw2-nav-links { display: none !important; }
+    .lw2-site .lw2-nav-cta {
+        display: inline-flex !important;
+        flex: 0 0 40px !important;
+        width: 40px !important;
+        min-width: 40px !important;
+        min-height: 38px !important;
+        padding: 0 !important;
+        justify-content: center !important;
+        gap: 0 !important;
+    }
+    .lw2-site .lw2-nav-cta > .lw2-nav-cta-label { display: none !important; }
+    .lw2-site .lw2-nav-cta > span:not(.lw2-nav-cta-label) {
+        display: inline-grid !important;
+        width: 38px !important;
+        height: 36px !important;
+        margin: 0 !important;
+        border-left: 0 !important;
+        place-items: center !important;
+        font-size: 16px !important;
+    }
+    .lw2-site .lw2-menu {
+        display: inline-flex !important;
+        flex: 0 0 42px !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 42px !important;
+        min-width: 42px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+        margin-left: auto !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        color: #fffdf8 !important;
+        cursor: pointer;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-label { display: none !important; }
+    .lw2-site .lw2-menu > .lw2-menu-icon {
+        display: flex !important;
+        flex: 0 0 18px !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+        width: 18px !important;
+        height: 11px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        transform: none !important;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-icon > i {
+        display: block !important;
+        width: 18px !important;
+        height: 1px !important;
+        flex: 0 0 1px !important;
+        margin: 0 !important;
+        background: currentColor !important;
+        transform: none;
+    }
+    .lw2-site .lw2-menu.is-open > .lw2-menu-icon > i:first-child { transform: translateY(3px) rotate(45deg); }
+    .lw2-site .lw2-menu.is-open > .lw2-menu-icon > i:last-child { transform: translateY(-3px) rotate(-45deg); }
+    .lw2-site .lw2-header.is-scrolled .lw2-menu { color: var(--lw2-ink) !important; }
+    .lw2-site .lw2-header.is-menu-open .lw2-menu { color: #fffdf8 !important; }
+}
+
+/* Phone/tablet global menu: keep all eight destinations inside one viewport. */
+@media (max-width: 1100px) {
+    .lw2-site .lw2-mobile {
+        padding: 78px max(16px, calc((100vw - 760px) / 2)) 18px;
+    }
+    .lw2-site .lw2-mobile nav a,
+    .lw2-site .lw2-mobile .lw2-mobile-secondary a {
+        min-height: 45px;
+        padding: 8px 0 7px;
+        font-size: clamp(24px, 4vw, 34px);
+        letter-spacing: -.045em;
+        line-height: .98;
+    }
+    .lw2-site .lw2-mobile nav a span,
+    .lw2-site .lw2-mobile .lw2-mobile-secondary a span {
+        font-size: 9px;
+        letter-spacing: .1em;
+    }
+    .lw2-site .lw2-mobile .lw2-button { display: none; }
+}

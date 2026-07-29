@@ -8648,6 +8648,132 @@ h3,
     .lw2-site .lw2-cta .lw2-button--dark span { width: 38px; height: 50px; margin-left: 12px; }
 }
 
+/* Guard the tablet-width header from squeezing into horizontal overflow. */
+@media (max-width: 1100px) {
+    .lw2-site .lw2-nav {
+        width: 100%;
+        min-width: 0;
+    }
+    .lw2-site .lw2-nav-links { display: none; }
+    .lw2-site .lw2-logo--header { min-width: 0; }
+    .lw2-site .lw2-menu {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 88px;
+        height: 38px;
+        margin-left: auto;
+        padding: 0 10px 0 12px;
+        border-radius: 0;
+        color: #fffdf8;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-label {
+        display: inline;
+        width: auto;
+        height: auto;
+        background: transparent;
+        color: currentColor;
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: .12em;
+        line-height: 1;
+        text-transform: uppercase;
+        transform: none;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-icon {
+        display: flex;
+        flex: 0 0 18px;
+        flex-direction: column;
+        gap: 5px;
+        width: 18px;
+        height: auto;
+        background: transparent;
+        transform: none;
+    }
+    .lw2-site .lw2-menu-icon i {
+        display: block;
+        width: 18px;
+        height: 1px;
+        background: currentColor;
+    }
+    .lw2-site .lw2-menu.is-open > .lw2-menu-label,
+    .lw2-site .lw2-menu.is-open > .lw2-menu-icon { transform: none; }
+    .lw2-site .lw2-menu.is-open .lw2-menu-icon i:first-child { transform: translateY(3px) rotate(45deg); }
+    .lw2-site .lw2-menu.is-open .lw2-menu-icon i:last-child { transform: translateY(-3px) rotate(-45deg); }
+    .lw2-site .lw2-header.is-scrolled .lw2-menu { color: var(--lw2-ink); }
+    .lw2-site .lw2-header.is-menu-open .lw2-menu,
+    .lw2-site .lw2-header.is-scrolled.is-menu-open .lw2-menu { color: #fffdf8; }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+    .lw2-site .lw2-nav-cta { display: inline-flex; }
+}
+
+/* Compressed header: preserve the action as an icon, move the label into the menu. */
+.lw2-site .lw2-nav-cta > .lw2-nav-cta-label {
+    display: inline;
+    width: auto;
+    height: auto;
+    border: 0;
+    font-size: inherit;
+    line-height: 1;
+}
+
+@media (max-width: 1100px) {
+    .lw2-site .lw2-nav-cta {
+        display: inline-flex;
+        width: 40px;
+        min-height: 38px;
+        padding: 0;
+        justify-content: center;
+        gap: 0;
+    }
+    .lw2-site .lw2-nav-cta > .lw2-nav-cta-label { display: none; }
+    .lw2-site .lw2-nav-cta > span:not(.lw2-nav-cta-label) {
+        width: 38px;
+        height: 36px;
+        border-left: 0;
+        font-size: 16px;
+    }
+    .lw2-site .lw2-mobile .lw2-mobile-secondary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        max-width: none;
+        margin: 30px 0 0;
+        border-top: 1px solid rgba(255, 253, 248, .2);
+    }
+    .lw2-site .lw2-mobile .lw2-mobile-secondary a {
+        display: block;
+        min-height: 0;
+        padding: 17px 0 0;
+        border: 0;
+        color: rgba(255, 253, 248, .58);
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: .1em;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+    .lw2-site .lw2-mobile .lw2-mobile-secondary a:hover {
+        padding-left: 0;
+        color: #fffdf8;
+    }
+}
+
+@media (max-width: 560px) {
+    .lw2-site .lw2-logo--header,
+    .lw2-site .lw2-logo--header .lw2-logo-mark { width: 104px; }
+    .lw2-site .lw2-nav { gap: 10px; }
+    .lw2-site .lw2-nav-cta { width: 36px; }
+    .lw2-site .lw2-nav-cta > span:not(.lw2-nav-cta-label) { width: 34px; }
+    .lw2-site .lw2-menu { width: 76px; padding-right: 8px; padding-left: 10px; }
+    .lw2-site .lw2-mobile .lw2-mobile-secondary { gap: 8px; }
+    .lw2-site .lw2-mobile .lw2-mobile-secondary a { font-size: 9px; letter-spacing: .06em; }
+}
+
 @media (max-width: 560px) {
     .lw2-site .lw2-mobile {
         padding-right: 22px;
@@ -8658,4 +8784,140 @@ h3,
         min-height: 82px;
         font-size: clamp(38px, 11vw, 58px);
     }
+}
+
+/* Final menu-button reset: isolate the label and icon from legacy span rules. */
+@media (max-width: 1100px) {
+    .lw2-site .lw2-menu {
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 88px !important;
+        min-width: 88px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+        margin-left: auto !important;
+        padding: 0 10px 0 12px !important;
+        border-radius: 0 !important;
+        color: #fffdf8 !important;
+        cursor: pointer;
+        overflow: visible;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-label {
+        display: inline-block !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: currentColor !important;
+        font-size: 9px !important;
+        font-weight: 500 !important;
+        letter-spacing: .12em !important;
+        line-height: 1 !important;
+        text-transform: uppercase;
+        transform: none !important;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-icon {
+        display: flex !important;
+        flex: 0 0 18px !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+        width: 18px !important;
+        height: 11px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        transform: none !important;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-icon > i {
+        display: block !important;
+        flex: 0 0 1px !important;
+        width: 18px !important;
+        height: 1px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: currentColor !important;
+        transform: none;
+    }
+    .lw2-site .lw2-menu.is-open > .lw2-menu-icon > i:first-child { transform: translateY(3px) rotate(45deg); }
+    .lw2-site .lw2-menu.is-open > .lw2-menu-icon > i:last-child { transform: translateY(-3px) rotate(-45deg); }
+    .lw2-site .lw2-header.is-scrolled .lw2-menu { color: var(--lw2-ink) !important; }
+    .lw2-site .lw2-header.is-menu-open .lw2-menu,
+    .lw2-site .lw2-header.is-scrolled.is-menu-open .lw2-menu { color: #fffdf8 !important; }
+}
+
+@media (max-width: 560px) {
+    .lw2-site .lw2-menu {
+        width: 76px !important;
+        min-width: 76px !important;
+        padding-right: 8px !important;
+        padding-left: 10px !important;
+    }
+}
+
+/* All eight destinations share one continuous vertical navigation rhythm. */
+.lw2-site .lw2-mobile .lw2-mobile-secondary {
+    display: block;
+    max-width: 1080px;
+    margin: 0 auto;
+    border-top: 0;
+}
+.lw2-site .lw2-mobile .lw2-mobile-secondary a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: clamp(76px, 11vw, 120px);
+    padding: 18px 0 16px;
+    border-bottom: 1px solid rgba(255, 253, 248, .2);
+    color: #fffdf8;
+    font-size: clamp(38px, 7vw, 88px);
+    font-weight: 300;
+    letter-spacing: -.055em;
+    line-height: .95;
+    text-decoration: none;
+    text-transform: none;
+    transition: color .3s var(--lw2-ease), padding-left .3s var(--lw2-ease);
+}
+.lw2-site .lw2-mobile .lw2-mobile-secondary a:hover {
+    padding-left: 12px;
+    color: #e8c98e;
+}
+.lw2-site .lw2-mobile .lw2-mobile-secondary a span {
+    flex: 0 0 auto;
+    color: rgba(255, 253, 248, .45);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    line-height: 1;
+}
+
+@media (max-width: 560px) {
+    .lw2-site .lw2-mobile .lw2-mobile-secondary a {
+        min-height: 82px;
+        font-size: clamp(38px, 11vw, 58px);
+    }
+}
+
+/* Compressed state stays icon-only: no MENU/CLOSE copy in the header. */
+@media (max-width: 1100px) {
+    .lw2-site .lw2-menu {
+        width: 42px !important;
+        min-width: 42px !important;
+        padding: 0 !important;
+        justify-content: center !important;
+    }
+    .lw2-site .lw2-menu > .lw2-menu-label { display: none !important; }
+    .lw2-site .lw2-menu > .lw2-menu-icon { flex-basis: 18px !important; }
+}
+
+@media (max-width: 560px) {
+    .lw2-site .lw2-menu { width: 40px !important; min-width: 40px !important; }
 }

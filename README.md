@@ -1,12 +1,21 @@
-# SYNC ART Lunawake
+# LunaWake website
 
 Link：https://jerlinn.github.io/SyncART/
 
-A revolutionary AI-powered wake-up device that personalizes your morning experience. This repository contains the website codebase for the Lunawake product.
+This repository contains the public LunaWake website and its tracked launch assets.
 
 ## Project Overview
 
-Lunawake is a smart alarm clock that combines AI technology with personalized wake-up experiences. The website showcases the product's features and support information.
+Do not use historical website copy, Coach/Dawn demos, audio test fixtures, or legacy CSS as product requirements. The current product definition lives in the `Lunawake-wiki` repository:
+
+- `wiki/summaries/device-interaction-spec.md`
+- `wiki/summaries/state-machine-spec.md`
+- `refs/01-capability/firmware.md`
+- `refs/Lunawake-用户旅程与设备反应.md`
+
+Key boundary: the microphones provide passive acoustic sensing only. LunaWake does not provide voice commands, text-to-speech, or conversation. The Luna App is the configuration and presentation layer; physical device controls remain authoritative.
+
+Raw source image and video libraries are kept locally under ignored paths and are not deployment assets. Any page reference to those files must be replaced with a tracked, deployable asset before publishing.
 
 ## Features
 

@@ -154,9 +154,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化移动端菜单
     initMobileMenu();
 
-    // 其他现有的初始化代码...
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const featurePanels = document.querySelectorAll('.feature-panel');
-    
-    // ... 保持其他代码不变 ...
-}); 
+});

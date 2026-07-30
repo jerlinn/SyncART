@@ -10,13 +10,19 @@
     // the exit transition has run, so opening and closing stay interruptible:
     // re-opening mid-exit re-targets from the panel's current opacity.
     let panelHideTimer = 0;
+    let panelOpenFrame = 0;
     const setPanelVisible = (visible) => {
         window.clearTimeout(panelHideTimer);
+        window.cancelAnimationFrame(panelOpenFrame);
         if (visible) {
             mobile.hidden = false;
-            requestAnimationFrame(() => mobile.classList.add('is-open'));
+            panelOpenFrame = window.requestAnimationFrame(() => {
+                panelOpenFrame = 0;
+                if (!mobile.hidden) mobile.classList.add('is-open');
+            });
             return;
         }
+        panelOpenFrame = 0;
         mobile.classList.remove('is-open');
         const exitMs = (parseFloat(window.getComputedStyle(mobile).transitionDuration) || 0) * 1000;
         panelHideTimer = window.setTimeout(() => {
@@ -36,7 +42,6 @@
 
         if (open) {
             lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : menu;
-            mobile.querySelector('a')?.focus({ preventScroll: true });
         } else if (restoreFocus) {
             lastFocusedElement?.focus?.({ preventScroll: true });
         }

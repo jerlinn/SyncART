@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>LunaWake — Better sleep begins at the bedside.</title>
-    <link rel="stylesheet" href="styles.css?v=lunawake-menu-frame-remove-final-2026-07-29">
+    <link rel="stylesheet" href="styles.css?v=lunawake-app-coach-2026-07-30-2">
 </head>
 <body class="lw2-site lw2-homepage">
     <div class="lw2-notice">
@@ -31,6 +31,7 @@
                 <a href="#hardware">Device</a>
                 <a href="#radar">Room</a>
                 <a href="#app">App</a>
+                <a href="science.html">Science</a>
             </nav>
             <a class="lw2-nav-cta" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer"><span class="lw2-nav-cta-label">Join the launch list</span><span class="lw2-nav-cta-icon" aria-hidden="true">↗</span></a>
             <button class="lw2-menu" type="button" data-menu-toggle aria-expanded="false" aria-controls="lw2-mobile-menu" aria-label="Open menu"><span class="lw2-menu-label">Menu</span><span class="lw2-menu-icon" aria-hidden="true"><i></i><i></i></span></button>
@@ -42,6 +43,7 @@
                 <a href="#hardware">Device <span>02</span></a>
                 <a href="#radar">Room <span>03</span></a>
                 <a href="#app">App <span>04</span></a>
+                <a href="science.html">Science <span>05</span></a>
             </nav>
             <nav class="lw2-mobile-secondary" aria-label="Secondary navigation">
                 <a href="about.html">About <span aria-hidden="true">↗</span></a>
@@ -161,28 +163,33 @@
             <div class="lw2-shell">
                 <div class="lw2-radar-head">
                     <div><p class="lw2-eyebrow">Inside the room / Smart &amp; adaptable</p><h2 id="room-heading">Smart &amp; adaptable for every room.</h2></div>
-                    <p>One calm intelligence layer notices the room, understands the moment, and lets the space respond. Explore the signal first, then see how it becomes a routine across the devices you already have.</p>
+                    <p>One calm intelligence layer notices the room, understands the moment, and lets the space respond. Explore how one intention becomes a routine across the devices you already have.</p>
                 </div>
                 <div class="lw2-room-demo" data-room-experience>
                     <div class="lw2-room-tabs" role="tablist" aria-label="Inside the room views">
-                        <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="room-panel-sensors" id="room-tab-sensors" data-room-tab="sensors"><span>01</span>Sensors &amp; Data</button>
-                        <button type="button" role="tab" aria-selected="false" aria-controls="room-panel-home" id="room-tab-home" data-room-tab="home"><span>02</span>Smart Home</button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="room-panel-sensors" id="room-tab-sensors" data-room-tab="sensors"><span>01</span>Sensors &amp; Data</button>
+                        <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="room-panel-home" id="room-tab-home" data-room-tab="home"><span>02</span>Smart Home</button>
                     </div>
                     <div class="lw2-room-workspace">
                         <div class="lw2-room-screen">
-                            <section class="lw2-room-panel is-active" role="tabpanel" id="room-panel-sensors" aria-labelledby="room-tab-sensors" data-room-panel="sensors">
+                            <section class="lw2-room-panel" role="tabpanel" id="room-panel-sensors" aria-labelledby="room-tab-sensors" data-room-panel="sensors" hidden>
                                 <div class="lw2-room-screen-header"><div><h3>Sensors &amp; Data</h3></div><button class="lw2-room-privacy is-on" type="button" data-room-toggle="privacy" aria-pressed="true"><span></span><b>Privacy switch</b><strong data-room-privacy-label>Sensing</strong></button></div>
                                 <div class="lw2-room-signal-grid"><article><div><span class="lw2-signal-glyph lw2-signal-glyph--breath" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M239.24,131.4c-22,46.8-41.4,68.6-61.2,68.6-25.1,0-40.73-33.32-57.28-68.6C107.7,103.56,92.9,72,78,72c-16.4,0-36.31,37.21-46.72,59.4a8,8,0,0,1-14.48-6.8C38.71,77.8,58.16,56,78,56c25.1,0,40.73,33.32,57.28,68.6C148.3,152.44,163.1,184,178,184c16.4,0,36.31-37.21,46.72-59.4a8,8,0,0,1,14.48,6.8Z"></path></svg></span><strong>Breathing</strong><em>in bed</em></div><b>15<small>br/min</small></b><svg class="lw2-sparkline lw2-sparkline--breath" viewBox="0 0 240 40" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sparkline-breath-stroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="currentColor" stop-opacity="0"></stop><stop offset="35%" stop-color="currentColor" stop-opacity=".35"></stop><stop offset="100%" stop-color="currentColor" stop-opacity=".95"></stop></linearGradient></defs><path d="M0.00 6.00 C1.38 8.33 5.52 17.67 8.28 20.00 C11.03 22.33 13.79 22.33 16.55 20.00 C19.31 17.67 22.07 3.67 24.83 6.00 C27.59 8.33 30.34 31.67 33.10 34.00 C35.86 36.33 38.62 24.67 41.38 20.00 C44.14 15.33 46.90 8.33 49.66 6.00 C52.41 3.67 55.17 1.33 57.93 6.00 C60.69 10.67 63.45 29.33 66.21 34.00 C68.97 38.67 71.72 36.33 74.48 34.00 C77.24 31.67 80.00 22.33 82.76 20.00 C85.52 17.67 88.28 22.33 91.03 20.00 C93.79 17.67 96.55 3.67 99.31 6.00 C102.07 8.33 104.83 31.67 107.59 34.00 C110.34 36.33 113.10 24.67 115.86 20.00 C118.62 15.33 121.38 8.33 124.14 6.00 C126.90 3.67 129.66 6.00 132.41 6.00 C135.17 6.00 137.93 1.33 140.69 6.00 C143.45 10.67 146.21 34.00 148.97 34.00 C151.72 34.00 154.48 8.33 157.24 6.00 C160.00 3.67 162.76 15.33 165.52 20.00 C168.28 24.67 171.03 31.67 173.79 34.00 C176.55 36.33 179.31 36.33 182.07 34.00 C184.83 31.67 187.59 20.00 190.34 20.00 C193.10 20.00 195.86 31.67 198.62 34.00 C201.38 36.33 204.14 38.67 206.90 34.00 C209.66 29.33 212.41 6.00 215.17 6.00 C217.93 6.00 220.69 29.33 223.45 34.00 C226.21 38.67 228.97 38.67 231.72 34.00 C234.48 29.33 238.62 10.67 240.00 6.00"></path></svg></article><article><div><span class="lw2-signal-glyph lw2-signal-glyph--movement" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"></path></svg></span><strong>Movement</strong><em>Still</em></div><b>8<small>%</small></b><svg class="lw2-sparkline lw2-sparkline--movement" viewBox="0 0 240 40" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sparkline-movement-stroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="currentColor" stop-opacity="0"></stop><stop offset="35%" stop-color="currentColor" stop-opacity=".35"></stop><stop offset="100%" stop-color="currentColor" stop-opacity=".95"></stop></linearGradient></defs><path d="M0.00 30.50 C1.38 28.75 5.52 23.50 8.28 20.00 C11.03 16.50 13.79 7.17 16.55 9.50 C19.31 11.83 22.07 32.83 24.83 34.00 C27.59 35.17 30.34 20.00 33.10 16.50 C35.86 13.00 38.62 11.83 41.38 13.00 C44.14 14.17 46.90 20.00 49.66 23.50 C52.41 27.00 55.17 34.58 57.93 34.00 C60.69 33.42 63.45 24.08 66.21 20.00 C68.97 15.92 71.72 9.50 74.48 9.50 C77.24 9.50 80.00 17.08 82.76 20.00 C85.52 22.92 88.28 24.67 91.03 27.00 C93.79 29.33 96.55 32.83 99.31 34.00 C102.07 35.17 104.83 36.33 107.59 34.00 C110.34 31.67 113.10 24.08 115.86 20.00 C118.62 15.92 121.38 10.67 124.14 9.50 C126.90 8.33 129.66 13.00 132.41 13.00 C135.17 13.00 137.93 6.58 140.69 9.50 C143.45 12.42 146.21 28.75 148.97 30.50 C151.72 32.25 154.48 23.50 157.24 20.00 C160.00 16.50 162.76 9.50 165.52 9.50 C168.28 9.50 171.03 18.25 173.79 20.00 C176.55 21.75 179.31 18.83 182.07 20.00 C184.83 21.17 187.59 29.33 190.34 27.00 C193.10 24.67 195.86 8.92 198.62 6.00 C201.38 3.08 204.14 5.42 206.90 9.50 C209.66 13.58 212.41 27.58 215.17 30.50 C217.93 33.42 220.69 28.17 223.45 27.00 C226.21 25.83 228.97 22.92 231.72 23.50 C234.48 24.08 238.62 29.33 240.00 30.50"></path></svg></article><article><div><span class="lw2-signal-glyph lw2-signal-glyph--noise" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></span><strong>Noise</strong><em>Quiet</em></div><b>36<small>dB</small></b></article></div>
                                 <div class="lw2-room-live-head"><span>Room <b>Bedroom · Night</b></span><strong><i></i> Example read · not connected</strong></div>
                                 <div class="lw2-room-climate"><article><span aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M136,153V88a8,8,0,0,0-16,0v65a32,32,0,1,0,16,0Zm-8,47a16,16,0,1,1,16-16A16,16,0,0,1,128,200Zm40-66V48a40,40,0,0,0-80,0v86a64,64,0,1,0,80,0Zm-40,98a48,48,0,0,1-27.42-87.4A8,8,0,0,0,104,138V48a24,24,0,0,1,48,0v90a8,8,0,0,0,3.42,6.56A48,48,0,0,1,128,232Z"></path></svg></span><small>Temperature</small><strong>22.0°C</strong></article><article><span aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM128,216a72.08,72.08,0,0,1-72-72c0-57.23,55.47-105,72-118,16.53,13,72,60.75,72,118A72.08,72.08,0,0,1,128,216Zm55.89-62.66a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68Z"></path></svg></span><small>Humidity</small><strong>50%</strong></article><article><span aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16-16a8,8,0,0,0-11.32,11.32l16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H40a8,8,0,0,0,0,16h8A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0-16h24A8,8,0,0,0,240,120Z"></path></svg></span><small>Light</small><strong>220 lux</strong></article></div>
                                 <button class="lw2-room-row-action" type="button" data-room-action="summary">◷ <strong>View morning summary</strong><span>›</span></button><div class="lw2-room-feedback" data-room-feedback="sensors" role="status" aria-live="polite"></div>
                             </section>
-                            <section class="lw2-room-panel" role="tabpanel" tabindex="0" hidden id="room-panel-home" aria-labelledby="room-tab-home" data-room-panel="home">
-                                <div class="lw2-room-screen-header"><div><h3>Smart Home</h3></div></div>
+                            <section class="lw2-room-panel is-active" role="tabpanel" tabindex="0" id="room-panel-home" aria-labelledby="room-tab-home" data-room-panel="home">
+                                <div class="lw2-room-screen-header"><div><h3>Smart Home</h3><span class="lw2-room-status"><i></i>Example setup · 3 connected</span></div></div>
                                 <p class="lw2-room-helper">Connected devices</p>
-                                <div class="lw2-device-grid"><button type="button" data-room-device="Connected shade"><span>▣</span><strong>Connected shade</strong><small><i></i> Wind Down <em>·</em> Wake</small></button><button type="button" data-room-device="Connected light"><span>♧</span><strong>Connected light</strong><small><i></i> Wind Down <em>·</em> Wake</small></button><button type="button" data-room-device="Connected climate"><span>♨</span><strong>Connected climate</strong><small><i></i> Wind Down <em>·</em> Wake</small></button><button type="button" class="is-add" data-room-device="Add a device"><span>＋</span><strong>Add a device</strong></button></div>
-                                <button class="lw2-room-row-action" type="button" data-room-action="manage">▣ <strong>Manage devices</strong><span>›</span></button>
-                                <div class="lw2-scenes-head"><span>Scenes</span><button type="button" data-room-action="edit">Edit</button></div><div class="lw2-scene-pills"><button type="button" data-room-scene="Wind Down">◌ Wind Down · 3</button><button type="button" data-room-scene="Wake">☼ Wake · 3</button></div><div class="lw2-room-feedback" data-room-feedback="home" role="status" aria-live="polite"></div>
+                                <div class="lw2-device-grid">
+                                    <button type="button" aria-pressed="false" data-room-device="Connected curtain"><span class="lw2-device-icon lw2-device-icon--curtain" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="15" y="15" width="34" height="34" rx="1"/><circle cx="25" cy="25" r="2.5"/><circle cx="35" cy="25" r="2.5"/></svg></span><strong>Connected curtain</strong><small><i></i><b>Wind Down</b><em>·</em><span>Wake</span></small></button>
+                                    <button type="button" aria-pressed="false" data-room-device="Connected light"><span class="lw2-device-icon lw2-device-icon--light" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 12c-9 0-16 7-16 16 0 6 3 10 8 13v6h16v-6c5-3 8-7 8-13 0-9-7-16-16-16Z"/><path d="M26 53h12"/></svg></span><strong>Connected light</strong><small><i></i><b>Wind Down</b><em>·</em><span>Wake</span></small></button>
+                                    <button type="button" aria-pressed="false" data-room-device="Connected thermostat"><span class="lw2-device-icon lw2-device-icon--climate" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 12a6 6 0 0 0-6 6v20.5a12 12 0 1 0 12 0V18a6 6 0 0 0-6-6Z"/><circle cx="32" cy="47" r="4"/><path d="M45 23v12M41 27h8M45 31h5"/></svg></span><strong>Connected climate</strong><small><i></i><b>Wind Down</b><em>·</em><span>Wake</span></small></button>
+                                    <button type="button" class="is-add" data-room-device="Add a device"><span class="lw2-device-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 16v32M16 32h32"/></svg></span><strong>Add a device</strong></button>
+                                </div>
+                                <button class="lw2-room-row-action" type="button" data-room-action="manage"><span class="lw2-manage-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="10" width="25" height="20" rx="2"/><rect x="22" y="20" width="20" height="18" rx="2"/></svg></span><strong>Manage devices</strong><span>›</span></button>
+                                <div class="lw2-scenes-head"><span>Scenes</span><button type="button" data-room-action="edit">Edit</button></div><div class="lw2-scene-pills"><button type="button" aria-pressed="false" data-room-scene="Wind Down"><span aria-hidden="true">☾</span><b>Wind Down</b><em>· 3</em></button><button type="button" aria-pressed="false" data-room-scene="Wake"><span aria-hidden="true">☼</span><b>Wake</b><em>· 3</em></button></div><div class="lw2-room-feedback" data-room-feedback="home" role="status" aria-live="polite"></div>
                             </section>
                         </div>
                         <div class="lw2-room-copy">
@@ -192,6 +199,60 @@
                         </div>
                     </div>
                 </div>
+                <div class="lw2-radar-mechanism" aria-labelledby="mechanism-heading">
+                    <div class="lw2-radar-mechanism-head">
+                        <div><p class="lw2-eyebrow">Product mechanism · one quiet loop</p><h3 id="mechanism-heading">How LunaWake orchestrates the room.</h3></div>
+                        <p>While you sleep, LunaWake notices the room locally, turns detail into a lighter state view, and gradually shapes the room around the wake window you choose.</p>
+                    </div>
+                    <ol class="lw2-radar-loop" aria-label="How LunaWake turns bedside signals into a night-time routine">
+                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--sense is-active" data-step="0" tabindex="0" role="button" aria-pressed="true" aria-label="Step one: Sense, local breathing-related sensing">
+                            <figcaption><span class="lw2-radar-loop-label">01 · Sense</span><b>Notices the night without a wearable.</b></figcaption>
+                            <svg class="lw2-radar-loop-svg" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true">
+                                <path class="lw2-radar-wave-echo" d="M 4 35.8 L 8 33.8 L 12 33 L 16 33.6 L 20 35.6 L 24 38.6 L 28 42.4 L 32 46.6 L 36 50.8 L 40 54.4 L 44 57.2 L 48 58.7 L 52 58.9 L 56 57.8 L 60 55.3 L 64 51.9 L 68 47.9 L 72 43.7 L 76 39.7 L 80 36.4 L 84 34.1 L 88 33 L 92 33.4 L 96 35.1 L 100 37.9 L 104 41.6 L 108 45.8 L 112 50 L 116 53.7 L 120 56.7 L 124 58.5 L 128 59 L 132 58.1 L 136 55.9 L 140 52.7 L 144 48.7 L 148 44.5 L 152 40.4 L 156 37 L 160 34.4 L 164 33.1 L 168 33.2 L 172 34.6 L 176 37.3 L 180 40.8 L 184 44.9 L 188 49.2 L 192 53 L 196 56.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                                <path class="lw2-radar-wave-main" d="M 4 46 L 8 39.6 L 12 33.8 L 16 29.4 L 20 26.7 L 24 26 L 28 27.5 L 32 31 L 36 36 L 40 42.1 L 44 48.6 L 48 54.8 L 52 60.1 L 56 63.9 L 60 65.8 L 64 65.6 L 68 63.3 L 72 59.2 L 76 53.7 L 80 47.3 L 84 40.8 L 88 34.9 L 92 30.1 L 96 27.1 L 100 26 L 104 27.1 L 108 30.1 L 112 34.9 L 116 40.8 L 120 47.3 L 124 53.7 L 128 59.2 L 132 63.3 L 136 65.6 L 140 65.8 L 144 63.9 L 148 60.1 L 152 54.8 L 156 48.6 L 160 42.1 L 164 36 L 168 31 L 172 27.5 L 176 26 L 180 26.7 L 184 29.4 L 188 33.8 L 192 39.6 L 196 46" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                            <div class="lw2-radar-loop-axis"><span>Before bed · in bed</span><span>Local sample · 10 Hz</span></div>
+                            <div class="lw2-radar-loop-read"><b>10 Hz</b><small>local sensing · contact-free</small></div>
+                            <p class="lw2-radar-loop-copy">Breathing-related patterns and movement are sampled at the bedside without a wearable. <b>Raw waveforms stay on the device.</b></p>
+                        </figure></li>
+                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--follow" data-step="1" tabindex="0" role="button" aria-pressed="false" aria-label="Step two: Follow, derived state guides gradual room response">
+                            <figcaption><span class="lw2-radar-loop-label">02 · Follow</span><b>Only a lighter state view is shared.</b></figcaption>
+                            <svg class="lw2-radar-loop-svg" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true">
+                                <line x1="123" x2="123" y1="6" y2="84" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".18"/>
+                                <path class="lw2-radar-follow-glow" d="M 4 13.7 C 14.9 18, 49.5 30.6, 69.3 39.6 C 89.1 48.6, 106.7 60.7, 123 67.7 C 139.3 74.7, 155 79.1, 167.2 81.8 C 179.4 84.5, 191.2 83.6, 196 84 L 196 84 L 4 84 Z" fill="currentColor"/>
+                                <path class="lw2-radar-follow-draw" d="M 4 13.7 C 14.9 18, 49.5 30.6, 69.3 39.6 C 89.1 48.6, 106.7 60.7, 123 67.7 C 139.3 74.7, 155 79.1, 167.2 81.8 C 179.4 84.5, 191.2 83.6, 196 84" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+                                <path class="lw2-radar-follow-draw" d="M 4 80.3 C 14.2 73.5, 47.5 48.9, 65.4 39.6 C 83.3 30.4, 96.8 22.6, 111.5 24.8 C 126.2 27, 139.7 44, 153.8 52.9 C 167.9 61.8, 189 73.9, 196 78.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                            <div class="lw2-radar-loop-axis"><span>Bedtime</span><span>Asleep · cues fade</span></div>
+                            <div class="lw2-radar-loop-read"><b>1 Hz</b><small>cloud sync · derived features / states</small></div>
+                            <p class="lw2-radar-loop-copy">On-device processing turns local detail into a lighter state view. <b>Only derived features and states sync to the cloud.</b></p>
+                        </figure></li>
+                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--wake" data-step="2" tabindex="0" role="button" aria-pressed="false" aria-label="Step three: Wake, gradual response inside a hard time boundary">
+                            <figcaption><span class="lw2-radar-loop-label">03 · Wake</span><b>Inside the time window you choose.</b></figcaption>
+                            <svg class="lw2-radar-loop-svg" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true">
+                                <rect class="lw2-radar-win-band" x="123" y="6" width="73" height="78" fill="currentColor"/>
+                                <path d="M 4 60.3 C 9.1 61.3, 23.2 67.4, 34.7 66.2 C 46.2 65, 61.6 53.6, 73.1 52.9 C 84.6 52.2, 92.9 62.5, 103.8 61.8 C 114.7 61.1, 128.8 54.4, 138.4 48.5 C 148 42.6, 151.8 26.8, 161.4 26.3 C 171 25.8, 190.2 42.3, 196 45.5 L 196 84 L 4 84 Z" fill="#6E6E73" opacity=".06"/>
+                                <path d="M 4 60.3 C 9.1 61.3, 23.2 67.4, 34.7 66.2 C 46.2 65, 61.6 53.6, 73.1 52.9 C 84.6 52.2, 92.9 62.5, 103.8 61.8 C 114.7 61.1, 128.8 54.4, 138.4 48.5 C 148 42.6, 151.8 26.8, 161.4 26.3 C 171 25.8, 190.2 42.3, 196 45.5" fill="none" stroke="#6E6E73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" opacity=".38"/>
+                                <clipPath id="lw2-radar-winclip"><rect x="123" y="0" width="77" height="90"/></clipPath>
+                                <path d="M 4 60.3 C 9.1 61.3, 23.2 67.4, 34.7 66.2 C 46.2 65, 61.6 53.6, 73.1 52.9 C 84.6 52.2, 92.9 62.5, 103.8 61.8 C 114.7 61.1, 128.8 54.4, 138.4 48.5 C 148 42.6, 151.8 26.8, 161.4 26.3 C 171 25.8, 190.2 42.3, 196 45.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" opacity=".8" clip-path="url(#lw2-radar-winclip)"/>
+                                <line x1="123" x2="123" y1="6" y2="84" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".3"/><line x1="196" x2="196" y1="6" y2="84" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" opacity=".5"/>
+                            </svg>
+                            <div class="lw2-radar-loop-axis"><span>Window opens</span><span>Latest time</span></div>
+                            <div class="lw2-radar-loop-read"><b>Wake window</b><small>light + sound build gradually</small></div>
+                            <p class="lw2-radar-loop-copy">Light and sound build gradually inside the wake window, while staying within the latest time you set.</p>
+                        </figure></li>
+                    </ol>
+                    <div class="lw2-radar-boundaries" role="list" aria-label="LunaWake product boundaries">
+                        <article role="listitem"><span>01 / Local signal</span><strong>Raw waveforms stay at the bedside.</strong><p>Detailed sensing is processed on the device, close to the room where it happens.</p></article>
+                        <article role="listitem"><span>02 / Lightweight sync</span><strong>Only derived state is shared.</strong><p>The cloud receives features and states at 1 Hz, not the original waveform.</p></article>
+                        <article role="listitem"><span>03 / Human boundary</span><strong>The room follows your latest time.</strong><p>Light and sound build gradually inside the wake window you choose.</p></article>
+                    </div>
+                    <div class="lw2-radar-mechanism-note">
+                        <p><strong>Data boundary</strong> Local sensing runs at 10 Hz; cloud sync carries derived features and states at 1 Hz. Raw waveforms stay on the device.</p>
+                        <p>Illustrative product flow, not a clinical waveform.<br>Signal interpretation and wake response are still being validated.</p>
+                        <a class="lw2-inline-link" href="science.html#evidence">See how we validate <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
                 <div class="lw2-radar-proof"><span>No camera</span><span>No wearable</span><span>Local routines</span><span>Physical privacy gate</span></div>
             </div>
         </section>
@@ -199,15 +260,49 @@
         <section class="lw2-app-story" id="app" aria-labelledby="app-heading">
             <div class="lw2-shell">
                 <div class="lw2-app-story-head">
-                    <div><p class="lw2-eyebrow">The Luna App</p><h2 id="app-heading">The app makes the night legible.</h2></div>
-                    <p>The Luna App is the configuration and reflection layer. Set up tonight before bed, let the device run locally, then return in the morning for a clear summary.</p>
+                    <div><p class="lw2-eyebrow">The Luna App</p><h2 id="app-heading">Luna understands the night you cannot see.</h2></div>
+                    <p>While you sleep, Luna notices the quiet signals. In the morning, it tells you what happened, what it might mean, and one gentle thing to try next.</p>
                 </div>
-                <div class="lw2-app-story-grid">
-                    <article><span>01 / Before bed</span><h3>Configure tonight.</h3><p>Choose the wake target, the latest you can sleep, and the preferences that shape the room.</p></article>
-                    <article><span>02 / Through the night</span><h3>Let the device run.</h3><p>Core routines continue on-device when the app or network is unavailable. Physical controls remain authoritative.</p></article>
-                    <article><span>03 / In the morning</span><h3>See what happened.</h3><p>Review a concise morning summary instead of an endless dashboard or a medical score.</p></article>
+                <div class="lw2-app-coach">
+                    <article class="lw2-app-insight lw2-app-insight--morning">
+                        <div class="lw2-app-insight-copy">
+                            <span>01 / This morning</span>
+                            <h3>A restless one.</h3>
+                            <p>You stirred a lot after 3. Nothing you did wrong — I’ll cool the room a touch tonight.</p>
+                            <strong>One clear read. One useful next step.</strong>
+                        </div>
+                        <figure class="lw2-app-insight-media lw2-app-sunrise-media"><img src="images/app-screens/sunrise.png" alt="Luna App Sunrise morning summary with a restless-night reflection and suggested routine" loading="lazy" decoding="async"><figcaption>Morning read / one night, understood.</figcaption></figure>
+                    </article>
+                    <article class="lw2-app-insight lw2-app-insight--pattern">
+                        <figure class="lw2-app-insight-media lw2-app-pattern-media"><div class="lw2-app-pattern-scroll" tabindex="0" role="region" aria-label="Scrollable Luna App Sleep Pattern report"><img src="images/app-screens/sleep-pattern.png" alt="Full Luna App Sleep Pattern report covering wind-down speed, charge efficiency, repair focus, social jet lag, rhythm and resilience, and a Steady Sleeper reflection" loading="lazy" decoding="async"></div><figcaption>Sleep Pattern / swipe up to explore the full reflection</figcaption></figure>
+                        <div class="lw2-app-insight-copy">
+                            <span>02 / Over time</span>
+                            <h3>Your nights begin to have a shape.</h3>
+                            <p>After a few nights, Luna turns repetition into something human: not a score, but a pattern you can recognize.</p>
+                            <strong>The Steady Sleeper is one way your rhythm can reveal itself.</strong>
+                        </div>
+                    </article>
                 </div>
-                <p class="lw2-app-story-note">Configuration and presentation live in the app. The bedside device remains the always-available system.</p>
+                <div class="lw2-app-evidence">
+                    <div class="lw2-app-evidence-head">
+                        <p class="lw2-eyebrow">Behind the insight</p>
+                        <h3>What Luna handles quietly</h3>
+                    </div>
+                    <div class="lw2-app-evidence-list">
+                        <article>
+                            <figure><img src="images/app-screens/wind-down.png" alt="Luna App Wind Down screen with sound, light, and bedtime controls" loading="lazy" decoding="async"></figure>
+                            <div><span>Before bed</span><p>You choose the intention. Luna carries it into the room.</p></div>
+                        </article>
+                        <article>
+                            <figure><img src="images/app-screens/sensors-data.png" alt="Luna App Sensors and Data screen showing breathing, movement, noise, and room conditions" loading="lazy" decoding="async"></figure>
+                            <div><span>Through the night</span><p>Luna senses, follows, and adjusts without asking you to watch.</p></div>
+                        </article>
+                    </div>
+                </div>
+                <div class="lw2-app-story-note">
+                    <p>See your night differently.</p>
+                    <a class="lw2-inline-link" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
+                </div>
             </div>
         </section>
 
@@ -229,7 +324,7 @@
         <section class="lw2-cta"><div class="lw2-shell"><p class="lw2-eyebrow">Stay close to the build</p><h2>Make tomorrow a little easier to meet.</h2><a class="lw2-button lw2-button--dark" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
-    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy <span aria-hidden="true">↗</span></a><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms <span aria-hidden="true">↗</span></a></nav></div><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Sleep support, not medical advice.</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
+    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div><nav aria-label="Footer navigation"><a href="science.html">Science</a><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy <span aria-hidden="true">↗</span></a><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms <span aria-hidden="true">↗</span></a></nav></div><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Sleep support, not medical advice.</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
 
     <script src="js/lw2_shell.js"></script>
     <script>
@@ -391,6 +486,8 @@
                 swapPanel(panels, (panel) => panel.dataset.roomPanel === key);
                 swapPanel(copyPanels, (panel) => panel.dataset.roomCopy === key);
             };
+            const initialTab = root.querySelector('[data-room-tab].is-active') || root.querySelector('[data-room-tab="home"]');
+            if (initialTab) setRoomState(initialTab.dataset.roomTab);
             tabs.forEach((tab, index) => {
                 tab.addEventListener('click', () => setRoomState(tab.dataset.roomTab));
                 tab.addEventListener('keydown', (event) => {
@@ -414,10 +511,23 @@
             }));
             root.querySelectorAll('[data-room-device]').forEach((button) => button.addEventListener('click', () => {
                 const feedback = root.querySelector('[data-room-feedback="home"]');
+                const isAdd = button.dataset.roomDevice === 'Add a device';
+                if (!isAdd) {
+                    root.querySelectorAll('[data-room-device]:not(.is-add)').forEach((device) => {
+                        const active = device === button;
+                        device.classList.toggle('is-selected', active);
+                        device.setAttribute('aria-pressed', String(active));
+                    });
+                }
                 if (feedback) feedback.textContent = button.dataset.roomDevice === 'Add a device' ? 'Example device setup opened.' : `Example device selected: ${button.dataset.roomDevice}.`;
             }));
             root.querySelectorAll('[data-room-scene]').forEach((button) => button.addEventListener('click', () => {
                 const feedback = root.querySelector('[data-room-feedback="home"]');
+                root.querySelectorAll('[data-room-scene]').forEach((scene) => {
+                    const active = scene === button;
+                    scene.classList.toggle('is-selected', active);
+                    scene.setAttribute('aria-pressed', String(active));
+                });
                 if (feedback) feedback.textContent = `Example ${button.dataset.roomScene} scene selected.`;
             }));
             root.querySelectorAll('[data-room-action]').forEach((button) => button.addEventListener('click', () => {
@@ -428,6 +538,75 @@
                 }
             }));
         });
+        const mechanismLoop = document.querySelector('.lw2-radar-loop');
+        const patternScroll = document.querySelector('.lw2-app-pattern-scroll');
+        if (patternScroll) {
+            const patternImage = patternScroll.querySelector('img');
+            const positionPatternAtEnd = () => {
+                const revealLead = Math.min(patternScroll.clientHeight * .24, 150);
+                patternScroll.scrollTop = Math.max(0, patternScroll.scrollHeight - patternScroll.clientHeight - revealLead);
+            };
+            const deferPatternPosition = () => window.setTimeout(positionPatternAtEnd, 80);
+            if (patternImage?.complete) deferPatternPosition();
+            else patternImage?.addEventListener('load', deferPatternPosition, { once: true });
+        }
+        if (mechanismLoop) {
+            const panels = Array.from(mechanismLoop.querySelectorAll('.lw2-radar-loop-panel'));
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const compactViewport = window.matchMedia('(max-width: 700px)');
+            let currentStep = 0;
+            let pinned = false;
+            let timer = null;
+            mechanismLoop.classList.add('is-live');
+            const showStep = (index) => {
+                currentStep = index;
+                panels.forEach((panel, panelIndex) => {
+                    const active = panelIndex === index;
+                    panel.classList.toggle('is-active', active);
+                    panel.setAttribute('aria-pressed', String(active));
+                });
+            };
+            const stopRotation = () => {
+                if (timer) window.clearInterval(timer);
+                timer = null;
+            };
+            const startRotation = () => {
+                if (reduceMotion || compactViewport.matches || pinned || timer) return;
+                timer = window.setInterval(() => showStep((currentStep + 1) % panels.length), 5000);
+            };
+            mechanismLoop.addEventListener('click', (event) => {
+                const panel = event.target.closest('.lw2-radar-loop-panel');
+                if (!panel) return;
+                const nextStep = panels.indexOf(panel);
+                if (pinned && nextStep === currentStep) {
+                    pinned = false;
+                    startRotation();
+                    return;
+                }
+                pinned = true;
+                stopRotation();
+                showStep(nextStep);
+            });
+            mechanismLoop.addEventListener('keydown', (event) => {
+                if (!['Enter', ' '].includes(event.key) || !event.target.classList.contains('lw2-radar-loop-panel')) return;
+                event.preventDefault();
+                event.target.click();
+            });
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver((entries) => entries.forEach((entry) => {
+                    if (entry.isIntersecting) startRotation();
+                    else stopRotation();
+                }), { threshold: .4 }).observe(mechanismLoop);
+            } else {
+                startRotation();
+            }
+            if ('addEventListener' in compactViewport) {
+                compactViewport.addEventListener('change', () => {
+                    if (compactViewport.matches) stopRotation();
+                    else startRotation();
+                });
+            }
+        }
         document.querySelectorAll('[data-year]').forEach((item) => item.textContent = new Date().getFullYear());
     })();
     </script>

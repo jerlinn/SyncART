@@ -6,6 +6,24 @@
 
     let lastFocusedElement = menu;
 
+    // The panel keeps [hidden] for assistive tech but only takes it back once
+    // the exit transition has run, so opening and closing stay interruptible:
+    // re-opening mid-exit re-targets from the panel's current opacity.
+    let panelHideTimer = 0;
+    const setPanelVisible = (visible) => {
+        window.clearTimeout(panelHideTimer);
+        if (visible) {
+            mobile.hidden = false;
+            requestAnimationFrame(() => mobile.classList.add('is-open'));
+            return;
+        }
+        mobile.classList.remove('is-open');
+        const exitMs = (parseFloat(window.getComputedStyle(mobile).transitionDuration) || 0) * 1000;
+        panelHideTimer = window.setTimeout(() => {
+            if (!mobile.classList.contains('is-open')) mobile.hidden = true;
+        }, exitMs);
+    };
+
     const setMenu = (open, { restoreFocus = false } = {}) => {
         menu.classList.toggle('is-open', open);
         menu.setAttribute('aria-expanded', String(open));
@@ -13,8 +31,8 @@
         const menuLabel = menu.querySelector('.lw2-menu-label');
         if (menuLabel) menuLabel.textContent = open ? 'Close' : 'Menu';
         header.classList.toggle('is-menu-open', open);
-        mobile.hidden = !open;
         document.body.classList.toggle('lw2-menu-open', open);
+        setPanelVisible(open);
 
         if (open) {
             lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : menu;
@@ -39,7 +57,27 @@
         setMenu(false);
     });
 
-    const updateHeaderState = () => header.classList.toggle('is-scrolled', window.scrollY > 16);
+    // Asymmetric thresholds: a single 16px trip point flickers the whole header
+    // material when the user rests near it. Enter high, leave low.
+    const SCROLLED_ENTER = 24;
+    const SCROLLED_EXIT = 6;
+    let isScrolled = false;
+    let scrollTicking = false;
+
+    const updateHeaderState = () => {
+        const next = isScrolled ? window.scrollY > SCROLLED_EXIT : window.scrollY > SCROLLED_ENTER;
+        if (next === isScrolled) return;
+        isScrolled = next;
+        header.classList.toggle('is-scrolled', next);
+    };
+
     updateHeaderState();
-    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('scroll', () => {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+            scrollTicking = false;
+            updateHeaderState();
+        });
+    }, { passive: true });
 })();

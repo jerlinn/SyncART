@@ -229,7 +229,7 @@
         <section class="lw2-cta"><div class="lw2-shell"><p class="lw2-eyebrow">Stay close to the build</p><h2>Make tomorrow a little easier to meet.</h2><a class="lw2-button lw2-button--dark" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
-    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></div><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Sleep support, not medical advice.</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
+    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy <span aria-hidden="true">↗</span></a><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms <span aria-hidden="true">↗</span></a></nav></div><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Sleep support, not medical advice.</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
 
     <script src="js/lw2_shell.js"></script>
     <script>
@@ -330,22 +330,66 @@
             const tabs = Array.from(root.querySelectorAll('[data-room-tab]'));
             const panels = Array.from(root.querySelectorAll('[data-room-panel]'));
             const copyPanels = Array.from(root.querySelectorAll('[data-room-copy]'));
+            // Panels used to swap on the [hidden] attribute, which cuts both the
+            // content and the frame height in one frame. Fade the outgoing panel
+            // out along the path the incoming one arrives on, morph the frame to
+            // the new height, then fade the incoming panel in.
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const EXIT_MS = 180;
+            const swapTimers = new WeakMap();
+
+            const swapPanel = (items, matches) => {
+                const next = items.find(matches);
+                const previous = items.find((panel) => !panel.hidden);
+                if (!next || next === previous) return;
+
+                const frame = next.parentElement;
+                window.clearTimeout(swapTimers.get(frame));
+
+                const commit = () => {
+                    const startHeight = frame.getBoundingClientRect().height;
+                    items.forEach((panel) => {
+                        const active = panel === next;
+                        panel.classList.toggle('is-active', active);
+                        panel.hidden = !active;
+                    });
+                    next.classList.add('is-entering');
+
+                    // Measure the incoming height and pin the outgoing one with
+                    // transitions suppressed, so the only animated step is the
+                    // single start -> end change below.
+                    frame.style.transition = 'none';
+                    frame.style.height = 'auto';
+                    const endHeight = frame.getBoundingClientRect().height;
+                    frame.style.height = `${startHeight}px`;
+                    window.getComputedStyle(frame).height;
+                    frame.style.transition = '';
+                    window.getComputedStyle(frame).height;
+                    frame.style.height = `${endHeight}px`;
+
+                    requestAnimationFrame(() => next.classList.remove('is-entering'));
+                    swapTimers.set(frame, window.setTimeout(() => {
+                        frame.style.height = '';
+                    }, 360));
+                };
+
+                if (!previous || reducedMotion.matches) {
+                    commit();
+                    return;
+                }
+
+                previous.classList.add('is-entering');
+                swapTimers.set(frame, window.setTimeout(commit, EXIT_MS));
+            };
+
             const setRoomState = (key) => {
                 tabs.forEach((tab) => {
                     const active = tab.dataset.roomTab === key;
                     tab.classList.toggle('is-active', active);
                     tab.setAttribute('aria-selected', String(active));
                 });
-                panels.forEach((panel) => {
-                    const active = panel.dataset.roomPanel === key;
-                    panel.classList.toggle('is-active', active);
-                    panel.hidden = !active;
-                });
-                copyPanels.forEach((panel) => {
-                    const active = panel.dataset.roomCopy === key;
-                    panel.classList.toggle('is-active', active);
-                    panel.hidden = !active;
-                });
+                swapPanel(panels, (panel) => panel.dataset.roomPanel === key);
+                swapPanel(copyPanels, (panel) => panel.dataset.roomCopy === key);
             };
             tabs.forEach((tab, index) => {
                 tab.addEventListener('click', () => setRoomState(tab.dataset.roomTab));

@@ -9582,8 +9582,179 @@ h3,
         margin: 0 !important;
         border-left: 1px solid rgba(255, 253, 248, .28) !important;
     }
+    /* Only the launch action absorbs the free space; the menu button stays
+       attached to it so the two right-hand actions read as one cluster. */
+    .lw2-site .lw2-nav-cta { margin-left: auto !important; }
+    .lw2-site .lw2-menu { margin-left: 0 !important; }
 }
 
 @media (max-width: 1100px) {
     .lw2-site .lw2-mobile .lw2-mobile-cta { display: inline-flex !important; }
 }
+
+/* ==========================================================================
+   Motion system — fluid-interface defaults
+   Response 0.18-0.4s, critically damped (no overshoot) for state changes.
+   Reversible transitions use a mirrored easing pair so the outbound path
+   matches the return path. Press feedback fires on pointer-down, not release.
+   ========================================================================== */
+:root {
+    --lw2-motion-press: 110ms;
+    --lw2-motion-fast: 180ms;
+    --lw2-motion-base: 300ms;
+    --lw2-motion-slow: 400ms;
+    /* Mirror pair: exit is the inverse cubic-bezier of enter. */
+    --lw2-ease-enter: cubic-bezier(.32, .72, 0, 1);
+    --lw2-ease-exit: cubic-bezier(1, 0, .68, .28);
+}
+
+/* Scoped to the live site: legacy sections still carry `transition: all`,
+   and enabling keyword interpolation globally would start animating their
+   auto-height changes too. */
+.lw2-site {
+    interpolate-size: allow-keywords;
+}
+
+/* 1 — Header scroll state.
+   The header was absolute below the threshold and fixed above it, so crossing
+   it teleported the bar by the current scroll offset while the nav collapsed
+   86px -> 68px with no transition. Pinning it at every offset removes the
+   teleport; what is left is a material change, which morphs. */
+.lw2-site .lw2-header {
+    position: fixed;
+    transition:
+        background var(--lw2-motion-slow) var(--lw2-ease-enter),
+        border-color var(--lw2-motion-slow) var(--lw2-ease-enter),
+        box-shadow var(--lw2-motion-slow) var(--lw2-ease-enter),
+        color var(--lw2-motion-slow) var(--lw2-ease-enter),
+        -webkit-backdrop-filter var(--lw2-motion-slow) var(--lw2-ease-enter),
+        backdrop-filter var(--lw2-motion-slow) var(--lw2-ease-enter);
+}
+
+.lw2-site .lw2-nav {
+    transition:
+        min-height var(--lw2-motion-slow) var(--lw2-ease-enter),
+        padding var(--lw2-motion-slow) var(--lw2-ease-enter),
+        width var(--lw2-motion-slow) var(--lw2-ease-enter),
+        background var(--lw2-motion-slow) var(--lw2-ease-enter),
+        border-color var(--lw2-motion-slow) var(--lw2-ease-enter),
+        box-shadow var(--lw2-motion-slow) var(--lw2-ease-enter);
+}
+
+/* 2 — Mobile menu materializes instead of switching on.
+   Enter and exit travel the same path, so grabbing the toggle mid-flight
+   reverses along the route the panel came in on. */
+.lw2-site .lw2-header .lw2-mobile {
+    opacity: 0 !important;
+    transform: translateY(-10px);
+    transform-origin: top center;
+    transition:
+        opacity var(--lw2-motion-fast) var(--lw2-ease-exit),
+        transform var(--lw2-motion-fast) var(--lw2-ease-exit);
+}
+
+.lw2-site .lw2-header .lw2-mobile.is-open {
+    opacity: 1 !important;
+    transform: translateY(0);
+    transition:
+        opacity var(--lw2-motion-base) var(--lw2-ease-enter),
+        transform var(--lw2-motion-base) var(--lw2-ease-enter);
+}
+
+/* 3 — Room tab panels cross-fade, and their frame morphs to the new height
+   rather than snapping. Height is driven from JS as an explicit px value. */
+.lw2-site .lw2-room-screen,
+.lw2-site .lw2-room-copy {
+    transition: height var(--lw2-motion-base) var(--lw2-ease-enter);
+}
+
+.lw2-site .lw2-room-panel,
+.lw2-site .lw2-room-copy-panel {
+    transition:
+        opacity var(--lw2-motion-fast) var(--lw2-ease-enter),
+        transform var(--lw2-motion-fast) var(--lw2-ease-enter);
+}
+
+.lw2-site .lw2-room-panel.is-entering,
+.lw2-site .lw2-room-copy-panel.is-entering {
+    opacity: 0;
+    transform: translateY(7px);
+}
+
+/* 4 — Press feedback. Highlight on the press, commit on release. */
+.lw2-site .lw2-button,
+.lw2-site .lw2-nav-cta,
+.lw2-site .lw2-mobile-cta,
+.lw2-site .lw2-menu,
+.lw2-site .lw2-room-tabs button,
+.lw2-site .lw2-finish-buttons button,
+.lw2-site .lw2-room-privacy {
+    transition:
+        background var(--lw2-motion-base) var(--lw2-ease-enter),
+        border-color var(--lw2-motion-base) var(--lw2-ease-enter),
+        color var(--lw2-motion-base) var(--lw2-ease-enter),
+        transform var(--lw2-motion-press) var(--lw2-ease-exit);
+}
+
+.lw2-site .lw2-button:active,
+.lw2-site .lw2-nav-cta:active,
+.lw2-site .lw2-mobile-cta:active,
+.lw2-site .lw2-menu:active,
+.lw2-site .lw2-room-tabs button:active,
+.lw2-site .lw2-finish-buttons button:active,
+.lw2-site .lw2-room-privacy:active {
+    transform: scale(.97);
+}
+
+/* 5 — FAQ disclosure. Native <details> opens discretely; where the engine
+   supports it, the panel grows to its own height instead. */
+.lw2-site details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+        block-size var(--lw2-motion-base) var(--lw2-ease-enter),
+        content-visibility var(--lw2-motion-base) var(--lw2-ease-enter) allow-discrete;
+}
+
+.lw2-site details[open]::details-content {
+    block-size: auto;
+}
+
+.lw2-site summary {
+    transition: color var(--lw2-motion-fast) var(--lw2-ease-enter);
+}
+
+/* 6 — Reduced motion keeps comprehension cues, drops the vestibular ones:
+   opacity still cross-fades, nothing travels or resizes. */
+@media (prefers-reduced-motion: reduce) {
+    .lw2-site .lw2-header,
+    .lw2-site .lw2-nav,
+    .lw2-site .lw2-room-screen,
+    .lw2-site .lw2-room-copy,
+    .lw2-site details::details-content {
+        transition-duration: .01ms !important;
+    }
+
+    .lw2-site .lw2-header .lw2-mobile,
+    .lw2-site .lw2-room-panel,
+    .lw2-site .lw2-room-copy-panel {
+        transform: none !important;
+        transition: opacity 200ms linear !important;
+    }
+
+    .lw2-site .lw2-button:active,
+    .lw2-site .lw2-nav-cta:active,
+    .lw2-site .lw2-mobile-cta:active,
+    .lw2-site .lw2-menu:active,
+    .lw2-site .lw2-room-tabs button:active,
+    .lw2-site .lw2-finish-buttons button:active,
+    .lw2-site .lw2-room-privacy:active {
+        transform: none;
+    }
+}
+
+/* Subsite header edge: the subsite bar drew a full-bleed rule on top of the
+   inset nav rule the homepage uses, stacking two hairlines 1px apart and
+   making the header 1px taller than the homepage's. Keep the inset rule only,
+   so both page types share one edge and one logo baseline. */
+.lw2-site.lw2-subsite .lw2-header { border-bottom: 0; }

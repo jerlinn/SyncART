@@ -1,0 +1,30 @@
+# LunaWake
+
+> LunaWake is a bedside sleep companion for quieter nights — sensing, guiding, and waking without a wearable or a camera. It sits on the nightstand and turns your night into a simple routine: wind down, sleep naturally, wake inside the window you choose.
+
+How it works — three quiet steps:
+1. Place: set LunaWake at the bedside, facing you. No wearable, no camera, no complicated setup.
+2. Sense: contact-free radar and environmental sensing follow presence and breathing-related movement while the room stays quiet.
+3. Wake: light and sound rise with your wake window, then meet the hard deadline you set — no sudden alarm.
+
+Key facts:
+- Wearable-free: no ring, no watch, nothing to charge or put on. Sleep tracking is automatic, from the bedside.
+- No camera, ever. Microphones support passive acoustic sensing only — not voice commands, text-to-speech, or conversation.
+- Works offline: the core night routine runs locally on the device even if the app or network is unavailable.
+- The Luna App handles setup, preferences, and morning summaries; the device keeps physical controls.
+- Designed for one sleeper closest to the device; reliable multi-person separation is not a supported capability.
+- Who it's for: people with busy schedules and late nights who want better sleep but dislike wearing devices to bed.
+- Category: consumer wellness product. Not a medical device; not intended to diagnose, treat, or prevent disease.
+- Status: pre-launch. Launch list at https://prelaunch.lunawake.ai/
+
+## Pages
+- [Home](https://lunawake.ai/): product overview — how it works, hardware, radar sensing, science, finishes, and the Luna App
+- [Reserve](https://lunawake.ai/deposit.html): reserve LunaWake for $10 and unlock $50 in VIP Launch Credit toward the final purchase
+- [About](https://lunawake.ai/about.html): why LunaWake is building a calmer, privacy-first bedside sleep companion
+- [Support / FAQ](https://lunawake.ai/support.html): how contact-free sensing works, privacy, app and compatibility, shipping
+- [Privacy Policy](https://lunawake.ai/privacy.html): privacy policy
+- [Terms of Service](https://lunawake.ai/terms.html): terms of service
+
+## Contact
+- Launch list & updates: https://prelaunch.lunawake.ai/
+- Instagram: https://www.instagram.com/lunawake.ai/

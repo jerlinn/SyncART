@@ -7200,6 +7200,12 @@ h3,
 .lw2-button:hover { transform: translateY(-2px); }
 .lw2-site .lw2-button--light { background: #fffdf8; color: var(--lw2-ink); }
 .lw2-button--light:hover { background: #e8c98e; }
+.lw2-site .lw2-hero .lw2-button--light {
+    background: #e7c99a;
+    color: #24211f;
+    box-shadow: 0 10px 24px rgba(20, 16, 13, .16);
+}
+.lw2-site .lw2-hero .lw2-button--light:hover { background: #f0d6a9; }
 .lw2-site .lw2-button--dark { background: var(--lw2-ink); color: #fffdf8; }
 .lw2-inline-link { display: inline-flex; align-items: center; gap: 9px; color: var(--lw2-ink); font-size: 12px; font-weight: 600; text-decoration: none; transition: gap .3s var(--lw2-ease); }
 .lw2-inline-link:hover { gap: 13px; }
@@ -8351,225 +8357,6 @@ h3,
     }
 }
 
-/* MM6-inspired navigation direction: transparent on image, architectural when held. */
-.lw2-site .lw2-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding: 0 24px;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    transition: opacity .45s var(--lw2-ease), transform .45s var(--lw2-ease);
-}
-
-.lw2-site .lw2-nav {
-    position: relative;
-    width: min(1280px, calc(100% - 32px));
-    min-height: 86px;
-    gap: 32px;
-    border-bottom: 1px solid rgba(255, 255, 255, .26);
-}
-
-.lw2-site .lw2-logo--header {
-    position: relative;
-    width: 137px;
-    min-height: 27px;
-}
-
-.lw2-site .lw2-logo--header .lw2-logo-mark {
-    width: 137px;
-    height: auto;
-    transition: opacity .35s var(--lw2-ease), transform .35s var(--lw2-ease);
-}
-
-.lw2-site .lw2-logo--header .lw2-logo-mark--light { opacity: 1; }
-.lw2-site .lw2-logo--header .lw2-logo-mark--dark { position: absolute; inset: 0 auto auto 0; opacity: 0; }
-
-.lw2-site .lw2-nav-links {
-    gap: 25px;
-    margin-left: auto;
-    color: rgba(255, 253, 248, .72);
-    font-size: 10px;
-    letter-spacing: .1em;
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.lw2-site .lw2-nav-links a {
-    position: relative;
-    padding: 9px 0;
-    transition: color .3s var(--lw2-ease);
-}
-
-.lw2-site .lw2-nav-links a::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    background: currentColor;
-    content: "";
-    opacity: 0;
-    transform: scaleX(0);
-    transform-origin: right center;
-    transition: opacity .3s var(--lw2-ease), transform .3s var(--lw2-ease);
-}
-
-.lw2-site .lw2-nav-links a:hover {
-    color: #fffdf8;
-}
-
-.lw2-site .lw2-nav-links a:hover::after {
-    opacity: .9;
-    transform: scaleX(1);
-    transform-origin: left center;
-}
-
-.lw2-site .lw2-nav-cta {
-    gap: 13px;
-    min-height: 38px;
-    padding: 0 0 0 14px;
-    border: 1px solid rgba(255, 253, 248, .42);
-    border-radius: 0;
-    background: transparent;
-    color: #fffdf8;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    transition: background .3s var(--lw2-ease), border-color .3s var(--lw2-ease), color .3s var(--lw2-ease);
-}
-
-.lw2-site .lw2-nav-cta span {
-    display: inline-grid;
-    width: 32px;
-    height: 36px;
-    place-items: center;
-    border-left: 1px solid rgba(255, 253, 248, .28);
-    font-size: 14px;
-    line-height: 1;
-}
-
-.lw2-site .lw2-nav-cta:hover {
-    background: rgba(255, 253, 248, .12);
-    border-color: rgba(255, 253, 248, .72);
-}
-
-.lw2-site .lw2-header.is-scrolled {
-    position: fixed;
-    top: 12px;
-    right: 0;
-    left: 0;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-}
-
-.lw2-site .lw2-header.is-scrolled .lw2-nav {
-    min-height: 62px;
-    padding: 0 17px;
-    border: 1px solid rgba(55, 49, 43, .12);
-    background: rgba(247, 245, 240, .82);
-    box-shadow: 0 16px 38px rgba(48, 42, 34, .12), 0 1px 0 rgba(255, 255, 255, .75) inset;
-    backdrop-filter: blur(24px) saturate(125%);
-    -webkit-backdrop-filter: blur(24px) saturate(125%);
-}
-
-.lw2-site .lw2-header.is-scrolled .lw2-logo-mark--light { opacity: 0; }
-.lw2-site .lw2-header.is-scrolled .lw2-logo-mark--dark { opacity: 1; }
-.lw2-site .lw2-header.is-scrolled .lw2-nav-links { color: var(--lw2-muted); }
-.lw2-site .lw2-header.is-scrolled .lw2-nav-links a:hover { color: var(--lw2-ink); }
-.lw2-site .lw2-header.is-scrolled .lw2-nav-cta {
-    border-color: rgba(36, 33, 31, .25);
-    color: var(--lw2-ink);
-}
-.lw2-site .lw2-header.is-scrolled .lw2-nav-cta span { border-color: rgba(36, 33, 31, .16); }
-.lw2-site .lw2-header.is-scrolled .lw2-nav-cta:hover { background: rgba(36, 33, 31, .08); }
-
-@media (max-width: 900px) {
-    .lw2-site .lw2-header { padding: 0 18px; }
-    .lw2-site .lw2-nav { width: 100%; min-height: 74px; }
-    .lw2-site .lw2-logo--header,
-    .lw2-site .lw2-logo--header .lw2-logo-mark { width: 128px; }
-    .lw2-site .lw2-menu {
-        width: 40px;
-        height: 36px;
-        margin-left: auto;
-        padding: 8px 7px;
-        border: 1px solid rgba(255, 253, 248, .42);
-        border-radius: 0;
-        background: transparent;
-    }
-    .lw2-site .lw2-menu span { background: #fffdf8; }
-    .lw2-site .lw2-mobile {
-        margin: 0 -18px;
-        padding: 21px 24px 25px;
-        border: 1px solid rgba(255, 253, 248, .18);
-        background: rgba(26, 23, 22, .94);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
-        color: #fffdf8;
-        backdrop-filter: blur(22px);
-        -webkit-backdrop-filter: blur(22px);
-    }
-    .lw2-site .lw2-mobile nav a { border-color: rgba(255, 253, 248, .16); }
-    .lw2-site .lw2-mobile nav a span { color: rgba(255, 253, 248, .48); }
-    .lw2-site .lw2-header.is-scrolled { top: 10px; }
-    .lw2-site .lw2-header.is-scrolled .lw2-nav {
-        min-height: 58px;
-        padding: 0 13px;
-    }
-    .lw2-site .lw2-header.is-scrolled .lw2-menu {
-        border-color: rgba(36, 33, 31, .2);
-    }
-    .lw2-site .lw2-header.is-scrolled .lw2-menu span { background: var(--lw2-ink); }
-    .lw2-site .lw2-header.is-scrolled .lw2-mobile {
-        margin: 0 -13px;
-        border-color: var(--lw2-line);
-        background: rgba(247, 245, 240, .96);
-        color: var(--lw2-ink);
-    }
-    .lw2-site .lw2-header.is-scrolled .lw2-mobile nav a { border-color: var(--lw2-line); }
-    .lw2-site .lw2-header.is-scrolled .lw2-mobile nav a span { color: var(--lw2-faint); }
-}
-
-@media (max-width: 560px) {
-    .lw2-site .lw2-nav { min-height: 68px; }
-    .lw2-site .lw2-header.is-scrolled { top: 8px; }
-}
-
-/* Edge-to-edge hold state: less card, more room. */
-.lw2-site .lw2-header.is-scrolled {
-    top: 0;
-    padding: 0;
-}
-
-.lw2-site .lw2-header.is-scrolled .lw2-nav {
-    width: 100%;
-    min-height: 72px;
-    padding: 0 max(24px, calc((100vw - 1280px) / 2));
-    border: 0;
-    border-bottom: 1px solid rgba(55, 49, 43, .12);
-    background: rgba(247, 245, 240, .78);
-    box-shadow: 0 8px 24px rgba(48, 42, 34, .06), 0 1px 0 rgba(255, 255, 255, .7) inset;
-}
-
-@media (max-width: 900px) {
-    .lw2-site .lw2-header.is-scrolled { top: 0; padding: 0; }
-    .lw2-site .lw2-header.is-scrolled .lw2-nav {
-        min-height: 68px;
-        padding: 0 18px;
-    }
-    .lw2-site .lw2-header.is-scrolled .lw2-mobile { margin: 0; }
-}
-
-@media (max-width: 560px) {
-    .lw2-site .lw2-header.is-scrolled .lw2-nav { min-height: 64px; padding: 0 18px; }
-}
-
 .lw2-site.lw2-menu-open { overflow: hidden; }
 .lw2-site .lw2-mobile { z-index: 30; }
 .lw2-site .lw2-mobile:not([hidden]) { display: block; }
@@ -9077,7 +8864,7 @@ h3,
 }
 .lw2-site .lw2-nav {
     position: relative;
-    width: min(1280px, calc(100% - 48px));
+    width: min(1280px, calc(100% - 80px));
     min-width: 0;
     min-height: 86px;
     display: flex;
@@ -9778,12 +9565,9 @@ h3,
 }
 
 /* 1 — Header scroll state.
-   The header was absolute below the threshold and fixed above it, so crossing
-   it teleported the bar by the current scroll offset while the nav collapsed
-   86px -> 68px with no transition. Pinning it at every offset removes the
-   teleport; what is left is a material change, which morphs. */
+   The header stays fixed from the first frame. The inner nav keeps one
+   geometry; only the full-width material layer changes after a small scroll. */
 .lw2-site .lw2-header {
-    position: fixed;
     transition:
         background var(--lw2-motion-slow) var(--lw2-ease-enter),
         border-color var(--lw2-motion-slow) var(--lw2-ease-enter),
@@ -9791,16 +9575,6 @@ h3,
         color var(--lw2-motion-slow) var(--lw2-ease-enter),
         -webkit-backdrop-filter var(--lw2-motion-slow) var(--lw2-ease-enter),
         backdrop-filter var(--lw2-motion-slow) var(--lw2-ease-enter);
-}
-
-.lw2-site .lw2-nav {
-    transition:
-        min-height var(--lw2-motion-slow) var(--lw2-ease-enter),
-        padding var(--lw2-motion-slow) var(--lw2-ease-enter),
-        width var(--lw2-motion-slow) var(--lw2-ease-enter),
-        background var(--lw2-motion-slow) var(--lw2-ease-enter),
-        border-color var(--lw2-motion-slow) var(--lw2-ease-enter),
-        box-shadow var(--lw2-motion-slow) var(--lw2-ease-enter);
 }
 
 /* 2 — Mobile menu materializes instead of switching on.
@@ -10538,4 +10312,101 @@ h3,
     .deposit-credit-flow__arrow { min-height: 45px; border-top: 1px solid rgba(199, 166, 106, .2); border-right: 0; border-bottom: 1px solid rgba(199, 166, 106, .2); border-left: 0; }
     .deposit-credit-flow__arrow-desktop { display: none; }
     .deposit-credit-flow__arrow-mobile { display: block; }
+}
+
+/* Final header system: the full-width header owns the material layer; the
+   inner nav only owns stable content geometry. */
+.lw2-site .lw2-header {
+    position: fixed;
+    inset: 0 0 auto;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.lw2-site .lw2-nav {
+    width: min(1280px, calc(100% - 80px));
+    margin-inline: auto;
+    min-height: 80px;
+    padding: 0;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.lw2-site .lw2-header:not(.is-scrolled):not(.is-menu-open) .lw2-nav {
+    border: 1px solid transparent;
+}
+
+.lw2-site .lw2-header.is-scrolled:not(.is-menu-open) {
+    position: fixed;
+    top: 0;
+    background: rgba(247, 245, 240, .36);
+    border: 0;
+    box-shadow: 0 5px 16px rgba(48, 42, 34, .025);
+    backdrop-filter: blur(16px) saturate(110%);
+    -webkit-backdrop-filter: blur(16px) saturate(110%);
+    transition:
+        background var(--lw2-motion-slow) var(--lw2-ease-enter),
+        box-shadow var(--lw2-motion-slow) var(--lw2-ease-enter),
+        color var(--lw2-motion-slow) var(--lw2-ease-enter),
+        -webkit-backdrop-filter var(--lw2-motion-slow) var(--lw2-ease-enter),
+        backdrop-filter var(--lw2-motion-slow) var(--lw2-ease-enter);
+}
+
+.lw2-site .lw2-header.is-scrolled:not(.is-menu-open) .lw2-nav {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.lw2-site .lw2-header.is-scrolled:not(.is-menu-open) .lw2-nav-links {
+    color: rgba(36, 33, 31, .88);
+}
+.lw2-site .lw2-header.is-scrolled:not(.is-menu-open) .lw2-nav-links a:hover,
+.lw2-site .lw2-header.is-scrolled:not(.is-menu-open) .lw2-nav-links a:focus-visible {
+    color: var(--lw2-ink);
+}
+.lw2-site .lw2-header.is-scrolled:not(.is-menu-open) .lw2-nav-cta {
+    border-color: rgba(36, 33, 31, .38);
+    color: var(--lw2-ink);
+}
+
+@media (max-width: 900px) {
+    .lw2-site .lw2-nav {
+        width: 100%;
+        min-height: 68px;
+        padding: 0 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    .lw2-site .lw2-nav { min-height: 64px; }
+}
+
+.lw2-app-pattern-media figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+.lw2-app-pattern-media figcaption::after {
+    flex: 0 0 auto;
+    color: var(--lw2-blue);
+    content: "↕";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+@media (max-width: 560px) {
+    .lw2-app-pattern-media figcaption { align-items: flex-start; }
+    .lw2-app-pattern-media figcaption::after { margin-top: 1px; }
 }

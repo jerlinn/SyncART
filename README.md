@@ -24,3 +24,16 @@ Raw source image and video libraries are kept locally under ignored paths and ar
 - Interactive FAQ system
 - Support ticket system
 - Region selector functionality
+
+## Reservation page handoff
+
+The reservation page lives at `deposit.html` and uses `js/deposit.js` as the
+single offer data source for finish selection, deposit credit, price status,
+refund policy, availability, and Shopify Checkout redirects. Before launch,
+add the real Shopify-hosted Checkout URL for each finish. Empty or unavailable
+values intentionally keep the reservation button disabled so the static site
+cannot send customers to an unconfigured payment destination.
+
+The current offer charges $10 and promises $50 in Launch Credit. Shopify must
+issue or associate that $50 credit with the reservation customer; the static
+page only communicates the offer and cannot provision account credit itself.

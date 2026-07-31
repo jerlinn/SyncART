@@ -1,4 +1,20 @@
 (() => {
+    // Keep the reservation CTA consistent across the static site while the
+    // launch-list link remains available as a secondary path in notices,
+    // inline links, and footer navigation.
+    document.querySelectorAll('a[href="https://prelaunch.lunawake.ai/"]').forEach((link) => {
+        if (!link.matches('.lw2-nav-cta, .lw2-mobile-cta, .lw2-button')) return;
+        link.href = 'deposit.html';
+        const navLabel = link.querySelector('.lw2-nav-cta-label');
+        if (navLabel) {
+            navLabel.textContent = 'Reserve yours';
+            return;
+        }
+        Array.from(link.childNodes).forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) node.textContent = 'Reserve yours ';
+        });
+    });
+
     const header = document.querySelector('[data-header]');
     const menu = document.querySelector('[data-menu-toggle]');
     const mobile = document.querySelector('#lw2-mobile-menu');

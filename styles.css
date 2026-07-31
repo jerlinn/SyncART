@@ -9738,6 +9738,22 @@ h3,
     .lw2-site .lw2-mobile .lw2-mobile-cta { display: inline-flex !important; }
 }
 
+/* The compact breakpoint makes the nav full width before the phone rules
+   apply their side padding. Keep the header controls inside the viewport. */
+@media (max-width: 1280px) {
+    .lw2-site .lw2-nav {
+        padding-right: 24px !important;
+        padding-left: 24px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .lw2-site .lw2-nav {
+        padding-right: 18px !important;
+        padding-left: 18px !important;
+    }
+}
+
 /* ==========================================================================
    Motion system — fluid-interface defaults
    Response 0.18-0.4s, critically damped (no overshoot) for state changes.

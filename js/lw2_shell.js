@@ -78,21 +78,25 @@
         setMenu(false);
     });
 
-    // Asymmetric thresholds: a single 16px trip point flickers the whole header
-    // material when the user rests near it. Enter high, leave low.
-    const SCROLLED_ENTER = 24;
-    const SCROLLED_EXIT = 6;
+    // Keep the header fixed from the first frame so it never disappears and
+    // reappears. A small scroll gesture is enough to bring in the frosted
+    // material, while hysteresis prevents flicker around the threshold.
+    const getScrollThresholds = () => {
+        return { enter: 24, exit: 6 };
+    };
     let isScrolled = false;
     let scrollTicking = false;
 
     const updateHeaderState = () => {
-        const next = isScrolled ? window.scrollY > SCROLLED_EXIT : window.scrollY > SCROLLED_ENTER;
+        const thresholds = getScrollThresholds();
+        const next = isScrolled ? window.scrollY > thresholds.exit : window.scrollY > thresholds.enter;
         if (next === isScrolled) return;
         isScrolled = next;
         header.classList.toggle('is-scrolled', next);
     };
 
     updateHeaderState();
+    window.addEventListener('resize', updateHeaderState, { passive: true });
     window.addEventListener('scroll', () => {
         if (scrollTicking) return;
         scrollTicking = true;

@@ -3894,11 +3894,11 @@ h3 {
 .lw2-site .lw2-header.is-scrolled:not(.is-menu-open) {
     position: fixed;
     top: 0;
-    background: rgba(247, 245, 240, .62);
+    background: rgba(247, 245, 240, .94);
     border: 0;
-    box-shadow: 0 5px 16px rgba(48, 42, 34, .025);
-    backdrop-filter: blur(16px) saturate(110%);
-    -webkit-backdrop-filter: blur(16px) saturate(110%);
+    box-shadow: 0 8px 24px rgba(48, 42, 34, .07);
+    backdrop-filter: blur(22px) saturate(120%);
+    -webkit-backdrop-filter: blur(22px) saturate(120%);
     transition:
         background var(--lw2-motion-slow) var(--lw2-ease-enter),
         box-shadow var(--lw2-motion-slow) var(--lw2-ease-enter),

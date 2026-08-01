@@ -11,9 +11,9 @@
         productPriceStatus: 'Final product price announced at launch.',
         refundPolicy: 'Fully refundable before final order; refund cancels the $50 credit.',
         finishes: {
-            amber: { label: 'Amber', image: 'images/luna-latest/finish-amber-cropped.png' },
-            stone: { label: 'Stone', image: 'images/luna-latest/finish-stone-cropped.png' },
-            charcoal: { label: 'Charcoal', image: 'images/luna-latest/finish-charcoal-cropped.png' }
+            amber: { label: 'Amber', image: 'images/luna-latest/finish-amber-1440.webp' },
+            stone: { label: 'Stone', image: 'images/luna-latest/finish-stone-1440.webp' },
+            charcoal: { label: 'Charcoal', image: 'images/luna-latest/finish-charcoal-1440.webp' }
         },
         variants: {
             amber: { finish: 'amber', available: false, checkoutUrl: '' },

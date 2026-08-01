@@ -8310,8 +8310,8 @@ h3,
 }
 .lw2-site .lw2-hero-copy {
     max-width: 640px;
-    margin-top: 32px;
-    white-space: nowrap;
+    margin-top: 14px;
+    white-space: normal;
 }
 
 .lw2-site .lw2-sub-hero h1 {

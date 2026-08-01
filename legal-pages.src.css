@@ -60,7 +60,7 @@ main.lw2-legal .lw2-legal-meta {
 main.lw2-legal .lw2-legal-lead {
     max-width: 430px;
     margin: 20px 0 0;
-    color: var(--lw2-muted, #746d65);
+    color: var(--lw2-muted, #6b645c);
     font-size: 15px;
     font-weight: 300;
     line-height: 1.75;
@@ -78,7 +78,7 @@ main.lw2-legal .lw2-legal-body {
 main.lw2-legal .lw2-legal-aside {
     max-width: 180px;
     padding-top: 3px;
-    color: var(--lw2-faint, #a69f95);
+    color: var(--lw2-faint, #6d665c);
     font-size: 11px;
     line-height: 1.7;
 }
@@ -129,7 +129,7 @@ main.lw2-legal .lw2-legal-copy h3 {
 
 main.lw2-legal .lw2-legal-copy p,
 main.lw2-legal .lw2-legal-copy li {
-    color: #746d65;
+    color: #6b645c;
     font-family: var(--lw2-functional, var(--font-sans));
     font-size: 14px;
     font-weight: 300;

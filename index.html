@@ -9,7 +9,7 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <title>LunaWake — Better sleep begins at the bedside.</title>
     <link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/luna-latest/luna-banner-828.avif 828w, images/luna-latest/luna-banner-1440.avif 1440w, images/luna-latest/luna-banner-2033.avif 2033w" imagesizes="100vw">
-    <link rel="stylesheet" href="styles.css?v=2026-08-01a">
+    <link rel="stylesheet" href="styles.css?v=2026-08-01b">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -241,7 +241,7 @@
                         <p>While you sleep, LunaWake notices the room locally, turns detail into a lighter state view, and gradually shapes the room around the wake window you choose.</p>
                     </div>
                     <ol class="lw2-radar-loop" aria-label="How LunaWake turns bedside signals into a night-time routine">
-                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--sense is-active" data-step="0" tabindex="0" role="button" aria-pressed="true" aria-label="Step one: Sense, local breathing-related sensing">
+                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--sense is-active" data-step="0" tabindex="0" role="button" aria-pressed="true">
                             <figcaption><span class="lw2-radar-loop-label">01 · Sense</span><b>Notices the night without a wearable.</b></figcaption>
                             <svg class="lw2-radar-loop-svg" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true">
                                 <path class="lw2-radar-wave-echo" d="M 4 35.8 L 8 33.8 L 12 33 L 16 33.6 L 20 35.6 L 24 38.6 L 28 42.4 L 32 46.6 L 36 50.8 L 40 54.4 L 44 57.2 L 48 58.7 L 52 58.9 L 56 57.8 L 60 55.3 L 64 51.9 L 68 47.9 L 72 43.7 L 76 39.7 L 80 36.4 L 84 34.1 L 88 33 L 92 33.4 L 96 35.1 L 100 37.9 L 104 41.6 L 108 45.8 L 112 50 L 116 53.7 L 120 56.7 L 124 58.5 L 128 59 L 132 58.1 L 136 55.9 L 140 52.7 L 144 48.7 L 148 44.5 L 152 40.4 L 156 37 L 160 34.4 L 164 33.1 L 168 33.2 L 172 34.6 L 176 37.3 L 180 40.8 L 184 44.9 L 188 49.2 L 192 53 L 196 56.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
@@ -251,7 +251,7 @@
                             <div class="lw2-radar-loop-read"><b>10 Hz</b><small>local sensing · contact-free</small></div>
                             <p class="lw2-radar-loop-copy">Breathing-related patterns and movement are sampled at the bedside without a wearable. <b>Raw waveforms stay on the device.</b></p>
                         </figure></li>
-                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--follow" data-step="1" tabindex="0" role="button" aria-pressed="false" aria-label="Step two: Follow, derived state guides gradual room response">
+                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--follow" data-step="1" tabindex="0" role="button" aria-pressed="false">
                             <figcaption><span class="lw2-radar-loop-label">02 · Follow</span><b>Only a lighter state view is shared.</b></figcaption>
                             <svg class="lw2-radar-loop-svg" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true">
                                 <line x1="123" x2="123" y1="6" y2="84" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".18"/>
@@ -263,7 +263,7 @@
                             <div class="lw2-radar-loop-read"><b>1 Hz</b><small>cloud sync · derived features / states</small></div>
                             <p class="lw2-radar-loop-copy">On-device processing turns local detail into a lighter state view. <b>Only derived features and states sync to the cloud.</b></p>
                         </figure></li>
-                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--wake" data-step="2" tabindex="0" role="button" aria-pressed="false" aria-label="Step three: Wake, gradual response inside a hard time boundary">
+                        <li class="lw2-radar-loop-item"><figure class="lw2-radar-loop-panel lw2-radar-loop-panel--wake" data-step="2" tabindex="0" role="button" aria-pressed="false">
                             <figcaption><span class="lw2-radar-loop-label">03 · Wake</span><b>Inside the time window you choose.</b></figcaption>
                             <svg class="lw2-radar-loop-svg" viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true">
                                 <rect class="lw2-radar-win-band" x="123" y="6" width="73" height="78" fill="currentColor"/>
@@ -279,9 +279,9 @@
                         </figure></li>
                     </ol>
                     <div class="lw2-radar-boundaries" role="list" aria-label="LunaWake product boundaries">
-                        <article role="listitem"><span>01 / Local signal</span><strong>Raw waveforms stay at the bedside.</strong><p>Detailed sensing is processed on the device, close to the room where it happens.</p></article>
-                        <article role="listitem"><span>02 / Lightweight sync</span><strong>Only derived state is shared.</strong><p>The cloud receives features and states at 1 Hz, not the original waveform.</p></article>
-                        <article role="listitem"><span>03 / Human boundary</span><strong>The room follows your latest time.</strong><p>Light and sound build gradually inside the wake window you choose.</p></article>
+                        <div role="listitem"><span>01 / Local signal</span><strong>Raw waveforms stay at the bedside.</strong><p>Detailed sensing is processed on the device, close to the room where it happens.</p></div>
+                        <div role="listitem"><span>02 / Lightweight sync</span><strong>Only derived state is shared.</strong><p>The cloud receives features and states at 1 Hz, not the original waveform.</p></div>
+                        <div role="listitem"><span>03 / Human boundary</span><strong>The room follows your latest time.</strong><p>Light and sound build gradually inside the wake window you choose.</p></div>
                     </div>
                     <div class="lw2-radar-mechanism-note">
                         <p><strong>Data boundary</strong> Local sensing runs at 10 Hz; cloud sync carries derived features and states at 1 Hz. Raw waveforms stay on the device.</p>
@@ -308,7 +308,7 @@
                             <strong>One clear read. One useful next step.</strong>
                         </div>
                         <figure class="lw2-app-insight-media lw2-app-sunrise-media"><img src="images/app-screens/sunrise.png" alt="Luna App Sunrise morning summary with a restless-night reflection and suggested routine" loading="lazy" decoding="async"><figcaption>Morning read / one night, understood.</figcaption></figure>
-                    </article>
+                    </div>
                     <article class="lw2-app-insight lw2-app-insight--pattern">
                         <figure class="lw2-app-insight-media lw2-app-pattern-media"><div class="lw2-app-pattern-scroll" tabindex="0" role="region" aria-label="Scrollable Luna App Sleep Pattern report"><img src="images/app-screens/sleep-pattern.png" alt="Full Luna App Sleep Pattern report covering wind-down speed, charge efficiency, repair focus, social jet lag, rhythm and resilience, and a Steady Sleeper reflection" loading="lazy" decoding="async"></div><figcaption>Sleep Pattern / scroll to read the full reflection</figcaption></figure>
                         <div class="lw2-app-insight-copy">
@@ -350,7 +350,7 @@
 
     <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div><nav aria-label="Footer navigation"><a href="#science">Science</a><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy <span aria-hidden="true">↗</span></a><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms <span aria-hidden="true">↗</span></a></nav></div><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Sleep support, not medical advice.</span><a href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
 
-    <script src="js/lw2_shell.js?v=2026-08-01a"></script>
+    <script src="js/lw2_shell.js?v=2026-08-01b"></script>
     <script>
     (() => {
         const lazyVideos = Array.from(document.querySelectorAll('[data-lazy-video]'));

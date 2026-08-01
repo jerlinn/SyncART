@@ -17,6 +17,22 @@ Key boundary: the microphones provide passive acoustic sensing only. LunaWake do
 
 Raw source image and video libraries are kept locally under ignored paths and are not deployment assets. Any page reference to those files must be replaced with a tracked, deployable asset before publishing.
 
+## CSS workflow
+
+`styles.css` and `legal-pages.css` are **minified build outputs** — do not edit them directly.
+Edit `styles.src.css` / `legal-pages.src.css`, then regenerate and commit both files:
+
+```bash
+npx --yes lightningcss-cli --minify --targets ">= 0.5%" styles.src.css -o styles.css
+npx --yes lightningcss-cli --minify --targets ">= 0.5%" legal-pages.src.css -o legal-pages.css
+```
+
+When shipping CSS/JS changes, bump the shared cache-bust token (`?v=2026-08-01a`) in every
+HTML file in the same commit: `grep -rln 'v=2026-' *.html signup/index.html`.
+
+Note: `signup/index.html` intentionally uses a meta-refresh redirect — GitHub Pages cannot
+issue server-side redirects to external hosts. It is `noindex` and excluded from Lighthouse audits.
+
 ## Features
 
 - Responsive design for all devices

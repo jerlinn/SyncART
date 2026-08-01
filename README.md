@@ -27,7 +27,7 @@ npx --yes csso-cli styles.src.css -o styles.css
 npx --yes csso-cli legal-pages.src.css -o legal-pages.css
 ```
 
-When shipping CSS/JS changes, bump the shared cache-bust token (`?v=2026-08-01b`) in every
+When shipping CSS/JS changes, bump the shared cache-bust token (`?v=2026-08-01d`) in every
 HTML file in the same commit: `grep -rln 'v=2026-' *.html signup/index.html`.
 
 Note: `signup/index.html` intentionally uses a meta-refresh redirect — GitHub Pages cannot

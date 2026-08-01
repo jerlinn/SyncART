@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     --header-height: 72px;
     --footer-height: 104px;
     /* Apple-inspired system typography: one family, one clear hierarchy. */
-    --font-primary: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "DM Sans", Arial, sans-serif;
+    --font-primary: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
     --font-display: var(--font-primary);
     --font-accent: var(--font-primary);
     --font-sans: var(--font-primary);
@@ -8287,7 +8287,7 @@ h3,
 /* Final title system: one quiet grotesk, with one editorial hero moment. */
 .lw2-site {
     --lw2-title: var(--lw2-functional);
-    --lw2-hero-editorial: "Iowan Old Style", "Cormorant Garamond", Georgia, serif;
+    --lw2-hero-editorial: "Iowan Old Style", Georgia, "Times New Roman", serif;
 }
 
 .lw2-site .lw2-sub-hero h1,

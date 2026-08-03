@@ -3706,6 +3706,12 @@ h3 {
 .deposit-conversion-card-heading { display: flex; align-items: start; justify-content: space-between; gap: 18px; margin-bottom: 23px; }
 .deposit-conversion-kicker { display: block; color: rgba(255, 253, 248, .52); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
 .deposit-conversion-card-heading strong { display: block; margin-top: 8px; font-size: 16px; font-weight: 500; }
+.deposit-price-lock { margin-top: 22px; padding: 22px 0 4px; border-top: 1px solid rgba(255, 253, 248, .16); }
+.deposit-price-lock__kicker { display: block; color: var(--deposit-gold); font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+.deposit-price-lock strong { display: block; margin-top: 14px; color: #fffdf8; font-size: 24px; font-weight: 600; line-height: 1.15; }
+.deposit-price-lock p { max-width: 360px; margin: 12px 0 0; color: rgba(255, 253, 248, .66); font-size: 14px; line-height: 1.55; }
+.deposit-price-lock__status { display: block; margin-top: 18px; color: rgba(255, 253, 248, .46); font-size: 12px; line-height: 1.45; }
+.deposit-price-live[hidden], .deposit-price-lock[hidden] { display: none; }
 .deposit-conversion-card-heading b { font-family: var(--font-serif); font-size: 39px; font-weight: 400; line-height: .8; }
 .deposit-conversion-card fieldset { margin: 0; padding: 18px 0 0; border: 0; border-top: 1px solid rgba(255, 253, 248, .16); }
 .deposit-conversion-card legend { margin-bottom: 11px; color: rgba(255, 253, 248, .55); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }

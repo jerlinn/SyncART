@@ -4,12 +4,14 @@
     // Single offer data source for the reservation page. Replace the guarded
     // values with confirmed Shopify URLs before enabling live payments.
     const offer = {
-        depositAmount: '$10',
-        creditAmount: '$50',
-        creditName: 'VIP Launch Credit',
-        creditBonus: '+$40 early-access bonus',
-        productPriceStatus: 'Final product price announced at launch.',
-        refundPolicy: 'Fully refundable before final order; refund cancels the $50 credit.',
+        pricingUnlocked: false,
+        unlockLabel: 'Pricing unlocks Aug 15',
+        depositAmount: '$9',
+        creditAmount: 'Final Kickstarter price',
+        creditName: 'Kickstarter launch price',
+        creditBonus: 'Revealed before reservations open',
+        productPriceStatus: 'Reservation pricing will be shown when the window opens.',
+        refundPolicy: 'Refundable before Kickstarter launch; non-refundable after launch.',
         finishes: {
             amber: { label: 'Amber', image: 'images/luna-latest/finish-amber-1440.webp' },
             stone: { label: 'Stone', image: 'images/luna-latest/finish-stone-1440.webp' },
@@ -29,6 +31,9 @@
     const summaryName = document.querySelector('[data-summary-name]');
     const checkoutStatus = document.querySelector('[data-checkout-status]');
     const creditFlow = document.querySelector('[data-credit-flow]');
+    const priceLock = document.querySelector('[data-price-lock]');
+    const priceLive = document.querySelector('[data-price-live]');
+    const lockStatus = document.querySelector('[data-lock-status]');
 
     const getFinish = () => offer.finishes[state.finish];
     const getVariant = () => offer.variants[state.finish];
@@ -42,7 +47,13 @@
     const update = () => {
         const variant = getVariant();
         const finish = getFinish();
-        const connected = hasCheckout(variant);
+        const connected = offer.pricingUnlocked && hasCheckout(variant);
+
+        if (priceLock) priceLock.hidden = offer.pricingUnlocked;
+        if (priceLive) priceLive.hidden = !offer.pricingUnlocked;
+        if (lockStatus) lockStatus.textContent = offer.pricingUnlocked
+            ? 'Reservations are open.'
+            : `${offer.unlockLabel}. Reservations are not open yet.`;
 
         finishButtons.forEach((button) => {
             const active = button.dataset.finish === state.finish;
@@ -50,27 +61,33 @@
             button.setAttribute('aria-pressed', String(active));
         });
         if (image) {
-            image.src = finish.image;
-            image.alt = `LunaWake in the ${finish.label} finish`;
+            image.src = offer.pricingUnlocked ? finish.image : 'images/luna-latest/luna-banner-1440.webp';
+            image.alt = offer.pricingUnlocked ? `LunaWake in the ${finish.label} finish` : 'LunaWake product preview';
         }
-        if (summaryName) summaryName.textContent = finish.label;
+        if (summaryName) summaryName.textContent = offer.pricingUnlocked ? finish.label : 'LunaWake';
         setAllText('[data-deposit-amount]', offer.depositAmount);
         setAllText('[data-credit-amount]', offer.creditAmount);
         setAllText('[data-credit-bonus]', offer.creditBonus);
         setAllText('[data-product-price-status]', offer.productPriceStatus);
         setAllText('[data-refund-policy]', offer.refundPolicy);
-        creditFlow?.setAttribute('aria-label', `Pay ${offer.depositAmount} today. Receive ${offer.creditAmount} ${offer.creditName} at final purchase, including a $40 early-access bonus.`);
+        creditFlow?.setAttribute('aria-label', offer.pricingUnlocked
+            ? `Pay ${offer.depositAmount} today and receive the ${offer.creditName}.`
+            : 'Reservation pricing is not available yet.');
         if (reserveButton) {
             reserveButton.disabled = !connected || state.submitting;
             reserveButton.setAttribute('aria-disabled', String(!connected || state.submitting));
             reserveButton.innerHTML = state.submitting
                 ? 'Opening Shopify Checkout…'
-                : `Unlock ${offer.creditAmount} VIP Credit for ${offer.depositAmount} <span aria-hidden="true">→</span>`;
+                : offer.pricingUnlocked
+                    ? `Reserve for ${offer.depositAmount} <span aria-hidden="true">→</span>`
+                    : 'Reservations open after pricing unlock';
         }
         if (checkoutStatus) {
             checkoutStatus.textContent = connected
                 ? 'You will continue to secure Shopify Checkout.'
-                : 'This finish is not open for Checkout yet.';
+                : offer.pricingUnlocked
+                    ? 'Reservations are not open for Checkout yet.'
+                    : `${offer.unlockLabel}.`;
             checkoutStatus.classList.toggle('is-ready', connected);
         }
     };

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1240" viewBox="0 0 1600 1240" role="img" aria-labelledby="title desc">
+  <title id="title">LunaWake 订金预约流程</title>
+  <desc id="desc">用户支付九美元订金后，在 Kickstarter 上线前可以退款；上线后通过专属链接参与众筹并享受优惠价格，众筹成功结束后开始三十天 coaching。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c8797"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#182232" flood-opacity=".10"/>
+    </filter>
+    <style>
+      .bg { fill: #f7f5f0; }
+      .title { fill: #121a27; font: 600 34px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .subtitle { fill: #697384; font: 400 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .node { filter: url(#shadow); stroke-width: 2; }
+      .node-title { fill: #121a27; font: 600 22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .node-body { fill: #4f5b6c; font: 400 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .edge { fill: none; stroke: #7c8797; stroke-width: 3; marker-end: url(#arrow); }
+      .edge-label { fill: #596576; font: 600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .section { fill: #a64d35; font: 600 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 2px; }
+      .legend { fill: #657184; font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="1240"/>
+  <text class="section" x="70" y="58">LUNAWAKE PRE-LAUNCH DEPOSIT</text>
+  <text class="title" x="70" y="105">订金预约与 Kickstarter 参与流程</text>
+  <text class="subtitle" x="70" y="140">上线前可退款；上线后通过专属链接享受优惠，众筹成功结束后开始 30 天 coaching。</text>
+
+  <rect x="70" y="174" width="260" height="28" rx="14" fill="#f4d8cc"/>
+  <text class="legend" x="88" y="194">● 订金与退款</text>
+  <rect x="250" y="174" width="260" height="28" rx="14" fill="#dce8f8"/>
+  <text class="legend" x="268" y="194">● Kickstarter 参与</text>
+  <rect x="430" y="174" width="230" height="28" rx="14" fill="#d8eee7"/>
+  <text class="legend" x="448" y="194">● Coaching</text>
+
+  <rect class="node" x="70" y="260" width="330" height="112" rx="20" fill="#f4d8cc" stroke="#c85d3d"/>
+  <text class="node-title" x="100" y="305">支付 $9 订金</text>
+  <text class="node-body" x="100" y="337">通过 Shopify Checkout</text>
+  <text class="node-body" x="100" y="362">记录邮箱与预约档位</text>
+
+  <path class="edge" d="M 400 316 H 520"/>
+  <rect class="node" x="520" y="260" width="330" height="112" rx="20" fill="#fffdf9" stroke="#aeb7c3"/>
+  <text class="node-title" x="550" y="305">Kickstarter 是否已上线？</text>
+  <text class="node-body" x="550" y="338">决定是否仍可退款</text>
+
+  <text class="edge-label" x="635" y="242">未上线</text>
+  <path class="edge" d="M 685 372 V 448"/>
+  <rect class="node" x="520" y="448" width="330" height="112" rx="20" fill="#fffdf9" stroke="#aeb7c3"/>
+  <text class="node-title" x="550" y="493">用户希望退款？</text>
+  <text class="node-body" x="550" y="526">上线前仍可申请退款</text>
+
+  <text class="edge-label" x="445" y="510">是</text>
+  <path class="edge" d="M 520 504 H 400"/>
+  <rect class="node" x="70" y="448" width="330" height="112" rx="20" fill="#f4d8cc" stroke="#c85d3d"/>
+  <text class="node-title" x="100" y="493">Shopify 原路退款</text>
+  <text class="node-body" x="100" y="526">退款流程结束</text>
+
+  <text class="edge-label" x="865" y="510">否</text>
+  <path class="edge" d="M 850 504 H 980"/>
+  <rect class="node" x="980" y="448" width="330" height="112" rx="20" fill="#fffdf9" stroke="#aeb7c3"/>
+  <text class="node-title" x="1010" y="493">保留预约资格</text>
+  <text class="node-body" x="1010" y="526">等待 Kickstarter 上线</text>
+
+  <text class="edge-label" x="930" y="300">已上线</text>
+  <path class="edge" d="M 850 316 H 980"/>
+  <rect class="node" x="980" y="260" width="330" height="112" rx="20" fill="#f4d8cc" stroke="#c85d3d"/>
+  <text class="node-title" x="1010" y="305">停止收取新订金</text>
+  <text class="node-body" x="1010" y="338">已有订金不可退款</text>
+  <text class="node-body" x="1010" y="363">进入专属参与流程</text>
+
+  <path class="edge" d="M 1145 560 V 650"/>
+  <path class="edge" d="M 1145 372 V 650"/>
+  <rect class="node" x="980" y="650" width="330" height="112" rx="20" fill="#dce8f8" stroke="#7898c4"/>
+  <text class="node-title" x="1010" y="695">发送专属链接</text>
+  <text class="node-body" x="1010" y="728">使用与订金相同的邮箱</text>
+
+  <path class="edge" d="M 1145 762 V 842"/>
+  <rect class="node" x="980" y="842" width="330" height="112" rx="20" fill="#fffdf9" stroke="#aeb7c3"/>
+  <text class="node-title" x="1010" y="887">完成有效 pledge？</text>
+  <text class="node-body" x="1010" y="920">未完成则不享受专属优惠</text>
+
+  <text class="edge-label" x="880" y="900">否</text>
+  <path class="edge" d="M 980 898 H 730"/>
+  <rect class="node" x="370" y="842" width="360" height="112" rx="20" fill="#f4d8cc" stroke="#c85d3d"/>
+  <text class="node-title" x="400" y="887">不进入后续退款流程</text>
+  <text class="node-body" x="400" y="920">按 agency 异常规则处理</text>
+
+  <text class="edge-label" x="1330" y="900">是</text>
+  <path class="edge" d="M 1310 898 H 1390"/>
+  <rect class="node" x="1390" y="842" width="180" height="112" rx="20" fill="#dce8f8" stroke="#7898c4"/>
+  <text class="node-title" x="1415" y="880">享受</text>
+  <text class="node-body" x="1415" y="910">Kickstarter</text>
+  <text class="node-body" x="1415" y="936">专属优惠</text>
+
+  <path class="edge" d="M 1480 954 V 1030"/>
+  <rect class="node" x="1230" y="1030" width="340" height="112" rx="20" fill="#fffdf9" stroke="#aeb7c3"/>
+  <text class="node-title" x="1260" y="1075">众筹成功结束？</text>
+  <text class="node-body" x="1260" y="1108">成功后进入 coaching</text>
+
+  <text class="edge-label" x="1190" y="1090">否</text>
+  <path class="edge" d="M 1230 1086 H 980"/>
+  <rect class="node" x="630" y="1030" width="350" height="112" rx="20" fill="#f4d8cc" stroke="#c85d3d"/>
+  <text class="node-title" x="660" y="1075">按失败/取消规则处理</text>
+  <text class="node-body" x="660" y="1108">由 agency 确认例外方案</text>
+
+  <text class="edge-label" x="1530" y="1190">是</text>
+  <path class="edge" d="M 1480 1142 V 1190"/>
+  <rect class="node" x="1110" y="1160" width="460" height="70" rx="20" fill="#d8eee7" stroke="#4b9b87"/>
+  <text class="node-title" x="1140" y="1204">开始 30 天 coaching（不等待产品发货）</text>
+</svg>

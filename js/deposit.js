@@ -4,13 +4,13 @@
     // Single offer data source for the reservation page. Replace the guarded
     // values with confirmed Shopify URLs before enabling live payments.
     const offer = {
-        pricingUnlocked: false,
+        pricingUnlocked: true,
         unlockLabel: 'Pricing unlocks Aug 15',
         depositAmount: '$9',
-        creditAmount: 'Final Kickstarter price',
+        creditAmount: 'Launch price',
         creditName: 'Kickstarter launch price',
-        creditBonus: 'Revealed before reservations open',
-        productPriceStatus: 'Reservation pricing will be shown when the window opens.',
+        creditBonus: 'Private Kickstarter offer',
+        productPriceStatus: 'Final Kickstarter reward price is configured on the campaign page.',
         refundPolicy: 'Refundable before Kickstarter launch; non-refundable after launch.',
         finishes: {
             amber: { label: 'Amber', image: 'images/luna-latest/finish-amber-1440.webp' },

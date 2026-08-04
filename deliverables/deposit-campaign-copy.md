@@ -46,7 +46,7 @@ Your reservation also qualifies you for 30-day coaching after a valid pledge and
 **Link:**
 
 ```text
-https://lunawake.ai/deposit.html?utm_source=edm&utm_medium=email&utm_campaign=deposit_launch_v1&utm_content=rules_first&utm_term=high_intent&angle=offer&creative=edm_high_intent_01
+https://lunawake.ai/deposit.html?audience=lead&utm_source=edm&utm_medium=email&utm_campaign=deposit_launch_v1&utm_content=rules_first&utm_term=high_intent&angle=offer&creative=edm_high_intent_01
 ```
 
 ## Engaged Leads：第二批
@@ -68,7 +68,7 @@ Important: after launch, the $9 is non-refundable if you do not pledge. The rese
 **Link:**
 
 ```text
-https://lunawake.ai/deposit.html?utm_source=group&utm_medium=community&utm_campaign=deposit_launch_v1&utm_content=rules_first&utm_term=engaged&angle=offer&creative=group_engaged_01
+https://lunawake.ai/deposit.html?audience=lead&utm_source=group&utm_medium=community&utm_campaign=deposit_launch_v1&utm_content=rules_first&utm_term=engaged&angle=offer&creative=group_engaged_01
 ```
 
 ## Unengaged Leads：先解释，再转化
@@ -119,4 +119,3 @@ If you are ready, reserve here. If you are not ready to pay, you can remain on t
 - refund requested；
 - email mismatch / support tickets；
 - valid Kickstarter pledge（上线后）。
-

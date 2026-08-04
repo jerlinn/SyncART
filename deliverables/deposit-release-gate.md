@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-- 本地：已完成规则优先版，支持 Lead 来源提示、价格解锁占位、三步路径、退款边界、颜色偏好和移动端 CTA。
+- 本地：已完成平衡转化版，顺序为 Hero → 产品证据/视频 → 退款规则 → 价格窗口 → 三步流程 → Luna Coach → 五色展示 → FAQ → Final CTA。
 - 线上：`https://lunawake.ai/deposit.html` 仍为旧版页面，不能作为本轮转化测试入口。
 - 支付：本地配置中的 `shopifyProductUrl` 仍为空，因此本地 CTA 会保持禁用，避免伪造支付成功。
 
@@ -22,7 +22,7 @@
 - `deposit.html`
 - `js/deposit.js`
 - `styles.css`
-- 订金页依赖的图片资源
+- 订金页依赖的图片、poster、WebP 和 MP4 资源
 
 生产环境可以在加载 `js/deposit.js` 前注入 `window.LUNAWAKE_DEPOSIT_CONFIG`，
 覆盖 Shopify 商品链接、campaign state、价格解锁状态、价格窗口和日期；不需要
@@ -30,13 +30,23 @@
 
 发布后线上页面应能检查到：
 
-- `Lock your launch price` 规则优先首屏；
-- `$300–$400` 品类参考锚点；
-- 三个 `Price unlocking soon` 价格窗口；
-- `data-audience-message` Lead / 新用户提示；
-- 规则说明、异常路径和 FAQ；
-- 移动端固定 CTA；
-- 不再出现旧的 `published CBT-I outcomes across 20 clinical studies` 表述。
+- 结果导向 Hero，同时显示 `$9 / 当前 Reward / $379`、退款边界和 CTA；
+- 首屏之后的 contact-free sensing 视频证据区与三条核心卖点；
+- 四种退款/pledge 结果只由规则区完整解释；
+- 当前主价格与后续价格阶梯；
+- Shopify → Kickstarter → Coach 三步流程，launch day 复用价格窗口配置；
+- Luna Coach、五色展示、FAQ、Final CTA 与移动端固定 CTA；
+- 无 Shopify URL 时所有按钮禁用并显示 `Launch`；
+- 不再出现旧的临床效果承诺或未经确认的库存、发货承诺。
+
+资源与埋点验收：
+
+- 首屏不请求 `02-contact-free-sensing.mp4`，视频接近视口后才加载；
+- reduced motion 下视频不自动播放，poster、caption 和原生控制正常；
+- 五色图优先返回 WebP，PNG fallback 可用且不引发布局跳动；
+- `deposit_cta_view` 保留；每个 `deposit_cta_slot_view` 的 `cta_slot` 只曝光一次；
+- `deposit_proof_view` 与 `deposit_proof_video_play` 分别只记录首次有效行为；
+- 页面不生成支付成功事件，支付完成仍以 Shopify 订单为准。
 
 ### 2. Shopify 收款配置
 

@@ -10,6 +10,9 @@
 
 在下列闸门完成前，不发送主批次 EDM、Group 或广告流量到订金页。
 
+需要转发给 agency / Shopify 同事的字段清单见
+[`shopify-payment-handoff.md`](shopify-payment-handoff.md)。
+
 ## 发布前必须完成
 
 ### 1. 生产文件发布

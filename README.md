@@ -76,3 +76,6 @@ Before sending traffic, run the production checks in
 
 The ready-to-use Lead email, Group copy, UTM links, and rollout sequence are in
 [`deliverables/deposit-campaign-copy.md`](deliverables/deposit-campaign-copy.md).
+
+Use [`deliverables/shopify-payment-handoff.md`](deliverables/shopify-payment-handoff.md)
+to collect the final Shopify product, order, email, refund, and support inputs.

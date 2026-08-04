@@ -1,6 +1,6 @@
 # LunaWake Shopify 订金页产品需求文档
 
-> 版本：v2.1
+> 版本：v2.2
 > 状态：页面结构、Coach 权益口径与业务规则已确认；待接入 Shopify 商品 URL、支付订单属性和 agency 的 Kickstarter 配置
 > 更新依据：前测报告、广告信任与数据采集笔记、agency 参考链路、当前 `deposit.html` 原型审计
 
@@ -17,20 +17,20 @@
 
 ### 2.1 先讲清楚，再讲卖点
 
-86.9% 的前测用户没有众筹经验，页面必须用白话解释 Kickstarter：
+86.9% 的前测用户没有众筹经验，页面主叙事必须像普通预订，不要求用户理解众筹术语：
 
-> Shopify 现在收取 `$9`，Kickstarter 上线后再通过专属链接完成正式 pledge。两次支付不是同一笔订单。
+> 今天收取 `$9`，锁定 `$229` 创始价；9 月 21 日通过邮件收到个人订单链接，一键完成订单；发货时 LunaWake 寄到家。
 
-首次出现 `pledge`、`Reward`、`Kickstarter` 时必须附带白话解释，不使用未解释的 backer、stretch goal 等行话。
+Kickstarter 只出现一次，并解释为“全球新品预订平台”；不使用 `pledge`、`backer`、`stretch goal` 等行话。
 
 ### 2.2 退款规则首屏公开
 
 支付前必须同时看到：
 
-- Kickstarter 上线前，可联系人工客服申请 `$9` 原路全额退款；
-- Kickstarter 上线后，如果没有完成 pledge，`$9` 不退款；
-- 众筹失败或取消，`$9` 原路全额退款；
-- 用户取消自己的 Kickstarter pledge，不触发新的 `$9` 退款流程。
+- `$9` 在发货前后均可联系人工客服申请原路全额退款；
+- 用户改变主意或不完成订单，都不影响 `$9` 的退款资格；
+- 如果发射取消，`$9` 原路全额退款；
+- 退款保障是首屏信任信号，不在页面反复介绍失败风险。
 
 主动披露“不利规则”是信任设计，不得只藏在 FAQ。
 
@@ -42,10 +42,10 @@
 
 支付与法律说明必须同时明确：
 
-- `$9` 是 Shopify 订金，不是 Kickstarter pledge；
-- `$9` 不直接抵扣 Kickstarter 支付；
-- 专属优惠由 Kickstarter Reward / agency 专属入口配置；
-- 订金邮箱和 Kickstarter pledge 邮箱必须一致。
+- `$9` 是 Shopify 订金，不是产品正式付款；
+- `$9` 不自动抵扣正式订单金额；
+- 正式订单通过发给用户的个人链接完成；
+- 订金邮箱和订单邮箱必须一致。
 
 ### 2.4 只使用已确认的 wellness 表述
 
@@ -65,18 +65,17 @@ flowchart TD
     B --> C[理解 $9、价格窗口和退款边界]
     C --> D[Shopify 支付 $9]
     D --> E[支付成功邮件 / 用户小组]
-    E --> F[Kickstarter 上线后收到专属链接]
-    F --> G[使用相同邮箱完成 pledge]
-    G --> H{是否有效 pledge 且众筹成功}
-    H -- 否，未 pledge --> I[$9 不退；无 Reward 优惠和 coaching]
-    H -- 否，众筹失败/取消 --> J[原路全额退回 $9]
-    H -- 是 --> K[agency 核验名单]
-    K --> L[下一个工作日开始 30 天 coaching]
+    E --> F[9 月 21 日收到个人订单链接]
+    F --> G[使用相同邮箱完成订单]
+    G --> H{是否改变主意或发射取消}
+    H -- 是 --> I[原路全额退回 $9]
+    H -- 否 --> J[订单核验]
+    J --> K[发货前开始 30 天 coaching]
 ```
 
 ## 4. 页面内容与顺序
 
-页面固定采用“Hero → 退款规则 → 价格窗口 → 五色展示 → 三步流程 → Luna Coach → 产品证明 → FAQ → Final CTA”的订金决策顺序。页面只讲清楚产品是什么、为什么现在预订、预订后如何获得权益；完整产品介绍由 Header 的 `How it works` 链接承接至官网，不在订金页复制 Page 1 的完整叙事。
+页面固定采用“Hero → 声音/晨读/光 → 价格窗口 → 分期说明 → 社会证明 → 退款规则 → 五色偏好 → 三步流程 → Luna Coach → FAQ → Final CTA”的订金决策顺序。页面只讲清楚产品是什么、为什么现在预订、预订后如何获得权益；完整产品介绍由 Header 的 `How it works` 链接承接至官网。
 
 ### 4.1 首屏与支付卡
 
@@ -84,9 +83,9 @@ flowchart TD
 
 - LunaWake 是什么；
 - 现在支付 `$9`；
-- 当前可获得哪个 Kickstarter Reward 价格；
+- 当前可锁定哪个创始价格；
 - 什么时候可以退款；
-- 下一步要通过专属链接完成 pledge。
+- 9 月 21 日会收到什么邮件。
 
 首屏主信息：
 
@@ -94,14 +93,13 @@ flowchart TD
 Unlock $229.
 For $9 today.
 
-Save $150 vs. $379 retail
+Save $90 vs. the $319 launch-day price
 
 A contact-free bedside sleep system — no wearable, no camera.
 
 [Reserve for $9]
 
-Refundable before Kickstarter launches.
-After launch, the $9 is non-refundable if you do not pledge.
+Refundable any time, for any reason.
 ```
 
 商品卡必须保持紧凑，只包含：
@@ -112,40 +110,40 @@ After launch, the $9 is non-refundable if you do not pledge.
 - 一句上线前可退款的边界说明；
 - 主 CTA 与安全预览状态。
 
-首屏左右两栏不得重复完整流程。Hero 整体只承担产品结果、`$9 / 当前 Reward / $379` 价格关系、退款边界和 CTA；完整的 Shopify → Kickstarter → Coach 阶段说明只出现在三步流程中，四种退款与 pledge 结果只出现在规则区。
+首屏左右两栏不得重复完整流程。Hero 整体只承担产品结果、`$9 / $229 today / $319 launch-day` 价格关系、退款边界和 CTA；完整的预订 → 订单链接 → 发货阶段说明只出现在三步流程中，退款保护只在规则区集中解释。
 
 购买卡必须在桌面端首屏内完整呈现 `$9`、当前 Reward 价格和主 CTA。倒计时由当前窗口的 `endAt` 与 `timezone` 配置计算，不写死在页面文案中。
 
 ### 4.2 三档价格窗口
 
-当前确认价格直接公开，且必须与 Kickstarter 实际 Reward 配置一致：
+当前确认价格直接公开，且必须与实际订单价格配置一致：
 
-| 窗口 | Reward 价格 | 截止时间 | 相对 `$379` 零售价 |
+| 窗口 | Reward 价格 | 截止时间 | 相对 `$319` launch-day 价格 |
 |---|---:|---|---:|
-| Founding Backer | `$229` | Aug 24 | Save `$150` |
-| Super Early Bird | `$269` | Sep 7 | Save `$110` |
-| Early Bird | `$319` | Sep 21 / launch day | Save `$60` |
+| Founding Backer | `$229` | Sep 6 · 11:59pm PT | Save `$90` |
+| Super Early Bird | `$269` | Sep 20 · 11:59pm PT | Save `$50` |
+| Early Bird | `$319` | Sep 21 / launch day | Launch-day price |
 
 要求：
 
 - 当前窗口使用 `Lowest launch price` 主卡视觉突出；
 - 后续窗口使用紧凑价格阶梯，不与当前价格同等抢注意力；
-- 当前窗口优先显示 `Save $150 · X days left`；具体 `endAt` 未配置时回退为 `while this window is open`，不显示虚假倒计时；
+- 当前窗口优先显示 `Save $90 vs. launch day · X days left`；具体 `endAt` 未配置时回退为 `while this window is open`，不显示虚假倒计时；
 - 后续窗口显示相对当前价格的涨幅，例如 `+$40 after current`、`+$90 after current`；
 - 已结束显示 `Ended`，未开始显示 `Upcoming`；
 - 日期、年份、时区、具体关闭时间、状态均配置化；
 - 页面不展示 `$300–$400` 类目参考锚点；
 - 页面不展示未经 agency 确认的库存上限；
-- `$379` 仅在其确为公开上市零售价时展示；
+- 页面不展示未实际执行过的 MSRP；价格锚定使用真实的 `$319` launch-day Reward；
 - Reward 售罄时由 agency 执行升级或替代方案。
 
 ### 4.3 三步流程
 
 1. **Pay $9 through Shopify**：订金锁定当时价格窗口；上线前可申请退款。
-2. **Pledge on Kickstarter**：上线后收到专属链接，用相同邮箱完成 pledge；Kickstarter 是正式购买平台。
-3. **Start 30-day coaching**：agency 核验有效 pledge 且众筹成功后，下一个工作日开始 Day 1，不等待发货。
+2. **Complete your order**：9 月 21 日收到个人订单链接，用相同邮箱一键完成订单。
+3. **Start 30-day coaching**：订单核验后开始 Day 1，不等待发货。
 
-退款、未 pledge、取消 pledge 和众筹失败的结果统一放入独立的 `Your $9, in plain English` 规则表，不在三步流程旁重复展示。
+退款、改变主意和发射取消的结果统一放入独立的 `Your $9, in plain English` 规则表，不在三步流程旁重复展示。
 
 第二步的上线日期必须复用 `priceWindows` 中 launch-day 窗口的 `displayDeadline`，不得在 HTML 或另一套配置中维护第二个日期来源。
 
@@ -161,7 +159,7 @@ After launch, the $9 is non-refundable if you do not pledge.
 
 - `30 days of Luna Coach included`；
 - `$19.99 value`，表示 30 天 Coach 的价值，不是当前 `$9` 订金金额；
-- 仅在有效 Kickstarter pledge 且众筹成功后开启；
+- 仅在订单核验后开启；
 - `$9` 不直接购买 Coach，订金页不展示月度自动续费、`auto-renews monthly` 或 `cancel anytime` 等订阅文案。
 
 #### 用户价值叙事
@@ -192,7 +190,7 @@ Day 1 plan → Daily reads & actions → Weekly reviews → Day 30 recap
 
 权益条件单独显示：
 
-> Available after a valid Kickstarter pledge and campaign success.
+> Available after your order is verified — before LunaWake ships.
 
 模块底部保留 wellness 边界：
 
@@ -254,7 +252,7 @@ Day 1 plan → Daily reads & actions → Weekly reviews → Day 30 recap
 - 继承官网暖黑、米白、金色、深棕和蓝色辅助色；
 - 使用官网的大号衬线标题、斜体强调和编辑式分栏；
 - Header 使用半透明固定层，桌面端持续显示简洁 CTA；
-- CTA 使用圆角胶囊按钮。无真实 Shopify URL 时所有按钮禁用并显示 `Launch`；URL 存在且 `reservation_open` 时，Header/移动端显示 `Reserve $9`，正文 CTA 可显示 `Lock in $229 access — $9`；
+- CTA 使用圆角胶囊按钮。无真实 Shopify URL 时所有按钮禁用并明确引导 launch list；URL 存在且 `reservation_open` 时，Header/移动端显示 `Reserve $9`，正文 CTA 可显示 `Lock in $229 access — $9`；
 - 移动端固定 CTA 左侧显示 `$9` 和当前 Reward，按钮避免窄屏换行；
 - `How the reservation works` 使用三节点时间轴：Now / Kickstarter goes live / After a successful campaign；
 - 时间轴只承担阶段和动作提示；退款、Reward 资格和 coaching 条件由下方白色规则区完整解释，避免重复叙述；
@@ -335,14 +333,13 @@ window.LUNAWAKE_DEPOSIT_CONFIG = {
   campaignState: 'reservation_open',
   pricingUnlocked: true,
   shopifyProductUrl: '',
-  retailPrice: '$379',
   launchAt: '',
   priceWindows: [],
   finishes: {},
   coach: {
     includedDays: 30,
     value: '$19.99',
-    availability: 'Available after a valid Kickstarter pledge and campaign success.'
+    availability: 'Available after your order is verified — before LunaWake ships.'
   },
   supportUrl: 'mailto:info@lunawake.ai'
 };
@@ -355,33 +352,33 @@ window.LUNAWAKE_DEPOSIT_CONFIG = {
 | 场景 | 处理 |
 |---|---|
 | 上线前申请退款 | 人工核验 Shopify 订单，原路退 `$9`，订金资格失效 |
-| 上线后未 pledge | `$9` 不退，不发 Reward 优惠和 coaching |
-| Kickstarter pledge 取消 | 专属优惠失效，订金不退 |
-| 众筹失败或取消 | 原路全额退 `$9` |
+| 用户改变主意 | 任何时候都可人工申请原路全额退 `$9` |
+| 订单未完成 | `$9` 仍可退款；不自动抵扣正式订单 |
+| 发射取消 | 原路全额退 `$9` |
 | 邮箱不一致 / Apple 隐藏邮箱 | 联系客服人工匹配，不能保证自动核验 |
 | 重复支付 | 客服合并记录或按退款规则处理 |
 | Reward 售罄 | agency 执行已确认的升级或替代方案 |
-| 颜色未确定 | 不要求用户选择；支付后再收集偏好 |
+| 颜色未确定 | 支付前可选择偏好；不锁定 SKU，不阻塞支付 |
 
 ## 9. 上线验收
 
-- [ ] 首屏同时显示 `$9`、当前 Reward 价格、退款边界和下一步；
-- [ ] 首屏以当前 Reward 价格为唯一主价格视觉；无 Shopify URL 时 CTA 禁用并显示 `Launch`；
+- [ ] 首屏同时显示 `$9`、`$229 today`、`$319 on launch day`、退款边界和下一步；
+- [ ] 首屏以当前价格窗口为唯一主价格视觉；无 Shopify URL 时 CTA 禁用并明确引导 launch list；
 - [ ] 购买卡显示当前价格窗口动态剩余天数，窗口截止当天显示 `Ends today`；
 - [ ] 桌面端滚动时 Header CTA 持续可见，移动端固定 CTA 持续可见；
-- [ ] 预约流程使用三节点时间轴，清楚区分 Shopify 支付、Kickstarter pledge 和 coaching；
-- [ ] Coach 模块位于流程之后，明确 `30 days included`、`$19.99 value` 与“有效 pledge 且众筹成功后开启”；
+- [ ] 预约流程使用三节点时间轴，清楚区分预订、个人订单链接和发货；
+- [ ] Coach 模块明确 `30 days included`、`$19.99 value` 与“订单核验后、发货前开启”；
 - [ ] Coach 模块交付清楚呈现 `Day 1 plan → Daily reads & actions → Weekly reviews → Day 30 recap`；
 - [ ] Coach 模块只使用 Sunrise 与 Sleep Pattern 两张 App 截图，桌面 / 移动端不变形、不横向溢出；
 - [ ] Coach 模块没有额外支付 CTA，且订金页不出现月度自动续费相关文案；
 - [ ] `deposit_coach_view` 只记录一次，并携带 Coach 配置字段与现有归因字段；
 - [ ] 流程第二步的 launch day 来自 `priceWindows`，页面没有第二套日期来源；
-- [ ] 首屏不存在两段以上重复解释 Shopify / Kickstarter 的长文案；
-- [ ] `$229 / $269 / $319` 与 Kickstarter Reward 一致；
+- [ ] 首屏不存在两段以上重复解释支付平台的长文案；
+- [ ] `$229 / $269 / $319` 与实际订单价格一致；
 - [ ] 价格模块使用当前主卡 + 后续价格阶梯，而不是三个同等重量卡片；
 - [ ] 页面不显示 `$300–$400` 类目锚点；
 - [ ] 页面不使用 PSG / 临床 / 诊断 / 治疗承诺；
-- [ ] 页面不要求用户选择颜色，且不透传默认颜色；
+- [ ] 页面允许记录颜色偏好，但不透传默认颜色、不锁定 SKU、不阻塞支付；
 - [ ] 规则、卖点和视觉继承官网系统；
 - [ ] 产品证据视频首屏不请求 MP4，接近视口后才加载；reduced motion 下不自动播放；
 - [ ] 五色图优先加载 WebP，并保留同尺寸 PNG fallback；

@@ -12,14 +12,14 @@
 
 所有 EDM、Group 帖和客服回复使用同一组规则：
 
-- Pay $9 through Shopify to reserve your launch-price eligibility.
-- You can request a full refund before Kickstarter launches.
-- When Kickstarter goes live, use the private link and the same email to pledge.
-- After launch, the $9 is non-refundable if you do not pledge.
-- If the campaign fails or is canceled, the $9 is refunded in full.
-- The $9 is a Shopify reservation, not a Kickstarter pledge or an automatic deduction from your Kickstarter payment.
+- Pay $9 through Shopify to reserve your founding price.
+- You can request a full refund any time, for any reason.
+- On Sep 21, we email your personal order link. Use the same email to complete your order.
+- If you change your mind, the $9 stays refundable.
+- If the launch is canceled, the $9 is refunded in full.
+- The $9 is a Shopify reservation, not the product payment or an automatic deduction.
 
-不要使用：`$9 is applied to Kickstarter`、`your deposit is always refunded after the campaign`、`coaching starts after shipping`。
+不要使用：`$9 is applied to the order`、`coaching starts after shipping`、`pledge`、`backer`、`campaign failure` 等需要众筹经验才能理解的术语。
 
 ## High-intent Leads：优先批次
 
@@ -27,19 +27,19 @@
 
 **Subject:** Lock your LunaWake launch price for $9
 
-**Preheader:** Full refund before Kickstarter launches. Same email, private link, clearer next step.
+**Preheader:** $229 today, $319 on launch day. Refundable any time.
 
 **Body:**
 
 Before you reserve, here is exactly how it works:
 
-1. Pay a $9 reservation through Shopify to lock your launch-price eligibility.
-2. Before Kickstarter launches, you can request a full refund.
-3. When Kickstarter goes live, use our private link and the same email to pledge at the Reward price available to your reservation window.
+1. Pay a $9 reservation through Shopify to lock the $229 founding price.
+2. You can request a full refund any time, for any reason.
+3. On Sep 21, we email your personal order link. Use the same email and one click completes your order.
 
-After Kickstarter launches, the $9 is non-refundable if you do not pledge. If the campaign fails or is canceled, we refund the $9 in full. The $9 is a Shopify reservation—not a Kickstarter pledge or an automatic deduction from Kickstarter.
+If you change your mind or the launch is canceled, you can request the $9 back in full through the original Shopify payment method. The $9 is a Shopify reservation—not the product payment or an automatic deduction.
 
-Your reservation also qualifies you for 30-day coaching after a valid pledge and a successful campaign. Coaching starts the next business day after pledge verification; it does not wait for shipping.
+Your reservation also qualifies you for 30 days of Luna Coach after your order is verified. Coaching starts before shipping.
 
 **CTA:** Reserve for $9 →
 
@@ -59,9 +59,9 @@ https://lunawake.ai/deposit.html?audience=lead&utm_source=edm&utm_medium=email&u
 
 You are already on the LunaWake launch list—there is no second form to fill out.
 
-Reserve for $9 through Shopify. You can request a full refund before Kickstarter launches. At launch, we will send a private link; use the same email to pledge and access the Reward price tied to your reservation window.
+Reserve for $9 through Shopify. You can request a full refund any time, for any reason. On Sep 21, we will send your personal order link; use the same email to complete your order at the price you locked.
 
-Important: after launch, the $9 is non-refundable if you do not pledge. The reservation is separate from Kickstarter and is not automatically deducted from your Kickstarter payment.
+The $9 remains a separate reservation after launch. It is not automatically deducted from your product payment, and you can request a full refund any time, for any reason.
 
 **CTA:** Lock my launch eligibility →
 
@@ -77,15 +77,15 @@ https://lunawake.ai/deposit.html?audience=lead&utm_source=group&utm_medium=commu
 
 **Subject:** What the LunaWake $9 reservation actually does
 
-**Preheader:** One payment, one private Kickstarter link, and clear refund rules.
+**Preheader:** One reservation, one personal order link, and clear refund rules.
 
 **Body:**
 
-The $9 is a Shopify reservation that records your launch-price eligibility. It is not the Kickstarter pledge itself.
+The $9 is a Shopify reservation that records your founding-price eligibility. It is not the product payment itself.
 
-Before Kickstarter launches, you can request a full refund. When the campaign goes live, use the private link we send and pledge with the same email. If you do not pledge after launch, the $9 is non-refundable. If the campaign fails or is canceled, it is refunded in full.
+You can request a full refund any time, for any reason. On Sep 21, use the personal order link we send and the same email to complete your order. If the launch is canceled, the $9 is refunded in full.
 
-If you are ready, reserve here. If you are not ready to pay, you can remain on the launch list and wait for the campaign update.
+If you are ready, reserve here. If you are not ready to pay, you can remain on the launch list and wait for the order-link update.
 
 **Primary CTA:** Reserve for $9 →
 
@@ -96,7 +96,7 @@ If you are ready, reserve here. If you are not ready to pay, you can remain on t
 - 每个用户只发送一个主订金链接，避免重复订单；
 - EDM / Group 链接必须包含 `utm_term` 分组和 `creative` 素材编号；
 - 页面识别到 `edm`、`email`、`group`、`lead`、`crm` 或 `community` 时，显示“已在 launch list，无需重新留资”；
-- Shopify 订单邮箱必须作为 Kickstarter 匹配邮箱提醒；
+- Shopify 订单邮箱必须作为正式订单匹配邮箱提醒；
 - 支付完成后，不再重复发送订金 CTA，转入订金用户邮件/小组流程；
 - 用户已退款、已重复支付或已进入异常队列时，停止自动催付并转人工客服。
 
@@ -118,4 +118,4 @@ If you are ready, reserve here. If you are not ready to pay, you can remain on t
 - Leads → payment completed rate；
 - refund requested；
 - email mismatch / support tickets；
-- valid Kickstarter pledge（上线后）。
+- completed order（上线后）。

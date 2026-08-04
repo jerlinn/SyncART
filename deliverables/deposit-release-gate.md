@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-- 本地：已完成平衡转化版，顺序为 Hero → 产品证据/视频 → 退款规则 → 价格窗口 → 三步流程 → Luna Coach → 五色展示 → FAQ → Final CTA。
+- 本地：已完成面向新手的预订版，顺序为 Hero → 声音/晨读/光 → 价格窗口 → 分期说明 → 社会证明 → 退款规则 → 五色偏好 → 三步流程 → Luna Coach → FAQ → Final CTA。
 - 线上：`https://lunawake.ai/deposit.html` 仍为旧版页面，不能作为本轮转化测试入口。
 - 支付：本地配置中的 `shopifyProductUrl` 仍为空，因此本地 CTA 会保持禁用，避免伪造支付成功。
 
@@ -30,13 +30,13 @@
 
 发布后线上页面应能检查到：
 
-- 结果导向 Hero，同时显示 `$9 / 当前 Reward / $379`、退款边界和 CTA；
-- 首屏之后的 contact-free sensing 视频证据区与三条核心卖点；
-- 四种退款/pledge 结果只由规则区完整解释；
+- 结果导向 Hero，同时显示 `$9 / 当前 Reward / $319 launch-day price`、退款边界和 CTA；
+- 首屏之后的声音、晨间解读和光三条核心卖点；
+- 退款保护只由规则区完整解释；
 - 当前主价格与后续价格阶梯；
-- Shopify → Kickstarter → Coach 三步流程，launch day 复用价格窗口配置；
+- 预订 → 个人订单链接 → 发货三步流程，launch day 复用价格窗口配置；
 - Luna Coach、五色展示、FAQ、Final CTA 与移动端固定 CTA；
-- 无 Shopify URL 时所有按钮禁用并显示 `Launch`；
+- 无 Shopify URL 时所有按钮禁用，并明确显示 checkout 尚未开放、引导用户进入 launch list；
 - 不再出现旧的临床效果承诺或未经确认的库存、发货承诺。
 
 资源与埋点验收：
@@ -66,7 +66,7 @@
 先使用内部邮箱和 10–20 个真实测试用户完成：
 
 1. EDM / Group 链接进入页面，不重复填写 Leads 表单；
-2. 广告新用户直接理解 $9、Kickstarter pledge 和 Reward 价格的关系；
+2. 广告新用户直接理解 $9、$229 founding price、$319 launch-day price 和个人订单链接的关系；
 3. 点击 CTA 后进入 Shopify 结账；
 4. 支付成功后能收到确认邮件；
 5. 退款、邮箱更正、链接补发和重复订金能够找到人工客服；
@@ -84,7 +84,7 @@
 - Shopify 结账完成率；
 - 邮箱不一致率；
 - 退款/客服率；
-- 有效 Kickstarter pledge 率。
+- 订单完成率与 Coach 激活率。
 
 ## 放量停止条件
 
@@ -92,6 +92,6 @@
 
 - CTA 仍显示不可支付或 Shopify URL 为空；
 - 用户误解为 $9 直接抵扣 Kickstarter 金额；
-- 用户不知道上线后不 pledge 的 $9 不退款；
+- 用户不知道 `$9` 在任何时候都可申请退款；
 - 线上页面仍展示旧规则或旧健康/临床表述；
 - 支付成功邮件、专属链接或客服路径无法完成闭环。

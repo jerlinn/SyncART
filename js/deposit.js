@@ -302,6 +302,27 @@
         });
     };
 
+    const positionCoachReport = () => {
+        const report = document.querySelector('[data-coach-report]');
+        if (!report || report.dataset.reportStart !== 'reflection') return;
+        const endOffset = Number(report.dataset.reportEndOffset || 0);
+        const maxScroll = Math.max(0, report.scrollHeight - report.clientHeight);
+        report.scrollTop = Math.max(0, maxScroll - (Number.isFinite(endOffset) ? endOffset : 0));
+    };
+
+    const initializeCoachReport = () => {
+        const report = document.querySelector('[data-coach-report]');
+        if (!report) return;
+        const image = report.querySelector('img');
+        if (image && !image.complete) image.addEventListener('load', positionCoachReport, { once: true });
+        positionCoachReport();
+        window.requestAnimationFrame(() => {
+            positionCoachReport();
+            window.setTimeout(positionCoachReport, 120);
+            window.setTimeout(positionCoachReport, 1000);
+        });
+    };
+
     const observeCoachSection = () => {
         if (!coachSection) return;
         const recordView = () => track('deposit_coach_view', {
@@ -400,6 +421,7 @@
     updateFinish();
     updateSource();
     updateCoachCopy();
+    initializeCoachReport();
     updateButtons();
     observeCtaSlots();
     observeCoachSection();

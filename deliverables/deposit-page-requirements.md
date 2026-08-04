@@ -1,385 +1,420 @@
-# LunaWake 订金转化链路产品需求文档
+# LunaWake Shopify 订金页产品需求文档
 
-> 版本：v1.6
-> 状态：页面结构已确认，待补齐最终价格、Shopify 商品配置、投放参数和 agency 执行配置
+> 版本：v2.1
+> 状态：页面结构、Coach 权益口径与业务规则已确认；待接入 Shopify 商品 URL、支付订单属性和 agency 的 Kickstarter 配置
+> 更新依据：前测报告、广告信任与数据采集笔记、agency 参考链路、当前 `deposit.html` 原型审计
 
-## 1. 目标与核心结论
+## 1. 产品目标
 
-预热阶段同时使用两个页面：
+页面 2 是 Shopify 独立商品页，直接收取 `$9` 订金，承接两类用户：
 
-- **页面 1：产品介绍 / Leads 页面**，沿用前测流程，用于产品介绍、Survey 和 Lead 沉淀；
-- **页面 2：Shopify 订金商品页**，作为可直接支付的订金转化页，用于广告投放和前测 Leads 的 EDM / Group 链路。
+- 广告新用户：无需先注册 Leads，理解规则后可直接进入 Shopify 支付；
+- 已注册 Leads：通过 EDM / Group 进入，不重复填写留资表单。
 
-订金页不是自建 `deposit.html`，而是 Shopify 上的独立商品详情页和支付流程。
+页面的核心目标是提高 `Leads → $9 支付完成率`。现有约 2,000 个 Leads 可作为首批转化人群；50% 是内部目标，不是对用户的承诺。点击率只做辅助指标，最终以 Shopify 成功订单为准。
 
-目标是让新广告用户可以直接完成订金决策，也让已经注册过的 Leads 跳过重复留资，直接进入 Shopify 订金页。
+## 2. 核心信任原则
 
-本轮转化目标：以现有约 2,000 个前测 Leads 为核心人群，目标推动约 50% 完成 $9 订金（约 1,000 笔）；行业 10% 仅作为外部参考基线，不作为页面承诺。页面优化和投放评估以 Leads → Shopify $9 支付完成率为核心指标。
+### 2.1 先讲清楚，再讲卖点
 
-## 2. 投放与用户链路
+86.9% 的前测用户没有众筹经验，页面必须用白话解释 Kickstarter：
+
+> Shopify 现在收取 `$9`，Kickstarter 上线后再通过专属链接完成正式 pledge。两次支付不是同一笔订单。
+
+首次出现 `pledge`、`Reward`、`Kickstarter` 时必须附带白话解释，不使用未解释的 backer、stretch goal 等行话。
+
+### 2.2 退款规则首屏公开
+
+支付前必须同时看到：
+
+- Kickstarter 上线前，可联系人工客服申请 `$9` 原路全额退款；
+- Kickstarter 上线后，如果没有完成 pledge，`$9` 不退款；
+- 众筹失败或取消，`$9` 原路全额退款；
+- 用户取消自己的 Kickstarter pledge，不触发新的 `$9` 退款流程。
+
+主动披露“不利规则”是信任设计，不得只藏在 FAQ。
+
+### 2.3 `$9` 的语义
+
+营销叙述使用：
+
+> `$9` locks your current launch-price eligibility.
+
+支付与法律说明必须同时明确：
+
+- `$9` 是 Shopify 订金，不是 Kickstarter pledge；
+- `$9` 不直接抵扣 Kickstarter 支付；
+- 专属优惠由 Kickstarter Reward / agency 专属入口配置；
+- 订金邮箱和 Kickstarter pledge 邮箱必须一致。
+
+### 2.4 只使用已确认的 wellness 表述
+
+本轮不使用 PSG、临床级、诊断、治疗或临床效果承诺。隐私是信任证明，不占据主标题或主卖点位；页面可使用：
+
+- No camera；
+- No wearable；
+- Raw signals stay on the device；
+- Physical privacy gate；
+- Wellness product, not a medical device。
+
+## 3. 用户链路
 
 ```mermaid
 flowchart TD
-    A[预热阶段并行投放]
-    A --> B[页面 1：产品介绍 / Leads]
-    A --> C[页面 2：Shopify 订金商品页]
-
-    B --> D[用户完成 Survey / 注册 Lead]
-    D --> E[进入前测 Group 或后续 Leads 运营流程]
-    E --> C
-
-    F[已注册前测 Leads]
-    F --> G[EDM / Group 订金 CTA]
-    G --> C
-
-    C --> H[了解价格、规则和 Kickstarter 流程]
-    H --> I[Shopify 支付固定 $9 订金]
-    I --> J[支付成功页 / 邮件 / 订金用户小组]
-
-    J --> K{Kickstarter 是否已上线？}
-    K -- 未上线，申请退款 --> L[人工客服审核<br/>Shopify 原路退款]
-    L --> M[订金资格失效]
-    K -- 未上线，不退款 --> N[等待 Kickstarter 上线]
-    K -- 已上线 --> O[停止新订金<br/>已有订金不可退款]
-    N --> P[agency 发送专属链接]
-    O --> P
-    P --> Q[使用相同邮箱完成 pledge]
-    Q --> R{是否完成有效 pledge？}
-    R -- 否 --> S[无专属优惠<br/>无 coaching<br/>不退款]
-    R -- 是 --> T[通过 Kickstarter Reward<br/>享受专属折扣]
-    T --> U{众筹是否成功？}
-    U -- 否，失败/取消 --> V[全额退回 $9]
-    U -- 是 --> W[agency 核验 pledge 名单]
-    W --> X[核验完成后下一个工作日<br/>开始 30 天 coaching]
+    A[广告新用户 / 已注册 Leads] --> B[进入 Shopify 订金页]
+    B --> C[理解 $9、价格窗口和退款边界]
+    C --> D[Shopify 支付 $9]
+    D --> E[支付成功邮件 / 用户小组]
+    E --> F[Kickstarter 上线后收到专属链接]
+    F --> G[使用相同邮箱完成 pledge]
+    G --> H{是否有效 pledge 且众筹成功}
+    H -- 否，未 pledge --> I[$9 不退；无 Reward 优惠和 coaching]
+    H -- 否，众筹失败/取消 --> J[原路全额退回 $9]
+    H -- 是 --> K[agency 核验名单]
+    K --> L[下一个工作日开始 30 天 coaching]
 ```
 
-### 2.1 页面 1：产品介绍 / Leads 页面
+## 4. 页面内容与顺序
 
-页面 1 沿用前测页面和流程，不在本需求中重做产品介绍体系。
+页面固定采用“Hero → 退款规则 → 价格窗口 → 五色展示 → 三步流程 → Luna Coach → 产品证明 → FAQ → Final CTA”的订金决策顺序。页面只讲清楚产品是什么、为什么现在预订、预订后如何获得权益；完整产品介绍由 Header 的 `How it works` 链接承接至官网，不在订金页复制 Page 1 的完整叙事。
 
-负责内容：
+### 4.1 首屏与支付卡
 
-- 产品定位和完整产品卖点；
-- 产品场景、能力和信任建设；
-- Survey / 留邮箱 / Lead 注册；
-- 前测 Group 或后续 Leads 运营承接；
-- 引导已注册用户通过 EDM / Group 进入 Shopify 订金页。
+首屏 5 秒内必须理解：
 
-### 2.2 页面 2：Shopify 订金商品页
+- LunaWake 是什么；
+- 现在支付 `$9`；
+- 当前可获得哪个 Kickstarter Reward 价格；
+- 什么时候可以退款；
+- 下一步要通过专属链接完成 pledge。
 
-页面 2 是独立的 Shopify 可支付页面，同时承接：
+首屏主信息：
 
-- 直接投放到订金页的广告新用户；
-- 已注册 Leads 从 EDM / Group 进入的用户。
+```text
+Unlock $229.
+For $9 today.
 
-页面 2 不重复完整产品介绍，但必须让第一次直接进入的广告用户能够完成基本判断和支付。
+Save $150 vs. $379 retail
 
-## 3. 页面 2 的内容要求
+A contact-free bedside sleep system — no wearable, no camera.
 
-### 3.1 首屏
+[Reserve for $9]
 
-首屏先呈现支付规则和用户下一步，再用后续模块补充产品介绍。用户在首屏需要快速理解：
+Refundable before Kickstarter launches.
+After launch, the $9 is non-refundable if you do not pledge.
+```
 
-- 这是 LunaWake 的 Kickstarter 订金；
-- 现在支付固定 $9；
-- 越早支付，后续 Kickstarter Reward 价格越低；
-- 下一步会收到专属链接并完成 pledge。
-- 首屏必须显式说明“上线前可全额退款”；同时在支付 CTA 附近说明 Kickstarter 上线后，如未完成 pledge，$9 不再退回。
-- $9 的主叙述使用“锁定 Founding Backer / 当前价格窗口资格”，但法律和支付说明中仍明确它是 Shopify 订金。
+商品卡必须保持紧凑，只包含：
 
-主 CTA：`Reserve for $9` / `Pay $9 Deposit`。
+- `Shopify reservation`；
+- 当前 `$9` 与 Kickstarter Reward 价格；
+- 当前价格窗口的动态剩余天数，例如 `20 days left at this price`；截止当天显示 `Ends today`；
+- 一句上线前可退款的边界说明；
+- 主 CTA 与安全预览状态。
 
-页面 2 不设置与订金同等权重的 `Notify me` CTA；留资由页面 1 承担。为承接高意向但预算不足的广告用户，页面底部可保留低调的次级出口 `Not ready to reserve? Join the launch list`，不得与支付 CTA 争夺首屏层级。
+首屏左右两栏不得重复完整流程。Hero 整体只承担产品结果、`$9 / 当前 Reward / $379` 价格关系、退款边界和 CTA；完整的 Shopify → Kickstarter → Coach 阶段说明只出现在三步流程中，四种退款与 pledge 结果只出现在规则区。
 
-页面信息顺序固定为：
+购买卡必须在桌面端首屏内完整呈现 `$9`、当前 Reward 价格和主 CTA。倒计时由当前窗口的 `endAt` 与 `timezone` 配置计算，不写死在页面文案中。
 
-1. `$9` 订金、退款边界、专属链接和同邮箱 pledge；
-2. 三档价格窗口和零售价格锚点；
-3. 三个关键时刻及 `$9` 的三种结果；
-4. 精简产品卖点、隐私和 PSG 验证说明；
-5. FAQ、客服和次级 Leads 出口。
+### 4.2 三档价格窗口
 
-这样页面 2 不要求 Leads 重新阅读完整产品故事后才能付款。
+当前确认价格直接公开，且必须与 Kickstarter 实际 Reward 配置一致：
 
-针对 EDM / Group / Leads 来源，页面需要显示“已在 launch list，无需重新留资”，并说明 Shopify 订单邮箱就是后续 Kickstarter 匹配邮箱。移动端需要保留固定的 `$9` 支付入口，避免用户在长页面中找不到 CTA。
-
-### 3.2 最低限度产品说明
-
-由于页面 2 会直接承接广告流量，至少保留：
-
-- LunaWake 是什么产品；
-- 无穿戴设备、无摄像头；
-- 光线和声音根据睡眠节奏适配；
-- 有效 pledge 且众筹成功后获得 30 天 coaching。
-- 主卖点优先使用研究验证过的高价值表达：“读懂你的夜”和“它替你调节”；灯光、声音等机制作为支撑，不作为首屏唯一主叙事。
-- 页面增加 PSG 相关验证说明，但在证据、法务确认前只能写成“正在进行/纳入验证的研究工作”，不得写成诊断、治疗或已完成的临床效果承诺。
-- 30 天 coaching 显示具体参考价值 `$19.99 value`，并继续标注其生效条件。
-- 无穿戴、无摄像头保留为信任证明，不占据首屏的主要卖点位置。
-
-完整产品故事继续由页面 1 承担，页面 2 不复制页面 1 的四大功能模块和长篇叙事。
-
-### 3.3 三档价格窗口
-
-展示三档价格窗口：
-
-1. Founding Backer：$229，Reserve by Aug 24；
-2. Super Early Bird：$269，Reserve by Sep 7；
-3. Early Bird：$319，Reserve by Sep 21 / launch day。
-
-价格、日期、年份、时区、节省金额、当前状态和具体关闭时间全部配置化。
-
-当前价格测试完成前，页面保留价格卡片和时间窗口，但金额显示为 `Price unlocking soon`，不公开未经确认的最终数字。价格解锁后再展示 Kickstarter Reward 的实际价格。
-
-价格未解锁时必须提供价格锚点，避免用户把页面理解为 $100–150 的低价产品：
-
-- 展示品类参考区间 `$300–$400`，并明确这是价格测试上下文，不是最终售价承诺；
-- 展示配置化的上市后零售价锚点，当前参考为 `$379`；
-- 价格解锁后展示 `Save $150 / $110 / $60 vs retail`，并且金额必须与 Kickstarter Reward 实际配置一致；
-- 后续阶段支持按 UTM / 素材 / 卖点角度做有锚点与无锚点 A/B 测试，不能在同一实验中混用不同参考价。
+| 窗口 | Reward 价格 | 截止时间 | 相对 `$379` 零售价 |
+|---|---:|---|---:|
+| Founding Backer | `$229` | Aug 24 | Save `$150` |
+| Super Early Bird | `$269` | Sep 7 | Save `$110` |
+| Early Bird | `$319` | Sep 21 / launch day | Save `$60` |
 
 要求：
 
-- 当前档位必须突出显示；
-- 已结束档位显示 ended；
-- 未开始档位显示 upcoming；
-- 价格解锁后的最终值必须与 Kickstarter Reward 实际配置一致；
-- 不展示未经确认的硬性库存上限；
-- Reward 售罄时执行 agency 已确认的升级或替代方案。
+- 当前窗口使用 `Lowest launch price` 主卡视觉突出；
+- 后续窗口使用紧凑价格阶梯，不与当前价格同等抢注意力；
+- 当前窗口优先显示 `Save $150 · X days left`；具体 `endAt` 未配置时回退为 `while this window is open`，不显示虚假倒计时；
+- 后续窗口显示相对当前价格的涨幅，例如 `+$40 after current`、`+$90 after current`；
+- 已结束显示 `Ended`，未开始显示 `Upcoming`；
+- 日期、年份、时区、具体关闭时间、状态均配置化；
+- 页面不展示 `$300–$400` 类目参考锚点；
+- 页面不展示未经 agency 确认的库存上限；
+- `$379` 仅在其确为公开上市零售价时展示；
+- Reward 售罄时由 agency 执行升级或替代方案。
 
-### 3.4 订金机制说明
+### 4.3 三步流程
 
-页面必须明确区分：
+1. **Pay $9 through Shopify**：订金锁定当时价格窗口；上线前可申请退款。
+2. **Pledge on Kickstarter**：上线后收到专属链接，用相同邮箱完成 pledge；Kickstarter 是正式购买平台。
+3. **Start 30-day coaching**：agency 核验有效 pledge 且众筹成功后，下一个工作日开始 Day 1，不等待发货。
 
-- $9 是 Shopify 订金，不是 Kickstarter pledge；
-- $9 不做 Shopify 与 Kickstarter 的跨平台金额抵扣；
-- Kickstarter 专属优惠来自 Reward 或 agency 管理的众筹入口；
-- 用户需要使用相同邮箱完成 pledge。
-- 支付前必须重复说明：未完成 pledge 时，上线后 $9 不退，且不获得专属优惠或 coaching；这条规则不能只藏在 FAQ。
+退款、未 pledge、取消 pledge 和众筹失败的结果统一放入独立的 `Your $9, in plain English` 规则表，不在三步流程旁重复展示。
 
-### 3.4.1 颜色偏好
+第二步的上线日期必须复用 `priceWindows` 中 launch-day 窗口的 `displayDeadline`，不得在 HTML 或另一套配置中维护第二个日期来源。
 
-- 颜色选择是可选偏好，不阻塞 $9 支付，也不作为 Shopify 必填变体；
-- 默认展示 Stone，随后为 Charcoal、Amber；该顺序基于当前前测人群的主视觉适配，不改变可选颜色范围；
-- 用户选择的 finish 作为偏好参数随 checkout 透传，后续仍可通过支付成功邮件确认最终颜色；
-- 颜色偏好不代表已锁定库存或最终 SKU，不能在页面上承诺固定发货颜色。
+### 4.4 Luna Coach 权益模块
 
-### 3.5 三步流程
+该模块位于 `How the reservation works` 三步流程之后、产品证明之前。它不是独立购买入口，也不是泛泛的 AI 聊天或产品介绍，而是把众筹成功后用户实际获得的 Coach 交付讲具体，回答“为什么值得完成后续 pledge”。
 
-页面用三个连续时刻表达完整路径，用户无需阅读长 FAQ 才能知道下一步：
+内容依据：`luna-product/docs/context/luna-coach-positioning.md`、`Lunawake-wiki/data-analysis/report-08-04/deposit-page-requirements-v1.4.md` 与 `Lunawake-wiki/data-analysis/reports/cross-insights.md`。这些材料共同指向“从看见数据到采取一个行动”的价值，而不是增加一个数据面板或聊天入口。
 
-1. **Before Kickstarter — Lock eligibility**：在 Shopify 支付 $9，记录用户加入的价格窗口；上线前可申请全额退款；
-2. **When Kickstarter launches — Pledge**：收到专属链接，用相同邮箱完成 pledge，获得对应 Kickstarter Reward 价格；
-3. **After a successful campaign — Start coaching**：agency 核验有效 pledge 后，下一个工作日开始 30 天 coaching，不等待发货。
+#### 商业口径
 
-流程模块旁边必须同时呈现 `$9` 的三种结果：
+页面固定展示：
 
-- 上线前取消：原路全额退款；
-- 众筹失败或取消：原路全额退款；
-- 上线后未 pledge：$9 不退，不获得 Reward 专属优惠和 coaching。
+- `30 days of Luna Coach included`；
+- `$19.99 value`，表示 30 天 Coach 的价值，不是当前 `$9` 订金金额；
+- 仅在有效 Kickstarter pledge 且众筹成功后开启；
+- `$9` 不直接购买 Coach，订金页不展示月度自动续费、`auto-renews monthly` 或 `cancel anytime` 等订阅文案。
 
-订金商品卡还需要明确列出支付包含的内容：专属链接、价格窗口资格和满足条件后的 30 天 coaching；`$9` 由 Shopify 收取，可能按用户本地货币处理。
+#### 用户价值叙事
 
-不能写成“众筹结束后一定退回 $9”或“发货后开始 coaching”。
+核心承诺是：
 
-### 3.6 支付成功后的用户小组
+> See what stood out. Choose one thing. Keep adjusting as real nights change.
 
-支付成功后需要提供订金用户后续承接方式，至少包含一种：
+页面使用以下结构：
 
-- Shopify 支付成功页提供入组入口；
-- 支付成功邮件提供入组链接；
-- 由运营人工将用户加入订金用户小组。
+标题：`The part after the data.`
 
-默认通过支付成功邮件发送入组链接；具体小组平台和自动化程度由运营确认，但必须能通过 Shopify 订单邮箱匹配用户。
+副标题：`30 days of Luna Coach · included — $19.99 value`
 
-### 3.7 FAQ / 规则提示
+正文：`Luna turns your real nights into one clear place to begin, then keeps adjusting as life and sleep change.`
 
-至少回答：
+三个连续价值：
 
-- 什么时候可以退款？
-- Kickstarter 上线后还能退款吗？
-- 如果没有完成 pledge 会怎样？
-- 为什么必须使用相同邮箱？
-- $9 是否直接抵扣 Kickstarter 价格？
-- 众筹失败或取消怎么办？
-- Coaching 什么时候开始？
-- 支付成功后如何进入订金用户小组？
-- `$300–$400` 和 `$379` 分别是什么价格锚点？
+1. **Read**：Morning read 告诉用户昨晚发生了什么，不只给一个分数；
+2. **Focus**：结合 Sleep Pattern 与用户表达的困扰，确定当前一个重点；
+3. **Adjust**：通过每日行动、每周回顾和 Day 30 recap，让计划随真实夜晚调整。
 
-## 4. 已确认业务规则
+服务节奏必须可扫读：
 
-| 项目 | 规则 |
+```text
+Day 1 plan → Daily reads & actions → Weekly reviews → Day 30 recap
+```
+
+权益条件单独显示：
+
+> Available after a valid Kickstarter pledge and campaign success.
+
+模块底部保留 wellness 边界：
+
+> Luna offers general sleep guidance. It does not diagnose or replace medical care.
+
+#### 界面素材与布局
+
+只使用两个能直接证明 Coach 交付的 App 界面：
+
+- `images/app-screens/sunrise.webp` 作为主视觉，证明“昨晚发生了什么 + 今天可以做什么”，配文 `A clear read. One useful next step.`；
+- `images/app-screens/sleep-pattern.webp` 作为次视觉，证明多晚数据可以整理成可理解的模式，配文 `Your nights begin to have a shape.`。
+
+不在 Coach 模块使用 `wind-down.png` 或 `sensors-data.png` 作为主证据；它们属于设备控制、传感器与隐私说明，会把订金页带回完整产品介绍。桌面端采用左侧价值文案与服务节奏、右侧叠放两张截图；移动端先显示 Sunrise，再显示 Read / Focus / Adjust 和 Sleep Pattern。截图必须保持比例，不产生横向溢出。
+
+该模块不新增任何购买 CTA。官方完整产品介绍通过 Header 的 `How it works` 链接跳转至 `https://lunawake.ai/#how-it-works`。
+
+### 4.5 产品证明
+
+只保留三个高价值主卖点：
+
+1. **Read your night**：把夜间模式变成用户能理解的反馈；
+2. **Adjusts for you**：灯光、声音和房间提示自动配合，不要求用户半夜操作；
+3. **No wearable**：不需要佩戴戒指、手表或身体传感器。
+
+隐私内容降级为信任行：`No camera / Raw signals stay on the device / Physical privacy gate`。
+
+产品证明区使用桌面双栏、移动端单栏：左侧展示 `02-contact-free-sensing.mp4`，右侧展示三个卖点；视频必须带静态 poster、原生控制、`muted`、`loop`、`playsinline` 与 `preload="none"`。MP4 只有在视频进入视口附近时才写入 `src` 并下载；用户开启 reduced motion 时不自动播放。
+
+页面不复制 Page 1 的完整产品故事。广告素材也必须保持单一主卖点：洞察类、自动调节类、免佩戴类、氛围类分别使用独立 `utm_content`，不能一条素材混讲多个主轴。
+
+### 4.6 颜色展示与偏好
+
+颜色尚未最终定案，但颜色本身是重要的消费刺激和产品偏好信号。因此页面展示完整的五色概念阵列：
+
+- Dawn；
+- Moonstone；
+- Midnight；
+- Amber；
+- Sage。
+
+本轮颜色展示是价格模块之后的独立视觉与偏好收集模块，不是支付前 SKU 选择器：
+
+- 五色一起呈现，帮助用户想象产品进入卧室后的效果；
+- 不默认选中任何颜色；
+- 不阻塞 `$9` 支付；
+- 不向 Shopify 透传默认颜色或锁定 SKU；
+- 不阻挡、不延迟或要求用户先完成颜色选择再支付；
+- 支付后通过邮件或运营流程确认最终颜色偏好；
+- 产品层另行确认哪些颜色正式上市，页面不得承诺全部五色最终可售。
+
+页面文案：
+
+> Five finishes to make it yours. Finish preference will be confirmed after reserving. Your `$9` payment does not lock a color or SKU.
+
+## 5. 页面视觉要求
+
+订金页必须是主官网的延伸，而不是独立电商模板：
+
+- 继承官网暖黑、米白、金色、深棕和蓝色辅助色；
+- 使用官网的大号衬线标题、斜体强调和编辑式分栏；
+- Header 使用半透明固定层，桌面端持续显示简洁 CTA；
+- CTA 使用圆角胶囊按钮。无真实 Shopify URL 时所有按钮禁用并显示 `Launch`；URL 存在且 `reservation_open` 时，Header/移动端显示 `Reserve $9`，正文 CTA 可显示 `Lock in $229 access — $9`；
+- 移动端固定 CTA 左侧显示 `$9` 和当前 Reward，按钮避免窄屏换行；
+- `How the reservation works` 使用三节点时间轴：Now / Kickstarter goes live / After a successful campaign；
+- 时间轴只承担阶段和动作提示；退款、Reward 资格和 coaching 条件由下方白色规则区完整解释，避免重复叙述；
+- 减少矩形卡片、重阴影和密集表单感；
+- 商品图片优先呈现卧室场景和产品关系，不只展示孤立的设备局部；
+- 移动端固定 CTA 同时显示 `$9` 和当前 Reward 价格；
+- 页面保持退款边界可见，但避免完整规则在多个位置重复出现。
+
+## 6. 数据、归因与实验
+
+### 6.1 UTM 与订单属性
+
+页面读取并透传：
+
+- `source`；
+- `utm_source`；
+- `utm_medium`；
+- `utm_campaign`；
+- `utm_content`；
+- `utm_term`；
+- `angle`；
+- `creative`；
+- `placement`。
+
+跳转 Shopify 时追加：
+
+- 上述来源参数；
+- `price_window`；
+- `reward_price`。
+
+Shopify 侧必须通过 Cart Attributes、订单属性或 Shopify Flow 保存这些字段；仅拼接 URL 不算归因闭环。颜色未选择，因此本轮不写入 `finish`。
+
+### 6.2 事件与指标
+
+页面事件：
+
+- `deposit_cta_view`；
+- `deposit_cta_slot_view`，携带 `cta_slot`，每个 CTA 槽位只记录一次；
+- `deposit_cta_click`；
+- `deposit_cta_blocked`；
+- `deposit_proof_view`，产品证据区首次有效曝光时记录；
+- `deposit_proof_video_play`，视频首次实际播放时记录且只记录一次；
+- `deposit_coach_view`，Coach 模块首次有效曝光时记录且只记录一次；
+- `deposit_finish_select` 仅在未来重新开启颜色选择器后启用。
+
+`deposit_coach_view` 沿用现有归因字段：`audience`、`utm_source`、`utm_medium`、`utm_campaign`、`utm_content`、`utm_term`、`angle`、`price_window`、`reward_price`，并额外记录：
+
+- `section: 'coach_value'`；
+- `coach_days`；
+- `coach_value`。
+
+Coach 模块只记录被动曝光，不新增 `deposit_cta_click` 或其他购买按钮事件。
+
+支付完成以 Shopify 成功订单为准，不由页面伪造。核心周报指标：
+
+- `$9` 支付完成率；
+- 各素材 / 卖点角度的支付完成率；
+- 已付 `$9` → 有效 pledge 率；
+- 有效 pledge → coaching 激活率；
+- 未 pledge 用户名单及客服触达结果。
+
+高意向低预算用户通过页脚低调出口回到 Page 1 Leads 流程，出口必须带独立 UTM，不得与首屏支付 CTA 同权重。
+
+FAQ 标题旁必须提供清晰的人工客服入口，直接展示当前客服邮箱（默认 `info@lunawake.ai`），点击后打开邮件；用于退款、邮箱不一致、专属链接补发、重复订金和入组异常。客服地址由 `supportUrl` 配置统一控制。
+
+### 6.3 实验纪律
+
+- 页面文案和价格窗口必须版本化并记录发布时间；
+- 测试期间冻结同一版本，不用时间先后替代 A/B；
+- 价格、退款措辞、卖点角度等变量随机分组；
+- `utm_content` 必须对应单一素材主轴，后端按支付完成率判断素材去留。
+
+## 7. 配置接口
+
+```js
+window.LUNAWAKE_DEPOSIT_CONFIG = {
+  depositAmount: '$9',
+  campaignState: 'reservation_open',
+  pricingUnlocked: true,
+  shopifyProductUrl: '',
+  retailPrice: '$379',
+  launchAt: '',
+  priceWindows: [],
+  finishes: {},
+  coach: {
+    includedDays: 30,
+    value: '$19.99',
+    availability: 'Available after a valid Kickstarter pledge and campaign success.'
+  },
+  supportUrl: 'mailto:info@lunawake.ai'
+};
+```
+
+`deposit.html` 只是本地视觉与流程预览；生产支付由 Shopify 承载。没有真实 Shopify 商品 URL 时，页面不能进入投放，CTA 必须保持预览状态并明确提示。
+
+## 8. 异常规则
+
+| 场景 | 处理 |
 |---|---|
-| 订金金额 | 固定 $9 USD，通过 Shopify 支付；使用一个订金商品，不按价格档位拆商品。 |
-| 价格档位 | 默认三档：Founding Backer $229、Super Early Bird $269、Early Bird $319。最终数字可配置，并在价格测试结束后确认。 |
-| 价格窗口 | 默认沿用参考图：$229 截止 Aug 24；$269 截止 Sep 7；$319 截止 Sep 21 / Kickstarter launch day。年份、时区、具体关闭时间可调。 |
-| Kickstarter 价格 | 订金用户的优惠直接配置在 Kickstarter Reward 或 agency 管理的众筹入口中；不做外部 $9 抵扣。 |
-| 上线前退款 | 用户联系人工客服后申请；核验 Shopify 订单，通过原支付方式退回 $9；退款后订金资格失效。 |
-| Kickstarter 上线后 | 停止收取新订金；已支付订金不再退款，用户直接使用专属优惠参与 Kickstarter。 |
-| 未完成 pledge | 不享受专属折扣、不获得 coaching，且不产生新的退款流程。 |
-| 取消 pledge | 专属优惠失效；订金不退。 |
-| 众筹失败/取消 | 作为唯一项目异常例外，全额退回 $9。 |
-| Reward 限额 | 页面不展示硬性名额上限；agency 预留可放大的库存 buffer，售罄时自动升级或提供替代方案。 |
-| Coaching | 仅限有效 pledge 且众筹成功的用户；agency 核验完成后下一个工作日为 Day 1，共 30 天，不等待产品发货。 |
-| 用户小组 | 默认通过支付成功邮件发送入组入口；平台和自动化方式待运营确认。 |
-| 人工客服 | 预留客服入口，用于退款、邮箱不一致、重复订金、链接补发、入组和异常核验。 |
+| 上线前申请退款 | 人工核验 Shopify 订单，原路退 `$9`，订金资格失效 |
+| 上线后未 pledge | `$9` 不退，不发 Reward 优惠和 coaching |
+| Kickstarter pledge 取消 | 专属优惠失效，订金不退 |
+| 众筹失败或取消 | 原路全额退 `$9` |
+| 邮箱不一致 / Apple 隐藏邮箱 | 联系客服人工匹配，不能保证自动核验 |
+| 重复支付 | 客服合并记录或按退款规则处理 |
+| Reward 售罄 | agency 执行已确认的升级或替代方案 |
+| 颜色未确定 | 不要求用户选择；支付后再收集偏好 |
 
-## 5. 页面状态
+## 9. 上线验收
 
-### A. 预热投放
+- [ ] 首屏同时显示 `$9`、当前 Reward 价格、退款边界和下一步；
+- [ ] 首屏以当前 Reward 价格为唯一主价格视觉；无 Shopify URL 时 CTA 禁用并显示 `Launch`；
+- [ ] 购买卡显示当前价格窗口动态剩余天数，窗口截止当天显示 `Ends today`；
+- [ ] 桌面端滚动时 Header CTA 持续可见，移动端固定 CTA 持续可见；
+- [ ] 预约流程使用三节点时间轴，清楚区分 Shopify 支付、Kickstarter pledge 和 coaching；
+- [ ] Coach 模块位于流程之后，明确 `30 days included`、`$19.99 value` 与“有效 pledge 且众筹成功后开启”；
+- [ ] Coach 模块交付清楚呈现 `Day 1 plan → Daily reads & actions → Weekly reviews → Day 30 recap`；
+- [ ] Coach 模块只使用 Sunrise 与 Sleep Pattern 两张 App 截图，桌面 / 移动端不变形、不横向溢出；
+- [ ] Coach 模块没有额外支付 CTA，且订金页不出现月度自动续费相关文案；
+- [ ] `deposit_coach_view` 只记录一次，并携带 Coach 配置字段与现有归因字段；
+- [ ] 流程第二步的 launch day 来自 `priceWindows`，页面没有第二套日期来源；
+- [ ] 首屏不存在两段以上重复解释 Shopify / Kickstarter 的长文案；
+- [ ] `$229 / $269 / $319` 与 Kickstarter Reward 一致；
+- [ ] 价格模块使用当前主卡 + 后续价格阶梯，而不是三个同等重量卡片；
+- [ ] 页面不显示 `$300–$400` 类目锚点；
+- [ ] 页面不使用 PSG / 临床 / 诊断 / 治疗承诺；
+- [ ] 页面不要求用户选择颜色，且不透传默认颜色；
+- [ ] 规则、卖点和视觉继承官网系统；
+- [ ] 产品证据视频首屏不请求 MP4，接近视口后才加载；reduced motion 下不自动播放；
+- [ ] 五色图优先加载 WebP，并保留同尺寸 PNG fallback；
+- [ ] 新用户无需先注册 Leads，已注册 Leads 不重复留资；
+- [ ] Shopify URL 配置后 CTA 可用，未配置时不会伪装成功支付；
+- [ ] UTM、价格窗口和素材角度能落到 Shopify 订单属性；
+- [ ] 页脚 Leads 出口带独立 UTM，且不抢首屏 CTA；
+- [ ] 桌面端、移动端无横向溢出；
+- [ ] 键盘焦点、语义结构、按钮状态和 FAQ 正常；
+- [ ] FAQ 区域清晰展示人工客服邮箱，邮箱可点击并可由 `supportUrl` 配置替换；
+- [ ] 控制台无错误，图片正常加载；
+- [ ] CTA 槽位曝光、证据区曝光和视频首次播放事件不会重复记录；
+- [ ] 记录版本号、发布时间和本轮实验变量。
 
-- 页面 1 和页面 2 并行投放；
-- 页面 1 负责 Leads 沉淀；
-- 页面 2 直接承接广告并收取 Shopify $9 订金；
-- 已注册 Leads 通过 EDM / Group 进入页面 2；
-- 两条路径使用独立 UTM / source 标记，便于比较转化。
+## 10. 职责与阻塞项
 
-### B. 订金开放
+### LunaWake / Shopify
 
-- Shopify 订金商品可购买；
-- 页面 2 展示三档价格和时间窗口；
-- 展示上线前可退款、上线后不可退款规则；
-- 支付成功后展示或发送订金用户小组入口；
-- 记录订单邮箱、来源、价格档位和支付时间。
-- 主要考核指标为 `$9` 支付完成率，不以 CTA 点击率作为最终转化指标。
-- UTM 需要细化到 `source / medium / campaign / content / term`，并允许额外记录素材、卖点角度（如 `angle` / `creative`）；价格锚点 A/B 必须能在订单和分析事件中区分。
-
-### C. Kickstarter 已上线
-
-- 关闭新的 $9 订金商品或将商品切换为不可购买；
-- 页面 2 提示已有订金用户检查邮件 / Group；
-- agency 通过专属链接引导用户 pledge；
-- 明确提示上线后订金不可退款。
-
-### D. 众筹结束
-
-- 成功：agency 核验有效 pledge，发送 coaching activation 邮件；
-- 失败或取消：生成 $9 全额退款名单并执行原路退款；
-- coaching 不依赖发货、签收或设备激活。
-
-## 6. 数据与系统要求
-
-### 6.1 页面 1 Leads 数据
-
-- lead email；
-- Survey / 表单完成状态；
-- Group 状态；
-- 来源和 UTM；
-- 进入页面 2 的时间和链接来源。
-
-### 6.2 Shopify 订单至少记录
-
-- Shopify order ID；
-- email；
-- 订金金额（固定 $9）；
-- order created time；
-- 来源和 UTM；
-- 当时命中的价格档位；
-- finish（如 Shopify 商品需要记录）；
-- 退款状态和退款时间；
-- 订金用户小组入组状态；
-- 客服备注或异常状态。
-
-### 6.3 业务配置项
-
-- `campaignState`：preheat / reservation_open / kickstarter_live / campaign_success / campaign_failed；
-- 页面 1 和页面 2 的投放链接及 UTM 规则；
-- `reservationEnabled`；
-- `launchAt`；
-- `priceWindows[]`：名称、价格、开始时间、结束时间、时区、状态；
-- `retailPrice`：当前参考 `$379`；
-- `priceAnchor`：当前参考 `$300–$400`，可按实验开关显示；
-- 每个价格窗口的 `savings`，价格未解锁时不展示具体节省金额；
-- Shopify $9 订金商品 URL；
-- 支付成功页、邮件和用户小组入组规则；
-- Kickstarter Reward / 专属链接发送规则；
-- pledge 核验和 coaching 激活规则。
-- 订金页面事件：`deposit_cta_view`、`deposit_cta_click`、`deposit_cta_blocked`；支付完成事件以 Shopify 订单为准，页面不得伪造支付成功。
-
-### 6.4 不做的功能
-
-- 不把 `deposit.html` 作为生产订金页；
-- 不建立 LunaWake 用户账户系统；
-- 不自建 Kickstarter 专属链接管理系统；
-- 不做 Shopify 与 Kickstarter 的自动金额抵扣；
-- 不做用户自助退款后台；
-- 不把 coaching 绑定到发货或设备激活；
-- 不在页面展示未经确认的最终价格或库存承诺。
-- 不把 PSG 验证说明写成已完成的临床效果、诊断或治疗承诺，除非证据和法务已经确认。
-
-## 7. 职责分工
-
-### LunaWake
-
-- 维护页面 1 的产品介绍和 Leads 流程；
-- 管理页面 2 的 Shopify 订金商品内容和支付配置；
-- 处理人工退款、入组和异常工单；
-- 提供订金用户名单给 agency；
-- 发送 coaching 激活邮件并负责 coaching 交付。
-
-### Shopify
-
-- 承载页面 2 的订金商品详情和 Checkout；
-- 收取并记录 $9 订金；
-- 保存邮箱、订单时间、来源和订单状态；
-- 执行人工原路退款；
-- 提供订单导出和退款状态。
+- 提供真实 `$9` 商品 URL；
+- 配置订单属性 / Cart Attributes / Shopify Flow；
+- 执行人工退款和客服异常处理；
+- 发送支付成功邮件和用户小组入口。
 
 ### Agency / Kickstarter
 
-- 确认三档 Reward 价格、时间窗口和有效期；
-- 配置专属优惠 Reward；
-- 发送、补发专属链接并匹配 pledge；
-- 维护 Reward buffer 和售罄升级方案；
-- 提供 pledge、项目成功、失败或取消状态；
-- 确认 coaching 内容、领取方式和激活名单。
+- 确认三档 Reward 价格、截止时间和时区；
+- 提供专属链接、补发机制和 pledge 核验名单；
+- 配置 Reward buffer、售罄升级方案和 campaign 状态；
+- 确认 coaching 激活名单和交付方式。
 
-### 运营 / Leads 团队
+### 当前阻塞项
 
-- 维护页面 1 的 Survey、Lead 和 Group 流程；
-- 维护 EDM 订金 CTA；
-- 维护支付成功后的订金用户小组；
-- 记录页面 1 → 页面 2 → Shopify 的转化数据。
-- 按 `$9` 支付完成率、后续有效 pledge 率和 coaching 激活率评估素材与卖点，不只看点击率。
-
-## 8. 上线前必须确认
-
-- [ ] 页面 1 和页面 2 的投放链接、广告素材和 UTM 规则；
-- [ ] 页面 1 的 Survey、Lead、Group 流程沿用前测版本；
-- [ ] 前测 Leads 的 EDM / Group 是否直接链接页面 2；
-- [ ] 页面 2 的 Shopify 商品详情、Checkout URL 和 $9 金额；
-- [ ] 三档最终价格与 Kickstarter Reward 一致；
-- [ ] Aug 24、Sep 7、Sep 21 的年份、时区和具体关闭时间；
-- [ ] 价格测试完成时间，以及何时开始直接投放页面 2；
-- [ ] 页面 2 的产品基础信息、价格、退款规则和 FAQ 文案；
-- [ ] `$300–$400` 品类参考锚点和 `$379` 零售价锚点是否允许公开，以及有锚点 / 无锚点 A/B 的实验分流规则；
-- [ ] PSG 验证说明的证据、法务审核和最终可用措辞；
-- [ ] 相同邮箱、Apple 隐藏邮箱和邮箱不一致的处理；
-- [ ] 支付成功邮件的入组链接和用户小组平台；
-- [ ] Reward 数量 buffer、售罄升级或替代方案；
-- [ ] 上线前退款、众筹失败/取消退款的人工流程；
-- [ ] 未 pledge、取消 pledge、重复订金的处理方式；
-- [ ] coaching 内容、激活邮件、领取链接和核验名单；
-- [ ] Terms、FAQ、退款声明和 Kickstarter 风险提示完成审核。
-
-## 9. 验收标准
-
-- 页面 1 和页面 2 可以并行投放，且来源数据可区分；
-- 页面 1 能完成产品介绍、Survey / Lead 注册和前测 Group 承接；
-- 页面 2 是 Shopify 可支付订金页，可直接承接广告冷流量；
-- 已注册 Leads 的 EDM / Group 能进入页面 2，不要求重复留资；
-- EDM / Group / Leads 进入页面 2 后能看到无需重复留资的个性化提示，移动端始终有可见的 `$9` CTA；
-- 页面 2 首屏能理解产品、三档价格、$9 订金和下一步 Kickstarter 流程；
-- 页面首屏能理解“读懂你的夜 / 它替你调节”的核心价值，并看到上线前退款和上线后不退款规则；
-- 价格未解锁时仍显示 `$300–$400` 参考锚点和 `$379` 零售价上下文，但不显示 `$229 / $269 / $319`；
-- 价格解锁后可正确展示三档金额及对应节省金额；
-- Shopify 只收取固定 $9，订单能记录邮箱、来源、档位和时间；
-- UTM 可细分到素材和卖点角度，分析可归因到 `$9` 支付完成率；
-- 支付成功后用户能看到或收到订金用户小组入口；
-- 上线前人工退款成功后，订金资格失效；
-- Kickstarter 上线后无法提交新的订金，已有订金不再退款；
-- 用户必须使用相同邮箱完成 pledge，agency 能补发和匹配专属链接；
-- 未 pledge 或取消 pledge 的用户不获得专属优惠和 coaching；
-- 众筹失败或取消时能执行 $9 全额退款；
-- 众筹成功且 pledge 核验完成后，下一个工作日开始 30 天 coaching；
-- Reward 售罄时存在已确认的升级或替代方案；
-- 桌面端、移动端、键盘操作、焦点状态和基础无障碍检查通过。
+- Shopify 商品 URL 尚未配置；
+- Shopify 订单属性 / Flow 尚未验证；
+- Kickstarter 专属链接和 Reward 配置尚未接入；
+- 颜色方案尚未最终确定，因此本页面只展示五色概念阵列，不采集支付前 SKU 选择；偏好在支付后确认。

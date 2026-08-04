@@ -57,6 +57,12 @@ Before launch, map these values to Shopify theme settings or metafields:
 - three Reward prices and their dates after pricing tests are complete;
 - post-purchase email and deposit-user-group invite configuration.
 
+For a static deployment, define `window.LUNAWAKE_DEPOSIT_CONFIG` before
+`js/deposit.js` to override the same fields without editing the page structure.
+At minimum, set `shopifyProductUrl` only after the $9 product is live and
+checkout-tested. Keep `pricingUnlocked: false` until the pricing test is
+approved.
+
 The preview intentionally does not create a fake checkout, cross-platform
 Kickstarter credit, or local user account. The $9 deposit is separate from the
 Kickstarter Reward price; the private Reward offer is managed on Kickstarter.

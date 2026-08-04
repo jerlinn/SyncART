@@ -1,9 +1,9 @@
 (() => {
     'use strict';
 
-    // Shopify-ready configuration. Keep this as the single source of truth
-    // for the local preview and map the same fields to Shopify metafields.
-    const config = {
+    // Shopify-ready defaults. A production host can override these fields by
+    // defining window.LUNAWAKE_DEPOSIT_CONFIG before this script loads.
+    const defaults = {
         depositAmount: '$9',
         campaignState: 'reservation_open',
         pricingUnlocked: false,
@@ -22,6 +22,14 @@
             { id: 'super-early', amount: '$269', savings: '$110', displayDeadline: 'Sep 7', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'upcoming', label: 'Next pricing window' },
             { id: 'early', amount: '$319', savings: '$60', displayDeadline: 'Sep 21 · launch day', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'upcoming', label: 'Launch-day pricing' }
         ]
+    };
+
+    const runtimeConfig = window.LUNAWAKE_DEPOSIT_CONFIG || {};
+    const config = {
+        ...defaults,
+        ...runtimeConfig,
+        priceWindows: Array.isArray(runtimeConfig.priceWindows) ? runtimeConfig.priceWindows : defaults.priceWindows,
+        finishes: { ...defaults.finishes, ...(runtimeConfig.finishes || {}) }
     };
 
     const reserveButtons = Array.from(document.querySelectorAll('[data-reserve-button]'));

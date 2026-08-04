@@ -21,6 +21,10 @@
 - `styles.css`
 - 订金页依赖的图片资源
 
+生产环境可以在加载 `js/deposit.js` 前注入 `window.LUNAWAKE_DEPOSIT_CONFIG`，
+覆盖 Shopify 商品链接、campaign state、价格解锁状态、价格窗口和日期；不需要
+修改页面结构。未注入真实商品链接时，CTA 必须继续保持禁用。
+
 发布后线上页面应能检查到：
 
 - `Lock your launch price` 规则优先首屏；
@@ -78,4 +82,3 @@
 - 用户不知道上线后不 pledge 的 $9 不退款；
 - 线上页面仍展示旧规则或旧健康/临床表述；
 - 支付成功邮件、专属链接或客服路径无法完成闭环。
-

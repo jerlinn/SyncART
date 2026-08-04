@@ -13,14 +13,14 @@
         shopifyProductUrl: '',
         supportUrl: 'mailto:info@lunawake.ai',
         finishes: {
-            amber: { name: 'Amber', src: 'images/luna-latest/finish-amber-1440.webp' },
             stone: { name: 'Stone', src: 'images/luna-latest/finish-stone-1440.webp' },
-            charcoal: { name: 'Charcoal', src: 'images/luna-latest/finish-charcoal-1440.webp' }
+            charcoal: { name: 'Charcoal', src: 'images/luna-latest/finish-charcoal-1440.webp' },
+            amber: { name: 'Amber', src: 'images/luna-latest/finish-amber-1440.webp' }
         },
         priceWindows: [
-            { id: 'founding', amount: '$229', savings: '$150', displayDeadline: 'Aug 24', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'current', label: 'Best launch pricing' },
-            { id: 'super-early', amount: '$269', savings: '$110', displayDeadline: 'Sep 7', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'upcoming', label: 'Next pricing window' },
-            { id: 'early', amount: '$319', savings: '$60', displayDeadline: 'Sep 21 · launch day', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'upcoming', label: 'Launch-day pricing' }
+            { id: 'founding', amount: '$229', savings: '$150', displayDeadline: 'Aug 24', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Founding Backer status', label: 'Best launch pricing' },
+            { id: 'super-early', amount: '$269', savings: '$110', displayDeadline: 'Sep 7', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'upcoming', ctaLabel: 'Super Early Bird status', label: 'Next pricing window' },
+            { id: 'early', amount: '$319', savings: '$60', displayDeadline: 'Sep 21 · launch day', startAt: '', endAt: '', timezone: 'America/Los_Angeles', status: 'upcoming', ctaLabel: 'Early Bird status', label: 'Launch-day pricing' }
         ]
     };
 
@@ -45,10 +45,22 @@
     const marketingContext = Object.fromEntries(Array.from(query.entries()).filter(([key]) => key === 'source' || key.startsWith('utm_') || key === 'angle' || key === 'creative'));
     const audienceSignals = [query.get('source'), query.get('utm_source'), query.get('utm_medium')].filter(Boolean).join(' ').toLowerCase();
     const isLeadTraffic = /edm|email|group|lead|crm|community/.test(audienceSignals);
-    const state = { submitting: false, finish: 'amber' };
+    const state = { submitting: false, finish: 'stone' };
 
     const isCheckoutReady = () => Boolean(config.shopifyProductUrl) && config.campaignState === 'reservation_open';
     const priceText = (windowConfig) => config.pricingUnlocked ? windowConfig.amount : 'Price unlocking soon';
+    const windowStatus = (windowConfig) => {
+        const now = Date.now();
+        const start = windowConfig.startAt ? Date.parse(windowConfig.startAt) : NaN;
+        const end = windowConfig.endAt ? Date.parse(windowConfig.endAt) : NaN;
+        if (!Number.isNaN(start) && now < start) return 'upcoming';
+        if (!Number.isNaN(end) && now >= end) return 'ended';
+        return windowConfig.status;
+    };
+    const currentWindow = () => config.priceWindows.find((item) => windowStatus(item) === 'current') || config.priceWindows.find((item) => windowStatus(item) !== 'ended') || config.priceWindows[0];
+    const ctaLabel = (slot) => slot === 'mobile'
+        ? `Lock in ${config.depositAmount}`
+        : `Lock in ${currentWindow()?.ctaLabel || 'launch-price eligibility'} — ${config.depositAmount}`;
 
     const track = (eventName, extra = {}) => {
         const payload = {
@@ -73,6 +85,7 @@
         if (!url) return url;
         const target = new URL(url, window.location.href);
         Object.entries(marketingContext).forEach(([key, value]) => target.searchParams.set(key, value));
+        target.searchParams.set('finish', state.finish);
         return target.toString();
     };
 
@@ -90,7 +103,7 @@
                     ? 'Reservations are closed'
                     : unavailable
                         ? 'Reservation window has ended'
-                        : `Reserve for ${config.depositAmount} <span aria-hidden="true">→</span>`;
+                        : `${ctaLabel(button.dataset.ctaSlot)} <span aria-hidden="true">→</span>`;
         });
 
         if (!checkoutStatus) return;
@@ -114,9 +127,10 @@
             if (amount) amount.textContent = priceText(windowConfig);
             if (savings) savings.textContent = config.pricingUnlocked ? `Save ${windowConfig.savings} vs retail` : 'Savings shown when price unlocks';
             if (deadline && windowConfig.displayDeadline) deadline.textContent = windowConfig.displayDeadline;
-            card.classList.toggle('is-current', windowConfig.status === 'current');
-            card.classList.toggle('is-upcoming', windowConfig.status === 'upcoming');
-            card.classList.toggle('is-ended', windowConfig.status === 'ended');
+            const status = windowStatus(windowConfig);
+            card.classList.toggle('is-current', status === 'current');
+            card.classList.toggle('is-upcoming', status === 'upcoming');
+            card.classList.toggle('is-ended', status === 'ended');
         });
         document.querySelectorAll('[data-retail-price]').forEach((element) => {
             element.textContent = config.retailPrice;
@@ -129,8 +143,8 @@
     };
 
     const updateFinish = (finishId = state.finish) => {
-        const finish = config.finishes[finishId] || config.finishes.amber;
-        state.finish = config.finishes[finishId] ? finishId : 'amber';
+        const finish = config.finishes[finishId] || config.finishes.stone;
+        state.finish = config.finishes[finishId] ? finishId : 'stone';
         finishButtons.forEach((button) => {
             const selected = button.dataset.depositFinish === state.finish;
             button.classList.toggle('is-active', selected);

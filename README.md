@@ -41,15 +41,29 @@ issue server-side redirects to external hosts. It is `noindex` and excluded from
 - Support ticket system
 - Region selector functionality
 
-## Reservation page handoff
+## Shopify deposit page handoff
 
-The reservation page lives at `deposit.html` and uses `js/deposit.js` as the
-single offer data source for finish selection, deposit credit, price status,
-refund policy, availability, and Shopify Checkout redirects. Before launch,
-add the real Shopify-hosted Checkout URL for each finish. Empty or unavailable
-values intentionally keep the reservation button disabled so the static site
-cannot send customers to an unconfigured payment destination.
+`deposit.html` is a local Shopify-ready preview, not the production deposit
+page. Production payment is handled by a standalone Shopify product page. The
+preview uses `js/deposit.js` as its configuration source for campaign state,
+locked/unlocked Reward pricing, the fixed $9 deposit, Shopify product URL,
+support URL, and price-window status.
 
-The current offer charges $10 and promises $50 in Launch Credit. Shopify must
-issue or associate that $50 credit with the reservation customer; the static
-page only communicates the offer and cannot provision account credit itself.
+Before launch, map these values to Shopify theme settings or metafields:
+
+- Shopify product URL for the $9 deposit product;
+- campaign state (`reservation_open`, `kickstarter_live`, `campaign_success`,
+  or `campaign_failed`);
+- three Reward prices and their dates after pricing tests are complete;
+- post-purchase email and deposit-user-group invite configuration.
+
+The preview intentionally does not create a fake checkout, cross-platform
+Kickstarter credit, or local user account. The $9 deposit is separate from the
+Kickstarter Reward price; the private Reward offer is managed on Kickstarter.
+
+For the 2,000-lead rollout sequence, UTM naming, cohort split, KPI definitions,
+and the Shopify launch gate, see
+[`deliverables/leads-to-deposit-launch-plan.md`](deliverables/leads-to-deposit-launch-plan.md).
+
+Before sending traffic, run the production checks in
+[`deliverables/deposit-release-gate.md`](deliverables/deposit-release-gate.md).

@@ -3874,6 +3874,197 @@ h3 {
     .deposit-credit-flow__arrow-mobile { display: block; }
 }
 
+/* Shopify-ready deposit preview: direct conversion page with locked launch pricing. */
+.lw2-deposit-page {
+    --shopify-ink: #17202d;
+    --shopify-muted: #667080;
+    --shopify-line: #dfe3e6;
+    --shopify-paper: #f5f1ea;
+    --shopify-panel: #fffdfa;
+    --shopify-accent: #d96f4f;
+    --shopify-accent-dark: #b95337;
+    --shopify-green: #5d9d7e;
+    background: var(--shopify-paper);
+    color: var(--shopify-ink);
+}
+.shopify-deposit-header { position: relative; z-index: 2; border-bottom: 1px solid rgba(23, 32, 45, .08); background: rgba(255, 253, 250, .72); }
+.shopify-deposit-header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
+.shopify-deposit-logo { display: inline-flex; align-items: center; }
+.shopify-deposit-logo img { width: 138px; height: auto; }
+.shopify-deposit-back, .shopify-deposit-support { color: var(--shopify-ink); font-size: 13px; font-weight: 600; }
+.shopify-deposit-back span, .shopify-deposit-support span { color: var(--shopify-accent); font-size: 17px; }
+.shopify-deposit-hero { overflow: hidden; padding: clamp(52px, 6vw, 82px) 0 clamp(70px, 9vw, 126px); }
+.shopify-deposit-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 500px); align-items: center; gap: clamp(52px, 8vw, 126px); }
+.shopify-deposit-hero__copy { max-width: 680px; }
+.shopify-deposit-eyebrow { margin: 0; color: var(--shopify-accent-dark); font-size: 12px; font-weight: 700; letter-spacing: .16em; line-height: 1.3; text-transform: uppercase; }
+.shopify-deposit-hero h1, .shopify-deposit-section-heading h2, .shopify-deposit-final-cta h2 { margin: 20px 0 0; color: var(--shopify-ink); font-family: var(--font-serif); font-weight: 400; letter-spacing: -.055em; line-height: .92; }
+.shopify-deposit-hero h1 { max-width: 720px; font-size: clamp(58px, 7.2vw, 108px); }
+.shopify-deposit-hero h1 em, .shopify-deposit-section-heading h2 em, .shopify-deposit-final-cta h2 em { color: var(--shopify-accent); font-style: italic; }
+.shopify-deposit-audience { width: fit-content; max-width: 560px; margin-top: 19px; padding: 9px 12px; border: 1px solid rgba(217, 111, 79, .28); background: rgba(217, 111, 79, .06); color: var(--shopify-accent-dark); font-size: 12px; font-weight: 600; line-height: 1.45; }
+.shopify-deposit-audience[hidden] { display: none; }
+.shopify-deposit-lede { max-width: 560px; margin: 29px 0 0; color: var(--shopify-muted); font-size: clamp(17px, 1.65vw, 22px); line-height: 1.5; }
+.shopify-deposit-proof { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 34px; }
+.shopify-deposit-proof span { color: var(--shopify-muted); font-size: 13px; }
+.shopify-deposit-proof b { color: var(--shopify-ink); font-weight: 700; }
+.shopify-deposit-hero-policy { max-width: 550px; margin-top: 25px; padding: 14px 16px; border-left: 3px solid var(--shopify-accent); background: rgba(217, 111, 79, .08); color: var(--shopify-ink); font-size: 13px; line-height: 1.55; }
+.shopify-deposit-hero-policy strong { color: var(--shopify-accent-dark); }
+.shopify-deposit-footnote { max-width: 510px; margin-top: 20px; color: #88909b; font-size: 12px; line-height: 1.5; }
+.shopify-deposit-buy-card { overflow: hidden; border: 1px solid rgba(23, 32, 45, .1); background: var(--shopify-panel); box-shadow: 0 25px 70px rgba(33, 39, 47, .13); }
+.shopify-deposit-buy-card__image { position: relative; background: #d9ddd9; }
+.shopify-deposit-buy-card__image img { display: block; width: 100%; aspect-ratio: 1.6; object-fit: cover; }
+.shopify-deposit-buy-card__badge { position: absolute; top: 16px; left: 16px; padding: 8px 12px; background: var(--shopify-accent); color: #fffdfa; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.shopify-deposit-buy-card__body { padding: 26px 28px 28px; }
+.shopify-deposit-card-kicker { margin: 0; color: var(--shopify-accent-dark); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.shopify-deposit-buy-card h2 { margin-top: 9px; font-size: 23px; letter-spacing: -.02em; }
+.shopify-deposit-price { display: flex; align-items: baseline; gap: 10px; margin-top: 17px; }
+.shopify-deposit-price span { color: var(--shopify-ink); font-size: 58px; font-weight: 700; letter-spacing: -.08em; line-height: .9; }
+.shopify-deposit-price small { color: var(--shopify-muted); font-size: 11px; }
+.shopify-deposit-price-note { margin-top: 7px; color: #89919a; font-size: 11px; line-height: 1.45; }
+.shopify-deposit-buy-card__copy { margin-top: 17px; color: var(--shopify-muted); font-size: 14px; line-height: 1.55; }
+.shopify-deposit-includes { display: grid; gap: 9px; margin: 17px 0 0; padding: 15px 0 0; border-top: 1px solid var(--shopify-line); list-style: none; }
+.shopify-deposit-includes li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: baseline; }
+.shopify-deposit-includes strong { color: var(--shopify-ink); font-size: 12px; }
+.shopify-deposit-includes span { color: var(--shopify-muted); font-size: 11px; text-align: right; }
+.shopify-deposit-buy-card__policy { margin-top: 15px; padding: 12px 13px; background: #f6eee9; color: var(--shopify-ink); font-size: 12px; line-height: 1.5; }
+.shopify-deposit-buy-card__policy strong { color: var(--shopify-accent-dark); }
+.shopify-deposit-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 56px; margin-top: 20px; border: 0; border-radius: 0; background: var(--shopify-accent); color: #fffdfa; cursor: pointer; font: inherit; font-size: 14px; font-weight: 700; transition: background .2s ease, transform .2s ease; }
+.shopify-deposit-button:hover:not(:disabled), .shopify-deposit-button:focus-visible:not(:disabled) { background: var(--shopify-accent-dark); transform: translateY(-1px); }
+.shopify-deposit-button:focus-visible { outline: 2px solid var(--shopify-accent); outline-offset: 4px; }
+.shopify-deposit-button:disabled { background: #b9bec3; color: #fff; cursor: not-allowed; }
+.shopify-deposit-status { min-height: 18px; margin: 10px 0 0; color: #89919a; font-size: 11px; line-height: 1.45; }
+.shopify-deposit-status.is-ready { color: var(--shopify-green); }
+.shopify-deposit-refund-note { margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--shopify-line); color: var(--shopify-muted); font-size: 12px; line-height: 1.5; }
+.shopify-deposit-refund-note strong { color: var(--shopify-ink); }
+.shopify-deposit-proof-section, .shopify-deposit-pricing, .shopify-deposit-rules, .shopify-deposit-faq { padding: clamp(72px, 9vw, 125px) 0; }
+.shopify-deposit-proof-section { background: #e9eeeb; }
+.shopify-deposit-section-heading { max-width: 610px; }
+.shopify-deposit-section-heading h2 { font-size: clamp(45px, 5.4vw, 77px); }
+.shopify-deposit-section-heading > p:last-child { max-width: 580px; margin-top: 22px; color: var(--shopify-muted); font-size: 17px; line-height: 1.55; }
+.shopify-deposit-proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 56px; }
+.shopify-deposit-proof-grid article { min-height: 226px; padding: 27px; border-top: 1px solid rgba(23, 32, 45, .2); }
+.shopify-deposit-proof-grid article > span { color: var(--shopify-accent-dark); font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+.shopify-deposit-proof-grid h3 { margin-top: 46px; font-size: 23px; letter-spacing: -.025em; }
+.shopify-deposit-proof-grid p { margin-top: 12px; color: var(--shopify-muted); font-size: 14px; line-height: 1.55; }
+.shopify-deposit-validation-note { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 26px; margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(23, 32, 45, .2); }
+.shopify-deposit-validation-note > span { color: var(--shopify-accent-dark); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.shopify-deposit-validation-note h3 { font-size: 18px; }
+.shopify-deposit-validation-note p { max-width: 740px; margin-top: 8px; color: var(--shopify-muted); font-size: 13px; line-height: 1.6; }
+.shopify-deposit-pricing { background: var(--shopify-panel); }
+.shopify-deposit-section-heading--wide { max-width: 760px; }
+.shopify-deposit-price-context { display: flex; align-items: baseline; gap: 16px; margin-top: 35px; padding: 17px 19px; border-left: 3px solid var(--shopify-accent); background: #f6eee9; }
+.shopify-deposit-price-context > span { color: var(--shopify-accent-dark); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.shopify-deposit-price-context strong { color: var(--shopify-ink); font-size: 18px; }
+.shopify-deposit-price-context p { margin-left: auto; color: var(--shopify-muted); font-size: 12px; }
+.shopify-deposit-price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+.shopify-deposit-price-card { position: relative; min-height: 246px; padding: 29px; border: 1px solid var(--shopify-line); background: #fff; }
+.shopify-deposit-price-card.is-current { border-color: var(--shopify-accent); box-shadow: inset 0 4px 0 var(--shopify-accent); }
+.shopify-deposit-price-card__tag { position: absolute; top: -13px; left: 21px; padding: 5px 10px; background: var(--shopify-accent); color: #fffdfa; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.shopify-deposit-price-card p { color: var(--shopify-ink); font-size: 18px; font-weight: 700; }
+.shopify-deposit-price-card strong { display: block; min-height: 50px; margin-top: 27px; color: var(--shopify-ink); font-size: clamp(26px, 3vw, 42px); font-weight: 700; letter-spacing: -.06em; line-height: 1; }
+.shopify-deposit-price-card span:not(.shopify-deposit-price-card__tag) { display: block; margin-top: 25px; color: var(--shopify-muted); font-size: 14px; }
+.shopify-deposit-price-card span b { color: var(--shopify-ink); }
+.shopify-deposit-price-card small { display: block; margin-top: 21px; color: var(--shopify-green); font-size: 13px; font-weight: 600; }
+.shopify-deposit-price-card.is-upcoming small { color: var(--shopify-muted); }
+.shopify-deposit-retail-note { margin-top: 24px; color: var(--shopify-muted); font-size: 14px; }
+.shopify-deposit-retail-note strong { color: var(--shopify-ink); text-decoration: line-through; text-decoration-thickness: 1px; }
+.shopify-deposit-pricing-note { margin-top: 21px; color: var(--shopify-muted); font-size: 12px; }
+.shopify-deposit-pricing-note span { margin-right: 7px; color: var(--shopify-accent); }
+.shopify-deposit-steps { padding: clamp(72px, 9vw, 115px) 0 0; background: #f0f3f1; }
+.shopify-deposit-step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; margin-top: 55px; padding: 0; list-style: none; }
+.shopify-deposit-step-grid li { display: grid; grid-template-columns: 38px 1fr; gap: 18px; min-height: 212px; padding: 27px; border: 1px solid rgba(23, 32, 45, .12); background: var(--shopify-panel); }
+.shopify-deposit-step-grid li > span { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--shopify-accent); color: #fffdfa; font-size: 13px; font-weight: 700; }
+.shopify-deposit-step-grid h3 { font-size: 20px; letter-spacing: -.02em; }
+.shopify-deposit-step-grid small { display: block; margin-bottom: 10px; color: var(--shopify-accent-dark); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.shopify-deposit-step-grid p { margin-top: 12px; color: var(--shopify-muted); font-size: 14px; line-height: 1.55; }
+.shopify-deposit-money-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 25px; }
+.shopify-deposit-money-grid article { display: grid; gap: 7px; padding: 18px; border: 1px solid rgba(23, 32, 45, .12); background: rgba(255, 253, 250, .6); }
+.shopify-deposit-money-grid strong { color: var(--shopify-ink); font-size: 13px; }
+.shopify-deposit-money-grid span { color: var(--shopify-muted); font-size: 12px; line-height: 1.45; }
+.shopify-deposit-math { display: flex; align-items: center; justify-content: center; gap: clamp(17px, 4vw, 60px); margin-top: 46px; padding: 26px 18px; border: 1px solid rgba(23, 32, 45, .12); background: #e2e8e4; text-align: center; }
+.shopify-deposit-math strong { font-size: 16px; }
+.shopify-deposit-math span { color: var(--shopify-accent); font-size: 26px; }
+.shopify-deposit-rules { background: var(--shopify-panel); }
+.shopify-deposit-rules__grid, .shopify-deposit-faq__grid { display: grid; grid-template-columns: minmax(260px, .7fr) minmax(0, 1fr); gap: clamp(52px, 10vw, 150px); }
+.shopify-deposit-rule-list { border-top: 1px solid var(--shopify-line); }
+.shopify-deposit-rule-list article { display: grid; grid-template-columns: 125px 1fr; gap: 24px; padding: 23px 0; border-bottom: 1px solid var(--shopify-line); }
+.shopify-deposit-rule-list span { color: var(--shopify-accent-dark); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.shopify-deposit-rule-list p { color: var(--shopify-muted); font-size: 14px; line-height: 1.6; }
+.shopify-deposit-faq { background: #e9eeeb; }
+.shopify-deposit-support { display: inline-block; margin-top: 38px; color: var(--shopify-accent-dark); }
+.shopify-deposit-faq-list { border-top: 1px solid rgba(23, 32, 45, .2); }
+.shopify-deposit-faq-list details { border-bottom: 1px solid rgba(23, 32, 45, .2); }
+.shopify-deposit-faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; color: var(--shopify-ink); cursor: pointer; font-size: 16px; font-weight: 600; list-style: none; }
+.shopify-deposit-faq-list summary::-webkit-details-marker { display: none; }
+.shopify-deposit-faq-list summary::after { color: var(--shopify-accent); content: "+"; font-size: 22px; font-weight: 400; }
+.shopify-deposit-faq-list details[open] summary::after { content: "−"; }
+.shopify-deposit-faq-list details p { max-width: 650px; padding: 0 35px 22px 0; color: var(--shopify-muted); font-size: 14px; line-height: 1.6; }
+.shopify-deposit-final-cta { padding: clamp(80px, 11vw, 145px) 0; background: var(--shopify-ink); color: #fffdfa; text-align: center; }
+.shopify-deposit-final-cta .shopify-deposit-eyebrow { color: #d9a18e; }
+.shopify-deposit-final-cta h2 { color: #fffdfa; font-size: clamp(50px, 6.5vw, 88px); }
+.shopify-deposit-final-cta h2 em { color: #e78b6c; }
+.shopify-deposit-final-cta__note { max-width: 480px; margin: 22px auto 0; color: rgba(255, 253, 250, .7); font-size: 13px; line-height: 1.55; }
+.shopify-deposit-final-cta .shopify-deposit-button { max-width: 310px; margin-inline: auto; }
+.shopify-deposit-button--light { background: #fffdfa; color: var(--shopify-ink); }
+.shopify-deposit-button--light:hover:not(:disabled), .shopify-deposit-button--light:focus-visible:not(:disabled) { background: #f6ddcf; color: var(--shopify-ink); }
+.shopify-deposit-footer { padding: 25px 0 30px; background: #111922; color: rgba(255, 253, 250, .55); font-size: 12px; }
+.shopify-deposit-footer__inner > p { max-width: 700px; line-height: 1.5; }
+.shopify-deposit-footer__inner > div { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 24px; }
+.shopify-deposit-footer nav { display: flex; gap: 18px; }
+.shopify-deposit-footer a { color: rgba(255, 253, 250, .72); }
+.shopify-deposit-footer a:hover { color: #fffdfa; }
+.shopify-deposit-secondary-cta { display: inline-block; margin-top: 22px; color: rgba(255, 253, 250, .7); font-size: 13px; }
+.shopify-deposit-secondary-cta span { color: #e78b6c; font-size: 16px; }
+.shopify-deposit-secondary-cta:hover { color: #fffdfa; }
+.shopify-deposit-mobile-cta { display: none; }
+@media (max-width: 900px) {
+    .lw2-deposit-page { padding-bottom: 82px; }
+    .shopify-deposit-hero__grid { grid-template-columns: 1fr; gap: 52px; }
+    .shopify-deposit-buy-card { max-width: 600px; }
+    .shopify-deposit-proof-grid, .shopify-deposit-price-grid, .shopify-deposit-step-grid { grid-template-columns: 1fr; }
+    .shopify-deposit-proof-grid { gap: 0; }
+    .shopify-deposit-proof-grid article { min-height: 0; padding: 24px 0; }
+    .shopify-deposit-proof-grid h3 { margin-top: 20px; }
+    .shopify-deposit-price-card { min-height: 0; }
+    .shopify-deposit-step-grid li { min-height: 0; }
+    .shopify-deposit-money-grid { grid-template-columns: 1fr; }
+    .shopify-deposit-validation-note { grid-template-columns: 1fr; gap: 10px; }
+    .shopify-deposit-rules__grid, .shopify-deposit-faq__grid { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 560px) {
+    .shopify-deposit-header__inner { min-height: 64px; }
+    .shopify-deposit-logo img { width: 118px; }
+    .shopify-deposit-back { font-size: 12px; }
+    .shopify-deposit-hero { padding-top: 49px; }
+    .shopify-deposit-hero h1 { font-size: 56px; }
+    .shopify-deposit-lede { font-size: 16px; }
+    .shopify-deposit-proof { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .shopify-deposit-hero-policy { margin-top: 22px; }
+    .shopify-deposit-buy-card__body { padding: 22px 20px 24px; }
+    .shopify-deposit-section-heading h2 { font-size: 47px; }
+    .shopify-deposit-proof-section, .shopify-deposit-pricing, .shopify-deposit-rules, .shopify-deposit-faq { padding: 72px 0; }
+    .shopify-deposit-price-grid, .shopify-deposit-step-grid { margin-top: 42px; }
+    .shopify-deposit-price-context { align-items: flex-start; flex-direction: column; gap: 7px; }
+    .shopify-deposit-price-context p { margin-left: 0; }
+    .shopify-deposit-price-card { padding: 24px; }
+    .shopify-deposit-includes li { grid-template-columns: 1fr; gap: 3px; }
+    .shopify-deposit-includes span { text-align: left; }
+    .shopify-deposit-math { flex-direction: column; gap: 8px; }
+    .shopify-deposit-math span { transform: rotate(90deg); }
+    .shopify-deposit-rule-list article { grid-template-columns: 1fr; gap: 10px; }
+    .shopify-deposit-faq-list summary { font-size: 15px; }
+    .shopify-deposit-footer__inner > div { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 900px) {
+    .shopify-deposit-mobile-cta { position: fixed; z-index: 10; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px max(16px, env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(23, 32, 45, .12); background: rgba(255, 253, 250, .96); box-shadow: 0 -10px 30px rgba(23, 32, 45, .1); backdrop-filter: blur(14px); }
+    .shopify-deposit-mobile-cta > div { display: grid; gap: 2px; min-width: 0; }
+    .shopify-deposit-mobile-cta strong { color: var(--shopify-ink); font-size: 20px; line-height: 1; }
+    .shopify-deposit-mobile-cta span { color: var(--shopify-muted); font-size: 11px; white-space: nowrap; }
+    .shopify-deposit-mobile-cta .shopify-deposit-button { width: auto; min-width: 155px; min-height: 46px; margin: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .shopify-deposit-button { transition: none; }
+}
+
 /* Final header system: the full-width header owns the material layer; the
    inner nav only owns stable content geometry. */
 .lw2-site .lw2-header {
@@ -3969,4 +4160,125 @@ h3 {
 @media (max-width: 560px) {
     .lw2-app-pattern-media figcaption { align-items: flex-start; }
     .lw2-app-pattern-media figcaption::after { margin-top: 1px; }
+}
+
+/* Conversion-path refinements: keep the editorial surface, but make the
+   primary explanation shorter and the supporting technical layer optional. */
+.lw2-real-life-card figcaption small {
+    max-width: 250px;
+    color: rgba(255, 253, 248, .72);
+    font-size: 12px;
+    line-height: 1.4;
+}
+.lw2-intro-grid > div > .lw2-inline-link { margin-top: 24px; }
+.lw2-radar-details {
+    margin-top: 48px;
+    border-top: 1px solid rgba(55, 49, 43, .18);
+    border-bottom: 1px solid rgba(55, 49, 43, .18);
+}
+.lw2-radar-details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    color: var(--lw2-ink);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .01em;
+    list-style: none;
+}
+.lw2-radar-details > summary::-webkit-details-marker { display: none; }
+.lw2-radar-details > summary span {
+    color: var(--lw2-blue);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1;
+}
+.lw2-radar-details[open] > summary span { font-size: 22px; }
+.lw2-radar-details > .lw2-room-demo { margin-top: 22px; }
+.lw2-radar-details > .lw2-radar-mechanism { margin-top: 42px; }
+.lw2-lab-credibility {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 253, 248, .18);
+    color: rgba(255, 253, 248, .74) !important;
+    font-size: 12px !important;
+}
+
+/* Optional finish choice for the Shopify deposit preview. It is deliberately
+   a visual preference, not a required payment field or Shopify variant. */
+.shopify-deposit-finish-picker {
+    min-width: 0;
+    margin: 23px 0 0;
+    padding: 18px 0 0;
+    border: 0;
+    border-top: 1px solid var(--shopify-line);
+}
+.shopify-deposit-finish-picker legend {
+    padding: 0;
+    color: var(--shopify-ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+.shopify-deposit-finish-picker legend span {
+    margin-left: 7px;
+    color: var(--shopify-muted);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.shopify-deposit-finish-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+.shopify-deposit-finish-options button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    min-height: 38px;
+    padding: 6px 8px;
+    border: 1px solid var(--shopify-line);
+    border-radius: 0;
+    background: transparent;
+    color: var(--shopify-muted);
+    cursor: pointer;
+    font: inherit;
+    font-size: 11px;
+    text-align: left;
+}
+.shopify-deposit-finish-options button:hover,
+.shopify-deposit-finish-options button:focus-visible,
+.shopify-deposit-finish-options button.is-active {
+    border-color: var(--shopify-accent);
+    color: var(--shopify-ink);
+}
+.shopify-deposit-finish-options button.is-active { background: #fff8f3; }
+.shopify-deposit-finish-options button:focus-visible {
+    outline: 2px solid var(--shopify-accent);
+    outline-offset: 3px;
+}
+.shopify-deposit-finish-swatch {
+    flex: 0 0 auto;
+    width: 17px;
+    height: 17px;
+    border: 1px solid rgba(23, 32, 45, .18);
+    border-radius: 50%;
+}
+.shopify-deposit-finish-swatch--amber { background: #b9673b; }
+.shopify-deposit-finish-swatch--stone { background: #a9aaa6; }
+.shopify-deposit-finish-swatch--charcoal { background: #242321; }
+.shopify-deposit-finish-picker > p { margin-top: 12px; color: var(--shopify-muted); font-size: 11px; }
+.shopify-deposit-finish-picker > p strong { color: var(--shopify-ink); font-weight: 700; }
+.shopify-deposit-finish-picker > small { display: block; margin-top: 5px; color: #89919a; font-size: 11px; line-height: 1.45; }
+
+@media (max-width: 560px) {
+    .lw2-real-life-card figcaption small { max-width: 210px; font-size: 11px; }
+    .lw2-radar-details { margin-top: 32px; }
+    .shopify-deposit-finish-options { gap: 6px; }
+    .shopify-deposit-finish-options button { padding-inline: 6px; font-size: 10px; }
 }

@@ -13,17 +13,29 @@
     <meta property="og:title" content="Reserve LunaWake | Kickstarter launch offer">
     <meta property="og:description" content="Place a $9 Shopify deposit to receive LunaWake's private Kickstarter launch offer.">
     <meta property="og:url" content="https://lunawake.ai/deposit.html">
-    <meta property="og:image" content="https://lunawake.ai/images/luna-latest/finish-stone-1440.webp">
+    <meta property="og:image" content="https://lunawake.ai/images/luna-latest/finishes-all.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preload" as="image" href="images/luna-latest/finish-stone-1440.webp" fetchpriority="high">
     <style>img,video{max-width:100%;height:auto}picture{display:block}</style>
-    <link rel="stylesheet" href="styles.css?v=2026-08-03e">
+    <link rel="stylesheet" href="styles.css?v=2026-08-04h">
 </head>
 <body class="lw2-site lw2-deposit-page">
     <header class="shopify-deposit-header">
         <div class="lw2-shell shopify-deposit-header__inner">
             <a class="shopify-deposit-logo" href="https://prelaunch.lunawake.ai/" aria-label="Visit LunaWake launch list"><img src="images/combinelogo.png" width="492" height="71" alt="LunaWake"></a>
-            <a class="shopify-deposit-back" href="mailto:info@lunawake.ai">Need help? Contact support <span aria-hidden="true">↗</span></a>
+            <div class="shopify-deposit-header__actions">
+                <nav class="shopify-deposit-nav" aria-label="Page sections">
+                    <a href="https://lunawake.ai/#how-it-works">How LunaWake works</a>
+                    <a href="#how-reservation-works">Your reservation</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+                <a class="shopify-deposit-back" href="mailto:info@lunawake.ai">Support <span aria-hidden="true">↗</span></a>
+                <div class="shopify-deposit-header__cta-wrap">
+                    <button class="shopify-deposit-header__cta" type="button" data-header-reserve-button data-reserve-button data-cta-slot="header" aria-describedby="checkout-status header-cta-note">Reserve $9 <span aria-hidden="true">→</span></button>
+                    <a class="shopify-deposit-header__waitlist" data-header-preview-link href="https://prelaunch.lunawake.ai/">Join the launch list <span aria-hidden="true">→</span></a>
+                    <span class="shopify-deposit-header__cta-note" id="header-cta-note">Access the current <span data-header-reward>$229</span> Kickstarter price</span>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -31,110 +43,90 @@
         <section class="shopify-deposit-hero" aria-labelledby="deposit-heading">
             <div class="lw2-shell shopify-deposit-hero__grid">
                 <div class="shopify-deposit-hero__copy">
-                    <p class="shopify-deposit-eyebrow">LunaWake · $9 reservation</p>
-                    <p class="shopify-deposit-audience" data-audience-message hidden></p>
-                    <h1 id="deposit-heading">Lock your launch price.<br><em>For $9 today.</em></h1>
-                    <p class="shopify-deposit-lede">Pay $9 through Shopify. Before Kickstarter launches, you can request a full refund. When it goes live, use your private link and the same email to pledge at the Reward price you locked.</p>
-                    <div class="shopify-deposit-proof" aria-label="Reservation highlights">
-                        <span><b>Fully refundable</b> until launch</span>
-                        <span><b>$9</b> today</span>
-                        <span><b>Private link</b> at launch</span>
-                        <span><b>Same-email</b> pledge</span>
-                        <span><b>30 days</b> coaching · $19.99 value*</span>
+                    <p class="shopify-deposit-eyebrow">LunaWake · Contact-free bedside sleep support</p>
+                    <h1 id="deposit-heading">Save <span data-hero-savings>$150</span> on LunaWake.<br><span class="shopify-deposit-heading-accent">Reserve for <span data-deposit-amount>$9</span> today.</span></h1>
+                    <p class="shopify-deposit-hero-lede">Reserve access to the current <b data-hero-reward>$229</b> Kickstarter price for <span data-deposit-amount>$9</span> today — <b data-current-savings>Save $150</b> vs. the <b data-retail-price>$379</b> retail reference. LunaWake senses your night without a wearable or camera, then turns it into one clear morning read and a gentler wake.</p>
+                    <div class="shopify-deposit-hero-value" aria-label="Current reservation value">
+                        <div><small>Pay today</small><strong data-deposit-amount>$9</strong></div>
+                        <span aria-hidden="true">→</span>
+                        <div><small>At Kickstarter</small><strong data-current-reward>$229</strong></div>
+                        <div class="shopify-deposit-hero-value__context"><small>Vs. retail <b data-retail-price>$379</b></small><strong data-current-savings>Save $150</strong></div>
                     </div>
-                    <p class="shopify-deposit-hero-policy"><strong>Rules at a glance:</strong> refundable before launch; non-refundable after launch if you do not pledge; full refund if the campaign fails or is canceled.</p>
-                    <p class="shopify-deposit-footnote">*Available after a valid pledge and a successful campaign. See the full terms below.</p>
+                    <p class="shopify-deposit-hero-positioning"><b>One clear morning read.</b> <b>Wake inside your chosen window.</b> <b>No wearable or camera.</b></p>
+                    <p class="shopify-deposit-hero-policy"><strong>Refundable before launch.</strong> At launch, we send a private Kickstarter link to the same email. The $9 is a separate reservation, not an automatic deduction.</p>
+                    <button class="shopify-deposit-button shopify-deposit-hero-button" type="button" data-reserve-button data-cta-slot="hero" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
                 </div>
 
                 <aside class="shopify-deposit-buy-card" aria-labelledby="buy-card-heading">
                     <div class="shopify-deposit-buy-card__image">
-                        <img data-finish-image src="images/luna-latest/finish-stone-1440.webp" width="1440" height="1199" alt="LunaWake in the Stone finish" fetchpriority="high" decoding="async">
-                        <span class="shopify-deposit-buy-card__badge">Lock your launch eligibility</span>
+                        <img data-finish-image src="images/luna-latest/device-bedside.webp" width="1536" height="1024" alt="LunaWake beside a sleeping person in a warm bedroom" fetchpriority="high" decoding="async">
+                        <span class="shopify-deposit-buy-card__badge">See it in the room</span>
                     </div>
                     <div class="shopify-deposit-buy-card__body">
+                        <p class="shopify-deposit-audience" data-audience-message hidden></p>
                         <p class="shopify-deposit-card-kicker">Shopify reservation</p>
-                        <h2 id="buy-card-heading">LunaWake private launch access</h2>
-                        <div class="shopify-deposit-price"><span>$9</span><small>USD · paid through Shopify</small></div>
-                        <p class="shopify-deposit-price-note">Shopify may process the charge in your local currency at checkout.</p>
-                        <fieldset class="shopify-deposit-finish-picker">
-                            <legend>Choose your finish <span>optional</span></legend>
-                            <div class="shopify-deposit-finish-options" role="group" aria-label="Choose a LunaWake finish">
-                                <button type="button" class="is-active" data-deposit-finish="stone" aria-pressed="true"><span class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--stone" aria-hidden="true"></span><span>Stone</span></button>
-                                <button type="button" data-deposit-finish="charcoal" aria-pressed="false"><span class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--charcoal" aria-hidden="true"></span><span>Charcoal</span></button>
-                                <button type="button" data-deposit-finish="amber" aria-pressed="false"><span class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--amber" aria-hidden="true"></span><span>Amber</span></button>
-                            </div>
-                            <p>Selected finish: <strong data-deposit-finish-name>Stone</strong></p>
-                            <small>Your finish preference can be confirmed after reserving.</small>
-                        </fieldset>
-                        <p class="shopify-deposit-buy-card__copy">Your $9 Shopify reservation locks your launch-price eligibility. It is not a Kickstarter pledge and does not automatically deduct from your Kickstarter payment; the private Reward price is managed on Kickstarter.</p>
-                        <p class="shopify-deposit-buy-card__policy"><strong>Read before paying:</strong> refundable before Kickstarter launches; non-refundable after launch if you do not pledge. Campaign failure or cancellation is refunded in full.</p>
-                        <button class="shopify-deposit-button" type="button" data-reserve-button data-cta-slot="card" aria-describedby="checkout-status">Reserve for $9 <span aria-hidden="true">→</span></button>
-                        <p class="shopify-deposit-status" id="checkout-status" data-checkout-status aria-live="polite">Checkout is being connected before launch.</p>
-                        <ul class="shopify-deposit-includes" aria-label="What your reservation includes">
-                            <li><strong>Private launch link</strong><span>sent when Kickstarter goes live</span></li>
-                            <li><strong>Locked price-window eligibility</strong><span>matched by your reservation time</span></li>
-                            <li><strong>30-day coaching</strong><span>$19.99 value after valid pledge + campaign success</span></li>
-                        </ul>
+                        <h2 id="buy-card-heading">Save <span data-card-savings>$150</span>.<br><span class="shopify-deposit-heading-accent">Reserve for $9.</span></h2>
+                        <div class="shopify-deposit-card-price-lock">
+                            <div><small>Pay today</small><strong data-deposit-amount>$9</strong></div>
+                            <p>At Kickstarter: <b data-current-reward>$229</b> current price</p>
+                        </div>
+                        <p class="shopify-deposit-countdown" aria-live="polite"><strong data-countdown-days>Current window</strong><span>at this price</span></p>
+                        <p class="shopify-deposit-current-deadline">Available until <b data-current-deadline>Current window</b></p>
+                        <p class="shopify-deposit-price-note">USD · Shopify may process the charge in your local currency at checkout.</p>
+                        <p class="shopify-deposit-buy-card__copy"><strong>At launch:</strong> we email your private Kickstarter link. Use the same email to complete the separate product payment.</p>
+                        <button class="shopify-deposit-button shopify-deposit-card-button" type="button" data-reserve-button data-cta-slot="card" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
+                        <p class="shopify-deposit-status" id="checkout-status" data-checkout-status aria-live="polite"><span data-checkout-message>Checkout is being connected before launch.</span> <a data-preview-link href="https://prelaunch.lunawake.ai/">Join the launch list</a></p>
                     </div>
                 </aside>
             </div>
         </section>
 
-        <section class="shopify-deposit-pricing" aria-labelledby="pricing-heading">
-            <div class="lw2-shell">
-                <div class="shopify-deposit-section-heading shopify-deposit-section-heading--wide">
-                    <p class="shopify-deposit-eyebrow">Pre-launch pricing</p>
-                    <h2 id="pricing-heading">Reserve earlier,<br><em>keep the better price.</em></h2>
-                    <p>Three launch windows. One $9 reservation. Your timing determines the Reward price you can access; final amounts will be unlocked after our pricing test and will match the Kickstarter campaign.</p>
+        <section class="shopify-deposit-coach" id="coach-value" aria-labelledby="coach-heading" data-coach-section>
+            <div class="lw2-shell shopify-deposit-coach__grid">
+                <div class="shopify-deposit-coach__copy">
+                    <p class="shopify-deposit-eyebrow">Available before Luna ships</p>
+                    <h2 id="coach-heading">The part after<br><span class="shopify-deposit-heading-accent">the data.</span></h2>
+                    <p class="shopify-deposit-coach__promise">One thing at a time, shaped by your real nights.</p>
+                    <p class="shopify-deposit-coach__lede">Your nights do not have to wait for the hardware. After a valid Kickstarter pledge and a successful campaign, Luna Coach can begin before LunaWake ships.</p>
+                    <div class="shopify-deposit-coach__value" aria-label="Included Luna Coach value">
+                        <strong><span data-coach-days>30</span> days of Luna Coach</strong>
+                        <span>Included · <b data-coach-value>$19.99</b> value</span>
+                        <small>Included after a valid Kickstarter pledge and campaign success. The $9 reservation does not unlock Coach by itself.</small>
+                    </div>
+                    <p class="shopify-deposit-coach__value-note">You’re not paying for more data. You’re paying for the part that comes after the data.</p>
+                    <ol class="shopify-deposit-coach__steps" aria-label="What Luna Coach gives you">
+                        <li class="shopify-deposit-coach__report-benefit"><span>01 / YOUR REPORT</span><div><h3>Your personal sleep report</h3><p>Luna brings your Sleep Pattern, measured nights, coffee, meals, movement, and the shape of your days together — then carries one clear focus into what comes next.</p><p class="shopify-deposit-coach__microcopy">Your pattern. The problem behind it. One useful next step.</p><div class="shopify-deposit-coach__report-points" aria-label="What your personal sleep report brings together"><span>Sleep Pattern</span><span>Problem insight</span><span>Next focus</span></div></div></li>
+                        <li><span>02 / REPORTS</span><div><h3>Four weekly reports</h3><p>See what shifted, what got in the way, and what to try next. A Day 30 review shows what changed and what is worth keeping.</p></div></li>
+                        <li><span>03 / OVER TIME</span><div><h3>Monthly insight reports</h3><p>Keep learning from the pattern after the first 30 days. From Day 37 onward, Luna checks in monthly and helps you notice what is holding.</p></div></li>
+                        <li><span>04 / ASK LUNA</span><div><h3>Ask Luna anytime</h3><p>Daily reads, useful actions, and answers shaped by your recent nights, your goal, and what you have already tried.</p><p class="shopify-deposit-coach__microcopy">One clear focus at a time. One useful next step when it matters.</p></div></li>
+                    </ol>
+                    <p class="shopify-deposit-coach__handoff"><strong>By the time LunaWake arrives, Luna already understands the shape of your nights.</strong> When bedside context becomes available, your Coach continues from where you are — not from the beginning.</p>
+                    <div class="shopify-deposit-coach-paths" aria-label="Ways to start using Luna Coach">
+                        <article><span>Have Apple Watch or Oura?</span><p>Connect Apple Health and let Luna read the nights you already have. Start building your Sleep Pattern before LunaWake ships.</p></article>
+                        <article><span>No wearable?</span><p>No problem. Luna Coach works without one. Share what your nights are like, then let LunaWake add bedside context when it arrives.</p></article>
+                    </div>
+                    <div class="shopify-deposit-coach__capabilities" aria-label="How Luna Coach works">
+                        <article><span>See the whole picture</span><p>Connect measured nights, long-term patterns, what you share, and how you live.</p></article>
+                        <article><span>Adjust as life changes</span><p>One rough night doesn’t reset the plan.</p></article>
+                        <article><span>Answer with context</span><p>Answers come with your focus, recent nights, and past attempts in view.</p></article>
+                    </div>
+                    <p class="shopify-deposit-coach__availability" data-coach-availability>Available after a valid Kickstarter pledge and campaign success — before LunaWake ships.</p>
+                    <p class="shopify-deposit-coach__boundary">Luna offers general sleep guidance. It does not diagnose or replace medical care.</p>
                 </div>
-                <div class="shopify-deposit-price-context" role="note">
-                    <span>Price context</span>
-                    <strong>Category reference range: <span data-price-anchor>$300–$400</span></strong>
-                    <p>This range is shown as context while final Kickstarter Reward pricing is being finalized.</p>
+                <div class="shopify-deposit-coach__screens" aria-label="Luna Coach app examples">
+                    <figure class="shopify-deposit-coach-screen shopify-deposit-coach-screen--pattern">
+                        <div class="shopify-deposit-coach-screen__crop" role="region" tabindex="0" aria-label="Scrollable personal Sleep Pattern report"><img src="images/app-screens/sleep-pattern.webp" width="960" height="8660" alt="Luna App personal sleep report showing a Sleep Pattern and the insight behind recurring nights" loading="lazy" decoding="async"></div>
+                        <p class="shopify-deposit-coach-screen__scroll-hint"><span>Sleep Pattern / Scroll to read the full reflection</span><b aria-hidden="true">↕</b></p>
+                        <figcaption><span>Personal sleep report</span><strong>Your pattern, the problem behind it, and what to do next.</strong></figcaption>
+                    </figure>
+                    <figure class="shopify-deposit-coach-screen shopify-deposit-coach-screen--morning">
+                        <img src="images/app-screens/sunrise.webp" width="1000" height="1264" alt="Luna App Morning Read turning a night pattern into one useful next step" loading="lazy" decoding="async">
+                        <figcaption><span>Morning read</span><strong>A clear read. One useful next step.</strong></figcaption>
+                    </figure>
                 </div>
-                <div class="shopify-deposit-price-grid" data-price-windows aria-live="polite">
-                    <article class="shopify-deposit-price-card is-current" data-price-window="founding">
-                        <span class="shopify-deposit-price-card__tag">Current window</span>
-                        <p>Founding Backer</p>
-                        <strong data-price-amount>Price unlocking soon</strong>
-                        <span>Reserve by <b data-price-deadline>Aug 24</b></span>
-                        <small data-price-savings>Savings shown when price unlocks</small>
-                    </article>
-                    <article class="shopify-deposit-price-card" data-price-window="super-early">
-                        <p>Super Early Bird</p>
-                        <strong data-price-amount>Price unlocking soon</strong>
-                        <span>Reserve by <b data-price-deadline>Sep 7</b></span>
-                        <small data-price-savings>Savings shown when price unlocks</small>
-                    </article>
-                    <article class="shopify-deposit-price-card" data-price-window="early">
-                        <p>Early Bird</p>
-                        <strong data-price-amount>Price unlocking soon</strong>
-                        <span>Reserve by <b data-price-deadline>Sep 21 · launch day</b></span>
-                        <small data-price-savings>Savings shown when price unlocks</small>
-                    </article>
-                </div>
-                <p class="shopify-deposit-retail-note">Retail after launch <strong data-retail-price>$379</strong> · reserve during an open window to access the corresponding private Reward price.</p>
-                <p class="shopify-deposit-pricing-note"><span aria-hidden="true">◆</span> Reward availability is managed on Kickstarter. We do not display a hard reservation cap here.</p>
             </div>
-        </section>
-
-        <section class="shopify-deposit-steps" aria-labelledby="steps-heading">
-            <div class="lw2-shell">
-                <div class="shopify-deposit-section-heading">
-                    <p class="shopify-deposit-eyebrow">How the reservation works</p>
-                    <h2 id="steps-heading">Three moments.<br><em>One clear path.</em></h2>
-                </div>
-                <ol class="shopify-deposit-step-grid">
-                    <li><span>1</span><div><small>Before Kickstarter</small><h3>Lock your price-window eligibility</h3><p>Pay $9 through Shopify with an email you can receive. You can request a full refund any time before the campaign goes live.</p></div></li>
-                    <li><span>2</span><div><small>When Kickstarter launches</small><h3>Use your private link to pledge</h3><p>Kickstarter is the campaign platform where you complete the purchase. We send the dedicated link by email; use the same email to pledge at the Reward price you unlocked.</p></div></li>
-                    <li><span>3</span><div><small>After a successful campaign</small><h3>Start your coaching</h3><p>After agency verifies a valid pledge, your 30-day coaching starts the next business day. It does not wait for shipping.</p></div></li>
-                </ol>
-                <div class="shopify-deposit-money-grid" aria-label="What happens to your $9">
-                    <article><strong>Cancel before launch</strong><span>Full $9 refund on request</span></article>
-                    <article><strong>Campaign fails or is canceled</strong><span>Full $9 refund through Shopify</span></article>
-                    <article><strong>No pledge after launch</strong><span>$9 is non-refundable; no Reward or coaching</span></article>
-                </div>
-                <div class="shopify-deposit-math"><strong>$9 today</strong><span>→</span><strong>Private Reward eligibility</strong><span>+</span><strong>30-day coaching · $19.99 value*</strong></div>
+            <div class="lw2-shell shopify-deposit-coach__rhythm" aria-label="Luna Coach service rhythm">
+                <span>Day 1 plan</span><i aria-hidden="true">→</i><span>Daily reads</span><i aria-hidden="true">→</i><span>Weekly reports</span><i aria-hidden="true">→</i><span>Day 30 review</span><i aria-hidden="true">→</i><span>Day 37</span><i aria-hidden="true">→</i><span>Monthly insights</span>
             </div>
         </section>
 
@@ -142,52 +134,101 @@
             <div class="lw2-shell shopify-deposit-rules__grid">
                 <div class="shopify-deposit-section-heading">
                     <p class="shopify-deposit-eyebrow">Before you reserve</p>
-                    <h2 id="rules-heading">A reservation, not a mystery.</h2>
+                    <h2 id="rules-heading">Your $9,<br><span class="shopify-deposit-heading-accent">in plain English.</span></h2>
+                    <p class="shopify-deposit-rules-lede">The reservation is refundable before launch. After launch, the outcome depends on whether you pledge and whether the campaign succeeds.</p>
                 </div>
                 <div class="shopify-deposit-rule-list">
-                    <article><span>Money-back</span><p>Request a full $9 refund before Kickstarter launches through customer support. After launch, the deposit is non-refundable if you do not pledge; campaign failure or cancellation is refunded in full.</p></article>
-                    <article><span>Email match</span><p>Use the same email for Shopify and Kickstarter. If your email changes or Apple hides it, contact support before pledging.</p></article>
-                    <article><span>Coaching</span><p>30-day coaching begins on the next business day after agency verifies a valid pledge and the campaign succeeds. It does not wait for shipping.</p></article>
+                    <article><span>Before launch</span><strong>Cancel before Kickstarter goes live</strong><p>Request a full $9 refund through LunaWake support before the campaign launches.</p></article>
+                    <article><span>At launch</span><strong>Pay separately on Kickstarter</strong><p>Use the private link and the same email to complete the formal Kickstarter payment. The Shopify $9 is not automatically deducted.</p></article>
+                    <article><span>After launch</span><strong>No pledge or canceled pledge</strong><p>If you do not complete the pledge, or cancel it yourself, the $9 is non-refundable. No Kickstarter price or coaching is issued.</p></article>
+                    <article><span>If campaign fails</span><strong>Kickstarter fails or the campaign is canceled</strong><p>LunaWake refunds the $9 in full through the original Shopify payment method.</p></article>
                 </div>
             </div>
         </section>
 
-        <section class="shopify-deposit-proof-section" aria-labelledby="why-lunawake-heading">
+        <section class="shopify-deposit-pricing" aria-labelledby="pricing-heading">
+            <div class="lw2-shell">
+                <div class="shopify-deposit-section-heading shopify-deposit-section-heading--wide">
+                    <p class="shopify-deposit-eyebrow">Price context</p>
+                    <h2 id="pricing-heading">A quieter way<br><span class="shopify-deposit-heading-accent">to reserve early.</span></h2>
+                    <p>The current Kickstarter price stays visible here, with later windows shown as supporting context.</p>
+                </div>
+                <div class="shopify-deposit-price-grid" data-price-windows aria-live="polite">
+                    <article class="shopify-deposit-price-card shopify-deposit-price-card--current is-current" data-price-window="founding">
+                        <span class="shopify-deposit-price-card__tag">Current price</span>
+                        <p>Founding Kickstarter price</p>
+                        <strong data-price-amount>$229</strong>
+                        <span class="shopify-deposit-price-card__deadline">Available until <b data-price-deadline>Current window</b></span>
+                        <small class="shopify-deposit-price-card__savings"><b data-price-savings>Save $150</b><span data-price-urgency>while this window is open</span></small>
+                    </article>
+                    <div class="shopify-deposit-price-ladder" aria-label="Upcoming pricing windows">
+                        <article class="shopify-deposit-price-step" data-price-window="super-early">
+                            <span>Next window</span><strong>Next Kickstarter price</strong><b data-price-amount>$269</b>
+                            <small><i data-price-savings>Save $110</i><em data-price-delta>+$40 later</em></small>
+                            <p>Available after <b data-price-deadline>Sep 7</b></p>
+                        </article>
+                        <article class="shopify-deposit-price-step" data-price-window="early">
+                            <span>Launch day</span><strong>Launch-day Kickstarter price</strong><b data-price-amount>$319</b>
+                            <small><i data-price-savings>Save $60</i><em data-price-delta>+$90 later</em></small>
+                            <p>Available on <b data-price-deadline>Sep 21 · launch day</b></p>
+                        </article>
+                    </div>
+                </div>
+                <p class="shopify-deposit-pricing-note">Current price shown above; later windows are supporting context.</p>
+            </div>
+        </section>
+
+        <section class="shopify-deposit-steps" id="how-reservation-works" aria-labelledby="steps-heading">
             <div class="lw2-shell">
                 <div class="shopify-deposit-section-heading">
-                    <p class="shopify-deposit-eyebrow">Why LunaWake</p>
-                    <h2 id="why-lunawake-heading">Once the rules are clear,<br><em>here is what Luna does.</em></h2>
-                    <p>LunaWake turns your night into a pattern you can understand, then lets the environment do more quietly. This is the short product proof; the full product story remains on the Leads page.</p>
+                    <p class="shopify-deposit-eyebrow">What happens next</p>
+                    <h2 id="steps-heading">Three moments.<br><span class="shopify-deposit-heading-accent">One clear path.</span></h2>
+                    <p>Your <span data-deposit-amount>$9</span> reservation and later Kickstarter pledge stay separate.</p>
                 </div>
-                <div class="shopify-deposit-proof-grid">
-                    <article><span>01</span><h3>Read your night</h3><p>See the patterns that shape your night, so sleep support can feel useful rather than abstract.</p></article>
-                    <article><span>02</span><h3>It adjusts for you</h3><p>Light, sound, and room cues work together automatically, so the environment can do more while you sleep.</p></article>
-                    <article><span>03</span><h3>A gentler wake</h3><p>Wake within your chosen window with gradual light and sound, designed to ease you into the day.</p></article>
-                    <article><span>04</span><h3>Private by design</h3><p>No wearable and no camera. Contact-free sensing keeps the bedside quiet and the room yours.</p></article>
-                </div>
-                <aside class="shopify-deposit-validation-note" aria-label="Validation note">
-                    <span>Validation note</span>
-                    <div><h3>PSG-informed validation</h3><p>Our validation work includes comparison with polysomnography (PSG), the clinical reference for sleep staging. Final substantiated claim language will be published before launch; LunaWake is not a diagnostic device.</p></div>
-                </aside>
+                <ol class="shopify-deposit-timeline">
+                    <li><span>1</span><div><small>Now · Pre-launch</small><h3>Reserve <span data-deposit-amount>$9</span> through Shopify</h3><p>Refundable before Kickstarter launches.</p></div></li>
+                    <li><span>2</span><div><small>When Kickstarter goes live · <span data-launch-date>Sep 21 · launch day</span></small><h3>Use your private Kickstarter link</h3><p>Pledge separately with the same email.</p></div></li>
+                    <li><span>3</span><div><small>After a successful campaign</small><h3>Start Luna Coach before LunaWake ships</h3><p>After a valid Kickstarter payment and campaign success.</p></div></li>
+                </ol>
             </div>
         </section>
 
-        <section class="shopify-deposit-faq" aria-labelledby="faq-heading">
+        <section class="shopify-deposit-finish-section" aria-labelledby="finish-showcase-heading">
+            <div class="lw2-shell">
+                <div class="shopify-deposit-finish-section__heading">
+                    <div>
+                        <p class="shopify-deposit-eyebrow">Make it yours</p>
+                        <h2 id="finish-showcase-heading">Five finishes.<br><span class="shopify-deposit-heading-accent">One LunaWake for your room.</span></h2>
+                    </div>
+                    <p>Explore the full finish direction. Your preference will be confirmed after reserving, once the final color lineup is set.</p>
+                </div>
+                <figure class="shopify-deposit-finish-showcase shopify-deposit-finish-showcase--section">
+                    <picture>
+                        <source srcset="images/luna-latest/finishes-all.webp" type="image/webp">
+                        <img src="images/luna-latest/finishes-all.png" width="1920" height="1003" alt="LunaWake finishes: Dawn, Moonstone, Midnight, Amber, and Sage" loading="lazy" decoding="async">
+                    </picture>
+                    <figcaption><strong>Dawn · Moonstone · Midnight · Amber · Sage</strong><span>Shown for inspiration. No color or SKU is selected at checkout.</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="shopify-deposit-faq" id="faq" aria-labelledby="faq-heading">
             <div class="lw2-shell shopify-deposit-faq__grid">
                 <div class="shopify-deposit-section-heading">
                     <p class="shopify-deposit-eyebrow">Questions, answered</p>
-                    <h2 id="faq-heading">Before you click reserve.</h2>
-                    <a class="shopify-deposit-support" href="mailto:info@lunawake.ai">Need help? Contact LunaWake support <span aria-hidden="true">↗</span></a>
+                    <h2 id="faq-heading">Start with<br>the important ones.</h2>
+                    <p class="shopify-deposit-faq-intro">Clarity matters. Here is what your $9 reservation does — and where Kickstarter begins.</p>
+                    <a class="shopify-deposit-support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">
+                        <span class="shopify-deposit-support__label">Human support</span>
+                        <strong data-support-email>info@lunawake.ai</strong>
+                        <span class="shopify-deposit-support__arrow" aria-hidden="true">↗</span>
+                    </a>
                 </div>
                 <div class="shopify-deposit-faq-list">
-                    <details open><summary>What is Kickstarter, and why are there two steps?</summary><p>Kickstarter is the campaign platform where LunaWake pledges are completed. Shopify collects the $9 reservation now; when the campaign launches, your private link takes you to Kickstarter to complete the pledge using the same email.</p></details>
-                    <details><summary>What does the $9 lock?</summary><p>The $9 locks your Founding Backer or then-current launch-window eligibility. It is paid through Shopify, is not a Kickstarter pledge, and does not automatically transfer to or deduct from Kickstarter.</p></details>
+                    <details open><summary>Why are there two payments?</summary><p>Shopify collects the $9 reservation today. Kickstarter is where the formal product payment happens later; your private link takes you there, and you use the same email.</p></details>
                     <details><summary>When can I get my $9 back?</summary><p>You can request a full refund before Kickstarter launches. After launch, the $9 is non-refundable if you do not pledge. If the campaign fails or is canceled, the $9 is refunded in full through Shopify.</p></details>
-                    <details><summary>What if I pay the reservation but never pledge?</summary><p>After Kickstarter launches, the $9 remains non-refundable. No private Reward price or coaching is issued unless you complete a valid pledge.</p></details>
-                    <details><summary>What if I cancel my pledge?</summary><p>Canceling the pledge ends the private offer and does not create a new deposit refund.</p></details>
+                    <details><summary>What if I do not complete the payment or cancel?</summary><p>After launch, the $9 remains non-refundable if you do not complete the Kickstarter payment or cancel it yourself. No private Kickstarter price or coaching is issued without a valid payment.</p></details>
                     <details><summary>What if the Kickstarter campaign fails?</summary><p>If the campaign fails or is canceled, LunaWake will refund the $9 deposit in full through the original Shopify payment method.</p></details>
-                    <details><summary>How do I get into the deposit user group?</summary><p>After payment, the group invitation and next-step information are sent by email. Use the email from your Shopify order so we can match your reservation.</p></details>
-                    <details><summary>Can I choose a finish now?</summary><p>Yes. You can select a preferred finish here, but it is optional and does not affect payment. Confirm your final preference after reserving.</p></details>
                 </div>
             </div>
         </section>
@@ -195,17 +236,17 @@
         <section class="shopify-deposit-final-cta" aria-labelledby="final-cta-heading">
             <div class="lw2-shell">
                 <p class="shopify-deposit-eyebrow">Ready when you are</p>
-                <h2 id="final-cta-heading">Lock your launch eligibility<br><em>for $9 today.</em></h2>
-                <p class="shopify-deposit-final-cta__note">Full refund before Kickstarter launches. After launch, the $9 is non-refundable if you do not pledge.</p>
-                <button class="shopify-deposit-button shopify-deposit-button--light" type="button" data-reserve-button data-cta-slot="final">Reserve for $9 <span aria-hidden="true">→</span></button>
+                <h2 id="final-cta-heading">Save <strong data-final-savings>$150</strong>.<br><span class="shopify-deposit-heading-accent">Reserve for $9 today.</span></h2>
+                <p class="shopify-deposit-final-cta__note"><strong>Refundable before launch.</strong> Use the same email when Kickstarter goes live.</p>
+                <button class="shopify-deposit-button shopify-deposit-button--light" type="button" data-reserve-button data-cta-slot="final">Reserve $9 <span aria-hidden="true">→</span></button>
                 <a class="shopify-deposit-secondary-cta" href="https://prelaunch.lunawake.ai/?utm_source=deposit-page&amp;utm_medium=footer&amp;utm_campaign=deposit_launch_v1&amp;utm_content=exit">Not ready to reserve? Join the launch list <span aria-hidden="true">↗</span></a>
             </div>
         </section>
     </main>
 
     <div class="shopify-deposit-mobile-cta" data-mobile-cta>
-        <div><strong>$9</strong><span>Lock your launch eligibility</span></div>
-        <button class="shopify-deposit-button" type="button" data-reserve-button data-cta-slot="mobile">Reserve for $9 <span aria-hidden="true">→</span></button>
+        <div><strong data-deposit-amount>$9</strong><span>At Kickstarter: <b data-mobile-reward>$229</b> current price</span></div>
+        <button class="shopify-deposit-button" type="button" data-reserve-button data-cta-slot="mobile">Reserve $9 <span aria-hidden="true">→</span></button>
     </div>
 
     <footer class="shopify-deposit-footer">
@@ -215,6 +256,6 @@
         </div>
     </footer>
 
-    <script src="js/deposit.js?v=2026-08-03f"></script>
+    <script src="js/deposit.js?v=2026-08-04g"></script>
 </body>
 </html>

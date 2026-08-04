@@ -1,6 +1,6 @@
 # LunaWake
 
-> LunaWake is a bedside sleep companion for quieter nights — sensing, guiding, and waking without a wearable or a camera. It sits on the nightstand and turns your night into a simple routine: wind down, sleep naturally, wake inside the window you choose.
+> LunaWake is a bedside sleep system for quieter nights — sensing the night without touching you, then adapting light, sound, and the room around you. It sits on the nightstand and turns your night into a simple routine: wind down, sleep naturally, wake inside the window you choose.
 
 How it works — three quiet steps:
 1. Place: set LunaWake at the bedside, facing you. No wearable, no camera, no complicated setup.
@@ -20,7 +20,7 @@ Key facts:
 ## Pages
 - [Home](https://lunawake.ai/): product overview — how it works, hardware, radar sensing, science, finishes, and the Luna App
 - [Reserve](https://lunawake.ai/deposit.html): preview of the Shopify $9 deposit page for LunaWake's private Kickstarter launch offer
-- [About](https://lunawake.ai/about.html): why LunaWake is building a calmer, privacy-first bedside sleep companion
+- [About](https://lunawake.ai/about.html): why LunaWake is building a calmer, privacy-first bedside sleep system
 - [Support / FAQ](https://lunawake.ai/support.html): how contact-free sensing works, privacy, app and compatibility, shipping
 - [Privacy Policy](https://lunawake.ai/privacy.html): privacy policy
 - [Terms of Service](https://lunawake.ai/terms.html): terms of service

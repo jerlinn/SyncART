@@ -44,7 +44,6 @@
     const supportLinks = Array.from(document.querySelectorAll('.shopify-deposit-support'));
     const secondaryLinks = Array.from(document.querySelectorAll('.shopify-deposit-secondary-cta'));
     const finishButtons = Array.from(document.querySelectorAll('[data-deposit-finish]'));
-    const finishImage = document.querySelector('[data-finish-image]');
     const finishName = document.querySelector('[data-deposit-finish-name]');
     const audienceMessage = document.querySelector('[data-audience-message]');
     const coldExplainer = document.querySelector('[data-cold-explainer]');
@@ -280,10 +279,6 @@
             button.classList.toggle('is-active', selected);
             button.setAttribute('aria-pressed', String(selected));
         });
-        if (finishImage && finish?.src) {
-            finishImage.src = finish.src;
-            finishImage.alt = `LunaWake in the ${finish.name} finish`;
-        }
         if (finishName) finishName.textContent = finish ? `${finish.name} selected as your preference.` : 'No finish selected yet. Your $9 payment does not lock a color or SKU.';
     };
 

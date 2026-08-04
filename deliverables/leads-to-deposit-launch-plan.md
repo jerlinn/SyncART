@@ -101,3 +101,6 @@ Leads → Shopify $9 Payment completed rate
 6. 支付完成率、退款率和有效 pledge 率的日报或看板。
 
 在第 1 项未配置前，页面只能作为本地预览，不能向 2,000 个 Leads 正式发送支付 CTA。
+
+市场可直接使用的 EDM / Group 文案、UTM 链接和分批发送顺序见
+[`deposit-campaign-copy.md`](deposit-campaign-copy.md)。

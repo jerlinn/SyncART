@@ -73,3 +73,6 @@ and the Shopify launch gate, see
 
 Before sending traffic, run the production checks in
 [`deliverables/deposit-release-gate.md`](deliverables/deposit-release-gate.md).
+
+The ready-to-use Lead email, Group copy, UTM links, and rollout sequence are in
+[`deliverables/deposit-campaign-copy.md`](deliverables/deposit-campaign-copy.md).

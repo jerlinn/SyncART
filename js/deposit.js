@@ -7,25 +7,25 @@
         depositAmount: '$9',
         campaignState: 'reservation_open',
         pricingUnlocked: true,
-        retailPrice: '$379',
-        priceAnchor: '',
-        priceAnchorEnabled: false,
+        launchListCount: '2,000+',
         coach: {
             includedDays: 30,
             value: '$19.99',
-            availability: 'Available after a valid Kickstarter pledge and campaign success — before LunaWake ships.'
+            availability: 'Available after your order is verified — before LunaWake ships.'
         },
         shopifyProductUrl: '',
         supportUrl: 'mailto:info@lunawake.ai',
         finishes: {
-            stone: { name: 'Stone', src: 'images/luna-latest/finish-stone-1440.webp' },
-            charcoal: { name: 'Charcoal', src: 'images/luna-latest/finish-charcoal-1440.webp' },
+            dawn: { name: 'Dawn' },
+            moonstone: { name: 'Moonstone' },
+            midnight: { name: 'Midnight' },
+            sage: { name: 'Sage' },
             amber: { name: 'Amber', src: 'images/luna-latest/finish-amber-1440.webp' }
         },
         priceWindows: [
-            { id: 'founding', amount: '$229', savings: '$150', displayDeadline: 'Aug 24, 2026 PT', startAt: '', endAt: '2026-08-24T23:59:59-07:00', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Current price', label: 'Founding Kickstarter price' },
-            { id: 'super-early', amount: '$269', savings: '$110', displayDeadline: 'Sep 7, 2026 PT', startAt: '2026-08-25T00:00:00-07:00', endAt: '2026-09-07T23:59:59-07:00', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Next price', label: 'Next Kickstarter price' },
-            { id: 'early', amount: '$319', savings: '$60', displayDeadline: 'Sep 21, 2026 PT · launch day', startAt: '2026-09-08T00:00:00-07:00', endAt: '2026-09-21T23:59:59-07:00', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Launch-day price', label: 'Launch-day Kickstarter price' }
+            { id: 'founding', amount: '$229', savings: '$90', displayDeadline: 'Sep 6 · 11:59pm PT', startAt: '', endAt: '2026-09-06T23:59:59-07:00', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Current price', label: 'Founding price' },
+            { id: 'super-early', amount: '$269', savings: '$50', displayDeadline: 'Sep 20 · 11:59pm PT', startAt: '2026-09-07T00:00:00-07:00', endAt: '2026-09-20T23:59:59-07:00', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Next price', label: 'Next launch price' },
+            { id: 'early', amount: '$319', savings: '$0', displayDeadline: 'Sep 21 · launch day', startAt: '2026-09-21T00:00:00-07:00', endAt: '', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Launch-day price', label: 'Launch-day price' }
         ]
     };
 
@@ -50,6 +50,7 @@
     const coldExplainer = document.querySelector('[data-cold-explainer]');
     const coachSection = document.querySelector('[data-coach-section]');
     const launchDateNodes = Array.from(document.querySelectorAll('[data-launch-date]'));
+    const launchListCountNodes = Array.from(document.querySelectorAll('[data-launch-list-count]'));
     const heroRewards = Array.from(document.querySelectorAll('[data-hero-reward]'));
     const heroSavings = document.querySelector('[data-hero-savings]');
     const headerReward = document.querySelector('[data-header-reward]');
@@ -95,9 +96,9 @@
     };
     const deadlineText = (windowConfig) => {
         if (windowConfig?.displayDeadline) return windowConfig.displayDeadline;
-        if (!windowConfig?.endAt) return 'Current window';
+        if (!windowConfig?.endAt) return 'before the next price window';
         const date = new Date(windowConfig.endAt);
-        if (Number.isNaN(date.getTime())) return 'Current window';
+        if (Number.isNaN(date.getTime())) return 'before the next price window';
         return new Intl.DateTimeFormat('en-US', {
             month: 'short',
             day: 'numeric',
@@ -111,6 +112,11 @@
         const remaining = daysLeft(windowConfig);
         if (remaining === null) return windowStatus(windowConfig) === 'current' ? 'while this window is open' : 'after the current window';
         return `${remaining} day${remaining === 1 ? '' : 's'} left`;
+    };
+    const savingsText = (windowConfig) => {
+        if (!config.pricingUnlocked) return 'Savings shown when price unlocks';
+        if (moneyValue(windowConfig?.savings) <= 0) return 'Launch-day price';
+        return `Save ${windowConfig.savings} vs. launch day`;
     };
     const priceDeltaLabel = (windowConfig) => {
         const active = currentWindow();
@@ -176,7 +182,9 @@
                         ? 'Reservation window has ended'
                         : ready
                             ? `${ctaLabel(button.dataset.ctaSlot)} <span aria-hidden="true">→</span>`
-                            : 'Reservation opens soon';
+                            : button.dataset.ctaSlot === 'mobile'
+                                ? 'Not open yet'
+                                : 'Checkout not open yet';
         });
 
         if (headerReserveButton) headerReserveButton.hidden = !ready && !campaignClosed && !unavailable;
@@ -184,12 +192,12 @@
 
         if (!checkoutStatus) return;
         if (checkoutMessage) checkoutMessage.textContent = ready
-            ? `You will continue to Shopify Checkout for ${config.depositAmount}.`
+            ? `You will continue to secure checkout for ${config.depositAmount}.`
             : campaignClosed
-                ? 'Kickstarter is live. New deposits are no longer accepted; existing deposit users should check their email for the private link.'
+                ? 'Launch is live. New reservations are no longer accepted; existing customers should check their email for the order link.'
                     : unavailable
                         ? 'This reservation window is closed.'
-                    : 'Checkout is opening soon. Join the launch list for launch updates.';
+                    : 'Checkout is not open yet. Join the launch list for updates.';
         previewLinks.forEach((link) => {
             link.hidden = ready || campaignClosed || unavailable;
         });
@@ -206,7 +214,7 @@
             const urgency = card.querySelector('[data-price-urgency]');
             const delta = card.querySelector('[data-price-delta]');
             if (amount) amount.textContent = priceText(windowConfig);
-            if (savings) savings.textContent = config.pricingUnlocked ? `Save ${windowConfig.savings}` : 'Savings shown when price unlocks';
+            if (savings) savings.textContent = savingsText(windowConfig);
             if (deadline) deadline.textContent = deadlineText(windowConfig);
             if (urgency) urgency.textContent = urgencyLabel(windowConfig);
             if (delta) delta.textContent = priceDeltaLabel(windowConfig);
@@ -214,9 +222,6 @@
             card.classList.toggle('is-current', status === 'current');
             card.classList.toggle('is-upcoming', status === 'upcoming');
             card.classList.toggle('is-ended', status === 'ended');
-        });
-        document.querySelectorAll('[data-retail-price]').forEach((element) => {
-            element.textContent = config.retailPrice;
         });
         const anchor = document.querySelector('.shopify-deposit-price-context');
         if (anchor) anchor.hidden = !config.priceAnchorEnabled;
@@ -235,14 +240,20 @@
         });
         if (headerReward) headerReward.textContent = config.pricingUnlocked ? reward : 'the current';
         document.querySelectorAll('[data-current-savings]').forEach((element) => {
-            element.textContent = config.pricingUnlocked && savings ? `Save ${savings}` : 'current launch window';
+            element.textContent = config.pricingUnlocked && savings ? savingsText(activeWindow) : 'current launch window';
         });
         document.querySelectorAll('[data-deposit-amount]').forEach((element) => {
             element.textContent = config.depositAmount;
         });
+        launchListCountNodes.forEach((element) => {
+            element.textContent = config.launchListCount;
+        });
         const launchWindow = config.priceWindows.find((item) => item.id === 'early') || config.priceWindows[config.priceWindows.length - 1];
+        document.querySelectorAll('[data-launch-price]').forEach((element) => {
+            element.textContent = priceText(launchWindow || {});
+        });
         launchDateNodes.forEach((element) => {
-            element.textContent = launchWindow?.displayDeadline || 'Kickstarter launch';
+            element.textContent = launchWindow?.displayDeadline || 'Launch day';
         });
         document.querySelectorAll('[data-final-savings]').forEach((element) => {
             element.textContent = config.pricingUnlocked && savings ? String(savings).replace(/^Save\s+/i, '') : 'more';
@@ -253,7 +264,7 @@
         });
         document.querySelectorAll('[data-countdown-days]').forEach((element) => {
             element.textContent = remaining === null
-                ? 'Current window open'
+                ? 'Price window open'
                 : remaining === 0
                     ? 'Ends today'
                     : `${remaining} day${remaining === 1 ? '' : 's'} left`;
@@ -261,19 +272,19 @@
     };
 
     const updateFinish = (finishId = state.finish) => {
-        const selectedFinishId = config.finishes[finishId] ? finishId : 'stone';
-        const finish = config.finishes[selectedFinishId];
+        const selectedFinishId = finishId && config.finishes[finishId] ? finishId : null;
+        const finish = selectedFinishId ? config.finishes[selectedFinishId] : null;
         state.finish = finishButtons.length ? selectedFinishId : null;
         finishButtons.forEach((button) => {
             const selected = button.dataset.depositFinish === state.finish;
             button.classList.toggle('is-active', selected);
             button.setAttribute('aria-pressed', String(selected));
         });
-        if (finishImage && finishButtons.length) {
+        if (finishImage && finish?.src) {
             finishImage.src = finish.src;
             finishImage.alt = `LunaWake in the ${finish.name} finish`;
         }
-        if (finishName) finishName.textContent = finish.name;
+        if (finishName) finishName.textContent = finish ? `${finish.name} selected as your preference.` : 'No finish selected yet. Your $9 payment does not lock a color or SKU.';
     };
 
     const updateSource = () => {
@@ -374,7 +385,7 @@
     const attemptCheckout = (button) => {
         const ctaSlot = button?.dataset.ctaSlot || 'unknown';
         if (!isCheckoutReady()) {
-            if (checkoutMessage) checkoutMessage.textContent = 'Checkout is opening soon. Join the launch list for launch updates.';
+            if (checkoutMessage) checkoutMessage.textContent = 'Secure checkout is not open yet. Join the launch list for updates.';
             track('deposit_cta_blocked', {
                 reason: config.shopifyProductUrl ? `campaign_state_${config.campaignState}` : 'shopify_product_url_missing',
                 cta_slot: ctaSlot
@@ -388,7 +399,10 @@
     };
 
     reserveButtons.forEach((button) => button.addEventListener('click', () => attemptCheckout(button)));
-    finishButtons.forEach((button) => button.addEventListener('click', () => updateFinish(button.dataset.depositFinish)));
+    finishButtons.forEach((button) => button.addEventListener('click', () => {
+        updateFinish(button.dataset.depositFinish);
+        track('deposit_finish_select', { finish: state.finish, cta_slot: 'finish_preference' });
+    }));
     supportLinks.forEach((link) => link.setAttribute('href', config.supportUrl));
     document.querySelectorAll('[data-support-email]').forEach((element) => {
         element.textContent = supportAddress(config.supportUrl) || 'Open support center';

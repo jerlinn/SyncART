@@ -438,14 +438,16 @@
                 nextFinishImage.sizes = finishSizes;
                 nextFinishImage.src = target.src;
                 nextFinishImage.alt = `LunaWake in the ${target.name} finish`;
-                requestAnimationFrame(() => {
-                    nextFinishImage.classList.add('is-visible');
-                    currentFinishImage.classList.add('is-hidden');
-                });
+                // The supplied renders are not pixel-registered, so never overlap them.
+                // Fade through the neutral frame to avoid a visible ghost/jitter.
+                currentFinishImage.classList.add('is-hidden');
                 await new Promise((resolve) => window.setTimeout(resolve, finishTransitionMs));
 
                 currentFinishImage.classList.remove('is-current', 'is-hidden');
                 currentFinishImage.classList.add('is-next');
+                requestAnimationFrame(() => nextFinishImage.classList.add('is-visible'));
+                await new Promise((resolve) => window.setTimeout(resolve, finishTransitionMs));
+
                 nextFinishImage.classList.remove('is-next', 'is-visible');
                 nextFinishImage.classList.add('is-current');
                 [currentFinishImage, nextFinishImage] = [nextFinishImage, currentFinishImage];

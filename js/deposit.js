@@ -17,11 +17,27 @@
         launchListUrl: 'https://prelaunch.lunawake.ai/',
         supportUrl: 'mailto:info@lunawake.ai',
         finishes: {
-            dawn: { name: 'Dawn' },
-            moonstone: { name: 'Moonstone' },
-            midnight: { name: 'Midnight' },
-            sage: { name: 'Sage' },
-            amber: { name: 'Amber', src: 'images/luna-latest/finish-amber-1440.webp' }
+            amber: {
+                name: 'Amber',
+                code: 'LW / AMBER',
+                hex: '#b9673b',
+                src: 'images/luna-latest/finish-amber-1440.webp?v=2026-08-05d',
+                srcset: 'images/luna-latest/finish-amber-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-amber-1440.webp?v=2026-08-05d 1440w'
+            },
+            stone: {
+                name: 'Stone',
+                code: 'LW / STONE',
+                hex: '#a9aaa6',
+                src: 'images/luna-latest/finish-stone-1440.webp?v=2026-08-05d',
+                srcset: 'images/luna-latest/finish-stone-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-stone-1440.webp?v=2026-08-05d 1440w'
+            },
+            charcoal: {
+                name: 'Charcoal',
+                code: 'LW / CHARCOAL',
+                hex: '#242321',
+                src: 'images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d',
+                srcset: 'images/luna-latest/finish-charcoal-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d 1440w'
+            }
         },
         priceWindows: [
             { id: 'founding', amount: '$229', savings: '$90', displayDeadline: 'Sep 6 · 11:59pm ET', startAt: '', endAt: '2026-09-06T23:59:59-04:00', timezone: 'America/New_York', status: 'current' },
@@ -46,6 +62,22 @@
     const priceCards = Array.from(document.querySelectorAll('[data-price-window]'));
     const supportLinks = Array.from(document.querySelectorAll('.deposit-reorg-trust__email, .deposit-reorg-faq__support'));
     const secondaryLinks = Array.from(document.querySelectorAll('.shopify-deposit-secondary-cta'));
+    const finishOptionsHost = document.querySelector('[data-deposit-finish-options]');
+    if (finishOptionsHost) {
+        finishOptionsHost.textContent = '';
+        Object.entries(config.finishes).forEach(([slug, finish]) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.dataset.depositFinish = slug;
+            button.setAttribute('aria-pressed', 'false');
+            const swatch = document.createElement('i');
+            swatch.className = 'shopify-deposit-finish-swatch';
+            swatch.setAttribute('aria-hidden', 'true');
+            if (finish.hex) swatch.style.background = finish.hex;
+            button.append(swatch, document.createTextNode(finish.name));
+            finishOptionsHost.append(button);
+        });
+    }
     const finishButtons = Array.from(document.querySelectorAll('[data-deposit-finish]'));
     const finishName = document.querySelector('[data-deposit-finish-name]');
     const coachSection = document.querySelector('[data-coach-section]');
@@ -58,7 +90,11 @@
     const audience = audienceParam === 'lead' ? 'lead' : audienceParam === 'ad' ? 'new' : 'new_or_unknown';
     const marketingContext = Object.fromEntries(Array.from(query.entries()).filter(([key]) => key === 'source' || key.startsWith('utm_') || ['angle', 'creative', 'placement'].includes(key)));
     const savedFinish = (() => {
-        try { return window.localStorage.getItem('lunawake-finish-poll') || null; } catch (error) { return null; }
+        try {
+            const raw = window.localStorage.getItem('lunawake-finish-poll') || null;
+            // Votes stored by the retired five-color poll: same hex under a different name.
+            return raw ? ({ moonstone: 'stone', midnight: 'charcoal' }[raw] || raw) : null;
+        } catch (error) { return null; }
     })();
     const state = { submitting: false, finish: savedFinish };
 
@@ -297,6 +333,41 @@
         });
     };
 
+    const finishImage = document.querySelector('[data-deposit-finish-image]');
+    const finishCode = document.querySelector('[data-deposit-finish-code]');
+    const finishSizes = '(max-width: 900px) 100vw, 60vw';
+    let finishRenderGen = 0;
+    let finishRenderPending = false;
+    const switchFinishRender = (finish) => {
+        if (!finishImage || !finish || !finish.src) return;
+        // Dedupe only when idle: with a swap in flight the DOM src is stale, so "last click wins" must run.
+        if (!finishRenderPending && finishImage.dataset.finishSrc === finish.src) return;
+        const gen = ++finishRenderGen;
+        finishRenderPending = true;
+        const apply = () => {
+            if (gen !== finishRenderGen) return;
+            finishImage.classList.add('is-fading');
+            window.setTimeout(() => {
+                if (gen !== finishRenderGen) { finishImage.classList.remove('is-fading'); return; }
+                if (finish.srcset) finishImage.srcset = finish.srcset; else finishImage.removeAttribute('srcset');
+                finishImage.sizes = finishSizes;
+                finishImage.src = finish.src;
+                finishImage.alt = `LunaWake in the ${finish.name} finish`;
+                finishImage.dataset.finishSrc = finish.src;
+                if (finishCode) finishCode.textContent = finish.code || '';
+                finishImage.classList.remove('is-fading');
+                finishRenderPending = false;
+            }, 180);
+        };
+        // Preload off-DOM so the swap lands on a decoded frame; a failed load keeps the current render.
+        const loader = new Image();
+        loader.onload = apply;
+        if (finish.srcset) loader.srcset = finish.srcset;
+        loader.sizes = finishSizes;
+        loader.src = finish.src;
+        if (loader.complete) { loader.onload = null; apply(); }
+    };
+
     const updateFinish = (finishId = state.finish) => {
         const selectedFinishId = finishId && config.finishes[finishId] ? finishId : null;
         const finish = selectedFinishId ? config.finishes[selectedFinishId] : null;
@@ -306,6 +377,7 @@
             button.classList.toggle('is-active', selected);
             button.setAttribute('aria-pressed', String(selected));
         });
+        if (finish) switchFinishRender(finish);
         if (finishName) finishName.textContent = finish ? `${finish.name} — good eye. Thanks.` : 'No vote yet — pick the one you\'d want on your nightstand.';
     };
 

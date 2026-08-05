@@ -23,17 +23,15 @@
         .shopify-deposit-finish-picker{margin-top:30px;padding-top:20px;border-top:1px solid var(--shopify-line)}
         .shopify-deposit-finish-picker legend{padding:0;color:var(--shopify-ink);font-size:14px;font-weight:600}
         .shopify-deposit-finish-picker legend span{margin-left:8px;color:var(--shopify-muted);font-size:10px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
-        .shopify-deposit-finish-options{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:13px}
+        .shopify-deposit-finish-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:13px}
         .shopify-deposit-finish-options button{display:flex;align-items:center;justify-content:center;gap:6px;min-width:0;min-height:40px;padding:7px 5px;border:1px solid var(--shopify-line);border-radius:999px;background:transparent;color:var(--shopify-muted);cursor:pointer;font:inherit;font-size:10px}
         .shopify-deposit-finish-options button:hover,.shopify-deposit-finish-options button:focus-visible,.shopify-deposit-finish-options button.is-active{border-color:var(--shopify-ink);color:var(--shopify-ink)}
         .shopify-deposit-finish-options button.is-active{background:var(--shopify-ink);color:#fffdf8}
         .shopify-deposit-finish-swatch{flex:0 0 auto;width:14px;height:14px;border:1px solid rgba(23,32,45,.18);border-radius:50%}
-        .shopify-deposit-finish-swatch--dawn{background:#e6c7ac}.shopify-deposit-finish-swatch--moonstone{background:#a9aaa6}.shopify-deposit-finish-swatch--midnight{background:#25242b}.shopify-deposit-finish-swatch--sage{background:#a8b59c}.shopify-deposit-finish-swatch--amber{background:#b9673b}
         .shopify-deposit-finish-picker>p{margin-top:12px;color:var(--shopify-muted);font-size:11px;line-height:1.45}
-        @media (max-width:560px){.shopify-deposit-finish-options{grid-template-columns:repeat(2,minmax(0,1fr))}.shopify-deposit-finish-options button:last-child{grid-column:span 2}}
     </style>
-    <link rel="stylesheet" href="styles.css?v=2026-08-05d" media="print" onload="this.media='all';this.onload=null">
-    <noscript><link rel="stylesheet" href="styles.css?v=2026-08-05d"></noscript>
+    <link rel="stylesheet" href="styles.css?v=2026-08-05e" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="styles.css?v=2026-08-05e"></noscript>
     <style>
         /* Deposit page reorganization: the mobile reading order is intentional. */
         .deposit-reorg-section{padding:clamp(72px,9vw,128px) 0}
@@ -113,12 +111,15 @@
         .deposit-reorg-finish__head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(280px,1.15fr);gap:40px;align-items:end}
         .deposit-reorg-finish__head h2{font-size:clamp(42px,5.5vw,76px)}
         .deposit-reorg-finish__head>p{max-width:560px;color:var(--shopify-muted,#69717b);font-size:17px;line-height:1.55}
-        .deposit-reorg-finish__media{margin-top:52px;background:#e4dbd0}
-        .deposit-reorg-finish__media img{display:block;width:100%;height:auto}
+        .deposit-reorg-finish__stage{margin:52px 0 0}
+        .deposit-finish-frame{overflow:hidden;background:#e4dbd0}
+        .deposit-finish-frame img{display:block;width:100%;height:auto;transition:opacity 180ms ease}
+        .deposit-finish-frame img.is-fading{opacity:0}
+        .deposit-reorg-finish__stage figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:10px;color:var(--shopify-muted,#69717b);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
         .deposit-reorg-finish .shopify-deposit-finish-picker{margin-top:30px;padding:0;border:0}
         .deposit-reorg-finish .shopify-deposit-finish-picker legend{font-size:18px;font-weight:600}
         .deposit-reorg-finish .shopify-deposit-finish-picker legend span{display:none}
-        .deposit-reorg-finish .shopify-deposit-finish-options{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:16px}
+        .deposit-reorg-finish .shopify-deposit-finish-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
         .deposit-reorg-finish .shopify-deposit-finish-options button{min-height:46px;border-radius:3px;font-size:12px}
         .deposit-reorg-finish .shopify-deposit-finish-picker>p{margin-top:13px;color:var(--shopify-muted,#69717b);font-size:15px}
         .deposit-reorg-faq{background:#edeae3}
@@ -160,8 +161,6 @@
             .deposit-reorg-get__item h3{margin-top:20px}
             .deposit-reorg-price__button{justify-self:start;margin-top:0}
             .deposit-reorg-price__cards{grid-template-columns:1fr;margin-top:42px}
-            .deposit-reorg-finish .shopify-deposit-finish-options{grid-template-columns:repeat(3,minmax(0,1fr))}
-            .deposit-reorg-finish .shopify-deposit-finish-options button:last-child{grid-column:auto}
         }
         @media (max-width:560px){
             .deposit-reorg-section{padding:64px 0}
@@ -184,10 +183,8 @@
             .deposit-reorg-steps__list li{grid-template-columns:78px minmax(0,1fr);gap:12px}
             .deposit-reorg-steps__list h3{font-size:20px}
             .deposit-reorg-steps__list p{font-size:17px}
-            .deposit-reorg-finish__media{margin-top:34px}
-            .deposit-reorg-finish .shopify-deposit-finish-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+            .deposit-reorg-finish__stage{margin-top:34px}
             .deposit-reorg-finish .shopify-deposit-finish-options button{min-height:48px}
-            .deposit-reorg-finish .shopify-deposit-finish-options button:last-child{grid-column:span 2}
             .deposit-reorg-faq__list summary{font-size:17px}
             .deposit-reorg-final .deposit-reorg-button{width:min(100%,360px)}
             .deposit-reorg-sticky{justify-content:space-between;gap:12px;padding-inline:16px}
@@ -302,7 +299,6 @@
         }
 
         /* Finish section: make the intent read as a standalone poll. */
-        .deposit-reorg-finish__poll-note{max-width:760px!important;margin-top:9px!important;color:var(--shopify-muted,#69717b)!important;font-size:15px!important;line-height:1.45!important}
         .deposit-reorg-finish .shopify-deposit-finish-options{margin-top:15px}
         .deposit-reorg-finish .shopify-deposit-finish-options button{font-size:13px}
         .deposit-reorg-finish .shopify-deposit-finish-picker>p[data-deposit-finish-name]{margin-top:11px}
@@ -1380,15 +1376,9 @@
 
         <section class="deposit-reorg-section deposit-reorg-finish" aria-labelledby="finish-showcase-heading">
             <div class="deposit-reorg-shell">
-                <div class="deposit-reorg-finish__head"><div><p class="deposit-reorg-eyebrow">Help us choose</p><h2 id="finish-showcase-heading">Five finishes.<br>Which one would you pick?</h2></div><p>A preference poll — it does not affect your reservation.</p></div>
-                <figure class="deposit-reorg-finish__media"><picture><source srcset="images/luna-latest/finishes-all.webp" type="image/webp"><img src="images/luna-latest/finishes-all.png" width="1920" height="1003" alt="LunaWake finishes: Dawn, Moonstone, Midnight, Amber, and Sage" loading="lazy" decoding="async"></picture></figure>
-                <fieldset class="shopify-deposit-finish-picker"><legend>Quick color poll</legend><p class="deposit-reorg-finish__poll-note">Choose the finish you like best. One vote, saved on this device.</p><div class="shopify-deposit-finish-options" role="group" aria-label="Vote for your favorite finish">
-                    <button type="button" data-deposit-finish="dawn" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--dawn" aria-hidden="true"></i>Dawn</button>
-                    <button type="button" data-deposit-finish="moonstone" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--moonstone" aria-hidden="true"></i>Moonstone</button>
-                    <button type="button" data-deposit-finish="midnight" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--midnight" aria-hidden="true"></i>Midnight</button>
-                    <button type="button" data-deposit-finish="amber" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--amber" aria-hidden="true"></i>Amber</button>
-                    <button type="button" data-deposit-finish="sage" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--sage" aria-hidden="true"></i>Sage</button>
-                </div><p data-deposit-finish-name aria-live="polite">No vote yet.</p></fieldset>
+                <div class="deposit-reorg-finish__head"><div><p class="deposit-reorg-eyebrow">Help us choose</p><h2 id="finish-showcase-heading">A quieter kind of color.</h2></div><p>Three material directions, one LunaWake. Tap a finish to see the render, then leave your vote — preference only; it does not affect your reservation.</p></div>
+                <figure class="deposit-reorg-finish__stage"><div class="deposit-finish-frame"><img data-deposit-finish-image data-finish-src="images/luna-latest/finish-stone-1440.webp?v=2026-08-05d" src="images/luna-latest/finish-stone-1440.webp?v=2026-08-05d" srcset="images/luna-latest/finish-stone-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-stone-1440.webp?v=2026-08-05d 1440w" sizes="(max-width: 900px) 100vw, 60vw" width="1440" height="1199" alt="LunaWake in the Stone finish" loading="lazy" decoding="async"></div><figcaption><span>LunaWake / finish render</span><span data-deposit-finish-code>LW / STONE</span></figcaption></figure>
+                <fieldset class="shopify-deposit-finish-picker"><legend>Which one would you pick?</legend><div class="shopify-deposit-finish-options" role="group" aria-label="Vote for your favorite finish" data-deposit-finish-options></div><p data-deposit-finish-name aria-live="polite">No vote yet.</p></fieldset>
             </div>
         </section>
 
@@ -1412,6 +1402,6 @@
     </footer>
 
     <script src="js/lw2_shell.js?v=2026-08-04l"></script>
-    <script src="js/deposit.js?v=2026-08-05e"></script>
+    <script src="js/deposit.js?v=2026-08-05f"></script>
 </body>
 </html>

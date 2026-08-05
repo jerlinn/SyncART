@@ -4581,9 +4581,6 @@ h3 {
     border: 1px solid rgba(23, 32, 45, .18);
     border-radius: 50%;
 }
-.shopify-deposit-finish-swatch--amber { background: #b9673b; }
-.shopify-deposit-finish-swatch--stone { background: #a9aaa6; }
-.shopify-deposit-finish-swatch--charcoal { background: #242321; }
 .shopify-deposit-finish-picker > p { margin-top: 12px; color: var(--shopify-muted); font-size: 11px; }
 .shopify-deposit-finish-picker > p strong { color: var(--shopify-ink); font-weight: 700; }
 .shopify-deposit-finish-picker > small { display: block; margin-top: 5px; color: #89919a; font-size: 11px; line-height: 1.45; }

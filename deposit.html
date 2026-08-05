@@ -694,19 +694,27 @@
             .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-logo-mark--light{opacity:0}
             .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-logo-mark--dark{opacity:1}
             .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-nav-links{color:rgba(36,33,31,.88)}
-            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-menu{color:var(--lw2-ink)}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-menu{color:var(--lw2-ink,#17202d)}
         }
+        /* The stock burger is two 1px hairlines — near-invisible on the light
+           header states. Thicken on this page so the menu reads as a control.
+           (!important: the shared shell pins height:1px/flex-basis:1px with
+           !important; this inline sheet comes later in document order.) */
+        .lw2-site.lw2-deposit-page .lw2-menu-icon i{height:2px!important;flex-basis:2px!important}
         @media (max-width:560px){
             .lw2-deposit-page .lw2-header{
                 position:relative;
                 top:auto;
                 background:rgba(247,245,240,.96);
-                border-bottom:1px solid var(--lw2-line);
-                color:var(--lw2-ink)
+                border-bottom:1px solid var(--lw2-line,#d8d6cf);
+                color:var(--lw2-ink,#17202d)
             }
             .lw2-deposit-page .lw2-logo-mark--light{opacity:0}
             .lw2-deposit-page .lw2-logo-mark--dark{opacity:1}
-            .lw2-deposit-page .lw2-menu{color:var(--lw2-ink)}
+            /* Shared shell pins the burger white (!important) below 1280px on the
+               assumption of a dark hero under a transparent header. This page's
+               mobile header is opaque cream from the start, so re-pin to ink. */
+            .lw2-deposit-page .lw2-header:not(.is-menu-open) .lw2-menu{color:var(--lw2-ink,#17202d)!important}
             .lw2-deposit-page .lw2-menu span{background:currentcolor}
         }
 

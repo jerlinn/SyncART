@@ -4484,7 +4484,6 @@ h3 {
 .lw2-intro-grid > div > .lw2-inline-link { margin-top: 24px; }
 .lw2-radar-details {
     margin-top: 48px;
-    border-top: 1px solid rgba(55, 49, 43, .18);
     border-bottom: 1px solid rgba(55, 49, 43, .18);
 }
 .lw2-radar-details > summary {

@@ -32,7 +32,7 @@
         .shopify-deposit-finish-picker>p{margin-top:12px;color:var(--shopify-muted);font-size:11px;line-height:1.45}
         @media (max-width:560px){.shopify-deposit-finish-options{grid-template-columns:repeat(2,minmax(0,1fr))}.shopify-deposit-finish-options button:last-child{grid-column:span 2}}
     </style>
-    <link rel="stylesheet" href="styles.css?v=2026-08-05c">
+    <link rel="stylesheet" href="styles.css?v=2026-08-05d">
     <style>
         /* Deposit page reorganization: the mobile reading order is intentional. */
         .deposit-reorg-section{padding:clamp(72px,9vw,128px) 0}
@@ -1129,57 +1129,66 @@
             .lw2-site.lw2-deposit-page .deposit-reorg-trust p{font-size:16px}
         }
 
-        /* Immersive card-deck mobile: the bedroom photo is a fixed, global
-           backdrop; the first screen tells the whole story (hero claim +
-           complete reservation card); every following section scrolls over
-           the photo as a rounded card, with the backdrop showing through
-           the gaps between cards. */
+        /* 10) Conventional mobile (2026-08-05): in-flow photo hero on cream,
+              full-bleed sections, one 18px gutter, compact price timeline.
+              Replaces the removed "immersive card-deck" layer. */
+
+        /* Desktop-load-bearing: keeps the <picture> wrapper out of the hero
+           grid flow (was unscoped inside the removed layer). */
         .deposit-reorg-hero__backdrop{position:absolute;z-index:-2;inset:0}
-        @media (max-width:900px){
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__image{
-                position:fixed;
-                z-index:-2;
-                inset:0;
-                width:100%;
-                height:100%;
-                aspect-ratio:auto;
-                object-fit:cover;
-                object-position:58% center
-            }
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero::after{
-                position:fixed;
-                z-index:-1;
-                inset:0;
-                display:block;
-                content:"";
-                background:linear-gradient(180deg,rgba(17,24,30,.62) 0%,rgba(17,24,30,.32) 42%,rgba(17,24,30,.58) 100%)
-            }
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero{min-height:0;background:transparent;color:#fffdf8}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero .deposit-reorg-eyebrow{color:rgba(255,253,248,.78)}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{color:#fffdf8}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero h1 [data-deposit-amount]{color:#f0d29e}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{color:rgba(255,253,248,.92)}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{color:rgba(255,253,248,.82)}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy strong{color:#fffdf8}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{color:#fffdf8}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content{padding:80px 0 8px}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{max-width:none;font-size:clamp(32px,7.4vw,42px);letter-spacing:-.03em;line-height:1.04}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{max-width:none;margin-top:10px;font-size:16px;line-height:1.42}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{margin-top:8px;font-size:15px;line-height:1.4}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{margin-top:10px;font-size:12px;line-height:1.35}
-            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card{position:relative;z-index:1;margin-top:14px;margin-bottom:22px}
-            .lw2-site.lw2-deposit-page main>section{position:relative;z-index:1;margin:14px 12px;border-radius:22px;overflow:hidden}
-            .lw2-site.lw2-deposit-page main>.deposit-reorg-hero{margin:0;border-radius:0;overflow:visible}
-            .lw2-site.lw2-deposit-page main>section.deposit-reorg-section{padding:48px 0}
-            .lw2-site.lw2-deposit-page main>.shopify-deposit-coach{padding-top:48px;padding-bottom:48px}
-        }
+
         @media (max-width:560px){
-            .lw2-site.lw2-deposit-page .lw2-header{position:fixed;top:0;right:0;left:0;background:transparent;border-bottom:0;color:#fffdf8}
-            .lw2-site.lw2-deposit-page .lw2-logo-mark--light{opacity:1}
-            .lw2-site.lw2-deposit-page .lw2-logo-mark--dark{opacity:0}
-            .lw2-site.lw2-deposit-page .lw2-menu{color:#fffdf8}
-            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open){background:rgba(23,32,45,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:none;color:#fffdf8}
-            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content{padding-top:84px}
+            /* Header: light, in-flow. The .is-menu-open dark states from the
+               earlier layer still win on specificity, which is correct. */
+            .lw2-site.lw2-deposit-page .lw2-header,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled{position:relative;top:auto;background:rgba(247,245,240,.96);border-bottom:1px solid var(--lw2-line);box-shadow:none;color:var(--lw2-ink)}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--light,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-logo-mark--light{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--dark,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-logo-mark--dark{opacity:1}
+            .lw2-site.lw2-deposit-page .lw2-menu,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-menu{color:var(--lw2-ink)}
+
+            /* Hero photo in flow at its natural 3:2. */
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__backdrop{position:static}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__image{position:static;display:block;width:100%;height:auto;aspect-ratio:1536/1024;object-fit:cover;object-position:50% 50%}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero{min-height:0;background:var(--lw2-cream);color:var(--lw2-ink)}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero::after{display:none}
+
+            /* Unified spacing: 56px rhythm, no floating-card margins. */
+            .lw2-site.lw2-deposit-page main>section{margin:0;border-radius:0}
+            .lw2-site.lw2-deposit-page .deposit-reorg-section{padding:56px 0}
+            .lw2-site.lw2-deposit-page .shopify-deposit-coach{padding-top:56px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price{padding:48px 0}
+
+            /* Sticky bar: sized for the JS-injected preview labels. */
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky{gap:10px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky__label{min-width:0;white-space:normal;line-height:1.25}
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky .deposit-reorg-button{flex:0 0 auto}
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky__desktop-label{display:none}
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky__compact-label{display:inline}
+        }
+        @media (max-width:900px){
+            /* Price section, phone AND tablet: keep the headline visible
+               (line ~1123 hides the whole layout at <=900), drop only the
+               duplicate Reserve button (sticky bar owns the action). */
+            .lw2-site.lw2-deposit-page .deposit-reorg-price__layout{display:block}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price__button{display:none}
+
+            /* Price schedule -> always-visible 3-row timeline (the stacked
+               giant cards read as a wall at every width below 900). DOM
+               unchanged: deposit.js keeps writing amounts and window classes. */
+            .lw2-site.lw2-deposit-page .deposit-price-details{margin-top:10px;border-top:0}
+            .lw2-site.lw2-deposit-page .deposit-price-details summary{display:none}
+            .lw2-site.lw2-deposit-page .deposit-price-details .deposit-reorg-price__cards{grid-template-columns:1fr;gap:1px;margin-top:0}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;padding:15px 16px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card>span{margin:0;font-size:11px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card h3{margin:0;font-size:15px;font-weight:600}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card>strong{margin:0 0 0 auto;font-size:20px;letter-spacing:-.02em}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card__deadline,
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card__savings{display:none}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card.is-current .deposit-reorg-price-card__savings{display:grid;flex-basis:100%;margin-top:5px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price-card.is-ended{opacity:.55}
         }
     </style>
 </head>
@@ -1245,7 +1254,7 @@
         <section class="deposit-reorg-trust" aria-label="Reservation assurances">
             <div class="deposit-reorg-shell deposit-reorg-trust__grid">
                 <p>Refund any time — before or after launch, no questions</p>
-                <p><span>One email on Sep 21 completes your <b data-current-reward>$229</b> order</span></p>
+                <p><span data-state-copy="trust-order">One email on Sep 21 completes your <b data-current-reward>$229</b> order</span></p>
                 <p><a class="deposit-reorg-trust__email" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real humans: <strong data-support-email>info@lunawake.ai</strong></a></p>
             </div>
         </section>
@@ -1265,7 +1274,7 @@
                     <summary>See the full price schedule</summary>
                     <div class="deposit-reorg-price__cards" data-price-windows aria-live="polite" aria-label="LunaWake price schedule">
                         <article class="deposit-reorg-price-card is-current" data-price-window="founding">
-                            <span>Today</span><h3>Founding price</h3><strong data-price-amount>$229</strong>
+                            <span data-state-copy="window-chip-founding">Today</span><h3>Founding price</h3><strong data-price-amount>$229</strong>
                             <span class="deposit-reorg-price-card__deadline">Available until <b data-price-deadline>Sep 6 · 11:59pm ET</b></span>
                             <small class="deposit-reorg-price-card__savings"><b data-price-savings>Save $90 vs. launch day</b><span data-price-urgency>while this window is open</span></small>
                         </article>
@@ -1297,7 +1306,7 @@
         <section class="deposit-reorg-section deposit-reorg-get" aria-labelledby="benefits-heading">
             <div class="deposit-reorg-shell"><div class="deposit-reorg-get__head"><div><p class="deposit-reorg-eyebrow">What you get</p><h2 id="benefits-heading">The room does<br>the work.</h2></div><p class="deposit-reorg-lede">Every night, while you sleep, and every morning — LunaWake turns the night into a calmer room and one useful next step.</p></div>
                 <div class="deposit-reorg-get__grid"><article class="deposit-reorg-get__item"><span>Every night</span><h3>Sound and light ease you to sleep.</h3><p>Nothing on your body, nothing new to remember.</p></article><article class="deposit-reorg-get__item"><span>While you sleep</span><h3>The room adjusts itself.</h3><p>Light, sound, and temperature move around your sleep.</p></article><article class="deposit-reorg-get__item"><span>Every morning</span><h3>One clear thing to try.</h3><p>A plain-English read about your night and one useful next step.</p></article></div>
-                <figure class="deposit-reorg-get__media"><img src="images/luna-latest/wake-room.png" width="1448" height="1086" alt="LunaWake shaping the light in a quiet bedroom" loading="lazy" decoding="async"></figure><p class="deposit-reorg-get__trust">No camera · No wearable · Raw signals stay on the device</p>
+                <figure class="deposit-reorg-get__media"><picture><source media="(max-width:560px)" srcset="images/luna-latest/device-bedside.webp"><img src="images/luna-latest/follow-room.png" width="1672" height="941" alt="LunaWake beside a sleeping person in a calm bedroom" loading="lazy" decoding="async"></picture></figure><p class="deposit-reorg-get__trust">No camera · No wearable · Raw signals stay on the device</p>
             </div>
         </section>
 
@@ -1339,15 +1348,15 @@
 
         <section class="deposit-reorg-section deposit-reorg-finish" aria-labelledby="finish-showcase-heading">
             <div class="deposit-reorg-shell">
-                <div class="deposit-reorg-finish__head"><div><p class="deposit-reorg-eyebrow">Help us choose</p><h2 id="finish-showcase-heading">Five finishes.<br>Which one would you pick?</h2></div><p>Quick color poll only. Your vote is separate from the $9 reservation, USD price, and product order.</p></div>
+                <div class="deposit-reorg-finish__head"><div><p class="deposit-reorg-eyebrow">Help us choose</p><h2 id="finish-showcase-heading">Five finishes.<br>Which one would you pick?</h2></div><p>A preference poll — it does not affect your reservation.</p></div>
                 <figure class="deposit-reorg-finish__media"><picture><source srcset="images/luna-latest/finishes-all.webp" type="image/webp"><img src="images/luna-latest/finishes-all.png" width="1920" height="1003" alt="LunaWake finishes: Dawn, Moonstone, Midnight, Amber, and Sage" loading="lazy" decoding="async"></picture></figure>
-                <fieldset class="shopify-deposit-finish-picker"><legend>Quick color poll</legend><p class="deposit-reorg-finish__poll-note">Choose the finish you like best. This does not change your $9 reservation, USD price, or order.</p><div class="shopify-deposit-finish-options" role="group" aria-label="Vote for your favorite finish">
+                <fieldset class="shopify-deposit-finish-picker"><legend>Quick color poll</legend><p class="deposit-reorg-finish__poll-note">Choose the finish you like best. One vote, saved on this device.</p><div class="shopify-deposit-finish-options" role="group" aria-label="Vote for your favorite finish">
                     <button type="button" data-deposit-finish="dawn" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--dawn" aria-hidden="true"></i>Dawn</button>
                     <button type="button" data-deposit-finish="moonstone" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--moonstone" aria-hidden="true"></i>Moonstone</button>
                     <button type="button" data-deposit-finish="midnight" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--midnight" aria-hidden="true"></i>Midnight</button>
                     <button type="button" data-deposit-finish="amber" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--amber" aria-hidden="true"></i>Amber</button>
                     <button type="button" data-deposit-finish="sage" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--sage" aria-hidden="true"></i>Sage</button>
-                </div><p data-deposit-finish-name aria-live="polite">No vote yet. Your choice is saved on this device only.</p></fieldset>
+                </div><p data-deposit-finish-name aria-live="polite">No vote yet.</p></fieldset>
             </div>
         </section>
 
@@ -1371,6 +1380,6 @@
     </footer>
 
     <script src="js/lw2_shell.js?v=2026-08-04l"></script>
-    <script src="js/deposit.js?v=2026-08-05a"></script>
+    <script src="js/deposit.js?v=2026-08-05c"></script>
 </body>
 </html>

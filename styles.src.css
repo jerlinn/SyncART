@@ -1503,14 +1503,14 @@ h3 {
     .lw2-nav { min-height: 68px; }
     .lw2-logo img, .lw2-logo--footer img { width: 132px; }
     .lw2-hero { display: block; min-height: 0; }
-    .lw2-hero-image { position: relative; height: 360px; }
+    .lw2-hero-image { position: relative; height: min(52vw, 300px); }
     .lw2-hero-image::after { background: linear-gradient(0deg, rgba(21, 17, 15, .42) 0%, rgba(21, 17, 15, .04) 62%, rgba(21, 17, 15, 0) 100%); }
     .lw2-hero-image img { object-position: 0% 50%; }
     .lw2-hero-content { padding-top: 42px; padding-bottom: 44px; }
     .lw2-hero h1 { font-size: clamp(54px, 16vw, 76px); }
     .lw2-hero-copy { margin-top: 22px; font-size: 15px; }
     .lw2-actions { align-items: flex-start; flex-direction: column; gap: 18px; margin-top: 27px; }
-    .lw2-hero-meta { gap: 9px; margin-top: 48px; font-size: 9px; letter-spacing: .06em; }
+    .lw2-hero-meta { gap: 9px; margin-top: 48px; font-size: 11px; letter-spacing: .06em; }
     .lw2-intro-grid { gap: 24px; }
     .lw2-intro h2, .lw2-real-life-head h2, .lw2-section-head h2, .lw2-radar-head h2, .lw2-device-copy h2, .lw2-finish-copy h2, .lw2-lab-copy h2, .lw2-faq h2 { font-size: 48px; }
     .lw2-section-head > p { font-size: 14px; }
@@ -1519,8 +1519,8 @@ h3 {
     .lw2-device-image img { aspect-ratio: .98; }
     .lw2-feature-row { gap: 0 16px; }
     .lw2-feature-row h3 { font-size: 24px; }
-    .lw2-feature-row p { font-size: 11px; }
-    .lw2-finish-stage figcaption { font-size: 9px; }
+    .lw2-feature-row p { font-size: 13px; }
+    .lw2-finish-stage figcaption { font-size: 11px; }
     .lw2-lab-media img, .lw2-lab-media video { aspect-ratio: .95; }
     .lw2-cta { padding: 88px 0; }
     .lw2-cta h2 { font-size: 51px; }
@@ -1855,7 +1855,7 @@ h3 {
 }
 
 @media (max-width: 560px) {
-    .lw2-hero-image img { object-position: 78% 50%; }
+    .lw2-hero-image img { object-position: 65% 50%; }
     .lw2-device-detail { margin-top: 42px; }
     .lw2-device-detail-image img { aspect-ratio: 1.12; }
     .lw2-device-detail-copy { min-height: 0; padding: 26px 20px 30px; }
@@ -3604,7 +3604,7 @@ h3 {
     .lw2-room-panel[data-room-panel="home"] .lw2-device-grid { gap: 8px; margin-top: 29px; }
     .lw2-room-panel[data-room-panel="home"] .lw2-device-grid button { min-height: 145px; padding-inline: 6px; }
     .lw2-room-panel[data-room-panel="home"] .lw2-device-grid strong { font-size: 12px; }
-    .lw2-room-panel[data-room-panel="home"] .lw2-device-grid small { gap: 3px; font-size: 9px; }
+    .lw2-room-panel[data-room-panel="home"] .lw2-device-grid small { gap: 3px; font-size: 11px; }
 }
 
 /* Smart Home primary view: keep the reference app language, remove the fixed phone height. */
@@ -3657,7 +3657,7 @@ h3 {
     .lw2-room-panel[data-room-panel="home"] .lw2-device-grid { gap: 8px; margin-top: 17px; }
     .lw2-room-panel[data-room-panel="home"] .lw2-device-grid button { min-height: 121px; padding-inline: 5px; }
     .lw2-room-panel[data-room-panel="home"] .lw2-device-grid strong { font-size: 11px; }
-    .lw2-room-panel[data-room-panel="home"] .lw2-device-grid small { gap: 3px; font-size: 9px; }
+    .lw2-room-panel[data-room-panel="home"] .lw2-device-grid small { gap: 3px; font-size: 11px; }
     .lw2-room-copy { padding: 26px 21px 22px; }
     .lw2-room-copy-panel h3 { font-size: 47px; }
     .lw2-radar-mechanism { margin-top: 42px; padding-top: 30px; }
@@ -5594,4 +5594,19 @@ h3 {
     .lw2-site .lw2-hero-offer {
         margin-top: 14px;
     }
+}
+
+/* Mobile rhythm (2026-08-05): one tighter <=560 spacing scale.
+   The .lw2-site prefix matches the 2-class strata above so source order wins. */
+@media (max-width: 560px) {
+    .lw2-site .lw2-intro, .lw2-site .lw2-real-life, .lw2-site .lw2-process,
+    .lw2-site .lw2-radar, .lw2-site .lw2-device, .lw2-site .lw2-finishes,
+    .lw2-site .lw2-app, .lw2-site .lw2-app-story, .lw2-site .lw2-lab,
+    .lw2-site .lw2-faq, .lw2-site .lw2-replaces, .lw2-site .lw2-cbti,
+    .lw2-site .lw2-no-score, .lw2-site .lw2-cta { padding: 64px 0; }
+    .lw2-site .lw2-section-head, .lw2-site .lw2-radar-head,
+    .lw2-site .lw2-device-hero, .lw2-site .lw2-finish-grid,
+    .lw2-site .lw2-lab-grid, .lw2-site .lw2-real-life-head { gap: 32px; }
+    .lw2-site .lw2-faq-grid { gap: 34px; }
+    .lw2-site .lw2-cbti-grid, .lw2-site .lw2-no-score-grid { gap: 32px; }
 }

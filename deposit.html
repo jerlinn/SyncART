@@ -16,31 +16,10 @@
     <meta property="og:url" content="https://lunawake.ai/deposit.html">
     <meta property="og:image" content="https://lunawake.ai/images/luna-latest/finishes-all.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="preload" as="image" href="images/luna-latest/device-bedside.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/luna-latest/device-bedside.webp" media="(min-width: 901px)" fetchpriority="high">
+    <link rel="preload" as="image" href="images/luna-latest/lab-bedside.webp" media="(max-width: 900px)" fetchpriority="high">
     <style>
         img,video{max-width:100%;height:auto}picture{display:block}
-        .shopify-deposit-proof{padding:clamp(72px,9vw,126px) 0;background:#e6ebe8}
-        .shopify-deposit-proof__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(280px,1.2fr);gap:clamp(40px,8vw,112px);align-items:end}
-        .shopify-deposit-proof h2{margin:0;color:var(--shopify-ink);font-size:clamp(44px,5.2vw,72px);letter-spacing:-.03em;line-height:.96}
-        .shopify-deposit-proof__grid>p{max-width:620px;margin:0;color:var(--shopify-muted);font-size:clamp(15px,1.25vw,17px);line-height:1.65}
-        .shopify-deposit-social-proof{max-width:560px;margin:27px 0 0;padding:14px 17px;border-left:3px solid var(--shopify-accent);background:rgba(231,201,154,.24);color:var(--shopify-muted);font-size:13px;line-height:1.5}
-        .shopify-deposit-social-proof strong{color:var(--shopify-ink);font-weight:600}
-        .shopify-deposit-benefits,.shopify-deposit-payment{padding:clamp(72px,9vw,126px) 0;background:var(--shopify-cream,#f7f5f0)}
-        .shopify-deposit-benefits__head,.shopify-deposit-payment__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(280px,1.2fr);gap:clamp(40px,8vw,112px);align-items:end}
-        .shopify-deposit-benefits h2,.shopify-deposit-payment h2{margin:0;color:var(--shopify-ink);font-size:clamp(44px,5.2vw,72px);letter-spacing:-.03em;line-height:.96}
-        .shopify-deposit-benefits__head>p,.shopify-deposit-payment__grid>p{max-width:620px;margin:0;color:var(--shopify-muted);font-size:clamp(15px,1.25vw,17px);line-height:1.65}
-        .shopify-deposit-benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:58px;border-top:1px solid var(--lw2-line)}
-        .shopify-deposit-benefit-grid article{min-width:0;padding:22px 24px 0 0;border-bottom:1px solid var(--lw2-line)}
-        .shopify-deposit-benefit-grid article+article{padding-left:24px;border-left:1px solid var(--lw2-line)}
-        .shopify-deposit-benefit-grid span,.shopify-deposit-payment__eyebrow{color:var(--shopify-accent-dark);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-        .shopify-deposit-benefit-grid h3{margin:42px 0 0;color:var(--shopify-ink);font-size:clamp(24px,2.3vw,34px);letter-spacing:-.04em;line-height:1}
-        .shopify-deposit-benefit-grid p{margin:12px 0 20px;color:var(--shopify-muted);font-size:13px;line-height:1.6}
-        .shopify-deposit-benefits__trust{margin-top:29px;color:var(--shopify-muted);font-size:11px;letter-spacing:.05em;text-transform:uppercase}
-        .shopify-deposit-payment{background:#e9eeeb}
-        .shopify-deposit-payment__grid{align-items:start}
-        .shopify-deposit-payment__grid>p{align-self:end}
-        .shopify-deposit-payment__note{display:block;margin-top:26px;color:var(--shopify-ink);font-weight:600}
-        .shopify-deposit-payment__fine{display:block;margin-top:6px;color:var(--shopify-muted);font-size:12px;font-weight:400}
         .shopify-deposit-finish-picker{margin-top:30px;padding-top:20px;border-top:1px solid var(--shopify-line)}
         .shopify-deposit-finish-picker legend{padding:0;color:var(--shopify-ink);font-size:14px;font-weight:600}
         .shopify-deposit-finish-picker legend span{margin-left:8px;color:var(--shopify-muted);font-size:10px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
@@ -51,11 +30,1158 @@
         .shopify-deposit-finish-swatch{flex:0 0 auto;width:14px;height:14px;border:1px solid rgba(23,32,45,.18);border-radius:50%}
         .shopify-deposit-finish-swatch--dawn{background:#e6c7ac}.shopify-deposit-finish-swatch--moonstone{background:#a9aaa6}.shopify-deposit-finish-swatch--midnight{background:#25242b}.shopify-deposit-finish-swatch--sage{background:#a8b59c}.shopify-deposit-finish-swatch--amber{background:#b9673b}
         .shopify-deposit-finish-picker>p{margin-top:12px;color:var(--shopify-muted);font-size:11px;line-height:1.45}
-        @media (max-width:900px){.shopify-deposit-benefits__head,.shopify-deposit-payment__grid{grid-template-columns:1fr;gap:30px}.shopify-deposit-benefit-grid{grid-template-columns:1fr;margin-top:42px}.shopify-deposit-benefit-grid article,.shopify-deposit-benefit-grid article+article{padding:18px 0 20px;border-left:0}.shopify-deposit-benefit-grid h3{margin-top:24px}}
         @media (max-width:560px){.shopify-deposit-finish-options{grid-template-columns:repeat(2,minmax(0,1fr))}.shopify-deposit-finish-options button:last-child{grid-column:span 2}}
-        @media (max-width:900px){.shopify-deposit-proof__grid{grid-template-columns:1fr;gap:30px}}
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-08-05c">
+    <style>
+        /* Deposit page reorganization: the mobile reading order is intentional. */
+        .deposit-reorg-section{padding:clamp(72px,9vw,128px) 0}
+        .deposit-reorg-shell{width:min(1120px,calc(100% - 48px));margin:0 auto}
+        .deposit-reorg-eyebrow{margin-bottom:18px;color:var(--shopify-accent-dark,#8d6b3d);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+        .deposit-reorg-section h2{max-width:760px;color:var(--shopify-ink,#17202d);font-size:clamp(40px,5.5vw,76px);font-weight:500;letter-spacing:-.045em;line-height:.98}
+        .deposit-reorg-lede{max-width:590px;margin-top:24px;color:var(--shopify-muted,#69717b);font-size:clamp(17px,1.5vw,20px);line-height:1.55}
+        .deposit-reorg-hero{position:relative;display:grid;min-height:min(820px,calc(100svh - 72px));isolation:isolate;overflow:hidden;background:#192028;color:#fffdf8}
+        .deposit-reorg-hero::after{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(17,24,30,.86) 0%,rgba(17,24,30,.58) 44%,rgba(17,24,30,.2) 100%),linear-gradient(0deg,rgba(17,24,30,.4),transparent 42%);content:""}
+        .deposit-reorg-hero__image{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+        .deposit-reorg-hero__content{position:relative;z-index:1;align-self:end;padding:clamp(100px,13vw,170px) 0 clamp(78px,10vw,118px)}
+        .deposit-reorg-hero__content h1{max-width:1040px;font-size:clamp(52px,7.5vw,108px);font-weight:500;letter-spacing:-.06em;line-height:.92}
+        .deposit-reorg-hero__content h1 strong{font-weight:600;color:#f0d29e}
+        .deposit-reorg-hero__lede{max-width:570px;margin-top:26px;color:rgba(255,253,248,.9);font-size:clamp(18px,1.7vw,22px);line-height:1.48}
+        .deposit-reorg-hero__policy{max-width:520px;margin-top:17px;color:rgba(255,253,248,.72);font-size:14px;line-height:1.5}
+        .deposit-reorg-hero__policy strong{color:#fffdf8;font-weight:600}
+        .deposit-reorg-hero__proof{display:flex;align-items:center;gap:10px;margin:24px 0 0;color:#fffdf8;font-size:14px}
+        .deposit-reorg-hero__proof::before{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#d8b77f;color:#182229;content:"✓";font-size:13px;font-weight:700}
+        .deposit-reorg-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;margin-top:28px;padding:15px 22px;border:1px solid transparent;border-radius:3px;background:#f0d29e;color:#17202d;cursor:pointer;font:inherit;font-size:16px;font-weight:700;letter-spacing:.01em}
+        .deposit-reorg-button:hover,.deposit-reorg-button:focus-visible{background:#fff1cf}
+        .deposit-reorg-button:disabled{cursor:not-allowed;opacity:.75}
+        .deposit-reorg-trust{padding:24px 0;background:#dce5e1}
+        .deposit-reorg-trust__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+        .deposit-reorg-trust p{display:flex;gap:11px;align-items:flex-start;color:#29343c;font-size:15px;line-height:1.42}
+        .deposit-reorg-trust p::before{flex:0 0 auto;color:#8d6b3d;content:"✓";font-size:17px;font-weight:700}
+        .deposit-reorg-trust__email{color:inherit}
+        .deposit-reorg-trust__email:hover{text-decoration:underline}
+        .deposit-reorg-get__head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(280px,1.15fr);gap:40px;align-items:end}
+        .deposit-reorg-get__head h2{font-size:clamp(42px,5.8vw,82px)}
+        .deposit-reorg-get__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:62px;border-top:1px solid var(--lw2-line,#d8d6cf)}
+        .deposit-reorg-get__item{padding:24px 24px 0 0;border-bottom:1px solid var(--lw2-line,#d8d6cf)}
+        .deposit-reorg-get__item+.deposit-reorg-get__item{padding-left:24px;border-left:1px solid var(--lw2-line,#d8d6cf)}
+        .deposit-reorg-get__item span{color:var(--shopify-accent-dark,#8d6b3d);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+        .deposit-reorg-get__item h3{margin-top:36px;color:var(--shopify-ink,#17202d);font-size:clamp(24px,2.5vw,36px);font-weight:500;letter-spacing:-.04em;line-height:1.02}
+        .deposit-reorg-get__item p{margin-top:14px;color:var(--shopify-muted,#69717b);font-size:15px;line-height:1.55}
+        .deposit-reorg-get__media{margin-top:56px;background:#e4dbd0}
+        .deposit-reorg-get__media img{display:block;width:100%;height:auto}
+        .deposit-reorg-get__trust{margin-top:18px;color:var(--shopify-muted,#69717b);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+        .deposit-reorg-price{background:#f0ede7}
+        .deposit-reorg-price__layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:80px;align-items:end}
+        .deposit-reorg-price__headline{max-width:630px;color:var(--shopify-ink,#17202d);font-size:clamp(32px,4vw,58px);font-weight:500;letter-spacing:-.045em;line-height:1.02}
+        .deposit-reorg-price__headline strong{font-weight:700}
+        .deposit-reorg-price__deadline{margin-top:22px;color:var(--shopify-muted,#69717b);font-size:17px;line-height:1.45}
+        .deposit-reorg-price__deadline b{color:var(--shopify-ink,#17202d);font-weight:700}
+        .deposit-reorg-price__button{justify-self:end;margin-top:0}
+        .deposit-reorg-price__cards{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1px;margin-top:54px;background:var(--lw2-line,#d8d6cf)}
+        .deposit-reorg-price-card{min-width:0;padding:24px;background:#fffdf8;color:var(--shopify-muted,#69717b)}
+        .deposit-reorg-price-card.is-current{background:#17202d;color:rgba(255,253,248,.72)}
+        .deposit-reorg-price-card>span{display:block;color:var(--shopify-accent-dark,#8d6b3d);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+        .deposit-reorg-price-card.is-current>span{color:#f0d29e}
+        .deposit-reorg-price-card h3{margin-top:28px;color:var(--shopify-ink,#17202d);font-size:20px;font-weight:600;letter-spacing:-.03em}
+        .deposit-reorg-price-card.is-current h3{color:#fffdf8}
+        .deposit-reorg-price-card>strong{display:block;margin-top:14px;color:var(--shopify-ink,#17202d);font-size:44px;font-weight:600;letter-spacing:-.06em;line-height:1}
+        .deposit-reorg-price-card.is-current>strong{color:#fffdf8}
+        .deposit-reorg-price-card__deadline{display:block;margin-top:18px;font-size:13px;line-height:1.45}
+        .deposit-reorg-price-card__deadline b{color:var(--shopify-ink,#17202d);font-weight:600}
+        .deposit-reorg-price-card.is-current .deposit-reorg-price-card__deadline b{color:#fffdf8}
+        .deposit-reorg-price-card__savings{display:grid;gap:4px;margin-top:22px;font-size:12px;line-height:1.4}
+        .deposit-reorg-price-card__savings b{color:var(--shopify-ink,#17202d);font-weight:600}
+        .deposit-reorg-price-card.is-current .deposit-reorg-price-card__savings b{color:#f0d29e}
+        .deposit-reorg-price-card__savings span{color:var(--shopify-muted,#69717b)}
+        .deposit-reorg-price-card.is-current .deposit-reorg-price-card__savings span{color:rgba(255,253,248,.64)}
+        .deposit-price-details{margin-top:54px;border-top:1px solid var(--lw2-line,#d8d6cf)}
+        .deposit-price-details summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;color:var(--shopify-ink,#17202d);cursor:pointer;font-size:14px;font-weight:600;list-style:none}
+        .deposit-price-details summary::-webkit-details-marker{display:none}
+        .deposit-price-details summary::after{color:var(--shopify-accent-dark,#8d6b3d);content:"+";font-size:22px;font-weight:400}
+        .deposit-price-details[open] summary::after{content:"−"}
+        .deposit-reorg-steps{background:#e9eeeb}
+        .deposit-reorg-steps__layout{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:86px;align-items:start}
+        .deposit-reorg-steps__list{margin:0;padding:0;border-top:1px solid var(--lw2-line,#d8d6cf);list-style:none}
+        .deposit-reorg-steps__list li{display:grid;grid-template-columns:104px minmax(0,1fr);gap:18px;padding:22px 0;border-bottom:1px solid var(--lw2-line,#d8d6cf)}
+        .deposit-reorg-steps__list time{color:var(--shopify-accent-dark,#8d6b3d);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+        .deposit-reorg-steps__list h3{color:var(--shopify-ink,#17202d);font-size:23px;font-weight:600;letter-spacing:-.03em;line-height:1.08}
+        .deposit-reorg-steps__list p{margin-top:8px;color:var(--shopify-muted,#69717b);font-size:15px;line-height:1.55}
+        .deposit-reorg-steps__list p em{color:var(--shopify-ink,#17202d);font-style:normal}
+        .deposit-reorg-finish{background:#e9eeeb}
+        .deposit-reorg-finish__head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(280px,1.15fr);gap:40px;align-items:end}
+        .deposit-reorg-finish__head h2{font-size:clamp(42px,5.5vw,76px)}
+        .deposit-reorg-finish__head>p{max-width:560px;color:var(--shopify-muted,#69717b);font-size:17px;line-height:1.55}
+        .deposit-reorg-finish__media{margin-top:52px;background:#e4dbd0}
+        .deposit-reorg-finish__media img{display:block;width:100%;height:auto}
+        .deposit-reorg-finish .shopify-deposit-finish-picker{margin-top:30px;padding:0;border:0}
+        .deposit-reorg-finish .shopify-deposit-finish-picker legend{font-size:18px;font-weight:600}
+        .deposit-reorg-finish .shopify-deposit-finish-picker legend span{display:none}
+        .deposit-reorg-finish .shopify-deposit-finish-options{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:16px}
+        .deposit-reorg-finish .shopify-deposit-finish-options button{min-height:46px;border-radius:3px;font-size:12px}
+        .deposit-reorg-finish .shopify-deposit-finish-picker>p{margin-top:13px;color:var(--shopify-muted,#69717b);font-size:15px}
+        .deposit-reorg-faq{background:#edeae3}
+        .deposit-reorg-faq__layout{display:grid;grid-template-columns:minmax(0,.75fr) minmax(280px,1.25fr);gap:92px;align-items:start}
+        .deposit-reorg-faq__intro{max-width:380px;margin-top:22px;color:var(--shopify-muted,#69717b);font-size:16px;line-height:1.6}
+        .deposit-reorg-faq__support{display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:var(--shopify-ink,#17202d);font-size:14px;font-weight:600}
+        .deposit-reorg-faq__support:hover{text-decoration:underline}
+        .deposit-reorg-faq__list{border-top:1px solid var(--lw2-line,#d8d6cf)}
+        .deposit-reorg-faq__list details{border-bottom:1px solid var(--lw2-line,#d8d6cf)}
+        .deposit-reorg-faq__list summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 0;color:var(--shopify-ink,#17202d);cursor:pointer;font-size:16px;font-weight:600;list-style:none}
+        .deposit-reorg-faq__list summary::-webkit-details-marker{display:none}
+        .deposit-reorg-faq__list summary::after{color:var(--shopify-accent-dark,#8d6b3d);content:"+";font-size:22px;font-weight:400}
+        .deposit-reorg-faq__list details[open] summary::after{content:"−"}
+        .deposit-reorg-faq__list p{max-width:650px;margin:0 36px 20px 0;color:var(--shopify-muted,#69717b);font-size:15px;line-height:1.65}
+        .deposit-reorg-final{background:#17202d;color:#fffdf8;text-align:center}
+        .deposit-reorg-final h2{max-width:none;color:#fffdf8;font-size:clamp(44px,6.5vw,90px)}
+        .deposit-reorg-final p{max-width:540px;margin:22px auto 0;color:rgba(255,253,248,.76);font-size:16px;line-height:1.55}
+        .deposit-reorg-final .deposit-reorg-button{margin-top:30px}
+        .deposit-reorg-final__link{display:block;width:max-content;max-width:100%;margin:22px auto 0;color:rgba(255,253,248,.74);font-size:14px}
+        .deposit-reorg-final__link:hover{text-decoration:underline}
+        .deposit-reorg-status{margin-top:16px;color:rgba(255,253,248,.68);font-size:14px;line-height:1.45}
+        .deposit-reorg-status a{color:#f0d29e;text-decoration:underline}
+        .deposit-reorg-sticky{position:fixed;z-index:20;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;gap:20px;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:rgba(23,32,45,.96);box-shadow:0 -8px 24px rgba(23,32,45,.12)}
+        .deposit-reorg-sticky__label{color:#fffdf8;font-size:15px;font-weight:600}
+        .deposit-reorg-sticky__compact-label{display:none}
+        .deposit-reorg-sticky .deposit-reorg-button{min-height:52px;margin:0;padding:11px 18px;font-size:14px}
+        .lw2-deposit-page{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+        @media (min-width:901px){
+            .deposit-reorg-hero__content{padding:100px 0 75px}
+            .deposit-reorg-hero__lede{max-width:760px}
+            .deposit-reorg-hero__policy{max-width:780px}
+            .deposit-reorg-hero__content>.deposit-reorg-button{display:inline-flex;margin-top:0}
+        }
+        @media (max-width:900px){
+            .deposit-reorg-shell{width:min(100% - 40px,680px)}
+            .deposit-reorg-get__head,.deposit-reorg-price__layout,.deposit-reorg-steps__layout,.deposit-reorg-finish__head,.deposit-reorg-faq__layout{grid-template-columns:1fr;gap:30px}
+            .deposit-reorg-get__grid{grid-template-columns:1fr;margin-top:42px}
+            .deposit-reorg-get__item,.deposit-reorg-get__item+.deposit-reorg-get__item{padding:20px 0;border-left:0}
+            .deposit-reorg-get__item h3{margin-top:20px}
+            .deposit-reorg-price__button{justify-self:start;margin-top:0}
+            .deposit-reorg-price__cards{grid-template-columns:1fr;margin-top:42px}
+            .deposit-reorg-finish .shopify-deposit-finish-options{grid-template-columns:repeat(3,minmax(0,1fr))}
+            .deposit-reorg-finish .shopify-deposit-finish-options button:last-child{grid-column:auto}
+        }
+        @media (max-width:560px){
+            .deposit-reorg-section{padding:64px 0}
+            .deposit-reorg-shell{width:calc(100% - 32px)}
+            .deposit-reorg-hero{min-height:0}
+            .deposit-reorg-hero__content{padding:20px 0 16px}
+            .deposit-reorg-hero__content h1{font-size:clamp(48px,13vw,64px)}
+            .deposit-reorg-hero__lede{margin-top:20px;font-size:17px}
+            .deposit-reorg-hero__policy{margin-top:13px;line-height:1.35}
+            .deposit-reorg-hero__proof{gap:7px;margin-top:8px;line-height:1.35}
+            .deposit-reorg-hero__content>.deposit-reorg-button{display:none}
+            .deposit-reorg-button{width:100%;min-height:56px}
+            .deposit-reorg-trust{padding:20px 0}
+            .deposit-reorg-trust__grid{grid-template-columns:1fr;gap:12px}
+            .deposit-reorg-trust p{font-size:17px}
+            .deposit-reorg-get__media{margin-top:38px}
+            .deposit-reorg-get__item p,.deposit-reorg-lede,.deposit-reorg-price__deadline,.deposit-reorg-steps__list p,.deposit-reorg-faq__list p,.deposit-reorg-final p{font-size:17px}
+            .deposit-reorg-price__headline{font-size:34px}
+            .deposit-reorg-price__button{margin-top:0}
+            .deposit-reorg-steps__list li{grid-template-columns:78px minmax(0,1fr);gap:12px}
+            .deposit-reorg-steps__list h3{font-size:20px}
+            .deposit-reorg-steps__list p{font-size:17px}
+            .deposit-reorg-finish__media{margin-top:34px}
+            .deposit-reorg-finish .shopify-deposit-finish-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+            .deposit-reorg-finish .shopify-deposit-finish-options button{min-height:48px}
+            .deposit-reorg-finish .shopify-deposit-finish-options button:last-child{grid-column:span 2}
+            .deposit-reorg-faq__list summary{font-size:17px}
+            .deposit-reorg-final .deposit-reorg-button{width:min(100%,360px)}
+            .deposit-reorg-sticky{justify-content:space-between;gap:12px;padding-inline:16px}
+            .deposit-reorg-sticky__label{font-size:14px}
+            .deposit-reorg-sticky .deposit-reorg-button{width:auto;min-width:150px;white-space:nowrap}
+        }
+        @media (max-width:360px){
+            .deposit-reorg-sticky__desktop-label{display:none}
+            .deposit-reorg-sticky__compact-label{display:inline}
+            .deposit-reorg-sticky .deposit-reorg-button{min-width:138px;padding-inline:12px}
+        }
+
+        /* Visual audit: compact type rhythm for the deposit page. */
+        .lw2-deposit-page{line-height:1.42}
+        .lw2-deposit-page .lw2-nav{min-height:72px}
+        .lw2-deposit-page .lw2-nav-links{gap:22px;font-size:9px;letter-spacing:.08em}
+        .deposit-reorg-section{padding:clamp(60px,7vw,96px) 0}
+        .deposit-reorg-section h2{line-height:.92}
+        .deposit-reorg-lede{margin-top:18px;font-size:clamp(16px,1.3vw,18px);line-height:1.4}
+        .deposit-reorg-hero{min-height:min(760px,calc(100svh - 64px))}
+        .deposit-reorg-hero__content{padding:clamp(76px,10vw,120px) 0 clamp(56px,7vw,86px)}
+        .deposit-reorg-hero__content h1{font-size:clamp(48px,6.8vw,96px);letter-spacing:-.065em;line-height:.86}
+        .deposit-reorg-hero__lede{margin-top:18px;font-size:clamp(17px,1.45vw,19px);line-height:1.34}
+        .deposit-reorg-hero__policy{margin-top:12px;font-size:15px;line-height:1.4}
+        .deposit-reorg-hero__proof{gap:8px;margin-top:16px;font-size:15px;line-height:1.35}
+        .deposit-reorg-hero__proof::before{width:18px;height:18px;font-size:12px}
+        .deposit-reorg-button{min-height:50px;margin-top:20px;padding:13px 20px;font-size:15px}
+        .deposit-reorg-trust{padding:18px 0}
+        .deposit-reorg-trust__grid{gap:18px}
+        .deposit-reorg-trust p{gap:9px;line-height:1.38}
+        .deposit-reorg-trust p::before{font-size:15px}
+        .deposit-reorg-get__grid{margin-top:46px}
+        .deposit-reorg-get__item{padding:18px 20px 0 0}
+        .deposit-reorg-get__item+.deposit-reorg-get__item{padding-left:20px}
+        .deposit-reorg-get__item h3{margin-top:26px;line-height:.96}
+        .deposit-reorg-get__item p{margin-top:10px;font-size:15px;line-height:1.45}
+        .deposit-reorg-price__layout{gap:60px}
+        .deposit-reorg-price__headline{line-height:.96}
+        .deposit-reorg-price__deadline{margin-top:16px;font-size:15px;line-height:1.35}
+        .deposit-reorg-price__cards{margin-top:40px}
+        .deposit-reorg-price-card{padding:18px}
+        .deposit-reorg-price-card h3{margin-top:20px}
+        .deposit-reorg-price-card>strong{margin-top:10px;font-size:40px}
+        .deposit-reorg-price-card__deadline{margin-top:12px;font-size:12px;line-height:1.35}
+        .deposit-reorg-price-card__savings{gap:3px;margin-top:16px;line-height:1.3}
+        .deposit-reorg-steps__list li{padding:18px 0}
+        .deposit-reorg-steps__list p{margin-top:6px;font-size:15px;line-height:1.45}
+        .deposit-reorg-finish__head>p{font-size:16px;line-height:1.4}
+        .deposit-reorg-faq__intro{margin-top:18px;font-size:15px;line-height:1.45}
+        .deposit-reorg-faq__list summary{padding:17px 0;font-size:15px}
+        .deposit-reorg-faq__list p{margin-bottom:17px;font-size:15px;line-height:1.5}
+        .deposit-reorg-final p{margin-top:18px;font-size:15px;line-height:1.4}
+
+        @media (max-width:900px){
+            .lw2-deposit-page .lw2-nav{min-height:68px}
+            .deposit-reorg-section{padding:56px 0}
+            .deposit-reorg-hero__content{padding:72px 0 58px}
+            .deposit-reorg-hero__content h1{font-size:clamp(46px,10vw,72px);line-height:.88}
+            .deposit-reorg-hero__lede{font-size:16px;line-height:1.36}
+            .deposit-reorg-trust p{font-size:16px}
+            .deposit-reorg-get__item p,.deposit-reorg-steps__list p,.deposit-reorg-faq__list p{font-size:16px}
+        }
+
+        @media (max-width:560px){
+            .deposit-reorg-section{padding:52px 0}
+            .deposit-reorg-hero__content{padding:20px 0 14px}
+            .deposit-reorg-hero__content h1{font-size:clamp(46px,12.5vw,60px);line-height:.87}
+            .deposit-reorg-hero__lede{margin-top:16px;font-size:16px;line-height:1.34}
+            .deposit-reorg-hero__policy{margin-top:10px;line-height:1.35}
+            .deposit-reorg-hero__proof{margin-top:7px;line-height:1.32}
+            .deposit-reorg-trust{padding:17px 0}
+            .deposit-reorg-trust__grid{gap:9px}
+            .deposit-reorg-get__item p,.deposit-reorg-lede,.deposit-reorg-price__deadline,.deposit-reorg-steps__list p,.deposit-reorg-faq__list p,.deposit-reorg-final p{font-size:16px;line-height:1.4}
+            .deposit-reorg-price__headline{font-size:32px}
+            .deposit-reorg-price__cards{margin-top:34px}
+            .deposit-reorg-price-card{padding:16px}
+            .deposit-reorg-price-card>strong{font-size:38px}
+            .deposit-reorg-faq__list summary{font-size:16px}
+        }
+
+        /* Visual direction pass: one quiet hierarchy, fewer competing labels. */
+        .deposit-reorg-hero .deposit-reorg-eyebrow{color:rgba(255,253,248,.72);font-size:12px;letter-spacing:.16em}
+        .deposit-reorg-hero__lede{max-width:780px;font-size:clamp(17px,1.3vw,20px);line-height:1.42}
+        .deposit-reorg-hero__policy{max-width:780px;margin-top:14px;color:rgba(255,253,248,.78);font-size:15px;line-height:1.42}
+        .deposit-reorg-hero__proof{display:flex;align-items:center;gap:10px;max-width:820px;margin-top:20px;color:rgba(255,253,248,.86);font-size:15px;line-height:1.4}
+        .deposit-reorg-hero__proof::before{display:grid;flex:0 0 20px;margin:0}
+        .deposit-reorg-hero__proof>span{display:block}
+        .deposit-reorg-hero__proof strong{font-weight:650}
+        .deposit-reorg-sticky .deposit-reorg-button{font-size:13px}
+        .lw2-deposit-page{padding-bottom:0}
+        @media (min-width:901px){
+            .deposit-reorg-sticky{display:none}
+        }
+        @media (max-width:900px){
+            .lw2-deposit-page{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+            .deposit-reorg-hero{min-height:0}
+            .deposit-reorg-hero__content>.deposit-reorg-button{display:none}
+            .deposit-reorg-sticky{display:flex}
+        }
+        @media (max-width:560px){
+            .deposit-reorg-hero__proof{margin-top:10px}
+        }
+
+        /* Desktop correction: keep the compact type, restore vertical breathing room. */
+        @media (min-width:901px){
+            .deposit-reorg-hero__content{padding-bottom:48px}
+            .deposit-reorg-hero__content h1{line-height:.9}
+            .deposit-reorg-hero__lede{margin-top:24px}
+            .deposit-reorg-hero__policy{margin-top:16px;line-height:1.42}
+            .deposit-reorg-hero__proof{margin-top:22px;line-height:1.4}
+            .deposit-reorg-hero__content>.deposit-reorg-button{margin-top:26px}
+        }
+
+        /* Finish section: make the intent read as a standalone poll. */
+        .deposit-reorg-finish__poll-note{max-width:760px!important;margin-top:9px!important;color:var(--shopify-muted,#69717b)!important;font-size:15px!important;line-height:1.45!important}
+        .deposit-reorg-finish .shopify-deposit-finish-options{margin-top:15px}
+        .deposit-reorg-finish .shopify-deposit-finish-options button{font-size:13px}
+        .deposit-reorg-finish .shopify-deposit-finish-picker>p[data-deposit-finish-name]{margin-top:11px}
+
+        /* Conversion pass: make the page read like one clear reservation flow. */
+        .lw2-deposit-page main{display:flex;flex-direction:column}
+        .lw2-deposit-page main>.deposit-reorg-hero{order:1}
+        .lw2-deposit-page main>.deposit-reorg-trust{order:2}
+        .lw2-deposit-page main>.deposit-reorg-price{order:3}
+        .lw2-deposit-page main>.deposit-reorg-steps{order:4}
+        .lw2-deposit-page main>.deposit-reorg-get{order:5}
+        .lw2-deposit-page main>.shopify-deposit-coach{order:6}
+        .lw2-deposit-page main>.deposit-reorg-finish{order:7}
+        .lw2-deposit-page main>.deposit-reorg-faq{order:8}
+        .lw2-deposit-page main>.deposit-reorg-final{order:9}
+        .deposit-reorg-hero{grid-template-columns:minmax(0,1.08fr) minmax(340px,.7fr);gap:clamp(24px,5vw,88px);padding-inline:clamp(24px,6vw,96px)}
+        .deposit-reorg-hero__content{width:auto;margin:0;padding-inline:0}
+        .deposit-reorg-hero__content h1{max-width:760px;font-size:clamp(52px,6.5vw,94px);line-height:.92}
+        .deposit-reorg-hero__lede{max-width:660px}
+        .deposit-reorg-hero__policy{max-width:620px}
+        .deposit-reorg-reservation-card{align-self:center;width:min(100%,430px);margin-right:clamp(0px,2vw,28px);padding:30px;background:#fffdf8;color:#17202d;box-shadow:0 22px 55px rgba(14,22,29,.2)}
+        .deposit-reorg-reservation-card__eyebrow{margin:0;color:#8d6b3d;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+        .deposit-reorg-reservation-card h2{margin:18px 0 24px;color:#17202d;font-size:clamp(28px,3vw,42px);font-weight:500;letter-spacing:-.05em;line-height:.98}
+        .deposit-reorg-reservation-card__due{display:flex;align-items:flex-end;justify-content:space-between;padding:16px 0 18px;border-top:1px solid #dedbd3;border-bottom:1px solid #dedbd3}
+        .deposit-reorg-reservation-card__due span{color:#69717b;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+        .deposit-reorg-reservation-card__due strong{color:#17202d;font-size:52px;font-weight:600;letter-spacing:-.06em;line-height:.8}
+        .deposit-reorg-reservation-card__prices{display:grid;gap:12px;margin:18px 0 20px}
+        .deposit-reorg-reservation-card__prices div{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+        .deposit-reorg-reservation-card__prices dt{color:#69717b;font-size:14px}
+        .deposit-reorg-reservation-card__prices dd{margin:0;color:#17202d;font-size:20px;font-weight:700}
+        .deposit-reorg-reservation-card__promise{display:flex;gap:8px;align-items:flex-start;margin:0;color:#17202d;font-size:14px;font-weight:600;line-height:1.4}
+        .deposit-reorg-reservation-card__promise span{color:#8d6b3d;font-size:17px;line-height:1}
+        .deposit-reorg-reservation-card__deadline{margin:16px 0 0;color:#69717b;font-size:14px;line-height:1.4}
+        .deposit-reorg-reservation-card__deadline b{color:#17202d}
+        .deposit-reorg-reservation-card .deposit-reorg-button{width:100%;min-height:56px;margin-top:22px}
+        .deposit-reorg-reservation-card .deposit-reorg-status{margin:12px 0 0;color:#69717b;font-size:14px;line-height:1.45}
+        .deposit-reorg-reservation-card__preview-link{display:block;margin-top:9px;color:#69717b;font-size:14px;text-decoration:underline}
+        .deposit-reorg-reservation-card__preview-link:hover{color:#17202d}
+        .deposit-reorg-reservation-card__preview-link[hidden],.deposit-reorg-final__link[hidden]{display:none}
+        .deposit-reorg-price__layout{align-items:center}
+        .deposit-reorg-price__headline{font-size:clamp(38px,4.5vw,66px)}
+        .deposit-reorg-price__button{min-width:190px}
+        .deposit-price-details{margin-top:36px}
+        .deposit-price-details .deposit-reorg-price__cards{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
+        .deposit-reorg-final .deposit-reorg-eyebrow{color:rgba(240,210,158,.8)}
+        .deposit-reorg-finish .shopify-deposit-finish-options button{min-height:48px}
+        .deposit-reorg-button[aria-disabled="false"]{opacity:1}
+        .deposit-reorg-button{min-height:52px}
+
+        @media (max-width:900px){
+            .deposit-reorg-hero{display:block;padding-inline:0}
+            .deposit-reorg-hero__content{width:min(100% - 40px,680px);margin:0 auto;padding-top:72px}
+            .deposit-reorg-reservation-card{width:min(100% - 40px,680px);margin:0 auto 40px}
+            .deposit-reorg-price__layout{grid-template-columns:1fr}
+            .deposit-reorg-price__button{justify-self:start}
+        }
+        @media (max-width:560px){
+            .deposit-reorg-hero__content{width:calc(100% - 32px);padding-top:20px;padding-bottom:26px}
+            .deposit-reorg-hero__content h1{font-size:clamp(46px,12.5vw,60px);line-height:.9}
+            .deposit-reorg-hero__lede{font-size:17px;line-height:1.42}
+            .deposit-reorg-hero__policy{font-size:16px;line-height:1.42}
+            .deposit-reorg-hero__proof{font-size:15px;line-height:1.4}
+            .deposit-reorg-reservation-card{width:calc(100% - 32px);margin-bottom:24px;padding:24px 20px}
+            .deposit-reorg-reservation-card h2{font-size:32px}
+            .deposit-reorg-reservation-card__due strong{font-size:48px}
+            .deposit-reorg-reservation-card__prices dt,.deposit-reorg-reservation-card__deadline{font-size:16px}
+            .deposit-reorg-reservation-card .deposit-reorg-button{min-height:56px}
+            .deposit-reorg-trust p{font-size:16px}
+            .deposit-price-details .deposit-reorg-price__cards{grid-template-columns:1fr}
+            .deposit-reorg-finish .shopify-deposit-finish-options button{min-height:52px}
+            .deposit-reorg-sticky{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+        }
+
+        /* Brand continuity: deposit uses the homepage system, with a stronger purchase action. */
+        .lw2-deposit-page{
+            --shopify-type:var(--lw2-functional);
+            --shopify-ink:var(--lw2-ink);
+            --shopify-muted:var(--lw2-muted);
+            --shopify-accent:#e7c99a;
+            --shopify-accent-dark:var(--lw2-blue);
+            --shopify-line:var(--lw2-line);
+            font-family:var(--lw2-functional);
+            color:var(--lw2-ink);
+            background:var(--lw2-cream)
+        }
+        .lw2-deposit-page .lw2-nav{width:min(1280px,100% - 80px);min-height:80px}
+        .lw2-deposit-page .lw2-nav-links{gap:25px;font-family:var(--lw2-functional);font-size:10px;letter-spacing:.1em;line-height:1;text-transform:uppercase}
+        .lw2-deposit-page .deposit-reorg-shell{width:min(1280px,100% - 80px)}
+        .lw2-deposit-page .deposit-reorg-section{padding:104px 0}
+        .lw2-deposit-page .deposit-reorg-section h2,
+        .lw2-deposit-page .shopify-deposit-coach h2,
+        .lw2-deposit-page .shopify-deposit-coach__service-heading h3,
+        .lw2-deposit-page .shopify-deposit-coach__continuity h3,
+        .lw2-deposit-page .deposit-reorg-final h2{
+            font-family:var(--lw2-functional);
+            font-weight:300;
+            letter-spacing:-.025em;
+            line-height:.98
+        }
+        .lw2-deposit-page .deposit-reorg-eyebrow,
+        .lw2-deposit-page .shopify-deposit-eyebrow{
+            margin-bottom:18px;
+            color:var(--lw2-blue);
+            font-family:var(--lw2-functional);
+            font-size:10px;
+            font-weight:600;
+            letter-spacing:.14em;
+            line-height:1.3
+        }
+        .lw2-deposit-page .deposit-reorg-lede{font-size:17px;line-height:1.65}
+        .lw2-deposit-page .deposit-reorg-hero{min-height:min(780px,100svh);background:#25201d}
+        .lw2-deposit-page .deposit-reorg-hero::after{background:linear-gradient(118deg,rgba(21,17,15,.62) 0,rgba(21,17,15,.26) 43%,rgba(21,17,15,0) 76%),linear-gradient(0deg,rgba(21,17,15,.28) 0,rgba(21,17,15,.03) 56%,rgba(21,17,15,0) 100%)}
+        .lw2-deposit-page .deposit-reorg-hero__content{padding:130px 0 62px}
+        .lw2-deposit-page .deposit-reorg-hero__content h1{
+            max-width:980px;
+            font-family:var(--lw2-functional);
+            font-size:clamp(54px,6.2vw,96px);
+            font-weight:300;
+            letter-spacing:-.025em;
+            line-height:.94;
+            text-wrap:balance
+        }
+        .lw2-deposit-page .deposit-reorg-hero h1 [data-deposit-amount]{color:#e7c99a}
+        .lw2-deposit-page .deposit-reorg-hero .deposit-reorg-eyebrow{color:#f0d29e}
+        .lw2-deposit-page .deposit-reorg-hero__lede{max-width:640px;margin-top:20px;font-size:16px;line-height:1.55}
+        .lw2-deposit-page .deposit-reorg-hero__policy{max-width:640px;margin-top:18px;font-size:14px;line-height:1.55}
+        .lw2-deposit-page .deposit-reorg-hero__proof{margin-top:30px;font-size:10px;letter-spacing:.09em;line-height:1.4;text-transform:uppercase}
+        .lw2-deposit-page .deposit-reorg-trust{padding:20px 0;background:#e6ebe8}
+        .lw2-deposit-page .deposit-reorg-trust p{font-size:13px;line-height:1.5}
+        .lw2-deposit-page .deposit-reorg-button{
+            min-height:56px;
+            padding:17px 22px;
+            border-radius:3px;
+            background:#e7c99a;
+            color:var(--lw2-ink);
+            font-family:var(--lw2-functional);
+            font-size:13px;
+            font-weight:600;
+            letter-spacing:.005em;
+            line-height:1.35;
+            transition:transform .3s var(--lw2-ease),background .3s var(--lw2-ease),color .3s var(--lw2-ease)
+        }
+        .lw2-deposit-page .deposit-reorg-button:hover{background:#f0d6a9;transform:translateY(-2px)}
+        .lw2-deposit-page .deposit-reorg-reservation-card{background:var(--lw2-warm);color:var(--lw2-ink);box-shadow:0 22px 55px rgba(20,16,13,.16)}
+        .lw2-deposit-page .deposit-reorg-reservation-card h2{font-family:var(--lw2-functional);font-weight:300;letter-spacing:-.025em;line-height:.98}
+        .lw2-deposit-page .deposit-reorg-reservation-card__eyebrow{color:var(--lw2-blue);font-size:10px;letter-spacing:.14em}
+        .lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-weight:500;letter-spacing:-.04em}
+        .lw2-deposit-page .deposit-price-details .deposit-reorg-price__cards{grid-template-columns:1.2fr 1fr 1fr;margin-top:0}
+        .lw2-deposit-page .deposit-reorg-get{background:var(--lw2-warm)}
+        .lw2-deposit-page .deposit-reorg-price{background:#f0ede7}
+        .lw2-deposit-page .deposit-reorg-steps{background:var(--lw2-cream)}
+        .lw2-deposit-page .shopify-deposit-coach{padding:92px 0 0;background:#e6ebe8}
+        .lw2-deposit-page .deposit-reorg-finish{background:var(--lw2-warm)}
+        .lw2-deposit-page .deposit-reorg-faq{background:var(--lw2-cream)}
+        .lw2-deposit-page .deposit-reorg-final{background:var(--lw2-dark)}
+        .lw2-deposit-page .deposit-reorg-faq__list summary{font-size:14px;font-weight:500;line-height:1.45}
+        .lw2-deposit-page .deposit-reorg-faq__list p{font-size:14px;line-height:1.7}
+        .lw2-deposit-page .deposit-reorg-finish .shopify-deposit-finish-options button{border-radius:3px;font-size:12px;font-weight:500}
+        .lw2-deposit-page .deposit-reorg-sticky{background:rgba(26,23,22,.96)}
+        .lw2-deposit-page .deposit-reorg-sticky{gap:28px;padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+        .lw2-deposit-page .deposit-reorg-sticky__label{display:flex;align-items:center;min-height:52px;white-space:nowrap}
+        .lw2-deposit-page .deposit-reorg-sticky .deposit-reorg-button{min-width:280px}
+
+        @media (max-width:900px){
+            .lw2-deposit-page .lw2-nav{width:min(100% - 48px,680px);min-height:68px}
+            .lw2-deposit-page .deposit-reorg-shell{width:min(100% - 48px,680px)}
+            .lw2-deposit-page .deposit-reorg-section{padding:92px 0}
+            .lw2-deposit-page .deposit-reorg-hero__content{padding:72px 0 58px}
+            .lw2-deposit-page .deposit-reorg-hero__content h1{font-size:clamp(50px,8vw,76px);line-height:.94}
+            .lw2-deposit-page .deposit-reorg-hero__lede{font-size:16px;line-height:1.55}
+            .lw2-deposit-page .shopify-deposit-coach{padding-top:92px}
+            .lw2-deposit-page .deposit-price-details .deposit-reorg-price__cards{grid-template-columns:1fr}
+        }
+        @media (max-width:560px){
+            .lw2-deposit-page .lw2-nav{width:calc(100% - 36px);min-height:64px}
+            .lw2-deposit-page .deposit-reorg-shell{width:calc(100% - 36px)}
+            .lw2-deposit-page .deposit-reorg-section{padding:72px 0}
+            .lw2-deposit-page .deposit-reorg-hero__content{padding:42px 0 44px}
+            .lw2-deposit-page .deposit-reorg-hero__content h1{font-size:clamp(52px,15vw,72px);letter-spacing:-.008em;line-height:.94}
+            .lw2-deposit-page .deposit-reorg-hero__lede{margin-top:22px;font-size:15px;line-height:1.55}
+            .lw2-deposit-page .deposit-reorg-hero__policy{font-size:14px;line-height:1.55}
+            .lw2-deposit-page .deposit-reorg-hero__proof{margin-top:24px;font-size:9px;letter-spacing:.06em}
+            .lw2-deposit-page .deposit-reorg-reservation-card{width:calc(100% - 36px);margin-bottom:24px;padding:24px 20px}
+            .lw2-deposit-page .deposit-reorg-reservation-card h2{font-size:32px}
+            .lw2-deposit-page .deposit-reorg-reservation-card .deposit-reorg-button{min-height:56px}
+            .lw2-deposit-page .deposit-reorg-trust{padding:18px 0}
+            .lw2-deposit-page .deposit-reorg-trust p{font-size:14px}
+            .lw2-deposit-page .shopify-deposit-coach{padding-top:72px}
+            .lw2-deposit-page .deposit-reorg-sticky{gap:12px;padding-top:10px}
+            .lw2-deposit-page .deposit-reorg-sticky .deposit-reorg-button{min-width:0;padding-inline:18px}
+        }
+
+        /* Final alignment: the deposit page shares one title metric system. */
+        /* Keep the hero's desktop grid on the same centered shell as the sections below. */
+        @media (min-width:901px){
+            .lw2-deposit-page .deposit-reorg-hero{
+                padding-inline:max(40px,calc((100% - 1280px)/2))
+            }
+            .lw2-deposit-page .deposit-reorg-hero__content{
+                width:100%;
+                margin:0
+            }
+        }
+
+        .lw2-deposit-page .deposit-reorg-hero__content h1,
+        .lw2-deposit-page .deposit-reorg-section h2{
+            font-family:var(--lw2-functional)!important;
+            font-weight:300;
+            letter-spacing:-.025em;
+            line-height:.98;
+            font-style:normal
+        }
+        .lw2-deposit-page .deposit-reorg-hero__content h1{font-size:clamp(54px,6.2vw,96px)}
+
+        /* Coach: make the copy and app proof one compact, balanced panel. */
+        .lw2-deposit-page .shopify-deposit-coach__grid{align-items:stretch}
+        .lw2-deposit-page .shopify-deposit-coach__copy{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            min-height:560px;
+            padding-block:20px
+        }
+        .lw2-deposit-page .shopify-deposit-coach__screens{
+            display:block;
+            height:560px;
+            min-height:0
+        }
+        .lw2-deposit-page .shopify-deposit-coach-screen--pattern{
+            top:0;
+            bottom:0;
+            height:100%;
+            display:flex;
+            flex-direction:column
+        }
+        .lw2-deposit-page .shopify-deposit-coach-screen__crop{
+            position:relative;
+            height:auto;
+            min-height:0;
+            flex:1 1 auto
+        }
+        .lw2-deposit-page .shopify-deposit-coach-screen__crop::after{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            height:84px;
+            content:"";
+            pointer-events:none;
+            background:linear-gradient(180deg,rgba(247,245,240,0),rgba(247,245,240,.94) 86%,#f7f5f0)
+        }
+        .lw2-deposit-page .shopify-deposit-coach-screen__crop.is-scrolled::after{opacity:.72}
+        .lw2-deposit-page .shopify-deposit-coach-screen__scroll-hint span::after{content:none}
+
+        /* Coach conversion pass: make the benefit legible, then let the app prove it. */
+        .lw2-deposit-page .shopify-deposit-coach__copy{min-height:720px}
+        .lw2-deposit-page .shopify-deposit-coach__screens{height:auto;min-height:720px;display:flex}
+        .lw2-deposit-page .shopify-deposit-coach-screen--pattern{
+            position:relative;
+            inset:auto;
+            align-self:stretch;
+            width:min(100%,480px);
+            height:auto;
+            margin:0 0 0 auto;
+            flex:0 1 480px
+        }
+        .lw2-deposit-page .shopify-deposit-coach-screen__title{
+            margin:0;
+            padding:13px 16px 10px;
+            color:var(--shopify-muted);
+            background:#fffdfa;
+            font-size:10px;
+            font-weight:600;
+            letter-spacing:.1em;
+            line-height:1.25;
+            text-transform:uppercase
+        }
+        .lw2-deposit-page .shopify-deposit-coach__service{
+            grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr);
+            align-items:center;
+            gap:clamp(30px,7vw,92px);
+            margin-top:72px;
+            padding:18px 0 20px
+        }
+        .lw2-deposit-page .shopify-deposit-coach__service-heading h3{margin-top:10px}
+        .lw2-deposit-page .shopify-deposit-coach__service-rhythm{
+            color:var(--shopify-ink);
+            font-size:14px;
+            font-weight:600;
+            letter-spacing:.01em;
+            line-height:1.45
+        }
+        .lw2-deposit-page .shopify-deposit-coach__continuity{
+            display:block;
+            margin-top:42px;
+            padding:18px 0 20px
+        }
+        .lw2-deposit-page .shopify-deposit-coach__continuity > p{
+            max-width:760px;
+            color:var(--shopify-muted);
+            font-size:14px;
+            line-height:1.5
+        }
+        .lw2-deposit-page .shopify-deposit-coach__continuity > p strong{color:var(--shopify-ink)}
+        .lw2-deposit-page .shopify-deposit-coach__footer{padding:16px 0 24px}
+        .lw2-deposit-page .shopify-deposit-coach__boundary{margin-top:0}
+
+        @media (max-width:900px){
+            .lw2-deposit-page .deposit-reorg-hero__content h1{font-size:clamp(50px,8vw,76px)}
+            .lw2-deposit-page .shopify-deposit-coach__copy{min-height:0;padding-block:0}
+            .lw2-deposit-page .shopify-deposit-coach__screens{height:auto;min-height:0;display:block}
+            .lw2-deposit-page .shopify-deposit-coach-screen--pattern{position:relative;inset:auto;height:auto;width:100%;max-width:620px;margin:0 auto}
+            .lw2-deposit-page .shopify-deposit-coach-screen__crop{height:520px;flex:none}
+            .lw2-deposit-page .shopify-deposit-coach__service{grid-template-columns:1fr;gap:12px;margin-top:42px}
+        }
+        @media (max-width:560px){
+            .lw2-deposit-page .deposit-reorg-hero__content h1{font-size:clamp(52px,15vw,72px);letter-spacing:-.025em;line-height:.98}
+            .lw2-deposit-page .shopify-deposit-coach-screen__crop{height:400px}
+            .lw2-deposit-page .shopify-deposit-coach__service{margin-top:36px;padding-block:16px 18px}
+            .lw2-deposit-page .shopify-deposit-coach__service-rhythm{font-size:13px}
+            .lw2-deposit-page .shopify-deposit-coach__continuity{margin-top:30px;padding-block:16px 18px}
+            .lw2-deposit-page .shopify-deposit-coach__continuity > p{font-size:14px}
+            .lw2-deposit-page .shopify-deposit-coach__footer{padding-block:14px 22px}
+        }
+
+        /* What-you-get density: benefits stack beside the photo on desktop. */
+        @media (min-width:901px){
+            .deposit-reorg-get .deposit-reorg-shell{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:clamp(40px,5vw,72px);align-items:start}
+            .deposit-reorg-get__head{grid-column:1/-1}
+            .deposit-reorg-get__grid{grid-template-columns:1fr;margin-top:34px}
+            .deposit-reorg-get__item,.deposit-reorg-get__item+.deposit-reorg-get__item{padding:16px 0 18px;border-left:0}
+            .deposit-reorg-get__item h3{margin-top:10px;font-size:clamp(20px,1.9vw,27px)}
+            .deposit-reorg-get__item p{margin-top:8px}
+            .deposit-reorg-get__media{grid-row:2;grid-column:2;margin-top:34px}
+            .deposit-reorg-get__trust{grid-row:3;grid-column:2;margin-top:14px}
+        }
+
+        /* Mobile keeps one visual product anchor, but avoids the desktop
+           full-bleed treatment competing with the reservation card. */
+        @media (max-width:560px){
+            .lw2-deposit-page .deposit-reorg-hero{
+                min-height:0;
+                background:var(--lw2-cream);
+                color:var(--lw2-ink)
+            }
+            .lw2-deposit-page .deposit-reorg-hero::after{display:none}
+            .lw2-deposit-page .deposit-reorg-hero__image{
+                position:relative;
+                z-index:0;
+                display:block;
+                width:100%;
+                height:auto;
+                aspect-ratio:1536/1024;
+                object-fit:cover
+            }
+            .lw2-deposit-page .deposit-reorg-hero__content{
+                align-self:auto;
+                padding:34px 0 24px
+            }
+            .lw2-deposit-page .deposit-reorg-hero .deposit-reorg-eyebrow{color:var(--lw2-blue)}
+            .lw2-deposit-page .deposit-reorg-hero__content h1{color:var(--lw2-ink)}
+            .lw2-deposit-page .deposit-reorg-hero h1 [data-deposit-amount]{color:#8d6b3d}
+            .lw2-deposit-page .deposit-reorg-hero__lede{color:var(--lw2-muted)}
+            .lw2-deposit-page .deposit-reorg-hero__policy{color:var(--lw2-muted)}
+            .lw2-deposit-page .deposit-reorg-hero__policy strong{color:var(--lw2-ink)}
+            .lw2-deposit-page .deposit-reorg-hero__proof{color:var(--lw2-ink)}
+        }
+
+        /* Header follows the main LunaWake site: transparent over desktop Hero,
+           materialized after scroll; mobile stays light because its Hero is now
+           transaction-first rather than image-led. */
+        @media (min-width:561px){
+            .lw2-site.lw2-deposit-page .lw2-header{
+                position:fixed;
+                top:0;
+                right:0;
+                left:0;
+                background:transparent;
+                border-bottom:0;
+                color:#fffdf8
+            }
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--light{opacity:1}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--dark{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-nav-links{color:rgba(255,253,248,.76)}
+            .lw2-site.lw2-deposit-page .lw2-menu{color:#fffdf8}
+            .lw2-site.lw2-deposit-page .lw2-menu span{background:currentcolor}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open){
+                background:rgba(247,245,240,.94);
+                border-bottom:0;
+                box-shadow:0 8px 24px rgba(48,42,34,.07);
+                color:var(--lw2-ink)
+            }
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-logo-mark--light{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-logo-mark--dark{opacity:1}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-nav-links{color:rgba(36,33,31,.88)}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-menu{color:var(--lw2-ink)}
+        }
+        @media (max-width:560px){
+            .lw2-deposit-page .lw2-header{
+                position:relative;
+                top:auto;
+                background:rgba(247,245,240,.96);
+                border-bottom:1px solid var(--lw2-line);
+                color:var(--lw2-ink)
+            }
+            .lw2-deposit-page .lw2-logo-mark--light{opacity:0}
+            .lw2-deposit-page .lw2-logo-mark--dark{opacity:1}
+            .lw2-deposit-page .lw2-menu{color:var(--lw2-ink)}
+            .lw2-deposit-page .lw2-menu span{background:currentcolor}
+        }
+
+        /* Reservation card: a restrained glass layer keeps the Hero connected
+           while protecting the purchase information's contrast. */
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card{
+            border:1px solid rgba(255,253,248,.58);
+            border-radius:14px;
+            background:rgba(255,253,248,.92);
+            box-shadow:0 24px 60px rgba(20,16,13,.2);
+            -webkit-backdrop-filter:blur(14px) saturate(115%);
+            backdrop-filter:blur(14px) saturate(115%)
+        }
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card{border-radius:14px}
+        }
+
+        /* Mobile/tablet conversion correction: the preview state should feel
+           like a calm notice, not a second hero. Keep the card as the sole
+           place where the full price arithmetic lives. */
+        @media (max-width:900px){
+            .lw2-deposit-page .deposit-reorg-hero__content{
+                width:min(100% - 48px,620px);
+                padding:58px 0 28px
+            }
+            .lw2-deposit-page .deposit-reorg-hero__content h1{
+                max-width:620px;
+                font-size:clamp(44px,7vw,64px);
+                letter-spacing:-.035em;
+                line-height:.94
+            }
+            .lw2-deposit-page .deposit-reorg-hero__lede{
+                max-width:520px;
+                margin-top:18px;
+                font-size:16px;
+                line-height:1.45
+            }
+            .lw2-deposit-page .deposit-reorg-hero__policy{
+                max-width:460px;
+                margin-top:12px;
+                font-size:14px;
+                line-height:1.45
+            }
+            .lw2-deposit-page .deposit-reorg-hero__proof{
+                max-width:520px;
+                margin-top:18px;
+                font-size:10px;
+                line-height:1.35
+            }
+            .lw2-deposit-page .deposit-reorg-reservation-card{
+                width:min(calc(100% - 48px),620px);
+                margin:0 auto 32px;
+                padding:24px 22px 22px;
+                box-shadow:0 18px 42px rgba(20,16,13,.16)
+            }
+            .lw2-deposit-page .deposit-reorg-reservation-card h2{
+                margin:14px 0 18px;
+                font-size:32px
+            }
+            .lw2-deposit-page .deposit-reorg-reservation-card__due{padding:13px 0 15px}
+            .lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-size:46px}
+            .lw2-deposit-page .deposit-reorg-reservation-card__prices{gap:9px;margin:14px 0 16px}
+            .lw2-deposit-page .deposit-reorg-reservation-card__promise{font-size:13px}
+            .lw2-deposit-page .deposit-reorg-reservation-card__deadline{margin-top:11px;font-size:13px;line-height:1.35}
+            .lw2-deposit-page .deposit-reorg-reservation-card .deposit-reorg-button{margin-top:16px}
+            .lw2-deposit-page .deposit-reorg-status{margin-top:9px;font-size:13px}
+            .lw2-deposit-page .deposit-reorg-sticky{
+                opacity:1;
+                transform:translateY(0);
+                transition:opacity .2s ease,transform .2s ease
+            }
+            .lw2-deposit-page .deposit-reorg-sticky.is-card-visible{
+                opacity:0;
+                pointer-events:none;
+                transform:translateY(110%)
+            }
+        }
+        @media (max-width:560px){
+            .lw2-deposit-page .deposit-reorg-hero__content{width:calc(100% - 36px);padding:34px 0 22px}
+            .lw2-deposit-page .deposit-reorg-hero__content h1{font-size:clamp(42px,12.5vw,56px);line-height:.95}
+            .lw2-deposit-page .deposit-reorg-hero__lede{margin-top:16px;font-size:15px}
+            .lw2-deposit-page .deposit-reorg-hero__policy{font-size:14px}
+            .lw2-deposit-page .deposit-reorg-hero__proof{margin-top:16px;font-size:9px}
+            .lw2-deposit-page .deposit-reorg-reservation-card{width:calc(100% - 36px);margin-bottom:24px;padding:22px 18px 20px}
+        }
+
+        /* Mobile experience floor: 55+ readability and thumb-zone fit.
+           Phone body copy never drops below 15px, the launch-list proof line
+           stays legible, and the sticky bar switches to its compact label
+           before it can collide with the button on small phones. */
+        @media (max-width:900px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{font-size:16px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{font-size:15px;line-height:1.42}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{font-size:13px;line-height:1.4}
+            .lw2-site.lw2-deposit-page .deposit-reorg-trust p{font-size:16px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-faq__list summary{font-size:16px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-faq__list p{font-size:16px;line-height:1.55}
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky__label{font-size:15px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky .deposit-reorg-button{font-size:15px}
+        }
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{font-size:16px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{font-size:14px}
+        }
+        @media (max-width:480px){
+            .deposit-reorg-sticky__desktop-label{display:none}
+            .deposit-reorg-sticky__compact-label{display:inline}
+        }
+
+        /* Final type system pass — Nothing-style restraint.
+           One scale, three responsive steps, no micro-copy below the mobile
+           readability floor. Tracking is used only for labels, never body
+           copy. Keep this block last until the legacy inline layers are
+           consolidated into the shared stylesheet. */
+        .lw2-site.lw2-deposit-page{
+            --deposit-body-size:16px;
+            --deposit-body-leading:1.55;
+            --deposit-label-size:10px;
+            --deposit-label-leading:1.3;
+            font-feature-settings:"kern" 1,"liga" 1;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-eyebrow,
+        .lw2-site.lw2-deposit-page .deposit-reorg-get__item span,
+        .lw2-site.lw2-deposit-page .deposit-reorg-price-card>span,
+        .lw2-site.lw2-deposit-page .deposit-reorg-steps__list time{
+            font-size:var(--deposit-label-size);
+            line-height:var(--deposit-label-leading);
+            letter-spacing:.14em;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-section h2{
+            font-size:clamp(42px,4.35vw,64px);
+            line-height:.94;
+            letter-spacing:-.045em;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-lede,
+        .lw2-site.lw2-deposit-page .deposit-reorg-get__item p,
+        .lw2-site.lw2-deposit-page .deposit-reorg-price__deadline,
+        .lw2-site.lw2-deposit-page .deposit-reorg-steps__list p,
+        .lw2-site.lw2-deposit-page .deposit-reorg-faq__list p,
+        .lw2-site.lw2-deposit-page .deposit-reorg-final p{
+            font-size:var(--deposit-body-size);
+            line-height:var(--deposit-body-leading);
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{
+            max-width:820px;
+            font-size:clamp(56px,6.3vw,88px);
+            line-height:.92;
+            letter-spacing:-.055em;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{
+            max-width:620px;
+            font-size:17px;
+            line-height:1.55;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{
+            font-size:15px;
+            line-height:1.5;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{
+            font-size:11px;
+            line-height:1.4;
+            letter-spacing:.08em;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card h2{
+            font-size:clamp(32px,2.85vw,40px);
+            line-height:.98;
+            letter-spacing:-.04em;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{
+            font-size:clamp(46px,4.2vw,58px);
+            line-height:.88;
+            letter-spacing:-.055em;
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__promise,
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__deadline,
+        .lw2-site.lw2-deposit-page .deposit-reorg-status{
+            font-size:14px;
+            line-height:1.5;
+        }
+
+        @media (max-width:900px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-section h2{
+                font-size:clamp(40px,7vw,56px);
+                line-height:.96;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{
+                max-width:640px;
+                font-size:clamp(46px,6.8vw,64px);
+                line-height:.94;
+                letter-spacing:-.04em;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede,
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy,
+            .lw2-site.lw2-deposit-page .deposit-reorg-lede,
+            .lw2-site.lw2-deposit-page .deposit-reorg-get__item p,
+            .lw2-site.lw2-deposit-page .deposit-reorg-price__deadline,
+            .lw2-site.lw2-deposit-page .deposit-reorg-steps__list p,
+            .lw2-site.lw2-deposit-page .deposit-reorg-faq__list p,
+            .lw2-site.lw2-deposit-page .deposit-reorg-final p{
+                font-size:16px;
+                line-height:1.55;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{
+                font-size:11px;
+                line-height:1.45;
+                letter-spacing:.06em;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card h2{font-size:32px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-size:48px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__promise,
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__deadline,
+            .lw2-site.lw2-deposit-page .deposit-reorg-status{font-size:15px;line-height:1.5}
+        }
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-section h2{
+                font-size:clamp(38px,11vw,48px);
+                line-height:.98;
+                letter-spacing:-.04em;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{
+                max-width:100%;
+                font-size:clamp(42px,12vw,54px);
+                line-height:.96;
+                letter-spacing:-.03em;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede,
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy,
+            .lw2-site.lw2-deposit-page .deposit-reorg-lede,
+            .lw2-site.lw2-deposit-page .deposit-reorg-get__item p,
+            .lw2-site.lw2-deposit-page .deposit-reorg-price__deadline,
+            .lw2-site.lw2-deposit-page .deposit-reorg-steps__list p,
+            .lw2-site.lw2-deposit-page .deposit-reorg-faq__list p,
+            .lw2-site.lw2-deposit-page .deposit-reorg-final p{
+                font-size:16px;
+                line-height:1.55;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{
+                font-size:11px;
+                line-height:1.45;
+                letter-spacing:.06em;
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card h2{font-size:30px;line-height:1}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-size:44px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__promise,
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__deadline,
+            .lw2-site.lw2-deposit-page .deposit-reorg-status{font-size:15px;line-height:1.5}
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky__label,
+            .lw2-site.lw2-deposit-page .deposit-reorg-sticky .deposit-reorg-button{font-size:15px;line-height:1.2}
+        }
+
+        /* Coach report window: the long app screenshot is evidence to explore,
+           not content that should determine the page height. */
+        .lw2-site.lw2-deposit-page .shopify-deposit-coach-screen__crop{
+            height:clamp(420px,42vw,520px);
+            min-height:0;
+            flex:0 0 auto;
+            overflow-x:hidden;
+            overflow-y:auto;
+        }
+        .lw2-site.lw2-deposit-page .shopify-deposit-coach-screen__scroll-hint{
+            position:relative;
+            z-index:1;
+            background:var(--lw2-warm,#fffdf8);
+        }
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .shopify-deposit-coach-screen__crop{height:400px}
+        }
+
+        /* Mobile decision path: one calm reading order, with the reservation
+           arithmetic and trust signals kept visible without shouting. */
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .lw2-header,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled{
+                position:absolute;
+                top:0;
+                background:transparent;
+                border-bottom:0;
+                box-shadow:none;
+                color:#fffdf8
+            }
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--light,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-logo-mark--light{opacity:1}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--dark,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-logo-mark--dark{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-menu,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-menu{color:#fffdf8}
+            .lw2-site.lw2-deposit-page .lw2-nav{min-height:64px}
+
+            /* The menu itself remains a full-screen dark layer when opened. */
+            .lw2-site.lw2-deposit-page .lw2-header.is-menu-open,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled.is-menu-open{
+                background:var(--lw2-dark);
+                color:#fffdf8
+            }
+            .lw2-site.lw2-deposit-page .lw2-header.is-menu-open .lw2-logo-mark--light,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled.is-menu-open .lw2-logo-mark--light{opacity:1}
+            .lw2-site.lw2-deposit-page .lw2-header.is-menu-open .lw2-logo-mark--dark,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled.is-menu-open .lw2-logo-mark--dark{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-header.is-menu-open .lw2-menu,
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled.is-menu-open .lw2-menu{color:#fffdf8}
+
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content{
+                padding:30px 0 22px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{
+                max-width:100%;
+                font-size:clamp(42px,11.5vw,54px);
+                line-height:.94;
+                letter-spacing:-.045em
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{
+                margin-top:16px;
+                font-size:16px;
+                line-height:1.45
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{
+                margin-top:14px;
+                font-size:15px;
+                line-height:1.4
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{
+                align-items:flex-start;
+                gap:8px;
+                margin-top:14px;
+                color:var(--lw2-ink);
+                font-size:13px;
+                line-height:1.42;
+                letter-spacing:0;
+                text-transform:none
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof::before{
+                flex:0 0 18px;
+                width:18px;
+                height:18px;
+                margin-top:1px;
+                font-size:11px
+            }
+
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card{
+                width:calc(100% - 36px);
+                margin-bottom:20px;
+                padding:22px 18px 19px;
+                border-radius:20px;
+                box-shadow:0 18px 42px rgba(20,16,13,.14)
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card h2{
+                margin:13px 0 16px;
+                font-size:30px;
+                line-height:1;
+                letter-spacing:-.045em
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due{
+                padding:13px 0 15px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{
+                font-size:44px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__prices{
+                gap:9px;
+                margin:14px 0 16px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__prices dt{
+                max-width:70%;
+                font-size:15px;
+                line-height:1.25
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__prices dd{
+                font-size:19px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__promise{
+                font-size:14px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__deadline{
+                margin-top:10px;
+                font-size:14px;
+                line-height:1.4
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card .deposit-reorg-button{
+                min-height:56px;
+                margin-top:15px;
+                padding-inline:12px;
+                font-size:15px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-status{
+                margin-top:9px;
+                font-size:13px;
+                line-height:1.4
+            }
+
+            .lw2-site.lw2-deposit-page .deposit-reorg-trust{
+                padding:17px 0
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-trust__grid{
+                gap:10px
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-trust p{
+                gap:8px;
+                font-size:14px;
+                line-height:1.42
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-trust p::before{
+                font-size:15px
+            }
+        }
+
+        /* Density pass for stacked (≤900px) layouts: the reservation card is
+           the single source of price arithmetic, so the price section keeps
+           only the collapsible schedule — headline, deadline, and CTA there
+           would be the third repeat of the same numbers in a row. */
+        @media (max-width:900px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-price__layout{display:none}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price{padding:44px 0}
+            .lw2-site.lw2-deposit-page .deposit-price-details{margin-top:14px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-trust p{font-size:15px}
+        }
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-trust p{font-size:16px}
+        }
+
+        /* Immersive card-deck mobile: the bedroom photo is a fixed, global
+           backdrop; the first screen tells the whole story (hero claim +
+           complete reservation card); every following section scrolls over
+           the photo as a rounded card, with the backdrop showing through
+           the gaps between cards. */
+        .deposit-reorg-hero__backdrop{position:absolute;z-index:-2;inset:0}
+        @media (max-width:900px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__image{
+                position:fixed;
+                z-index:-2;
+                inset:0;
+                width:100%;
+                height:100%;
+                aspect-ratio:auto;
+                object-fit:cover;
+                object-position:58% center
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero::after{
+                position:fixed;
+                z-index:-1;
+                inset:0;
+                display:block;
+                content:"";
+                background:linear-gradient(180deg,rgba(17,24,30,.62) 0%,rgba(17,24,30,.32) 42%,rgba(17,24,30,.58) 100%)
+            }
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero{min-height:0;background:transparent;color:#fffdf8}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero .deposit-reorg-eyebrow{color:rgba(255,253,248,.78)}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{color:#fffdf8}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero h1 [data-deposit-amount]{color:#f0d29e}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{color:rgba(255,253,248,.92)}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{color:rgba(255,253,248,.82)}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy strong{color:#fffdf8}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{color:#fffdf8}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content{padding:80px 0 8px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{max-width:none;font-size:clamp(32px,7.4vw,42px);letter-spacing:-.03em;line-height:1.04}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{max-width:none;margin-top:10px;font-size:16px;line-height:1.42}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__policy{margin-top:8px;font-size:15px;line-height:1.4}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__proof{margin-top:10px;font-size:12px;line-height:1.35}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card{position:relative;z-index:1;margin-top:14px;margin-bottom:22px}
+            .lw2-site.lw2-deposit-page main>section{position:relative;z-index:1;margin:14px 12px;border-radius:22px;overflow:hidden}
+            .lw2-site.lw2-deposit-page main>.deposit-reorg-hero{margin:0;border-radius:0;overflow:visible}
+            .lw2-site.lw2-deposit-page main>section.deposit-reorg-section{padding:48px 0}
+            .lw2-site.lw2-deposit-page main>.shopify-deposit-coach{padding-top:48px;padding-bottom:48px}
+        }
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .lw2-header{position:fixed;top:0;right:0;left:0;background:transparent;border-bottom:0;color:#fffdf8}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--light{opacity:1}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--dark{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-menu{color:#fffdf8}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open){background:rgba(23,32,45,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:none;color:#fffdf8}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content{padding-top:84px}
+        }
+    </style>
 </head>
 <body class="lw2-site lw2-deposit-page">
     <header class="lw2-header" data-header>
@@ -71,11 +1197,9 @@
                 <a href="index.html#science">Science</a>
                 <a href="index.html#app">App</a>
             </nav>
-            <a class="lw2-nav-cta" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer"><span class="lw2-nav-cta-label">Join the launch list</span><span class="lw2-nav-cta-icon" aria-hidden="true">↗</span></a>
             <button class="lw2-menu" type="button" data-menu-toggle aria-expanded="false" aria-controls="lw2-mobile-menu" aria-label="Open menu"><span class="lw2-menu-label">Menu</span><span class="lw2-menu-icon" aria-hidden="true"><i></i><i></i></span></button>
         </div>
         <div class="lw2-mobile" id="lw2-mobile-menu" hidden>
-            <a class="lw2-mobile-cta lw2-button lw2-button--dark" href="https://prelaunch.lunawake.ai/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
             <nav aria-label="Menu navigation">
                 <a href="index.html#how-it-works">How it works <span>01</span></a>
                 <a href="index.html#hardware">Device <span>02</span></a>
@@ -93,181 +1217,108 @@
     </header>
 
     <main>
-        <section class="shopify-deposit-hero" aria-labelledby="deposit-heading">
-            <div class="lw2-shell shopify-deposit-hero__grid">
-                <div class="shopify-deposit-hero__copy">
-                    <p class="shopify-deposit-eyebrow">LunaWake · A bedside sleep companion</p>
-                    <h1 id="deposit-heading"><span data-hero-reward>$229</span> today.<br><span class="shopify-deposit-heading-accent"><span data-launch-price>$319</span> on launch day.</span></h1>
-                    <p class="shopify-deposit-hero-lede">Reserve the LunaWake founding price for <span data-deposit-amount>$9</span> today. No wearable, no camera, and no new thing to remember each night. Lock the founding price now — it only goes up from here.</p>
-                    <div class="shopify-deposit-hero-value" aria-label="Current reservation value">
-                        <div><small>Pay today</small><strong data-deposit-amount>$9</strong></div>
-                        <span aria-hidden="true">→</span>
-                        <div><small>Founding price</small><strong data-current-reward>$229</strong></div>
-                        <div class="shopify-deposit-hero-value__context"><small>Vs. launch day <b data-launch-price>$319</b></small><strong data-current-savings>Save $90 vs. launch day</strong></div>
-                    </div>
-                    <p class="shopify-deposit-hero-positioning"><b>Sound that settles.</b> <b>A morning read in plain English.</b> <b>The room adjusts around you.</b></p>
-                    <p class="shopify-deposit-hero-policy"><strong>Refundable any time, for any reason.</strong> At launch, we email your personal order link. The $9 is a reservation, not the product payment.</p>
-                    <p class="shopify-deposit-social-proof"><strong><span data-launch-list-count>2,000+</span> people are already on the launch list.</strong> Every reservation moves you ahead of them.</p>
-                    <button class="shopify-deposit-button shopify-deposit-hero-button" type="button" data-reserve-button data-cta-slot="hero" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
-                </div>
+        <section class="deposit-reorg-hero" aria-labelledby="deposit-heading">
+            <picture class="deposit-reorg-hero__backdrop"><source media="(max-width:900px)" srcset="images/luna-latest/lab-bedside.webp"><img class="deposit-reorg-hero__image" src="images/luna-latest/device-bedside.webp" width="1536" height="1024" alt="LunaWake beside a sleeping person in a warm bedroom" fetchpriority="high" decoding="async"></picture>
+            <div class="deposit-reorg-shell deposit-reorg-hero__content">
+                <p class="deposit-reorg-eyebrow">LunaWake · A bedside sleep companion</p>
+                <h1 id="deposit-heading" data-state-copy="hero-heading">Hold your LunaWake for <span data-deposit-amount>$9</span>.</h1>
+                <p class="deposit-reorg-hero__lede" data-state-copy="hero-lede">It reads your night from the bedside — nothing to wear, nothing to charge — then shapes the room around your sleep.</p>
+                <p class="deposit-reorg-hero__policy" data-state-copy="hero-policy"><strong>Refundable any time, for any reason.</strong> Your reservation holds your founding price; it is not the product payment.</p>
+                <p class="deposit-reorg-hero__proof" data-state-copy="hero-proof"><span><strong><span data-launch-list-count>2,000+</span> people are already on the launch list.</strong> Join them when you are ready.</span></p>
+            </div>
+            <aside class="deposit-reorg-reservation-card" aria-labelledby="reservation-card-heading">
+                <p class="deposit-reorg-reservation-card__eyebrow">Your LunaWake reservation</p>
+                <h2 id="reservation-card-heading">A better night,<br>held for <span data-deposit-amount>$9</span>.</h2>
+                <div class="deposit-reorg-reservation-card__due"><span data-state-copy="card-due-label">Due today</span><strong data-deposit-amount>$9</strong></div>
+                <dl class="deposit-reorg-reservation-card__prices">
+                    <div><dt data-state-copy="card-reward-label">Founding price locked</dt><dd data-current-reward>$229</dd></div>
+                    <div><dt>Launch-day price</dt><dd data-launch-price>$319</dd></div>
+                </dl>
+                <p class="deposit-reorg-reservation-card__promise"><span aria-hidden="true">✓</span> Refundable before or after launch</p>
+                <p class="deposit-reorg-reservation-card__deadline" data-state-copy="card-deadline">This price ends <b data-current-deadline>Sep 6 · 11:59pm ET</b><b data-countdown-days hidden></b>.</p>
+                <button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="reservation-card" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
+                <p class="deposit-reorg-status" id="checkout-status" data-checkout-status aria-live="polite"><span data-checkout-message>Reservations open soon. Get notified when they open.</span></p>
+                <a class="deposit-reorg-reservation-card__preview-link" data-preview-link href="https://prelaunch.lunawake.ai/">Get notified when reservations open <span aria-hidden="true">↗</span></a>
+            </aside>
+        </section>
 
-                <aside class="shopify-deposit-buy-card" aria-labelledby="buy-card-heading">
-                    <div class="shopify-deposit-buy-card__image">
-                        <img src="images/luna-latest/device-bedside.webp" width="1536" height="1024" alt="LunaWake beside a sleeping person in a warm bedroom" fetchpriority="high" decoding="async">
-                        <span class="shopify-deposit-buy-card__badge">See it in the room</span>
-                    </div>
-                    <div class="shopify-deposit-buy-card__body">
-                        <p class="shopify-deposit-audience" data-audience-message hidden></p>
-                        <p class="shopify-deposit-card-kicker">Shopify reservation</p>
-                        <h2 id="buy-card-heading">Lock in <span data-current-reward>$229</span>.<br><span class="shopify-deposit-heading-accent">Reserve for $9.</span></h2>
-                        <div class="shopify-deposit-card-price-lock">
-                            <div><small>Pay today</small><strong data-deposit-amount>$9</strong></div>
-                            <p>Founding price: <b data-current-reward>$229</b> today</p>
-                        </div>
-                        <p class="shopify-deposit-countdown" aria-live="polite"><strong data-countdown-days>33 days left</strong><span>at this price</span></p>
-                        <p class="shopify-deposit-current-deadline">Available until <b data-current-deadline>Sep 6 · 11:59pm PT</b></p>
-                        <p class="shopify-deposit-price-note">USD · Shopify may process the charge in your local currency at checkout.</p>
-                        <p class="shopify-deposit-buy-card__copy"><strong>At launch:</strong> we email your personal order link. One click completes your order at the price you locked.</p>
-                        <button class="shopify-deposit-button shopify-deposit-card-button" type="button" data-reserve-button data-cta-slot="card" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
-                        <p class="shopify-deposit-status" id="checkout-status" data-checkout-status aria-live="polite"><span data-checkout-message>Checkout is not open yet. Join the launch list for updates.</span> <a data-preview-link href="https://prelaunch.lunawake.ai/">Join the launch list</a></p>
-                    </div>
-                </aside>
+        <section class="deposit-reorg-trust" aria-label="Reservation assurances">
+            <div class="deposit-reorg-shell deposit-reorg-trust__grid">
+                <p>Refund any time — before or after launch, no questions</p>
+                <p><span>One email on Sep 21 completes your <b data-current-reward>$229</b> order</span></p>
+                <p><a class="deposit-reorg-trust__email" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real humans: <strong data-support-email>info@lunawake.ai</strong></a></p>
             </div>
         </section>
 
-        <section class="shopify-deposit-benefits" aria-labelledby="benefits-heading">
-            <div class="lw2-shell">
-                <div class="shopify-deposit-benefits__head">
+        <section class="deposit-reorg-section deposit-reorg-price" aria-labelledby="pricing-heading">
+            <div class="deposit-reorg-shell">
+                <p class="deposit-reorg-eyebrow">Price context</p>
+                <div class="deposit-reorg-price__layout">
                     <div>
-                        <p class="shopify-deposit-eyebrow">What LunaWake does for you</p>
-                        <h2 id="benefits-heading">The room does<br><span class="shopify-deposit-heading-accent">the work.</span></h2>
+                        <h2 id="pricing-heading" class="deposit-reorg-price__headline" data-state-copy="price-headline">$9 today locks<br><strong>$229</strong>.</h2>
+                        <p class="deposit-reorg-lede">On Sep 21, the launch-day price is $319.</p>
+                        <p class="deposit-reorg-price__deadline" data-state-copy="price-deadline">This price ends <b data-current-deadline>Sep 6 · 11:59pm ET</b><b data-countdown-days hidden></b>.</p>
                     </div>
-                    <p>You do not need another score to chase. LunaWake notices the night, then turns it into a calmer room and one useful next step.</p>
+                    <button class="deposit-reorg-button deposit-reorg-price__button" type="button" data-reserve-button data-cta-slot="pricing" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
                 </div>
-                <div class="shopify-deposit-benefit-grid">
-                    <article><span>01 / Sound</span><h3>Sound that settles you in.</h3><p>Audio helps the room move toward sleep without asking you to put on, charge, or remember anything.</p></article>
-                    <article><span>02 / Morning read</span><h3>Know what stood out.</h3><p>Wake up to one clear read in plain English — what happened last night and one thing worth trying tonight.</p></article>
-                    <article><span>03 / Light</span><h3>Wake inside your window.</h3><p>Light and room cues build gradually around the time you chose, so the wake feels less like an alarm.</p></article>
-                </div>
-                <p class="shopify-deposit-benefits__trust">No camera · No wearable · Raw signals stay on the device</p>
-            </div>
-        </section>
-
-        <section class="shopify-deposit-pricing" aria-labelledby="pricing-heading">
-            <div class="lw2-shell">
-                <div class="shopify-deposit-section-heading shopify-deposit-section-heading--wide">
-                    <p class="shopify-deposit-eyebrow">Price context</p>
-                    <h2 id="pricing-heading">A quieter way<br><span class="shopify-deposit-heading-accent">to reserve early.</span></h2>
-                    <p>$229 today. $319 on launch day. The price only goes up from here.</p>
-                </div>
-                <div class="shopify-deposit-price-grid" data-price-windows aria-live="polite">
-                    <article class="shopify-deposit-price-card shopify-deposit-price-card--current is-current" data-price-window="founding">
-                        <span class="shopify-deposit-price-card__tag">Current price</span>
-                        <p>Founding price</p>
-                        <strong data-price-amount>$229</strong>
-                        <span class="shopify-deposit-price-card__deadline">Available until <b data-price-deadline>Sep 6 · 11:59pm PT</b></span>
-                        <small class="shopify-deposit-price-card__savings"><b data-price-savings>Save $90 vs. launch day</b><span data-price-urgency>while this window is open</span></small>
-                    </article>
-                    <div class="shopify-deposit-price-ladder" aria-label="Upcoming pricing windows">
-                        <article class="shopify-deposit-price-step" data-price-window="super-early">
-                            <span>Next window</span><strong>Next launch price</strong><b data-price-amount>$269</b>
-                            <small><i data-price-savings>Save $50 vs. launch day</i><em data-price-delta>+$40 after current</em></small>
-                            <p>Available after <b data-price-deadline>Sep 7</b></p>
+                <details class="deposit-price-details" open>
+                    <summary>See the full price schedule</summary>
+                    <div class="deposit-reorg-price__cards" data-price-windows aria-live="polite" aria-label="LunaWake price schedule">
+                        <article class="deposit-reorg-price-card is-current" data-price-window="founding">
+                            <span>Today</span><h3>Founding price</h3><strong data-price-amount>$229</strong>
+                            <span class="deposit-reorg-price-card__deadline">Available until <b data-price-deadline>Sep 6 · 11:59pm ET</b></span>
+                            <small class="deposit-reorg-price-card__savings"><b data-price-savings>Save $90 vs. launch day</b><span data-price-urgency>while this window is open</span></small>
                         </article>
-                        <article class="shopify-deposit-price-step" data-price-window="early">
-                            <span>Launch day</span><strong>Launch-day price</strong><b data-price-amount>$319</b>
-                            <small><i data-price-savings>Launch-day price</i><em data-price-delta>+$90 after current</em></small>
-                            <p>Available on <b data-price-deadline>Sep 21 · launch day</b></p>
+                        <article class="deposit-reorg-price-card" data-price-window="super-early">
+                            <span>Sep 7–20</span><h3>Next launch price</h3><strong data-price-amount>$269</strong>
+                            <span class="deposit-reorg-price-card__deadline">Available until <b data-price-deadline>Sep 20 · 11:59pm ET</b></span>
+                            <small class="deposit-reorg-price-card__savings"><b data-price-savings>Save $50 vs. launch day</b><span data-price-delta>+$40 after current</span></small>
+                        </article>
+                        <article class="deposit-reorg-price-card" data-price-window="early">
+                            <span>Sep 21</span><h3>Launch-day price</h3><strong data-price-amount>$319</strong>
+                            <span class="deposit-reorg-price-card__deadline">Available on <b data-price-deadline>Sep 21 · launch day</b></span>
+                            <small class="deposit-reorg-price-card__savings"><b data-price-savings>Launch-day price</b><span data-price-delta>+$90 after current</span></small>
                         </article>
                     </div>
-                </div>
-                <p class="shopify-deposit-pricing-note">Current price shown above; later windows are supporting context.</p>
+                </details>
             </div>
         </section>
 
-        <section class="shopify-deposit-payment" aria-labelledby="payment-heading">
-            <div class="lw2-shell shopify-deposit-payment__grid">
-                <div>
-                    <p class="shopify-deposit-payment__eyebrow">A little more flexibility</p>
-                    <h2 id="payment-heading">One payment<br><span class="shopify-deposit-heading-accent">isn't your only path.</span></h2>
-                </div>
-                <p>If paying <span data-current-reward>$229</span> all at once is a stretch, planned retail checkout options may include PayPal Pay in 3 or Klarna after launch. Availability varies by country.<span class="shopify-deposit-payment__note">Join the launch list and we’ll let you know when those options are live.</span><span class="shopify-deposit-payment__fine">Your $9 reservation remains refundable any time, for any reason.</span></p>
+        <section class="deposit-reorg-section deposit-reorg-steps" id="how-reservation-works" aria-labelledby="steps-heading">
+            <div class="deposit-reorg-shell deposit-reorg-steps__layout">
+                <div><p class="deposit-reorg-eyebrow">What happens next</p><h2 id="steps-heading">Two simple steps.</h2><p class="deposit-reorg-lede" data-state-copy="steps-lede">Today — <span data-deposit-amount>$9</span> holds your price. Sep 21 — one personal order link completes your order.</p></div>
+                <ol class="deposit-reorg-steps__list">
+                    <li><time datetime="2026-08-04" data-state-copy="step1-time">Today</time><div><h3><span data-deposit-amount>$9</span> holds your price.</h3><p data-state-copy="step1-body">That is it. Your reservation is refundable any time, for any reason.</p></div></li>
+                    <li><time datetime="2026-09-21">Sep 21</time><div><h3>One email completes your order.</h3><p>We email your personal order link. Follow it to complete the <span data-current-reward>$229</span> order.</p></div></li>
+                </ol>
             </div>
         </section>
 
-        <section class="shopify-deposit-proof" aria-labelledby="proof-heading">
-            <div class="lw2-shell shopify-deposit-proof__grid">
-                <div>
-                    <p class="shopify-deposit-eyebrow">What is real today</p>
-                    <h2 id="proof-heading">Real rooms.<br><span class="shopify-deposit-heading-accent">Real routines.</span></h2>
-                </div>
-                <p>We test LunaWake in real rooms and real routines — sensing, waking, and the language of the morning read. The product is still being refined, and we will keep showing what we know and where we are learning.</p>
-            </div>
-        </section>
-
-        <section class="shopify-deposit-rules" aria-labelledby="rules-heading">
-            <div class="lw2-shell shopify-deposit-rules__grid">
-                <div class="shopify-deposit-section-heading">
-                    <p class="shopify-deposit-eyebrow">Before you reserve</p>
-                    <h2 id="rules-heading">Your $9,<br><span class="shopify-deposit-heading-accent">in plain English.</span></h2>
-                    <p class="shopify-deposit-rules-lede">Your reservation is refundable any time, for any reason. The $9 holds your price; it never turns into an automatic deduction.</p>
-                </div>
-                <div class="shopify-deposit-rule-list">
-                    <article><span>Any time</span><strong>Change your mind? Get the $9 back.</strong><p>Request a full refund through LunaWake support before or after launch, for any reason. It goes back to the original Shopify payment method.</p></article>
-                    <article><span>At launch</span><strong>Complete your order</strong><p>We email your personal order link. Use the same email and one click completes the product payment at the price you locked.</p></article>
-                    <article><span>After your order</span><strong>Start Luna Coach while you wait</strong><p>Your 30 days of Luna Coach begin after your order is verified. You do not wait for LunaWake to ship.</p></article>
-                    <article><span>If launch is canceled</span><strong>You do not carry the risk</strong><p>If the launch does not go ahead, your $9 comes back in full through the original Shopify payment method. You do not carry any launch risk.</p></article>
-                </div>
-            </div>
-        </section>
-
-        <section class="shopify-deposit-finish-section" aria-labelledby="finish-showcase-heading">
-            <div class="lw2-shell">
-                <div class="shopify-deposit-finish-section__heading">
-                    <div>
-                        <p class="shopify-deposit-eyebrow">Make it yours</p>
-                        <h2 id="finish-showcase-heading">Five finishes.<br><span class="shopify-deposit-heading-accent">One LunaWake for your room.</span></h2>
-                    </div>
-                    <p>Which finish is yours? Tell us now and we’ll record the preference after you reserve. It does not lock a color or SKU.</p>
-                </div>
-                <figure class="shopify-deposit-finish-showcase shopify-deposit-finish-showcase--section">
-                    <picture>
-                        <source srcset="images/luna-latest/finishes-all.webp" type="image/webp">
-                        <img src="images/luna-latest/finishes-all.png" width="1920" height="1003" alt="LunaWake finishes: Dawn, Moonstone, Midnight, Amber, and Sage" loading="lazy" decoding="async">
-                    </picture>
-                    <figcaption><strong>Dawn · Moonstone · Midnight · Amber · Sage</strong><span>Shown for inspiration. Finish preference is recorded separately from payment.</span></figcaption>
-                </figure>
-                <fieldset class="shopify-deposit-finish-picker">
-                    <legend>Which finish is yours? <span>Preference only</span></legend>
-                    <div class="shopify-deposit-finish-options" role="group" aria-label="Choose a finish preference">
-                        <button type="button" data-deposit-finish="moonstone" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--moonstone" aria-hidden="true"></i>Moonstone</button>
-                        <button type="button" data-deposit-finish="dawn" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--dawn" aria-hidden="true"></i>Dawn</button>
-                        <button type="button" data-deposit-finish="midnight" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--midnight" aria-hidden="true"></i>Midnight</button>
-                        <button type="button" data-deposit-finish="sage" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--sage" aria-hidden="true"></i>Sage</button>
-                        <button type="button" data-deposit-finish="amber" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--amber" aria-hidden="true"></i>Amber</button>
-                    </div>
-                    <p data-deposit-finish-name>No finish selected yet. Your $9 payment does not lock a color or SKU.</p>
-                </fieldset>
+        <section class="deposit-reorg-section deposit-reorg-get" aria-labelledby="benefits-heading">
+            <div class="deposit-reorg-shell"><div class="deposit-reorg-get__head"><div><p class="deposit-reorg-eyebrow">What you get</p><h2 id="benefits-heading">The room does<br>the work.</h2></div><p class="deposit-reorg-lede">Every night, while you sleep, and every morning — LunaWake turns the night into a calmer room and one useful next step.</p></div>
+                <div class="deposit-reorg-get__grid"><article class="deposit-reorg-get__item"><span>Every night</span><h3>Sound and light ease you to sleep.</h3><p>Nothing on your body, nothing new to remember.</p></article><article class="deposit-reorg-get__item"><span>While you sleep</span><h3>The room adjusts itself.</h3><p>Light, sound, and temperature move around your sleep.</p></article><article class="deposit-reorg-get__item"><span>Every morning</span><h3>One clear thing to try.</h3><p>A plain-English read about your night and one useful next step.</p></article></div>
+                <figure class="deposit-reorg-get__media"><img src="images/luna-latest/wake-room.png" width="1448" height="1086" alt="LunaWake shaping the light in a quiet bedroom" loading="lazy" decoding="async"></figure><p class="deposit-reorg-get__trust">No camera · No wearable · Raw signals stay on the device</p>
             </div>
         </section>
 
         <section class="shopify-deposit-coach" id="coach-value" aria-labelledby="coach-heading" data-coach-section>
             <div class="lw2-shell shopify-deposit-coach__grid">
                 <div class="shopify-deposit-coach__copy">
-                    <p class="shopify-deposit-eyebrow">Available before Luna ships</p>
-                    <h2 id="coach-heading">You don't wait<br><span class="shopify-deposit-heading-accent">to sleep better.</span></h2>
-                    <p class="shopify-deposit-coach__promise">Most crowdfunding means paying now and getting nothing for a year. Not here.</p>
-                    <p class="shopify-deposit-coach__lede">Once your order is verified, Luna Coach starts: your sleep pattern, the problem behind it, and one thing to try tonight. By the time LunaWake arrives at your door, it already knows your nights.</p>
+                    <p class="shopify-deposit-eyebrow">Included with your $9 reservation</p>
+                    <h2 id="coach-heading">Start sleeping better<br><span class="shopify-deposit-heading-accent">before LunaWake arrives.</span></h2>
+                    <p class="shopify-deposit-coach__promise">30 days of Luna Coach, free.</p>
+                    <p class="shopify-deposit-coach__lede">Your first month starts when the campaign ends — before LunaWake ships. Each morning, Luna turns your night into a plain-English report and one useful thing to try.</p>
                     <div class="shopify-deposit-coach__value" aria-label="Included Luna Coach value">
                         <strong><span data-coach-days>30</span> days of Luna Coach</strong>
-                        <span>Included · <b data-coach-value>$19.99</b> value</span>
+                        <span>Included free · <b data-coach-value>$19.99</b> value</span>
                     </div>
                 </div>
                 <div class="shopify-deposit-coach__screens" aria-label="Luna Coach app examples">
                     <figure class="shopify-deposit-coach-screen shopify-deposit-coach-screen--pattern">
-                        <div class="shopify-deposit-coach-screen__crop" data-coach-report data-report-start="reflection" data-report-end-offset="190" role="region" tabindex="0" aria-label="Scrollable personal Sleep Pattern report, initially showing the complete sleep reflection"><img src="images/app-screens/sleep-pattern.webp" width="960" height="8660" alt="Luna App personal sleep report showing a complete Sleep Pattern reflection with an illustrated sleeper and explanation" loading="lazy" decoding="async"></div>
-                        <p class="shopify-deposit-coach-screen__scroll-hint"><span>Sleep Pattern / Scroll to read the full reflection</span><b aria-hidden="true">↕</b></p>
-                        <figcaption><span>Personal sleep report</span><strong>Your pattern, the problem behind it, and what to do next.</strong></figcaption>
+                        <p class="shopify-deposit-coach-screen__title">Your morning sleep report</p>
+                        <div class="shopify-deposit-coach-screen__crop" data-coach-report data-report-start="reflection" data-report-end-offset="190" role="region" tabindex="0" aria-label="Scrollable personal Sleep Pattern report; scroll to explore the full reflection"><img src="images/app-screens/sleep-pattern.webp" width="960" height="8660" alt="Luna App Sleep Pattern report explaining your sleep rhythm and one useful next step" loading="lazy" decoding="async"></div>
+                        <p class="shopify-deposit-coach-screen__scroll-hint"><span>Scroll to explore your report</span><b aria-hidden="true">↕</b></p>
+                        <figcaption><span>Sleep Pattern</span><strong>Your pattern, explained in plain English — and what to try next.</strong></figcaption>
                     </figure>
                 </div>
             </div>
@@ -276,111 +1327,38 @@
                     <p class="shopify-deposit-eyebrow">What Luna stays with</p>
                     <h3 id="coach-service-heading">Then Luna keeps learning with you.</h3>
                 </div>
-                <ol class="shopify-deposit-coach__service-list">
-                    <li><span>Day 1</span><div><strong>Start somewhere real.</strong><p>One Focus, four milestones, and a first experiment.</p></div></li>
-                    <li><span>Daily</span><div><strong>Do one useful thing.</strong><p>A short read, a practical action, and Ask Luna when you need context.</p></div></li>
-                    <li><span>Weekly</span><div><strong>Notice what changed.</strong><p>What shifted, what got in the way, and what to try next.</p></div></li>
-                    <li><span>Day 30 → monthly</span><div><strong>Keep what fits.</strong><p>A 30-day review, then monthly pattern check-ins.</p></div></li>
-                </ol>
+                <p class="shopify-deposit-coach__service-rhythm">Day 1: first read · Daily: one next step · Weekly: see the pattern · Day 30: review what changed</p>
             </div>
             <div class="lw2-shell shopify-deposit-coach__continuity" aria-labelledby="coach-continuity-heading">
-                <div>
-                    <p class="shopify-deposit-eyebrow">Start with the nights you already have</p>
-                    <h3 id="coach-continuity-heading">Start with the nights<br><em>you already have.</em></h3>
-                </div>
-                <p>Already use Apple Watch or Oura? Luna can begin from measured nights through Apple Health. Without a wearable, start by telling Luna what your nights are like. When LunaWake arrives, it adds bedside context without starting over.</p>
+                <p id="coach-continuity-heading"><strong>When LunaWake arrives:</strong> it adds bedside context to the nights Luna Coach already knows.</p>
             </div>
             <div class="lw2-shell shopify-deposit-coach__footer">
-                <p class="shopify-deposit-coach__availability" data-coach-availability>Available after your order is verified — before LunaWake ships.</p>
                 <p class="shopify-deposit-coach__boundary">Luna offers general sleep guidance. It does not diagnose or replace medical care.</p>
             </div>
         </section>
 
-        <section class="shopify-deposit-steps" id="how-reservation-works" aria-labelledby="steps-heading">
-            <div class="lw2-shell shopify-deposit-steps__grid">
-                <div class="shopify-deposit-steps__intro shopify-deposit-section-heading">
-                    <p class="shopify-deposit-eyebrow">What happens next</p>
-                    <h2 id="steps-heading">Three moments.<br><span class="shopify-deposit-heading-accent">One simple path.</span></h2>
-                    <p>Today — <span data-deposit-amount>$9</span> holds your price. Sep 21 — one personal order link. When it ships — LunaWake comes home.</p>
-                </div>
-                <ol class="shopify-deposit-timeline">
-                    <li>
-                        <div class="shopify-deposit-timeline__marker" aria-hidden="true">
-                            <span class="shopify-deposit-timeline__number">01</span>
-                            <svg class="shopify-deposit-timeline__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M3 9h18M7 3v4M17 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                        </div>
-                        <div class="shopify-deposit-timeline__body">
-                            <div class="shopify-deposit-timeline__meta"><span class="shopify-deposit-timeline__phase">Today</span><span class="shopify-deposit-timeline__tag">Pay <b data-deposit-amount>$9</b> reservation</span></div>
-                            <h3>Reserve <span data-deposit-amount>$9</span> through Shopify</h3>
-                            <p>Your founding price is held. Refundable any time, for any reason.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shopify-deposit-timeline__marker" aria-hidden="true">
-                            <span class="shopify-deposit-timeline__number">02</span>
-                            <svg class="shopify-deposit-timeline__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M7 2v4M17 2v4M3 9h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="m9 15 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                        </div>
-                        <div class="shopify-deposit-timeline__body">
-                            <div class="shopify-deposit-timeline__meta"><span class="shopify-deposit-timeline__phase"><span data-launch-date>Sep 21, 2026 PT · launch day</span></span><span class="shopify-deposit-timeline__tag">Pay separately</span></div>
-                            <h3>Complete your order from our email</h3>
-                            <p>On Sep 21, LunaWake launches through Kickstarter, a global platform for new-product pre-orders. We email your personal order link.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shopify-deposit-timeline__marker" aria-hidden="true">
-                            <span class="shopify-deposit-timeline__number">03</span>
-                            <svg class="shopify-deposit-timeline__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12.5 9.2 17 19 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle></svg>
-                        </div>
-                        <div class="shopify-deposit-timeline__body">
-                            <div class="shopify-deposit-timeline__meta"><span class="shopify-deposit-timeline__phase">When it ships</span><span class="shopify-deposit-timeline__tag">LunaWake arrives</span></div>
-                            <h3>Your bedside companion comes home</h3>
-                            <p>Luna Coach can begin before shipping, so the device arrives to a sleep pattern it already understands.</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="lw2-shell shopify-deposit-steps__facts" aria-label="Reservation facts">
-                <p><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m5 12.5 4 4L19 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b data-deposit-amount>$9</b> holds your founding price</span></p>
-                <p><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3.5 19 6v5.5c0 4.5-3 7.4-7 9-4-1.6-7-4.5-7-9V6l7-2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Refundable any time, for any reason</span></p>
-                <p><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"></path><path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><span>Use the same email for your order</span></p>
+        <section class="deposit-reorg-section deposit-reorg-finish" aria-labelledby="finish-showcase-heading">
+            <div class="deposit-reorg-shell">
+                <div class="deposit-reorg-finish__head"><div><p class="deposit-reorg-eyebrow">Help us choose</p><h2 id="finish-showcase-heading">Five finishes.<br>Which one would you pick?</h2></div><p>Quick color poll only. Your vote is separate from the $9 reservation, USD price, and product order.</p></div>
+                <figure class="deposit-reorg-finish__media"><picture><source srcset="images/luna-latest/finishes-all.webp" type="image/webp"><img src="images/luna-latest/finishes-all.png" width="1920" height="1003" alt="LunaWake finishes: Dawn, Moonstone, Midnight, Amber, and Sage" loading="lazy" decoding="async"></picture></figure>
+                <fieldset class="shopify-deposit-finish-picker"><legend>Quick color poll</legend><p class="deposit-reorg-finish__poll-note">Choose the finish you like best. This does not change your $9 reservation, USD price, or order.</p><div class="shopify-deposit-finish-options" role="group" aria-label="Vote for your favorite finish">
+                    <button type="button" data-deposit-finish="dawn" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--dawn" aria-hidden="true"></i>Dawn</button>
+                    <button type="button" data-deposit-finish="moonstone" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--moonstone" aria-hidden="true"></i>Moonstone</button>
+                    <button type="button" data-deposit-finish="midnight" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--midnight" aria-hidden="true"></i>Midnight</button>
+                    <button type="button" data-deposit-finish="amber" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--amber" aria-hidden="true"></i>Amber</button>
+                    <button type="button" data-deposit-finish="sage" aria-pressed="false"><i class="shopify-deposit-finish-swatch shopify-deposit-finish-swatch--sage" aria-hidden="true"></i>Sage</button>
+                </div><p data-deposit-finish-name aria-live="polite">No vote yet. Your choice is saved on this device only.</p></fieldset>
             </div>
         </section>
 
-        <section class="shopify-deposit-faq" id="faq" aria-labelledby="faq-heading">
-            <div class="lw2-shell shopify-deposit-faq__grid">
-                <div class="shopify-deposit-section-heading">
-                    <p class="shopify-deposit-eyebrow">Questions, answered</p>
-                    <h2 id="faq-heading">Start with<br>the important ones.</h2>
-                    <p class="shopify-deposit-faq-intro">Clarity matters. Here is what your $9 reservation does — and what happens next.</p>
-                    <a class="shopify-deposit-support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">
-                        <span class="shopify-deposit-support__label">Human support</span>
-                        <strong data-support-email>info@lunawake.ai</strong>
-                        <span class="shopify-deposit-support__arrow" aria-hidden="true">↗</span>
-                    </a>
-                </div>
-                <div class="shopify-deposit-faq-list">
-                    <details open><summary>What happens on Sep 21?</summary><p>We email your personal order link. Use the same email and one click completes your order at the founding price you locked today.</p></details>
-                    <details><summary>Can I get my $9 back?</summary><p>Yes. You can request a full refund any time, for any reason. If the launch is canceled, the $9 is refunded in full through Shopify.</p></details>
-                    <details><summary>What do I receive?</summary><p>Your order includes LunaWake at the price you locked, plus 30 days of Luna Coach after your order is verified. Coach starts before the device ships.</p></details>
-                    <details><summary>What if the launch is canceled?</summary><p>You do not carry the risk. LunaWake refunds the $9 in full through the original Shopify payment method.</p></details>
-                </div>
-            </div>
-        </section>
+        <section class="deposit-reorg-section deposit-reorg-faq" id="faq" aria-labelledby="faq-heading"><div class="deposit-reorg-shell deposit-reorg-faq__layout"><div><p class="deposit-reorg-eyebrow">Questions, answered</p><h2 id="faq-heading">Start with<br>the important ones.</h2><p class="deposit-reorg-faq__intro">Clarity matters. Here is what your $9 reservation does — and what happens next.</p><a class="deposit-reorg-faq__support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real human support · <strong data-support-email>info@lunawake.ai</strong> ↗</a></div><div class="deposit-reorg-faq__list"><details><summary>What does LunaWake do?</summary><p>LunaWake reads your night from the bedside, then shapes sound, light, and room temperature around your sleep. Nothing to wear and nothing to charge.</p></details><details><summary>Do I need a subscription?</summary><p>No subscription is required for the LunaWake device. Your reservation includes 30 days of Luna Coach free while you wait.</p></details><details><summary>When does LunaWake ship?</summary><p>We will share the delivery schedule on launch day and in your order confirmation. Luna Coach starts when the campaign ends, before the device ships.</p></details><details><summary>Why are there two payments?</summary><p>The $9 reservation holds your $229 founding price. On Sep 21, we email your personal order link to complete the product order at that locked price through Kickstarter.</p></details><details><summary>Can I get my $9 back?</summary><p>Yes. You can request a full refund before or after launch, for any reason. If the campaign does not go ahead, the $9 is refunded in full through the original payment method.</p></details></div></div></section>
 
-        <section class="shopify-deposit-final-cta" aria-labelledby="final-cta-heading">
-            <div class="lw2-shell">
-                <p class="shopify-deposit-eyebrow">Ready when you are</p>
-                <h2 id="final-cta-heading">Save <strong data-final-savings>$90</strong>.<br><span class="shopify-deposit-heading-accent">Reserve for $9 today.</span></h2>
-                <p class="shopify-deposit-final-cta__note"><strong>Refundable any time, for any reason.</strong> Use the same email when your order link arrives.</p>
-                <button class="shopify-deposit-button shopify-deposit-button--light" type="button" data-reserve-button data-cta-slot="final">Reserve $9 <span aria-hidden="true">→</span></button>
-                <a class="shopify-deposit-secondary-cta" href="https://prelaunch.lunawake.ai/?utm_source=deposit-page&amp;utm_medium=footer&amp;utm_campaign=deposit_launch_v1&amp;utm_content=exit">Not ready to reserve? Join the launch list <span aria-hidden="true">↗</span></a>
-            </div>
-        </section>
+        <section class="deposit-reorg-section deposit-reorg-final" aria-labelledby="final-cta-heading"><div class="deposit-reorg-shell"><p class="deposit-reorg-eyebrow">Ready when you are</p><h2 id="final-cta-heading" data-state-copy="final-heading">Hold your LunaWake<br>for $9 today.</h2><p data-state-copy="final-lede"><strong>Refundable before or after launch.</strong> One email on Sep 21 completes your order.</p><button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="final" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button><a class="deposit-reorg-final__link shopify-deposit-secondary-cta" href="https://prelaunch.lunawake.ai/">Not ready to reserve? Get notified when reservations open <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
-    <div class="shopify-deposit-mobile-cta" data-mobile-cta>
-        <div><strong data-deposit-amount>$9</strong><span>Founding: <b data-mobile-reward>$229</b></span></div>
-        <button class="shopify-deposit-button" type="button" data-reserve-button data-cta-slot="mobile">Reserve $9 <span aria-hidden="true">→</span></button>
+    <div class="deposit-reorg-sticky" data-mobile-cta>
+        <span class="deposit-reorg-sticky__label" data-state-copy="sticky-label"><strong data-deposit-amount>$9</strong><span class="deposit-reorg-sticky__desktop-label"> · Reserve your LunaWake</span><span class="deposit-reorg-sticky__compact-label"> · Reserve</span></span>
+        <button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="mobile" aria-describedby="checkout-status">Reserve for $9 <span aria-hidden="true">→</span></button>
     </div>
 
     <footer class="lw2-footer">
@@ -393,6 +1371,6 @@
     </footer>
 
     <script src="js/lw2_shell.js?v=2026-08-04l"></script>
-    <script src="js/deposit.js?v=2026-08-04m"></script>
+    <script src="js/deposit.js?v=2026-08-05a"></script>
 </body>
 </html>

@@ -11,9 +11,10 @@
         coach: {
             includedDays: 30,
             value: '$19.99',
-            availability: 'Available after your order is verified — before LunaWake ships.'
+            availability: 'Starts when the campaign ends — before LunaWake ships.'
         },
         shopifyProductUrl: '',
+        launchListUrl: 'https://prelaunch.lunawake.ai/',
         supportUrl: 'mailto:info@lunawake.ai',
         finishes: {
             dawn: { name: 'Dawn' },
@@ -23,9 +24,9 @@
             amber: { name: 'Amber', src: 'images/luna-latest/finish-amber-1440.webp' }
         },
         priceWindows: [
-            { id: 'founding', amount: '$229', savings: '$90', displayDeadline: 'Sep 6 · 11:59pm PT', startAt: '', endAt: '2026-09-06T23:59:59-07:00', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Current price', label: 'Founding price' },
-            { id: 'super-early', amount: '$269', savings: '$50', displayDeadline: 'Sep 20 · 11:59pm PT', startAt: '2026-09-07T00:00:00-07:00', endAt: '2026-09-20T23:59:59-07:00', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Next price', label: 'Next launch price' },
-            { id: 'early', amount: '$319', savings: '$0', displayDeadline: 'Sep 21 · launch day', startAt: '2026-09-21T00:00:00-07:00', endAt: '', timezone: 'America/Los_Angeles', status: 'current', ctaLabel: 'Launch-day price', label: 'Launch-day price' }
+            { id: 'founding', amount: '$229', savings: '$90', displayDeadline: 'Sep 6 · 11:59pm ET', startAt: '', endAt: '2026-09-06T23:59:59-04:00', timezone: 'America/New_York', status: 'current' },
+            { id: 'super-early', amount: '$269', savings: '$50', displayDeadline: 'Sep 20 · 11:59pm ET', startAt: '2026-09-07T00:00:00-04:00', endAt: '2026-09-20T23:59:59-04:00', timezone: 'America/New_York', status: 'current' },
+            { id: 'early', amount: '$319', savings: '$0', displayDeadline: 'Sep 21 · launch day', startAt: '2026-09-21T00:00:00-04:00', endAt: '', timezone: 'America/New_York', status: 'current' }
         ]
     };
 
@@ -39,32 +40,34 @@
     };
 
     const reserveButtons = Array.from(document.querySelectorAll('[data-reserve-button]'));
+    const reservationCard = document.querySelector('.deposit-reorg-reservation-card');
+    const mobileCta = document.querySelector('[data-mobile-cta]');
     const checkoutStatus = document.querySelector('[data-checkout-status]');
     const priceCards = Array.from(document.querySelectorAll('[data-price-window]'));
-    const supportLinks = Array.from(document.querySelectorAll('.shopify-deposit-support'));
+    const supportLinks = Array.from(document.querySelectorAll('.deposit-reorg-trust__email, .deposit-reorg-faq__support'));
     const secondaryLinks = Array.from(document.querySelectorAll('.shopify-deposit-secondary-cta'));
     const finishButtons = Array.from(document.querySelectorAll('[data-deposit-finish]'));
     const finishName = document.querySelector('[data-deposit-finish-name]');
-    const audienceMessage = document.querySelector('[data-audience-message]');
-    const coldExplainer = document.querySelector('[data-cold-explainer]');
     const coachSection = document.querySelector('[data-coach-section]');
-    const launchDateNodes = Array.from(document.querySelectorAll('[data-launch-date]'));
     const launchListCountNodes = Array.from(document.querySelectorAll('[data-launch-list-count]'));
-    const heroRewards = Array.from(document.querySelectorAll('[data-hero-reward]'));
-    const heroSavings = document.querySelector('[data-hero-savings]');
-    const headerReward = document.querySelector('[data-header-reward]');
     const checkoutMessage = checkoutStatus?.querySelector('[data-checkout-message]') || checkoutStatus;
-    const previewLinks = Array.from(document.querySelectorAll('[data-preview-link], [data-header-preview-link]'));
-    const headerReserveButton = document.querySelector('[data-header-reserve-button]');
-    const headerPreviewLink = document.querySelector('[data-header-preview-link]');
+    const previewLinks = Array.from(document.querySelectorAll('[data-preview-link]'));
     const query = new URLSearchParams(window.location.search);
     const source = query.get('source') || query.get('utm_source') || query.get('traffic_source') || '';
     const audienceParam = (query.get('audience') || '').toLowerCase();
     const audience = audienceParam === 'lead' ? 'lead' : audienceParam === 'ad' ? 'new' : 'new_or_unknown';
     const marketingContext = Object.fromEntries(Array.from(query.entries()).filter(([key]) => key === 'source' || key.startsWith('utm_') || ['angle', 'creative', 'placement'].includes(key)));
-    const state = { submitting: false, finish: null };
+    const savedFinish = (() => {
+        try { return window.localStorage.getItem('lunawake-finish-poll') || null; } catch (error) { return null; }
+    })();
+    const state = { submitting: false, finish: savedFinish };
 
-    const isCheckoutReady = () => Boolean(config.shopifyProductUrl) && config.campaignState === 'reservation_open';
+    const checkoutState = () => {
+        if (config.campaignState === 'kickstarter_live') return 'closed';
+        if (config.campaignState === 'campaign_failed' || config.campaignState === 'campaign_success') return 'ended';
+        return Boolean(config.shopifyProductUrl) && config.campaignState === 'reservation_open' ? 'live' : 'preview';
+    };
+    const isCheckoutReady = () => checkoutState() === 'live';
     const priceText = (windowConfig) => config.pricingUnlocked ? windowConfig.amount : 'Price unlocking soon';
     const windowStatus = (windowConfig) => {
         const now = Date.now();
@@ -123,7 +126,43 @@
         if (!config.pricingUnlocked || !Number.isFinite(delta) || delta <= 0) return 'Price rises later';
         return `+$${delta} after current`;
     };
-    const ctaLabel = () => `Reserve ${config.depositAmount}`;
+    const ctaLabel = (slot = '') => {
+        if (checkoutState() === 'preview') return slot === 'mobile' ? 'Notify me when it opens' : 'Get notified when reservations open';
+        return `Reserve ${config.depositAmount}`;
+    };
+
+    // The static HTML carries the live-state copy. In preview, the promise
+    // ("Due today $9") must not outrun the action ("Get notified"), so these
+    // strings rewrite the payment language into honest waitlist language.
+    const STATE_COPY = {
+        preview: {
+            'hero-heading': `Be first when the ${config.depositAmount} reservation opens.`,
+            'hero-lede': `LunaWake reads your night and shapes the room around your sleep. Join the list for first access to the ${config.depositAmount} reservation.`,
+            'hero-policy': `<strong>Your ${config.depositAmount} is refundable any time, for any reason.</strong>`,
+            'hero-proof': '<span><strong><span data-launch-list-count>2,000+</span> people are already on the launch list.</strong> Join them when you are ready.</span>',
+            'card-due-label': 'Reservation deposit',
+            'card-reward-label': 'Founding price when reservations open',
+            'card-deadline': 'Reservations open soon — the founding price ends <b data-current-deadline></b><b data-countdown-days hidden></b>.',
+            'price-headline': `${config.depositAmount} will lock<br><strong>${currentWindow()?.amount || '$229'}</strong>.`,
+            'price-deadline': 'The founding price ends <b data-current-deadline></b><b data-countdown-days hidden></b>. The launch list hears first when reservations open.',
+            'steps-lede': `When reservations open — <span data-deposit-amount>${config.depositAmount}</span> holds your price. Sep 21 — one personal order link completes your order.`,
+            'step1-time': 'At open',
+            'step1-body': `We email you the moment reservations open. Your ${config.depositAmount} will be refundable any time, for any reason.`,
+            'final-heading': 'Be first when<br>reservations open.',
+            'final-lede': `<strong><span data-launch-list-count>${config.launchListCount}</span> people are already on the list.</strong> Leave your email and we will tell you the moment the ${config.depositAmount} reservation opens.`,
+            'sticky-label': '<span class="deposit-reorg-sticky__desktop-label">Reservations open soon</span><span class="deposit-reorg-sticky__compact-label">Open soon</span>'
+        }
+    };
+    // Must run before updatePriceCards() so the deadline/countdown spans it
+    // injects get filled; must not run again after, or the fills are lost.
+    const updateStateCopy = () => {
+        const copy = STATE_COPY[checkoutState()];
+        document.querySelectorAll('[data-state-copy]').forEach((element) => {
+            if (element.dataset.defaultCopy === undefined) element.dataset.defaultCopy = element.innerHTML;
+            const next = (copy && copy[element.dataset.stateCopy]) ?? element.dataset.defaultCopy;
+            if (element.innerHTML !== next) element.innerHTML = next;
+        });
+    };
 
     const track = (eventName, extra = {}) => {
         const activeWindow = currentWindow();
@@ -133,11 +172,11 @@
             deposit_amount: config.depositAmount,
             campaign_state: config.campaignState,
             pricing_unlocked: config.pricingUnlocked,
-            finish: state.finish,
             audience,
             traffic_source: source,
             campaign: query.get('campaign') || query.get('utm_campaign') || '',
             creative: query.get('creative') || query.get('utm_content') || '',
+            checkout_state: checkoutState(),
             price_window: activeWindow?.id || '',
             reward_price: activeWindow?.amount || '',
             ...marketingContext,
@@ -157,7 +196,6 @@
         if (audienceParam) target.searchParams.set('audience', audienceParam);
         Object.entries(extraParams).forEach(([key, value]) => target.searchParams.set(key, value));
         const activeWindow = currentWindow();
-        if (state.finish) target.searchParams.set('finish', state.finish);
         if (activeWindow) {
             target.searchParams.set('price_window', activeWindow.id);
             target.searchParams.set('reward_price', activeWindow.amount);
@@ -166,41 +204,48 @@
     };
 
     const updateButtons = () => {
-        const ready = isCheckoutReady();
-        const campaignClosed = config.campaignState === 'kickstarter_live';
-        const unavailable = config.campaignState === 'campaign_failed' || config.campaignState === 'campaign_success';
+        const stateName = checkoutState();
+        const ready = stateName === 'live';
+        const actionable = stateName === 'live' || stateName === 'preview';
 
         reserveButtons.forEach((button) => {
-            button.disabled = !ready || state.submitting;
-            button.setAttribute('aria-disabled', String(!ready || state.submitting));
+            const disabled = !actionable || state.submitting;
+            button.disabled = disabled;
+            button.setAttribute('aria-disabled', String(disabled));
             button.innerHTML = state.submitting
-                ? 'Opening Shopify Checkout…'
-                : campaignClosed
+                ? stateName === 'preview' ? 'Taking you to the launch list…' : 'Opening secure checkout…'
+                : stateName === 'closed'
                     ? 'Reservations are closed'
-                    : unavailable
+                    : stateName === 'ended'
                         ? 'Reservation window has ended'
-                        : ready
-                            ? `${ctaLabel(button.dataset.ctaSlot)} <span aria-hidden="true">→</span>`
-                            : button.dataset.ctaSlot === 'mobile'
-                                ? 'Not open yet'
-                                : 'Checkout not open yet';
+                        : `${ctaLabel(button.dataset.ctaSlot)} <span aria-hidden="true">→</span>`;
         });
-
-        if (headerReserveButton) headerReserveButton.hidden = !ready && !campaignClosed && !unavailable;
-        if (headerPreviewLink) headerPreviewLink.hidden = ready || campaignClosed || unavailable;
 
         if (!checkoutStatus) return;
-        if (checkoutMessage) checkoutMessage.textContent = ready
-            ? `You will continue to secure checkout for ${config.depositAmount}.`
-            : campaignClosed
+        if (checkoutMessage) checkoutMessage.textContent = stateName === 'live'
+            ? `Secure checkout — ${config.depositAmount} today, refundable any time.`
+            : stateName === 'preview'
+                ? 'We’ll email you when reservations open.'
+                : stateName === 'closed'
                 ? 'Launch is live. New reservations are no longer accepted; existing customers should check their email for the order link.'
-                    : unavailable
-                        ? 'This reservation window is closed.'
-                    : 'Checkout is not open yet. Join the launch list for updates.';
+                : 'This reservation window has ended.';
+        // In preview the primary button already goes to the launch list, so the
+        // card link would be a second identical ask; keep it as the escape
+        // hatch for closed/ended only.
         previewLinks.forEach((link) => {
-            link.hidden = ready || campaignClosed || unavailable;
+            link.hidden = stateName === 'preview' || stateName === 'live';
+            link.setAttribute('href', withTracking(config.launchListUrl, {
+                utm_source: 'deposit-page',
+                utm_medium: link.dataset.ctaSlot === 'header' ? 'header' : 'reservation-card',
+                utm_campaign: 'deposit_launch_v1',
+                utm_content: 'not-ready'
+            }));
+        });
+        secondaryLinks.forEach((link) => {
+            link.hidden = stateName === 'preview';
         });
         checkoutStatus.classList.toggle('is-ready', ready);
+        checkoutStatus.dataset.checkoutState = stateName;
     };
 
     const updatePriceCards = () => {
@@ -222,24 +267,10 @@
             card.classList.toggle('is-upcoming', status === 'upcoming');
             card.classList.toggle('is-ended', status === 'ended');
         });
-        const anchor = document.querySelector('.shopify-deposit-price-context');
-        if (anchor) anchor.hidden = !config.priceAnchorEnabled;
         const activeWindow = currentWindow();
         const reward = activeWindow?.amount || config.priceWindows[0]?.amount || '';
-        const savings = activeWindow?.savings || '';
-        heroRewards.forEach((element) => {
-            element.textContent = priceText(activeWindow || {});
-        });
-        if (heroSavings) heroSavings.textContent = config.pricingUnlocked && savings ? String(savings).replace(/^Save\s+/i, '') : 'more';
-        document.querySelectorAll('[data-card-savings]').forEach((element) => {
-            element.textContent = config.pricingUnlocked && savings ? String(savings).replace(/^Save\s+/i, '') : 'more';
-        });
-        document.querySelectorAll('[data-current-reward], [data-mobile-reward]').forEach((element) => {
+        document.querySelectorAll('[data-current-reward]').forEach((element) => {
             element.textContent = config.pricingUnlocked ? reward : 'Price unlocking soon';
-        });
-        if (headerReward) headerReward.textContent = config.pricingUnlocked ? reward : 'the current';
-        document.querySelectorAll('[data-current-savings]').forEach((element) => {
-            element.textContent = config.pricingUnlocked && savings ? savingsText(activeWindow) : 'current launch window';
         });
         document.querySelectorAll('[data-deposit-amount]').forEach((element) => {
             element.textContent = config.depositAmount;
@@ -251,22 +282,13 @@
         document.querySelectorAll('[data-launch-price]').forEach((element) => {
             element.textContent = priceText(launchWindow || {});
         });
-        launchDateNodes.forEach((element) => {
-            element.textContent = launchWindow?.displayDeadline || 'Launch day';
-        });
-        document.querySelectorAll('[data-final-savings]').forEach((element) => {
-            element.textContent = config.pricingUnlocked && savings ? String(savings).replace(/^Save\s+/i, '') : 'more';
-        });
         const remaining = daysLeft(activeWindow);
         document.querySelectorAll('[data-current-deadline]').forEach((element) => {
             element.textContent = deadlineText(activeWindow);
         });
         document.querySelectorAll('[data-countdown-days]').forEach((element) => {
-            element.textContent = remaining === null
-                ? 'Price window open'
-                : remaining === 0
-                    ? 'Ends today'
-                    : `${remaining} day${remaining === 1 ? '' : 's'} left`;
+            element.hidden = remaining === null;
+            element.textContent = remaining === null ? '' : remaining === 0 ? ' — ends today' : ` — ${remaining} day${remaining === 1 ? '' : 's'} left`;
         });
     };
 
@@ -279,21 +301,12 @@
             button.classList.toggle('is-active', selected);
             button.setAttribute('aria-pressed', String(selected));
         });
-        if (finishName) finishName.textContent = finish ? `${finish.name} selected as your preference.` : 'No finish selected yet. Your $9 payment does not lock a color or SKU.';
+        if (finishName) finishName.textContent = finish ? `${finish.name} — good eye. Thanks for helping us choose. Your vote stays on this device and never changes your ${config.depositAmount} reservation or price.` : 'No vote yet — pick the one you\'d want on your nightstand. Saved on this device only.';
     };
 
     const updateSource = () => {
         if (source) document.body.dataset.trafficSource = source;
         document.body.dataset.trafficAudience = audience;
-        if (!audienceMessage) return;
-        if (audience === 'lead') {
-            audienceMessage.hidden = false;
-            audienceMessage.textContent = 'You are already on the launch list — no second form needed.';
-            if (coldExplainer) coldExplainer.hidden = true;
-            return;
-        }
-        audienceMessage.hidden = true;
-        if (coldExplainer) coldExplainer.hidden = false;
     };
 
     const updateCoachCopy = () => {
@@ -322,6 +335,9 @@
         const image = report.querySelector('img');
         if (image && !image.complete) image.addEventListener('load', positionCoachReport, { once: true });
         positionCoachReport();
+        report.addEventListener('scroll', () => {
+            report.classList.toggle('is-scrolled', report.scrollTop > 12);
+        }, { passive: true });
         window.requestAnimationFrame(() => {
             positionCoachReport();
             window.setTimeout(positionCoachReport, 120);
@@ -371,6 +387,17 @@
         reserveButtons.forEach((button) => observer.observe(button));
     };
 
+    const observeReservationCard = () => {
+        if (!mobileCta || !reservationCard || !('IntersectionObserver' in window)) return;
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            mobileCta.classList.toggle('is-card-visible', Boolean(entry?.isIntersecting));
+        }, { threshold: 0.55 });
+        // The sticky bar should yield to the reservation card as soon as the
+        // card enters the viewport, so it never masks the card's own action.
+        observer.observe(reservationCard);
+    };
+
     const supportAddress = (url) => {
         const value = String(url || '');
         if (!value.toLowerCase().startsWith('mailto:')) return '';
@@ -379,26 +406,53 @@
 
     const attemptCheckout = (button) => {
         const ctaSlot = button?.dataset.ctaSlot || 'unknown';
-        if (!isCheckoutReady()) {
-            if (checkoutMessage) checkoutMessage.textContent = 'Secure checkout is not open yet. Join the launch list for updates.';
+        const stateName = checkoutState();
+        if (stateName === 'preview') {
+            state.submitting = true;
+            updateButtons();
+            track('deposit_cta_click', {
+                destination: 'launch_list',
+                checkout_state: stateName,
+                cta_slot: ctaSlot,
+                reason: 'shopify_product_url_missing'
+            });
+            window.location.assign(withTracking(config.launchListUrl, {
+                utm_source: 'deposit-page',
+                utm_medium: 'reservation-cta',
+                utm_campaign: 'deposit_launch_v1',
+                utm_content: ctaSlot
+            }));
+            return;
+        }
+        if (stateName !== 'live') {
+            if (checkoutMessage) checkoutMessage.textContent = stateName === 'closed'
+                ? 'Reservations are closed. Join the launch list for the next opening.'
+                : 'This reservation window has ended. Join the launch list for the next opening.';
             track('deposit_cta_blocked', {
-                reason: config.shopifyProductUrl ? `campaign_state_${config.campaignState}` : 'shopify_product_url_missing',
+                reason: `checkout_state_${stateName}`,
+                checkout_state: stateName,
                 cta_slot: ctaSlot
             });
             return;
         }
         state.submitting = true;
         updateButtons();
-        track('deposit_cta_click', { destination: 'shopify_checkout', cta_slot: ctaSlot });
+        track('deposit_cta_click', { destination: 'shopify_checkout', checkout_state: stateName, cta_slot: ctaSlot });
         window.location.assign(withTracking(config.shopifyProductUrl));
     };
 
     reserveButtons.forEach((button) => button.addEventListener('click', () => attemptCheckout(button)));
     finishButtons.forEach((button) => button.addEventListener('click', () => {
         updateFinish(button.dataset.depositFinish);
-        track('deposit_finish_select', { finish: state.finish, cta_slot: 'finish_preference' });
+        try { window.localStorage.setItem('lunawake-finish-poll', state.finish || ''); } catch (error) { /* local preference is optional */ }
+        track('deposit_finish_vote', { finish: state.finish, cta_slot: 'finish_poll' });
     }));
     supportLinks.forEach((link) => link.setAttribute('href', config.supportUrl));
+    previewLinks.forEach((link) => link.addEventListener('click', () => track('deposit_waitlist_click', {
+        destination: 'launch_list',
+        checkout_state: checkoutState(),
+        cta_slot: link.dataset.ctaSlot || 'reservation-card'
+    })));
     document.querySelectorAll('[data-support-email]').forEach((element) => {
         element.textContent = supportAddress(config.supportUrl) || 'Open support center';
     });
@@ -410,22 +464,16 @@
             utm_content: 'not-ready'
         }));
     });
-    if (headerPreviewLink) {
-        headerPreviewLink.setAttribute('href', withTracking(headerPreviewLink.href, {
-            utm_source: 'deposit-page',
-            utm_medium: 'header',
-            utm_campaign: 'deposit_launch_v1',
-            utm_content: 'not-ready'
-        }));
-        headerPreviewLink.addEventListener('click', () => track('deposit_waitlist_click', {
-            destination: 'launch_list',
-            cta_slot: 'header'
-        }));
-    }
     document.querySelectorAll('[data-year]').forEach((element) => {
         element.textContent = String(new Date().getFullYear());
     });
 
+    // On phones the full price schedule starts collapsed — mobile urgency is
+    // one price gap and one date, not a table. The summary stays tappable.
+    if (window.matchMedia('(max-width: 900px)').matches) {
+        document.querySelector('.deposit-price-details[open]')?.removeAttribute('open');
+    }
+    updateStateCopy();
     updatePriceCards();
     updateFinish();
     updateSource();
@@ -433,6 +481,7 @@
     initializeCoachReport();
     updateButtons();
     observeCtaSlots();
+    observeReservationCard();
     observeCoachSection();
     track('deposit_cta_view', { cta_slot: 'page' });
 })();

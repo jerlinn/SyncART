@@ -349,7 +349,7 @@
         <section class="lw2-finishes" id="finishes">
             <div class="lw2-shell lw2-finish-grid">
                 <div class="lw2-finish-copy"><p class="lw2-eyebrow">Choose your finish</p><h2>A quieter kind of color.</h2><p>Three material directions, one LunaWake experience. Select a finish to see the product render in its material state.</p><div class="lw2-finish-buttons" role="group" aria-label="Choose a LunaWake finish"><button class="is-active" type="button" data-finish="orange" aria-pressed="true"><span class="lw2-swatch lw2-swatch--orange"></span>Amber</button><button type="button" data-finish="gray" aria-pressed="false"><span class="lw2-swatch lw2-swatch--gray"></span>Stone</button><button type="button" data-finish="black" aria-pressed="false"><span class="lw2-swatch lw2-swatch--black"></span>Charcoal</button></div><p class="lw2-finish-name"><strong data-finish-name>Amber</strong><span data-finish-detail>Warm textile, warm light.</span></p></div>
-                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img class="is-current" data-finish-image src="images/luna-latest/finish-amber-1440.webp?v=2026-08-05d" width="1440" height="1199" alt="LunaWake in the Amber finish" loading="lazy"><img class="is-next" data-finish-image-next src="images/luna-latest/finish-amber-1440.webp?v=2026-08-05d" width="1440" height="1199" alt="" loading="lazy" aria-hidden="true"></div><figcaption><span>LunaWake / finish render</span><span data-finish-code>LW / AMBER</span></figcaption></figure>
+                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img class="is-current" data-finish-image src="images/luna-latest/finish-amber-1440.webp?v=2026-08-05d" srcset="images/luna-latest/finish-amber-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-amber-1440.webp?v=2026-08-05d 1440w" sizes="(max-width: 900px) 100vw, 60vw" width="1440" height="1199" alt="LunaWake in the Amber finish" loading="lazy" decoding="async"><img class="is-next" data-finish-image-next width="1440" height="1199" alt="" aria-hidden="true"></div><figcaption><span>LunaWake / finish render</span><span data-finish-code>LW / AMBER</span></figcaption></figure>
             </div>
         </section>
 
@@ -394,10 +394,11 @@
         }
 
         const finishData = {
-            orange: { name: 'Amber', detail: 'Warm textile, warm light.', code: 'LW / AMBER', src: 'images/luna-latest/finish-amber-1440.webp?v=2026-08-05d' },
-            gray: { name: 'Stone', detail: 'Soft neutral, warm light.', code: 'LW / STONE', src: 'images/luna-latest/finish-stone-1440.webp?v=2026-08-05d' },
-            black: { name: 'Charcoal', detail: 'Deep textile, warm light.', code: 'LW / CHARCOAL', src: 'images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d' }
+            orange: { name: 'Amber', detail: 'Warm textile, warm light.', code: 'LW / AMBER', src: 'images/luna-latest/finish-amber-1440.webp?v=2026-08-05d', srcset: 'images/luna-latest/finish-amber-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-amber-1440.webp?v=2026-08-05d 1440w' },
+            gray: { name: 'Stone', detail: 'Soft neutral, warm light.', code: 'LW / STONE', src: 'images/luna-latest/finish-stone-1440.webp?v=2026-08-05d', srcset: 'images/luna-latest/finish-stone-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-stone-1440.webp?v=2026-08-05d 1440w' },
+            black: { name: 'Charcoal', detail: 'Deep textile, warm light.', code: 'LW / CHARCOAL', src: 'images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d', srcset: 'images/luna-latest/finish-charcoal-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d 1440w' }
         };
+        const finishSizes = '(max-width: 900px) 100vw, 60vw';
         const finishFrame = document.querySelector('.lw2-finish-image');
         let currentFinishImage = finishFrame?.querySelector('[data-finish-image]');
         let nextFinishImage = finishFrame?.querySelector('[data-finish-image-next]');
@@ -406,11 +407,13 @@
         let isSwitchingFinish = false;
         const finishTransitionMs = 300;
 
-        const preloadFinish = (src) => new Promise((resolve, reject) => {
+        const preloadFinish = (data) => new Promise((resolve, reject) => {
             const image = new Image();
             image.onload = resolve;
             image.onerror = reject;
-            image.src = src;
+            image.srcset = data.srcset;
+            image.sizes = finishSizes;
+            image.src = data.src;
         });
 
         const switchFinishImage = async (data) => {
@@ -426,11 +429,13 @@
                 if (target.src === currentFinishSrc) continue;
 
                 try {
-                    await preloadFinish(target.src);
+                    await preloadFinish(target);
                 } catch {
                     continue;
                 }
 
+                nextFinishImage.srcset = target.srcset;
+                nextFinishImage.sizes = finishSizes;
                 nextFinishImage.src = target.src;
                 nextFinishImage.alt = `LunaWake in the ${target.name} finish`;
                 requestAnimationFrame(() => {
@@ -449,15 +454,6 @@
             isSwitchingFinish = false;
         };
 
-        const finishSection = document.querySelector('.lw2-finish-grid');
-        if (finishSection && 'IntersectionObserver' in window) {
-            const finishWarmup = new IntersectionObserver((entries, observer) => {
-                if (!entries.some((entry) => entry.isIntersecting)) return;
-                observer.disconnect();
-                Object.values(finishData).forEach(({ src }) => { const image = new Image(); image.src = src; });
-            }, { rootMargin: '800px 0px' });
-            finishWarmup.observe(finishSection);
-        }
         document.querySelectorAll('[data-finish]').forEach((button) => button.addEventListener('click', () => {
             const data = finishData[button.dataset.finish];
             if (!data) return;

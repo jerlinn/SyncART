@@ -175,7 +175,7 @@
             // Pre-test data (n=437): the strongest differentiator for the
             // 25-44 wearable-user segment is "nothing to wear" — keep it in
             // the preview lede, and keep the gold amount span in the heading.
-            'hero-heading': `Be first when the <span data-deposit-amount>${config.depositAmount}</span> reservation opens.`,
+            'hero-heading': 'Be first when reservations open.',
             'hero-lede': 'Nothing to wear, nothing to charge — it reads your night from the bedside and shapes the room around your sleep.',
             'card-due-label': 'Reservation deposit',
             'card-reward-label': 'Founding price at open',
@@ -189,7 +189,7 @@
             'steps-lede': `When reservations open — <span data-deposit-amount>${config.depositAmount}</span> holds your price. Sep 21 — one personal order link completes your order.`,
             'step1-time': 'At open',
             'step1-body': `We email you the moment reservations open. Your ${config.depositAmount} will be refundable any time, for any reason.`,
-            'final-heading': 'Be first when<br>reservations open.',
+            'final-heading': 'Save your spot<br>on the launch list.',
             'final-lede': `<strong><span data-launch-list-count>${config.launchListCount}</span> people are already on the list.</strong> Leave your email and we will tell you the moment the ${config.depositAmount} reservation opens.`,
             'sticky-label': '<span class="deposit-reorg-sticky__desktop-label">Reservations open soon</span><span class="deposit-reorg-sticky__compact-label">Open soon</span>'
         }

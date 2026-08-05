@@ -178,8 +178,8 @@
             'hero-heading': 'Be first when reservations open.',
             'hero-lede': 'Nothing to wear, nothing to charge — it reads your night from the bedside and shapes the room around your sleep.',
             'card-due-label': 'Reservation deposit',
-            'card-reward-label': 'Founding price at open',
-            'card-deadline': 'Reservations open soon — the founding price ends <b data-current-deadline></b><b data-countdown-days hidden></b>.',
+            'card-reward-label': 'Your $9 locks this price',
+            'card-deadline': 'Reservations open soon. The founding price holds until <b data-current-deadline></b><b data-countdown-days hidden></b>.',
             'price-headline': `${config.depositAmount} will lock<br><strong>${currentWindow()?.amount || '$229'}</strong>.`,
             // The deadline lives in the card and the timeline row; stating it a
             // third time here read as manufactured urgency in design review.

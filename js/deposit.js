@@ -189,16 +189,6 @@
         };
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(payload);
-        // Plausible bridge: same events, five key dimensions only.
-        if (typeof window.plausible === 'function') {
-            window.plausible(eventName, { props: {
-                cta_slot: payload.cta_slot || '',
-                checkout_state: payload.checkout_state,
-                price_window: payload.price_window,
-                source: payload.traffic_source || '',
-                campaign: payload.campaign || ''
-            } });
-        }
         if (typeof window.CustomEvent === 'function') {
             window.dispatchEvent(new CustomEvent('lunawake:deposit', { detail: payload }));
         }

@@ -136,12 +136,13 @@
     // strings rewrite the payment language into honest waitlist language.
     const STATE_COPY = {
         preview: {
-            'hero-heading': `Be first when the ${config.depositAmount} reservation opens.`,
-            'hero-lede': `LunaWake reads your night and shapes the room around your sleep. Join the list for first access to the ${config.depositAmount} reservation.`,
-            'hero-policy': `<strong>Your ${config.depositAmount} is refundable any time, for any reason.</strong>`,
-            'hero-proof': '<span><strong><span data-launch-list-count>2,000+</span> people are already on the launch list.</strong> Join them when you are ready.</span>',
+            // Pre-test data (n=437): the strongest differentiator for the
+            // 25-44 wearable-user segment is "nothing to wear" — keep it in
+            // the preview lede, and keep the gold amount span in the heading.
+            'hero-heading': `Be first when the <span data-deposit-amount>${config.depositAmount}</span> reservation opens.`,
+            'hero-lede': 'Nothing to wear, nothing to charge — it reads your night from the bedside and shapes the room around your sleep.',
             'card-due-label': 'Reservation deposit',
-            'card-reward-label': 'Founding price when reservations open',
+            'card-reward-label': 'Founding price at open',
             'card-deadline': 'Reservations open soon — the founding price ends <b data-current-deadline></b><b data-countdown-days hidden></b>.',
             'price-headline': `${config.depositAmount} will lock<br><strong>${currentWindow()?.amount || '$229'}</strong>.`,
             // The deadline lives in the card and the timeline row; stating it a
@@ -188,6 +189,16 @@
         };
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(payload);
+        // Plausible bridge: same events, five key dimensions only.
+        if (typeof window.plausible === 'function') {
+            window.plausible(eventName, { props: {
+                cta_slot: payload.cta_slot || '',
+                checkout_state: payload.checkout_state,
+                price_window: payload.price_window,
+                source: payload.traffic_source || '',
+                campaign: payload.campaign || ''
+            } });
+        }
         if (typeof window.CustomEvent === 'function') {
             window.dispatchEvent(new CustomEvent('lunawake:deposit', { detail: payload }));
         }
@@ -229,7 +240,7 @@
         if (checkoutMessage) checkoutMessage.textContent = stateName === 'live'
             ? `Secure checkout — ${config.depositAmount} today, refundable any time.`
             : stateName === 'preview'
-                ? 'We’ll email you when reservations open.'
+                ? '2,000+ people are already on the launch list — we’ll email you at open.'
                 : stateName === 'closed'
                 ? 'Launch is live. New reservations are no longer accepted; existing customers should check their email for the order link.'
                 : 'This reservation window has ended.';

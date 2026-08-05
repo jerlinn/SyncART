@@ -14,8 +14,10 @@
     <meta property="og:title" content="Reserve LunaWake | Founding price">
     <meta property="og:description" content="Reserve LunaWake for $9 and lock the $229 founding price before launch day. Refundable any time, for any reason.">
     <meta property="og:url" content="https://lunawake.ai/deposit.html">
-    <meta property="og:image" content="https://lunawake.ai/images/luna-latest/finishes-all.png">
+    <meta property="og:image" content="https://lunawake.ai/images/og/og-deposit.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    <script defer data-domain="lunawake.ai" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+    <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
     <link rel="preload" as="image" href="images/luna-latest/device-bedside.webp" media="(min-width: 901px)" fetchpriority="high">
     <link rel="preload" as="image" href="images/luna-latest/lab-bedside.webp" media="(max-width: 900px)" fetchpriority="high">
     <style>
@@ -32,7 +34,8 @@
         .shopify-deposit-finish-picker>p{margin-top:12px;color:var(--shopify-muted);font-size:11px;line-height:1.45}
         @media (max-width:560px){.shopify-deposit-finish-options{grid-template-columns:repeat(2,minmax(0,1fr))}.shopify-deposit-finish-options button:last-child{grid-column:span 2}}
     </style>
-    <link rel="stylesheet" href="styles.css?v=2026-08-05d">
+    <link rel="stylesheet" href="styles.css?v=2026-08-05d" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="styles.css?v=2026-08-05d"></noscript>
     <style>
         /* Deposit page reorganization: the mobile reading order is intentional. */
         .deposit-reorg-section{padding:clamp(72px,9vw,128px) 0}
@@ -1190,6 +1193,39 @@
             .lw2-site.lw2-deposit-page .deposit-reorg-price-card.is-current .deposit-reorg-price-card__savings{display:grid;flex-basis:100%;margin-top:5px}
             .lw2-site.lw2-deposit-page .deposit-reorg-price-card.is-ended{opacity:.55}
         }
+
+        /* 11) Conversion type pass (2026-08-05): one label spec, medium-weight
+              display type instead of the 300 hairline, primary button no longer
+              smaller than body copy, hero vertically balanced with the card. */
+        .lw2-site.lw2-deposit-page .deposit-reorg-section h2{text-wrap:balance}
+        .lw2-site.lw2-deposit-page .deposit-reorg-price__anchor{margin:18px 0 0;color:var(--lw2-muted);font-size:13px;line-height:1.5}
+        .lw2-site.lw2-deposit-page .deposit-reorg-button{font-size:15px;font-weight:600;letter-spacing:0}
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__eyebrow{font-weight:600}
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due>span{font-size:10px;font-weight:600;letter-spacing:.14em}
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__prices dt{font-size:14px}
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__prices dd{font-size:19px;font-weight:650}
+        @media (min-width:901px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content{align-self:center;padding:110px 0 70px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{font-weight:550;font-size:clamp(48px,5vw,64px);letter-spacing:-.035em;line-height:1.04}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{margin-top:16px;font-size:17px;line-height:1.45}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due{padding:14px 0 16px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-size:56px;font-weight:600;letter-spacing:-.045em;line-height:.9}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__prices{gap:10px;margin:16px 0 18px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__promise,
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__deadline{font-size:14px;line-height:1.45}
+            .lw2-site.lw2-deposit-page .deposit-reorg-status{font-size:13px;line-height:1.45}
+        }
+        @media (min-width:561px) and (max-width:900px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero{min-height:0}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content{padding:64px 0 32px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{font-weight:550;font-size:clamp(40px,5.8vw,52px);letter-spacing:-.035em;line-height:1.04}
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__lede{font-size:16px;line-height:1.45}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-size:50px;font-weight:600;letter-spacing:-.045em;line-height:.9}
+        }
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{font-weight:550;letter-spacing:-.03em;line-height:1.05}
+            .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-size:46px;font-weight:600;letter-spacing:-.045em;line-height:.9}
+        }
     </style>
 </head>
 <body class="lw2-site lw2-deposit-page">
@@ -1232,12 +1268,9 @@
                 <p class="deposit-reorg-eyebrow">LunaWake · A bedside sleep companion</p>
                 <h1 id="deposit-heading" data-state-copy="hero-heading">Hold your LunaWake for <span data-deposit-amount>$9</span>.</h1>
                 <p class="deposit-reorg-hero__lede" data-state-copy="hero-lede">It reads your night from the bedside — nothing to wear, nothing to charge — then shapes the room around your sleep.</p>
-                <p class="deposit-reorg-hero__policy" data-state-copy="hero-policy"><strong>Refundable any time, for any reason.</strong> Your reservation holds your founding price; it is not the product payment.</p>
-                <p class="deposit-reorg-hero__proof" data-state-copy="hero-proof"><span><strong><span data-launch-list-count>2,000+</span> people are already on the launch list.</strong> Join them when you are ready.</span></p>
             </div>
             <aside class="deposit-reorg-reservation-card" aria-labelledby="reservation-card-heading">
-                <p class="deposit-reorg-reservation-card__eyebrow">Your LunaWake reservation</p>
-                <h2 id="reservation-card-heading">A better night,<br>held for <span data-deposit-amount>$9</span>.</h2>
+                <p class="deposit-reorg-reservation-card__eyebrow" id="reservation-card-heading">Your LunaWake reservation</p>
                 <div class="deposit-reorg-reservation-card__due"><span data-state-copy="card-due-label">Due today</span><strong data-deposit-amount>$9</strong></div>
                 <dl class="deposit-reorg-reservation-card__prices">
                     <div><dt data-state-copy="card-reward-label">Founding price locked</dt><dd data-current-reward>$229</dd></div>
@@ -1290,6 +1323,7 @@
                         </article>
                     </div>
                 </details>
+                <p class="deposit-reorg-price__anchor">Replaces the bedside stack — sunrise alarm, sound machine, sleep tracker, smart-home schedules — one purchase, not four.</p>
             </div>
         </section>
 
@@ -1306,7 +1340,7 @@
         <section class="deposit-reorg-section deposit-reorg-get" aria-labelledby="benefits-heading">
             <div class="deposit-reorg-shell"><div class="deposit-reorg-get__head"><div><p class="deposit-reorg-eyebrow">What you get</p><h2 id="benefits-heading">The room does<br>the work.</h2></div><p class="deposit-reorg-lede">Every night, while you sleep, and every morning — LunaWake turns the night into a calmer room and one useful next step.</p></div>
                 <div class="deposit-reorg-get__grid"><article class="deposit-reorg-get__item"><span>Every night</span><h3>Sound and light ease you to sleep.</h3><p>Nothing on your body, nothing new to remember.</p></article><article class="deposit-reorg-get__item"><span>While you sleep</span><h3>The room adjusts itself.</h3><p>Light, sound, and temperature move around your sleep.</p></article><article class="deposit-reorg-get__item"><span>Every morning</span><h3>One clear thing to try.</h3><p>A plain-English read about your night and one useful next step.</p></article></div>
-                <figure class="deposit-reorg-get__media"><picture><source media="(max-width:560px)" srcset="images/luna-latest/device-bedside.webp"><img src="images/luna-latest/follow-room.png" width="1672" height="941" alt="LunaWake beside a sleeping person in a calm bedroom" loading="lazy" decoding="async"></picture></figure><p class="deposit-reorg-get__trust">No camera · No wearable · Raw signals stay on the device</p>
+                <figure class="deposit-reorg-get__media"><picture><source media="(max-width:560px)" srcset="images/luna-latest/device-bedside.webp"><source type="image/webp" srcset="images/luna-latest/follow-room.webp"><img src="images/luna-latest/follow-room.png" width="1672" height="941" alt="LunaWake beside a sleeping person in a calm bedroom" loading="lazy" decoding="async"></picture></figure><p class="deposit-reorg-get__trust">No camera · No wearable · Raw signals stay on the device · Clinical validation in progress</p>
             </div>
         </section>
 
@@ -1360,7 +1394,7 @@
             </div>
         </section>
 
-        <section class="deposit-reorg-section deposit-reorg-faq" id="faq" aria-labelledby="faq-heading"><div class="deposit-reorg-shell deposit-reorg-faq__layout"><div><p class="deposit-reorg-eyebrow">Questions, answered</p><h2 id="faq-heading">Start with<br>the important ones.</h2><p class="deposit-reorg-faq__intro">Clarity matters. Here is what your $9 reservation does — and what happens next.</p><a class="deposit-reorg-faq__support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real human support · <strong data-support-email>info@lunawake.ai</strong> ↗</a></div><div class="deposit-reorg-faq__list"><details><summary>What does LunaWake do?</summary><p>LunaWake reads your night from the bedside, then shapes sound, light, and room temperature around your sleep. Nothing to wear and nothing to charge.</p></details><details><summary>Do I need a subscription?</summary><p>No subscription is required for the LunaWake device. Your reservation includes 30 days of Luna Coach free while you wait.</p></details><details><summary>When does LunaWake ship?</summary><p>We will share the delivery schedule on launch day and in your order confirmation. Luna Coach starts when the campaign ends, before the device ships.</p></details><details><summary>Why are there two payments?</summary><p>The $9 reservation holds your $229 founding price. On Sep 21, we email your personal order link to complete the product order at that locked price through Kickstarter.</p></details><details><summary>Can I get my $9 back?</summary><p>Yes. You can request a full refund before or after launch, for any reason. If the campaign does not go ahead, the $9 is refunded in full through the original payment method.</p></details></div></div></section>
+        <section class="deposit-reorg-section deposit-reorg-faq" id="faq" aria-labelledby="faq-heading"><div class="deposit-reorg-shell deposit-reorg-faq__layout"><div><p class="deposit-reorg-eyebrow">Questions, answered</p><h2 id="faq-heading">Start with<br>the important ones.</h2><p class="deposit-reorg-faq__intro">Clarity matters. Here is what your $9 reservation does — and what happens next.</p><a class="deposit-reorg-faq__support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real human support · <strong data-support-email>info@lunawake.ai</strong> ↗</a></div><div class="deposit-reorg-faq__list"><details><summary>What does LunaWake do?</summary><p>LunaWake reads your night from the bedside, then shapes sound, light, and room temperature around your sleep. Nothing to wear and nothing to charge.</p></details><details><summary>Do I need a subscription?</summary><p>No subscription is required for the LunaWake device. Your reservation includes 30 days of Luna Coach free while you wait.</p></details><details><summary>When does LunaWake ship?</summary><p>We will share the delivery schedule on launch day and in your order confirmation. Luna Coach starts when the campaign ends, before the device ships.</p></details><details><summary>Why are there two payments?</summary><p>The $9 reservation holds your $229 founding price. On Sep 21, we email your personal order link to complete the product order at that locked price through Kickstarter.</p></details><details><summary>Can I get my $9 back?</summary><p>Yes. You can request a full refund before or after launch, for any reason. If the campaign does not go ahead, the $9 is refunded in full through the original payment method.</p></details><details><summary>Why does LunaWake cost what it costs?</summary><p>It's a sensing device, a light, a speaker, and an on-device processor in one object — built to run your whole night locally, without a wearable and without a camera. Most people considering LunaWake are otherwise looking at a bedside light and a tracker they'd have to wear. We've priced it as one purchase, not two.</p></details><details><summary>Can I spread the payment?</summary><p>Payment plans are available at checkout, including PayPal Pay in 3 and Klarna, so LunaWake can be spread over three months at no extra cost. We're also setting up an accessibility program — join the launch list and we'll email details.</p></details><details><summary>What does it need to work?</summary><p>Core functions work locally — features such as updates and backups need Wi-Fi. The planned app experience supports iOS and Android. It is designed for the one sleeper closest to the device.</p></details></div></div></section>
 
         <section class="deposit-reorg-section deposit-reorg-final" aria-labelledby="final-cta-heading"><div class="deposit-reorg-shell"><p class="deposit-reorg-eyebrow">Ready when you are</p><h2 id="final-cta-heading" data-state-copy="final-heading">Hold your LunaWake<br>for $9 today.</h2><p data-state-copy="final-lede"><strong>Refundable before or after launch.</strong> One email on Sep 21 completes your order.</p><button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="final" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button><a class="deposit-reorg-final__link shopify-deposit-secondary-cta" href="https://prelaunch.lunawake.ai/">Not ready to reserve? Get notified when reservations open <span aria-hidden="true">↗</span></a></div></section>
     </main>
@@ -1380,6 +1414,6 @@
     </footer>
 
     <script src="js/lw2_shell.js?v=2026-08-04l"></script>
-    <script src="js/deposit.js?v=2026-08-05c"></script>
+    <script src="js/deposit.js?v=2026-08-05e"></script>
 </body>
 </html>

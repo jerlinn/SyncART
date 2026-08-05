@@ -144,7 +144,11 @@
             'card-reward-label': 'Founding price when reservations open',
             'card-deadline': 'Reservations open soon — the founding price ends <b data-current-deadline></b><b data-countdown-days hidden></b>.',
             'price-headline': `${config.depositAmount} will lock<br><strong>${currentWindow()?.amount || '$229'}</strong>.`,
-            'price-deadline': 'The founding price ends <b data-current-deadline></b><b data-countdown-days hidden></b>. The launch list hears first when reservations open.',
+            // The deadline lives in the card and the timeline row; stating it a
+            // third time here read as manufactured urgency in design review.
+            'price-deadline': 'The launch list hears first when reservations open.',
+            'window-chip-founding': 'At open',
+            'trust-order': 'One email on Sep 21 completes the <b data-current-reward>$229</b> order',
             'steps-lede': `When reservations open — <span data-deposit-amount>${config.depositAmount}</span> holds your price. Sep 21 — one personal order link completes your order.`,
             'step1-time': 'At open',
             'step1-body': `We email you the moment reservations open. Your ${config.depositAmount} will be refundable any time, for any reason.`,
@@ -301,7 +305,7 @@
             button.classList.toggle('is-active', selected);
             button.setAttribute('aria-pressed', String(selected));
         });
-        if (finishName) finishName.textContent = finish ? `${finish.name} — good eye. Thanks for helping us choose. Your vote stays on this device and never changes your ${config.depositAmount} reservation or price.` : 'No vote yet — pick the one you\'d want on your nightstand. Saved on this device only.';
+        if (finishName) finishName.textContent = finish ? `${finish.name} — good eye. Thanks.` : 'No vote yet — pick the one you\'d want on your nightstand.';
     };
 
     const updateSource = () => {
@@ -388,15 +392,34 @@
     };
 
     const observeReservationCard = () => {
-        if (!mobileCta || !reservationCard || !('IntersectionObserver' in window)) return;
+        if (!mobileCta || !('IntersectionObserver' in window)) return;
+        // The sticky bar should yield whenever an equivalent action is already
+        // on screen — the reservation card, or the final section's own CTA
+        // (otherwise two identical amber buttons stack at the page end). The
+        // card can exceed 55% of a phone viewport, so the threshold must stay
+        // low enough to be reachable on small screens.
+        const targets = [reservationCard, document.querySelector('[data-reserve-button][data-cta-slot="final"]')].filter(Boolean);
+        if (!targets.length) return;
+        const visible = new Set();
         const observer = new IntersectionObserver((entries) => {
-            const entry = entries[0];
-            mobileCta.classList.toggle('is-card-visible', Boolean(entry?.isIntersecting));
-        }, { threshold: 0.55 });
-        // The sticky bar should yield to the reservation card as soon as the
-        // card enters the viewport, so it never masks the card's own action.
-        observer.observe(reservationCard);
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) visible.add(entry.target);
+                else visible.delete(entry.target);
+            });
+            mobileCta.classList.toggle('is-card-visible', visible.size > 0);
+        }, { threshold: 0.15 });
+        targets.forEach((target) => observer.observe(target));
     };
+
+    // bfcache restore (iOS back button after a CTA navigation): the page
+    // comes back with every reserve button disabled mid-"Taking you…".
+    // Reset the submitting flag so the primary CTA works again.
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted && state.submitting) {
+            state.submitting = false;
+            updateButtons();
+        }
+    });
 
     const supportAddress = (url) => {
         const value = String(url || '');
@@ -468,11 +491,6 @@
         element.textContent = String(new Date().getFullYear());
     });
 
-    // On phones the full price schedule starts collapsed — mobile urgency is
-    // one price gap and one date, not a table. The summary stays tappable.
-    if (window.matchMedia('(max-width: 900px)').matches) {
-        document.querySelector('.deposit-price-details[open]')?.removeAttribute('open');
-    }
     updateStateCopy();
     updatePriceCards();
     updateFinish();

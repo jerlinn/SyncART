@@ -11,11 +11,22 @@ Key facts:
 - Wearable-free: no ring, no watch, nothing to charge or put on. Sleep tracking is automatic, from the bedside.
 - No camera, ever. Microphones support passive acoustic sensing only — not voice commands, text-to-speech, or conversation.
 - Works offline: the core night routine runs locally on the device even if the app or network is unavailable.
-- The Luna App handles setup, preferences, and morning summaries; the device keeps physical controls.
+- The Luna App handles setup, preferences, and the sleep coaching described below; the device keeps physical controls.
 - Designed for one sleeper closest to the device; reliable multi-person separation is not a supported capability.
 - Who it's for: people with busy schedules and late nights who want better sleep but dislike wearing devices to bed.
 - Category: consumer wellness product. Not a medical device; not intended to diagnose, treat, or prevent disease.
 - Status: pre-launch. Launch list at https://prelaunch.lunawake.ai/
+
+## The Luna App
+
+The device and the app are two products that meet at the bedside. LunaWake senses the night and runs the wake routine; the Luna App is a CBT-I sleep companion that reads sleep data, forms a long-term picture of how a person actually sleeps, and turns it into daily and weekly coaching. The app works from Apple Health sleep data and does not depend on the device, so the two are described separately below and only the device is pre-launch.
+
+- Luna is the app's single conversational agent. She answers from the user's own record instead of generic sleep advice, reaches back through the history when a question needs it, consults an actual CBT-I reference for rules and definitions, and anchors each answer to the screen and the night the user is looking at.
+- Persona replaces the intake questionnaire: a short note on who the user is now and which habits touch their sleep, readable and editable at any time, holding only stable facts the user has stated, and grounding every personalized output.
+- The sleep score is behavioral rather than physiological. It opens at 100 and deducts across duration, efficiency, timing and continuity, weighted 35/30/20/15, redistributing the weight of any dimension a night cannot support so the number stays comparable.
+- Heart-rate variability and resting heart rate stay out of that score and surface on their own as Body Recharge and Deepest Rest, each read against the user's own rolling baseline instead of a population norm.
+- Free users get their data fully explained and sound general principles, with no upsell written into the answers; the paid Professional Coach relationship adds a Focus the user chooses, a Plan revised as evidence accumulates, a Daily Brief each morning and an immutable Weekly Report.
+- LunaWake treats CBT-I as a useful anchor rather than a protocol to enforce, and weights relative change in an individual over population-average targets.
 
 ## Pages
 - [Home](https://lunawake.ai/): product overview — how it works, hardware, radar sensing, science, finishes, and the Luna App

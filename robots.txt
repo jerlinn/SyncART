@@ -48,3 +48,7 @@ User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://lunawake.ai/sitemap.xml
+
+# Machine-readable site summary: https://lunawake.ai/llms.txt
+# (no registered robots directive exists for llms.txt; this line is for agents
+# that read robots.txt as text)

@@ -4,8 +4,8 @@
 
 ## 当前状态
 
-- 本地：已完成收银台优先的预订版，顺序为 Hero → Reservation Summary → 信任条 → 声音/晨读/光 → 价格 → 两步流程 → Luna Coach → 五色偏好 → FAQ → Final CTA。
-- 线上：`https://lunawake.ai/deposit.html` 仍为旧版页面，不能作为本轮转化测试入口。
+- 本地：已完成收银台优先的预订版，顺序为 Hero → Reservation Summary → 信任条 → 声音/晨读/光 → 价格 → 两步流程 → Luna Coach → 三色渲染选色器（2026-08-05 替代五色偏好） → FAQ → Final CTA。
+- 线上：`https://lunawake.ai/deposit.html` 已与本地同步（GitHub Pages，push 即部署）。
 - 支付：本地配置中的 `shopifyProductUrl` 仍为空，因此本地 CTA 会进入 launch list 预览状态；不会伪造支付成功。
 - 双状态文案：preview 态由 `data-state-copy` 机制把付款语言改写为等待语言（"Reservation deposit / Reservations open soon"），注入真实 Shopify URL 后自动恢复付款文案；契约表见 `deposit-page-requirements.md` §5。
 
@@ -44,14 +44,14 @@
 - 退款保护在 Summary 先给结论，并在 FAQ 末条完整解释；
 - 当前主价格与后续价格阶梯；
 - 预订 → 个人订单链接两步流程，launch day 复用价格窗口配置；
-- Luna Coach、五色展示、FAQ、Final CTA 与移动端固定 CTA；
+- Luna Coach、三色渲染选色器（Amber/Stone/Charcoal，默认 Stone）、FAQ、Final CTA 与移动端固定 CTA；
 - 无 Shopify URL 时所有预约 CTA 可点击并引导用户进入 launch list；
 - 不再出现旧的临床效果承诺或未经确认的库存、发货承诺。
 
 资源与埋点验收：
 
-- Hero 图 preload + `fetchpriority="high"`，长截图与五色图 lazy；
-- 五色图优先返回 WebP，PNG fallback 可用且不引发布局跳动；
+- Hero 图 preload + `fetchpriority="high"`，长截图与 finish 渲染图 lazy；
+- finish 渲染图为 720/1440 WebP 双档 srcset（与首页共用资产），切换淡入不引发布局跳动；
 - 预订卡与价格区的倒计时显示正确天数（ET 日历日），`endAt` 缺失时隐藏且句子完整；
 - `deposit_cta_view` 保留；每个 `deposit_cta_slot_view` 的 `cta_slot` 只曝光一次；
 - 全部事件携带 `checkout_state`；`deposit_coach_view` 只记录一次；

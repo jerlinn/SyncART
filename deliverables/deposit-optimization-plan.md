@@ -65,7 +65,7 @@
 
 ### 3.4 品牌喜爱微文案
 
-- 颜色投票反馈:`{Finish} — good eye. Thanks for helping us choose. …`;未投:`No vote yet — pick the one you'd want on your nightstand.`
+- 颜色投票反馈(实现定稿):`{Finish} — good eye. Thanks.`;未投:`No vote yet — pick the one you'd want on your nightstand.`(2026-08-05 起投票对象为三色渲染选色器,见 requirements v3.1 §3.7)
 - live 状态行:`Secure checkout — $9 today, refundable any time.`
 - preview 状态行:`Reservations open soon. Leave your email and we will tell you the moment they do.`
 

@@ -1,8 +1,8 @@
 # LunaWake 订金页产品需求文档
 
-> 版本:v3.0(2026-08-04)
+> 版本:v3.1(2026-08-05)
 > 状态:与当前 `deposit.html` / `js/deposit.js` 实现对齐;待接入 Shopify 商品 URL 与 agency 的 Kickstarter 配置
-> 变更:替代 v2.2。恢复 $269 三档窗口；保留双状态文案契约、倒计时规格与事件目录。
+> 变更:替代 v3.0。五色投票 → 三色渲染选色器(配置驱动,旧投票自动迁移);preview 主标题去 $9、终 CTA 标题改写、价格区删冗余 $319 句;新增 PSG 对标信任文案(FAQ + 信任行);预订卡收线为单条分隔线;修复移动端浅色头条上汉堡图标被共享样式钉白导致不可见的问题。
 > 相关文档:`deposit-optimization-plan.md`(本轮优化方案)、`deposit-release-gate.md`(发布闸门)、`shopify-payment-handoff.md`(收款回填单)
 
 ## 1. 产品目标
@@ -42,7 +42,7 @@
 
 ### 2.4 只使用已确认的 wellness 表述
 
-不使用 PSG、临床级、诊断、治疗承诺。可用:No camera / No wearable / Raw signals stay on the device / Wellness product, not a medical device。隐私是信任行,不占主标题位。
+不做诊断、治疗承诺,不引用试点数字、不出现 OSA/AHI/敏感性等筛查性医疗指标,不透露合作机构与个人信息。可用(2026-08-05 起):事实性 PSG 对标陈述——"PSG gold-standard benchmarking in progress"(信任行)与 FAQ "How do you know it's accurate?"(大学睡眠实验室、逐夜逐 epoch 对照、发布前公布结果)。依据:前测 n=437 中 PSG 卖点选中者 57.9% 落在高价带,是唯一"带钱"卖点。其余可用:No camera / No wearable / Raw signals stay on the device / Wellness product, not a medical device。隐私是信任行,不占主标题位。
 
 ## 3. 页面结构(与实现一致)
 
@@ -51,11 +51,11 @@ DOM/视觉顺序(由内联 CSS `order` 固定,移动端单列同序):
 1. **Hero + 预订卡**:左侧 "Hold your LunaWake for $9." + lede + 退款 policy + 2,000+ 社证;右侧 `<aside>` 预订卡(唯一价格卡):eyebrow、"A better night, held for $9."、Due today $9、Founding price locked $229 / Launch-day price $319、✓ Refundable、deadline + 倒计时、主 CTA、状态行、preview 链接(仅 closed/ended 显示)。
 2. **信任条**(3 项):Refund any time / One email on Sep 21 completes your $229 order / Real humans: info@lunawake.ai。
 3. **What you get**:"The room does the work." 三条(Every night / While you sleep / Every morning)+ 场景图 + 隐私信任行。
-4. **价格区**:"$9 today locks $229." + Sep 21 变 $319 + deadline + 倒计时 + CTA;完整三档价格表默认展开在 `<details>` 内。
+4. **价格区**:"$9 today locks $229." + deadline + 倒计时 + CTA;完整三档价格表默认展开在 `<details>` 内("On Sep 21, the launch-day price is $319." 副句已删——价格表同屏陈述同一信息且带 Save $90 语境,2026-08-05 去重)。
 5. **两步流程**:Today($9 holds your price)/ Sep 21(personal order link,括号内一次性说明 Kickstarter)。
 6. **Luna Coach**:完整权益模块(30 天 included、$19.99 value、Sleep Pattern 长截图、Day 1 → Daily → Weekly → Day 30 节奏、Apple Health 衔接、wellness 边界),无独立购买 CTA。
-7. **五色投票**:Dawn / Moonstone / Midnight / Amber / Sage,纯偏好投票,localStorage 本地保存,不透传 SKU、不阻塞支付。
-8. **FAQ**(5 条,产品前置):What does LunaWake do? / Do I need a subscription? / When does LunaWake ship? / Why are there two payments? / Can I get my $9 back?(退款细则唯一完整出处)+ 人工客服邮箱。
+7. **三色渲染选色器**(2026-08-05 替代五色投票):与首页同一套材质方向 Amber / Stone / Charcoal,单张真实渲染图 180ms 淡切,默认 Stone(前测双性别第一名,报告建议主推色)。按钮由 JS 从 `config.finishes` 生成——换色只改配置 + 放渲染图,不动 HTML。仍是纯偏好投票:localStorage(key `lunawake-finish-poll`)本地保存,不透传 SKU、不阻塞支付;旧五色投票自动迁移(moonstone→stone、midnight→charcoal,dawn/sage 回落未投票)。待办:Dawn 渲染图产出后按前测数据(需求份额 24.2%、女性首选)顶掉 Amber(份额垫底 9.0%),并先锁定投放性别结构再定阵容。
+8. **FAQ**(产品前置):What does LunaWake do? / How do you know it's accurate?(2026-08-05 新增,PSG 对标,见 §2)/ Do I need a subscription? / When does LunaWake ship? / Why are there two payments? / Can I get my $9 back?(退款细则唯一完整出处)/ Why does LunaWake cost what it costs? / Can I spread the payment? / What does it need to work? + 人工客服邮箱。
 9. **终 CTA** + **移动端粘性底栏**(≤900px 显示,safe-area 适配)。
 
 ### 3.1 价格窗口(三档)
@@ -92,13 +92,14 @@ HTML 默认文案 = live 态;JS 的 `STATE_COPY.preview` 按 key 覆写,非 prev
 
 | key | 挂点 | preview 覆写要点 |
 |---|---|---|
+| hero-heading | Hero h1 | Be first when reservations open.(2026-08-05 去 $9——首屏价格陈述只留卡片大 $9;live 态维持默认 "Hold your LunaWake for $9.") |
 | card-due-label | 卡片 Due today 标签 | Reservation deposit |
 | card-deadline | 卡片 deadline 行 | Reservations open soon — the founding price ends …(含倒计时) |
 | price-headline | 价格区 h2 | $9 will lock $229. |
 | price-deadline | 价格区 deadline | …The launch list hears first when reservations open. |
 | steps-lede | 两步 lede | When reservations open — … |
 | step1-time / step1-body | 步骤一 | At open / We email you the moment reservations open. … |
-| final-heading / final-lede | 终 CTA | Be first when reservations open. + 2,000+ 社证 |
+| final-heading / final-lede | 终 CTA | Save your spot on the launch list.(2026-08-05 改写,避免与 hero-heading 同句)+ 2,000+ 社证 |
 | sticky-label | 粘性底栏 | Reservations open soon(≤360px: Open soon),去 $9 前缀 |
 
 原则:preview 态全页不得出现 "Due today / $9 today" 类当下付款措辞;价格锁定承诺($229/$319/截止日)两态一致,因为它是真的。
@@ -109,8 +110,9 @@ HTML 默认文案 = live 态;JS 的 `STATE_COPY.preview` 按 key 覆写,非 prev
 - 主 CTA ≥52px 高;移动端卡片按钮 ≥56px;
 - **正文字号下限:桌面 ≥15px,≤900px ≥16px,≤560px ≥16px(hero proof ≥15px,卡片辅助行 ≥14px)**;
 - 粘性底栏 `env(safe-area-inset-bottom)` 适配,>900px 隐藏;
-- Hero 图 webp + preload + `fetchpriority="high"`;长截图与颜色图 lazy;五色图 WebP 优先 + PNG fallback;
-- 颜色投票触点 ≥44px、可键盘操作、`aria-pressed`。
+- Hero 图 webp + preload + `fetchpriority="high"`;长截图与 finish 渲染图 lazy;渲染图复用首页 720/1440 webp 双档 srcset(finishes-all 合影已下线,文件保留在磁盘);
+- 颜色投票触点 ≥44px、可键盘操作、`aria-pressed`;
+- 移动端(≤560px)头条为不透明米色:汉堡图标必须以 `!important` 钉墨色(共享 shell 在 ≤1280px 把它钉白,假设深色 hero 垫底,本页不成立),线宽 2px。
 
 ## 7. 数据、归因与实验
 
@@ -127,7 +129,7 @@ HTML 默认文案 = live 态;JS 的 `STATE_COPY.preview` 按 key 覆写,非 prev
 | `deposit_cta_click` | CTA 点击 | `destination: launch_list \| shopify_checkout`、`cta_slot` |
 | `deposit_cta_blocked` | closed/ended 态点击 | `reason` |
 | `deposit_coach_view` | Coach 模块首次曝光 | `coach_days`、`coach_value` |
-| `deposit_finish_vote` | 颜色投票 | `finish` |
+| `deposit_finish_vote` | 颜色投票 | `finish`(2026-08-05 起取值 amber/stone/charcoal;旧值读取时迁移 moonstone→stone、midnight→charcoal,dawn/sage 作未投票) |
 | `deposit_waitlist_click` | preview/逃生链接点击 | `cta_slot` |
 
 State A 北极星:`deposit_cta_click{checkout_state:'preview', destination:'launch_list'}` / 页面到访。State B 北极星:$9 支付完成率(Shopify 订单为准,页面不伪造)。
@@ -150,7 +152,7 @@ window.LUNAWAKE_DEPOSIT_CONFIG = {
   launchListUrl: 'https://prelaunch.lunawake.ai/',
   supportUrl: 'mailto:info@lunawake.ai',
   priceWindows: [ /* founding $229 / super-early $269 / early $319, all ET */ ],
-  finishes: { /* 五色 */ },
+  finishes: { /* 三色,单一事实来源:{ amber|stone|charcoal: { name, code, hex, src, srcset } };换色=改此 map+放渲染图,按钮由 JS 生成 */ },
   coach: { includedDays: 30, value: '$19.99', availability: '…' }
 };
 ```

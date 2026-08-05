@@ -111,7 +111,12 @@
         .deposit-reorg-finish__head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(280px,1.15fr);gap:40px;align-items:end}
         .deposit-reorg-finish__head h2{font-size:clamp(42px,5.5vw,76px)}
         .deposit-reorg-finish__head>p{max-width:560px;color:var(--shopify-muted,#69717b);font-size:17px;line-height:1.55}
-        .deposit-reorg-finish__stage{margin:52px 0 0}
+        .deposit-reorg-finish__stage{max-width:520px;margin:52px 0 0}
+        @media (min-width:901px){
+            .deposit-reorg-finish .deposit-reorg-shell{display:grid;grid-template-columns:minmax(0,520px) minmax(280px,1fr);gap:0 72px;align-items:end}
+            .deposit-reorg-finish__head{grid-column:1/-1}
+            .deposit-reorg-finish .shopify-deposit-finish-picker{margin:0 0 6px}
+        }
         .deposit-finish-frame{overflow:hidden;background:#e4dbd0}
         .deposit-finish-frame img{display:block;width:100%;height:auto;transition:opacity 180ms ease}
         .deposit-finish-frame img.is-fading{opacity:0}
@@ -702,19 +707,6 @@
            !important; this inline sheet comes later in document order.) */
         .lw2-site.lw2-deposit-page .lw2-menu-icon i{height:2px!important;flex-basis:2px!important}
         @media (max-width:560px){
-            .lw2-deposit-page .lw2-header{
-                position:relative;
-                top:auto;
-                background:rgba(247,245,240,.96);
-                border-bottom:1px solid var(--lw2-line,#d8d6cf);
-                color:var(--lw2-ink,#17202d)
-            }
-            .lw2-deposit-page .lw2-logo-mark--light{opacity:0}
-            .lw2-deposit-page .lw2-logo-mark--dark{opacity:1}
-            /* Shared shell pins the burger white (!important) below 1280px on the
-               assumption of a dark hero under a transparent header. This page's
-               mobile header is opaque cream from the start, so re-pin to ink. */
-            .lw2-deposit-page .lw2-header:not(.is-menu-open) .lw2-menu{color:var(--lw2-ink,#17202d)!important}
             .lw2-deposit-page .lw2-menu span{background:currentcolor}
         }
 
@@ -1143,16 +1135,17 @@
         .deposit-reorg-hero__backdrop{position:absolute;z-index:-2;inset:0}
 
         @media (max-width:560px){
-            /* Header: light, in-flow. The .is-menu-open dark states from the
-               earlier layer still win on specificity, which is correct. */
-            .lw2-site.lw2-deposit-page .lw2-header,
-            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled{position:relative;top:auto;background:rgba(247,245,240,.96);border-bottom:1px solid var(--lw2-line);box-shadow:none;color:var(--lw2-ink)}
-            .lw2-site.lw2-deposit-page .lw2-logo-mark--light,
-            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-logo-mark--light{opacity:0}
-            .lw2-site.lw2-deposit-page .lw2-logo-mark--dark,
-            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-logo-mark--dark{opacity:1}
-            .lw2-site.lw2-deposit-page .lw2-menu,
-            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled .lw2-menu{color:var(--lw2-ink)}
+            /* Header: fully transparent over the hero photo (2026-08-05 —
+               reverses the light in-flow layer above); materializes to cream +
+               ink after scroll. Burger colors come from the shared shell's
+               !important state machine (top white / scrolled ink / open white).
+               The .is-menu-open dark states from the earlier layer still win. */
+            .lw2-site.lw2-deposit-page .lw2-header{position:fixed;top:0;right:0;left:0;background:transparent;border-bottom:0;box-shadow:none;color:#fffdf8}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--light{opacity:1}
+            .lw2-site.lw2-deposit-page .lw2-logo-mark--dark{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open){background:rgba(247,245,240,.96);border-bottom:1px solid var(--lw2-line,#d8d6cf);color:var(--lw2-ink,#17202d)}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-logo-mark--light{opacity:0}
+            .lw2-site.lw2-deposit-page .lw2-header.is-scrolled:not(.is-menu-open) .lw2-logo-mark--dark{opacity:1}
 
             /* Hero photo in flow at its natural 3:2. */
             .lw2-site.lw2-deposit-page .deposit-reorg-hero__backdrop{position:static}

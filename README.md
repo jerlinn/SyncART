@@ -47,25 +47,34 @@ issue server-side redirects to external hosts. It is `noindex` and excluded from
 page. Production payment is handled by a standalone Shopify product page. The
 preview uses `js/deposit.js` as its configuration source for campaign state,
 locked/unlocked Reward pricing, the fixed $9 deposit, Shopify product URL,
-support URL, and price-window status.
+launch-list URL, support URL, and price-window status.
 
 Before launch, map these values to Shopify theme settings or metafields:
 
 - Shopify product URL for the $9 deposit product;
+- launch-list URL for the preview state (defaults to `https://prelaunch.lunawake.ai/`);
 - campaign state (`reservation_open`, `kickstarter_live`, `campaign_success`,
   or `campaign_failed`);
-- three Reward prices and their dates after pricing tests are complete;
+- the three Reward price windows ($229 founding / $269 next window / $319
+  launch-day) and their dates after pricing tests are complete;
 - post-purchase email and deposit-user-group invite configuration.
 
 For a static deployment, define `window.LUNAWAKE_DEPOSIT_CONFIG` before
 `js/deposit.js` to override the same fields without editing the page structure.
 At minimum, set `shopifyProductUrl` only after the $9 product is live and
 checkout-tested. Keep `pricingUnlocked: false` until the pricing test is
-approved.
+approved. When `shopifyProductUrl` is empty, every reservation CTA remains
+clickable and sends the visitor to `launchListUrl`; it never shows a disabled
+checkout button. In that preview state, elements marked `data-state-copy` are
+rewritten from payment language ("Due today $9") into waitlist language
+("Reservations open soon"); injecting a real `shopifyProductUrl` restores the
+payment copy automatically — the HTML source always carries the live-state
+strings.
 
 The preview intentionally does not create a fake checkout, cross-platform
-Kickstarter credit, or local user account. The $9 deposit is separate from the
-Kickstarter Reward price; the private Reward offer is managed on Kickstarter.
+Kickstarter credit, or local user account. The $9 reservation holds the
+founding price; the later product order is completed through the personal link
+sent on launch day.
 
 For the 2,000-lead rollout sequence, UTM naming, cohort split, KPI definitions,
 and the Shopify launch gate, see

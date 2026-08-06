@@ -79,6 +79,18 @@
         setMenu(false);
     });
 
+    // The drawer's only close control is the burger, which is display:none
+    // above 1280px. If the window widens past that while the drawer is open
+    // (maximize, rotate), close it — otherwise the scroll lock survives with
+    // no visible way out.
+    const wideNav = window.matchMedia('(min-width: 1281px)');
+    const closeOnWide = (mq) => {
+        if (mq.matches && menu.getAttribute('aria-expanded') === 'true') setMenu(false);
+    };
+    closeOnWide(wideNav);
+    if (typeof wideNav.addEventListener === 'function') wideNav.addEventListener('change', closeOnWide);
+    else if (typeof wideNav.addListener === 'function') wideNav.addListener(closeOnWide);
+
     // Keep the header fixed from the first frame so it never disappears and
     // reappears. A small scroll gesture is enough to bring in the frosted
     // material, while hysteresis prevents flicker around the threshold.

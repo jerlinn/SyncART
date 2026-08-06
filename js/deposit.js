@@ -64,7 +64,6 @@
     const checkoutStatus = document.querySelector('[data-checkout-status]');
     const priceCards = Array.from(document.querySelectorAll('[data-price-window]'));
     const supportLinks = Array.from(document.querySelectorAll('.deposit-reorg-trust__email, .deposit-reorg-faq__support'));
-    const secondaryLinks = Array.from(document.querySelectorAll('.shopify-deposit-secondary-cta'));
     const finishOptionsHost = document.querySelector('[data-deposit-finish-options]');
     if (finishOptionsHost) {
         finishOptionsHost.textContent = '';
@@ -166,7 +165,7 @@
         return `+$${delta} after current`;
     };
     const ctaLabel = (slot = '') => {
-        if (checkoutState() === 'preview') return slot === 'mobile' ? 'Notify me when it opens' : 'Get notified when reservations open';
+        if (checkoutState() === 'preview') return 'Notify me when it opens';
         return `Reserve ${config.depositAmount}`;
     };
 
@@ -181,8 +180,8 @@
             'hero-heading': 'Be first when reservations open.',
             'hero-lede': 'Nothing to wear, nothing to charge — it reads your night from the bedside and shapes the room around your sleep.',
             'card-due-label': 'Reservation deposit',
-            'card-reward-label': 'Your $9 locks this price',
-            'card-deadline': 'Reservations open soon. The founding price holds until <b data-current-deadline></b><b data-countdown-days hidden></b>.',
+            'card-reward-label': 'Your $9 unlocks this price',
+            'card-deadline': 'The founding price holds until <b data-current-deadline></b><b data-countdown-days hidden></b>.',
             'price-headline': `${config.depositAmount} will lock<br><strong>${currentWindow()?.amount || '$229'}</strong>.`,
             // The deadline lives in the card and the timeline row; stating it a
             // third time here read as manufactured urgency in design review.
@@ -194,7 +193,7 @@
             'step1-body': `We email you the moment reservations open. Your ${config.depositAmount} will be refundable any time, for any reason.`,
             'final-heading': 'Save your spot<br>on the launch list.',
             'final-lede': `<strong><span data-launch-list-count>${config.launchListCount}</span> people are already on the list.</strong> Leave your email and we will tell you the moment the ${config.depositAmount} reservation opens.`,
-            'sticky-label': '<span class="deposit-reorg-sticky__desktop-label">Reservations open soon</span><span class="deposit-reorg-sticky__compact-label">Open soon</span>'
+            'sticky-label': '<span class="deposit-reorg-sticky__desktop-label">Unlock <span data-current-reward>$229</span> + 30 days of Luna Coach for $9</span><span class="deposit-reorg-sticky__compact-label">Unlock <span data-current-reward>$229</span> + 30-day Coach · $9</span>'
         }
     };
     // Must run before updatePriceCards() so the deadline/countdown spans it
@@ -269,7 +268,7 @@
         if (checkoutMessage) checkoutMessage.textContent = stateName === 'live'
             ? `Secure checkout — ${config.depositAmount} today, refundable any time.`
             : stateName === 'preview'
-                ? '2,000+ people are already on the launch list — we’ll email you at open.'
+                ? '2,000+ people are already on the launch list — we’ll email you when it opens.'
                 : stateName === 'closed'
                 ? 'Launch is live. New reservations are no longer accepted; existing customers should check their email for the order link.'
                 : 'This reservation window has ended.';
@@ -284,9 +283,6 @@
                 utm_campaign: 'deposit_launch_v1',
                 utm_content: 'not-ready'
             }));
-        });
-        secondaryLinks.forEach((link) => {
-            link.hidden = stateName === 'preview';
         });
         checkoutStatus.classList.toggle('is-ready', ready);
         checkoutStatus.dataset.checkoutState = stateName;
@@ -554,14 +550,6 @@
     })));
     document.querySelectorAll('[data-support-email]').forEach((element) => {
         element.textContent = supportAddress(config.supportUrl) || 'Open support center';
-    });
-    secondaryLinks.forEach((link) => {
-        link.setAttribute('href', withTracking(link.href, {
-            utm_source: 'deposit-page',
-            utm_medium: 'footer-exit',
-            utm_campaign: 'deposit_launch_v1',
-            utm_content: 'not-ready'
-        }));
     });
     document.querySelectorAll('[data-year]').forEach((element) => {
         element.textContent = String(new Date().getFullYear());

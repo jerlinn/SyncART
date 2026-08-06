@@ -1221,6 +1221,27 @@
             .lw2-site.lw2-deposit-page .deposit-reorg-hero__content h1{font-weight:550;letter-spacing:-.03em;line-height:1.05}
             .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due strong{font-size:46px;font-weight:600;letter-spacing:-.045em;line-height:.9}
         }
+
+        /* Mobile space audit: keep the page breathable without stacking
+           oversized bands between every decision point. Body type stays at
+           the readability floor; only structural gaps are tightened. */
+        @media (max-width:560px){
+            .lw2-site.lw2-deposit-page .deposit-reorg-section{padding:40px 0}
+            .lw2-site.lw2-deposit-page .deposit-reorg-price{padding:34px 0}
+            .lw2-site.lw2-deposit-page .shopify-deposit-coach{padding-top:40px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-get__head,
+            .lw2-site.lw2-deposit-page .deposit-reorg-steps__layout,
+            .lw2-site.lw2-deposit-page .deposit-reorg-finish__head,
+            .lw2-site.lw2-deposit-page .deposit-reorg-faq__layout{gap:22px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-get__grid{margin-top:28px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-get__item{padding:14px 0 18px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-get__item h3{margin-top:18px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-get__media{margin-top:24px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-finish__stage{margin-top:24px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-finish .shopify-deposit-finish-picker{margin-top:20px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-faq__support{margin-top:20px}
+            .lw2-site.lw2-deposit-page .deposit-reorg-final .deposit-reorg-button{margin-top:22px}
+        }
     </style>
 </head>
 <body class="lw2-site lw2-deposit-page">
@@ -1271,17 +1292,16 @@
                     <div><dt data-state-copy="card-reward-label">Founding price locked</dt><dd data-current-reward>$229</dd></div>
                     <div><dt>Launch-day price</dt><dd data-launch-price>$319</dd></div>
                 </dl>
-                <p class="deposit-reorg-reservation-card__promise"><span aria-hidden="true">✓</span> Refundable before or after launch</p>
                 <p class="deposit-reorg-reservation-card__deadline" data-state-copy="card-deadline">This price ends <b data-current-deadline>Sep 6 · 11:59pm ET</b><b data-countdown-days hidden></b>.</p>
                 <button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="reservation-card" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
-                <p class="deposit-reorg-status" id="checkout-status" data-checkout-status aria-live="polite"><span data-checkout-message>Reservations open soon. Get notified when they open.</span></p>
-                <a class="deposit-reorg-reservation-card__preview-link" data-preview-link href="https://prelaunch.lunawake.ai/">Get notified when reservations open <span aria-hidden="true">↗</span></a>
+                <p class="deposit-reorg-status" id="checkout-status" data-checkout-status aria-live="polite"><span data-checkout-message>Join the launch list to be notified when it opens.</span></p>
+                <a class="deposit-reorg-reservation-card__preview-link" data-preview-link href="https://prelaunch.lunawake.ai/">Join the launch list <span aria-hidden="true">↗</span></a>
             </aside>
         </section>
 
         <section class="deposit-reorg-trust" aria-label="Reservation assurances">
             <div class="deposit-reorg-shell deposit-reorg-trust__grid">
-                <p>Refund any time — before or after launch, no questions</p>
+                <p>Full refund, any time — before or after launch</p>
                 <p><span data-state-copy="trust-order">One email on Sep 21 completes your <b data-current-reward>$229</b> order</span></p>
                 <p><a class="deposit-reorg-trust__email" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real humans: <strong data-support-email>info@lunawake.ai</strong></a></p>
             </div>
@@ -1384,7 +1404,7 @@
 
         <section class="deposit-reorg-section deposit-reorg-faq" id="faq" aria-labelledby="faq-heading"><div class="deposit-reorg-shell deposit-reorg-faq__layout"><div><p class="deposit-reorg-eyebrow">Questions, answered</p><h2 id="faq-heading">Start with<br>the important ones.</h2><p class="deposit-reorg-faq__intro">Clarity matters. Here is what your $9 reservation does — and what happens next.</p><a class="deposit-reorg-faq__support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real human support · <strong data-support-email>info@lunawake.ai</strong> ↗</a></div><div class="deposit-reorg-faq__list"><details><summary>What does LunaWake do?</summary><p>LunaWake reads your night from the bedside, then shapes sound, light, and room temperature around your sleep. Nothing to wear and nothing to charge.</p></details><details><summary>How do you know it's accurate?</summary><p>LunaWake is being benchmarked night-for-night against polysomnography (PSG) — the gold standard used in clinical sleep labs. Full-night sessions in a university sleep laboratory compare its sleep stages, breathing, and movement against PSG, epoch by epoch. Validation is ongoing, and we'll share results before launch.</p></details><details><summary>Do I need a subscription?</summary><p>No subscription is required for the LunaWake device. Your reservation includes 30 days of Luna Coach free while you wait.</p></details><details><summary>When does LunaWake ship?</summary><p>We will share the delivery schedule on launch day and in your order confirmation. Luna Coach starts when the campaign ends, before the device ships.</p></details><details><summary>Why are there two payments?</summary><p>The $9 reservation holds your $229 founding price. On Sep 21, we email your personal order link to complete the product order at that locked price through Kickstarter.</p></details><details><summary>Can I get my $9 back?</summary><p>Yes. You can request a full refund before or after launch, for any reason. If the campaign does not go ahead, the $9 is refunded in full through the original payment method.</p></details><details><summary>Why does LunaWake cost what it costs?</summary><p>It's a sensing device, a light, a speaker, and an on-device processor in one object — built to run your whole night locally, without a wearable and without a camera. Most people considering LunaWake are otherwise looking at a bedside light and a tracker they'd have to wear. We've priced it as one purchase, not two.</p></details><details><summary>Can I spread the payment?</summary><p>Payment plans are available at checkout, including PayPal Pay in 3 and Klarna, so LunaWake can be spread over three months at no extra cost. We're also setting up an accessibility program — join the launch list and we'll email details.</p></details><details><summary>What does it need to work?</summary><p>Core functions work locally — features such as updates and backups need Wi-Fi. The planned app experience supports iOS and Android. It is designed for the one sleeper closest to the device.</p></details></div></div></section>
 
-        <section class="deposit-reorg-section deposit-reorg-final" aria-labelledby="final-cta-heading"><div class="deposit-reorg-shell"><p class="deposit-reorg-eyebrow">Ready when you are</p><h2 id="final-cta-heading" data-state-copy="final-heading">Hold your LunaWake<br>for $9 today.</h2><p data-state-copy="final-lede"><strong>Refundable before or after launch.</strong> One email on Sep 21 completes your order.</p><button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="final" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button><a class="deposit-reorg-final__link shopify-deposit-secondary-cta" href="https://prelaunch.lunawake.ai/">Not ready to reserve? Get notified when reservations open <span aria-hidden="true">↗</span></a></div></section>
+        <section class="deposit-reorg-section deposit-reorg-final" aria-labelledby="final-cta-heading"><div class="deposit-reorg-shell"><p class="deposit-reorg-eyebrow">Ready when you are</p><h2 id="final-cta-heading" data-state-copy="final-heading">Hold your LunaWake<br>for $9 today.</h2><p data-state-copy="final-lede">One email on Sep 21 completes your order at the locked price.</p><button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="final" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button></div></section>
     </main>
 
     <div class="deposit-reorg-sticky" data-mobile-cta>

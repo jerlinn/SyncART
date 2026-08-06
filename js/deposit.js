@@ -19,6 +19,7 @@
         finishes: {
             amber: {
                 name: 'Amber',
+                detail: 'Burnished amber that warms the room before the light comes on.',
                 code: 'LW / AMBER',
                 hex: '#b9673b',
                 src: 'images/luna-latest/finish-amber-1440.webp?v=2026-08-05d',
@@ -26,6 +27,7 @@
             },
             stone: {
                 name: 'Stone',
+                detail: 'A pale mineral neutral that keeps the room feeling open and quiet.',
                 code: 'LW / STONE',
                 hex: '#a9aaa6',
                 src: 'images/luna-latest/finish-stone-1440.webp?v=2026-08-05d',
@@ -33,6 +35,7 @@
             },
             charcoal: {
                 name: 'Charcoal',
+                detail: 'Deep charcoal with a grounded, architectural presence.',
                 code: 'LW / CHARCOAL',
                 hex: '#242321',
                 src: 'images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d',
@@ -378,7 +381,7 @@
             button.setAttribute('aria-pressed', String(selected));
         });
         if (finish) switchFinishRender(finish);
-        if (finishName) finishName.textContent = finish ? `${finish.name} — good eye. Thanks.` : 'No vote yet — pick the one you\'d want on your nightstand.';
+        if (finishName) finishName.textContent = finish ? `${finish.name} — good eye. ${finish.detail || 'Thanks.'}` : 'No vote yet — pick the one you\'d want on your nightstand.';
     };
 
     const updateSource = () => {

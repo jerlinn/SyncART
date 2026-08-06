@@ -1242,6 +1242,63 @@
             .lw2-site.lw2-deposit-page .deposit-reorg-faq__support{margin-top:20px}
             .lw2-site.lw2-deposit-page .deposit-reorg-final .deposit-reorg-button{margin-top:22px}
         }
+
+        /* Visual refinement: replace divider-heavy components with quiet
+           surfaces, spacing, and soft contrast. Keep the reservation card's
+           price divider as the one intentional transaction cue. */
+        .lw2-site.lw2-deposit-page .deposit-reorg-get__grid{
+            gap:18px;
+            border-top:0
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-get__item,
+        .lw2-site.lw2-deposit-page .deposit-reorg-get__item+.deposit-reorg-get__item{
+            border:0;
+            padding-left:0
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-price__cards{
+            gap:12px;
+            background:transparent
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-price-card{
+            border-radius:12px;
+            box-shadow:0 8px 24px rgba(48,42,34,.06)
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-reservation-card__due{
+            padding-bottom:10px;
+            border-bottom:0
+        }
+        .lw2-site.lw2-deposit-page .deposit-price-details,
+        .lw2-site.lw2-deposit-page .deposit-reorg-steps__list,
+        .lw2-site.lw2-deposit-page .deposit-reorg-faq__list{
+            border-top:0
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-steps__list li{
+            margin-top:10px;
+            padding:18px 16px;
+            border:0;
+            border-radius:12px;
+            background:rgba(255,253,248,.58)
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-steps__list li:first-child{margin-top:0}
+        .lw2-site.lw2-deposit-page .deposit-reorg-faq__list details{
+            margin-top:8px;
+            border:0
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-faq__list details:first-child{margin-top:0}
+        .lw2-site.lw2-deposit-page .deposit-reorg-faq__list summary{
+            padding:17px 16px;
+            border-radius:10px;
+            background:rgba(255,253,248,.58)
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-faq__list details[open] summary{
+            border-radius:10px 10px 0 0
+        }
+        .lw2-site.lw2-deposit-page .deposit-reorg-faq__list details p{
+            margin:0;
+            padding:0 16px 17px;
+            border-radius:0 0 10px 10px;
+            background:rgba(255,253,248,.58)
+        }
     </style>
 </head>
 <body class="lw2-site lw2-deposit-page">

@@ -3681,9 +3681,6 @@ h3 {
 .lw2-site.lw2-deposit-page .lw2-nav { border-bottom-color: var(--lw2-line); }
 .lw2-site.lw2-deposit-page .lw2-logo-mark--light { opacity: 0; }
 .lw2-site.lw2-deposit-page .lw2-logo-mark--dark { opacity: 1; }
-.lw2-site.lw2-deposit-page .lw2-nav-links { color: var(--lw2-muted); }
-.lw2-site.lw2-deposit-page .lw2-nav-links a:hover,
-.lw2-site.lw2-deposit-page .lw2-nav-links a:focus-visible { color: var(--lw2-ink); }
 .lw2-site.lw2-deposit-page .lw2-nav-cta {
     border-color: rgba(36, 33, 31, .25);
     color: var(--lw2-ink);

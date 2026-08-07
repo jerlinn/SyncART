@@ -17,14 +17,6 @@
         launchListUrl: 'https://prelaunch.lunawake.ai/',
         supportUrl: 'mailto:info@lunawake.ai',
         finishes: {
-            amber: {
-                name: 'Amber',
-                detail: 'Burnished amber that warms the room before the light comes on.',
-                code: 'LW / AMBER',
-                hex: '#b9673b',
-                src: 'images/luna-latest/finish-amber-1440.webp?v=2026-08-05d',
-                srcset: 'images/luna-latest/finish-amber-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-amber-1440.webp?v=2026-08-05d 1440w'
-            },
             stone: {
                 name: 'Stone',
                 detail: 'A pale mineral neutral that keeps the room feeling open and quiet.',
@@ -40,12 +32,20 @@
                 hex: '#242321',
                 src: 'images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d',
                 srcset: 'images/luna-latest/finish-charcoal-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d 1440w'
-            }
+            },
+            amber: {
+                name: 'Amber',
+                detail: 'Burnished amber that warms the room before the light comes on.',
+                code: 'LW / AMBER',
+                hex: '#b9673b',
+                src: 'images/luna-latest/finish-amber-1440.webp?v=2026-08-05d',
+                srcset: 'images/luna-latest/finish-amber-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-amber-1440.webp?v=2026-08-05d 1440w'
+            },
         },
         priceWindows: [
             { id: 'founding', amount: '$229', savings: '$90', displayDeadline: 'Sep 6 · 11:59pm ET', startAt: '', endAt: '2026-09-06T23:59:59-04:00', timezone: 'America/New_York', status: 'current' },
-            { id: 'super-early', amount: '$269', savings: '$50', displayDeadline: 'Sep 20 · 11:59pm ET', startAt: '2026-09-07T00:00:00-04:00', endAt: '2026-09-20T23:59:59-04:00', timezone: 'America/New_York', status: 'current' },
-            { id: 'early', amount: '$319', savings: '$0', displayDeadline: 'Sep 21 · launch day', startAt: '2026-09-21T00:00:00-04:00', endAt: '', timezone: 'America/New_York', status: 'current' }
+            { id: 'super-early', amount: '$269', savings: '$50', deltaLabel: '+$40 vs. the founding price', displayDeadline: 'Sep 20 · 11:59pm ET', startAt: '2026-09-07T00:00:00-04:00', endAt: '2026-09-20T23:59:59-04:00', timezone: 'America/New_York', status: 'current' },
+            { id: 'early', amount: '$319', savings: '$0', deltaLabel: '+$90 vs. the founding price', displayDeadline: 'Sep 21 · launch day', startAt: '2026-09-21T00:00:00-04:00', endAt: '', timezone: 'America/New_York', status: 'current' }
         ]
     };
 
@@ -66,9 +66,16 @@
     const supportLinks = Array.from(document.querySelectorAll('.deposit-reorg-trust__email, .deposit-reorg-faq__support'));
     const finishOptionsHost = document.querySelector('[data-deposit-finish-options]');
     if (finishOptionsHost) {
-        finishOptionsHost.textContent = '';
-        Object.entries(config.finishes).forEach(([slug, finish]) => {
-            const button = document.createElement('button');
+        const configuredFinishes = Object.entries(config.finishes);
+        const existingFinishButtons = Array.from(finishOptionsHost.querySelectorAll('[data-deposit-finish]'));
+        const existingFinishIds = existingFinishButtons.map((button) => button.dataset.depositFinish);
+        const configuredFinishIds = configuredFinishes.map(([slug]) => slug);
+        const hasMatchingFallback = existingFinishIds.length === configuredFinishIds.length
+            && existingFinishIds.every((slug, index) => slug === configuredFinishIds[index]);
+        if (!hasMatchingFallback) finishOptionsHost.textContent = '';
+        configuredFinishes.forEach(([slug, finish], index) => {
+            const button = hasMatchingFallback ? existingFinishButtons[index] : document.createElement('button');
+            if (hasMatchingFallback) button.replaceChildren();
             button.type = 'button';
             button.dataset.depositFinish = slug;
             button.setAttribute('aria-pressed', 'false');
@@ -77,15 +84,18 @@
             swatch.setAttribute('aria-hidden', 'true');
             if (finish.hex) swatch.style.background = finish.hex;
             button.append(swatch, document.createTextNode(finish.name));
-            finishOptionsHost.append(button);
+            if (!hasMatchingFallback) finishOptionsHost.append(button);
         });
     }
     const finishButtons = Array.from(document.querySelectorAll('[data-deposit-finish]'));
     const finishName = document.querySelector('[data-deposit-finish-name]');
     const coachSection = document.querySelector('[data-coach-section]');
     const launchListCountNodes = Array.from(document.querySelectorAll('[data-launch-list-count]'));
-    const checkoutMessage = checkoutStatus?.querySelector('[data-checkout-message]') || checkoutStatus;
+    const checkoutMessage = checkoutStatus?.querySelector('[data-checkout-runtime-message]')
+        || checkoutStatus?.querySelector('[data-checkout-message]')
+        || checkoutStatus;
     const previewLinks = Array.from(document.querySelectorAll('[data-preview-link]'));
+    const footerLaunchLinks = Array.from(document.querySelectorAll('[data-footer-launch-link]'));
     const query = new URLSearchParams(window.location.search);
     const source = query.get('source') || query.get('utm_source') || query.get('traffic_source') || '';
     const audienceParam = (query.get('audience') || '').toLowerCase();
@@ -98,7 +108,7 @@
             return raw ? ({ moonstone: 'stone', midnight: 'charcoal' }[raw] || raw) : null;
         } catch (error) { return null; }
     })();
-    const state = { submitting: false, finish: savedFinish };
+    const state = { submitting: false, finish: savedFinish || 'stone' };
 
     const checkoutState = () => {
         if (config.campaignState === 'kickstarter_live') return 'closed';
@@ -159,51 +169,30 @@
         return `Save ${windowConfig.savings} vs. launch day`;
     };
     const priceDeltaLabel = (windowConfig) => {
+        if (windowConfig?.deltaLabel) return windowConfig.deltaLabel;
         const active = currentWindow();
         const delta = moneyValue(windowConfig?.amount) - moneyValue(active?.amount);
         if (!config.pricingUnlocked || !Number.isFinite(delta) || delta <= 0) return 'Price rises later';
         return `+$${delta} after current`;
     };
     const ctaLabel = (slot = '') => {
-        if (checkoutState() === 'preview') return 'Notify me when it opens';
         return `Reserve ${config.depositAmount}`;
     };
 
-    // The static HTML carries the live-state copy. In preview, the promise
-    // ("Due today $9") must not outrun the action ("Get notified"), so these
-    // strings rewrite the payment language into honest waitlist language.
-    const STATE_COPY = {
-        preview: {
-            // Pre-test data (n=437): the strongest differentiator for the
-            // 25-44 wearable-user segment is "nothing to wear" — keep it in
-            // the preview lede, and keep the gold amount span in the heading.
-            'hero-heading': 'Be first when reservations open.',
-            'hero-lede': 'Nothing to wear, nothing to charge — it reads your night from the bedside and shapes the room around your sleep.',
-            'card-due-label': 'Reservation deposit',
-            'card-reward-label': 'Your $9 unlocks this price',
-            'card-deadline': 'The founding price holds until <b data-current-deadline></b><b data-countdown-days hidden></b>.',
-            'price-headline': `${config.depositAmount} will lock<br><strong>${currentWindow()?.amount || '$229'}</strong>.`,
-            // The deadline lives in the card and the timeline row; stating it a
-            // third time here read as manufactured urgency in design review.
-            'price-deadline': 'The launch list hears first when reservations open.',
-            'window-chip-founding': 'At open',
-            'trust-order': 'One email on Sep 21 completes the <b data-current-reward>$229</b> order',
-            'steps-lede': `When reservations open — <span data-deposit-amount>${config.depositAmount}</span> holds your price. Sep 21 — one personal order link completes your order.`,
-            'step1-time': 'At open',
-            'step1-body': `We email you the moment reservations open. Your ${config.depositAmount} will be refundable any time, for any reason.`,
-            'final-heading': 'Save your spot<br>on the launch list.',
-            'final-lede': `<strong><span data-launch-list-count>${config.launchListCount}</span> people are already on the list.</strong> Leave your email and we will tell you the moment the ${config.depositAmount} reservation opens.`,
-            'sticky-label': '<span class="deposit-reorg-sticky__desktop-label">Unlock <span data-current-reward>$229</span> + 30 days of Luna Coach for $9</span><span class="deposit-reorg-sticky__compact-label">Unlock <span data-current-reward>$229</span> + 30-day Coach · $9</span>'
+    const originalCtaLabel = (button) => {
+        if (!button) return `Reserve ${config.depositAmount}`;
+        if (!button.dataset.originalCtaLabel) {
+            button.dataset.originalCtaLabel = button.textContent.replace(/\s*→\s*$/, '').trim();
         }
+        return button.dataset.originalCtaLabel;
     };
-    // Must run before updatePriceCards() so the deadline/countdown spans it
-    // injects get filled; must not run again after, or the fills are lost.
+
+    // The revised HTML is the copy source of truth. The attributes remain as
+    // stable hooks for configuration and future state work without rewriting
+    // the supplied copy in preview mode.
     const updateStateCopy = () => {
-        const copy = STATE_COPY[checkoutState()];
         document.querySelectorAll('[data-state-copy]').forEach((element) => {
             if (element.dataset.defaultCopy === undefined) element.dataset.defaultCopy = element.innerHTML;
-            const next = (copy && copy[element.dataset.stateCopy]) ?? element.dataset.defaultCopy;
-            if (element.innerHTML !== next) element.innerHTML = next;
         });
     };
 
@@ -227,6 +216,8 @@
         };
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(payload);
+        if (typeof window.gtag === 'function') window.gtag('event', eventName, payload);
+        if (typeof window.fbq === 'function') window.fbq('trackCustom', eventName, payload);
         if (typeof window.CustomEvent === 'function') {
             window.dispatchEvent(new CustomEvent('lunawake:deposit', { detail: payload }));
         }
@@ -261,7 +252,7 @@
                     ? 'Reservations are closed'
                     : stateName === 'ended'
                         ? 'Reservation window has ended'
-                        : `${ctaLabel(button.dataset.ctaSlot)} <span aria-hidden="true">→</span>`;
+                        : `${stateName === 'preview' ? originalCtaLabel(button) : ctaLabel(button.dataset.ctaSlot)} <span aria-hidden="true">→</span>`;
         });
 
         if (!checkoutStatus) return;
@@ -276,7 +267,7 @@
         // card link would be a second identical ask; keep it as the escape
         // hatch for closed/ended only.
         previewLinks.forEach((link) => {
-            link.hidden = stateName === 'preview' || stateName === 'live';
+            link.hidden = false;
             link.setAttribute('href', withTracking(config.launchListUrl, {
                 utm_source: 'deposit-page',
                 utm_medium: link.dataset.ctaSlot === 'header' ? 'header' : 'reservation-card',
@@ -284,6 +275,12 @@
                 utm_content: 'not-ready'
             }));
         });
+        footerLaunchLinks.forEach((link) => link.setAttribute('href', withTracking(config.launchListUrl, {
+            utm_source: 'deposit-page',
+            utm_medium: 'footer-exit',
+            utm_campaign: 'deposit_launch_v1',
+            utm_content: 'not-ready'
+        })));
         checkoutStatus.classList.toggle('is-ready', ready);
         checkoutStatus.dataset.checkoutState = stateName;
     };
@@ -321,6 +318,15 @@
         const launchWindow = config.priceWindows.find((item) => item.id === 'early') || config.priceWindows[config.priceWindows.length - 1];
         document.querySelectorAll('[data-launch-price]').forEach((element) => {
             element.textContent = priceText(launchWindow || {});
+        });
+        document.querySelectorAll('[data-sticky-benefit]').forEach((element) => {
+            if (!config.pricingUnlocked) {
+                element.textContent = 'Price unlocking soon';
+            } else if (moneyValue(activeWindow?.savings) > 0) {
+                element.textContent = `Save ${activeWindow.savings} vs. launch`;
+            } else {
+                element.textContent = 'Launch-day price';
+            }
         });
         const remaining = daysLeft(activeWindow);
         document.querySelectorAll('[data-current-deadline]').forEach((element) => {
@@ -509,13 +515,15 @@
                 destination: 'launch_list',
                 checkout_state: stateName,
                 cta_slot: ctaSlot,
-                reason: 'shopify_product_url_missing'
+                reason: 'shopify_product_url_missing',
+                finish: state.finish || 'stone'
             });
             window.location.assign(withTracking(config.launchListUrl, {
                 utm_source: 'deposit-page',
                 utm_medium: 'reservation-cta',
                 utm_campaign: 'deposit_launch_v1',
-                utm_content: ctaSlot
+                utm_content: ctaSlot,
+                finish: state.finish || 'stone'
             }));
             return;
         }
@@ -532,8 +540,11 @@
         }
         state.submitting = true;
         updateButtons();
-        track('deposit_cta_click', { destination: 'shopify_checkout', checkout_state: stateName, cta_slot: ctaSlot });
-        window.location.assign(withTracking(config.shopifyProductUrl));
+        track('deposit_cta_click', { destination: 'shopify_checkout', checkout_state: stateName, cta_slot: ctaSlot, finish: state.finish || 'stone' });
+        window.location.assign(withTracking(config.shopifyProductUrl, {
+            finish: state.finish || 'stone',
+            cta_slot: ctaSlot
+        }));
     };
 
     reserveButtons.forEach((button) => button.addEventListener('click', () => attemptCheckout(button)));
@@ -547,6 +558,11 @@
         destination: 'launch_list',
         checkout_state: checkoutState(),
         cta_slot: link.dataset.ctaSlot || 'reservation-card'
+    })));
+    footerLaunchLinks.forEach((link) => link.addEventListener('click', () => track('deposit_waitlist_click', {
+        destination: 'launch_list',
+        checkout_state: checkoutState(),
+        cta_slot: 'footer-exit'
     })));
     document.querySelectorAll('[data-support-email]').forEach((element) => {
         element.textContent = supportAddress(config.supportUrl) || 'Open support center';

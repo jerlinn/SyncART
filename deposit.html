@@ -147,6 +147,12 @@
         .deposit-reorg-final__link:hover{text-decoration:underline}
         .deposit-reorg-status{margin-top:16px;color:rgba(255,253,248,.68);font-size:14px;line-height:1.45}
         .deposit-reorg-status a{color:#f0d29e;text-decoration:underline}
+        .deposit-reorg-runtime-status{display:block;margin-top:6px}
+        .deposit-reorg-policy{margin-top:10px;color:var(--shopify-muted,#69717b);font-size:12px;line-height:1.4}
+        .deposit-reorg-final .deposit-reorg-policy{color:rgba(255,253,248,.68)}
+        .lw2-footer-exit{margin-top:20px;text-align:center;font-size:13px}
+        .lw2-footer-exit a{color:rgba(255,253,248,.72);text-decoration:underline;text-underline-offset:3px}
+        .lw2-footer-exit a:hover{color:#fffdf8}
         .deposit-reorg-sticky{position:fixed;z-index:20;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;gap:20px;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:rgba(23,32,45,.96);box-shadow:0 -8px 24px rgba(23,32,45,.12)}
         .deposit-reorg-sticky__label{color:#fffdf8;font-size:15px;font-weight:600}
         .deposit-reorg-sticky__compact-label{display:none}
@@ -960,7 +966,7 @@
         /* Coach report window: the long app screenshot is evidence to explore,
            not content that should determine the page height. */
         .lw2-site.lw2-deposit-page .shopify-deposit-coach-screen__crop{
-            height:clamp(420px,42vw,520px);
+            height:clamp(560px,48vw,700px);
             min-height:0;
             flex:0 0 auto;
             overflow-x:hidden;
@@ -972,7 +978,7 @@
             background:var(--lw2-warm,#fffdf8);
         }
         @media (max-width:560px){
-            .lw2-site.lw2-deposit-page .shopify-deposit-coach-screen__crop{height:400px}
+            .lw2-site.lw2-deposit-page .shopify-deposit-coach-screen__crop{height:560px}
         }
 
         /* Mobile decision path: one calm reading order, with the reservation
@@ -1338,44 +1344,44 @@
         <section class="deposit-reorg-hero" aria-labelledby="deposit-heading">
             <picture class="deposit-reorg-hero__backdrop"><source media="(max-width:900px)" srcset="images/luna-latest/lab-bedside.webp"><img class="deposit-reorg-hero__image" src="images/luna-latest/device-bedside.webp" width="1536" height="1024" alt="LunaWake beside a sleeping person in a warm bedroom" fetchpriority="high" decoding="async"></picture>
             <div class="deposit-reorg-shell deposit-reorg-hero__content">
-                <p class="deposit-reorg-eyebrow">LunaWake · A bedside sleep companion</p>
-                <h1 id="deposit-heading" data-state-copy="hero-heading">Hold your LunaWake for <span data-deposit-amount>$9</span>.</h1>
-                <p class="deposit-reorg-hero__lede" data-state-copy="hero-lede">It reads your night from the bedside — nothing to wear, nothing to charge — then shapes the room around your sleep.</p>
+                <p class="deposit-reorg-eyebrow">The bedside sleep coach · reserve before launch</p>
+                <h1 id="deposit-heading" data-state-copy="hero-heading">Fall asleep easier.<br>Wake up rested.</h1>
+                <p class="deposit-reorg-hero__lede" data-state-copy="hero-lede">LunaWake reads your night from the bedside — nothing to wear, nothing to charge — and tunes the room's sound and light around your sleep. Reserve yours for <span data-deposit-amount>$9</span> and lock the lowest price it will ever be.</p>
             </div>
             <aside class="deposit-reorg-reservation-card" aria-labelledby="reservation-card-heading">
-                <p class="deposit-reorg-reservation-card__eyebrow" id="reservation-card-heading">Your LunaWake reservation</p>
-                <div class="deposit-reorg-reservation-card__due"><span data-state-copy="card-due-label">Due today</span><strong data-deposit-amount>$9</strong></div>
+                <p class="deposit-reorg-reservation-card__eyebrow" id="reservation-card-heading">Lock in the lowest price</p>
+                <div class="deposit-reorg-reservation-card__due"><span data-state-copy="card-due-label">Just today</span><strong data-deposit-amount>$9</strong></div>
                 <dl class="deposit-reorg-reservation-card__prices">
-                    <div><dt data-state-copy="card-reward-label">Founding price locked</dt><dd data-current-reward>$229</dd></div>
-                    <div><dt>Launch-day price</dt><dd data-launch-price>$319</dd></div>
+                    <div><dt data-state-copy="card-reward-label">Your price, locked</dt><dd data-current-reward>$229</dd></div>
+                    <div><dt>Price at launch</dt><dd data-launch-price>$319</dd></div>
                 </dl>
-                <p class="deposit-reorg-reservation-card__deadline" data-state-copy="card-deadline">This price ends <b data-current-deadline>Sep 6 · 11:59pm ET</b><b data-countdown-days hidden></b>.</p>
-                <button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="reservation-card" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
-                <p class="deposit-reorg-status" id="checkout-status" data-checkout-status aria-live="polite"><span data-checkout-message>Join the launch list to be notified when it opens.</span></p>
-                <a class="deposit-reorg-reservation-card__preview-link" data-preview-link href="https://prelaunch.lunawake.ai/">Join the launch list <span aria-hidden="true">↗</span></a>
+                <p class="deposit-reorg-reservation-card__deadline" data-state-copy="card-deadline">$9 locks $229 — that's <b>$90 off</b> launch day. This price ends <b data-current-deadline>Sep 6, 11:59pm ET</b><b data-countdown-days hidden></b>.</p>
+                <button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="reservation-card" aria-describedby="checkout-status">Reserve for $9 <span aria-hidden="true">→</span></button>
+                <p class="deposit-reorg-status" id="checkout-status" data-checkout-status aria-live="polite"><span data-checkout-message>Fully refundable — change your mind anytime.</span><span class="deposit-reorg-runtime-status" data-checkout-runtime-message></span></p>
+                <a class="deposit-reorg-reservation-card__preview-link" data-preview-link href="https://prelaunch.lunawake.ai/">Not ready? Remind me when it's live <span aria-hidden="true">↗</span></a>
             </aside>
         </section>
 
         <section class="deposit-reorg-trust" aria-label="Reservation assurances">
             <div class="deposit-reorg-shell deposit-reorg-trust__grid">
-                <p>Full refund, any time — before or after launch</p>
-                <p><span data-state-copy="trust-order">One email on Sep 21 completes your <b data-current-reward>$229</b> order</span></p>
-                <p><a class="deposit-reorg-trust__email" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real humans: <strong data-support-email>info@lunawake.ai</strong></a></p>
+                <p>Fully refundable — change your mind anytime, no questions</p>
+                <p><span data-state-copy="trust-order">Two steps: $9 today, one link on Sep 21 to finish. That's it.</span></p>
+                <p><a class="deposit-reorg-trust__email" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Questions? A real person replies: <strong data-support-email>info@lunawake.ai</strong></a></p>
             </div>
         </section>
 
         <section class="deposit-reorg-section deposit-reorg-price" aria-labelledby="pricing-heading">
             <div class="deposit-reorg-shell">
-                <p class="deposit-reorg-eyebrow">Price context</p>
+                <p class="deposit-reorg-eyebrow">The sooner you reserve, the less you pay</p>
                 <div class="deposit-reorg-price__layout">
                     <div>
-                        <h2 id="pricing-heading" class="deposit-reorg-price__headline" data-state-copy="price-headline">$9 today locks<br><strong>$229</strong>.</h2>
-                        <p class="deposit-reorg-price__deadline" data-state-copy="price-deadline">This price ends <b data-current-deadline>Sep 6 · 11:59pm ET</b><b data-countdown-days hidden></b>.</p>
+                        <h2 id="pricing-heading" class="deposit-reorg-price__headline" data-state-copy="price-headline">$9 today locks<br><strong data-current-reward>$229</strong>.</h2>
+                        <p class="deposit-reorg-price__deadline" data-state-copy="price-deadline">That's <b>$90 off</b> the launch-day price. This $229 price ends <b data-current-deadline>Sep 6, 11:59pm ET</b><b data-countdown-days hidden></b> — then it's gone.</p>
                     </div>
-                    <button class="deposit-reorg-button deposit-reorg-price__button" type="button" data-reserve-button data-cta-slot="pricing" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button>
+                    <button class="deposit-reorg-button deposit-reorg-price__button" type="button" data-reserve-button data-cta-slot="pricing" aria-describedby="checkout-status">Reserve for $9 <span aria-hidden="true">→</span></button>
                 </div>
                 <details class="deposit-price-details" open>
-                    <summary>See the full price schedule</summary>
+                    <summary>See all three price windows</summary>
                     <div class="deposit-reorg-price__cards" data-price-windows aria-live="polite" aria-label="LunaWake price schedule">
                         <article class="deposit-reorg-price-card is-current" data-price-window="founding">
                             <span data-state-copy="window-chip-founding">Today</span><h3>Founding price</h3><strong data-price-amount>$229</strong>
@@ -1385,32 +1391,32 @@
                         <article class="deposit-reorg-price-card" data-price-window="super-early">
                             <span>Sep 7–20</span><h3>Next launch price</h3><strong data-price-amount>$269</strong>
                             <span class="deposit-reorg-price-card__deadline">Available until <b data-price-deadline>Sep 20 · 11:59pm ET</b></span>
-                            <small class="deposit-reorg-price-card__savings"><b data-price-savings>Save $50 vs. launch day</b><span data-price-delta>+$40 after current</span></small>
+                            <small class="deposit-reorg-price-card__savings"><b data-price-savings>Save $50 vs. launch day</b><span data-price-delta>+$40 vs. the founding price</span></small>
                         </article>
                         <article class="deposit-reorg-price-card" data-price-window="early">
                             <span>Sep 21</span><h3>Launch-day price</h3><strong data-price-amount>$319</strong>
                             <span class="deposit-reorg-price-card__deadline">Available on <b data-price-deadline>Sep 21 · launch day</b></span>
-                            <small class="deposit-reorg-price-card__savings"><b data-price-savings>Launch-day price</b><span data-price-delta>+$90 after current</span></small>
+                            <small class="deposit-reorg-price-card__savings"><b data-price-savings>Launch-day price</b><span data-price-delta>+$90 vs. the founding price</span></small>
                         </article>
                     </div>
                 </details>
-                <p class="deposit-reorg-price__anchor">Replaces the bedside stack — sunrise alarm, sound machine, sleep tracker, smart-home schedules — one purchase, not four.</p>
+                <p class="deposit-reorg-price__anchor">Replaces the bedside stack — sunrise alarm, sound machine, sleep tracker, and a sleep-coach app — one purchase, not four.</p>
             </div>
         </section>
 
         <section class="deposit-reorg-section deposit-reorg-steps" id="how-reservation-works" aria-labelledby="steps-heading">
             <div class="deposit-reorg-shell deposit-reorg-steps__layout">
-                <div><p class="deposit-reorg-eyebrow">What happens next</p><h2 id="steps-heading">Two simple steps.</h2><p class="deposit-reorg-lede" data-state-copy="steps-lede">Today — <span data-deposit-amount>$9</span> holds your price. Sep 21 — one personal order link completes your order.</p></div>
+                <div><p class="deposit-reorg-eyebrow">How it works</p><h2 id="steps-heading">Two simple steps.</h2><p class="deposit-reorg-lede" data-state-copy="steps-lede">Today, your <span data-deposit-amount>$9</span> locks the <span data-current-reward>$229</span> founding price. On Sep 21, one link finishes your order. Change your mind anytime — full refund.</p></div>
                 <ol class="deposit-reorg-steps__list">
-                    <li><time datetime="2026-08-04" data-state-copy="step1-time">Today</time><div><h3><span data-deposit-amount>$9</span> holds your price.</h3><p data-state-copy="step1-body">That is it. Your reservation is refundable any time, for any reason.</p></div></li>
-                    <li><time datetime="2026-09-21">Sep 21</time><div><h3>One email completes your order.</h3><p>We email your personal order link. Follow it to complete the <span data-current-reward>$229</span> order.</p></div></li>
+                    <li><time datetime="2026-08-04" data-state-copy="step1-time">Today</time><div><h3><span data-deposit-amount>$9</span> locks your <span data-current-reward>$229</span> price.</h3><p data-state-copy="step1-body">You'd pay <span data-launch-price>$319</span> at launch. Your $9 is refundable anytime, for any reason.</p></div></li>
+                    <li><time datetime="2026-09-21">Sep 21</time><div><h3>One link completes your order.</h3><p>We email you a private order link. Follow it to pay the rest at your locked <span data-current-reward>$229</span> — one click, done.</p></div></li>
                 </ol>
             </div>
         </section>
 
         <section class="deposit-reorg-section deposit-reorg-get" aria-labelledby="benefits-heading">
-            <div class="deposit-reorg-shell"><div class="deposit-reorg-get__head"><div><p class="deposit-reorg-eyebrow">What you get</p><h2 id="benefits-heading">The room does<br>the work.</h2></div><p class="deposit-reorg-lede">Every night, while you sleep, and every morning — LunaWake turns the night into a calmer room and one useful next step.</p></div>
-                <div class="deposit-reorg-get__grid"><article class="deposit-reorg-get__item"><span>Every night</span><h3>Sound and light ease you to sleep.</h3><p>Nothing on your body, nothing new to remember.</p></article><article class="deposit-reorg-get__item"><span>While you sleep</span><h3>The room adjusts itself.</h3><p>Light, sound, and temperature move around your sleep.</p></article><article class="deposit-reorg-get__item"><span>Every morning</span><h3>One clear thing to try.</h3><p>A plain-English read about your night and one useful next step.</p></article></div>
+            <div class="deposit-reorg-shell"><div class="deposit-reorg-get__head"><div><p class="deposit-reorg-eyebrow">What you get</p><h2 id="benefits-heading">The room does<br>the work.</h2></div><p class="deposit-reorg-lede">LunaWake is two things working as one: a smart bedside device that tracks your sleep and shapes your room, and Luna — an AI sleep coach in the app that turns each night into one clear next step.</p></div>
+                <div class="deposit-reorg-get__grid"><article class="deposit-reorg-get__item"><span>The device · all night</span><h3>It tracks your sleep — nothing to wear.</h3><p>Breathing, movement, and sleep stages, sensed from the bedside. No band, no watch, no charging.</p></article><article class="deposit-reorg-get__item"><span>The device · every night</span><h3>The room eases you down.</h3><p>Sound, light, and temperature move around your sleep. Nothing new to remember.</p></article><article class="deposit-reorg-get__item"><span>The app · every morning</span><h3>Luna coaches you.</h3><p>Your AI sleep coach reads the night in plain English and gives you one useful thing to try.</p></article></div>
                 <figure class="deposit-reorg-get__media"><picture><source media="(max-width:560px)" srcset="images/luna-latest/device-bedside.webp"><source type="image/webp" srcset="images/luna-latest/follow-room.webp"><img src="images/luna-latest/follow-room.png" width="1672" height="941" alt="LunaWake beside a sleeping person in a calm bedroom" loading="lazy" decoding="async"></picture></figure><p class="deposit-reorg-get__trust">No camera · No wearable · Raw signals stay on the device · PSG gold-standard benchmarking in progress</p>
             </div>
         </section>
@@ -1420,8 +1426,8 @@
                 <div class="shopify-deposit-coach__copy">
                     <p class="shopify-deposit-eyebrow">Included with your $9 reservation</p>
                     <h2 id="coach-heading">Start sleeping better<br><span class="shopify-deposit-heading-accent">before LunaWake arrives.</span></h2>
-                    <p class="shopify-deposit-coach__promise">30 days of Luna Coach, free.</p>
-                    <p class="shopify-deposit-coach__lede">Your first month starts when the campaign ends — before LunaWake ships. Each morning, Luna turns your night into a plain-English report and one useful thing to try.</p>
+                    <p class="shopify-deposit-coach__promise">30 days with Luna Coach — free.</p>
+                    <p class="shopify-deposit-coach__lede">Luna Coach is the app side of LunaWake: your AI sleep coach. It runs on your phone, so your month can start the day the campaign ends — before the device even ships. Each morning, Luna reads your night in plain English and gives you one useful thing to try.</p>
                     <div class="shopify-deposit-coach__value" aria-label="Included Luna Coach value">
                         <strong><span data-coach-days>30</span> days of Luna Coach</strong>
                         <span>Included free · <b data-coach-value>$19.99</b> value</span>
@@ -1430,7 +1436,7 @@
                 <div class="shopify-deposit-coach__screens" aria-label="Luna Coach app examples">
                     <figure class="shopify-deposit-coach-screen shopify-deposit-coach-screen--pattern">
                         <p class="shopify-deposit-coach-screen__title">Your morning sleep report</p>
-                        <div class="shopify-deposit-coach-screen__crop" data-coach-report data-report-start="reflection" data-report-end-offset="190" role="region" tabindex="0" aria-label="Scrollable personal Sleep Pattern report; scroll to explore the full reflection"><img src="images/app-screens/sleep-pattern.webp" width="960" height="8660" alt="Luna App Sleep Pattern report explaining your sleep rhythm and one useful next step" loading="lazy" decoding="async"></div>
+                        <div class="shopify-deposit-coach-screen__crop" data-coach-report data-report-start="reflection" data-report-end-offset="0" role="region" tabindex="0" aria-label="Scrollable personal Sleep Pattern report; scroll to explore the full reflection"><img src="images/app-screens/sleep-pattern.webp" width="960" height="8660" alt="Luna App Sleep Pattern report explaining your sleep rhythm and one useful next step" loading="lazy" decoding="async"></div>
                         <p class="shopify-deposit-coach-screen__scroll-hint"><span>Scroll to explore your report</span><b aria-hidden="true">↕</b></p>
                         <figcaption><span>Sleep Pattern</span><strong>Your pattern, explained in plain English — and what to try next.</strong></figcaption>
                     </figure>
@@ -1455,17 +1461,17 @@
             <div class="deposit-reorg-shell">
                 <div class="deposit-reorg-finish__head"><div><p class="deposit-reorg-eyebrow">Help us choose</p><h2 id="finish-showcase-heading">A quieter kind of color.</h2></div><p>Three material directions, one LunaWake. Tap a finish to see the render, then leave your vote — preference only; it does not affect your reservation.</p></div>
                 <figure class="deposit-reorg-finish__stage"><div class="deposit-finish-frame"><img data-deposit-finish-image data-finish-src="images/luna-latest/finish-stone-1440.webp?v=2026-08-05d" src="images/luna-latest/finish-stone-1440.webp?v=2026-08-05d" srcset="images/luna-latest/finish-stone-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-stone-1440.webp?v=2026-08-05d 1440w" sizes="(max-width: 900px) 100vw, 60vw" width="1440" height="1199" alt="LunaWake in the Stone finish" loading="lazy" decoding="async"></div><figcaption><span>LunaWake / finish render</span><span data-deposit-finish-code>LW / STONE</span></figcaption></figure>
-                <fieldset class="shopify-deposit-finish-picker"><legend>Which one would you pick?</legend><div class="shopify-deposit-finish-options" role="group" aria-label="Vote for your favorite finish" data-deposit-finish-options></div><p data-deposit-finish-name aria-live="polite">No vote yet.</p></fieldset>
+                <fieldset class="shopify-deposit-finish-picker"><legend>Which one would you pick?</legend><div class="shopify-deposit-finish-options" role="group" aria-label="Vote for your favorite finish" data-deposit-finish-options><button type="button" class="is-active" data-deposit-finish="stone" aria-pressed="true"><i class="shopify-deposit-finish-swatch" aria-hidden="true" style="background:#a9aaa6"></i>Stone</button><button type="button" data-deposit-finish="charcoal" aria-pressed="false"><i class="shopify-deposit-finish-swatch" aria-hidden="true" style="background:#242321"></i>Charcoal</button><button type="button" data-deposit-finish="amber" aria-pressed="false"><i class="shopify-deposit-finish-swatch" aria-hidden="true" style="background:#b9673b"></i>Amber</button></div><p data-deposit-finish-name aria-live="polite">Stone selected.</p></fieldset>
             </div>
         </section>
 
-        <section class="deposit-reorg-section deposit-reorg-faq" id="faq" aria-labelledby="faq-heading"><div class="deposit-reorg-shell deposit-reorg-faq__layout"><div><p class="deposit-reorg-eyebrow">Questions, answered</p><h2 id="faq-heading">Start with<br>the important ones.</h2><p class="deposit-reorg-faq__intro">Clarity matters. Here is what your $9 reservation does — and what happens next.</p><a class="deposit-reorg-faq__support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real human support · <strong data-support-email>info@lunawake.ai</strong> ↗</a></div><div class="deposit-reorg-faq__list"><details><summary>What does LunaWake do?</summary><p>LunaWake reads your night from the bedside, then shapes sound, light, and room temperature around your sleep. Nothing to wear and nothing to charge.</p></details><details><summary>How do you know it's accurate?</summary><p>LunaWake is being benchmarked night-for-night against polysomnography (PSG) — the gold standard used in clinical sleep labs. Full-night sessions in a university sleep laboratory compare its sleep stages, breathing, and movement against PSG, epoch by epoch. Validation is ongoing, and we'll share results before launch.</p></details><details><summary>Do I need a subscription?</summary><p>No subscription is required for the LunaWake device. Your reservation includes 30 days of Luna Coach free while you wait.</p></details><details><summary>When does LunaWake ship?</summary><p>We will share the delivery schedule on launch day and in your order confirmation. Luna Coach starts when the campaign ends, before the device ships.</p></details><details><summary>Why are there two payments?</summary><p>The $9 reservation holds your $229 founding price. On Sep 21, we email your personal order link to complete the product order at that locked price through Kickstarter.</p></details><details><summary>Can I get my $9 back?</summary><p>Yes. You can request a full refund before or after launch, for any reason. If the campaign does not go ahead, the $9 is refunded in full through the original payment method.</p></details><details><summary>Why does LunaWake cost what it costs?</summary><p>It's a sensing device, a light, a speaker, and an on-device processor in one object — built to run your whole night locally, without a wearable and without a camera. Most people considering LunaWake are otherwise looking at a bedside light and a tracker they'd have to wear. We've priced it as one purchase, not two.</p></details><details><summary>Can I spread the payment?</summary><p>Payment plans are available at checkout, including PayPal Pay in 3 and Klarna, so LunaWake can be spread over three months at no extra cost. We're also setting up an accessibility program — join the launch list and we'll email details.</p></details><details><summary>What does it need to work?</summary><p>Core functions work locally — features such as updates and backups need Wi-Fi. The planned app experience supports iOS and Android. It is designed for the one sleeper closest to the device.</p></details></div></div></section>
+        <section class="deposit-reorg-section deposit-reorg-faq" id="faq" aria-labelledby="faq-heading"><div class="deposit-reorg-shell deposit-reorg-faq__layout"><div><p class="deposit-reorg-eyebrow">Questions, answered</p><h2 id="faq-heading">Start with<br>the important ones.</h2><p class="deposit-reorg-faq__intro">Clarity matters. Here is what your $9 reservation does — and what happens next.</p><a class="deposit-reorg-faq__support" href="mailto:info@lunawake.ai" aria-label="Email LunaWake human support">Real human support · <strong data-support-email>info@lunawake.ai</strong> ↗</a></div><div class="deposit-reorg-faq__list"><details><summary>What does LunaWake do?</summary><p>LunaWake reads your night from the bedside, then shapes sound, light, and room temperature around your sleep. Nothing to wear and nothing to charge.</p></details><details><summary>How do you know it's accurate?</summary><p>LunaWake is being benchmarked night-for-night against polysomnography (PSG) — the gold standard used in clinical sleep labs. Full-night sessions in a university sleep laboratory compare its sleep stages, breathing, and movement against PSG, epoch by epoch. Validation is ongoing, and we'll share results before launch.</p></details><details><summary>Do I need a subscription?</summary><p>No subscription is required for the LunaWake device. Your reservation includes 30 days of Luna Coach free while you wait.</p></details><details><summary>When does LunaWake ship?</summary><p>We will share the delivery schedule on launch day and in your order confirmation. Luna Coach starts when the campaign ends, before the device ships.</p></details><details><summary>Why do I pay in two steps?</summary><p>It keeps your risk tiny. Today, $9 locks your $229 founding price — $90 below launch day. On Sep 21, we email you a private order link; follow it to pay the rest and your order is complete. (That final step is completed through our Kickstarter campaign, at your locked price.)</p></details><details><summary>Can I get my $9 back?</summary><p>Yes. You can request a full refund before or after launch, for any reason. If the campaign does not go ahead, the $9 is refunded in full through the original payment method.</p></details><details><summary>Why does LunaWake cost what it costs?</summary><p>It's a sensing device, a light, a speaker, and an on-device processor in one object — built to run your whole night locally, without a wearable and without a camera. Most people considering LunaWake are otherwise looking at a bedside light and a tracker they'd have to wear. We've priced it as one purchase, not two.</p></details><details><summary>Can I spread the payment?</summary><p>Payment plans are available at checkout, including PayPal Pay in 3 and Klarna, so LunaWake can be spread over three months at no extra cost. We're also setting up an accessibility program — email us and we'll share the details.</p></details><details><summary>What does it need to work?</summary><p>Core functions work locally — features such as updates and backups need Wi-Fi. The planned app experience supports iOS and Android. It is designed for the one sleeper closest to the device.</p></details></div></div></section>
 
-        <section class="deposit-reorg-section deposit-reorg-final" aria-labelledby="final-cta-heading"><div class="deposit-reorg-shell"><p class="deposit-reorg-eyebrow">Ready when you are</p><h2 id="final-cta-heading" data-state-copy="final-heading">Hold your LunaWake<br>for $9 today.</h2><p data-state-copy="final-lede">One email on Sep 21 completes your order at the locked price.</p><button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="final" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button></div></section>
+        <section class="deposit-reorg-section deposit-reorg-final" aria-labelledby="final-cta-heading"><div class="deposit-reorg-shell"><p class="deposit-reorg-eyebrow">Ready when you are</p><h2 id="final-cta-heading" data-state-copy="final-heading">Better nights<br>start with $9.</h2><p data-state-copy="final-lede">Reserve now to lock <span data-current-reward>$229</span> before Sep 6 — $90 off launch day. One link on Sep 21 finishes your order, or get a full refund anytime.</p><button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="final" aria-describedby="checkout-status">Reserve $9 <span aria-hidden="true">→</span></button><p class="deposit-reorg-policy" data-checkout-policy>Refundable any time — before or after launch.</p></div></section>
     </main>
 
     <div class="deposit-reorg-sticky" data-mobile-cta>
-        <span class="deposit-reorg-sticky__label" data-state-copy="sticky-label"><strong data-deposit-amount>$9</strong><span class="deposit-reorg-sticky__desktop-label"> · Reserve your LunaWake</span><span class="deposit-reorg-sticky__compact-label"> · Reserve</span></span>
+        <span class="deposit-reorg-sticky__label" data-state-copy="sticky-label"><span data-sticky-benefit>Save $90 vs. launch</span></span>
         <button class="deposit-reorg-button" type="button" data-reserve-button data-cta-slot="mobile" aria-describedby="checkout-status">Reserve for $9 <span aria-hidden="true">→</span></button>
     </div>
 
@@ -1474,6 +1480,7 @@
             <div><a class="lw2-logo lw2-logo--footer" href="index.html"><img src="images/combinelogo_white.png" width="328" height="47" alt="LunaWake"></a><p>A bedside sleep companion for more considered nights.</p></div>
             <nav aria-label="Footer navigation"><a href="index.html#science">Science</a><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy <span aria-hidden="true">↗</span></a><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms <span aria-hidden="true">↗</span></a></nav>
         </div>
+        <p class="lw2-shell lw2-footer-exit"><a data-footer-launch-link href="https://prelaunch.lunawake.ai/">Not ready? Remind me when it's live <span aria-hidden="true">↗</span></a></p>
         <p class="lw2-shell lw2-footer-disclaimer">LunaWake is a wellness product, not a medical device. It is not intended to diagnose, treat, cure, or prevent any disease. Our sleep education is informed by published CBT-I research. Individual results may vary.</p>
         <div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Wellness support, not medical advice.</span><a class="lw2-footer-social" href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer" aria-label="LunaWake on Instagram"><svg viewBox="0 0 256 256" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></a></div>
     </footer>

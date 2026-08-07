@@ -9,8 +9,8 @@
         pricingUnlocked: true,
         launchListCount: '2,000+',
         coach: {
-            includedDays: 365,
-            value: '$240 annual value',
+            includedDays: 30,
+            value: '$19.99',
             availability: 'Starts when the campaign ends — before LunaWake ships.'
         },
         shopifyProductUrl: '',

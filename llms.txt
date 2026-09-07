@@ -29,13 +29,13 @@ The device and the app are two products that meet at the bedside. LunaWake sense
 - LunaWake treats CBT-I as a useful anchor rather than a protocol to enforce, and weights relative change in an individual over population-average targets.
 
 ## Pages
-- [Home](https://lunawake.ai/): product overview — how it works, hardware, radar sensing, science, finishes, and the Luna App
-- [Reserve](https://lunawake.ai/deposit.html): preview of the Shopify $9 deposit page for LunaWake's private Kickstarter launch offer
-- [Science](https://lunawake.ai/science.html): how the bedside radar reads the night and how it is being tested against technician-scored polysomnography in the sleep lab — method, footage, early signal windows, and stated boundaries
-- [About](https://lunawake.ai/about.html): why LunaWake is building a calmer, privacy-first bedside sleep system
-- [Support / FAQ](https://lunawake.ai/support.html): how contact-free sensing works, privacy, app and compatibility, shipping
-- [Privacy Policy](https://lunawake.ai/privacy.html): privacy policy
-- [Terms of Service](https://lunawake.ai/terms.html): terms of service
+- [Home](https://hellolunawake.com/): product overview — how it works, hardware, radar sensing, science, finishes, and the Luna App
+- [Reserve](https://hellolunawake.com/deposit.html): preview of the Shopify $9 deposit page for LunaWake's private Kickstarter launch offer
+- [Science](https://hellolunawake.com/science.html): how the bedside radar reads the night and how it is being tested against technician-scored polysomnography in the sleep lab — method, footage, early signal windows, and stated boundaries
+- [About](https://hellolunawake.com/about.html): why LunaWake is building a calmer, privacy-first bedside sleep system
+- [Support / FAQ](https://hellolunawake.com/support.html): how contact-free sensing works, privacy, app and compatibility, shipping
+- [Privacy Policy](https://hellolunawake.com/privacy.html): privacy policy
+- [Terms of Service](https://hellolunawake.com/terms.html): terms of service
 
 ## Contact
 - Launch list & updates: https://reserve.hellolunawake.com/

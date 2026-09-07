@@ -15,7 +15,7 @@
         },
         shopifyProductUrl: '',
         launchListUrl: 'https://prelaunch.lunawake.ai/',
-        supportUrl: 'mailto:info@lunawake.ai',
+        supportUrl: 'mailto:hello@hellolunawake.com',
         finishes: {
             stone: {
                 name: 'Stone',

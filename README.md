@@ -52,7 +52,7 @@ launch-list URL, support URL, and price-window status.
 Before launch, map these values to Shopify theme settings or metafields:
 
 - Shopify product URL for the $9 deposit product;
-- launch-list URL for the preview state (defaults to `https://prelaunch.lunawake.ai/`);
+- launch-list URL for the preview state (defaults to `https://reserve.hellolunawake.com/`);
 - campaign state (`reservation_open`, `kickstarter_live`, `campaign_success`,
   or `campaign_failed`);
 - the three Reward price windows ($229 founding / $269 next window / $319

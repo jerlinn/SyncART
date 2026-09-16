@@ -1,21 +1,4 @@
 (() => {
-    // The primary CTA stays on the launch-list experience until the deposit
-    // page is intentionally promoted as the live reservation destination.
-    document.querySelectorAll('a[href="deposit.html"]').forEach((link) => {
-        if (!link.matches('.lw2-nav-cta, .lw2-mobile-cta, .lw2-button')) return;
-        link.href = 'https://prelaunch.lunawake.ai/';
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        const navLabel = link.querySelector('.lw2-nav-cta-label');
-        if (navLabel) {
-            navLabel.textContent = 'Join the launch list';
-            return;
-        }
-        Array.from(link.childNodes).forEach((node) => {
-            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) node.textContent = 'Join the launch list ';
-        });
-    });
-
     const header = document.querySelector('[data-header]');
     const menu = document.querySelector('[data-menu-toggle]');
     const mobile = document.querySelector('#lw2-mobile-menu');

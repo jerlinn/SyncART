@@ -14,7 +14,7 @@
             availability: 'Starts when the campaign ends — before LunaWake ships.'
         },
         shopifyProductUrl: '',
-        launchListUrl: 'https://prelaunch.lunawake.ai/',
+        launchListUrl: 'https://reserve.hellolunawake.com/',
         supportUrl: 'mailto:hello@hellolunawake.com',
         finishes: {
             stone: {

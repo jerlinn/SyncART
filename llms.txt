@@ -33,7 +33,8 @@ The device and the app are two products that meet at the bedside. LunaWake sense
 - [Reserve](https://reserve.hellolunawake.com/): the $9 reservation page for LunaWake's Kickstarter launch offer
 - [Science](https://hellolunawake.com/science.html): how the bedside radar reads the night and how it is being tested against technician-scored polysomnography in the sleep lab — method, footage, early signal windows, and stated boundaries
 - [About](https://hellolunawake.com/about.html): why LunaWake is building a calmer, privacy-first bedside sleep system
-- [Support / FAQ](https://hellolunawake.com/support.html): how contact-free sensing works, privacy, app and compatibility, shipping
+- [Support / FAQ](https://lunawake.ai/support.html): product questions, data deletion and download requests, refunds and billing, and bug reports — contact [support@lunawake.ai](mailto:support@lunawake.ai)
+- [Partnerships / Media](mailto:hello@hellolunawake.com): partnership and media inquirie
 - [Privacy Policy](https://hellolunawake.com/privacy.html): privacy policy
 - [Terms of Service](https://hellolunawake.com/terms.html): terms of service
 

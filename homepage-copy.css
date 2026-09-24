@@ -1,4 +1,4 @@
-/* Homepage copy hierarchy: make the sensing-to-room loop legible before deeper product detail. */
+/* Homepage copy hierarchy: make the bedside routine legible before deeper product detail. */
 .lw2-site .lw2-hero-offer {
     margin: 18px 0 0;
     color: rgba(255, 253, 248, .72);
@@ -15,7 +15,7 @@
 
 .lw2-site .lw2-replaces-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     margin-top: 62px;
 }
@@ -122,7 +122,7 @@
     .lw2-site .lw2-no-score { padding: 92px 0; }
 
     .lw2-site .lw2-replaces-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         margin-top: 44px;
     }
 

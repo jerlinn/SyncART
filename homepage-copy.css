@@ -156,3 +156,11 @@
     .lw2-site .lw2-no-score h2 { font-size: 48px; }
     .lw2-site .lw2-hero-offer { margin-top: 14px; }
 }
+
+/* Match the current reservation-page finishes and render framing. */
+.lw2-site .lw2-swatch--sandstone { background: #8c7a69; }
+.lw2-site .lw2-swatch--moonstone { background: #a3a09b; }
+.lw2-site .lw2-swatch--midnight { background: #232325; }
+.lw2-site .lw2-finishes .lw2-finish-image { aspect-ratio: 1; }
+.lw2-site .lw2-finish-image img { object-fit: contain; object-position: 50% 50%; }
+.lw2-site .lw2-finish-image img[data-finish-view="detail"] { object-fit: cover; object-position: 50% 85%; }

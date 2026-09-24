@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-08-05g" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-08-05g"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-09-24a">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-09-24b">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -329,8 +329,8 @@
 
         <section class="lw2-finishes" id="finishes">
             <div class="lw2-shell lw2-finish-grid">
-                <div class="lw2-finish-copy"><p class="lw2-eyebrow">Choose your finish</p><h2>A quieter kind of color.</h2><p>Three material directions, one LunaWake experience. Select a finish to see the product render in its material state.</p><div class="lw2-finish-buttons" role="group" aria-label="Choose a LunaWake finish"><button type="button" data-finish="orange" aria-pressed="false"><span class="lw2-swatch lw2-swatch--orange"></span>Amber</button><button class="is-active" type="button" data-finish="gray" aria-pressed="true"><span class="lw2-swatch lw2-swatch--gray"></span>Stone</button><button type="button" data-finish="black" aria-pressed="false"><span class="lw2-swatch lw2-swatch--black"></span>Charcoal</button></div><p class="lw2-finish-name"><strong data-finish-name>Stone</strong><span data-finish-detail>A pale mineral neutral that keeps the room feeling open and quiet.</span></p></div>
-                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img class="is-current" data-finish-image src="images/luna-latest/finish-stone-1440.webp?v=2026-08-05d" srcset="images/luna-latest/finish-stone-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-stone-1440.webp?v=2026-08-05d 1440w" sizes="(max-width: 900px) 100vw, 60vw" width="1440" height="1199" alt="LunaWake in the Stone finish" loading="lazy" decoding="async"><img class="is-next" data-finish-image-next width="1440" height="1199" alt="" aria-hidden="true"></div><figcaption><span>LunaWake / finish render</span><span data-finish-code>LW / STONE</span></figcaption></figure>
+                <div class="lw2-finish-copy"><p class="lw2-eyebrow">Choose your finish</p><h2>A quieter kind of color.</h2><p>Three material directions, one LunaWake experience. Select a finish to see the product render in its material state.</p><div class="lw2-finish-buttons" role="group" aria-label="Choose a LunaWake finish"><button type="button" data-finish="sandstone" aria-pressed="false"><span class="lw2-swatch lw2-swatch--sandstone" aria-hidden="true"></span>Sandstone (Warm Oat)</button><button class="is-active" type="button" data-finish="moonstone" aria-pressed="true"><span class="lw2-swatch lw2-swatch--moonstone" aria-hidden="true"></span>Moonstone (Grey)</button><button type="button" data-finish="midnight" aria-pressed="false"><span class="lw2-swatch lw2-swatch--midnight" aria-hidden="true"></span>Midnight (Charcoal)</button></div><p class="lw2-finish-name"><strong data-finish-name>Moonstone (Grey)</strong><span data-finish-detail>Light grey woven fabric, standing on its base in soft daylight.</span></p></div>
+                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img class="is-current" data-finish-image data-finish-view="full" src="images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp" srcset="images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp 1254w" sizes="(max-width: 900px) 100vw, 60vw" width="1254" height="1254" alt="LunaWake in Moonstone, a light grey woven finish, standing on its base in soft daylight." loading="lazy" decoding="async"><img class="is-next" data-finish-image-next width="1254" height="1254" alt="" aria-hidden="true"></div><figcaption><span>LunaWake / finish render</span><span data-finish-code>LW / MOONSTONE</span></figcaption></figure>
             </div>
         </section>
 
@@ -375,10 +375,40 @@
         }
 
         const finishData = {
-            orange: { name: 'Amber', detail: 'Burnished amber that warms the room before the light comes on.', code: 'LW / AMBER', src: 'images/luna-latest/finish-amber-1440.webp?v=2026-08-05d', srcset: 'images/luna-latest/finish-amber-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-amber-1440.webp?v=2026-08-05d 1440w' },
-            gray: { name: 'Stone', detail: 'A pale mineral neutral that keeps the room feeling open and quiet.', code: 'LW / STONE', src: 'images/luna-latest/finish-stone-1440.webp?v=2026-08-05d', srcset: 'images/luna-latest/finish-stone-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-stone-1440.webp?v=2026-08-05d 1440w' },
-            black: { name: 'Charcoal', detail: 'Deep charcoal with a grounded, architectural presence.', code: 'LW / CHARCOAL', src: 'images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d', srcset: 'images/luna-latest/finish-charcoal-720.webp?v=2026-08-05d 720w, images/luna-latest/finish-charcoal-1440.webp?v=2026-08-05d 1440w' }
-        };
+    "sandstone": {
+        "name": "Sandstone (Warm Oat)",
+        "detail": "Warm oat woven fabric with a speckled crown and butterfly mark.",
+        "code": "LW / SANDSTONE",
+        "src": "images/luna-latest/by001-render-oatmeal-crown-logo-material-hero-ai-v1.webp",
+        "srcset": "images/luna-latest/by001-render-oatmeal-crown-logo-material-hero-ai-v1.webp 1086w",
+        "alt": "LunaWake in Sandstone, a warm oat woven finish, showing its fabric, speckled crown and butterfly mark.",
+        "width": 1086,
+        "height": 1448,
+        "view": "detail"
+    },
+    "moonstone": {
+        "name": "Moonstone (Grey)",
+        "detail": "Light grey woven fabric, standing on its base in soft daylight.",
+        "code": "LW / MOONSTONE",
+        "src": "images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp",
+        "srcset": "images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp 1254w",
+        "alt": "LunaWake in Moonstone, a light grey woven finish, standing on its base in soft daylight.",
+        "width": 1254,
+        "height": 1254,
+        "view": "full"
+    },
+    "midnight": {
+        "name": "Midnight (Charcoal)",
+        "detail": "Near-black woven fabric with a dark base and a quiet display.",
+        "code": "LW / MIDNIGHT",
+        "src": "images/luna-latest/by001-render-midnight-full-body-light-sweep.webp",
+        "srcset": "images/luna-latest/by001-render-midnight-full-body-light-sweep.webp 1254w",
+        "alt": "LunaWake in Midnight, a near-black woven finish, showing the 07:00 display on its base.",
+        "width": 1254,
+        "height": 1254,
+        "view": "full"
+    }
+};
         const finishSizes = '(max-width: 900px) 100vw, 60vw';
         const finishFrame = document.querySelector('.lw2-finish-image');
         let currentFinishImage = finishFrame?.querySelector('[data-finish-image]');
@@ -421,7 +451,10 @@
                 nextFinishImage.srcset = target.srcset;
                 nextFinishImage.sizes = finishSizes;
                 nextFinishImage.src = target.src;
-                nextFinishImage.alt = `LunaWake in the ${target.name} finish`;
+                nextFinishImage.alt = target.alt;
+                nextFinishImage.width = target.width;
+                nextFinishImage.height = target.height;
+                nextFinishImage.dataset.finishView = target.view;
                 // The supplied renders are not pixel-registered, so never overlap them.
                 // Fade through the neutral frame to avoid a visible ghost/jitter.
                 currentFinishImage.classList.add('is-hidden');
@@ -434,6 +467,8 @@
 
                 nextFinishImage.classList.remove('is-next', 'is-visible');
                 nextFinishImage.classList.add('is-current');
+                nextFinishImage.removeAttribute('aria-hidden');
+                currentFinishImage.setAttribute('aria-hidden', 'true');
                 [currentFinishImage, nextFinishImage] = [nextFinishImage, currentFinishImage];
                 currentFinishSrc = target.src;
             }

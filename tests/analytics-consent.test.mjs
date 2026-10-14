@@ -2,103 +2,93 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
-
 const source = readFileSync(new URL('../js/lw2_analytics.js', import.meta.url), 'utf8');
-const key = 'lunawake.analytics-consent.v1';
-const saved = value => JSON.stringify({ value, expires: Date.now() + 60000 });
-function page({ choice = null, hostname = 'hellolunawake.com', blockedStorage = false } = {}) {
-    const store = new Map(choice ? [[key, choice]] : []);
-    const scripts = [], cookies = [], events = {}, body = [], footer = [];
-    let reloads = 0, focused;
-    const element = tag => ({
-        tag, events: {}, setAttribute() {},
-        addEventListener(name, fn) { this.events[name] = fn; },
-        focus() { focused = this; },
-        querySelector() { return { focus() {} }; },
-    });
-    const window = { addEventListener(name, fn) { events[name] = fn; } };
+const key = 'lunawake.analytics-disabled.v1';
+function page({ disabled = null, legacy = null, hostname = 'hellolunawake.com', gpc = false, blocked = false } = {}) {
+    const store = new Map([[key, disabled], ['lunawake.analytics-consent.v1', legacy]]);
+    const scripts = [], cookies = [], footer = [], calls = [], events = {};
+    let reloads = 0;
+    const window = { addEventListener(name, fn) { events[name] = fn; }, clarity(...args) { calls.push(args); } };
     const document = {
-        createElement: element,
+        createElement(tag) { return { tag, events: {}, addEventListener(n, fn) { this.events[n] = fn; } }; },
+        getElementById(id) { return scripts.find(s => s.id === id); },
         head: { appendChild(node) { scripts.push(node); } },
-        body: { appendChild(node) { body.push(node); } },
         querySelector() { return { appendChild(node) { footer.push(node); } }; },
         set cookie(value) { cookies.push(value); },
     };
-    runInNewContext(source, { window, document, location: { hostname, reload() { reloads++; } }, localStorage: {
-        getItem(k) { if (blockedStorage) throw Error('blocked'); return store.get(k) ?? null; },
-        setItem(k, v) { if (blockedStorage) throw Error('blocked'); store.set(k, v); },
-    } });
-    return { scripts, cookies, store, window, panel: body[0], settings: footer[0],
-        get reloads() { return reloads; }, get focused() { return focused; },
-        choose(value) { body[0].events.click({ target: { closest: () => ({ dataset: { choice: value } }) } }); },
-        storage(value) { if (value) store.set(key, value); else store.delete(key); events.storage({ key }); },
-    };
+    runInNewContext(source, { window, document, navigator: { globalPrivacyControl: gpc },
+        location: { hostname, reload() { reloads++; } }, sessionStorage: { removeItem() {} },
+        localStorage: {
+            getItem(k) { if (blocked) throw Error('blocked'); return store.get(k) ?? null; },
+            setItem(k, v) { if (blocked) throw Error('blocked'); store.set(k, v); },
+        } });
+    return { scripts, cookies, store, calls, control: footer[0], events, get reloads() { return reloads; } };
 }
-
-test('no analytics before choice; rejection survives a new page', () => {
+test('default uses existing project with both storage permissions denied and no popup', () => {
     const p = page();
-    assert.equal(p.panel.hidden, false);
-    assert.equal(p.scripts.length, 0);
-    p.choose('denied');
-    assert.equal(p.scripts.length, 0);
-    const next = page({ choice: p.store.get(key) });
-    assert.equal(next.panel.hidden, true);
-    assert.equal(next.scripts.length, 0);
-});
-test('consent loads existing project once and denies advertising; persists across pages', () => {
-    const p = page();
-    p.choose('granted'); p.choose('granted');
     assert.equal(p.scripts.length, 1);
     assert.equal(p.scripts[0].src, 'https://www.clarity.ms/tag/yi1tshme1g');
-    assert.deepEqual(JSON.parse(JSON.stringify(Array.from(p.window.clarity.q[0]))),
-        ['consentv2', { analytics_Storage: 'granted', ad_Storage: 'denied' }]);
-    const next = page({ choice: p.store.get(key) });
-    assert.equal(next.panel.hidden, true);
-    assert.equal(next.scripts.length, 1);
+    assert.deepEqual(JSON.parse(JSON.stringify(p.calls[0])),
+        ['consentv2', { analytics_Storage: 'denied', ad_Storage: 'denied' }]);
+    assert.equal(p.control.textContent, 'Turn off analytics');
+    assert.ok(!source.includes('innerHTML'));
 });
-test('footer reopens choices; revocation clears cookies and unloads recorder', () => {
-    const p = page({ choice: saved('granted') });
-    p.settings.events.click();
-    assert.equal(p.panel.hidden, false);
-    p.choose('denied');
-    assert.equal(p.focused, p.settings);
-    assert.equal(p.reloads, 1);
+test('old opt-in never grants cookie access; old refusal and browser opt-out are respected', () => {
+    assert.equal(page({ legacy: JSON.stringify({ value: 'granted' }) }).calls[0][1].analytics_Storage, 'denied');
+    assert.equal(page({ legacy: JSON.stringify({ value: 'denied' }) }).scripts.length, 0);
+    assert.equal(page({ disabled: 'true' }).scripts.length, 0);
+    const p = page({ gpc: true });
+    assert.equal(p.scripts.length, 0);
+    assert.equal(p.control.disabled, true);
+});
+test('footer opt-out stops collection and persists, re-enabling stays cookieless without duplicate tag', () => {
+    const p = page();
+    p.control.events.click();
+    assert.equal(p.calls.at(-1)[0], 'stop');
+    assert.equal(p.store.get(key), 'true');
+    assert.equal(page({ disabled: p.store.get(key) }).scripts.length, 0);
+    p.control.events.click();
+    assert.equal(p.store.get(key), 'false');
+    assert.equal(p.scripts.length, 1);
+    assert.equal(p.calls.at(-1)[1].analytics_Storage, 'denied');
+});
+test('a refused visit can explicitly re-enable cookieless analytics', () => {
+    const p = page({ legacy: JSON.stringify({ value: 'denied' }) });
+    p.control.events.click();
+    assert.equal(p.scripts.length, 1);
+    assert.equal(p.calls[0][1].analytics_Storage, 'denied');
+});
+test('old identifiers are expired, no persistent cookies are created', () => {
+    const p = page();
     assert.ok(p.cookies.some(c => c.startsWith('_clck=; Max-Age=0')));
     assert.ok(p.cookies.some(c => c.startsWith('_clsk=; Max-Age=0')));
-    assert.equal(page({ choice: p.store.get(key) }).scripts.length, 0);
+    assert.ok(p.cookies.every(c => c.includes('Max-Age=0')));
 });
-test('invalid or expired preferences ask again without collecting', () => {
-    for (const choice of ['broken', JSON.stringify({ value: 'granted', expires: 0 }), saved('other')]) {
-        const p = page({ choice });
-        assert.equal(p.scripts.length, 0);
-        assert.equal(p.panel.hidden, false);
-    }
-});
-test('unavailable storage does not prevent a choice or record by default', () => {
-    const p = page({ blockedStorage: true });
-    assert.equal(p.scripts.length, 0);
-    p.choose('granted');
+test('unavailable storage does not break collection or page-only opt-out', () => {
+    const p = page({ blocked: true });
     assert.equal(p.scripts.length, 1);
-    p.choose('denied');
-    assert.equal(p.reloads, 1);
+    p.control.events.click();
+    assert.equal(p.calls.at(-1)[0], 'stop');
 });
-test('changes in another tab start or unload recording', () => {
+test('an opt-out during tag loading queues stop; changes in another tab reload', () => {
     const p = page();
-    p.storage(saved('granted'));
-    assert.equal(p.scripts.length, 1);
-    p.storage(saved('denied'));
+    p.control.events.click();
+    p.scripts[0].onload();
+    assert.equal(p.calls.at(-1)[0], 'stop');
+    p.events.storage({ key });
     assert.equal(p.reloads, 1);
 });
-test('local and preview hosts never send analytics', () => {
+test('previews never send analytics or touch cookies', () => {
     for (const hostname of ['127.0.0.1', 'localhost', 'jerlinn.github.io']) {
-        const p = page({ hostname, choice: saved('granted') });
+        const p = page({ hostname });
         assert.equal(p.scripts.length, 0);
+        assert.equal(p.cookies.length, 0);
     }
 });
-test('all public content pages and future article template load consent assets once', () => {
+test('public pages have updated script and no popup assets', () => {
     for (const name of ['index', 'about', 'science', 'support', 'privacy', 'terms', 'press', '_article-template']) {
         const html = readFileSync(new URL('../' + name + '.html', import.meta.url), 'utf8');
-        assert.equal((html.match(/src="\/js\/lw2_analytics.js/g) || []).length, 1);
-        assert.equal((html.match(/href="\/cookie-consent.css/g) || []).length, 1);
+        assert.equal((html.match(/src="\/js\/lw2_analytics.js\?v=2026-10-14b/g) || []).length, 1);
+        assert.ok(!html.includes('cookie-consent.css'));
     }
 });

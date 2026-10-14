@@ -33,6 +33,27 @@ HTML file in the same commit: `grep -rln 'v=2026-' *.html signup/index.html`.
 Note: `signup/index.html` intentionally uses a meta-refresh redirect — GitHub Pages cannot
 issue server-side redirects to external hosts. It is `noindex` and excluded from Lighthouse audits.
 
+## Website analytics
+
+The main website uses the existing LunaWake Microsoft Clarity project `yi1tshme1g`.
+`js/lw2_analytics.js` loads the vendor only on `hellolunawake.com` and
+`www.hellolunawake.com`, after an explicit analytics choice. Local previews never
+send recordings. The Shopify reservation site keeps its separate official app
+installation in the same project; filter by visited URL to distinguish sites.
+
+Choices are saved per browser origin for 180 days. The footer’s Cookie settings
+button reopens the choices. Withdrawal clears Clarity cookies and reloads the
+page to unload its runtime. When storage is blocked, the choice applies only to
+the current page. Advertising consent stays denied. Keep the privacy disclosure,
+`cookie-consent.css`, and the shared script references in all public content pages
+(and the article template) together when changing this integration.
+
+Run the dependency-free consent checks with:
+
+```bash
+node --test tests/analytics-consent.test.mjs
+```
+
 ## Features
 
 - Responsive design for all devices

@@ -35,20 +35,22 @@ issue server-side redirects to external hosts. It is `noindex` and excluded from
 
 ## Website analytics
 
-The main website uses the existing LunaWake Microsoft Clarity project `yi1tshme1g`.
-`js/lw2_analytics.js` loads the vendor only on `hellolunawake.com` and
-`www.hellolunawake.com`, after an explicit analytics choice. Local previews never
-send recordings. The Shopify reservation site keeps its separate official app
-installation in the same project; filter by visited URL to distinguish sites.
+The main website uses the existing LunaWake Microsoft Clarity project `yi1tshme1g`
+in cookieless mode, with no consent popup. **Keep Settings → Setup → Cookies OFF
+in this Clarity project.** The shared script sends `consentv2` with both storage
+permissions denied and removes old Clarity identifiers before loading. Analytics
+runs only on `hellolunawake.com` and `www.hellolunawake.com`, never in previews.
 
-Choices are saved per browser origin for 180 days. The footer’s Cookie settings
-button reopens the choices. Withdrawal clears Clarity cookies and reloads the
-page to unload its runtime. When storage is blocked, the choice applies only to
-the current page. Advertising consent stays denied. Keep the privacy disclosure,
-`cookie-consent.css`, and the shared script references in all public content pages
-(and the article template) together when changing this integration.
+The footer offers a local-storage opt-out, also respecting Global Privacy Control
+and a previous explicit refusal. No analytics permission is ever granted by this
+script. Cookieless reporting supports page interactions and single-page recordings;
+it cannot reliably connect pages into journeys or distinguish returning visitors.
+Shopify keeps its official app, which sends Shopify's actual consent decisions to
+the same project. Filter by visited URL to distinguish sites.
 
-Run the dependency-free consent checks with:
+Keep the disclosure, `analytics-privacy.css`, and shared script references in the
+seven public content pages and article template together. Verify the live consent
+status is denied/denied, `_clck` and `_clsk` are absent, and `/collect` succeeds.
 
 ```bash
 node --test tests/analytics-consent.test.mjs

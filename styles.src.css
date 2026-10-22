@@ -5604,3 +5604,19 @@ h3 {
     .lw2-site .lw2-faq-grid { gap: 34px; }
     .lw2-site .lw2-cbti-grid, .lw2-site .lw2-no-score-grid { gap: 32px; }
 }
+
+/* Agent connector footer */
+
+.lw2-footer .lw2-mcp{border-top:1px solid rgba(255,253,248,.16);border-bottom:1px solid rgba(255,253,248,.16);margin:30px 0;padding:0;color:#fffdf8}
+.lw2-mcp summary{display:flex;align-items:center;gap:16px;cursor:pointer;list-style:none;padding:21px 0;font-size:14px;font-weight:400}
+.lw2-mcp summary::-webkit-details-marker{display:none}
+.lw2-mcp-label{color:rgba(255,253,248,.55);font-size:11px}
+.lw2-mcp-plus{margin-left:auto;font-size:20px;font-weight:300}
+.lw2-mcp[open] .lw2-mcp-plus{transform:rotate(45deg)}
+.lw2-mcp-content{padding:0 0 24px;max-width:800px}
+.lw2-footer .lw2-mcp-content p{font-size:14px;line-height:1.8;color:rgba(255,253,248,.8);margin:0;overflow-wrap:anywhere;user-select:text}
+.lw2-footer .lw2-mcp-content a{text-decoration:underline;text-underline-offset:3px;color:inherit}
+.lw2-mcp-actions{display:flex;align-items:center;gap:14px;margin-top:18px;font-size:12px;color:rgba(255,253,248,.65)}
+.lw2-mcp-actions button{font:inherit;color:#fffdf8;border:1px solid rgba(255,253,248,.35);border-radius:999px;background:transparent;cursor:pointer;padding:8px 20px;min-height:40px}
+.lw2-mcp-actions button:hover{background:rgba(255,253,248,.1)}
+.lw2-mcp summary:focus-visible,.lw2-mcp button:focus-visible,.lw2-mcp a:focus-visible{outline:2px solid #fffdf8;outline-offset:5px}

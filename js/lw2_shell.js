@@ -102,3 +102,21 @@
         });
     }, { passive: true });
 })();
+
+;(() => {
+ document.querySelectorAll('[data-mcp-copy]').forEach(button => {
+  let timer;
+  button.addEventListener('click', async () => {
+   const panel = button.closest('.lw2-mcp');
+   const status = panel.querySelector('[data-mcp-status]');
+   clearTimeout(timer);
+   try {
+    await navigator.clipboard.writeText(panel.querySelector('[data-mcp-prompt]').textContent);
+    button.textContent = 'Copied'; status.textContent = 'Copied to clipboard.';
+    timer = setTimeout(() => {button.textContent = 'Copy'; status.textContent = '';}, 2500);
+   } catch {
+    button.textContent = 'Copy'; status.textContent = 'Select the sentence above and copy it manually.';
+   }
+  });
+ });
+})();

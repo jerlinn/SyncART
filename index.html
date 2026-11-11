@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-10-22-mcp1" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-10-22-mcp1"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-11c">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-11d">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -116,25 +116,31 @@
                 <p class="lw2-hero-copy">LunaWake handles your wind-down and your wake-up, and its AI sleep coach tells you in a few sentences what last night meant. Nothing to wear, nothing to charge.</p>
                 <div class="lw2-actions">
                     <a class="lw2-button lw2-button--light" href="https://reserve.hellolunawake.com/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
-                    <a class="lw2-inline-link lw2-inline-link--light" href="#how-it-works">See one night <span aria-hidden="true">↓</span></a>
+                    <a class="lw2-inline-link lw2-inline-link--light" href="#film">Watch one night <span aria-hidden="true">↓</span></a>
                 </div>
                 <div class="lw2-hero-meta"><span>Nothing to wear</span><i></i><span>Looks after your night</span><i></i><span>No subscription</span></div>
             </div>
         </section>
 
-        <section class="lw2-tried" id="what-it-replaces" aria-labelledby="replaces-heading">
+        <section class="lw2-film" id="film" aria-labelledby="film-heading">
             <div class="lw2-shell">
-                <div class="lw2-tried-card">
-                    <p class="lw2-eyebrow">Sound familiar</p>
-                    <h2 id="replaces-heading">Sleep shouldn’t feel like work.</h2>
-                    <ul class="lw2-tried-points">
-                        <li>A watch to charge and wear to bed.</li>
-                        <li>A sleep score to decode on your own.</li>
-                        <li>A sound timer to set every night.</li>
-                    </ul>
+                <div class="lw2-section-head lw2-film-head">
+                    <div><p class="lw2-eyebrow">The film / one night in 1:44</p><h2 id="film-heading">Put the watch away.<br> LunaWake takes the night from here.</h2></div>
+                    <p>One night with LunaWake: the wind-down, the light and sound that fade once you’re asleep, a gentle wake-up, and a few sentences in the morning on what last night meant.</p>
                 </div>
-                <p class="lw2-tried-answer"><strong>LunaWake takes these off your plate.</strong> Nothing to wear. Soundscapes designed to fade out after you fall asleep. A few sentences each morning on what last night meant.</p>
-                <p class="lw2-tried-note">One bedside object in place of a sleep tracker, a sound machine, and a sunrise alarm. No subscription for the essentials.</p>
+                <div class="lw2-film-frame" data-film>
+                    <video class="lw2-film-video" preload="none" playsinline width="1920" height="1080" poster="images/luna-latest/video-posters/brand-film-poster.webp" aria-label="LunaWake brand film: one night, from wind-down to morning">
+                        <source src="https://cdn.shopify.com/videos/c/o/v/dab967ca90a54576b0b17ffe36940779.mp4" type="video/mp4">
+                    </video>
+                    <button class="lw2-film-play" type="button" data-film-play aria-label="Play the LunaWake film, 1 minute 44 seconds"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><span>Watch the film</span><small>1:44</small></button>
+                </div>
+                <ol class="lw2-film-chapters" aria-label="Jump to a moment in the film">
+                    <li><button type="button" data-film-seek="3"><span>0:03</span><strong>Evening</strong><small>Nothing to wear. Warm light and soundscapes to wind down.</small></button></li>
+                    <li><button type="button" data-film-seek="21"><span>0:21</span><strong>Asleep</strong><small>Light and sound are designed to fade together once you’re asleep.</small></button></li>
+                    <li><button type="button" data-film-seek="44"><span>0:44</span><strong>Wake-up</strong><small>A soft glow ten minutes before your alarm, then light and sound that build.</small></button></li>
+                    <li><button type="button" data-film-seek="59"><span>0:59</span><strong>Morning</strong><small>A few sentences on what last night meant.</small></button></li>
+                </ol>
+                <p class="lw2-film-note"><strong>One bedside object in place of a sleep tracker, a sound machine, and a sunrise alarm.</strong> No subscription for the essentials. <a class="lw2-inline-link" href="https://reserve.hellolunawake.com/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a></p>
             </div>
         </section>
 
@@ -572,6 +578,36 @@
             }
         }
         document.querySelectorAll('[data-year]').forEach((item) => item.textContent = new Date().getFullYear());
+    })();
+    </script>
+    <script>
+    (() => {
+        const frame = document.querySelector('[data-film]');
+        if (!frame) return;
+        const video = frame.querySelector('video');
+        const play = frame.querySelector('[data-film-play]');
+        const seeks = Array.from(document.querySelectorAll('[data-film-seek]'));
+        const start = (t) => {
+            video.controls = true;
+            if (typeof t === 'number') {
+                if (video.readyState >= 1) video.currentTime = t;
+                else video.addEventListener('loadedmetadata', () => { video.currentTime = t; }, { once: true });
+            }
+            const p = video.play();
+            if (p && p.catch) p.catch(() => {});
+        };
+        play.addEventListener('click', () => start());
+        seeks.forEach((b) => b.addEventListener('click', () => {
+            frame.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            start(Number(b.dataset.filmSeek));
+        }));
+        video.addEventListener('play', () => frame.classList.add('is-playing'));
+        video.addEventListener('ended', () => frame.classList.remove('is-playing'));
+        video.addEventListener('timeupdate', () => {
+            let active = -1;
+            seeks.forEach((b, i) => { if (video.currentTime >= Number(b.dataset.filmSeek)) active = i; });
+            seeks.forEach((b, i) => b.classList.toggle('is-active', i === active));
+        });
     })();
     </script>
 </body>

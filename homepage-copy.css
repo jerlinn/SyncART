@@ -170,3 +170,51 @@
 
 /* "What it replaces" and the Autopilot share a background; a hairline separates them. */
 .lw2-site .lw2-replaces + .lw2-real-life { border-top: 1px solid var(--lw2-line); }
+
+/* Pain screen: one dark card with three short lines; the answer sits outside the card. */
+.lw2-site .lw2-tried { padding: 96px 0 104px; background: var(--lw2-warm); }
+.lw2-site .lw2-tried + .lw2-cbti { background: #f0ede7; }
+.lw2-site .lw2-cbti + .lw2-real-life { border-top: 1px solid var(--lw2-line); }
+.lw2-site .lw2-tried-card { padding: 64px 64px 56px; background: #151719; color: #f0ede7; }
+.lw2-site .lw2-tried-card .lw2-eyebrow { color: #d3cec7; }
+.lw2-site .lw2-tried-card h2 {
+    max-width: 860px;
+    margin: 0;
+    color: #fffdf8;
+    font-family: var(--font-serif);
+    font-size: clamp(40px, 4.6vw, 66px);
+    font-weight: 400;
+    letter-spacing: -.025em;
+    line-height: 1;
+}
+.lw2-site .lw2-tried-points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 56px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.lw2-site .lw2-tried-points li {
+    padding-top: 18px;
+    border-top: 1px solid rgba(240, 237, 231, .22);
+    font-size: 19px;
+    line-height: 1.35;
+}
+.lw2-site .lw2-tried-answer { max-width: 760px; margin: 40px 0 0; color: var(--lw2-muted); font-size: 18px; line-height: 1.6; }
+.lw2-site .lw2-tried-answer strong { color: var(--lw2-ink); font-weight: 500; }
+.lw2-site .lw2-tried-note { max-width: 760px; margin: 14px 0 0; color: var(--lw2-faint); font-size: 13px; line-height: 1.65; }
+
+@media (max-width: 900px) {
+    .lw2-site .lw2-tried { padding: 72px 0 76px; }
+    .lw2-site .lw2-tried-card { padding: 44px 36px 40px; }
+    .lw2-site .lw2-tried-points { margin-top: 40px; }
+}
+@media (max-width: 560px) {
+    .lw2-site .lw2-tried { padding: 20px 0 60px; }
+    .lw2-site .lw2-tried-card { padding: 32px 22px 28px; }
+    .lw2-site .lw2-tried-card h2 { font-size: 34px; }
+    .lw2-site .lw2-tried-points { grid-template-columns: 1fr; gap: 0; margin-top: 26px; }
+    .lw2-site .lw2-tried-points li { padding: 13px 0; font-size: 16px; }
+    .lw2-site .lw2-tried-answer { margin-top: 26px; font-size: 16px; }
+}

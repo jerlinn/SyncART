@@ -1363,8 +1363,6 @@ h3 {
 .lw2-real-life-card { position: relative; min-width: 0; margin: 0; overflow: hidden; background: #dad6cf; }
 .lw2-real-life-card img { display: block; width: 100%; aspect-ratio: 1.08; object-fit: cover; filter: saturate(.84) contrast(.98); }
 .lw2-real-life-card--tall img { aspect-ratio: .9; }
-.lw2-real-life-card--evening img { object-position: 22% 55%; }
-.lw2-real-life-card--morning img { object-position: 36% 55%; }
 .lw2-real-life-card::after { position: absolute; inset: 0; content: ""; background: linear-gradient(0deg, rgba(20, 17, 15, .64), transparent 48%); pointer-events: none; }
 .lw2-real-life-card figcaption { position: absolute; z-index: 1; right: 18px; bottom: 17px; left: 18px; display: grid; gap: 5px; color: #fffdf8; }
 .lw2-real-life-card figcaption span { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }

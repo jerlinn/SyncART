@@ -1356,6 +1356,19 @@ h3 {
 .lw2-intro-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; }
 .lw2-intro h2, .lw2-section-head h2, .lw2-device-copy h2, .lw2-finish-copy h2, .lw2-lab-copy h2, .lw2-faq h2, .lw2-cta h2 { margin: 0; font-family: var(--font-serif); font-size: clamp(44px, 5.2vw, 76px); line-height: .98; }
 .lw2-intro-grid > div { max-width: 740px; }
+.lw2-intro-grid > .lw2-rhythm-media {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: clamp(24px, 5vw, 72px);
+    max-width: none;
+}
+.lw2-rhythm-device img {
+    width: 100%;
+    border-radius: 24px;
+}
 .lw2-intro-grid > div p { max-width: 540px; margin: 25px 0 0; color: var(--lw2-muted); font-size: 17px; line-height: 1.65; }
 .lw2-real-life { padding: 112px 0 120px; background: #f0ede7; }
 .lw2-real-life-head { display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px; align-items: end; }
@@ -1365,8 +1378,22 @@ h3 {
 .lw2-real-life-card { position: relative; min-width: 0; margin: 0; overflow: hidden; background: #dad6cf; }
 .lw2-real-life-card img { display: block; width: 100%; aspect-ratio: 1.08; object-fit: cover; filter: saturate(.84) contrast(.98); }
 .lw2-real-life-card--tall img { aspect-ratio: .9; }
+.lw2-real-life-card--text {
+    display: grid;
+    align-content: end;
+    aspect-ratio: 1.08;
+    background: #302a26;
+}
+@media (max-width: 900px) {
+    .lw2-real-life-card--text { aspect-ratio: auto; }
+}
 .lw2-real-life-card::after { position: absolute; inset: 0; content: ""; background: linear-gradient(0deg, rgba(20, 17, 15, .64), transparent 48%); pointer-events: none; }
 .lw2-real-life-card figcaption { position: absolute; z-index: 1; right: 18px; bottom: 17px; left: 18px; display: grid; gap: 5px; color: #fffdf8; }
+.lw2-real-life-card--text figcaption {
+    position: relative;
+    inset: auto;
+    padding: 24px 18px 17px;
+}
 .lw2-real-life-card figcaption span { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
 .lw2-real-life-card figcaption strong { font-family: var(--font-serif); font-size: 25px; font-weight: 400; line-height: 1; }
 .lw2-process { padding: 128px 0; background: var(--lw2-cream); }
@@ -1423,9 +1450,10 @@ h3 {
 .lw2-app { padding: 128px 0 136px; background: var(--lw2-cream); }
 .lw2-lab { padding: 128px 0; background: var(--lw2-dark); color: #fffdf8; }
 .lw2-lab-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: center; }
-.lw2-lab-media { position: relative; overflow: hidden; background: #0d0c0b; }
+.lw2-lab-media { position: relative; overflow: hidden; margin: 0; background: #0d0c0b; }
 .lw2-lab-media img, .lw2-lab-media video { width: 100%; aspect-ratio: 1.25; object-fit: cover; }
-.lw2-lab-media > span { display: block; padding: 12px 15px; color: rgba(255, 253, 248, .5); font-size: 10px; letter-spacing: .04em; }
+.lw2-lab-media img { object-position: 15% 50%; }
+.lw2-lab-media > figcaption { display: block; padding: 12px 15px; color: rgba(255, 253, 248, .5); font-size: 10px; letter-spacing: .04em; }
 .lw2-lab-copy { max-width: 450px; }
 .lw2-lab .lw2-eyebrow { color: #a9b2d8; }
 .lw2-lab-copy h2 { font-size: clamp(42px, 4.5vw, 66px); }
@@ -1512,6 +1540,7 @@ h3 {
     .lw2-actions { align-items: flex-start; flex-direction: column; gap: 18px; margin-top: 27px; }
     .lw2-hero-meta { gap: 9px; margin-top: 48px; font-size: 11px; letter-spacing: .06em; }
     .lw2-intro-grid { gap: 24px; }
+    .lw2-intro-grid > .lw2-rhythm-media { grid-template-columns: 1fr; }
     .lw2-intro h2, .lw2-real-life-head h2, .lw2-section-head h2, .lw2-radar-head h2, .lw2-device-copy h2, .lw2-finish-copy h2, .lw2-lab-copy h2, .lw2-faq h2 { font-size: 48px; }
     .lw2-section-head > p { font-size: 14px; }
     .lw2-process-body { padding: 21px 20px 24px; }
@@ -1946,14 +1975,9 @@ h3 {
 }
 .lw2-app-insight--morning .lw2-app-insight-media {
     justify-self: end;
-    aspect-ratio: 1320 / 1350;
-    overflow: hidden;
-}
-.lw2-app-insight--morning .lw2-app-insight-media img {
-    max-width: none;
 }
 .lw2-app-sunrise-media {
-    width: min(100%, 500px);
+    width: min(100%, 390px);
 }
 .lw2-app-insight--pattern .lw2-app-insight-media {
     justify-self: start;
@@ -1979,7 +2003,7 @@ h3 {
     height: 620px;
     overflow-y: auto;
     border-radius: 30px;
-    background: #f7f5f0;
+    background: #181818;
     box-shadow: 0 18px 42px rgba(48, 42, 34, .10);
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;

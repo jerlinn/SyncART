@@ -218,3 +218,11 @@
     .lw2-site .lw2-tried-points li { padding: 13px 0; font-size: 16px; }
     .lw2-site .lw2-tried-answer { margin-top: 26px; font-size: 16px; }
 }
+
+/* Three-line hero headline: breathing room before the subcopy; natural wrapping on phones. */
+.lw2-site .lw2-hero h1 + .lw2-hero-copy { margin-top: 30px; }
+@media (max-width: 560px) {
+    .lw2-site .lw2-hero h1 br { display: none; }
+    .lw2-site .lw2-hero h1 { font-size: clamp(40px, 10.6vw, 52px); }
+    .lw2-site .lw2-hero h1 + .lw2-hero-copy { margin-top: 20px; }
+}

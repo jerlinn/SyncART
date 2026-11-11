@@ -164,3 +164,9 @@
 .lw2-site .lw2-finishes .lw2-finish-image { aspect-ratio: 1; }
 .lw2-site .lw2-finish-image img { object-fit: contain; object-position: 50% 50%; }
 .lw2-site .lw2-finish-image img[data-finish-view="detail"] { object-fit: cover; object-position: 50% 85%; }
+
+/* Coach section: "Keep your watch" now sits directly under the section head. */
+.lw2-site .lw2-app-story-head + .lw2-app-backstage { margin-top: 56px; }
+
+/* "What it replaces" and the Autopilot share a background; a hairline separates them. */
+.lw2-site .lw2-replaces + .lw2-real-life { border-top: 1px solid var(--lw2-line); }

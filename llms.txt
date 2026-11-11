@@ -16,7 +16,7 @@ Key facts:
 - Smart Wake: a soft glow ten minutes before the alarm; the alarm starts at the time the user sets. It does not pick a wake time from sleep stages or movement.
 - Offline: after a one-time Wi-Fi setup, alarms, light, sound, and overnight recording keep running on the device without a connection. Sleep reports, Luna, and updates need a connection. The device has no battery; after a power cut it needs to reconnect to recover the time.
 - One object in place of three: sound machine, sunrise alarm, and wearable-free sleep tracker, plus an AI sleep coach.
-- Pricing model at launch: one-time hardware purchase with no monthly or annual fee planned. Device features and sleep data stay free. Asking Luna and periodic reports use credits, bought as needed and never expiring; some come with the device. Prices are not announced.
+- Pricing: one-time hardware purchase, no subscription and no monthly or annual fee. Device features and sleep data stay free. Asking Luna and periodic reports use credits, bought as needed and never expiring; some come with the device. Prices are not announced.
 - Designed for one sleeper closest to the device; reliable multi-person separation is not a supported capability.
 - Testing: contact-free sensing is being compared against technician-scored polysomnography (PSG) in a university sleep lab. This work is in progress and no accuracy figure is claimed.
 - Category: consumer wellness product. Not a medical device; not intended to diagnose, treat, or prevent disease. Luna's coaching draws on CBT-I methods and does not diagnose.

@@ -1127,3 +1127,103 @@ body.lw2-site.lw2-homepage .lw2-type-picker button[aria-pressed="true"]:hover {
 }
 body.lw2-site.lw2-homepage .lw2-type-picker button:focus-visible { outline: 2px solid var(--lw2-graphic-accent-ink); outline-offset: 2px; }
 body.lw2-site.lw2-homepage .lw2-type-picker button:focus:not(:focus-visible) { outline: none; }
+
+/* Rhythm dial centre: a round window of this phase's sky, airbrushed from four soft colour
+   fields with a fine grain, drifting slowly; one short line of care on top. The colours are
+   registered so each field eases into the next phase. Lines are drawn from the care lines
+   LunaWake speaks when held (luna-product web/lib/rhythm-check/catalog.ts). */
+@property --sky-a { syntax: "<color>"; inherits: true; initial-value: #f2b27c; }
+@property --sky-b { syntax: "<color>"; inherits: true; initial-value: #e58f7a; }
+@property --sky-c { syntax: "<color>"; inherits: true; initial-value: #f6d9a0; }
+@property --sky-base { syntax: "<color>"; inherits: true; initial-value: #eec3a0; }
+@property --sky-ink { syntax: "<color>"; inherits: true; initial-value: #2a211c; }
+body.lw2-site.lw2-homepage .lw2-rhythm-center {
+    --sky-ease: 1.4s cubic-bezier(.32, .72, 0, 1);
+    inset: 28%;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 2vw, 28px);
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 50%;
+    background: var(--sky-base);
+    box-shadow: 0 18px 50px -24px color-mix(in srgb, var(--sky-a) 70%, transparent), inset 0 0 0 1px rgba(255, 255, 255, .18);
+    transition: --sky-a var(--sky-ease), --sky-b var(--sky-ease), --sky-c var(--sky-ease), --sky-base var(--sky-ease), --sky-ink var(--sky-ease);
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-center::before {
+    content: "";
+    position: absolute;
+    inset: -25%;
+    z-index: -2;
+    background:
+        radial-gradient(42% 42% at 28% 30%, var(--sky-a), transparent 72%),
+        radial-gradient(40% 40% at 74% 26%, var(--sky-b), transparent 72%),
+        radial-gradient(50% 46% at 58% 78%, var(--sky-c), transparent 74%),
+        radial-gradient(36% 36% at 22% 76%, var(--sky-b), transparent 70%);
+    filter: blur(14px) saturate(1.08);
+    animation: lw2-sky-drift 48s linear infinite;
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-center::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: soft-light;
+    opacity: .55;
+}
+@keyframes lw2-sky-drift {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.06); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="0"] { --sky-a: #f6bfa0; --sky-b: #c5c0ea; --sky-c: #f8e2c0; --sky-base: #e6d2da; --sky-ink: #2a211c; }
+body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="1"] { --sky-a: #b8deea; --sky-b: #f6efd6; --sky-c: #d4ecd6; --sky-base: #e2eef0; --sky-ink: #1f2a2c; }
+body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="2"] { --sky-a: #eed5b0; --sky-b: #d6d3e6; --sky-c: #f4e8d4; --sky-base: #e9e1d4; --sky-ink: #2a241d; }
+body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="3"] { --sky-a: #f2b27c; --sky-b: #e58f7a; --sky-c: #f6d9a0; --sky-base: #eec3a0; --sky-ink: #2a1d16; }
+body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="4"] { --sky-a: #8a74b4; --sky-b: #cf93a6; --sky-c: #44508a; --sky-base: #5e5884; --sky-ink: #fdf8ef; }
+body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="5"] { --sky-a: #2b3878; --sky-b: #55428a; --sky-c: #10142a; --sky-base: #1b2038; --sky-ink: #f1ecdf; }
+body.lw2-site.lw2-homepage .lw2-rhythm-care {
+    margin: 0;
+    color: var(--sky-ink);
+    font-size: var(--t4);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    text-align: center;
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-care span { display: block; text-wrap: balance; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-rhythm-care { font-size: var(--t6); }
+}
+@media (prefers-reduced-motion: reduce) {
+    body.lw2-site.lw2-homepage .lw2-rhythm-center { transition: none; }
+    body.lw2-site.lw2-homepage .lw2-rhythm-center::before { animation: none; }
+}
+
+/* One visual system: the device icons sit on small airbrushed skies borrowed from the dial
+   (Sound · dusk, Light · sleep window, Insights · night, Alarm · dawn), dotted in light ink;
+   the dial's small phase icons stay as clean fine lines, so dots remain the accent. */
+body.lw2-site.lw2-homepage .lw2-feature-icon {
+    box-sizing: border-box;
+    width: clamp(52px, 4.2vw, 60px);
+    padding: 9px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 24px -14px var(--orb-a), inset 0 0 0 1px rgba(255, 255, 255, .2);
+    background:
+        radial-gradient(60% 60% at 26% 28%, var(--orb-a), transparent 72%),
+        radial-gradient(56% 56% at 76% 30%, var(--orb-b), transparent 72%),
+        radial-gradient(70% 60% at 56% 86%, var(--orb-c), transparent 74%),
+        var(--orb-base);
+}
+body.lw2-site.lw2-homepage .lw2-sky--dawn { --orb-a: #f6bfa0; --orb-b: #c5c0ea; --orb-c: #f8e2c0; --orb-base: #e6d2da; }
+body.lw2-site.lw2-homepage .lw2-sky--dusk { --orb-a: #f2b27c; --orb-b: #e58f7a; --orb-c: #f6d9a0; --orb-base: #eec3a0; }
+body.lw2-site.lw2-homepage .lw2-sky--window { --orb-a: #8a74b4; --orb-b: #cf93a6; --orb-c: #44508a; --orb-base: #5e5884; }
+body.lw2-site.lw2-homepage .lw2-sky--night { --orb-a: #2b3878; --orb-b: #55428a; --orb-c: #10142a; --orb-base: #1b2038; }
+body.lw2-site.lw2-homepage .lw2-feature-icon .d { stroke: #fffaf1; stroke-width: 2; stroke-dasharray: 0 3.8; }
+body.lw2-site.lw2-homepage .lw2-feature-icon .s { fill: #fffaf1; }
+body.lw2-site.lw2-homepage :is(.lw2-sky--dawn, .lw2-sky--dusk) .d { stroke: #3d2a22; }
+body.lw2-site.lw2-homepage :is(.lw2-sky--dawn, .lw2-sky--dusk) .s { fill: #3d2a22; }
+

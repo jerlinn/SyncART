@@ -1315,3 +1315,26 @@ body.lw2-site.lw2-homepage .lw2-type-picker button[aria-pressed="true"] { border
 /* Icons and small marks: neutral */
 body.lw2-site.lw2-homepage .lw2-sound-sources svg { stroke: #1d1d1f; }
 body.lw2-site.lw2-homepage .lw2-app-pilot time { color: #1d1d1f; }
+
+/* Rhythm dial motion: the base ring stays grey; the current arc is drawn in ink by an overlay
+   (pathLength 1, dash offset driven by script). While autoplay runs the script moves the pointer
+   every frame, so its CSS transition is off; a viewer's choice glides it with a long ease. */
+body.lw2-site.lw2-homepage .lw2-rhythm-arcs path,
+body.lw2-site.lw2-homepage .lw2-rhythm-arcs path.is-active { stroke: #d2d2d7; }
+.lw2-rhythm-progress path {
+    fill: none;
+    stroke: #1d1d1f;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 1 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset .9s cubic-bezier(.32, .72, 0, 1);
+}
+.lw2-rhythm-dial.is-playing .lw2-rhythm-progress path { transition: none; }
+body.lw2-site.lw2-homepage .lw2-rhythm-pointer { transition: transform .9s cubic-bezier(.32, .72, 0, 1); }
+body.lw2-site.lw2-homepage .lw2-rhythm-dial.is-playing .lw2-rhythm-pointer { transition: none; }
+body.lw2-site.lw2-homepage .lw2-rhythm-phase { transition: color .7s cubic-bezier(.32, .72, 0, 1); }
+body.lw2-site.lw2-homepage .lw2-rhythm-figure figcaption span { display: inline-block; }
+@media (prefers-reduced-motion: reduce) {
+    .lw2-rhythm-progress path, body.lw2-site.lw2-homepage .lw2-rhythm-pointer { transition: none; }
+}

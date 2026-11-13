@@ -1257,3 +1257,61 @@ body.lw2-site.lw2-homepage .lw2-rhythm-phase:focus-visible { outline: 1px solid 
    the scrolled header keeps only its 1px bottom line. */
 body.lw2-site.lw2-homepage .lw2-header.is-scrolled { box-shadow: none; }
 body.lw2-site.lw2-homepage .lw2-button { box-shadow: none; }
+
+/* ==========================================================================
+   Colour calibration after apple.com (2026-11-12)
+   Grounds: white and #f5f5f7, alternating; black for the dark bands.
+   Text: #1d1d1f, secondary #6e6e73, tertiary #86868b; on dark #f5f5f7 / #a1a1a6.
+   Hairlines #d2d2d7. Colour is kept for content only: the rhythm skies, the finish
+   swatches and the night charts. UI text and icons are neutral.
+   ========================================================================== */
+body.lw2-site.lw2-homepage {
+    --lw2-ink: #1d1d1f;
+    --lw2-muted: #6e6e73;
+    --lw2-annotation: #6e6e73;
+    --lw2-faint: #86868b;
+    --lw2-blue: #6e6e73;
+    --lw2-line: #d2d2d7;
+    --lw2-graphic-line: #d2d2d7;
+    --lw2-graphic-track: #d2d2d7;
+    --lw2-graphic-stone: #86868b;
+    --lw2-graphic-accent-ink: #1d1d1f;
+    --lw2-graphic-paper: #ffffff;
+    --lw2-dark: #000000;
+    --lw2-ground-paper: #ffffff;
+    --lw2-ground-stone: #f5f5f7;
+    background: #ffffff;
+    color: #1d1d1f;
+}
+/* Grounds */
+body.lw2-site.lw2-homepage :is(.lw2-rhythm, .lw2-real-life, .lw2-radar, .lw2-finishes) { background: #ffffff; }
+body.lw2-site.lw2-homepage :is(.lw2-film, .lw2-device, .lw2-app-story, .lw2-faq) { background: #f5f5f7; }
+body.lw2-site.lw2-homepage .lw2-cta { background: #ffffff; }
+body.lw2-site.lw2-homepage :is(.lw2-lab, .lw2-footer, .lw2-hero, .lw2-hero-image, .lw2-film-frame, .lw2-lab-media) { background: #000000; }
+body.lw2-site.lw2-homepage :is(.lw2-real-life-card, .lw2-device-image, .lw2-device-detail-image, .lw2-finish-image) { background: #f5f5f7; }
+body.lw2-site.lw2-homepage .lw2-device-detail-copy { background: #ffffff; }
+body.lw2-site.lw2-homepage :is(.lw2-night-card, .lw2-type-card) { background: #ffffff; border-color: #d2d2d7; }
+body.lw2-site.lw2-homepage .lw2-axis-track { background: #d2d2d7; }
+/* Header: translucent white material */
+body.lw2-site.lw2-homepage .lw2-header.is-scrolled { background: rgba(255, 255, 255, .8); border-bottom-color: #d2d2d7; }
+/* Text */
+body.lw2-site.lw2-homepage :is(h1, h2, h3, strong, .lw2-rhythm-phase[aria-pressed="true"]) { color: inherit; }
+body.lw2-site.lw2-homepage main :is(h2, h3) { color: #1d1d1f; }
+body.lw2-site.lw2-homepage :is(.lw2-hero, .lw2-lab, .lw2-footer) :is(h1, h2, h3, strong) { color: #f5f5f7; }
+body.lw2-site.lw2-homepage .lw2-feature-row h3 { color: #86868b; }
+body.lw2-site.lw2-homepage .lw2-rhythm-phase { color: #86868b; }
+body.lw2-site.lw2-homepage :is(.lw2-device-image figcaption, .lw2-night-controls .lw2-night-playback) { color: #6e6e73; }
+body.lw2-site.lw2-homepage .lw2-hero-copy { color: #f5f5f7; opacity: .86; }
+body.lw2-site.lw2-homepage :is(.lw2-hero-meta span, .lw2-lab-media > span, .lw2-lab-list span, .lw2-lab-credibility,
+    .lw2-footer nav a, .lw2-footer nav a span, .lw2-footer-top p, .lw2-mcp-label, .lw2-mcp-content p,
+    .lw2-footer-bottom, .lw2-footer-bottom *, .lw2-footer-disclaimer) { color: #a1a1a6; }
+body.lw2-site.lw2-homepage .lw2-sleep-lab .lw2-eyebrow, body.lw2-site.lw2-homepage .lw2-lab .lw2-eyebrow { color: #a1a1a6; }
+/* Buttons: one ink pill on light grounds, one white pill on dark */
+body.lw2-site.lw2-homepage .lw2-button--light { background: #f5f5f7; color: #1d1d1f; }
+body.lw2-site.lw2-homepage .lw2-button--light:hover { background: #ffffff; }
+body.lw2-site.lw2-homepage main :is(.lw2-cta, .lw2-finishes) .lw2-button--dark { background: #1d1d1f; color: #ffffff; }
+body.lw2-site.lw2-homepage main :is(.lw2-cta, .lw2-finishes) .lw2-button--dark:hover { background: #424245; }
+body.lw2-site.lw2-homepage .lw2-type-picker button[aria-pressed="true"] { border-color: #1d1d1f; background: #1d1d1f; color: #ffffff; }
+/* Icons and small marks: neutral */
+body.lw2-site.lw2-homepage .lw2-sound-sources svg { stroke: #1d1d1f; }
+body.lw2-site.lw2-homepage .lw2-app-pilot time { color: #1d1d1f; }

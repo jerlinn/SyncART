@@ -1669,3 +1669,10 @@ body.lw2-site.lw2-homepage .lw2-night-takeaway a { text-decoration: none; }
     body.lw2-site.lw2-homepage .lw2-app-insight-copy { width: 100%; max-width: 100%; justify-self: stretch; }
     body.lw2-site.lw2-homepage .lw2-type-picker { width: auto; max-width: calc(100% + 36px); }
 }
+
+/* Type card: "Where LunaWake starts" aligns with the rest of the card (it kept an old 16px inset). */
+body.lw2-site.lw2-homepage .lw2-type-start { padding: 0; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-type-card-top strong { min-height: 0; }
+    body.lw2-site.lw2-homepage .lw2-type-line { min-height: 0; margin-top: 10px; }
+}

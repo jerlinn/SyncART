@@ -1055,3 +1055,4 @@ body.lw2-site.lw2-homepage .lw2-feature-row p {
 /* The four words read as quiet labels at heading size: warm stone (≈3.4:1 on the ground,
    above the 3:1 floor for large text), so the section headline above keeps the lead. */
 body.lw2-site.lw2-homepage .lw2-feature-row h3 { color: var(--lw2-graphic-stone); }
+body.lw2-site.lw2-homepage .lw2-feature-row h3 { margin-top: 14px; font-size: var(--t3); letter-spacing: -.025em; }

@@ -936,7 +936,16 @@ body.lw2-site.lw2-homepage {
     --lw2-reading: var(--t5);
     --lw2-label-size: var(--t7);
 }
-body.lw2-site.lw2-homepage .lw2-hero h1 { font-size: var(--t1); }
+body.lw2-site.lw2-homepage .lw2-hero h1 {
+    font-family: var(--lw2-functional);
+    font-size: clamp(52px, 7.1vw, 106px);
+    font-weight: 450;
+    letter-spacing: -.04em;
+    line-height: .94;
+}
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-hero h1 { font-size: clamp(42px, 11.5vw, 64px); }
+}
 
 /* t3 title */
 body.lw2-site.lw2-homepage :is(.lw2-device-detail-copy h3, .lw2-night-copy h3,
@@ -1396,6 +1405,8 @@ body.lw2-site.lw2-homepage .lw2-function-card img {
     aspect-ratio: 4 / 5;
     object-fit: cover;
 }
+body.lw2-site.lw2-homepage .lw2-function-card:first-child img { object-position: 55% center; }
+body.lw2-site.lw2-homepage .lw2-function-card:nth-child(2) img { object-position: 58% center; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption { display: grid; gap: 8px; margin-top: 18px; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption span { color: #6e6e73; font-size: var(--t7); font-weight: 500; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption strong { color: #1d1d1f; font-size: var(--t4); font-weight: 500; line-height: 1.2; letter-spacing: -.015em; text-wrap: balance; }
@@ -1559,3 +1570,102 @@ body.lw2-site.lw2-homepage .lw2-rhythm-progress path { stroke-dasharray: 1 2; }
 /* "What LunaWake records": no rule under the charts and no underline; it reads like the other inline links. */
 body.lw2-site.lw2-homepage .lw2-radar-details { border-bottom: 0; }
 body.lw2-site.lw2-homepage .lw2-night-takeaway a { text-decoration: none; }
+
+/* ==========================================================================
+   Phone density (≤560px): one idea per screen, readable at a glance.
+   Tighter section rhythm, a slightly smaller type ramp, and swipeable rows
+   in place of long vertical stacks.
+   ========================================================================== */
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage {
+        --t2: 30px;
+        --t3: 22px;
+        --t4: 18px;
+        --t5: 16px;
+        --lw2-section-space: 48px;
+    }
+    body.lw2-site.lw2-homepage main :is(h2, .lw2-app-insight--pattern .lw2-app-insight-copy h3) { line-height: 1.1; }
+    body.lw2-site.lw2-homepage main :is(.lw2-section-head, .lw2-real-life-head, .lw2-radar-head, .lw2-film-head) { gap: 12px; }
+    body.lw2-site.lw2-homepage main :is(.lw2-film-head, .lw2-real-life-head, .lw2-radar-head) > p:not(.lw2-eyebrow),
+    body.lw2-site.lw2-homepage main :is(.lw2-rhythm-copy, .lw2-device-copy, .lw2-night-copy, .lw2-app-insight-copy) > p:not(.lw2-eyebrow) {
+        margin-top: 12px;
+        line-height: 1.5;
+    }
+    body.lw2-site.lw2-homepage .lw2-eyebrow { margin-bottom: 10px; }
+
+    /* Hero: shorter photo band, tighter stack. */
+    body.lw2-site.lw2-homepage .lw2-hero-content { padding-top: 28px; padding-bottom: 32px; }
+    body.lw2-site.lw2-homepage .lw2-hero h1 + .lw2-hero-copy { margin-top: 14px; }
+    body.lw2-site.lw2-homepage .lw2-hero-pillars { margin-top: 20px; padding-top: 14px; gap: 10px; }
+    body.lw2-site.lw2-homepage .lw2-hero .lw2-actions { margin-top: 22px; }
+    body.lw2-site.lw2-homepage .lw2-hero-meta { margin-top: 20px; }
+
+    /* Four function cards: a swipeable row, one card and a peek of the next. */
+    body.lw2-site.lw2-homepage .lw2-function-grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 78%;
+        grid-template-columns: none;
+        gap: 14px;
+        margin: 28px -18px 0;
+        padding: 0 18px 4px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 18px;
+        scrollbar-width: none;
+    }
+    body.lw2-site.lw2-homepage .lw2-function-grid::-webkit-scrollbar { display: none; }
+    body.lw2-site.lw2-homepage .lw2-function-card { scroll-snap-align: start; }
+    body.lw2-site.lw2-homepage .lw2-function-card img { aspect-ratio: 4 / 3; }
+    body.lw2-site.lw2-homepage .lw2-function-card figcaption { gap: 6px; margin-top: 12px; }
+    body.lw2-site.lw2-homepage .lw2-function-card figcaption small { font-size: var(--t7); }
+
+    /* Device: the four keyword tiles are compact; photos are wide, not tall. */
+    body.lw2-site.lw2-homepage .lw2-device-image img { aspect-ratio: 16 / 10; }
+    body.lw2-site.lw2-homepage .lw2-feature-row { row-gap: 22px; margin-top: 24px; }
+    body.lw2-site.lw2-homepage .lw2-feature-row > div { padding-top: 12px; }
+    body.lw2-site.lw2-homepage .lw2-feature-icon { width: 34px; }
+    body.lw2-site.lw2-homepage .lw2-feature-row h3 { margin-top: 8px; }
+    body.lw2-site.lw2-homepage .lw2-feature-row p { margin-top: 4px; font-size: var(--t7); }
+    body.lw2-site.lw2-homepage .lw2-device-detail { margin-top: 28px; }
+    body.lw2-site.lw2-homepage .lw2-device-detail-image img { aspect-ratio: 16 / 10; }
+    body.lw2-site.lw2-homepage .lw2-device-detail-copy { padding: 18px; }
+
+    /* Night charts and Sleep Lab: less air around the card, a wide lab photo. */
+    body.lw2-site.lw2-homepage .lw2-night-card { padding: 16px; }
+    body.lw2-site.lw2-homepage .lw2-night-copy { margin-bottom: 16px; }
+    body.lw2-site.lw2-homepage .lw2-lab-media img { aspect-ratio: 3 / 2; }
+    body.lw2-site.lw2-homepage .lw2-lab-grid { gap: 24px; }
+    body.lw2-site.lw2-homepage .lw2-lab-list > div { padding-block: 12px; }
+
+    /* Sleep type: picker scrolls sideways in one line instead of four rows of chips. */
+    body.lw2-site.lw2-homepage .lw2-type-picker {
+        flex-wrap: nowrap;
+        margin: 18px -18px 0;
+        padding: 0 18px 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        max-width: none;
+    }
+    body.lw2-site.lw2-homepage .lw2-type-picker::-webkit-scrollbar { display: none; }
+    body.lw2-site.lw2-homepage .lw2-type-picker button { flex: none; }
+    body.lw2-site.lw2-homepage .lw2-type-card { padding: 18px; }
+    body.lw2-site.lw2-homepage .lw2-axis-list { gap: 10px; margin-top: 18px; }
+    body.lw2-site.lw2-homepage .lw2-type-start { margin-top: 18px; }
+
+    /* Finishes: the selected finish only; the side-by-side overview is a desktop image. */
+    body.lw2-site.lw2-homepage .lw2-finishes-overview { display: none; }
+    body.lw2-site.lw2-homepage .lw2-finish-image img { aspect-ratio: 4 / 3; }
+
+    /* FAQ: tighter rows. */
+    body.lw2-site.lw2-homepage .lw2-faq-list summary { padding-block: 15px; }
+}
+@media (max-width: 560px) {
+    /* Keep the one-line picker from widening its grid column. */
+    body.lw2-site.lw2-homepage .lw2-app-insight { grid-template-columns: minmax(0, 1fr); }
+    body.lw2-site.lw2-homepage :is(.lw2-app-insight-copy, .lw2-app-type-media, .lw2-real-life .lw2-shell) { min-width: 0; }
+}
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-app-insight-copy { width: 100%; max-width: 100%; justify-self: stretch; }
+    body.lw2-site.lw2-homepage .lw2-type-picker { width: auto; max-width: calc(100% + 36px); }
+}

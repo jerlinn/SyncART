@@ -1,10 +1,10 @@
 # LunaWake
 
-> LunaWake is a bedside sleep device paired with an AI sleep coach. Nothing to wear: the device looks after wind-down and wake-up with its own light and sound, and the Luna App reads your nights and helps you keep a rhythm that fits your life. Slogan: Your sleep, in rhythm.
+> LunaWake is a bedside sleep device paired with a Smart Sleep Coach. Nothing to wear: the device looks after wind-down and wake-up with its own light and sound, and the Luna App reads your nights and helps you keep a rhythm that fits your life. Slogan: Your sleep, in rhythm.
 
 Two things LunaWake does:
 1. The Bedroom Autopilot: a gentle bedtime chime timed to your rhythm, built-in soundscapes designed to fade out after you fall asleep, a device that stays dark through the night, an optional low light when you walk up, and a wake-up with light and sound. Most of it is on by default and can be turned off in the app.
-2. AI Sleep Coach: each morning starts with a short written summary of last night instead of a score. Sleep score, stages, and trends are available as supporting detail. Ask Luna answers from the user's own record, habits, and daily life.
+2. Smart Sleep Coach: each morning starts with a short written summary of last night instead of a score. Sleep score, stages, and trends are available as supporting detail. Ask Luna answers from the user's own record, habits, and daily life.
 
 Signature feature — Rhythm check: hold the device for two seconds and it says roughly where your body is in its daily rhythm (for example the afternoon dip or the sleep window) with one suggestion. The app shows the whole day's rhythm as a strip. The spoken suggestion is only given on the device.
 
@@ -15,7 +15,7 @@ Key facts:
 - Data: radar signals are processed on the device. After each night the sleep record is encrypted and uploaded to create sleep stages, the morning summary, and trends. Data is not sold, not used for advertising, and not used to train AI models. Export and deletion are available by emailing support@lunawake.ai.
 - Smart Wake: a soft glow ten minutes before the alarm; the alarm starts at the time the user sets. It does not pick a wake time from sleep stages or movement.
 - Offline: after a one-time Wi-Fi setup, alarms, light, sound, and overnight recording keep running on the device without a connection. Sleep reports, Luna, and updates need a connection. The device has no battery; after a power cut it needs to reconnect to recover the time.
-- One object in place of three: sound machine, sunrise alarm, and wearable-free sleep tracker, plus an AI sleep coach.
+- One object in place of three: sound machine, sunrise alarm, and wearable-free sleep tracker, plus a Smart Sleep Coach.
 - Pricing: one-time hardware purchase, no subscription and no monthly or annual fee. Device features and sleep data stay free. In-depth Ask Luna answers use credits; 10,000 credits come with each device and never expire. When credits run out, Ask Luna still answers. Credit purchases are not available yet.
 - Designed for one sleeper closest to the device; reliable multi-person separation is not a supported capability.
 - Testing: contact-free sensing is being compared against technician-scored polysomnography (PSG) in a university sleep lab. This work is in progress and no accuracy figure is claimed.
@@ -31,7 +31,7 @@ Key facts:
 - Lunawake MCP lets a user connect their sleep data, read-only and with their authorization, to an AI agent they already use.
 
 ## Pages
-- [Home](https://hellolunawake.com/): product overview — the Bedroom Autopilot, the device, bedside sensing and privacy, the AI Sleep Coach, finishes, and FAQ
+- [Home](https://hellolunawake.com/): product overview — the Bedroom Autopilot, the device, bedside sensing and privacy, the Smart Sleep Coach, finishes, and FAQ
 - [Reserve](https://reserve.hellolunawake.com/): the $9 reservation page for LunaWake's Kickstarter launch offer
 - [Science](https://hellolunawake.com/science.html): how the bedside radar reads the night and how it is being tested against technician-scored polysomnography in the sleep lab — method, footage, early signal windows, and stated boundaries
 - [About](https://hellolunawake.com/about.html): why LunaWake is building a calmer, privacy-first bedside sleep system

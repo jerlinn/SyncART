@@ -1761,3 +1761,15 @@ body.lw2-site.lw2-homepage .lw2-type-card-top img {
 }
 body.lw2-site.lw2-homepage .lw2-type-card-top small { margin-bottom: 6px; }
 body.lw2-site.lw2-homepage .lw2-type-card-top :is(small, strong) { align-self: flex-start; }
+
+/* Room chart: a soft sage band marks the most settled stretch of the night. */
+body.lw2-site.lw2-homepage .lw2-night-settled { fill: #e4ece6; }
+body.lw2-site.lw2-homepage .lw2-night-key-settled {
+    display: inline-block;
+    width: 14px;
+    height: 10px;
+    margin-right: 6px;
+    border-radius: 2px;
+    background: #e4ece6;
+    vertical-align: -1px;
+}

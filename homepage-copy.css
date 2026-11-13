@@ -203,7 +203,6 @@
     font-weight: 500;
     cursor: pointer;
     transform: translate(-50%, -50%);
-    box-shadow: 0 18px 40px rgba(20, 16, 13, .28);
     transition: transform .2s, opacity .2s, background .2s;
 }
 .lw2-site .lw2-film-play:hover,
@@ -1147,7 +1146,6 @@ body.lw2-site.lw2-homepage .lw2-rhythm-center {
     isolation: isolate;
     border-radius: 50%;
     background: var(--sky-base);
-    box-shadow: 0 18px 50px -24px color-mix(in srgb, var(--sky-a) 70%, transparent), inset 0 0 0 1px rgba(255, 255, 255, .18);
     transition: --sky-a var(--sky-ease), --sky-b var(--sky-ease), --sky-c var(--sky-ease), --sky-base var(--sky-ease), --sky-ink var(--sky-ease);
 }
 body.lw2-site.lw2-homepage .lw2-rhythm-center::before {
@@ -1225,7 +1223,6 @@ body.lw2-site.lw2-homepage .lw2-feature-icon {
     padding: 9px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 10px 24px -14px var(--orb-a), inset 0 0 0 1px rgba(255, 255, 255, .2);
     background:
         radial-gradient(60% 60% at 26% 28%, var(--orb-a), transparent 72%),
         radial-gradient(56% 56% at 76% 30%, var(--orb-b), transparent 72%),
@@ -1255,3 +1252,8 @@ body.lw2-site.lw2-homepage .lw2-rhythm-phase[aria-pressed="true"] { color: var(-
 }
 body.lw2-site.lw2-homepage .lw2-rhythm-phase:focus { outline: none; }
 body.lw2-site.lw2-homepage .lw2-rhythm-phase:focus-visible { outline: 1px solid var(--lw2-ink); outline-offset: 3px; }
+
+/* Restraint: no drop shadows on the homepage. Surfaces separate by tone and a hairline, not glow;
+   the scrolled header keeps only its 1px bottom line. */
+body.lw2-site.lw2-homepage .lw2-header.is-scrolled { box-shadow: none; }
+body.lw2-site.lw2-homepage .lw2-button { box-shadow: none; }

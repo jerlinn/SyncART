@@ -1773,3 +1773,15 @@ body.lw2-site.lw2-homepage .lw2-night-key-settled {
     background: #e4ece6;
     vertical-align: -1px;
 }
+
+/* Hero headline, lighter: Light weight, a step smaller, gentler tracking. It leads without pressing
+   on the subcopy and photo. Supersedes the 106px / 450 / -.04em setting above. */
+body.lw2-site.lw2-homepage .lw2-hero h1 {
+    font-size: clamp(44px, 5.2vw, 80px);
+    font-weight: 300;
+    letter-spacing: -.015em;
+    line-height: 1.02;
+}
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-hero h1 { font-size: clamp(38px, 10.5vw, 52px); }
+}

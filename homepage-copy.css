@@ -1056,3 +1056,37 @@ body.lw2-site.lw2-homepage .lw2-feature-row p {
    above the 3:1 floor for large text), so the section headline above keeps the lead. */
 body.lw2-site.lw2-homepage .lw2-feature-row h3 { color: var(--lw2-graphic-stone); }
 body.lw2-site.lw2-homepage .lw2-feature-row h3 { margin-top: 14px; font-size: var(--t3); letter-spacing: -.025em; }
+
+/* Sound and light: what you can play (icon + one word), then one example night where sound and light fade together. */
+body.lw2-site.lw2-homepage .lw2-sound-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+}
+body.lw2-site.lw2-homepage .lw2-sound-sources li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--lw2-ink);
+    font-size: var(--t6);
+    font-weight: 500;
+}
+body.lw2-site.lw2-homepage .lw2-sound-sources svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--lw2-graphic-accent);
+    stroke-width: 1.55;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+body.lw2-site.lw2-homepage .lw2-app-pilot ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body.lw2-site.lw2-homepage .lw2-app-pilot li { flex-direction: column; align-items: flex-start; gap: 4px; line-height: 1.4; }
+body.lw2-site.lw2-homepage .lw2-app-pilot li span { text-wrap: balance; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-app-pilot ol { grid-template-columns: minmax(0, 1fr); }
+    body.lw2-site.lw2-homepage .lw2-app-pilot li { display: grid; grid-template-columns: 5.6em minmax(0, 1fr); gap: 10px; }
+}

@@ -1083,5 +1083,9 @@ body.lw2-site.lw2-homepage .lw2-sound-sources svg {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-    body.lw2-site.lw2-homepage .lw2-app-pilot li { display: grid; grid-template-columns: 5.6em minmax(0, 1fr); gap: 10px; }
+body.lw2-site.lw2-homepage .lw2-app-morning-copy > p.lw2-sound-note {
+    margin: 14px 0 0;
+    color: var(--lw2-annotation);
+    font-size: var(--t7);
+    line-height: 1.45;
 }

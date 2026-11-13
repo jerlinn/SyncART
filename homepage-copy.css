@@ -1089,3 +1089,41 @@ body.lw2-site.lw2-homepage .lw2-app-morning-copy > p.lw2-sound-note {
     font-size: var(--t7);
     line-height: 1.45;
 }
+
+/* Device roles: fine dotted-line icons (round-capped zero-length dashes) beside the number. */
+body.lw2-site.lw2-homepage .lw2-feature-row > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+}
+body.lw2-site.lw2-homepage .lw2-feature-row > div > :is(h3, p) { grid-column: 1 / -1; }
+body.lw2-site.lw2-homepage .lw2-feature-icon {
+    width: clamp(40px, 3.4vw, 48px);
+    height: auto;
+    margin-top: 4px;
+    overflow: visible;
+}
+body.lw2-site.lw2-homepage .lw2-feature-icon .d {
+    fill: none;
+    stroke: var(--lw2-graphic-accent);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 0 3.6;
+}
+body.lw2-site.lw2-homepage .lw2-feature-icon .s { fill: var(--lw2-graphic-accent); }
+body.lw2-site.lw2-homepage .lw2-feature-row > div > span { grid-column: 2; grid-row: 1; }
+body.lw2-site.lw2-homepage .lw2-app-morning-copy > p { text-wrap: pretty; }
+
+/* Sleep type picker: the chosen pill fills in place with a soft fade (no sliding pill). */
+body.lw2-site.lw2-homepage .lw2-type-picker button {
+    transition: background-color .5s cubic-bezier(.32, .72, 0, 1), color .5s cubic-bezier(.32, .72, 0, 1), border-color .5s cubic-bezier(.32, .72, 0, 1), transform .2s;
+}
+body.lw2-site.lw2-homepage .lw2-type-picker button[aria-pressed="true"],
+body.lw2-site.lw2-homepage .lw2-type-picker button[aria-pressed="true"]:hover {
+    border-color: var(--lw2-ink);
+    background: var(--lw2-ink);
+    color: #fffdf9;
+}
+body.lw2-site.lw2-homepage .lw2-type-picker button:focus-visible { outline: 2px solid var(--lw2-graphic-accent-ink); outline-offset: 2px; }
+body.lw2-site.lw2-homepage .lw2-type-picker button:focus:not(:focus-visible) { outline: none; }

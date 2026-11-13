@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-12-sound-light-v4">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-12-type-fade-v1">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -206,10 +206,10 @@
                     <figure class="lw2-device-image"><img src="images/luna-latest/device-bedside-evening.webp" width="1600" height="1067" alt="A softly lit LunaWake on the nightstand beside a person settling into bed" loading="lazy" decoding="async"><figcaption>Built to belong at the bedside.</figcaption></figure>
                 </div>
                 <div class="lw2-feature-row">
-                    <div><span>01</span><h3>Sound</h3><p>Your music, without the timer.</p></div>
-                    <div><span>02</span><h3>Light</h3><p>Light that fades with your sound.</p></div>
-                    <div><span>03</span><h3>Insights</h3><p>Sleep insights, nothing to wear.</p></div>
-                    <div><span>04</span><h3>Alarm</h3><p>A gentler morning, right on time.</p></div>
+                    <div><svg class="lw2-feature-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="24" r="2.2" class="s"/><path class="d" d="M19 17.5a9 9 0 0 1 0 13"/><path class="d" d="M24.5 12.5a16 16 0 0 1 0 23"/><path class="d" d="M30 7.5a23 23 0 0 1 0 33"/></svg><span>01</span><h3>Sound</h3><p>Your music, without the timer.</p></div>
+                    <div><svg class="lw2-feature-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="2.6" class="s"/><circle class="d" cx="24" cy="24" r="9"/><circle class="d" cx="24" cy="24" r="16"/></svg><span>02</span><h3>Light</h3><p>Light that fades with your sound.</p></div>
+                    <div><svg class="lw2-feature-icon" viewBox="0 0 48 48" aria-hidden="true"><path class="d" d="M4 10h8v12h6v-7h8v19h7v-11h9"/><circle cx="42" cy="23" r="2.2" class="s"/><path class="d" d="M4 42h40"/></svg><span>03</span><h3>Insights</h3><p>Sleep insights, nothing to wear.</p></div>
+                    <div><svg class="lw2-feature-icon" viewBox="0 0 48 48" aria-hidden="true"><path class="d" d="M4 40h40"/><path class="d" d="M10 40a14 14 0 0 1 28 0"/><circle cx="24" cy="12" r="1.8" class="s"/><circle cx="8.4" cy="21" r="1.8" class="s"/><circle cx="39.6" cy="21" r="1.8" class="s"/></svg><span>04</span><h3>Alarm</h3><p>A gentler morning, right on time.</p></div>
                 </div>
                 <p class="lw2-device-synergy lw2-feature-note"><strong>A steadier rhythm, night after night.</strong></p>
                 <div class="lw2-device-detail">
@@ -281,8 +281,8 @@
                 <div class="lw2-app-story-head lw2-app-morning">
                     <div class="lw2-app-morning-copy">
                         <p class="lw2-pilot-promise">Tonight, I’ll…</p>
-                        <h2 id="app-heading">Wait until you’re asleep, then softly turn off the light and the music.</h2>
-                        <p>Fall asleep to anything on your phone over Bluetooth. Like someone who stays until you drift off, every night.</p>
+                        <h2 id="app-heading">Stay until you fall asleep.</h2>
+                        <p>Fall asleep to anything on your phone over Bluetooth. Once you drift off, the music and the light fade out for you.</p>
                         <ul class="lw2-sound-sources" aria-label="What you can play">
                             <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13 M9 18a3 3 0 1 1-6 0a3 3 0 0 1 6 0 M20 16a3 3 0 1 1-6 0a3 3 0 0 1 6 0"/></svg>Music</li>
                             <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3 M5 11a7 7 0 0 0 14 0 M12 18v3 M8 21h8"/></svg>Podcasts</li>
@@ -317,7 +317,6 @@
                             <p>After 7 to 14 nights, see the pattern in your sleep and where LunaWake would start.</p>
                             <p class="lw2-app-health-note">Sleep insights work with LunaWake or sleep data from Apple Health.</p>
                             <div class="lw2-type-picker" role="group" aria-label="Choose a sleep type to preview">
-                                <span class="lw2-type-pill" aria-hidden="true"></span>
                                 <button type="button" data-type="night-listener" aria-pressed="true">Night Listener</button>
                                 <button type="button" data-type="dawn-caller" aria-pressed="false">Dawn Caller</button>
                                 <button type="button" data-type="freeform" aria-pressed="false">Freeform Sleeper</button>
@@ -678,7 +677,6 @@
     var types = [{"id": "night-listener", "name": "The Night Listener", "img": "images/pattern-types/owl.webp", "w": 600, "h": 600, "line": "Your night runs later than most people your age.", "pos": [88, 55, 40, 52, 48], "standout": ["timing", "r"], "start": "A steady wake time, with light that builds before your alarm."}, {"id": "dawn-caller", "name": "The Dawn Caller", "img": "images/pattern-types/lark.webp", "w": 600, "h": 600, "line": "You’re up earlier than most people your age.", "pos": [12, 56, 30, 40, 50], "standout": ["timing", "l"], "start": "A dark room until your alarm, then a light-first wake."}, {"id": "freeform", "name": "The Freeform Sleeper", "img": "images/pattern-types/cat.webp", "w": 600, "h": 600, "line": "Your bedtime moves a lot from night to night.", "pos": [60, 45, 90, 55, 50], "standout": ["consistency", "r"], "start": "One anchor first: the same wake time, every day."}, {"id": "deep", "name": "The Deep Sleeper", "img": "images/pattern-types/dormouse.webp", "w": 600, "h": 600, "line": "More of your night goes to deep and REM sleep than most people your age.", "pos": [45, 88, 34, 35, 55], "standout": ["recharge", "r"], "start": "Keep the wind-down that’s working, night after night."}, {"id": "brief", "name": "The Brief Sleeper", "img": "images/pattern-types/giraffe.webp", "w": 450, "h": 600, "line": "You sleep less than most people your age.", "pos": [55, 50, 42, 38, 10], "standout": ["duration", "l"], "start": "A wind-down cue at the same hour each evening."}, {"id": "long", "name": "The Long Sleeper", "img": "images/pattern-types/koala.webp", "w": 600, "h": 600, "line": "You sleep longer than most people your age.", "pos": [50, 52, 36, 48, 90], "standout": ["duration", "r"], "start": "A gentle, light-first wake at the time you set."}, {"id": "steady", "name": "The Steady Sleeper", "img": "images/pattern-types/capybara.webp", "w": 600, "h": 600, "line": "No extremes. Your nights keep an even pace.", "pos": [50, 52, 42, 46, 50], "standout": null, "start": "Keep the rhythm. Luna tells you if it starts to drift."}];
     var INTERVAL = 3600;
     var picker = document.querySelector('.lw2-type-picker');
-    var pill = picker.querySelector('.lw2-type-pill');
     var buttons = Array.prototype.slice.call(picker.querySelectorAll('[data-type]'));
     var axes = ['timing', 'recharge', 'consistency', 'winddown', 'duration'];
     var nameEl = card.querySelector('[data-type-name]'), lineEl = card.querySelector('[data-type-line]'), imgEl = card.querySelector('[data-type-img]');
@@ -690,18 +688,6 @@
 
     function preload() { if (preloaded) return; preloaded = true; types.forEach(function (t) { var i = new Image(); i.src = t.img; }); }
 
-    function movePill(index, instant) {
-        var b = buttons[index];
-        if (instant) pill.style.transition = 'none';
-        pill.style.width = b.offsetWidth + 'px';
-        pill.style.height = b.offsetHeight + 'px';
-        pill.style.transform = 'translate(' + b.offsetLeft + 'px,' + b.offsetTop + 'px)';
-        if (instant) { pill.offsetWidth; pill.style.transition = ''; }
-    }
-    function runProgress() {
-        picker.classList.remove('is-timing'); pill.offsetWidth;
-        if (timer) picker.classList.add('is-timing');
-    }
 
     function setName(text) {
         nameEl.setAttribute('aria-label', text);
@@ -744,8 +730,6 @@
         opts = opts || {};
         var t = types[index]; current = index;
         buttons.forEach(function (b, k) { b.setAttribute('aria-pressed', k === index ? 'true' : 'false'); });
-        movePill(index);
-        runProgress();
         if (!canAnimate) {
             startEl.textContent = t.start; nameEl.textContent = t.name; lineEl.textContent = t.line; imgEl.src = t.img; imgEl.width = t.w; imgEl.height = t.h;
             setAxes(t); return;
@@ -773,17 +757,12 @@
         };
     }
 
-    function stop() { if (timer) { clearInterval(timer); timer = null; } picker.classList.remove('is-timing'); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
     function start() {
         if (touched || timer || reduce) return;
         timer = setInterval(function () { show((current + 1) % types.length); }, INTERVAL);
-        runProgress();
     }
 
-    picker.style.setProperty('--interval', INTERVAL + 'ms');
-    picker.classList.add('has-pill');
-    movePill(0, true);
-    window.addEventListener('resize', function () { movePill(current, true); });
     buttons.forEach(function (b, k) {
         b.addEventListener('click', function () { touched = true; stop(); preload(); if (k !== current) show(k); });
     });

@@ -1241,3 +1241,17 @@ body.lw2-site.lw2-homepage .lw2-feature-icon .s { fill: #fffaf1; }
 body.lw2-site.lw2-homepage :is(.lw2-sky--dawn, .lw2-sky--dusk) .d { stroke: #3d2a22; }
 body.lw2-site.lw2-homepage :is(.lw2-sky--dawn, .lw2-sky--dusk) .s { fill: #3d2a22; }
 
+
+/* Rhythm dial in ink and grey: the sky window is the only colour. The current phase is marked
+   by an ink arc, an ink pointer and ink text; the rest of the ring and labels sit in warm grey.
+   A focus ring shows for keyboard focus only. */
+body.lw2-site.lw2-homepage .lw2-rhythm-arcs path { stroke: #d6cfc4; }
+body.lw2-site.lw2-homepage .lw2-rhythm-arcs path.is-active { stroke: var(--lw2-ink); }
+body.lw2-site.lw2-homepage .lw2-rhythm-pointer circle { fill: var(--lw2-ink); }
+body.lw2-site.lw2-homepage .lw2-rhythm-phase { color: #9a9087; }
+body.lw2-site.lw2-homepage .lw2-rhythm-phase[aria-pressed="true"] { color: var(--lw2-ink); }
+@media (hover: hover) {
+    body.lw2-site.lw2-homepage .lw2-rhythm-phase:hover { color: var(--lw2-ink); }
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-phase:focus { outline: none; }
+body.lw2-site.lw2-homepage .lw2-rhythm-phase:focus-visible { outline: 1px solid var(--lw2-ink); outline-offset: 3px; }

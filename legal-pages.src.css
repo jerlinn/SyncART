@@ -25,7 +25,7 @@ main.lw2-legal .lw2-legal-head h1 {
     max-width: 600px;
     margin: 0;
     font-family: var(--lw2-title, "DM Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif);
-    font-size: clamp(50px, 6vw, 86px);
+    font-size: var(--t1);
     font-weight: 300;
     letter-spacing: -.075em;
     line-height: .92;
@@ -50,7 +50,7 @@ main.lw2-legal .lw2-legal-head > div {
 
 main.lw2-legal .lw2-legal-meta {
     color: var(--lw2-blue, #4a5489);
-    font-size: 10px;
+    font-size: var(--t8);
     font-weight: 600;
     letter-spacing: .13em;
     line-height: 1.3;
@@ -61,7 +61,7 @@ main.lw2-legal .lw2-legal-lead {
     max-width: 430px;
     margin: 20px 0 0;
     color: var(--lw2-muted, #6b645c);
-    font-size: 15px;
+    font-size: var(--t6);
     font-weight: 300;
     line-height: 1.75;
 }
@@ -79,7 +79,7 @@ main.lw2-legal .lw2-legal-aside {
     max-width: 180px;
     padding-top: 3px;
     color: var(--lw2-faint, #6d665c);
-    font-size: 11px;
+    font-size: var(--t8);
     line-height: 1.7;
 }
 
@@ -87,7 +87,7 @@ main.lw2-legal .lw2-legal-aside strong {
     display: block;
     margin-bottom: 9px;
     color: var(--lw2-ink, #24211f);
-    font-size: 12px;
+    font-size: var(--t8);
     font-weight: 600;
 }
 
@@ -112,7 +112,7 @@ main.lw2-legal .lw2-legal-copy h2 {
     margin: 0 0 13px;
     color: var(--lw2-ink, #24211f);
     font-family: var(--lw2-functional, var(--font-sans));
-    font-size: 17px;
+    font-size: var(--t5);
     font-weight: 600;
     letter-spacing: -.015em;
     line-height: 1.25;
@@ -122,7 +122,7 @@ main.lw2-legal .lw2-legal-copy h3 {
     margin: 22px 0 9px;
     color: var(--lw2-ink, #24211f);
     font-family: var(--lw2-functional, var(--font-sans));
-    font-size: 13px;
+    font-size: var(--t7);
     font-weight: 600;
     line-height: 1.35;
 }
@@ -131,7 +131,7 @@ main.lw2-legal .lw2-legal-copy p,
 main.lw2-legal .lw2-legal-copy li {
     color: #6b645c;
     font-family: var(--lw2-functional, var(--font-sans));
-    font-size: 14px;
+    font-size: var(--t6);
     font-weight: 300;
     line-height: 1.78;
 }
@@ -176,7 +176,7 @@ main.lw2-legal .lw2-legal-copy a {
 
     main.lw2-legal .lw2-legal-head h1 {
         max-width: 680px;
-        font-size: clamp(56px, 11vw, 78px);
+        font-size: var(--t1);
     }
 
     main.lw2-legal .lw2-legal-head > div,
@@ -215,13 +215,13 @@ main.lw2-legal .lw2-legal-copy a {
     }
 
     main.lw2-legal .lw2-legal-head h1 {
-        font-size: clamp(46px, 14vw, 66px);
+        font-size: var(--t1);
         letter-spacing: -.055em;
     }
 
     main.lw2-legal .lw2-legal-lead {
         margin-top: 16px;
-        font-size: 14px;
+        font-size: var(--t6);
     }
 
     main.lw2-legal .lw2-legal-body {
@@ -235,12 +235,12 @@ main.lw2-legal .lw2-legal-copy a {
     }
 
     main.lw2-legal .lw2-legal-copy h2 {
-        font-size: 16px;
+        font-size: var(--t6);
     }
 
     main.lw2-legal .lw2-legal-copy p,
     main.lw2-legal .lw2-legal-copy li {
-        font-size: 13px;
+        font-size: var(--t7);
         line-height: 1.72;
     }
 }

@@ -20,10 +20,9 @@
         .lw2-site .lw2-hero-copy{font-weight:400}
         @media (max-width:560px){.lw2-site .lw2-hero h1{font-size:clamp(46px,13.5vw,64px);letter-spacing:-.01em;line-height:.94}.lw2-site .lw2-hero-copy{margin-top:18px;font-size:16px;line-height:1.55}}
     </style>
-    <link rel="stylesheet" href="styles.css?v=2026-10-22-mcp1" media="print" onload="this.media='all';this.onload=null">
-    <noscript><link rel="stylesheet" href="styles.css?v=2026-10-22-mcp1"></noscript>
-    <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-12-type-layout3">
+    <link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale"></noscript>
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-12-audit-v1">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -112,13 +111,47 @@
                 </picture>
             </div>
             <div class="lw2-shell lw2-hero-content">
-                <h1>Your sleep, <br>in rhythm.</h1>
+                <h1>Your sleep <br>in rhythm</h1>
                 <p class="lw2-hero-copy">LunaWake is the bedside device that helps you wind down in step with your body clock and wake at the time you choose.</p>
                 <div class="lw2-actions">
                     <a class="lw2-button lw2-button--light" href="https://reserve.hellolunawake.com/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a>
                     <a class="lw2-inline-link lw2-inline-link--light" href="#film">Watch one night <span aria-hidden="true">↓</span></a>
                 </div>
                 <div class="lw2-hero-meta"><span>Nothing to wear</span><i></i><span>No subscription</span></div>
+            </div>
+        </section>
+
+        <section class="lw2-intro lw2-rhythm" id="rhythm" aria-labelledby="rhythm-heading">
+            <div class="lw2-shell lw2-rhythm-layout">
+                <div class="lw2-rhythm-copy">
+                    <p class="lw2-eyebrow">Rhythm check</p>
+                    <h2 id="rhythm-heading">It’s bedtime. Why aren’t you sleepy?</h2>
+                    <p>Being tired and being ready to sleep can happen at different times. Your body clock can give you a second wind before your sleep window opens.</p>
+                    <p>The Luna App maps your day using your sleep and wake patterns. Hold LunaWake for two seconds to hear where you are in that rhythm and one thing you can try.</p>
+                    <a class="lw2-inline-link" href="#how-it-works">See how LunaWake follows your night <span aria-hidden="true">↓</span></a>
+                </div>
+                <figure class="lw2-rhythm-figure" data-rhythm-clock>
+                    <div class="lw2-rhythm-dial" style="--dial-angle:180deg" role="group" aria-label="Explore six stages of a daily rhythm">
+                        <svg class="lw2-rhythm-face" viewBox="0 0 360 360" aria-hidden="true">
+                            <g class="lw2-rhythm-arcs"><path data-rhythm-arc="0" d="M114.74 57.27A139 139 0 0 1 245.26 57.27"/><path data-rhythm-arc="1" d="M253.66 62.12A139 139 0 0 1 318.92 175.15"/><path data-rhythm-arc="2" d="M318.92 184.85A139 139 0 0 1 253.66 297.88"/><path data-rhythm-arc="3" class="is-active" d="M245.26 302.73A139 139 0 0 1 114.74 302.73"/><path data-rhythm-arc="4" d="M106.34 297.88A139 139 0 0 1 41.08 184.85"/><path data-rhythm-arc="5" d="M41.08 175.15A139 139 0 0 1 106.34 62.12"/></g>
+                            <g class="lw2-rhythm-pointer"><circle cx="180" cy="28" r="3.25"/></g>
+                        </svg>
+                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="0" style="--phase-x:50.000%;--phase-y:18.889%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18 M7 15a5 5 0 0 1 10 0 M12 4v3 M4 9l2 2 M20 9l-2 2"/></svg><span>Waking up</span></button>
+                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="1" style="--phase-x:76.943%;--phase-y:34.444%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18 18 5 M9 5h9v9"/></svg><span>Peak</span></button>
+                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="2" style="--phase-x:76.943%;--phase-y:65.556%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6l13 13 M9 19h9v-9"/></svg><span>Dip</span></button>
+                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="3" style="--phase-x:50.000%;--phase-y:81.111%" aria-pressed="true" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20c3-7 7-10 13-14 M5 17C3 8 12 4 20 4c0 8-4 14-12 14"/></svg><span>Second wind</span></button>
+                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="4" style="--phase-x:23.057%;--phase-y:65.556%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h14l-4-8H9l-4 8z M12 13v7 M8 20h8"/></svg><span>Sleep window</span></button>
+                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="5" style="--phase-x:23.057%;--phase-y:34.444%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h7l-7 8h7 M13 5h7l-7 8h7"/></svg><span>Night</span></button>
+                        <div class="lw2-rhythm-center" aria-hidden="true">
+                            <span>Second wind</span>
+                        </div>
+                    </div>
+                    <figcaption id="rhythm-phase-readout" aria-live="polite">
+                        <span>Your body clock can give alertness a lift before sleepiness takes over.</span>
+                    </figcaption>
+                    <p class="lw2-rhythm-example">Example rhythm. Your phase and timing are estimates based on your sleep schedule.</p>
+                    <template data-rhythm-notes><ol><li><b>Waking up</b> You’re awake. Your alertness is still catching up.</li><li><b>Peak</b> A stretch when you tend to feel more alert.</li><li><b>Dip</b> Alertness can dip in the middle of your day.</li><li><b>Second wind</b> Your body clock can give alertness a lift before sleepiness takes over.</li><li><b>Sleep window</b> The stretch when sleep usually comes more easily for you.</li><li><b>Night</b> The part of your rhythm when your body is set up for sleep.</li></ol></template>
+                </figure>
             </div>
         </section>
 
@@ -135,53 +168,18 @@
                     <button class="lw2-film-play" type="button" data-film-play aria-label="Play the LunaWake film, 1 minute 44 seconds"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><span>Watch the film</span><small>1:44</small></button>
                 </div>
                 <ol class="lw2-film-chapters" aria-label="Jump to a moment in the film">
-                    <li><button type="button" data-film-seek="3"><span>0:03</span><strong>Evening</strong><small>Nothing to wear. Warm light and soundscapes to wind down.</small></button></li>
-                    <li><button type="button" data-film-seek="21"><span>0:21</span><strong>Asleep</strong><small>Light and sound are designed to fade together once you’re asleep.</small></button></li>
-                    <li><button type="button" data-film-seek="44"><span>0:44</span><strong>Wake-up</strong><small>A soft glow ten minutes before your alarm, then light and sound that build.</small></button></li>
-                    <li><button type="button" data-film-seek="59"><span>0:59</span><strong>Morning</strong><small>A few sentences on what last night meant.</small></button></li>
+                    <li><button type="button" data-film-seek="3"><span>0:03</span><strong>Evening</strong></button></li>
+                    <li><button type="button" data-film-seek="21"><span>0:21</span><strong>Asleep</strong></button></li>
+                    <li><button type="button" data-film-seek="44"><span>0:44</span><strong>Wake-up</strong></button></li>
+                    <li><button type="button" data-film-seek="59"><span>0:59</span><strong>Morning</strong></button></li>
                 </ol>
-            </div>
-        </section>
-
-        <section class="lw2-intro lw2-rhythm" id="rhythm" aria-labelledby="rhythm-heading">
-            <div class="lw2-shell lw2-rhythm-layout">
-                <div class="lw2-rhythm-copy">
-                    <p class="lw2-eyebrow">Rhythm check</p>
-                    <h2 id="rhythm-heading">It’s bedtime. Why aren’t you sleepy?</h2>
-                    <p>Being tired and being ready to sleep can happen at different times. Your body clock can give you a second wind before your sleep window opens.</p>
-                    <p>The Luna App maps your day using your sleep and wake patterns. Hold LunaWake for two seconds to hear where you are in that rhythm and one thing you can try.</p>
-                    <a class="lw2-inline-link" href="#how-it-works">See how LunaWake follows your night <span aria-hidden="true">↓</span></a>
-                </div>
-                <figure class="lw2-rhythm-figure" data-rhythm-clock>
-                    <div class="lw2-rhythm-dial" style="--dial-angle:180deg" role="group" aria-label="Explore six stages of a daily rhythm">
-                        <svg class="lw2-rhythm-face" viewBox="0 0 360 360" aria-hidden="true">
-                            <circle cx="180" cy="180" r="165"/>
-                            <g class="lw2-rhythm-ticks"><path d="M180 22v9 M338 180h-9 M180 338v-9 M22 180h9"/></g>
-                            <g class="lw2-rhythm-arcs"><path data-rhythm-arc="0" d="M114.74 57.27A139 139 0 0 1 245.26 57.27"/><path data-rhythm-arc="1" d="M253.66 62.12A139 139 0 0 1 318.92 175.15"/><path data-rhythm-arc="2" d="M318.92 184.85A139 139 0 0 1 253.66 297.88"/><path data-rhythm-arc="3" class="is-active" d="M245.26 302.73A139 139 0 0 1 114.74 302.73"/><path data-rhythm-arc="4" d="M106.34 297.88A139 139 0 0 1 41.08 184.85"/><path data-rhythm-arc="5" d="M41.08 175.15A139 139 0 0 1 106.34 62.12"/></g>
-                            <g class="lw2-rhythm-pointer"><path d="M175 27h10l-5 6z"/></g>
-                        </svg>
-                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="0" style="--phase-x:50.000%;--phase-y:18.889%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18 M7 15a5 5 0 0 1 10 0 M12 4v3 M4 9l2 2 M20 9l-2 2"/></svg><span>Waking up</span></button>
-                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="1" style="--phase-x:76.943%;--phase-y:34.444%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18 18 5 M9 5h9v9"/></svg><span>Peak</span></button>
-                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="2" style="--phase-x:76.943%;--phase-y:65.556%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6l13 13 M9 19h9v-9"/></svg><span>Dip</span></button>
-                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="3" style="--phase-x:50.000%;--phase-y:81.111%" aria-pressed="true" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20c3-7 7-10 13-14 M5 17C3 8 12 4 20 4c0 8-4 14-12 14"/></svg><span>Second wind</span></button>
-                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="4" style="--phase-x:23.057%;--phase-y:65.556%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13h14l-4-8H9l-4 8z M12 13v7 M8 20h8"/></svg><span>Sleep window</span></button>
-                        <button type="button" class="lw2-rhythm-phase" data-rhythm-phase="5" style="--phase-x:23.057%;--phase-y:34.444%" aria-pressed="false" aria-controls="rhythm-phase-readout"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h7l-7 8h7 M13 5h7l-7 8h7"/></svg><span>Night</span></button>
-                        <div class="lw2-rhythm-center" aria-hidden="true"><b>One day.</b></div>
-                    </div>
-                    <figcaption id="rhythm-phase-readout" aria-live="polite">
-                        <strong>Second wind</strong>
-                        <span>Your body clock can give alertness a lift before sleepiness takes over.</span>
-                    </figcaption>
-                    <p class="lw2-rhythm-example">Example rhythm. Your phase and timing are estimates based on your sleep schedule.</p>
-                    <template data-rhythm-notes><ol><li><b>Waking up</b> You’re awake. Your alertness is still catching up.</li><li><b>Peak</b> A stretch when you tend to feel more alert.</li><li><b>Dip</b> Alertness can dip in the middle of your day.</li><li><b>Second wind</b> Your body clock can give alertness a lift before sleepiness takes over.</li><li><b>Sleep window</b> The stretch when sleep usually comes more easily for you.</li><li><b>Night</b> The part of your rhythm when your body is set up for sleep.</li></ol></template>
-                </figure>
             </div>
         </section>
 
         <section class="lw2-real-life" id="how-it-works" aria-labelledby="real-life-heading">
             <div class="lw2-shell">
                 <div class="lw2-real-life-head">
-                    <div><p class="lw2-eyebrow">The Bedroom Autopilot / one night</p><h2 id="real-life-heading">Wind down with your rhythm. Wake on your time.</h2></div>
+                    <div><p class="lw2-eyebrow">One night</p><h2 id="real-life-heading">Wind down with your rhythm. Wake on your time.</h2></div>
                     <p>Choose your cues in the app. LunaWake takes it from there.</p>
                 </div>
                 <div class="lw2-real-life-grid">
@@ -194,7 +192,7 @@
                         <figcaption><span>02 / Night</span><strong>Wrapped up for you.</strong><small>Sound and light are designed to fade out together as you fall asleep, leaving the room dark and quiet through the night.</small></figcaption>
                     </figure>
                     <figure class="lw2-real-life-card">
-                        <img src="images/luna-latest/model-scenes/c86.webp" width="960" height="720" alt="Person stretching awake in bed beside LunaWake in the morning" loading="lazy" decoding="async">
+                        <img src="images/luna-latest/morning-stretch.webp" width="1600" height="1067" alt="A person stretching in morning sunlight, with LunaWake in the foreground" loading="lazy" decoding="async">
                         <figcaption><span>03 / Morning</span><strong>Meet the morning.</strong><small>A soft glow ten minutes before your alarm. Light and sound build at the time you set.</small></figcaption>
                     </figure>
                 </div>
@@ -205,7 +203,7 @@
             <div class="lw2-shell">
                 <div class="lw2-device-hero">
                     <div class="lw2-device-copy"><p class="lw2-eyebrow">The device</p><h2>Four devices. One nightstand.</h2><p>Better together. Four bedtime essentials working as one.</p><a class="lw2-inline-link" href="#finishes">Explore finishes <span aria-hidden="true">→</span></a></div>
-                    <figure class="lw2-device-image"><img src="images/luna-latest/device-four-in-one-bedside.webp" width="1600" height="1067" alt="LunaWake casting a warm light from a nightstand beside a person lying in bed" loading="lazy" decoding="async"><figcaption>Built to belong at the bedside.</figcaption></figure>
+                    <figure class="lw2-device-image"><img src="images/luna-latest/device-bedside-evening.webp" width="1600" height="1067" alt="A softly lit LunaWake on the nightstand beside a person settling into bed" loading="lazy" decoding="async"><figcaption>Built to belong at the bedside.</figcaption></figure>
                 </div>
                 <div class="lw2-feature-row">
                     <div><span>01 / Sound machine</span><h3>Your music, without the timer.</h3></div>
@@ -282,7 +280,7 @@
             <div class="lw2-shell">
                 <div class="lw2-app-story-head lw2-app-morning">
                     <div class="lw2-app-morning-copy">
-                        <p class="lw2-eyebrow">The Luna App · Luna Pilot</p>
+                        <p class="lw2-eyebrow">The Luna App</p>
                         <p class="lw2-pilot-promise">Tonight, I’ll…</p>
                         <h2 id="app-heading">Fade out the sound as you fall asleep.</h2>
                         <p>Put on something you love. Leave the timer off.</p>
@@ -290,7 +288,7 @@
                     <figure class="lw2-app-pilot">
                         <img src="images/luna-latest/luna-pilot-night.webp" width="1440" height="960" alt="A person asleep beside an unlit LunaWake on the nightstand" loading="lazy" decoding="async">
                         <figcaption>
-                            <p class="lw2-pilot-example">Luna Pilot · Example night</p>
+                            <p class="lw2-pilot-example">Example night</p>
                             <ol>
                                 <li><time datetime="23:20">11:20 PM</time><span>Bedtime reminder</span></li>
                                 <li><time datetime="08:00">8:00 AM</time><span>Gentle wake-up</span></li>
@@ -338,13 +336,14 @@
 
         <section class="lw2-finishes" id="finishes">
             <div class="lw2-shell lw2-finish-grid">
-                <div class="lw2-finish-copy"><p class="lw2-eyebrow">Choose your finish</p><h2>A quieter kind of color.</h2><p>Three material directions, one LunaWake experience. Select a finish to see the product render in its material state.</p><div class="lw2-finish-buttons" role="group" aria-label="Choose a LunaWake finish"><button type="button" data-finish="sandstone" aria-pressed="false"><span class="lw2-swatch lw2-swatch--sandstone" aria-hidden="true"></span>Sandstone (Warm Oat)</button><button class="is-active" type="button" data-finish="moonstone" aria-pressed="true"><span class="lw2-swatch lw2-swatch--moonstone" aria-hidden="true"></span>Moonstone (Grey)</button><button type="button" data-finish="midnight" aria-pressed="false"><span class="lw2-swatch lw2-swatch--midnight" aria-hidden="true"></span>Midnight (Charcoal)</button></div><p class="lw2-finish-name"><strong data-finish-name>Moonstone (Grey)</strong><span data-finish-detail>Light grey woven fabric, standing on its base in soft daylight.</span></p></div>
-                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img class="is-current" data-finish-image data-finish-view="full" src="images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp" srcset="images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp 1254w" sizes="(max-width: 900px) 100vw, 60vw" width="1254" height="1254" alt="LunaWake in Moonstone, a light grey woven finish, standing on its base in soft daylight." loading="lazy" decoding="async"><img class="is-next" data-finish-image-next width="1254" height="1254" alt="" aria-hidden="true"></div><figcaption><span>LunaWake / finish render</span><span data-finish-code>LW / MOONSTONE</span></figcaption></figure>
+                <figure class="lw2-finishes-overview"><img src="images/luna-latest/finishes-in-daylight.webp" width="1600" height="1067" alt="Moonstone, Sandstone, and Midnight LunaWake finishes side by side in daylight" loading="lazy" decoding="async"></figure>
+                <div class="lw2-finish-copy"><p class="lw2-eyebrow">Choose your finish</p><h2>A quieter kind of color.</h2><p>Three finishes, one LunaWake. Select a finish to see it up close.</p><div class="lw2-finish-buttons" role="group" aria-label="Choose a LunaWake finish"><button type="button" data-finish="sandstone" aria-pressed="false"><span class="lw2-swatch lw2-swatch--sandstone" aria-hidden="true"></span>Sandstone (Warm Oat)</button><button class="is-active" type="button" data-finish="moonstone" aria-pressed="true"><span class="lw2-swatch lw2-swatch--moonstone" aria-hidden="true"></span>Moonstone (Grey)</button><button type="button" data-finish="midnight" aria-pressed="false"><span class="lw2-swatch lw2-swatch--midnight" aria-hidden="true"></span>Midnight (Charcoal)</button></div><p class="lw2-finish-name"><strong data-finish-name>Moonstone (Grey)</strong><span data-finish-detail>Light grey woven fabric, standing on its base in soft daylight.</span></p><a class="lw2-button lw2-button--dark lw2-finish-cta" href="https://reserve.hellolunawake.com/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a></div>
+                <figure class="lw2-finish-stage"><div class="lw2-finish-image"><img class="is-current" data-finish-image data-finish-view="full" src="images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp" srcset="images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp 1254w" sizes="(max-width: 900px) 100vw, 60vw" width="1254" height="1254" alt="LunaWake in Moonstone, a light grey woven finish, standing on its base in soft daylight." loading="lazy" decoding="async"><img class="is-next" data-finish-image-next width="1254" height="1254" alt="" aria-hidden="true"></div></figure>
             </div>
         </section>
 
         <section class="lw2-lab" id="sleep-lab">
-            <div class="lw2-shell lw2-lab-grid"><div class="lw2-lab-media"><img src="images/luna-latest/model-scenes/c7.webp" width="1440" height="1080" alt="Person sleeping beside LunaWake in a real bedroom" loading="lazy" decoding="async"><span>Real-room study / overnight routine preview</span></div><div class="lw2-lab-copy"><p class="lw2-eyebrow">Sleep Lab</p><h2>The checks we run before Luna tells you anything.</h2><div class="lw2-lab-list" role="list"><div role="listitem"><span>01 / Lab</span><strong>Side by side with PSG in a university sleep lab, every 30 seconds, all night. Still in progress.</strong></div><div role="listitem"><span>02 / Wait</span><strong>No sleep type until Luna has seen at least a week of your nights.</strong></div><div role="listitem"><span>03 / Home</span><strong>Tested in ordinary bedrooms, not only in the lab.</strong></div></div><a class="lw2-inline-link" href="science.html">Read the study <span aria-hidden="true">↗</span></a><p class="lw2-lab-credibility">Luna’s coaching draws on CBT-I methods. LunaWake is a consumer wellness product, not a medical device.</p></div></div>
+            <div class="lw2-shell lw2-lab-grid"><div class="lw2-lab-media"><img src="images/luna-latest/model-scenes/c7.webp" width="1440" height="1080" alt="Person sleeping beside LunaWake in a real bedroom" loading="lazy" decoding="async"><span>A real bedroom, overnight</span></div><div class="lw2-lab-copy"><p class="lw2-eyebrow">Sleep Lab</p><h2>The checks we run before Luna tells you anything.</h2><div class="lw2-lab-list" role="list"><div role="listitem"><span>01 / Lab</span><strong>Side by side with PSG in a university sleep lab, every 30 seconds, all night. Still in progress.</strong></div><div role="listitem"><span>02 / Wait</span><strong>No sleep type until Luna has seen at least a week of your nights.</strong></div><div role="listitem"><span>03 / Home</span><strong>Tested in ordinary bedrooms, not only in the lab.</strong></div></div><a class="lw2-inline-link" href="science.html">Read the study <span aria-hidden="true">↗</span></a><p class="lw2-lab-credibility">Luna’s coaching draws on CBT-I methods.</p></div></div>
         </section>
 
         <section class="lw2-faq" id="faq">
@@ -354,7 +353,7 @@
         <section class="lw2-cta"><div class="lw2-shell"><p class="lw2-eyebrow">Join the launch list</p><h2>Bring home a steadier sleep rhythm.</h2><a class="lw2-button lw2-button--dark" href="https://reserve.hellolunawake.com/" target="_blank" rel="noopener noreferrer">Join the launch list <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
-    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" width="328" height="47" alt="LunaWake"></a><p>Your sleep, in rhythm.</p></div><nav aria-label="Footer navigation"><a href="science.html">Science</a><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy <span aria-hidden="true">↗</span></a><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms <span aria-hidden="true">↗</span></a></nav></div><div class="lw2-shell"><details class="lw2-mcp" id="lunawake-mcp"><summary><span>Lunawake MCP</span><span class="lw2-mcp-label">For your agent</span><span class="lw2-mcp-plus" aria-hidden="true">+</span></summary><div class="lw2-mcp-content"><p data-mcp-prompt>Read <a href="https://luna-product.vercel.app/lunawake-sleep-mcp.md" target="_blank" rel="noopener noreferrer">https://luna-product.vercel.app/lunawake-sleep-mcp.md</a> and help me connect Lunawake to my agent, then list my last 7 nights to verify the connection.</p><div class="lw2-mcp-actions"><button type="button" data-mcp-copy>Copy</button><span data-mcp-status role="status" aria-live="polite"></span></div></div></details></div><p class="lw2-shell lw2-footer-disclaimer">LunaWake is a wellness product, not a medical device. It is not intended to diagnose, treat, cure, or prevent any disease. Our sleep education is informed by published CBT-I research. Individual results may vary.</p><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><span>Wellness support, not medical advice.</span><a class="lw2-footer-social" href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer" aria-label="LunaWake on Instagram"><svg viewBox="0 0 256 256" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></a></div></footer>
+    <footer class="lw2-footer"><div class="lw2-shell lw2-footer-top"><div><a class="lw2-logo lw2-logo--footer" href="#top"><img src="images/combinelogo_white.png" width="328" height="47" alt="LunaWake"></a><p>Your sleep, in rhythm.</p></div><nav aria-label="Footer navigation"><a href="science.html">Science</a><a href="about.html">About</a><a href="support.html">Support</a><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy <span aria-hidden="true">↗</span></a><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms <span aria-hidden="true">↗</span></a></nav></div><div class="lw2-shell"><details class="lw2-mcp" id="lunawake-mcp"><summary><span>Lunawake MCP</span><span class="lw2-mcp-label">For your agent</span><span class="lw2-mcp-plus" aria-hidden="true">+</span></summary><div class="lw2-mcp-content"><p data-mcp-prompt>Read <a href="https://luna-product.vercel.app/lunawake-sleep-mcp.md" target="_blank" rel="noopener noreferrer">https://luna-product.vercel.app/lunawake-sleep-mcp.md</a> and help me connect Lunawake to my agent, then list my last 7 nights to verify the connection.</p><div class="lw2-mcp-actions"><button type="button" data-mcp-copy>Copy</button><span data-mcp-status role="status" aria-live="polite"></span></div></div></details></div><p class="lw2-shell lw2-footer-disclaimer">LunaWake is a wellness product, not a medical device. It is not intended to diagnose, treat, cure, or prevent any disease. Our sleep education is informed by published CBT-I research. Individual results may vary.</p><div class="lw2-shell lw2-footer-bottom"><span>© <span data-year="2026">2026</span> LunaWake</span><a class="lw2-footer-social" href="https://www.instagram.com/lunawake.ai/" target="_blank" rel="noopener noreferrer" aria-label="LunaWake on Instagram"><svg viewBox="0 0 256 256" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></a></div></footer>
 
     <script src="js/lw2_shell.js?v=2026-10-22-mcp1"></script>
     <script>
@@ -387,7 +386,6 @@
     "sandstone": {
         "name": "Sandstone (Warm Oat)",
         "detail": "Warm oat woven fabric with a speckled crown and butterfly mark.",
-        "code": "LW / SANDSTONE",
         "src": "images/luna-latest/by001-render-oatmeal-crown-logo-material-hero-ai-v1.webp",
         "srcset": "images/luna-latest/by001-render-oatmeal-crown-logo-material-hero-ai-v1.webp 1086w",
         "alt": "LunaWake in Sandstone, a warm oat woven finish, showing its fabric, speckled crown and butterfly mark.",
@@ -398,7 +396,6 @@
     "moonstone": {
         "name": "Moonstone (Grey)",
         "detail": "Light grey woven fabric, standing on its base in soft daylight.",
-        "code": "LW / MOONSTONE",
         "src": "images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp",
         "srcset": "images/luna-latest/by001-render-moonstone-full-body-light-sweep.webp 1254w",
         "alt": "LunaWake in Moonstone, a light grey woven finish, standing on its base in soft daylight.",
@@ -409,7 +406,6 @@
     "midnight": {
         "name": "Midnight (Charcoal)",
         "detail": "Near-black woven fabric with a dark base and a quiet display.",
-        "code": "LW / MIDNIGHT",
         "src": "images/luna-latest/by001-render-midnight-full-body-light-sweep.webp",
         "srcset": "images/luna-latest/by001-render-midnight-full-body-light-sweep.webp 1254w",
         "alt": "LunaWake in Midnight, a near-black woven finish, showing the 07:00 display on its base.",
@@ -491,7 +487,6 @@
             switchFinishImage(data);
             document.querySelector('[data-finish-name]').textContent = data.name;
             document.querySelector('[data-finish-detail]').textContent = data.detail;
-            document.querySelector('[data-finish-code]').textContent = data.code;
         }));
 
         const rhythmClock = document.querySelector('[data-rhythm-clock]');
@@ -501,18 +496,55 @@
             const readout = rhythmClock.querySelector('figcaption');
             const dial = rhythmClock.querySelector('.lw2-rhythm-dial');
             const arcs = Array.from(dial.querySelectorAll('[data-rhythm-arc]'));
+            const center = dial.querySelector('.lw2-rhythm-center');
+            const centerLabel = center.querySelector('span');
+            const description = readout.querySelector('span');
             let angle = 180;
-            phases.forEach((phase, index) => phase.addEventListener('click', () => {
-                if (phase.getAttribute('aria-pressed') === 'true') return;
-                phases.forEach((button) => button.setAttribute('aria-pressed', String(button === phase)));
+            let current = phases.findIndex((phase) => phase.getAttribute('aria-pressed') === 'true');
+            const select = (index) => {
+                if (index === current) return;
+                current = index;
+                phases.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
                 arcs.forEach((arc, arcIndex) => arc.classList.toggle('is-active', arcIndex === index));
                 const step = ((index * 60 - angle + 180) % 360 + 360) % 360 - 180;
                 angle += step;
                 dial.style.setProperty('--dial-angle', `${angle}deg`);
                 const label = notes[index].querySelector('b').textContent;
-                readout.querySelector('strong').textContent = label;
-                readout.querySelector('span').textContent = notes[index].textContent.slice(label.length).trim();
-            }));
+                centerLabel.textContent = label;
+                description.textContent = notes[index].textContent.slice(label.length).trim();
+            };
+
+            // Autoplay: walk the day clockwise while the dial is on screen, so first-time visitors
+            // see that it moves. Hover pauses it; any click or keyboard focus hands control to the
+            // viewer for good. Screen readers only hear the readout once the viewer is in control.
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let autoplay = !reducedMotion.matches;
+            let inView = false;
+            let hovering = false;
+            let timer = null;
+            const tick = () => select((current + 1) % phases.length);
+            const sync = () => {
+                const run = autoplay && inView && !hovering && !document.hidden;
+                if (run && !timer) timer = setInterval(tick, 3200);
+                if (!run && timer) { clearInterval(timer); timer = null; }
+            };
+            const takeControl = () => {
+                autoplay = false;
+                readout.setAttribute('aria-live', 'polite');
+                sync();
+            };
+            if (autoplay) readout.setAttribute('aria-live', 'off');
+            phases.forEach((phase, index) => {
+                phase.addEventListener('click', () => { takeControl(); select(index); });
+                phase.addEventListener('focus', () => { if (phase.matches(':focus-visible')) takeControl(); });
+            });
+            dial.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') { hovering = true; sync(); } });
+            dial.addEventListener('pointerleave', () => { hovering = false; sync(); });
+            document.addEventListener('visibilitychange', sync);
+            reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) takeControl(); });
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; sync(); }, { threshold: 0.5 }).observe(dial);
+            }
         }
 
         const nightView = document.querySelector('[data-night-view]');

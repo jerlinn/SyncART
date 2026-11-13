@@ -1391,14 +1391,49 @@ body.lw2-site.lw2-homepage .lw2-hero-meta i { background: #a1a1a6; }
     body.lw2-site.lw2-homepage .lw2-hero-pillars { grid-template-columns: minmax(0, 1fr); gap: 14px; }
 }
 
-/* Four function cards: photo, then name, what it does, and more, set on the ground below. */
+.lw2-feature-motion-toggle:not([hidden]) {
+    display: block;
+    min-height: 44px;
+    margin: 0 0 4px auto;
+    padding: 0 2px;
+    border: 0;
+    background: transparent;
+    color: #625950;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+}
+.lw2-feature-motion-toggle:not([hidden]) + .lw2-function-grid { margin-top: 0; }
+
+.lw2-adaptive-light-scene {
+    position: relative;
+    overflow: hidden;
+}
+.lw2-adaptive-light-off {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: lw2-adaptive-light-dim 8s infinite both paused;
+}
+.lw2-adaptive-light-scene.is-playing .lw2-adaptive-light-off { animation-play-state: running; }
+@keyframes lw2-adaptive-light-dim {
+    0%, 18%, 100% { opacity: 0; }
+    52%, 80% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .lw2-adaptive-light-scene:not(.is-playing) .lw2-adaptive-light-off { animation: none; }
+}
+
+/* Four function cards: imagery, then name, what it does, and more, set on the ground below. */
 body.lw2-site.lw2-homepage .lw2-function-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(20px, 2.2vw, 32px);
     align-items: start;
 }
 body.lw2-site.lw2-homepage .lw2-function-card { margin: 0; min-width: 0; }
-body.lw2-site.lw2-homepage .lw2-function-card video {
+body.lw2-site.lw2-homepage .lw2-function-card :is(img, video) {
     display: block;
     width: 100%;
     height: auto;
@@ -1406,24 +1441,6 @@ body.lw2-site.lw2-homepage .lw2-function-card video {
     object-fit: cover;
     background: #201b18;
 }
-body.lw2-site.lw2-homepage .lw2-function-card:first-child img { object-position: 55% center; }
-body.lw2-site.lw2-homepage .lw2-function-card:nth-child(2) img { object-position: 58% center; }
-.lw2-feature-clip { position: relative; }
-.lw2-feature-clip-play:not([hidden]) {
-    position: absolute;
-    inset: auto 12px 12px auto;
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(255, 255, 255, .6);
-    border-radius: 50%;
-    background: rgba(26, 22, 19, .65);
-    color: #fff;
-    cursor: pointer;
-}
-.lw2-feature-clip-play:hover { background: #1a1613; }
-.lw2-feature-clip-play:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption { display: grid; gap: 8px; margin-top: 18px; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption span { color: #6e6e73; font-size: var(--t7); font-weight: 500; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption strong { color: #1d1d1f; font-size: var(--t4); font-weight: 500; line-height: 1.2; letter-spacing: -.015em; text-wrap: balance; }
@@ -1433,7 +1450,7 @@ body.lw2-site.lw2-homepage .lw2-function-card figcaption small { color: #6e6e73;
 }
 @media (max-width: 560px) {
     body.lw2-site.lw2-homepage .lw2-function-grid { grid-template-columns: minmax(0, 1fr); }
-    body.lw2-site.lw2-homepage .lw2-function-card video { aspect-ratio: 3 / 2; }
+    body.lw2-site.lw2-homepage .lw2-function-card :is(img, video) { aspect-ratio: 3 / 2; }
 }
 
 /* Hero pillars as two hairline cards (per the hero layout reference), in the page's neutrals. */
@@ -1633,24 +1650,8 @@ body.lw2-site.lw2-homepage .lw2-night-takeaway a { text-decoration: none; }
     }
     body.lw2-site.lw2-homepage .lw2-function-grid::-webkit-scrollbar { display: none; }
     body.lw2-site.lw2-homepage .lw2-function-card { scroll-snap-align: start; }
-    body.lw2-site.lw2-homepage .lw2-function-card video { aspect-ratio: 4 / 3; }
-    .lw2-feature-clip { position: relative; }
-.lw2-feature-clip-play:not([hidden]) {
-    position: absolute;
-    inset: auto 12px 12px auto;
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(255, 255, 255, .6);
-    border-radius: 50%;
-    background: rgba(26, 22, 19, .65);
-    color: #fff;
-    cursor: pointer;
-}
-.lw2-feature-clip-play:hover { background: #1a1613; }
-.lw2-feature-clip-play:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-body.lw2-site.lw2-homepage .lw2-function-card figcaption { gap: 6px; margin-top: 12px; }
+    body.lw2-site.lw2-homepage .lw2-function-card :is(img, video) { aspect-ratio: 4 / 3; }
+    body.lw2-site.lw2-homepage .lw2-function-card figcaption { gap: 6px; margin-top: 12px; }
     body.lw2-site.lw2-homepage .lw2-function-card figcaption small { font-size: var(--t7); }
 
     /* Device: the four keyword tiles are compact; photos are wide, not tall. */

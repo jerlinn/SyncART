@@ -18,4 +18,8 @@
 /media/video/lunawake/*
 !/media/video/lunawake/featured/
 !/media/video/lunawake/featured/*.mp4
+!/media/video/lunawake/features/
+!/media/video/lunawake/features/*.mp4
+!/media/video/lunawake/features/*.jpg
+!/media/video/lunawake/features/*.gif
 /images/library/

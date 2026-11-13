@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-feature-clips">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-light-off">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -185,49 +185,25 @@
                     <div><p class="lw2-eyebrow">Four in one</p><h2 id="real-life-heading">Wind down with your rhythm. Wake on your time.</h2></div>
                     <p>Four jobs, one bedside device. Set your cues once, and LunaWake takes it from there.</p>
                 </div>
+                <button class="lw2-feature-motion-toggle" type="button" data-feature-motion-toggle hidden>Pause animations</button>
                 <div class="lw2-real-life-grid lw2-function-grid">
                     <figure class="lw2-function-card">
-                        <div class="lw2-feature-clip">
-                            <video controls muted playsinline preload="none" width="576" height="720" poster="media/video/lunawake/features/wind-down.jpg" aria-label="Bedtime wind-down">
-                                <source src="media/video/lunawake/features/wind-down.mp4" type="video/mp4">
-                            </video>
-                            <button class="lw2-feature-clip-play" type="button" aria-label="Play clip: Bedtime wind-down" hidden>
-                                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 7 5-7 5z" fill="currentColor"/></svg>
-                            </button>
-                        </div>
+                        <img src="images/luna-latest/routine-wind-down.webp" width="1600" height="1067" alt="A woman settles into bed beside LunaWake" loading="lazy" decoding="async">
                         <figcaption><span>01 / Wind Down Speaker</span><strong>Soundscapes that help you relax into sleep.</strong><small>Play the built-in sounds, or your own music, podcast, anything over Bluetooth. It fades out on its own once you’re asleep.</small></figcaption>
                     </figure>
                     <figure class="lw2-function-card">
-                        <div class="lw2-feature-clip">
-                            <video controls muted playsinline preload="none" width="576" height="720" poster="media/video/lunawake/features/adaptive-light.jpg" aria-label="LunaWake light dimming">
-                                <source src="media/video/lunawake/features/adaptive-light.mp4" type="video/mp4">
-                            </video>
-                            <button class="lw2-feature-clip-play" type="button" aria-label="Play clip: LunaWake light dimming" hidden>
-                                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 7 5-7 5z" fill="currentColor"/></svg>
-                            </button>
+                        <div class="lw2-adaptive-light-scene" data-feature-light>
+                            <img src="images/luna-latest/adaptive-light-bedroom.jpg" width="1600" height="1066" alt="Warm LunaWake light washes over the wall beside the bed" loading="lazy" decoding="async">
+                            <img class="lw2-adaptive-light-off" src="images/luna-latest/adaptive-light-bedroom-off.webp" width="1600" height="1066" alt="" aria-hidden="true" loading="lazy" decoding="async">
                         </div>
                         <figcaption><span>02 / Adaptive Light</span><strong>Warm light that winds down with your sound.</strong><small>It dims as you fall asleep, and gives a soft floor glow if you get up at night. No overhead light, no reaching for your phone.</small></figcaption>
                     </figure>
                     <figure class="lw2-function-card">
-                        <div class="lw2-feature-clip">
-                            <video controls muted playsinline preload="none" width="576" height="720" poster="media/video/lunawake/features/sleep-coach.jpg" aria-label="Morning sleep report in the Luna App">
-                                <source src="media/video/lunawake/features/sleep-coach.mp4" type="video/mp4">
-                            </video>
-                            <button class="lw2-feature-clip-play" type="button" aria-label="Play clip: Morning sleep report in the Luna App" hidden>
-                                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 7 5-7 5z" fill="currentColor"/></svg>
-                            </button>
-                        </div>
+                        <video data-feature-video="media/video/lunawake/features/overnight-radar-original.mp4" poster="media/video/lunawake/features/overnight-radar-original.jpg" width="480" height="600" muted loop playsinline preload="none" aria-label="Illustration of LunaWake sensing sleep with millimeter-wave radar"></video>
                         <figcaption><span>03 / Smart Sleep Coach</span><strong>Reads your nights and gives you one next step.</strong><small>Not a score, not a generic chatbot. It works from your own records and your life, built on CBT-I.</small></figcaption>
                     </figure>
                     <figure class="lw2-function-card">
-                        <div class="lw2-feature-clip">
-                            <video controls muted playsinline preload="none" width="576" height="720" poster="media/video/lunawake/features/sunrise.jpg" aria-label="Waking up and stretching in morning light">
-                                <source src="media/video/lunawake/features/sunrise.mp4" type="video/mp4">
-                            </video>
-                            <button class="lw2-feature-clip-play" type="button" aria-label="Play clip: Waking up and stretching in morning light" hidden>
-                                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m6 3 7 5-7 5z" fill="currentColor"/></svg>
-                            </button>
-                        </div>
+                        <video data-feature-video="media/video/lunawake/features/sunrise-original.mp4" poster="media/video/lunawake/features/sunrise-original.jpg" width="480" height="600" muted loop playsinline preload="none" aria-label="A woman wakes and stretches in morning light"></video>
                         <figcaption><span>04 / Sunrise Alarm</span><strong>A gradual light and sound wake, at the time you set.</strong><small>The glow builds before your alarm and eases you up at a lighter moment, so mornings feel less jarring.</small></figcaption>
                     </figure>
                 </div>
@@ -727,25 +703,45 @@
     </script>
     <script>
     (() => {
-        const clips = document.querySelectorAll('.lw2-feature-clip');
-        let playingClip;
-        clips.forEach((clip) => {
-            const video = clip.querySelector('video');
-            const trigger = clip.querySelector('button');
-            video.controls = false;
-            trigger.hidden = false;
-            trigger.addEventListener('click', () => {
-                video.controls = true;
-                const playback = video.play();
-                if (document.activeElement === trigger) video.focus();
-                trigger.hidden = true;
-                playback.catch(() => {});
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const motionToggle = document.querySelector('[data-feature-motion-toggle]');
+        if (motionToggle && 'IntersectionObserver' in window) {
+            const videos = Array.from(document.querySelectorAll('[data-feature-video]'));
+            const light = document.querySelector('[data-feature-light]');
+            const visible = new Set();
+            let playing = !reducedMotion.matches;
+            const sync = () => {
+                motionToggle.textContent = playing ? 'Pause animations' : 'Play animations';
+                if (light) light.classList.toggle('is-playing', playing && visible.has(light));
+                videos.forEach((video) => {
+                    if (playing && visible.has(video)) {
+                        if (!video.getAttribute('src')) video.src = video.dataset.featureVideo;
+                        if (video.paused) video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                    }
+                });
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(({ target, intersectionRatio }) => {
+                    if (intersectionRatio >= 0.45) visible.add(target);
+                    else visible.delete(target);
+                });
+                sync();
+            }, { threshold: 0.45 });
+            videos.forEach((video) => observer.observe(video));
+            if (light) observer.observe(light);
+            motionToggle.hidden = false;
+            motionToggle.addEventListener('click', () => {
+                playing = !playing;
+                sync();
             });
-            video.addEventListener('play', () => {
-                if (playingClip !== video) playingClip?.pause();
-                playingClip = video;
+            reducedMotion.addEventListener('change', () => {
+                playing = !reducedMotion.matches;
+                sync();
             });
-        });
+            sync();
+        }
 
         const frame = document.querySelector('[data-film]');
         if (!frame) return;

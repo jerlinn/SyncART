@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-pillar-cards-v1">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-pillars-plain-v1">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -718,7 +718,16 @@
             start(Number(b.dataset.filmSeek));
         }));
         video.addEventListener('play', () => frame.classList.add('is-playing'));
-        video.addEventListener('ended', () => frame.classList.remove('is-playing'));
+        // When the film ends, return to the poster instead of freezing on the end card with the
+        // play button over the logo: hide the controls, reload to the poster, clear the chapters.
+        video.addEventListener('ended', () => {
+            frame.classList.remove('is-playing');
+            video.controls = false;
+            video.load();
+            seeks.forEach((b) => b.classList.remove('is-active'));
+            const label = play.querySelector('span');
+            if (label) label.textContent = 'Watch again';
+        });
         video.addEventListener('timeupdate', () => {
             let active = -1;
             seeks.forEach((b, i) => { if (video.currentTime >= Number(b.dataset.filmSeek)) active = i; });

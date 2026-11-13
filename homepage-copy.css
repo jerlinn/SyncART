@@ -1352,3 +1352,6 @@ body.lw2-site.lw2-homepage :is(.lw2-sky--dawn, .lw2-sky--dusk) .d { stroke: #1d1
 body.lw2-site.lw2-homepage .lw2-feature-icon .s,
 body.lw2-site.lw2-homepage :is(.lw2-sky--dawn, .lw2-sky--dusk) .s { fill: #1d1d1f; }
 body.lw2-site.lw2-homepage .lw2-lab-media img { object-position: 42% 50%; }
+
+/* One dot per device icon carries the butterfly's orange-red (sampled from the logo). */
+body.lw2-site.lw2-homepage .lw2-feature-icon .s.a { fill: #f45648; }

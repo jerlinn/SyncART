@@ -837,16 +837,19 @@ html { scroll-padding-top: 88px; }
 .lw2-homepage .lw2-rhythm-figure { width: min(100%, 610px); }
 .lw2-homepage .lw2-rhythm-phase[data-rhythm-phase="4"] { left: calc(var(--phase-x) + 4%); }
 .lw2-homepage .lw2-rhythm-example { color: var(--lw2-annotation); }
-.lw2-homepage .lw2-feature-row { gap: 18px; margin-top: clamp(30px, 4vw, 54px); }
+/* Four roles in a row: wide gutters, regular-weight titles balanced over two lines so no
+   word is left alone, and the closing line set apart as its own beat. */
+.lw2-homepage .lw2-feature-row { column-gap: clamp(28px, 3.6vw, 56px); row-gap: 40px; margin-top: clamp(30px, 4vw, 54px); }
 .lw2-homepage .lw2-feature-row > div > span { color: var(--lw2-annotation); }
 .lw2-homepage .lw2-feature-row h3 {
-    margin-top: 14px;
+    margin-top: 12px;
     font-size: clamp(19px, 1.65vw, 24px);
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -.025em;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    text-wrap: balance;
 }
-.lw2-homepage .lw2-feature-note { margin-top: 30px; }
+.lw2-homepage .lw2-feature-note { margin-top: clamp(56px, 6vw, 88px); }
 .lw2-homepage .lw2-device-detail { margin-top: clamp(32px, 4.8vw, 64px); }
 .lw2-homepage .lw2-app-story .lw2-app-morning { gap: clamp(25px, 5vw, 74px); }
 .lw2-homepage .lw2-app-story .lw2-app-coach { margin-top: clamp(32px, 4.5vw, 58px); }
@@ -1031,3 +1034,21 @@ body.lw2-site.lw2-homepage .lw2-app-pilot img { border-radius: 0; }
 body.lw2-site.lw2-homepage { --lw2-ground-paper: #fffdf8; --lw2-ground-stone: #efece6; }
 body.lw2-site.lw2-homepage :is(.lw2-rhythm, .lw2-real-life, .lw2-radar, .lw2-finishes) { background: var(--lw2-ground-paper); }
 body.lw2-site.lw2-homepage :is(.lw2-film, .lw2-device, .lw2-app-story, .lw2-faq) { background: var(--lw2-ground-stone); }
+
+/* Four devices, four words: a number, the role in one big word, then the promise. */
+body.lw2-site.lw2-homepage .lw2-feature-row > div { min-height: 0; padding-top: 18px; }
+body.lw2-site.lw2-homepage .lw2-feature-row h3 {
+    margin-top: clamp(14px, 1.6vw, 22px);
+    font-size: var(--t2);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.035em;
+}
+body.lw2-site.lw2-homepage .lw2-feature-row p {
+    margin: 12px 0 0;
+    max-width: 15em;
+    color: var(--lw2-muted);
+    font-size: var(--t5);
+    line-height: 1.4;
+    text-wrap: balance;
+}

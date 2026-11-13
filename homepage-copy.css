@@ -1785,3 +1785,31 @@ body.lw2-site.lw2-homepage .lw2-hero h1 {
 @media (max-width: 560px) {
     body.lw2-site.lw2-homepage .lw2-hero h1 { font-size: clamp(38px, 10.5vw, 52px); }
 }
+
+/* Hero type hierarchy and spacing (design pass).
+   Levels: headline 80 Light · statement 19 · pillar name 17 Medium · pillar line 15 · action 15 · trust 12.
+   Spacing groups related things: headline + statement sit close (24), each new group opens
+   wider (pillars 32, actions 36, trust 32). The pillar rule matches the statement's measure. */
+body.lw2-site.lw2-homepage .lw2-hero-copy { max-width: 560px; text-wrap: pretty; }
+body.lw2-site.lw2-homepage .lw2-hero h1 + .lw2-hero-copy { margin-top: 24px; }
+body.lw2-site.lw2-homepage .lw2-hero-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    width: 100%;
+    max-width: 560px;
+    margin-top: 32px;
+    padding-top: 20px;
+}
+body.lw2-site.lw2-homepage .lw2-hero-pillars li { gap: 6px; }
+body.lw2-site.lw2-homepage .lw2-hero-pillars strong { font-size: 17px; font-weight: 500; }
+body.lw2-site.lw2-homepage .lw2-hero-pillars span { color: rgba(245, 245, 247, .72); font-size: var(--t6); line-height: 1.45; }
+body.lw2-site.lw2-homepage .lw2-hero .lw2-actions { margin-top: 36px; }
+body.lw2-site.lw2-homepage .lw2-hero-meta { margin-top: 32px; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-hero h1 + .lw2-hero-copy { margin-top: 18px; }
+    body.lw2-site.lw2-homepage .lw2-hero-pillars { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 24px; padding-top: 16px; }
+    body.lw2-site.lw2-homepage .lw2-hero-pillars strong { font-size: var(--t6); }
+    body.lw2-site.lw2-homepage .lw2-hero-pillars span { font-size: 14px; }
+    body.lw2-site.lw2-homepage .lw2-hero .lw2-actions { margin-top: 28px; }
+    body.lw2-site.lw2-homepage .lw2-hero-meta { margin-top: 24px; }
+}

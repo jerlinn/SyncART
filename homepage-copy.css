@@ -1398,15 +1398,32 @@ body.lw2-site.lw2-homepage .lw2-function-grid {
     align-items: start;
 }
 body.lw2-site.lw2-homepage .lw2-function-card { margin: 0; min-width: 0; }
-body.lw2-site.lw2-homepage .lw2-function-card img {
+body.lw2-site.lw2-homepage .lw2-function-card video {
     display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    background: #201b18;
 }
 body.lw2-site.lw2-homepage .lw2-function-card:first-child img { object-position: 55% center; }
 body.lw2-site.lw2-homepage .lw2-function-card:nth-child(2) img { object-position: 58% center; }
+.lw2-feature-clip { position: relative; }
+.lw2-feature-clip-play:not([hidden]) {
+    position: absolute;
+    inset: auto 12px 12px auto;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 50%;
+    background: rgba(26, 22, 19, .65);
+    color: #fff;
+    cursor: pointer;
+}
+.lw2-feature-clip-play:hover { background: #1a1613; }
+.lw2-feature-clip-play:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption { display: grid; gap: 8px; margin-top: 18px; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption span { color: #6e6e73; font-size: var(--t7); font-weight: 500; }
 body.lw2-site.lw2-homepage .lw2-function-card figcaption strong { color: #1d1d1f; font-size: var(--t4); font-weight: 500; line-height: 1.2; letter-spacing: -.015em; text-wrap: balance; }
@@ -1416,7 +1433,7 @@ body.lw2-site.lw2-homepage .lw2-function-card figcaption small { color: #6e6e73;
 }
 @media (max-width: 560px) {
     body.lw2-site.lw2-homepage .lw2-function-grid { grid-template-columns: minmax(0, 1fr); }
-    body.lw2-site.lw2-homepage .lw2-function-card img { aspect-ratio: 3 / 2; }
+    body.lw2-site.lw2-homepage .lw2-function-card video { aspect-ratio: 3 / 2; }
 }
 
 /* Hero pillars as two hairline cards (per the hero layout reference), in the page's neutrals. */
@@ -1616,8 +1633,24 @@ body.lw2-site.lw2-homepage .lw2-night-takeaway a { text-decoration: none; }
     }
     body.lw2-site.lw2-homepage .lw2-function-grid::-webkit-scrollbar { display: none; }
     body.lw2-site.lw2-homepage .lw2-function-card { scroll-snap-align: start; }
-    body.lw2-site.lw2-homepage .lw2-function-card img { aspect-ratio: 4 / 3; }
-    body.lw2-site.lw2-homepage .lw2-function-card figcaption { gap: 6px; margin-top: 12px; }
+    body.lw2-site.lw2-homepage .lw2-function-card video { aspect-ratio: 4 / 3; }
+    .lw2-feature-clip { position: relative; }
+.lw2-feature-clip-play:not([hidden]) {
+    position: absolute;
+    inset: auto 12px 12px auto;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 50%;
+    background: rgba(26, 22, 19, .65);
+    color: #fff;
+    cursor: pointer;
+}
+.lw2-feature-clip-play:hover { background: #1a1613; }
+.lw2-feature-clip-play:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+body.lw2-site.lw2-homepage .lw2-function-card figcaption { gap: 6px; margin-top: 12px; }
     body.lw2-site.lw2-homepage .lw2-function-card figcaption small { font-size: var(--t7); }
 
     /* Device: the four keyword tiles are compact; photos are wide, not tall. */
@@ -1676,3 +1709,54 @@ body.lw2-site.lw2-homepage .lw2-type-start { padding: 0; }
     body.lw2-site.lw2-homepage .lw2-type-card-top strong { min-height: 0; }
     body.lw2-site.lw2-homepage .lw2-type-line { min-height: 0; margin-top: 10px; }
 }
+
+/* Sleep type card, design pass: the animal is the hero of the card, sitting top-right above
+   a full-width name, so names never wrap and nothing reserves empty lines. Spacing follows
+   one 8-point rhythm: 8 · 16 · 24. */
+body.lw2-site.lw2-homepage .lw2-type-card-top {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: end;
+    gap: 8px 16px;
+}
+body.lw2-site.lw2-homepage .lw2-type-card-top > div { display: contents; }
+body.lw2-site.lw2-homepage .lw2-type-card-top small { grid-column: 1; grid-row: 1; align-self: end; }
+body.lw2-site.lw2-homepage .lw2-type-card-top strong { grid-column: 1 / -1; grid-row: 2; min-height: 0; white-space: nowrap; }
+body.lw2-site.lw2-homepage .lw2-type-card-top img {
+    grid-column: 2;
+    grid-row: 1;
+    width: clamp(88px, 8.4vw, 120px);
+    height: auto;
+    aspect-ratio: 1;
+    margin-bottom: -4px;
+}
+body.lw2-site.lw2-homepage .lw2-type-line { min-height: 0; margin-top: 16px; }
+body.lw2-site.lw2-homepage .lw2-axis-list { margin-top: 24px; gap: 16px; }
+body.lw2-site.lw2-homepage .lw2-type-start { margin-top: 24px; }
+body.lw2-site.lw2-homepage .lw2-type-card figcaption { margin-top: 16px; }
+
+/* The picker is one swipeable line on phones and tablets. */
+@media (max-width: 900px) {
+    body.lw2-site.lw2-homepage .lw2-type-picker {
+        flex-wrap: nowrap;
+        margin: 18px -18px 0;
+        padding: 0 18px 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        max-width: calc(100% + 36px);
+    }
+    body.lw2-site.lw2-homepage .lw2-type-picker::-webkit-scrollbar { display: none; }
+    body.lw2-site.lw2-homepage .lw2-type-picker button { flex: none; }
+    body.lw2-site.lw2-homepage .lw2-app-insight { grid-template-columns: minmax(0, 1fr); }
+    body.lw2-site.lw2-homepage .lw2-app-insight-copy { width: 100%; max-width: 100%; min-width: 0; }
+}
+/* Animal leads the card: a larger illustration on the card's left text edge, then label and name.
+   The drawings carry their own white space, so they need room to read at a glance. */
+body.lw2-site.lw2-homepage .lw2-type-card-top { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+body.lw2-site.lw2-homepage .lw2-type-card-top img {
+    order: -1;
+    width: clamp(120px, 10vw, 148px);
+    margin: -8px 0 12px -10px;
+}
+body.lw2-site.lw2-homepage .lw2-type-card-top small { margin-bottom: 6px; }
+body.lw2-site.lw2-homepage .lw2-type-card-top :is(small, strong) { align-self: flex-start; }

@@ -1455,3 +1455,58 @@ body.lw2-site.lw2-homepage .lw2-hero-pillars li {
     body.lw2-site.lw2-homepage .lw2-hero-pillars li { background: none; }
 }
 body.lw2-site.lw2-homepage .lw2-hero-pillars { margin-top: clamp(26px, 2.6vw, 36px); }
+
+/* Night charts in muted Morandi tones: one distinct hue per series, all at similar low
+   saturation so the charts read as a family on white. */
+body.lw2-site.lw2-homepage {
+    --mo-clay: #c08a74;      /* temperature, awake */
+    --mo-sage: #8fa69a;      /* humidity, core */
+    --mo-lavender: #9d93b6;  /* noise, REM */
+    --mo-slate: #5f7486;     /* deep */
+    --mo-rose: #c39a9c;      /* snoring */
+    --mo-wash: #f1e6dd;      /* falling-asleep span */
+}
+body.lw2-site.lw2-homepage .lw2-night-temp { stroke: var(--mo-clay); }
+body.lw2-site.lw2-homepage .lw2-night-humidity { stroke: var(--mo-sage); }
+body.lw2-site.lw2-homepage .lw2-night-noise { stroke: var(--mo-lavender); }
+body.lw2-site.lw2-homepage .lw2-night-trace polyline { stroke-width: 1.8; }
+body.lw2-site.lw2-homepage .lw2-night-stage-awake { fill: var(--mo-clay); }
+body.lw2-site.lw2-homepage .lw2-night-stage-rem { fill: var(--mo-lavender); }
+body.lw2-site.lw2-homepage .lw2-night-stage-core { fill: var(--mo-sage); }
+body.lw2-site.lw2-homepage .lw2-night-stage-deep { fill: var(--mo-slate); }
+body.lw2-site.lw2-homepage .lw2-night-snore { fill: var(--mo-rose); }
+body.lw2-site.lw2-homepage :is(.lw2-night-key-latency, .lw2-night-latency) { background: var(--mo-wash); fill: var(--mo-wash); }
+body.lw2-site.lw2-homepage .lw2-night-event { stroke: #86868b; }
+body.lw2-site.lw2-homepage .lw2-night-key > .lw2-night-key-awake { border-left-color: #86868b; }
+/* Tabs: ink underline, focus ring for keyboard only. */
+body.lw2-site.lw2-homepage .lw2-night-tabs button[aria-selected="true"] { color: #1d1d1f; border-bottom-color: #1d1d1f; box-shadow: inset 0 -2px 0 #1d1d1f; }
+body.lw2-site.lw2-homepage .lw2-night-tabs button:focus:not(:focus-visible) { outline: none; }
+
+/* Type card: no border and no dividers inside; sections separate by space. Axis tracks stay. */
+body.lw2-site.lw2-homepage .lw2-type-card { border: 0; }
+body.lw2-site.lw2-homepage .lw2-axis-list { padding-top: 0; border-top: 0; margin-top: 28px; }
+body.lw2-site.lw2-homepage .lw2-type-start { padding-top: 0; border-top: 0; margin-top: 30px; }
+
+/* Hero pillars, restored to the hairline version: one thin rule above two plain columns,
+   name in sentence case, line in grey. Supersedes the card and plain-text variants above. */
+body.lw2-site.lw2-homepage .lw2-hero-pillars {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+    gap: 28px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 26px 0 0;
+    padding: 18px 0 0;
+    border-top: 1px solid rgba(245, 245, 247, .22);
+}
+body.lw2-site.lw2-homepage .lw2-hero-pillars li { gap: 4px; padding: 0; border: 0; background: none; }
+body.lw2-site.lw2-homepage .lw2-hero-pillars strong {
+    color: #f5f5f7;
+    font-size: var(--t6);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+body.lw2-site.lw2-homepage .lw2-hero-pillars span { color: #a1a1a6; font-size: var(--t7); line-height: 1.45; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-hero-pillars { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}

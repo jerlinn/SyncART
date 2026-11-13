@@ -1439,3 +1439,19 @@ body.lw2-site.lw2-homepage .lw2-hero-pillars span { color: rgba(245, 245, 247, .
     body.lw2-site.lw2-homepage .lw2-hero-pillars { grid-template-columns: minmax(0, 1fr); gap: 10px; }
     body.lw2-site.lw2-homepage .lw2-hero-pillars li { background: rgba(255, 255, 255, .04); }
 }
+
+/* Hero pillars: plain text on the photo, no card fill or border. */
+body.lw2-site.lw2-homepage .lw2-hero-pillars { gap: clamp(24px, 3vw, 44px); }
+body.lw2-site.lw2-homepage .lw2-hero-pillars li {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-hero-pillars { gap: 16px; }
+    body.lw2-site.lw2-homepage .lw2-hero-pillars li { background: none; }
+}
+body.lw2-site.lw2-homepage .lw2-hero-pillars { margin-top: clamp(26px, 2.6vw, 36px); }

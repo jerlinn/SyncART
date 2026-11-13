@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-chips-v1">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-mobile-v1">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -134,7 +134,7 @@
                     <a class="lw2-inline-link" href="#how-it-works">See how LunaWake follows your night <span aria-hidden="true">↓</span></a>
                 </div>
                 <figure class="lw2-rhythm-figure" data-rhythm-clock>
-                    <div class="lw2-rhythm-dial" style="--dial-angle:180deg" role="group" aria-label="Explore six stages of a daily rhythm">
+                    <div class="lw2-rhythm-dial" data-phase="3" style="--dial-angle:180deg" role="group" aria-label="Explore six stages of a daily rhythm">
                         <svg class="lw2-rhythm-face" viewBox="0 0 360 360" aria-hidden="true">
                             <g class="lw2-rhythm-arcs"><path data-rhythm-arc="0" d="M114.74 57.27A139 139 0 0 1 245.26 57.27"/><path data-rhythm-arc="1" d="M253.66 62.12A139 139 0 0 1 318.92 175.15"/><path data-rhythm-arc="2" d="M318.92 184.85A139 139 0 0 1 253.66 297.88"/><path data-rhythm-arc="3" class="is-active" d="M245.26 302.73A139 139 0 0 1 114.74 302.73"/><path data-rhythm-arc="4" d="M106.34 297.88A139 139 0 0 1 41.08 184.85"/><path data-rhythm-arc="5" d="M41.08 175.15A139 139 0 0 1 106.34 62.12"/></g>
                             <g class="lw2-rhythm-pointer"><circle cx="180" cy="28" r="3.25"/></g>
@@ -547,6 +547,7 @@
                 phases.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
                 arcs.forEach((arc, i) => arc.classList.toggle('is-active', i === index));
                 center.dataset.phase = String(index);
+                dial.dataset.phase = String(index);
                 swapWords(index);
             };
 

@@ -1532,3 +1532,30 @@ body.lw2-site.lw2-homepage .lw2-type-picker button[aria-pressed="true"]:hover {
 }
 body.lw2-site.lw2-homepage :is(.lw2-finish-buttons, .lw2-type-picker) button:focus:not(:focus-visible) { outline: none; }
 body.lw2-site.lw2-homepage :is(.lw2-finish-buttons, .lw2-type-picker) button:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 2px; }
+
+/* Rhythm pointer takes the colour of the current phase's sky. */
+body.lw2-site.lw2-homepage .lw2-rhythm-pointer circle { transition: fill 1.2s cubic-bezier(.32, .72, 0, 1); }
+body.lw2-site.lw2-homepage .lw2-rhythm-dial[data-phase="0"] .lw2-rhythm-pointer circle { fill: #e9a07e; }
+body.lw2-site.lw2-homepage .lw2-rhythm-dial[data-phase="1"] .lw2-rhythm-pointer circle { fill: #7fb3c6; }
+body.lw2-site.lw2-homepage .lw2-rhythm-dial[data-phase="2"] .lw2-rhythm-pointer circle { fill: #d4ae78; }
+body.lw2-site.lw2-homepage .lw2-rhythm-dial[data-phase="3"] .lw2-rhythm-pointer circle { fill: #e58f7a; }
+body.lw2-site.lw2-homepage .lw2-rhythm-dial[data-phase="4"] .lw2-rhythm-pointer circle { fill: #8a74b4; }
+body.lw2-site.lw2-homepage .lw2-rhythm-dial[data-phase="5"] .lw2-rhythm-pointer circle { fill: #3b4a8a; }
+
+/* Mobile pass: 44px tap targets, and a trust strip that wraps without a stray dot. */
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage main .lw2-inline-link { display: inline-flex; align-items: center; min-height: 44px; }
+    body.lw2-site.lw2-homepage :is(.lw2-finish-buttons, .lw2-type-picker) button { min-height: 44px; }
+    body.lw2-site.lw2-homepage .lw2-rhythm-phase { min-width: 44px; min-height: 44px; }
+    body.lw2-site.lw2-homepage .lw2-menu { min-width: 44px; min-height: 44px; }
+    body.lw2-site.lw2-homepage .lw2-hero-meta { gap: 8px 18px; }
+    body.lw2-site.lw2-homepage .lw2-hero-meta i { display: none; }
+}
+/* Progress arcs: the gap now spans the whole arc, so no round-cap dot shows at arc ends. */
+body.lw2-site.lw2-homepage .lw2-rhythm-progress path { stroke-dasharray: 1 2; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-header .lw2-menu { width: 44px; height: 44px; }
+}
+/* "What LunaWake records": no rule under the charts and no underline; it reads like the other inline links. */
+body.lw2-site.lw2-homepage .lw2-radar-details { border-bottom: 0; }
+body.lw2-site.lw2-homepage .lw2-night-takeaway a { text-decoration: none; }

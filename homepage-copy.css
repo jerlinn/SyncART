@@ -1185,17 +1185,31 @@ body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="3"] { --sky-a: #f2b27c
 body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="4"] { --sky-a: #8a74b4; --sky-b: #cf93a6; --sky-c: #44508a; --sky-base: #5e5884; --sky-ink: #fdf8ef; }
 body.lw2-site.lw2-homepage .lw2-rhythm-center[data-phase="5"] { --sky-a: #2b3878; --sky-b: #55428a; --sky-c: #10142a; --sky-base: #1b2038; --sky-ink: #f1ecdf; }
 body.lw2-site.lw2-homepage .lw2-rhythm-care {
+    display: grid;
+    gap: .5em;
     margin: 0;
     color: var(--sky-ink);
-    font-size: var(--t4);
-    font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: -.02em;
     text-align: center;
 }
-body.lw2-site.lw2-homepage .lw2-rhythm-care span { display: block; text-wrap: balance; }
+body.lw2-site.lw2-homepage .lw2-rhythm-name {
+    font-size: var(--t3);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -.03em;
+    text-wrap: balance;
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-care .lw2-rhythm-feel {
+    font-size: var(--t6);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0;
+    opacity: .8;
+    text-wrap: balance;
+}
 @media (max-width: 560px) {
-    body.lw2-site.lw2-homepage .lw2-rhythm-care { font-size: var(--t6); }
+    body.lw2-site.lw2-homepage .lw2-rhythm-care { gap: .35em; }
+    body.lw2-site.lw2-homepage .lw2-rhythm-care .lw2-rhythm-feel { font-size: var(--t8); }
+    body.lw2-site.lw2-homepage .lw2-rhythm-care .lw2-rhythm-name { font-size: var(--t5); }
 }
 @media (prefers-reduced-motion: reduce) {
     body.lw2-site.lw2-homepage .lw2-rhythm-center { transition: none; }

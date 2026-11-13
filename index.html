@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-12-apple-colour-v1">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-12-rhythm-motion-v1">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -499,54 +499,112 @@
             const centerFeel = centerCare.querySelector('.lw2-rhythm-feel');
             const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
             const description = readout.querySelector('span');
-            let angle = 180;
+            // Autoplay walks the day as one continuous motion: the pointer travels the ring at a
+            // steady pace, the current arc draws in ink behind it, and when the pointer crosses
+            // into the next phase the sky eases over and the words hand off (out, then in, staggered).
+            // Hover pauses mid-stroke; a click or keyboard focus hands control to the viewer for good.
+            // Screen readers only hear the readout once the viewer is in control.
+            const PHASE_MS = 4200;
+            const EASE_OUT = 'cubic-bezier(.32, .72, 0, 1)';
+            const pointer = dial.querySelector('.lw2-rhythm-pointer');
+            const svgNS = 'http://www.w3.org/2000/svg';
+            const progressGroup = document.createElementNS(svgNS, 'g');
+            progressGroup.setAttribute('class', 'lw2-rhythm-progress');
+            const progressArcs = arcs.map((arc) => {
+                const path = document.createElementNS(svgNS, 'path');
+                path.setAttribute('d', arc.getAttribute('d'));
+                path.setAttribute('pathLength', '1');
+                progressGroup.appendChild(path);
+                return path;
+            });
+            arcs[0].parentNode.after(progressGroup);
+
             let current = phases.findIndex((phase) => phase.getAttribute('aria-pressed') === 'true');
-            const select = (index) => {
+            let pos = current;           // pointer position in phases; an integer is the middle of an arc
+            const setPointer = () => dial.style.setProperty('--dial-angle', `${pos * 60}deg`);
+            const fill = (index, amount) => progressArcs.forEach((path, i) => {
+                path.style.strokeDashoffset = String(i === index ? 1 - amount : 1);
+            });
+
+            const swapWords = (index) => {
+                const words = [
+                    [centerName, notes[index].querySelector('b').textContent],
+                    [centerFeel, phases[index].dataset.rhythmFeel],
+                    [description, phases[index].dataset.rhythmCare],
+                ];
+                if (reducedMotionQuery.matches || !centerName.animate) {
+                    words.forEach(([el, text]) => { el.textContent = text; });
+                    return;
+                }
+                words.forEach(([el, text], i) => {
+                    el.getAnimations().forEach((animation) => animation.cancel());
+                    const out = el.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-4px)' }],
+                        { duration: 260, easing: 'cubic-bezier(.4, 0, 1, 1)', fill: 'forwards' });
+                    out.onfinish = () => {
+                        el.textContent = text;
+                        out.cancel();
+                        el.animate([
+                            { opacity: 0, transform: 'translateY(6px)', filter: 'blur(4px)' },
+                            { opacity: 1, transform: 'none', filter: 'blur(0)' },
+                        ], { duration: 760, delay: i * 80, easing: EASE_OUT, fill: 'backwards' });
+                    };
+                });
+            };
+
+            const enter = (index) => {
                 if (index === current) return;
                 current = index;
                 phases.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
-                arcs.forEach((arc, arcIndex) => arc.classList.toggle('is-active', arcIndex === index));
-                const step = ((index * 60 - angle + 180) % 360 + 360) % 360 - 180;
-                angle += step;
-                dial.style.setProperty('--dial-angle', `${angle}deg`);
-                const label = notes[index].querySelector('b').textContent;
-                centerName.textContent = label;
-                centerFeel.textContent = phases[index].dataset.rhythmFeel;
+                arcs.forEach((arc, i) => arc.classList.toggle('is-active', i === index));
                 center.dataset.phase = String(index);
-                if (!reducedMotionQuery.matches && centerCare.animate) {
-                    centerCare.animate([{ opacity: 0, filter: 'blur(3px)' }, { opacity: 1, filter: 'blur(0)' }], { duration: 600, easing: 'cubic-bezier(.32, .72, 0, 1)' });
-                }
-                description.textContent = phases[index].dataset.rhythmCare;
+                swapWords(index);
             };
 
-            // Autoplay: walk the day clockwise while the dial is on screen, so first-time visitors
-            // see that it moves. Hover pauses it; any click or keyboard focus hands control to the
-            // viewer for good. Screen readers only hear the readout once the viewer is in control.
+            // Viewer choice: glide the pointer to the middle of the chosen arc and ink it fully.
+            const select = (index) => {
+                const step = (((index - pos) % 6) + 9) % 6 - 3;
+                pos = Math.round(pos + step);
+                dial.classList.remove('is-playing');
+                setPointer();
+                fill(index, 1);
+                enter(index);
+            };
+
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
             let autoplay = !reducedMotion.matches;
             let inView = false;
             let hovering = false;
-            let timer = null;
-            const tick = () => select((current + 1) % phases.length);
+            let frame = 0;
+            let last = 0;
+            const play = (now) => {
+                if (last) pos += (now - last) / PHASE_MS;
+                last = now;
+                const index = ((Math.round(pos) % 6) + 6) % 6;
+                enter(index);
+                fill(index, pos - Math.round(pos) + .5);
+                setPointer();
+                frame = requestAnimationFrame(play);
+            };
             const sync = () => {
                 const run = autoplay && inView && !hovering && !document.hidden;
-                if (run && !timer) timer = setInterval(tick, 3200);
-                if (!run && timer) { clearInterval(timer); timer = null; }
+                if (run && !frame) { last = 0; dial.classList.add('is-playing'); frame = requestAnimationFrame(play); }
+                if (!run && frame) { cancelAnimationFrame(frame); frame = 0; }
             };
             const takeControl = () => {
                 autoplay = false;
                 readout.setAttribute('aria-live', 'polite');
                 sync();
             };
+            fill(current, autoplay ? .5 : 1);
             if (autoplay) readout.setAttribute('aria-live', 'off');
             phases.forEach((phase, index) => {
                 phase.addEventListener('click', () => { takeControl(); select(index); });
-                phase.addEventListener('focus', () => { if (phase.matches(':focus-visible')) takeControl(); });
+                phase.addEventListener('focus', () => { if (phase.matches(':focus-visible')) { takeControl(); select(index); } });
             });
             dial.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') { hovering = true; sync(); } });
             dial.addEventListener('pointerleave', () => { hovering = false; sync(); });
             document.addEventListener('visibilitychange', sync);
-            reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) takeControl(); });
+            reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) { takeControl(); select(current); } });
             if ('IntersectionObserver' in window) {
                 new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; sync(); }, { threshold: 0.5 }).observe(dial);
             }

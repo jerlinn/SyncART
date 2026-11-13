@@ -1407,3 +1407,35 @@ body.lw2-site.lw2-homepage .lw2-function-card figcaption small { color: #6e6e73;
     body.lw2-site.lw2-homepage .lw2-function-grid { grid-template-columns: minmax(0, 1fr); }
     body.lw2-site.lw2-homepage .lw2-function-card img { aspect-ratio: 3 / 2; }
 }
+
+/* Hero pillars as two hairline cards (per the hero layout reference), in the page's neutrals. */
+body.lw2-site.lw2-homepage .lw2-hero-copy strong { color: #f5f5f7; font-weight: 600; }
+body.lw2-site.lw2-homepage .lw2-hero-pillars {
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    gap: 14px;
+    width: auto;
+    margin-top: 28px;
+    padding: 0;
+    border-top: 0;
+}
+body.lw2-site.lw2-homepage .lw2-hero-pillars li {
+    gap: 8px;
+    padding: 16px 18px 18px;
+    border: 1px solid rgba(245, 245, 247, .22);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, .28);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+body.lw2-site.lw2-homepage .lw2-hero-pillars strong {
+    color: #f5f5f7;
+    font-size: var(--t8);
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+body.lw2-site.lw2-homepage .lw2-hero-pillars span { color: rgba(245, 245, 247, .82); font-size: var(--t6); line-height: 1.45; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-hero-pillars { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    body.lw2-site.lw2-homepage .lw2-hero-pillars li { background: rgba(255, 255, 255, .04); }
+}

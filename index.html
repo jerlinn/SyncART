@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale" media="print" onload="this.media='all';this.onload=null">
     <noscript><link rel="stylesheet" href="styles.css?v=2026-11-12-type-scale"></noscript>
-    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-hero-rhythm">
+    <link rel="stylesheet" href="homepage-copy.css?v=2026-11-13-pattern-guidance">
     <script>
         (function () {
             var host = window.location.hostname.toLowerCase();
@@ -290,40 +290,79 @@
             <div class="lw2-shell lw2-lab-grid"><div class="lw2-lab-media"><img src="images/luna-latest/model-scenes/sleep-lab-bedside.webp" width="1440" height="960" alt="A woman asleep in bed, LunaWake glowing softly on the nightstand behind her" loading="lazy" decoding="async"><span>A real bedroom, overnight</span></div><div class="lw2-lab-copy"><p class="lw2-eyebrow">Sleep Lab</p><h2>The checks we run before Luna tells you anything.</h2><div class="lw2-lab-list" role="list"><div role="listitem"><span>01 / Lab</span><strong>Side by side with PSG in a university sleep lab, every 30 seconds, all night. Still in progress.</strong></div><div role="listitem"><span>02 / Wait</span><strong>No sleep type until Luna has seen at least a week of your nights.</strong></div><div role="listitem"><span>03 / Home</span><strong>Tested in ordinary bedrooms, not only in the lab.</strong></div></div><a class="lw2-inline-link" href="science.html">Read the study <span aria-hidden="true">↗</span></a><p class="lw2-lab-credibility">Smart Sleep Coach is built on CBT-I.</p></div></div>
         </section>
 
-        <section class="lw2-app-story" id="app" aria-label="Your sleep type">
+        <section class="lw2-app-story" id="app" aria-labelledby="sleep-pattern-heading">
             <div class="lw2-shell">
                 <div class="lw2-app-coach">
                     <article class="lw2-app-insight lw2-app-insight--pattern">
-                        <figure class="lw2-type-card lw2-app-type-media" data-type-card aria-live="polite">
-                        <div class="lw2-type-card-top">
-                            <div><small>Your type</small><strong data-type-name>The Night Listener</strong></div>
-                            <img data-type-img src="images/pattern-types/owl.webp" width="600" height="600" alt="" decoding="async">
-                        </div>
-                        <p class="lw2-type-line" data-type-line>Your night runs later than most people your age.</p>
-                        <ul class="lw2-axis-list">
-                            <li data-axis="timing" class="is-standout"><span class="lw2-axis-name">Timing</span><span class="lw2-axis-track"><i style="--k:0;left:88%"></i></span><span class="lw2-axis-poles"><small>Early bird</small><small class="is-on">Night owl</small></span></li>
-                            <li data-axis="recharge"><span class="lw2-axis-name">Recharge</span><span class="lw2-axis-track"><i style="--k:1;left:55%"></i></span><span class="lw2-axis-poles"><small>Light</small><small>Deep</small></span></li>
-                            <li data-axis="consistency"><span class="lw2-axis-name">Consistency</span><span class="lw2-axis-track"><i style="--k:2;left:40%"></i></span><span class="lw2-axis-poles"><small>Clockwork</small><small>Freestyle</small></span></li>
-                            <li data-axis="winddown"><span class="lw2-axis-name">Wind-down</span><span class="lw2-axis-track"><i style="--k:3;left:52%"></i></span><span class="lw2-axis-poles"><small>Quick</small><small>Slow</small></span></li>
-                            <li data-axis="duration"><span class="lw2-axis-name">Duration</span><span class="lw2-axis-track"><i style="--k:4;left:48%"></i></span><span class="lw2-axis-poles"><small>Short</small><small>Long</small></span></li>
-                        </ul>
-                        <div class="lw2-type-start"><small>Where LunaWake starts</small><p data-type-start>A steady wake time, with light that builds before your alarm.</p></div>
-                        <figcaption>Example readout. Yours comes from your own nights.</figcaption>
-                    </figure>
                         <div class="lw2-app-insight-copy">
-                            <h3>Meet your sleep type.</h3>
+                            <h3 id="sleep-pattern-heading">Meet your sleep pattern.</h3>
                             <p>After 7 to 14 nights, see the pattern in your sleep and where LunaWake would start.</p>
                             <p class="lw2-app-health-note">Sleep insights work with LunaWake or sleep data from Apple Health.</p>
-                            <div class="lw2-type-picker" role="group" aria-label="Choose a sleep type to preview">
-                                <button type="button" data-type="night-listener" aria-pressed="true">Night Listener</button>
-                                <button type="button" data-type="dawn-caller" aria-pressed="false">Dawn Caller</button>
-                                <button type="button" data-type="freeform" aria-pressed="false">Freeform Sleeper</button>
-                                <button type="button" data-type="deep" aria-pressed="false">Deep Sleeper</button>
-                                <button type="button" data-type="brief" aria-pressed="false">Brief Sleeper</button>
-                                <button type="button" data-type="long" aria-pressed="false">Long Sleeper</button>
-                                <button type="button" data-type="steady" aria-pressed="false">Steady Sleeper</button>
+                            <div class="lw2-pattern-picker" role="group" aria-label="Sleep pattern controls">
+                                    <button type="button" data-type="night-listener" aria-pressed="true">Owl</button>
+                                    <button type="button" data-type="dawn-caller" aria-pressed="false">Lark</button>
+                                    <button type="button" data-type="freeform" aria-pressed="false">Cat</button>
+                                    <button type="button" data-type="deep" aria-pressed="false">Dormouse</button>
+                                    <button type="button" data-type="brief" aria-pressed="false">Giraffe</button>
+                                    <button type="button" data-type="long" aria-pressed="false">Koala</button>
+                                    <button type="button" data-type="steady" aria-pressed="false">Capybara</button>
+                                    <button class="lw2-pattern-playback" type="button" data-pattern-playback aria-label="Pause autoplay" hidden>Pause</button>
                             </div>
                         </div>
+                        <figure class="lw2-pattern-card" data-type-card aria-live="off">
+                            <div class="lw2-pattern-header">
+                                <div>
+                                    <p class="lw2-pattern-label">Your pattern · <span data-type-roman>I</span></p>
+                                    <h4 data-type-name>Owl</h4>
+                                    <p class="lw2-pattern-description" data-type-line>Nocturnal. Owls aren't fighting the dark, they're built for it, sharpest and most awake long after dusk. So are you: your best thinking and your truest energy arrive once the world goes quiet, which is exactly why mornings and you have never gotten along.</p>
+                                </div>
+                                <div class="lw2-pattern-art" aria-hidden="true">
+                                    <img data-type-img src="images/pattern-types/owl-reference.jpg" width="340" height="340" alt="">
+                                </div>
+                            </div>
+                            <ul class="lw2-pattern-axes">
+                                <li data-axis="timing" class="is-standout">
+                                    <span class="lw2-pattern-axis-name">Timing</span>
+                                    <span class="lw2-pattern-track" role="meter" aria-label="Timing, Early bird to Night owl" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88"><i style="left: 88%"></i></span>
+                                    <span class="lw2-pattern-poles"><span>Early bird</span><span class="is-on">Night owl</span></span>
+                                </li>
+                                <li data-axis="recharge">
+                                    <span class="lw2-pattern-axis-name">Recharge</span>
+                                    <span class="lw2-pattern-track" role="meter" aria-label="Recharge, Light to Deep" aria-valuemin="0" aria-valuemax="100" aria-valuenow="55"><i style="left: 55%"></i></span>
+                                    <span class="lw2-pattern-poles"><span>Light</span><span>Deep</span></span>
+                                </li>
+                                <li data-axis="consistency">
+                                    <span class="lw2-pattern-axis-name">Consistency</span>
+                                    <span class="lw2-pattern-track" role="meter" aria-label="Consistency, Clockwork to Freestyle" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><i style="left: 40%"></i></span>
+                                    <span class="lw2-pattern-poles"><span>Clockwork</span><span>Freestyle</span></span>
+                                </li>
+                                <li data-axis="winddown">
+                                    <span class="lw2-pattern-axis-name">Wind-down</span>
+                                    <span class="lw2-pattern-track" role="meter" aria-label="Wind-down, Quick to Slow" aria-valuemin="0" aria-valuemax="100" aria-valuenow="52"><i style="left: 52%"></i></span>
+                                    <span class="lw2-pattern-poles"><span>Quick</span><span>Slow</span></span>
+                                </li>
+                                <li data-axis="duration">
+                                    <span class="lw2-pattern-axis-name">Duration</span>
+                                    <span class="lw2-pattern-track" role="meter" aria-label="Duration, Short to Long" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48"><i style="left: 48%"></i></span>
+                                    <span class="lw2-pattern-poles"><span>Short</span><span>Long</span></span>
+                                </li>
+                            </ul>
+                            <div class="lw2-pattern-details">
+                                <div class="lw2-pattern-start">
+                                    <p class="lw2-pattern-label">Where LunaWake starts</p>
+                                    <p class="lw2-pattern-action" data-type-action>Give late nights a steady morning</p>
+                                    <p data-type-start>A steady wake time, with light that builds before your alarm.</p>
+                                </div>
+                                <div class="lw2-pattern-roommate">
+                                    <p class="lw2-pattern-label">Best roommate <strong data-type-mate>Cat</strong></p>
+                                    <div class="lw2-pattern-art lw2-pattern-mate-art" aria-hidden="true">
+                                        <img data-type-mate-img src="images/pattern-types/cat-reference.jpg" width="340" height="340" alt="">
+                                    </div>
+                                    <p data-type-mate-line>Two creatures of the night orbiting the same dark. Neither blinks at a 2 a.m. light still on or a midnight snack run.</p>
+                                </div>
+                            </div>
+                            <figcaption>Example readout. Yours comes from your own nights.</figcaption>
+                        </figure>
                     </article>
                 </div>
             </div>
@@ -782,114 +821,217 @@
     </script>
 <script>
 (function () {
-    var card = document.querySelector('[data-type-card]');
+    const card = document.querySelector('[data-type-card]');
     if (!card) return;
-    var types = [{"id": "night-listener", "name": "The Night Listener", "img": "images/pattern-types/owl.webp", "w": 600, "h": 600, "line": "Your night runs later than most people your age.", "pos": [88, 55, 40, 52, 48], "standout": ["timing", "r"], "start": "A steady wake time, with light that builds before your alarm."}, {"id": "dawn-caller", "name": "The Dawn Caller", "img": "images/pattern-types/lark.webp", "w": 600, "h": 600, "line": "You’re up earlier than most people your age.", "pos": [12, 56, 30, 40, 50], "standout": ["timing", "l"], "start": "A dark room until your alarm, then a light-first wake."}, {"id": "freeform", "name": "The Freeform Sleeper", "img": "images/pattern-types/cat.webp", "w": 600, "h": 600, "line": "Your bedtime moves a lot from night to night.", "pos": [60, 45, 90, 55, 50], "standout": ["consistency", "r"], "start": "One anchor first: the same wake time, every day."}, {"id": "deep", "name": "The Deep Sleeper", "img": "images/pattern-types/dormouse.webp", "w": 600, "h": 600, "line": "More of your night goes to deep and REM sleep than most people your age.", "pos": [45, 88, 34, 35, 55], "standout": ["recharge", "r"], "start": "Keep the wind-down that’s working, night after night."}, {"id": "brief", "name": "The Brief Sleeper", "img": "images/pattern-types/giraffe.webp", "w": 450, "h": 600, "line": "You sleep less than most people your age.", "pos": [55, 50, 42, 38, 10], "standout": ["duration", "l"], "start": "A wind-down cue at the same hour each evening."}, {"id": "long", "name": "The Long Sleeper", "img": "images/pattern-types/koala.webp", "w": 600, "h": 600, "line": "You sleep longer than most people your age.", "pos": [50, 52, 36, 48, 90], "standout": ["duration", "r"], "start": "A gentle, light-first wake at the time you set."}, {"id": "steady", "name": "The Steady Sleeper", "img": "images/pattern-types/capybara.webp", "w": 600, "h": 600, "line": "No extremes. Your nights keep an even pace.", "pos": [50, 52, 42, 46, 50], "standout": null, "start": "Keep the rhythm. Luna tells you if it starts to drift."}];
-    var INTERVAL = 3600;
-    var picker = document.querySelector('.lw2-type-picker');
-    var buttons = Array.prototype.slice.call(picker.querySelectorAll('[data-type]'));
-    var axes = ['timing', 'recharge', 'consistency', 'winddown', 'duration'];
-    var nameEl = card.querySelector('[data-type-name]'), lineEl = card.querySelector('[data-type-line]'), imgEl = card.querySelector('[data-type-img]');
-    var startEl = card.querySelector('[data-type-start]');
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var canAnimate = !reduce && typeof nameEl.animate === 'function';
-    var EASE = 'cubic-bezier(.2, .8, .2, 1)';
-    var current = 0, timer = null, touched = false, seen = false, preloaded = false;
 
-    function preload() { if (preloaded) return; preloaded = true; types.forEach(function (t) { var i = new Image(); i.src = t.img; }); }
-
-
-    function setName(text) {
-        nameEl.setAttribute('aria-label', text);
-        if (!canAnimate) { nameEl.textContent = text; return; }
-        nameEl.textContent = '';
-        var n = 0;
-        text.split(' ').forEach(function (word, w) {
-            if (w) nameEl.appendChild(document.createTextNode(' '));
-            var wordEl = document.createElement('span');
-            wordEl.className = 'lw2-type-word';
-            wordEl.setAttribute('aria-hidden', 'true');
-            Array.prototype.forEach.call(word, function (ch) {
-                var s = document.createElement('span');
-                s.textContent = ch;
-                wordEl.appendChild(s);
-                s.animate([
-                    { opacity: 0, transform: 'translateY(.28em)', filter: 'blur(8px)' },
-                    { opacity: 1, transform: 'none', filter: 'blur(0)' }
-                ], { duration: 620, delay: n++ * 16, easing: EASE, fill: 'backwards' });
-            });
-            nameEl.appendChild(wordEl);
-        });
-    }
-
-    function setAxes(t, from) {
-        axes.forEach(function (key, k) {
-            var li = card.querySelector('[data-axis="' + key + '"]');
-            var on = !!t.standout && t.standout[0] === key;
-            li.classList.toggle('is-standout', on);
-            var dot = li.querySelector('i');
-            if (from != null) { dot.style.transition = 'none'; dot.style.left = from + '%'; dot.offsetWidth; dot.style.transition = ''; }
-            dot.style.left = t.pos[k] + '%';
-            var poles = li.querySelectorAll('small');
-            poles[0].classList.toggle('is-on', on && t.standout[1] === 'l');
-            poles[1].classList.toggle('is-on', on && t.standout[1] === 'r');
-        });
-    }
-
-    function show(index, opts) {
-        opts = opts || {};
-        var t = types[index]; current = index;
-        buttons.forEach(function (b, k) { b.setAttribute('aria-pressed', k === index ? 'true' : 'false'); });
-        if (!canAnimate) {
-            startEl.textContent = t.start; nameEl.textContent = t.name; lineEl.textContent = t.line; imgEl.src = t.img; imgEl.width = t.w; imgEl.height = t.h;
-            setAxes(t); return;
+    const types = [
+        {
+            name: "Owl", roman: "I",
+            image: "images/pattern-types/owl-reference.jpg",
+            line: "Nocturnal. Owls aren't fighting the dark, they're built for it, sharpest and most awake long after dusk. So are you: your best thinking and your truest energy arrive once the world goes quiet, which is exactly why mornings and you have never gotten along.",
+            positions: [88, 55, 40, 52, 48], standout: ["timing", "r"],
+            action: "Give late nights a steady morning",
+            start: "A steady wake time, with light that builds before your alarm.",
+            mate: "Cat", mateLine: "Two creatures of the night orbiting the same dark. Neither blinks at a 2 a.m. light still on or a midnight snack run."
+        },
+        {
+            name: "Lark", roman: "II",
+            image: "images/pattern-types/lark-reference.jpg",
+            line: "Early. The lark is the first voice of the morning, singing before the sky has fully turned. You wake the same way, clearest and most yourself in that still hour before anyone else stirs, and just as honestly, you're spent by late evening.",
+            positions: [12, 56, 30, 40, 50], standout: ["timing", "l"],
+            action: "Let your alarm set the first light",
+            start: "A dark room until your alarm, then a light-first wake.",
+            mate: "Giraffe", mateLine: "The only two awake at 5 a.m., and thrilled about it. Sunrise and coffee before the world opens its eyes."
+        },
+        {
+            name: "Cat", roman: "III",
+            image: "images/pattern-types/cat-reference.jpg",
+            line: "Freeform. Cats sleep in scattered naps whenever the mood takes them, loyal only to their own clock. Your nights run the same way: no two alike, no fixed routine, because a rigid schedule has never once fit the way you actually live.",
+            positions: [60, 45, 90, 55, 50], standout: ["consistency", "r"],
+            action: "Give an irregular schedule one anchor",
+            start: "One anchor first: the same wake time, every day.",
+            mate: "Dormouse", mateLine: "You keep no schedule and roam at all hours; the Dormouse is so far under it will never once know. Total freedom, zero guilt."
+        },
+        {
+            name: "Dormouse", roman: "IV",
+            image: "images/pattern-types/dormouse-reference.jpg",
+            line: "Deep. The dormouse is the champion sleeper of the animal world, famous for going under so completely it can stay asleep for months. You're cut from the same cloth: you sink fast and far, sleep clean through the storm, and surface genuinely restored while lighter sleepers look on with envy.",
+            positions: [45, 88, 34, 35, 55], standout: ["recharge", "r"],
+            action: "Keep the routine that helps you sleep deeply",
+            start: "Keep the wind-down that’s working, night after night.",
+            mate: "Cat", mateLine: "Nothing wakes you, so you're the dream roommate for a wanderer. They could stage a midnight play and you'd sleep clean through the encore."
+        },
+        {
+            name: "Giraffe", roman: "V",
+            image: "images/pattern-types/giraffe-reference.jpg",
+            line: "Brief. A giraffe runs the whole day on under two hours of sleep, taken in quick bursts, and barely misses a beat. You're wired much the same: you need less than most people and you're not bragging, it's just how you're built, one good short night and you're good to go.",
+            positions: [55, 50, 42, 38, 10], standout: ["duration", "l"],
+            action: "Set a cue so short nights don’t shrink",
+            start: "A wind-down cue at the same hour each evening.",
+            mate: "Lark", mateLine: "Both up early, both fine on little, both long out of bed while the Koalas dream on. The room is always free, and that suits you both."
+        },
+        {
+            name: "Koala", roman: "VI",
+            image: "images/pattern-types/koala-reference.jpg",
+            line: "Long. Koalas spend up to twenty hours a day asleep and make zero apologies for it. You get it: you need a long, generous night to feel like yourself, and when you finally get one, no creature on earth is more at ease.",
+            positions: [50, 52, 36, 48, 90], standout: ["duration", "r"],
+            action: "Give a long night a gentle ending",
+            start: "A gentle, light-first wake at the time you set.",
+            mate: "Capybara", mateLine: "You need a long, protected, unhurried sleep; the unshakeable Capybara guards the calm and lets you have every hour of it."
+        },
+        {
+            name: "Capybara", roman: "VII",
+            image: "images/pattern-types/capybara-reference.jpg",
+            line: "Steady. The capybara is nature's picture of calm, unbothered by chaos and at ease with absolutely everyone. Your nights carry the same even temper, holding their rhythm no matter what the day threw at you, and that quiet consistency is a rarer superpower than it sounds.",
+            positions: [50, 52, 42, 46, 50], standout: null,
+            action: "Spot the first signs of drift",
+            start: "Keep the rhythm. Luna tells you if it starts to drift.",
+            mate: "Koala", mateLine: "Nature's diplomat sleeps easy beside any type and smooths whatever rhythm the room keeps. The roommate everybody secretly wants."
         }
-        if (opts.intro) { setAxes(t, 50); return; }
-        var out = { duration: 200, easing: 'ease-in', fill: 'forwards' };
-        nameEl.animate([{ opacity: 1, filter: 'blur(0)', transform: 'none' }, { opacity: 0, filter: 'blur(6px)', transform: 'translateY(-.12em)' }], out);
-        lineEl.animate([{ opacity: 1 }, { opacity: 0 }], out);
-        startEl.animate([{ opacity: 1 }, { opacity: 0 }], out);
-        var imgOut = imgEl.animate([{ opacity: 1, transform: 'none', filter: 'blur(0)' }, { opacity: 0, transform: 'scale(.9)', filter: 'blur(6px)' }], out);
-        setAxes(t);
-        imgOut.onfinish = function () {
-            if (current !== index) return;
-            setName(t.name);
-            nameEl.getAnimations().forEach(function (a) { if (a.effect && a.effect.target === nameEl) a.cancel(); });
-            lineEl.textContent = t.line;
-            lineEl.getAnimations().forEach(function (a) { a.cancel(); });
-            lineEl.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 520, delay: 140, easing: EASE, fill: 'backwards' });
-            startEl.textContent = t.start;
-            startEl.getAnimations().forEach(function (x) { x.cancel(); });
-            startEl.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 560, delay: 520, easing: EASE, fill: 'backwards' });
-            imgEl.src = t.img; imgEl.width = t.w; imgEl.height = t.h;
-            imgEl.getAnimations().forEach(function (a) { a.cancel(); });
-            imgEl.animate([{ opacity: 0, transform: 'scale(1.08)', filter: 'blur(6px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 700, easing: 'cubic-bezier(.34, 1.3, .5, 1)', fill: 'backwards' });
-        };
+    ];
+    const picker = document.querySelector('.lw2-pattern-picker');
+    const buttons = Array.from(picker.querySelectorAll('[data-type]'));
+    const axes = Array.from(card.querySelectorAll('[data-axis]'));
+    const name = card.querySelector('[data-type-name]');
+    const description = card.querySelector('[data-type-line]');
+    const roman = card.querySelector('[data-type-roman]');
+    const image = card.querySelector('[data-type-img]');
+    const action = card.querySelector('[data-type-action]');
+    const start = card.querySelector('[data-type-start]');
+    const mate = card.querySelector('[data-type-mate]');
+    const mateImage = card.querySelector('[data-type-mate-img]');
+    const mateLine = card.querySelector('[data-type-mate-line]');
+    const playback = document.querySelector('[data-pattern-playback]');
+    const animatedContent = [
+        card.querySelector('.lw2-pattern-header'),
+        card.querySelector('.lw2-pattern-details')
+    ];
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const readingTime = 10000;
+    let current = 0;
+    let timer;
+    let animations = [];
+    let autoplay = !reducedMotion.matches;
+    let visible = false;
+
+    function cancelTransition() {
+        animations.forEach(animation => animation.cancel());
+        animations = [];
     }
 
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
-    function start() {
-        if (touched || timer || reduce) return;
-        timer = setInterval(function () { show((current + 1) % types.length); }, INTERVAL);
-    }
-
-    buttons.forEach(function (b, k) {
-        b.addEventListener('click', function () { touched = true; stop(); preload(); if (k !== current) show(k); });
-    });
-    [card, picker].forEach(function (el) {
-        el.addEventListener('mouseenter', stop);
-        el.addEventListener('mouseleave', function () { if (seen) start(); });
-    });
-    if (!('IntersectionObserver' in window)) return;
-    new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-            if (e.isIntersecting) {
-                preload();
-                if (!seen) { seen = true; card.classList.add('is-in'); if (canAnimate) show(current, { intro: true }); }
-                start();
-            } else stop();
+    function show(index, automatic = false) {
+        cancelTransition();
+        const type = types[index];
+        if (index === current) return;
+        card.setAttribute('aria-live', automatic ? 'off' : 'polite');
+        current = index;
+        buttons.forEach((button, position) => {
+            button.setAttribute('aria-pressed', String(position === index));
         });
-    }, { threshold: 0.45 }).observe(card);
+        roman.textContent = type.roman;
+        name.textContent = type.name;
+        description.textContent = type.line;
+        image.src = type.image;
+        action.textContent = type.action;
+        start.textContent = type.start;
+        mate.textContent = type.mate;
+        mateImage.src = types.find(pattern => pattern.name === type.mate).image;
+        mateLine.textContent = type.mateLine;
+        axes.forEach((axis, position) => {
+            const value = type.positions[position];
+            const standout = type.standout?.[0] === axis.dataset.axis;
+            const track = axis.querySelector('.lw2-pattern-track');
+            const [low, high] = axis.querySelector('.lw2-pattern-poles').children;
+            axis.classList.toggle('is-standout', standout);
+            track.setAttribute('aria-valuenow', value);
+            track.firstElementChild.style.left = value + '%';
+            low.classList.toggle('is-on', standout && type.standout[1] === 'l');
+            high.classList.toggle('is-on', standout && type.standout[1] === 'r');
+        });
+        if (!reducedMotion.matches && typeof card.animate === 'function') {
+            animations = animatedContent.map(element => element.animate(
+                [{ opacity: automatic ? 0.16 : 0.55 }, { opacity: 1 }],
+                { duration: 640, easing: 'ease-out' }
+            ));
+        }
+    }
+
+    function suspend() {
+        clearTimeout(timer);
+        timer = undefined;
+        cancelTransition();
+    }
+
+    function setAutoplay(enabled) {
+        autoplay = enabled;
+        playback.textContent = autoplay ? 'Pause' : 'Play';
+        playback.setAttribute('aria-label', autoplay ? 'Pause autoplay' : 'Play automatically');
+        suspend();
+        if (autoplay) resume();
+    }
+
+    async function advance() {
+        timer = undefined;
+        const next = (current + 1) % types.length;
+        if (!reducedMotion.matches && typeof card.animate === 'function') {
+            cancelTransition();
+            animations = animatedContent.map(element => element.animate(
+                [{ opacity: 1 }, { opacity: 0.16 }],
+                { duration: 360, easing: 'ease-in-out', fill: 'forwards' }
+            ));
+            try {
+                await Promise.all(animations.map(animation => animation.finished));
+            } catch {
+                return;
+            }
+        }
+        show(next, true);
+        resume();
+    }
+
+    function resume() {
+        if (timer || !autoplay || !visible || document.hidden ||
+            picker.querySelector('[data-type]:focus, [data-type]:hover') || card.matches(':hover')) return;
+        timer = setTimeout(advance, readingTime);
+    }
+
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            setAutoplay(false);
+            show(index);
+        });
+    });
+    [card, ...buttons].forEach((element) => {
+        element.addEventListener('mouseenter', suspend);
+        element.addEventListener('mouseleave', () => requestAnimationFrame(resume));
+    });
+    picker.addEventListener('focusin', event => {
+        if (event.target !== playback) suspend();
+    });
+    picker.addEventListener('focusout', () => requestAnimationFrame(resume));
+    reducedMotion.addEventListener('change', () => {
+        if (reducedMotion.matches) setAutoplay(false);
+    });
+    document.addEventListener('visibilitychange', () => document.hidden ? suspend() : resume());
+
+    if ('IntersectionObserver' in window) {
+        playback.hidden = false;
+        playback.addEventListener('click', () => setAutoplay(!autoplay));
+        setAutoplay(autoplay);
+        const preload = new IntersectionObserver(entries => {
+            if (!entries.some(entry => entry.isIntersecting)) return;
+            types.slice(1).forEach(type => { new Image().src = type.image; });
+            preload.disconnect();
+        }, { rootMargin: '240px' });
+        preload.observe(card);
+
+        const observer = new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting;
+            if (visible) resume();
+            else suspend();
+        }, { threshold: 0.25 });
+        observer.observe(card);
+    }
 })();
 </script>
 </body>

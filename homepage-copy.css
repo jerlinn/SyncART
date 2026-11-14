@@ -1814,54 +1814,295 @@ body.lw2-site.lw2-homepage .lw2-hero-meta { margin-top: 32px; }
     body.lw2-site.lw2-homepage .lw2-hero-meta { margin-top: 24px; }
 }
 
-
-/* Sleep Pattern: the site's paper, muted ink and soft ambient light, not a separate palette. */
-.lw2-site .lw2-app-insight--pattern .lw2-type-card {
-  border-radius: 20px;
-  overflow: hidden;
-  background: var(--lw2-graphic-paper);
-  box-shadow: 0 12px 36px rgba(34,31,26,.045);
+/* Homepage Sleep Pattern preview */
+.lw2-site.lw2-homepage .lw2-app-insight--pattern {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: clamp(32px, 6vw, 96px);
 }
-.lw2-site .lw2-pattern-art {
-  position: relative;
-  display: grid;
-  place-items: center;
-  isolation: isolate;
-  height: clamp(180px, 23vw, 245px);
-  margin: -18px -18px 18px;
-  background: transparent;
+.lw2-homepage .lw2-app-insight--pattern .lw2-app-insight-copy {
+    max-width: 425px;
 }
-.lw2-site .lw2-pattern-orb {
-  position: absolute;
-  z-index: -1;
-  width: min(75%, 270px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 55% 43%,var(--pattern-hue, #dcd9ee) 5%, color-mix(in srgb, var(--pattern-hue, #dcd9ee) 48%, var(--lw2-graphic-paper)) 48%,transparent 73%);
-  opacity: .84;
-  filter: blur(4px);
+.lw2-homepage .lw2-pattern-picker {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 24px;
 }
-.lw2-site .lw2-pattern-art img {
-  width: 62%;
-  max-width: 188px;
-  height: 85%;
-  object-fit: contain;
-  filter: none;
+.lw2-homepage .lw2-pattern-picker button {
+    min-height: 44px;
+    padding: 6px 4px;
+    border: 0;
+    border-radius: 7px;
+    background: #eeece8;
+    color: #332f2b;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    cursor: pointer;
 }
-.lw2-site .lw2-app-insight--pattern .lw2-type-card-top { display: block; }
-.lw2-site .lw2-app-insight--pattern .lw2-type-card-top strong { min-height: 0; font-size: clamp(30px,3vw,40px); line-height: 1.12; }
-.lw2-site .lw2-app-insight--pattern .lw2-type-line { min-height: 0; font-size: 14px; line-height: 1.7; margin-top: 12px; }
-.lw2-site .lw2-pattern-mate {
-  margin-top: 18px;
-  padding: 14px 16px;
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--lw2-graphic-accent-wash) 58%, var(--lw2-graphic-paper));
+.lw2-homepage .lw2-pattern-picker button:hover {
+    background: #eae7e1;
 }
-.lw2-site .lw2-pattern-mate small { display: block; font-size: 12px; color: var(--lw2-graphic-accent-ink); }
-.lw2-site .lw2-pattern-mate strong { font-weight: 600; color: var(--lw2-ink); }
-.lw2-site .lw2-pattern-mate p { margin: 6px 0 0; font-size: 13px; line-height: 1.55; color: var(--lw2-muted); }
+.lw2-homepage .lw2-pattern-picker button[aria-pressed="true"] {
+    background: #27241f;
+    color: #fffdf8;
+}
+.lw2-homepage .lw2-pattern-picker button:focus-visible {
+    outline: 2px solid #543b2b;
+    outline-offset: 2px;
+}
+.lw2-homepage .lw2-pattern-picker .lw2-pattern-playback {
+    background: transparent;
+    color: #625c53;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.lw2-homepage .lw2-pattern-picker .lw2-pattern-playback:hover {
+    background: #eae7e1;
+}
+.lw2-homepage .lw2-pattern-card {
+    --pattern-rule: #e4dfd6;
+    --pattern-ink: #2e2a24;
+    --pattern-muted: #625c53;
+    --pattern-accent: #924b23;
+    --pattern-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    width: min(100%, 640px);
+    margin: 0;
+    padding: clamp(18px, 2.6vw, 34px);
+    border: 1px solid var(--pattern-rule);
+    border-radius: 16px;
+    background: #fbf9f5;
+    color: var(--pattern-ink);
+    box-shadow: 0 14px 34px rgba(50, 40, 30, .045);
+}
+.lw2-homepage .lw2-pattern-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(106px, 14vw, 182px);
+    align-items: center;
+    column-gap: 16px;
+}
+.lw2-homepage .lw2-pattern-label {
+    margin: 0;
+    color: var(--pattern-muted);
+    font: 500 11px/1.4 var(--pattern-mono);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+.lw2-homepage .lw2-pattern-header h4 {
+    margin: 6px 0 7px;
+    font-size: clamp(25px, 3.3vw, 44px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+.lw2-homepage .lw2-pattern-description {
+    max-width: 47ch;
+    margin: 0;
+    color: var(--pattern-muted);
+    font-size: clamp(13px, 1.2vw, 16px);
+    line-height: 1.45;
+}
+.lw2-homepage .lw2-pattern-art img {
+    display: block;
+    width: 100%;
+    height: auto;
+    mask-image:
+        radial-gradient(ellipse 49% 46% at 49% 52%, #000 54%, rgb(0 0 0 / .5) 80%, transparent),
+        radial-gradient(ellipse 34% 34% at 60% 45%, #000 31%, transparent),
+        radial-gradient(ellipse 35% 35% at 37% 57%, rgb(0 0 0 / .76), transparent);
+}
+.lw2-homepage .lw2-pattern-art img[src$="giraffe-reference.jpg"] {
+    mask-image:
+        radial-gradient(ellipse 42% 50% at 49% 50%, #000 76%, rgb(0 0 0 / .6) 91%, transparent),
+        radial-gradient(ellipse 42% 38% at 52% 55%, #000 42%, transparent);
+}
+.lw2-homepage .lw2-pattern-axes {
+    display: grid;
+    margin: 18px 0 22px;
+    list-style: none;
+}
+.lw2-homepage .lw2-pattern-axes li {
+    display: grid;
+    grid-template-columns: 88px 66px minmax(0, 1fr) 66px;
+    grid-template-areas: "name low track high";
+    align-items: center;
+    gap: 9px;
+    min-height: 34px;
+}
+.lw2-homepage .lw2-pattern-axis-name {
+    grid-area: name;
+    color: var(--pattern-ink);
+    font-size: 13px;
+    line-height: 1.3;
+}
+.lw2-homepage .lw2-pattern-track {
+    grid-area: track;
+    position: relative;
+    display: block;
+    height: 3px;
+    margin-inline: 3px;
+    border-radius: 2px;
+    background: #c0b8ac;
+}
+.lw2-homepage .lw2-pattern-track i {
+    position: absolute;
+    top: 50%;
+    width: 3px;
+    height: 13px;
+    border-radius: 1px;
+    background: var(--pattern-ink);
+    transform: translate(-50%, -50%);
+    transition: left 700ms cubic-bezier(.22, .8, .25, 1);
+}
+.lw2-homepage .lw2-pattern-poles {
+    display: contents;
+}
+.lw2-homepage .lw2-pattern-poles span {
+    color: var(--pattern-muted);
+    font-size: 12px;
+    line-height: 1.2;
+}
+.lw2-homepage .lw2-pattern-poles span:first-child {
+    grid-area: low;
+    text-align: right;
+}
+.lw2-homepage .lw2-pattern-poles span:last-child {
+    grid-area: high;
+}
+.lw2-homepage .lw2-pattern-axes .is-standout .lw2-pattern-axis-name,
+.lw2-homepage .lw2-pattern-poles .is-on {
+    color: var(--pattern-accent);
+    font-weight: 600;
+}
+.lw2-homepage .lw2-pattern-axes .is-standout i {
+    width: 4px;
+    height: 16px;
+    background: var(--pattern-accent);
+}
+.lw2-homepage .lw2-pattern-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+.lw2-homepage .lw2-pattern-roommate {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(48px, 5.7vw, 74px);
+    column-gap: 8px;
+    align-items: start;
+}
+.lw2-homepage .lw2-pattern-roommate strong {
+    display: block;
+    margin-top: 3px;
+    color: var(--pattern-ink);
+    font-size: 13px;
+    letter-spacing: 0;
+    font-weight: 600;
+    text-transform: none;
+}
+.lw2-homepage .lw2-pattern-mate-art {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+}
+.lw2-homepage .lw2-pattern-details p:not(.lw2-pattern-label) {
+    margin: 5px 0 0;
+    color: var(--pattern-ink);
+    font-size: 13px;
+    line-height: 1.4;
+}
+.lw2-homepage .lw2-pattern-start p.lw2-pattern-action {
+    max-width: 24ch;
+    margin-top: 8px;
+    font-size: clamp(18px, 1.8vw, 24px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+}
+.lw2-homepage .lw2-pattern-start p[data-type-start] {
+    max-width: 36ch;
+    margin-top: 8px;
+    color: var(--pattern-muted);
+    font-size: clamp(14px, 1.25vw, 17px);
+    line-height: 1.45;
+}
+.lw2-homepage .lw2-pattern-card figcaption {
+    margin-top: 12px;
+    color: var(--pattern-muted);
+    font-size: 11px;
+    line-height: 1.35;
+}
+@media (max-width: 900px) {
+    .lw2-site.lw2-homepage .lw2-app-insight--pattern {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+    .lw2-homepage .lw2-app-insight--pattern .lw2-app-insight-copy {
+        order: 0;
+        max-width: 640px;
+    }
+    .lw2-homepage .lw2-app-insight--pattern .lw2-app-health-note {
+        margin-top: 7px;
+    }
+    .lw2-homepage .lw2-pattern-picker {
+        margin-top: 14px;
+    }
+    .lw2-homepage .lw2-pattern-header {
+        grid-template-columns: minmax(0, 1fr) clamp(94px, 24vw, 182px);
+    }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+    .lw2-homepage .lw2-pattern-picker {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+}
 @media (max-width: 560px) {
-  .lw2-site .lw2-pattern-art { margin: -8px -8px 16px; height: 190px; }
-  .lw2-site .lw2-pattern-art img { width: 60%; }
-  .lw2-site .lw2-app-insight--pattern .lw2-type-line { font-size: 13px; }
+    .lw2-homepage .lw2-pattern-header {
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+    .lw2-homepage .lw2-pattern-header h4 {
+        max-width: calc(100% - 86px);
+        min-height: 29px;
+    }
+    .lw2-homepage .lw2-pattern-header > .lw2-pattern-art {
+        position: absolute;
+        top: -12px;
+        right: -6px;
+        width: 88px;
+        pointer-events: none;
+    }
+    .lw2-homepage .lw2-pattern-description {
+        margin-top: 30px;
+    }
+    .lw2-homepage .lw2-pattern-axes li {
+        grid-template-columns: 73px 52px minmax(0, 1fr) 52px;
+        gap: 5px;
+    }
+    .lw2-homepage .lw2-pattern-poles span {
+        font-size: 11px;
+    }
+    .lw2-homepage .lw2-pattern-details {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .lw2-homepage .lw2-pattern-roommate {
+        grid-template-columns: minmax(0, 1fr) 60px;
+    }
+}
+@media (max-width: 360px) {
+    .lw2-homepage .lw2-pattern-axes li {
+        grid-template-columns: max-content minmax(0, 1fr) max-content;
+        grid-template-areas: "name name name" "low track high";
+        gap: 3px 8px;
+        padding-block: 5px;
+    }
+    .lw2-homepage .lw2-pattern-poles span:first-child {
+        text-align: left;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .lw2-homepage .lw2-pattern-track i {
+        transition: none;
+    }
 }

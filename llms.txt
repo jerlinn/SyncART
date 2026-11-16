@@ -4,7 +4,7 @@
 
 Two things LunaWake does:
 1. The Bedroom Autopilot: a gentle bedtime chime timed to your rhythm, built-in soundscapes designed to fade out after you fall asleep, a device that stays dark through the night, an optional low light when you walk up, and a wake-up with light and sound. Most of it is on by default and can be turned off in the app.
-2. Smart Sleep Coach: each morning starts with a short written summary of last night instead of a score. Sleep score, stages, and trends are available as supporting detail. Ask Luna answers from the user's own record, habits, and daily life.
+2. Smart Sleep Coach: each morning starts with a short written summary of last night. The nightly report in the web app compares when you fell asleep and woke up with your usual rhythm. Sleep stages and trends add detail. Ask Luna answers from your own sleep record, habits, and daily life.
 
 Signature feature — Rhythm check: hold the device for two seconds and it says roughly where your body is in its daily rhythm (for example the afternoon dip or the sleep window) with one suggestion. The app shows the whole day's rhythm as a strip. The spoken suggestion is only given on the device.
 

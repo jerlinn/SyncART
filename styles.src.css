@@ -5618,18 +5618,23 @@ h3 {
 /* Agent connector footer */
 
 .lw2-footer .lw2-mcp{border-top:1px solid rgba(255,253,248,.16);border-bottom:1px solid rgba(255,253,248,.16);margin:30px 0;padding:0;color:#fffdf8}
-.lw2-mcp summary{display:flex;align-items:center;gap:16px;cursor:pointer;list-style:none;padding:21px 0;font-size:var(--t6);font-weight:400}
-.lw2-mcp summary::-webkit-details-marker{display:none}
+.lw2-mcp-header{position:relative;display:flex;align-items:center;gap:clamp(8px,2vw,16px);padding-right:16px}
+.lw2-mcp-toggle{display:flex;align-items:center;gap:inherit;padding:21px 0;color:inherit;border:0;background:none;font-family:inherit;font-size:var(--t6);font-weight:400;text-align:left}
+.lw2-mcp-toggle:enabled{cursor:pointer}
+.lw2-mcp-toggle:enabled::after{content:"";position:absolute;inset:0}
+.lw2-mcp-toggle:disabled .lw2-mcp-plus{display:none}
 .lw2-mcp-label{color:rgba(255,253,248,.55);font-size:var(--t8)}
-.lw2-mcp-plus{margin-left:auto;font-size:var(--t5);font-weight:300}
-.lw2-mcp[open] .lw2-mcp-plus{transform:rotate(45deg)}
+.lw2-mcp-plus{position:absolute;right:0;top:50%;translate:0 -50%;font-size:var(--t5);font-weight:300}
+.lw2-mcp-toggle[aria-expanded="true"] .lw2-mcp-plus{rotate:45deg}
+.lw2-mcp-copy{position:relative;z-index:1;flex:none;min-width:60px;min-height:40px;padding:0 8px;border:1px solid rgba(255,253,248,.35);border-radius:999px;background:transparent;color:inherit;font-family:inherit;font-size:var(--t8);cursor:pointer}
+.lw2-mcp-copy:hover{background:rgba(255,253,248,.1)}
+.lw2-mcp-copy[data-state="success"]{color:var(--color-success);border-color:currentColor}
+.lw2-mcp-copy[data-state="error"]{color:var(--color-error);border-color:currentColor}
+.lw2-mcp-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .lw2-mcp-content{padding:0 0 24px;max-width:800px}
 .lw2-footer .lw2-mcp-content p{font-size:var(--t6);line-height:1.8;color:rgba(255,253,248,.8);margin:0;overflow-wrap:anywhere;user-select:text}
 .lw2-footer .lw2-mcp-content a{text-decoration:underline;text-underline-offset:3px;color:inherit}
-.lw2-mcp-actions{display:flex;align-items:center;gap:14px;margin-top:18px;font-size:var(--t8);color:rgba(255,253,248,.65)}
-.lw2-mcp-actions button{font:inherit;color:#fffdf8;border:1px solid rgba(255,253,248,.35);border-radius:999px;background:transparent;cursor:pointer;padding:8px 20px;min-height:40px}
-.lw2-mcp-actions button:hover{background:rgba(255,253,248,.1)}
-.lw2-mcp summary:focus-visible,.lw2-mcp button:focus-visible,.lw2-mcp a:focus-visible{outline:2px solid #fffdf8;outline-offset:5px}
+.lw2-mcp-toggle:focus-visible::after,.lw2-mcp-copy:focus-visible,.lw2-mcp a:focus-visible{outline:2px solid #fffdf8;outline-offset:5px}
 
 /* Sitewide voice (2026-11-12): section labels use the homepage's warm grey, and the accent word
    in a page title uses the brand's warm accent instead of indigo. */

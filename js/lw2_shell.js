@@ -104,19 +104,43 @@
 })();
 
 ;(() => {
- document.querySelectorAll('[data-mcp-copy]').forEach(button => {
-  let timer;
-  button.addEventListener('click', async () => {
-   const panel = button.closest('.lw2-mcp');
-   const status = panel.querySelector('[data-mcp-status]');
-   clearTimeout(timer);
-   try {
-    await navigator.clipboard.writeText(panel.querySelector('[data-mcp-prompt]').textContent);
-    button.textContent = 'Copied'; status.textContent = 'Copied to clipboard.';
-    timer = setTimeout(() => {button.textContent = 'Copy'; status.textContent = '';}, 2500);
-   } catch {
-    button.textContent = 'Copy'; status.textContent = 'Select the sentence above and copy it manually.';
-   }
-  });
- });
+    document.querySelectorAll('.lw2-mcp').forEach(panel => {
+        const toggle = panel.querySelector('.lw2-mcp-toggle');
+        const content = document.getElementById(toggle.getAttribute('aria-controls'));
+        const copy = panel.querySelector('[data-mcp-copy]');
+        const prompt = content.querySelector('[data-mcp-prompt]');
+        const status = panel.querySelector('[data-mcp-status]');
+        let resetStatus;
+
+        const setExpanded = expanded => {
+            toggle.setAttribute('aria-expanded', String(expanded));
+            content.hidden = !expanded;
+        };
+
+        setExpanded(false);
+        toggle.disabled = false;
+        copy.hidden = false;
+        toggle.addEventListener('click', () => setExpanded(content.hidden));
+
+        copy.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(prompt.textContent);
+                clearTimeout(resetStatus);
+                copy.dataset.state = 'success';
+                copy.textContent = 'Copied';
+                status.textContent = 'Copied to clipboard.';
+                resetStatus = setTimeout(() => {
+                    delete copy.dataset.state;
+                    copy.textContent = 'Copy';
+                    status.textContent = '';
+                }, 2500);
+            } catch {
+                clearTimeout(resetStatus);
+                setExpanded(true);
+                copy.dataset.state = 'error';
+                copy.textContent = 'Retry';
+                status.textContent = 'Select the sentence below and copy it manually.';
+            }
+        });
+    });
 })();

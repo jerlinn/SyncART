@@ -971,7 +971,7 @@ body.lw2-site.lw2-homepage :is(.lw2-rhythm-figure figcaption, .lw2-type-line,
 body.lw2-site.lw2-homepage :is(.lw2-button, .lw2-inline-link, .lw2-button > span, .lw2-inline-link > span,
     .lw2-film-play > span, .lw2-type-picker button, .lw2-device-detail-copy p, .lw2-finish-name strong,
     .lw2-faq-list summary, .lw2-faq-list details p, .lw2-faq-grid > div:first-child > p:not(.lw2-eyebrow),
-    .lw2-lab-list strong, .lw2-app-pilot li, .lw2-mcp summary > span:first-child, .lw2-mcp-content p, .lw2-mcp-plus) {
+    .lw2-lab-list strong, .lw2-app-pilot li, .lw2-mcp-content p, .lw2-mcp-plus) {
     font-size: var(--t6);
 }
 body.lw2-site.lw2-homepage main .lw2-cta .lw2-button { text-transform: none; }

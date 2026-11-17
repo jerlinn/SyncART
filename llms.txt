@@ -1,8 +1,10 @@
-# LunaWake
+# Lunawake
 
-> LunaWake is a bedside sleep device paired with a Smart Sleep Coach. Nothing to wear: the device looks after wind-down and wake-up with its own light and sound, and the Luna App reads your nights and helps you keep a rhythm that fits your life. Slogan: Your sleep, in rhythm.
+> Lunawake is the smart sleep system that helps you find your rhythm, effortlessly. The contactless bedside device uses light and sound to help you wind down and wake. The Luna App helps you see how your nights relate to how you feel during the day.
 
-Two things LunaWake does:
+Your sleep, in rhythm.
+
+Two things Lunawake does:
 1. The Bedroom Autopilot: a gentle bedtime chime timed to your rhythm, built-in soundscapes designed to fade out after you fall asleep, a device that stays dark through the night, an optional low light when you walk up, and a wake-up with light and sound. Most of it is on by default and can be turned off in the app.
 2. Smart Sleep Coach: each morning starts with a short written summary of last night. The nightly report in the web app compares when you fell asleep and woke up with your usual rhythm. Sleep stages and trends add detail. Ask Luna answers from your own sleep record, habits, and daily life.
 
@@ -26,15 +28,15 @@ Key facts:
 
 - Luna is the app's single conversational agent, reached through Ask Luna. Answers are grounded in the user's own sleep record and the habits they have shared.
 - Each morning: a short summary of last night. A Daily Brief covers the whole sleep day. Neither assigns tasks or routines.
-- Sleep Pattern: a long-term picture of how a person sleeps, with charts and a written reading, updated as the record changes.
+- Sleep Pattern is your long-term sleep profile, with charts and a written reading by Mira. In the web app, open it from the book icon at the top right of Home. Evolution shows past assessments when available.
 - The app can work from Apple Health sleep data without the device. Each night uses one data source.
 - Lunawake MCP lets a user connect their sleep data, read-only and with their authorization, to an AI agent they already use.
 
 ## Pages
 - [Home](https://hellolunawake.com/): product overview — the Bedroom Autopilot, the device, bedside sensing and privacy, the Smart Sleep Coach, finishes, and FAQ
-- [Reserve](https://reserve.hellolunawake.com/): the $9 reservation page for LunaWake's Kickstarter launch offer
+- [Reserve](https://reserve.hellolunawake.com/): the $9 reservation page for Lunawake's Kickstarter launch offer
 - [Science](https://hellolunawake.com/science.html): how the bedside radar reads the night and how it is being tested against technician-scored polysomnography in the sleep lab — method, footage, early signal windows, and stated boundaries
-- [About](https://hellolunawake.com/about.html): why LunaWake is building a calmer, privacy-first bedside sleep system
+- [About](https://hellolunawake.com/about.html): why Lunawake is building a calmer, privacy-first bedside sleep system
 - [Support / FAQ](https://lunawake.ai/support.html): product questions, data deletion and download requests, refunds and billing, and bug reports — contact [support@lunawake.ai](mailto:support@lunawake.ai)
 - [Partnerships / Media](mailto:hello@hellolunawake.com): partnership and media inquiries
 - [Privacy Policy](https://hellolunawake.com/privacy.html): privacy policy

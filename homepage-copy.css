@@ -2106,3 +2106,29 @@ body.lw2-site.lw2-homepage .lw2-hero-meta { margin-top: 32px; }
         transition: none;
     }
 }
+
+/* Rhythm clock readout: the moment's time, a lived scene, then the stage it belongs to.
+   The scene keeps room for its longest line count so switching stages never moves the page. */
+body.lw2-site.lw2-homepage .lw2-rhythm-figure figcaption {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    min-height: 0;
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-time {
+    color: var(--lw2-annotation);
+    font-size: 13px;
+    letter-spacing: .06em;
+    font-variant-numeric: tabular-nums;
+}
+body.lw2-site.lw2-homepage .lw2-rhythm-scene { max-width: 36ch; min-height: 3lh; }
+body.lw2-site.lw2-homepage .lw2-rhythm-claim { color: var(--lw2-muted); }
+body.lw2-site.lw2-homepage .lw2-rhythm-claim b { color: var(--lw2-ink); font-weight: 600; }
+@media (max-width: 560px) {
+    body.lw2-site.lw2-homepage .lw2-rhythm-scene { min-height: 4lh; }
+}
+
+/* Rhythm Check closes the rhythm section. */
+body.lw2-site.lw2-homepage .lw2-rhythm-check { margin-top: clamp(40px, 6vw, 80px); }
+body.lw2-site.lw2-homepage .lw2-rhythm-check h3 { max-width: 22ch; margin: 0; font-size: var(--t3); font-weight: 500; line-height: 1.2; text-wrap: balance; }
+body.lw2-site.lw2-homepage .lw2-rhythm-check > p:not(.lw2-eyebrow) { max-width: 60ch; margin: 14px 0 0; color: var(--lw2-muted); font-size: var(--lw2-reading); line-height: 1.6; }

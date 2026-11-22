@@ -1154,6 +1154,10 @@ body.lw2-site.lw2-homepage .lw2-rhythm-center {
     overflow: hidden;
     isolation: isolate;
     border-radius: 50%;
+    /* iOS WebKit drops the rounded clip once the blurred, rotating ::before is composited,
+       so the sky showed as a square. An explicit circle clip and a mask layer keep it round. */
+    clip-path: circle(50%);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
     background: var(--sky-base);
     transition: --sky-a var(--sky-ease), --sky-b var(--sky-ease), --sky-c var(--sky-ease), --sky-base var(--sky-ease), --sky-ink var(--sky-ease);
 }
